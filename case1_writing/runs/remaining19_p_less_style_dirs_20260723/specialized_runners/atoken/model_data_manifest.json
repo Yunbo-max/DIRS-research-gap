@@ -1,0 +1,347 @@
+{
+  "artifact_kind": "atoken_model_data_manifest",
+  "candidate_output_artifacts": [
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/professional_gate_result.json",
+      "size_human": "3906"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/micro_debug_qwen25vl3b_around1/summary_metrics.json",
+      "size_human": "659"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/preflight_around10/summary_metrics.json",
+      "size_human": "308"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/micro_qwen25vl3b_around5/summary_metrics.json",
+      "size_human": "714"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/ifeval_latent_constraint_branch2/preflight/ifeval_branch2_command_plan.json",
+      "size_human": "954"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/ifeval_latent_constraint_branch2/preflight/ifeval_branch2_preflight_report.json",
+      "size_human": "3218"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/latent_kv_flexible_left_branches_20260705/ifeval_family_audit_manual_check/ifeval_family_audit.json",
+      "size_human": "20970"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/latent_kv_flexible_left_branches_20260705/ifeval_family_audit_48h_existing/ifeval_family_audit.json",
+      "size_human": "20970"
+    }
+  ],
+  "checkpoints": [
+    {
+      "file": "checkpoints/atoken-soc.pt",
+      "file_count": 0,
+      "id": "atoken_soc_continuous",
+      "local_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/checkpoints/atoken-soc.pt",
+      "local_size_bytes": 0,
+      "local_size_human": null,
+      "materialized_locally": false,
+      "paper_role": "main continuous tokenizer for image/video/3D reconstruction and understanding transfer",
+      "url": "https://ml-site.cdn-apple.com/models/atoken/atoken-soc.pt",
+      "url_head": {
+        "cmd": [
+          "bash",
+          "-lc",
+          "curl -L -I --max-time 12 'https://ml-site.cdn-apple.com/models/atoken/atoken-soc.pt'"
+        ],
+        "content_length_bytes": 3383173281,
+        "cwd": null,
+        "http_status_codes": [
+          "200"
+        ],
+        "returncode": 0,
+        "seconds": 0.502,
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0 3226M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0 3226M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+        "stdout": "HTTP/2 200 \ndate: Thu, 23 Jul 2026 19:09:18 GMT\nlast-modified: Wed, 15 Oct 2025 01:30:05 GMT\netag: \"092b073fafe63c1c7f4016dc05885255-197\"\naccept-ranges: bytes\ncontent-type: binary/octet-stream\ncontent-length: 3383173281\nserver: AmazonS3\ncache-control: max-age=600, public\nage: 0\nvia: https/1.1 gbslo5-xdc-mx-022.ts.apple.com (acdn/327.16648), https/1.1 uklon5-edge-fx-025.ts.apple.com (acdn/327.16648), http/1.1 uklon5-edge-fx-025.ts.apple.com (acdn/327.16648)\nx-cache: miss, miss, none\ncdnuuid: 68ba64ed-496a-4fa0-b353-ac66d6fa0db2-376652480\n\n",
+        "timeout": false
+      }
+    },
+    {
+      "file": "checkpoints/atoken-sod.pt",
+      "file_count": 0,
+      "id": "atoken_sod_discrete",
+      "local_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/checkpoints/atoken-sod.pt",
+      "local_size_bytes": 0,
+      "local_size_human": null,
+      "materialized_locally": false,
+      "paper_role": "discrete FSQ tokenizer checkpoint",
+      "url": "https://ml-site.cdn-apple.com/models/atoken/atoken-sod.pt",
+      "url_head": {
+        "cmd": [
+          "bash",
+          "-lc",
+          "curl -L -I --max-time 12 'https://ml-site.cdn-apple.com/models/atoken/atoken-sod.pt'"
+        ],
+        "content_length_bytes": 3383173409,
+        "cwd": null,
+        "http_status_codes": [
+          "200"
+        ],
+        "returncode": 0,
+        "seconds": 0.519,
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0 3226M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+        "stdout": "HTTP/2 200 \ndate: Thu, 23 Jul 2026 19:09:19 GMT\nlast-modified: Wed, 15 Oct 2025 01:30:05 GMT\netag: \"33a82e283c2d37de7b7125a5cd34d460-197\"\naccept-ranges: bytes\ncontent-type: binary/octet-stream\ncontent-length: 3383173409\nserver: AmazonS3\ncache-control: max-age=600, public\nage: 3\nvia: https/1.1 gbslo5-xdc-mx-014.ts.apple.com (acdn/327.16648), https/1.1 uklon5-edge-fx-019.ts.apple.com (acdn/327.16648), http/1.1 uklon5-edge-fx-019.ts.apple.com (acdn/327.16648)\nx-cache: miss, miss, none\ncdnuuid: 510db1e4-145c-4dfd-8ab9-ca62bf7310bc-358179811\n\n",
+        "timeout": false
+      }
+    },
+    {
+      "file": "checkpoints/3d_decode_gs.pt",
+      "file_count": 0,
+      "id": "atoken_3d_decode_gs",
+      "local_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/checkpoints/3d_decode_gs.pt",
+      "local_size_bytes": 0,
+      "local_size_human": null,
+      "materialized_locally": false,
+      "paper_role": "Gaussian Splatting 3D decoder checkpoint",
+      "url": "https://ml-site.cdn-apple.com/models/atoken/3d_decode_gs.pt",
+      "url_head": {
+        "cmd": [
+          "bash",
+          "-lc",
+          "curl -L -I --max-time 12 'https://ml-site.cdn-apple.com/models/atoken/3d_decode_gs.pt'"
+        ],
+        "content_length_bytes": 402461638,
+        "cwd": null,
+        "http_status_codes": [
+          "200"
+        ],
+        "returncode": 0,
+        "seconds": 0.512,
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0  383M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0  383M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+        "stdout": "HTTP/2 200 \ndate: Thu, 23 Jul 2026 19:09:19 GMT\nlast-modified: Tue, 14 Oct 2025 19:09:39 GMT\netag: \"882bb74d34fa9d57d6ed9991aa6f7449-24\"\naccept-ranges: bytes\ncontent-type: binary/octet-stream\ncontent-length: 402461638\nserver: AmazonS3\ncache-control: max-age=600, public\nage: 0\nvia: https/1.1 gbslo5-xdc-mx-013.ts.apple.com (acdn/327.16648), https/1.1 uklon5-edge-fx-027.ts.apple.com (acdn/327.16648), http/1.1 uklon5-edge-fx-027.ts.apple.com (acdn/327.16648)\nx-cache: miss, miss, none\ncdnuuid: 09fd5d83-1322-4823-8673-ace53a51e4b9-336891746\n\n",
+        "timeout": false
+      }
+    },
+    {
+      "file": "checkpoints/atoken-soc-s1.pt",
+      "file_count": 0,
+      "id": "atoken_soc_stage1",
+      "local_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/checkpoints/atoken-soc-s1.pt",
+      "local_size_bytes": 0,
+      "local_size_human": null,
+      "materialized_locally": false,
+      "paper_role": "early image-only stage checkpoint for scaling/stage analysis",
+      "url": "https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s1.pt",
+      "url_head": {
+        "cmd": [
+          "bash",
+          "-lc",
+          "curl -L -I --max-time 12 'https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s1.pt'"
+        ],
+        "content_length_bytes": 3382952097,
+        "cwd": null,
+        "http_status_codes": [
+          "200"
+        ],
+        "returncode": 0,
+        "seconds": 0.522,
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0 3226M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+        "stdout": "HTTP/2 200 \ndate: Thu, 23 Jul 2026 19:09:20 GMT\nlast-modified: Tue, 14 Oct 2025 19:11:24 GMT\netag: \"e156880064aa8d14ec22d69e1c2aa6e3-197\"\naccept-ranges: bytes\ncontent-type: binary/octet-stream\ncontent-length: 3382952097\nserver: AmazonS3\ncache-control: max-age=600, public\nage: 3\nvia: https/1.1 gbslo5-xdc-mx-012.ts.apple.com (acdn/327.16648), https/1.1 uklon5-edge-fx-019.ts.apple.com (acdn/327.16648), http/1.1 uklon5-edge-fx-019.ts.apple.com (acdn/327.16648)\nx-cache: miss, miss, none\ncdnuuid: 25dea4ea-6151-42ef-9237-6d3690b51a7e-362984531\n\n",
+        "timeout": false
+      }
+    },
+    {
+      "file": "checkpoints/atoken-soc-s2.pt",
+      "file_count": 0,
+      "id": "atoken_soc_stage2",
+      "local_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/checkpoints/atoken-soc-s2.pt",
+      "local_size_bytes": 0,
+      "local_size_human": null,
+      "materialized_locally": false,
+      "paper_role": "early image+video stage checkpoint for scaling/stage analysis",
+      "url": "https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s2.pt",
+      "url_head": {
+        "cmd": [
+          "bash",
+          "-lc",
+          "curl -L -I --max-time 12 'https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s2.pt'"
+        ],
+        "content_length_bytes": 3383173281,
+        "cwd": null,
+        "http_status_codes": [
+          "200"
+        ],
+        "returncode": 0,
+        "seconds": 0.52,
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0 3226M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0 3226M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+        "stdout": "HTTP/2 200 \ndate: Thu, 23 Jul 2026 19:09:20 GMT\nlast-modified: Tue, 14 Oct 2025 20:33:11 GMT\netag: \"6b5b308a14bc86883ef6e38480bedd9a-197\"\naccept-ranges: bytes\ncontent-type: binary/octet-stream\ncontent-length: 3383173281\nserver: AmazonS3\ncache-control: max-age=600, public\nage: 0\nvia: https/1.1 gbslo5-xdc-mx-022.ts.apple.com (acdn/327.16648), https/1.1 uklon5-edge-fx-027.ts.apple.com (acdn/327.16648), http/1.1 uklon5-edge-fx-027.ts.apple.com (acdn/327.16648)\nx-cache: miss, miss, none\ncdnuuid: 68ba64ed-496a-4fa0-b353-ac66d6fa0db2-376656793\n\n",
+        "timeout": false
+      }
+    }
+  ],
+  "created_at_utc": "2026-07-23T18:53:13Z",
+  "datasets_and_metric_artifacts": [
+    {
+      "hints": [
+        "DFN",
+        "dfn"
+      ],
+      "id": "dfn_training",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "DFN training images/text for tokenizer pretraining"
+    },
+    {
+      "hints": [
+        "OpenImages",
+        "Open Images",
+        "openimages",
+        "open_images"
+      ],
+      "id": "open_images_training",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Open Images training/eval data"
+    },
+    {
+      "hints": [
+        "WebVid",
+        "webvid"
+      ],
+      "id": "webvid_video_training",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "WebVid video training data"
+    },
+    {
+      "hints": [
+        "TextVR",
+        "textvr"
+      ],
+      "id": "textvr_retrieval",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "TextVR video-text retrieval benchmark"
+    },
+    {
+      "hints": [
+        "Panda70M",
+        "panda70m"
+      ],
+      "id": "panda70m_video_training",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Panda70M video training data"
+    },
+    {
+      "hints": [
+        "Objaverse",
+        "objaverse"
+      ],
+      "id": "objaverse_3d",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Objaverse 3D data"
+    },
+    {
+      "hints": [
+        "Cap3D",
+        "cap3d"
+      ],
+      "id": "cap3d_3d_text",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Cap3D text/3D data"
+    },
+    {
+      "hints": [
+        "ImageNet",
+        "imagenet",
+        "ILSVRC"
+      ],
+      "id": "imagenet_classification",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "ImageNet zero-shot/classification benchmark"
+    },
+    {
+      "hints": [
+        "COCO",
+        "coco",
+        "MSCOCO"
+      ],
+      "id": "coco_retrieval_generation",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "COCO image-text retrieval/generation benchmark"
+    },
+    {
+      "hints": [
+        "DAVIS",
+        "davis"
+      ],
+      "id": "davis_video_reconstruction",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "DAVIS video reconstruction benchmark"
+    },
+    {
+      "hints": [
+        "MSRVTT",
+        "MSR-VTT",
+        "msrvtt"
+      ],
+      "id": "msrvtt_video_text",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "MSR-VTT video-text retrieval benchmark"
+    }
+  ],
+  "not_promoted_support": [
+    "official README checkpoint URLs",
+    "assets/overview.png",
+    "test_atoken.py example output folders",
+    "lightweight repo random demos or single-GPU defaults",
+    "paper text bundled in lightweight repo"
+  ],
+  "official_repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken",
+  "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+  "paper_result_surfaces": [
+    "image reconstruction table with PSNR, SSIM, LPIPS, rFID",
+    "video reconstruction table with PSNR, SSIM, LPIPS, rFVD",
+    "zero-shot ImageNet or equivalent accuracy table",
+    "image-text retrieval table with R@1 and matching baselines",
+    "video-text retrieval table with R@1 and matching baselines",
+    "MLLM image understanding replacement table",
+    "MLLM video understanding replacement table",
+    "text-to-image generation table with gFID, IS, precision",
+    "text-to-video generation table with rFVD/rFID-style generation metrics",
+    "image-to-3D synthesis table and qualitative outputs",
+    "stage/capacity scaling ablation including small-model degradation",
+    "raw reconstructed images/videos/3D outputs, metric JSON, timing and GPU traces"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "event": "manual_stop_after_verified_convergence",
+  "stopped_at_utc": "2026-07-21T10:56:06Z",
+  "completed_loops": 125,
+  "converged": true,
+  "control_verdict": "pass",
+  "stable_top_question": "Q1_budgeted_state_verifying_agents",
+  "stable_verdict": "partial_gap"
+}

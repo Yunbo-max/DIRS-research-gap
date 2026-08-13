@@ -1,0 +1,61 @@
+{
+  "artifact_kind": "sencache_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Paper/DAG expects GH200 supplement latency or comparable high-end video-diffusion traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "paper_hardware_class",
+      "status": "blocked"
+    },
+    {
+      "detail": "Visible GPUs are memory-heavy or active; GPU 3 is occupied by Prophet. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 100}]",
+      "id": "clean_gpu_slot_for_video_diffusion_grid",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local loadable checkpoints: wan21_t2v_13b, cogvideox_15_5b, ltx_video_091",
+      "id": "required_video_model_checkpoints_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local sensitivity .npz weights or calibration outputs: sensitivity_wan21, sensitivity_cogvid, sensitivity_ltx",
+      "id": "sensitivity_weights_or_calibration_outputs_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local calibration/prompt/evaluator artifacts: mixkit_calibration_videos, vbench_full_prompt_set, t2v_compbench_70_prompts",
+      "id": "calibration_prompt_metric_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing required runtime packages/imports: diffusers, lpips, vbench, wan",
+      "id": "video_diffusion_metric_runtime_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No raw cached/uncached Wan2.1, CogVideoX, and LTX outputs with VBench/LPIPS/PSNR/SSIM/latency/GFLOPs summaries were found.",
+      "id": "full_cached_uncached_result_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-24T13:32:00Z",
+  "next_full_execution_if_unblocked": [
+    "materialize Wan2.1, CogVideoX, and LTX-Video checkpoints",
+    "download released Yassaman/SenCache sensitivity weights or rerun finite-difference calibration on MixKit videos",
+    "materialize VBench and T2V-CompBench prompt/evaluator artifacts",
+    "run cached and uncached variants for each model with matching T=50, seeds, K, and thresholds",
+    "emit raw videos, skip-count logs, NFE/cache ratio, latency/GFLOPs traces, and quality scores",
+    "compare simulated gap/results to the paper tables, paragraphs, figures, and supplement MAE diagnostic"
+  ],
+  "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+  "paper_title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching",
+  "professional_package_ready": false,
+  "status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements",
+  "support_checks": {
+    "compileall_passed": true,
+    "dataset_metric_artifacts_checked": 3,
+    "model_manifests_checked": 3,
+    "repo_files_checked": 13,
+    "sensitivity_weight_manifests_checked": 3
+  }
+}

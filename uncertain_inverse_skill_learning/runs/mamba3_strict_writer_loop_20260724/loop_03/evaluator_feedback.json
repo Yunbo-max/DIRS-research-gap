@@ -1,0 +1,56 @@
+{
+  "schema_version": "dirs.strict_writer.evaluator_feedback.v1",
+  "loop": 3,
+  "blind_boundary": {
+    "writer_output_frozen_before_evaluation": true,
+    "expert_wording_in_feedback": false
+  },
+  "scores": {
+    "evidence_fidelity": 0.99,
+    "problem_and_gap_function": 0.95,
+    "method_mechanism_function": 0.97,
+    "headline_result_selection": 0.94,
+    "expert_artifact_function_coverage": 0.94,
+    "coherence_and_compression": 0.95,
+    "bounded_claims": 0.97,
+    "overall": 0.959
+  },
+  "score_delta_from_loop_02": 0.022,
+  "hard_failures": [],
+  "accepted_improvements": [
+    "The complex-state mechanism now has a compact qualitative capability-validation output.",
+    "Experimental details are compressed while the evidence bindings remain in the graph.",
+    "The comparative quality and efficiency branches remain connected to one bounded synthesis."
+  ],
+  "error_attribution": {
+    "representation_errors": [],
+    "selection_errors": [],
+    "execution_errors": [
+      {
+        "id": "EXE2",
+        "problem": "The main quality sentence can be expressed more compactly as comparative changes instead of four absolute values plus a baseline maximum.",
+        "repair": "Perform a wording-only compression using quantities derivable from the public chip; do not change the selected graph."
+      }
+    ],
+    "evaluation_errors": [],
+    "data_or_evidence_errors": [
+      {
+        "id": "DATA1",
+        "status": "unchanged_evidence_shortage",
+        "instruction": "Continue to omit the unsupported state-size outcome."
+      }
+    ]
+  },
+  "structural_decision": {
+    "new_structural_edit_authorized": false,
+    "selected_graph_judgment": "adequate",
+    "next_loop_scope": "wording_only_execution_test"
+  },
+  "required_next_loop_tests": [
+    "Run loop 4 with the loop-3 selected graph frozen and no structural edit.",
+    "Retain posterior alternatives without changing weights unless new evidence exists.",
+    "Apply only EXE2 wording compression.",
+    "Report whether score and graph stability meet the preregistered stop conditions."
+  ],
+  "feedback_level": "wording_only_no_expert_phrases"
+}

@@ -1,0 +1,232 @@
+{
+  "artifact_kind": "dto_kd_artifact_manifest",
+  "checkpoint_candidates": {
+    "deit_small_student": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/checkpoints/deit_small",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/weights/deit_small",
+        "size_human": null
+      }
+    ],
+    "deit_tiny_student": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/checkpoints/deit_tiny",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/weights/deit_tiny",
+        "size_human": null
+      }
+    ],
+    "regnety_160_teacher": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/checkpoints/regnety_160",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/weights/regnety_160",
+        "size_human": null
+      }
+    ],
+    "vidt_base_teacher": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/checkpoints/vidt_base",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/weights/vidt_base",
+        "size_human": null
+      }
+    ],
+    "vidt_nano_tiny_small_students": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/checkpoints/vidt_students",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/external_artifacts/dto_kd/weights/vidt_students",
+        "size_human": null
+      }
+    ]
+  },
+  "created_at_utc": "2026-07-23T18:53:41Z",
+  "dataset_candidates": {
+    "cifar100": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/datasets/cifar100",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/data/cifar100",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/datasets/cifar100",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/data/cifar100",
+        "size_human": null
+      }
+    ],
+    "coco2017": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/datasets/coco2017",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/data/coco2017",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/datasets/coco2017",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/data/coco2017",
+        "size_human": null
+      }
+    ],
+    "imagenet_1k": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/datasets/imagenet",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/tf/notebooks/data/imagenet",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/datasets/imagenet",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "is_dir": false,
+        "path": "/data/imagenet",
+        "size_human": null
+      }
+    ]
+  },
+  "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+  "paper_shaped_outputs_required": [
+    "official or faithfully reimplemented DTO-KD training code from Algorithm 1 and Equations 8-18",
+    "four-H100 training logs and environment traces",
+    "ImageNet-1K 300-epoch RegNetY-160 to DeiT-Ti/DeiT-S distillation outputs",
+    "CIFAR-100 six-pair KD grid against FitNet/RKD/PKT/KD/OFD/CRD/DIST/ReviewKD/DKD/ReviewKD++ baselines",
+    "COCO2017 ViDT-nano/tiny/small 50-epoch distillation outputs against ViDT, Token-Matching, and VkD",
+    "component ablation outputs for projector optimization, DTO, and gradient clipping",
+    "teacher-scale robustness outputs and Figure 3/4 dynamic-pi/error-analysis data"
+  ],
+  "paper_table_targets": {
+    "figures_3_4": {
+      "required": "dynamic pi trajectories and TIDE classification/localization error analysis"
+    },
+    "table_1_imagenet_top1": {
+      "DTO-KD_S": 83.1,
+      "DTO-KD_Ti": 79.7,
+      "protocol": "300 epochs ImageNet-1K, RegNetY-160 teacher, DeiT Tiny/Small students"
+    },
+    "table_2_cifar100_top1": {
+      "DTO-KD_values": [
+        72.35,
+        75.68,
+        76.4,
+        70.9,
+        77.95,
+        78.22
+      ],
+      "protocol": "six CIFAR-100 homogeneous/heterogeneous teacher-student pairs"
+    },
+    "table_3_coco_detection": {
+      "DTO-KD_nano_AP": 43.7,
+      "DTO-KD_small_AP": 49.6,
+      "DTO-KD_tiny_AP": 47.4,
+      "protocol": "50 epochs COCO2017 ViDT distillation from ViDT-base teacher"
+    },
+    "table_4_ablation": {
+      "baseline_AP_AP50_AP75": [
+        41.0,
+        59.2,
+        42.8
+      ],
+      "full_projector_dto_gradclip_AP_AP50_AP75": [
+        43.7,
+        63.1,
+        46.8
+      ]
+    },
+    "table_5_teacher_scale": {
+      "claim": "DTO-KD is best for nano/tiny students with both ViDT-small and ViDT-base teachers"
+    }
+  },
+  "paper_title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+  "result_candidates": []
+}

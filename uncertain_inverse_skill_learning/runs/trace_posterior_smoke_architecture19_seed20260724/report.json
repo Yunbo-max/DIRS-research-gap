@@ -1,0 +1,106 @@
+{
+  "evidence_status": "smoke_only_synthetic_proposal_noise",
+  "convergence_claim": false,
+  "source_trace": "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/training_trace.json",
+  "seed": 20260724,
+  "proposal_count": 12,
+  "split": {
+    "train": [
+      "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+      "ICML2026_71193_focus_dilution_attention",
+      "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+      "ICML2026_71039_discoformer_density_score_transformers",
+      "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+      "CVPR2026_113_sat_structural_action_transformer",
+      "CVPR2026_136_segmote_token_moe_medical_segmentation",
+      "ICML2026_71133_rational_transductors",
+      "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+      "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete",
+      "ICLR2026_ZBj3Qp1bYg_ebt"
+    ],
+    "validation": [
+      "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+      "ICML2026_71083_any_order_gpt_mdm",
+      "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+      "ICLR2026_pN261iTKvr_learning_to_segment_vrp"
+    ],
+    "test": [
+      "ICML2026_71127_coevol_no_neural_operator",
+      "CVPR2026_069_mdcs_moame_survival_prediction",
+      "ICML2026_71098_secnet_event_cloud",
+      "ICML2026_71192_context_parameter_updates"
+    ]
+  },
+  "node_order": [
+    "R1_abstract_as_argument",
+    "G1_problem_gap",
+    "C1_domain_context",
+    "O1_named_method_or_object",
+    "M1_architecture_or_mechanism",
+    "M2_efficiency_or_theory_detail",
+    "E1_evaluation_setup",
+    "E2_result_outcome",
+    "E3_quantitative_anchor",
+    "I1_interpretation_or_tradeoff",
+    "S1_bounded_takeaway",
+    "P1_length_and_placement_prior"
+  ],
+  "training_only_proxy_node_prevalence": {
+    "R1_abstract_as_argument": 1.0,
+    "G1_problem_gap": 1.0,
+    "C1_domain_context": 0.45454545454545453,
+    "O1_named_method_or_object": 1.0,
+    "M1_architecture_or_mechanism": 1.0,
+    "M2_efficiency_or_theory_detail": 0.8181818181818182,
+    "E1_evaluation_setup": 1.0,
+    "E2_result_outcome": 1.0,
+    "E3_quantitative_anchor": 0.7272727272727273,
+    "I1_interpretation_or_tradeoff": 1.0,
+    "S1_bounded_takeaway": 1.0,
+    "P1_length_and_placement_prior": 1.0
+  },
+  "optimized_hyperparameters": {
+    "temperature": 0.06,
+    "complexity_penalty": 0.0,
+    "graph_weight": 0.5,
+    "validation_objective": 0.92509,
+    "search_boundary_hits": [
+      "complexity_penalty",
+      "graph_weight"
+    ]
+  },
+  "test_metrics": {
+    "single_hypothesis": {
+      "cases": 4,
+      "mean_map_f1": 0.773529,
+      "mean_expected_f1": 0.773529,
+      "mean_node_brier": 0.333333,
+      "mean_posterior_entropy": 0.0,
+      "credible_90_mean_size": 1,
+      "credible_90_mean_best_f1": 0.773529,
+      "mean_best_available_f1": 0.986842
+    },
+    "optimized_multi_hypothesis": {
+      "cases": 4,
+      "mean_map_f1": 0.96413,
+      "mean_expected_f1": 0.949497,
+      "mean_node_brier": 0.030611,
+      "mean_posterior_entropy": 1.18264,
+      "credible_90_mean_size": 3,
+      "credible_90_mean_best_f1": 0.986842,
+      "mean_best_available_f1": 0.986842
+    },
+    "delta": {
+      "mean_map_f1": 0.190601,
+      "mean_expected_f1": 0.175968,
+      "mean_node_brier": -0.302722
+    }
+  },
+  "limitations": [
+    "Training traces are previous DIRS extractions, not historical expert traces.",
+    "Proposal and verifier noise are synthetic.",
+    "Synthetic corruption rates, verifier mixture, and tuning ranges are test-fixture constants, not DIRS policy.",
+    "The graph has few node types and no generated-artifact execution.",
+    "This run validates machinery only and is not convergence or publication evidence."
+  ]
+}

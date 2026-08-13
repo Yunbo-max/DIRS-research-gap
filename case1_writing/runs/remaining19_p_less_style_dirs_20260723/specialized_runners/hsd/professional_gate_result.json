@@ -1,0 +1,57 @@
+{
+  "artifact_kind": "hsd_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Paper expects ['single NVIDIA H20 96GB for Qwen2.5 experiments', '8 H20 GPUs for Llama-3.1-70B extended evaluation', 'H100 80GB and H200 141GB for supplementary hardware comparisons']; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "h20_96gb_or_h100_h200_hardware_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No clean large-memory professional GPU slot is visible. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 179.99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16149, 'memory_free_mib': 8068, 'utilization_gpu_pct': 99, 'temperature_c': 86, 'power_w': 384.59}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 77, 'power_w': 182.2}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16169, 'memory_free_mib': 8048, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 156.04}].",
+      "id": "llama70b_multigpu_h20_grid_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing runtime imports: auto_gptq, eagle",
+      "id": "hsd_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Repository compileall did not pass; see environment manifest.",
+      "id": "hsd_source_compile_or_patch_check_failed",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing required paper artifacts: gsm8k_tokenwise_result_jsonl, gsm8k_hsd_result_jsonl, gsm8k_multidraft_hsd_result_jsonl, humaneval_result_jsonl, cnndm_result_jsonl, table_metric_summary",
+      "id": "hsd_required_artifacts_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate after repo resolution; no reduced/proxy/support-only evidence is promoted",
+  "created_at_utc": "2026-07-24T13:33:49Z",
+  "next_full_execution_if_unblocked": [
+    "materialize all model/data artifacts listed in the paper DAG",
+    "install exact runtime stack and paper hardware path",
+    "run the full paper benchmark grid, not a smoke or reduced setting",
+    "emit raw outputs, metric JSON/CSV, timing/memory/GPU traces, and table/figure summaries",
+    "verifier compares result shape to paper tables, figures, appendix, and paragraphs"
+  ],
+  "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+  "paper_shaped_outputs_required": [
+    "Table 1 Qwen2.5 14B/32B/72B single-draft BE/DS/accuracy",
+    "Table 2 multi-draft RRS comparison",
+    "Table 3 temperature and draft-length ablations",
+    "Table 4 target-size and EAGLE-3H integration",
+    "Appendix runtime breakdown and lossless verifier checks"
+  ],
+  "paper_title": "Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding",
+  "professional_package_ready": false,
+  "status": "blocked_by_model_data_hardware_transformers_patch_and_full_hsd_result_grid",
+  "support_checks": {
+    "gpu_rows_checked": 4,
+    "repo_discovered_and_encoded": true,
+    "script_files_checked": 13,
+    "source_compile_passed": false,
+    "verifier_output_candidate_count": 17
+  }
+}

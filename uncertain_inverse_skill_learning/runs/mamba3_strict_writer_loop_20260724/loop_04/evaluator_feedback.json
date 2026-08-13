@@ -1,0 +1,52 @@
+{
+  "schema_version": "dirs.strict_writer.evaluator_feedback.v1",
+  "loop": 4,
+  "blind_boundary": {
+    "writer_output_frozen_before_evaluation": true,
+    "expert_wording_in_feedback": false
+  },
+  "scores": {
+    "evidence_fidelity": 0.99,
+    "problem_and_gap_function": 0.95,
+    "method_mechanism_function": 0.97,
+    "headline_result_selection": 0.96,
+    "expert_artifact_function_coverage": 0.94,
+    "coherence_and_compression": 0.97,
+    "bounded_claims": 0.98,
+    "overall": 0.966
+  },
+  "score_delta_from_loop_03": 0.007,
+  "hard_failures": [],
+  "error_attribution": {
+    "representation_errors": [],
+    "selection_errors": [],
+    "execution_errors": [],
+    "evaluation_errors": [],
+    "data_or_evidence_errors": [
+      {
+        "id": "DATA1",
+        "status": "unchanged_evidence_shortage"
+      }
+    ]
+  },
+  "structural_decision": {
+    "new_structural_edit_authorized": false,
+    "selected_graph_judgment": "adequate",
+    "remaining_feedback": "none"
+  },
+  "stability": {
+    "hard_failures_zero": true,
+    "graph_signature_unchanged_from_previous_loop": true,
+    "accepted_structural_edits": 0,
+    "score_improvement_below_0_01": true,
+    "wording_only_or_no_feedback": true,
+    "consecutive_stable_transitions_so_far": 1,
+    "required_consecutive_stable_transitions": 2
+  },
+  "required_next_loop_tests": [
+    "Run loop 5 as a no-edit confirmation with the same frozen graph and posterior.",
+    "Do not change wording unless a hard self-check failure is found.",
+    "If loop 5 remains structurally equivalent, hard-failure free, and changes score by less than 0.01, stop."
+  ],
+  "feedback_level": "no_repair_stability_confirmation"
+}

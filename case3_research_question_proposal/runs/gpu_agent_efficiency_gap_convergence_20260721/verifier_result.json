@@ -1,0 +1,46 @@
+{
+  "verdict": "partial_gap",
+  "confidence": "medium_high",
+  "reason": "The broad area is covered by agent benchmarks and efficiency papers, but their intersection is only partially covered. The supported gap is the joint optimization of task success, simulator/state reliability, tool latency, token/KV cost, and 4090-feasible evaluation for 7B/8B agents.",
+  "top_question": {
+    "id": "Q1_budgeted_state_verifying_agents",
+    "question": "Can a 7B/8B tool agent improve dynamic multi-turn task success by planning under an explicit joint budget for tokens, tool latency, GPU time, and simulator-verified state reliability?",
+    "needs": [
+      "simulator_state_verifier",
+      "tool_agent_planning",
+      "dynamic_async_tasks",
+      "cost_latency_budget",
+      "small_model_feasible"
+    ],
+    "experiment": "Run tau2-Bench, SimuHome, and Gaia2 subsets with a Qwen/Llama-class local agent. Compare baseline ReAct against a budget-aware planner that rejects plans failing simulator/verifier checks.",
+    "supported_dimensions": 5,
+    "required_dimensions": 5,
+    "support_papers": [
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+    ],
+    "scores": {
+      "grounding": 2,
+      "novelty": 2,
+      "feasibility": 2,
+      "expected_insight": 2,
+      "experiment_path": 2,
+      "scope_control": 2,
+      "total": 12
+    },
+    "decision": "pursue_now"
+  },
+  "do_not_claim": [
+    "No prior work studies efficient agents.",
+    "All selected papers run fully on a 4090.",
+    "The gap is already proven novel without external literature search."
+  ]
+}

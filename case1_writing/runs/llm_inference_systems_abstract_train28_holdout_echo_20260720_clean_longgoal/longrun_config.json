@@ -1,0 +1,61 @@
+{
+  "run_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_clean_longgoal",
+  "domain": "LLM Inference / Systems / Token Efficiency",
+  "domain_file": "/tf/notebooks/yunbo/DIRS/domain_topics/semantic_balanced_23_domains/llm_inference_systems_token_efficiency.md",
+  "holdout_chip_id": "ICML2026_71057_echo_elastic_speculative_decoding",
+  "training_examples": 28,
+  "runtime_mode": "local_deterministic_no_api",
+  "hardware_profile": "local RTX 4090 environment",
+  "blind_holdout_rule": "do not open holdout_private_after_generation.json during training or convergence",
+  "supervisor": {
+    "pid": 658514,
+    "started_at_utc": "2026-07-20T23:20:22Z",
+    "last_observed_at_utc": "2026-07-21T23:30:35Z",
+    "last_observed_elapsed_seconds": 87013,
+    "last_observed_remaining_seconds": 0,
+    "duration_seconds": 86400,
+    "min_loops": 24,
+    "max_loops": 1000,
+    "mcts_rollouts": 5000,
+    "stable_window": 10,
+    "base_seed": 20260720,
+    "stop_after_converged": false,
+    "status_file": "longgoal_supervisor.status.json",
+    "events_file": "longgoal_supervisor.events.jsonl",
+    "latest_file": "longgoal_supervisor.latest.json",
+    "snapshot_dir": "longgoal_iterations",
+    "supervisor_alive": false,
+    "child_processes": [],
+    "snapshot_count": 537
+  },
+  "latest_completed_iteration": {
+    "iteration": 537,
+    "seed": 20261257,
+    "completed_loops": 24,
+    "converged": true,
+    "converged_at_loop": 24,
+    "final_mean_replay_score": 0.975294,
+    "final_min_replay_score": 0.958234,
+    "returncode": 0
+  },
+  "active_iteration": null,
+  "first_iteration": {
+    "iteration": 1,
+    "seed": 20260721,
+    "completed_loops": 24,
+    "converged": true,
+    "converged_at_loop": 24,
+    "final_mean_replay_score": 0.975294,
+    "final_min_replay_score": 0.958234,
+    "target_words_from_training": 164,
+    "target_band_from_training": [
+      128,
+      198
+    ]
+  },
+  "ended": {
+    "event": "ended",
+    "ended_at_utc": "2026-07-21T23:22:02Z",
+    "iterations_completed": 537
+  }
+}

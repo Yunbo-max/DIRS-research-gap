@@ -1,0 +1,28 @@
+# Python and notebook artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Downloaded models, datasets, and embedded repositories
+.cache/
+**/hf_cache/
+**/operational_shared_hf_cache/
+**/external/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Generated runtime files
+*.pid
+.DS_Store

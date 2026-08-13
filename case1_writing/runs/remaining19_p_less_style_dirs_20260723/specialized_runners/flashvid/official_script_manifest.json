@@ -1,0 +1,325 @@
+{
+  "artifact_kind": "flashvid_official_script_manifest",
+  "created_at_utc": "2026-07-23T18:53:32Z",
+  "full_grid_commands_required": [
+    "bash scripts/baseline/llava_ov.sh",
+    "bash scripts/baseline/llava_vid.sh",
+    "bash scripts/baseline/qwen2_5_vl.sh",
+    "bash scripts/llava_ov.sh",
+    "bash scripts/llava_vid.sh",
+    "bash scripts/qwen2_5_vl.sh",
+    "bash scripts/fixed_token_budget/baseline.sh",
+    "bash scripts/fixed_token_budget/flashvid.sh",
+    "bash scripts/efficiency/llava_ov.sh"
+  ],
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+  "scripts": [
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "32"
+      ],
+      "models": [
+        "llava_onevision"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/llava_ov.sh",
+      "pretrained": "lmms-lab/llava-onevision-qwen2-7b-ov",
+      "retention_ratios": [
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25"
+      ],
+      "tasks": [
+        "videomme",
+        "mvbench",
+        "longvideobench_val_v",
+        "egoschema"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "64"
+      ],
+      "models": [
+        "llava_vid"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/llava_vid.sh",
+      "pretrained": "lmms-lab/LLaVA-Video-7B-Qwen2",
+      "retention_ratios": [
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25"
+      ],
+      "tasks": [
+        "videomme",
+        "mvbench",
+        "longvideobench_val_v",
+        "egoschema"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "32"
+      ],
+      "models": [
+        "qwen2_5_vl"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/qwen2_5_vl.sh",
+      "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "retention_ratios": [
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25"
+      ],
+      "tasks": [
+        "videomme",
+        "egoschema",
+        "mvbench",
+        "longvideobench_val_v",
+        "mlvu_test"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "32"
+      ],
+      "models": [
+        "qwen3_vl"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/qwen3_vl.sh",
+      "pretrained": "Qwen/Qwen3-VL-8B-Instruct",
+      "retention_ratios": [
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25"
+      ],
+      "tasks": [
+        "videomme",
+        "egoschema",
+        "mvbench",
+        "longvideobench_val_v",
+        "mlvu_test"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "32"
+      ],
+      "models": [
+        "llava_onevision"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/llava_ov.sh",
+      "pretrained": "lmms-lab/llava-onevision-qwen2-7b-ov",
+      "retention_ratios": [],
+      "tasks": [
+        "videomme",
+        "mvbench",
+        "longvideobench_val_v",
+        "egoschema"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "64"
+      ],
+      "models": [
+        "llava_vid"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/llava_vid.sh",
+      "pretrained": "lmms-lab/LLaVA-Video-7B-Qwen2",
+      "retention_ratios": [],
+      "tasks": [
+        "videomme",
+        "mvbench",
+        "longvideobench_val_v",
+        "egoschema"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "32"
+      ],
+      "models": [
+        "qwen2_5_vl"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/qwen2_5_vl.sh",
+      "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "retention_ratios": [],
+      "tasks": [
+        "videomme",
+        "egoschema",
+        "mvbench",
+        "longvideobench_val_v",
+        "mlvu_test"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "32"
+      ],
+      "models": [
+        "qwen3_vl"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/qwen3_vl.sh",
+      "pretrained": "Qwen/Qwen3-VL-8B-Instruct",
+      "retention_ratios": [],
+      "tasks": [
+        "videomme",
+        "egoschema",
+        "mvbench",
+        "longvideobench_val_v",
+        "mlvu_test"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "16"
+      ],
+      "models": [
+        "qwen2_5_vl"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/fixed_token_budget/baseline.sh",
+      "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "retention_ratios": [],
+      "tasks": [
+        "videomme",
+        "mlvu_test",
+        "longvideobench_val_v",
+        "egoschema"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+      "exists": true,
+      "max_frames": [
+        "160",
+        "80",
+        "64",
+        "48"
+      ],
+      "models": [
+        "qwen2_5_vl"
+      ],
+      "num_processes": [
+        "8"
+      ],
+      "output_paths": [
+        "./log"
+      ],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/fixed_token_budget/flashvid.sh",
+      "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "retention_ratios": [
+        "0.100",
+        "0.200",
+        "0.250",
+        "0.333"
+      ],
+      "tasks": [
+        "videomme",
+        "mlvu_test",
+        "longvideobench_val_v",
+        "egoschema"
+      ]
+    },
+    {
+      "cuda_visible_devices": "0",
+      "exists": true,
+      "max_frames": [],
+      "models": [],
+      "num_processes": [],
+      "output_paths": [],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/efficiency/llava_ov.sh",
+      "pretrained": null,
+      "retention_ratios": [],
+      "tasks": []
+    },
+    {
+      "cuda_visible_devices": "0",
+      "exists": true,
+      "max_frames": [],
+      "models": [],
+      "num_processes": [],
+      "output_paths": [],
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/efficiency/llava_vid.sh",
+      "pretrained": null,
+      "retention_ratios": [],
+      "tasks": []
+    }
+  ]
+}

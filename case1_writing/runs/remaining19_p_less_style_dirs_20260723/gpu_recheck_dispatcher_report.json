@@ -1,0 +1,53 @@
+{
+  "active_llada_processes": [
+    "root        2355 97.9  0.2 80346904 1482384 ?    Rsl  13:20 100:14 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 0 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2 --run-label table1_threshold_relaxed_6_4_2 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 6.0 --mid-threshold 4.0 --late-threshold 2.0",
+    "root        2465 97.1  0.2 80349024 1487748 ?    Rsl  13:20  99:17 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 1 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1 --run-label table1_threshold_relaxed_5_3_1 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 5.0 --mid-threshold 3.0 --late-threshold 1.0",
+    "root        2714 97.8  0.2 80347344 1485976 ?    Rsl  13:20 100:01 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 2 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5 --run-label table1_threshold_relaxed_4_2_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 4.0 --mid-threshold 2.0 --late-threshold 0.5",
+    "root        2903 97.9  0.2 80347180 1485896 ?    Rsl  13:20 100:03 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5 --run-label table1_threshold_relaxed_3_1p5_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 3.0 --mid-threshold 1.5 --late-threshold 0.5"
+  ],
+  "artifact_kind": "gpu_recheck_dispatcher_report",
+  "created_at_utc": "2026-07-24T14:02:55Z",
+  "gpu": "3",
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 8395,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16169,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8435,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7956,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16608,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8415,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 100
+    }
+  ],
+  "pending_before_count": 0,
+  "policy": {
+    "can_converge_papers": false,
+    "purpose": "rerun exact paper-specific professional gates after GPU-release blockers may be stale",
+    "reduced_or_proxy_evidence_allowed": false
+  },
+  "recheck_results": [],
+  "status": "deferred_selected_gpu_has_active_prophet_runner"
+}

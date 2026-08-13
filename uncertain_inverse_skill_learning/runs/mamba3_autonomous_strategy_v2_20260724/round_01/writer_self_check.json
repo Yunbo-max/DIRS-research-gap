@@ -1,0 +1,329 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 1,
+  "writer_mode": "fresh_strictly_isolated_blind_writer",
+  "read_log": [
+    "iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+    "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/style_profile.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/04_learning_and_search_algorithms.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/09_learned_policy_vs_hard_constraints.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/10_autonomous_strategy_discovery.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/PROTOCOL.md"
+  ],
+  "read_completion": {
+    "all_six_permitted_files_read_to_eof": true,
+    "note": "The initial combined display was truncated, so every permitted file was subsequently read separately or in explicit contiguous line chunks through its final line before any round artifact was written."
+  },
+  "write_log": [
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/strategy_candidates.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/variants.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/selected_strategy.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/selected_abstract.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/writer_self_check.json"
+  ],
+  "forbidden_input_check": {
+    "hidden_mamba3_abstract_read": false,
+    "openreview_or_full_paper_read": false,
+    "old_run_mamba3_strict_writer_loop_20260724_read": false,
+    "other_mamba3_abstract_or_generated_text_read": false,
+    "repository_wide_search_performed": false,
+    "internet_or_network_search_performed": false,
+    "expert_wording_matching_attempted": false,
+    "files_read_outside_read_log": false
+  },
+  "factual_claim_registry": [
+    {
+      "fact_id": "F01",
+      "claim": "Transformers have attention/KV-cache inference costs, while linear or recurrent alternatives can retain constant state yet lose capability or remain memory-bound at decode.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.problem_gap.summary",
+        "$.problem_gap.nodes[?(@.id=='gap_transformer_inference_cost')].props.failure_modes",
+        "$.problem_gap.nodes[?(@.id=='gap_linear_model_capability')].props.failure_modes",
+        "$.problem_gap.nodes[?(@.id=='gap_memory_bound_decode')].props.failure_modes"
+      ]
+    },
+    {
+      "fact_id": "F02",
+      "claim": "Mamba-3 combines an exponential-trapezoidal recurrence and trap gate, data-dependent complex state dynamics, and SISO or MIMO state-space paths.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.method_mechanism.summary",
+        "$.method_mechanism.nodes[?(@.id=='module_exp_trap_recurrence')].props",
+        "$.method_mechanism.nodes[?(@.id=='module_complex_state_update')].props",
+        "$.method_mechanism.nodes[?(@.id=='module_mimo_ssm')].props"
+      ]
+    },
+    {
+      "fact_id": "F03",
+      "claim": "The main MIMO setting uses rank 4 and is designed to raise arithmetic intensity during memory-bound decode.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.method_mechanism.nodes[?(@.id=='module_mimo_ssm')].props",
+        "$.result_outcome.nodes[?(@.id=='result_mimo_increment')].props.rank"
+      ]
+    },
+    {
+      "fact_id": "F04",
+      "claim": "The controlled pretraining protocol uses 100B FineWeb-Edu tokens, the Llama-3.1 tokenizer, 2K context, and model scales from 180M to 1.5B.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.method_mechanism.events[?(@.id=='training_pretraining_protocol')].claim",
+        "$.experimental_setting.nodes[?(@.id=='setting_pretraining_100b')].props",
+        "$.evaluation_validation.events[?(@.id=='binding_lm_eval')].setting"
+      ]
+    },
+    {
+      "fact_id": "F05",
+      "claim": "At 1.5B, FineWeb-Edu perplexities are 10.51 Transformer, 10.45 Gated DeltaNet, 10.47 Mamba-2, 10.35 Mamba-3 SISO, and 10.24 Mamba-3 MIMO; average accuracies are 55.4, 55.8, 55.7, 56.4, and 57.6 respectively.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_lm_1p5b')].props.fineweb_edu_ppl",
+        "$.result_outcome.nodes[?(@.id=='result_lm_1p5b')].props.average_accuracy"
+      ]
+    },
+    {
+      "fact_id": "F06",
+      "claim": "At 1.5B, MIMO improves over SISO from 10.35 to 10.24 perplexity and from 56.4 to 57.6 average downstream accuracy.",
+      "used_in": [
+        "Variant B",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_lm_1p5b')].props",
+        "$.result_outcome.nodes[?(@.id=='result_mimo_increment')].props.claim"
+      ]
+    },
+    {
+      "fact_id": "F07",
+      "claim": "On formal tasks, Mamba-3 scores 100.0 on parity, 98.51 on arithmetic without brackets, and 87.75 with brackets, while Mamba-2 scores 0.9, 47.81, and 0.88.",
+      "used_in": [
+        "Variant A in compressed form",
+        "Variant B",
+        "Variant C in a two-task subset",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_state_tracking')].props.mamba3_accuracy",
+        "$.result_outcome.nodes[?(@.id=='result_state_tracking')].props.mamba2_accuracy",
+        "$.result_outcome.events[?(@.id=='outcome_state_tracking_gain')]"
+      ]
+    },
+    {
+      "fact_id": "F08",
+      "claim": "At 440M, the complete Mamba-3 design has 15.72 perplexity, the version without bias and trap has 16.68, and adding convolution gives 15.85.",
+      "used_in": [
+        "Variant A in compressed form",
+        "Variant B",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_component_ablation')].props.440m_ppl",
+        "$.result_outcome.nodes[?(@.id=='result_component_ablation')].props.interpretation"
+      ]
+    },
+    {
+      "fact_id": "F09",
+      "claim": "On H100 in BF16 at state size 128, kernel latency is 0.156 ms/token for Mamba-3 SISO, 0.179 for MIMO, 0.203 for Mamba-2, and 0.257 for Gated DeltaNet.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_bf16_kernel_latency')].props.bf16_dstate128_ms_per_token",
+        "$.evaluation_validation.nodes[?(@.id=='eval_inference_latency')].props"
+      ]
+    },
+    {
+      "fact_id": "F10",
+      "claim": "Pure Mamba-3 remains weaker or mixed on some real-world semi-structured and unstructured retrieval tasks.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.problem_gap.nodes[?(@.id=='failure_fixed_state_retrieval')].props",
+        "$.method_mechanism.events[?(@.id=='compat_fixed_state_retrieval_risk')].claim",
+        "$.limitations.items[1]"
+      ]
+    },
+    {
+      "fact_id": "F11",
+      "claim": "Sparse or hybrid NoPE attention improves retrieval but reintroduces attention-related compute and memory cost.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.method_mechanism.nodes[?(@.id=='primitive_hybrid_attention_ratio')].props.lifecycle",
+        "$.method_mechanism.events[?(@.id=='compat_hybrid_adds_cost')].claim",
+        "$.limitations.items[2]"
+      ]
+    },
+    {
+      "fact_id": "F12",
+      "claim": "Direct 7B scaling and instruction-tuned 7B performance are untested; reported models top out at 1.5B.",
+      "used_in": [
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.experimental_setting.summary",
+        "$.experimental_setting.events[?(@.id=='compat_7b_scaling_unproven')].claim",
+        "$.limitations.items[0]"
+      ]
+    },
+    {
+      "fact_id": "F13",
+      "claim": "The reported recurrent paths use specialized H100-oriented kernels and implementation dependencies.",
+      "used_in": [
+        "Variant B",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.evaluation_validation.nodes[?(@.id=='eval_inference_latency')].props.hardware",
+        "$.method_mechanism.events[?(@.id=='compat_mimo_depends_kernels')].claim",
+        "$.implementation.summary"
+      ]
+    },
+    {
+      "fact_id": "F14",
+      "claim": "At the reported 16,384-token prefill-plus-decode setting, Mamba-3 SISO at 54.79 seconds is faster than the reported recurrent alternatives Mamba-2 at 57.9, MIMO at 62.88, and Gated DeltaNet at 71.66.",
+      "used_in": [
+        "Variant C"
+      ],
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_end_to_end_latency')].props.prefill_plus_decode_16384_tokens_seconds"
+      ]
+    },
+    {
+      "fact_id": "F15",
+      "claim": "The complete bias-and-trapezoidal formulation improves the reported 440M ablations, while adding a short convolution is not beneficial in that pure setup.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.method_mechanism.nodes[?(@.id=='module_exp_trap_recurrence')].props.effect",
+        "$.result_outcome.nodes[?(@.id=='result_component_ablation')].props"
+      ]
+    },
+    {
+      "fact_id": "F16",
+      "claim": "A fixed recurrent state can lose sparse evidence even while offering efficiency.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.problem_gap.nodes[?(@.id=='failure_fixed_state_retrieval')].props.failure_mode",
+        "$.method_mechanism.events[?(@.id=='compat_fixed_state_retrieval_risk')].claim"
+      ]
+    },
+    {
+      "fact_id": "F17",
+      "claim": "The characterization of Mamba-3 as advancing a quality-efficiency frontier while retaining retrieval and scaling questions is a bounded synthesis, not a new measurement.",
+      "used_in": [
+        "Variant A",
+        "Variant B",
+        "Variant C",
+        "Selected abstract"
+      ],
+      "chip_paths": [
+        "$.result_outcome.summary",
+        "$.result_outcome.events[?(@.id=='outcome_latency_gain')].claim",
+        "$.limitations.summary"
+      ]
+    }
+  ],
+  "functional_self_evaluation": {
+    "scale_note": "Ordinal 1-5 diagnostics are uncalibrated writer judgments and are not summed or treated as learned utility.",
+    "variants": {
+      "A": {
+        "factual_support": 5,
+        "problem_method_result_coverage": 5,
+        "mechanism_result_coherence": 4,
+        "importance_weighted_selection": 5,
+        "bounded_claims": 5,
+        "clarity_and_compression": 4,
+        "distinctive_strength": "Immediate baseline and Pareto salience.",
+        "main_risk": "Dense numeric center and weaker one-to-one component attribution."
+      },
+      "B": {
+        "factual_support": 5,
+        "problem_method_result_coverage": 5,
+        "mechanism_result_coherence": 5,
+        "importance_weighted_selection": 5,
+        "bounded_claims": 5,
+        "clarity_and_compression": 5,
+        "distinctive_strength": "Each architectural operation is immediately paired with diagnostic evidence.",
+        "main_risk": "The headline aggregate result arrives after two local mechanism steps."
+      },
+      "C": {
+        "factual_support": 5,
+        "problem_method_result_coverage": 5,
+        "mechanism_result_coherence": 4,
+        "importance_weighted_selection": 5,
+        "bounded_claims": 5,
+        "clarity_and_compression": 4,
+        "distinctive_strength": "Broad evaluation roles and explicit quality-latency non-dominance.",
+        "main_risk": "The evaluation mosaic is more fragmented and gives recurrence ablations less space."
+      }
+    },
+    "selected_variant": "B",
+    "selection_confidence": "moderate",
+    "reason_not_high_confidence": "No blind controller preference or matched counterfactual has yet been observed."
+  },
+  "output_checks": {
+    "strategy_candidate_count": 4,
+    "all_candidates_have_required_contract_fields": true,
+    "abstract_variant_count": 3,
+    "variant_word_counts": {
+      "A": 197,
+      "B": 204,
+      "C": 210
+    },
+    "all_variants_within_166_236_words": true,
+    "variants_surface_and_information_order_distinct": true,
+    "selected_abstract_matches_variant_B": true,
+    "multimodal_candidates_retained": true,
+    "unsupported_citations_added": false,
+    "reusable_skill_claimed": false,
+    "round_2_attempted": false
+  }
+}

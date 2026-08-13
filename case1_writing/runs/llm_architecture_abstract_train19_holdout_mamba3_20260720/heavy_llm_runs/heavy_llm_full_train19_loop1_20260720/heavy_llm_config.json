@@ -1,0 +1,17 @@
+{
+  "run_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720",
+  "output_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/heavy_llm_runs/heavy_llm_full_train19_loop1_20260720",
+  "max_loops": 1,
+  "max_samples": "all",
+  "mcts_rollouts": 500,
+  "candidate_paths": 4,
+  "stable_window": 3,
+  "min_mean_score": 0.88,
+  "seed": 20260720,
+  "editor_model": "gpt-5-mini",
+  "simulator_model": "gpt-5-mini",
+  "evaluator_model": "gpt-5-mini",
+  "dry_run": false,
+  "include_holdout_blind": false,
+  "heldout_private_rule": "not read by this script"
+}

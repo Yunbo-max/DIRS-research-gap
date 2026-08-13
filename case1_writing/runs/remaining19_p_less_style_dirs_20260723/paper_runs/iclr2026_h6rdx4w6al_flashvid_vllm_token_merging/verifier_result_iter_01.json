@@ -1,0 +1,191 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "attention-only-selection-misses-diversity",
+        "fixed-budget-long-video-understanding",
+        "fixed-location-temporal-merge-noise",
+        "semantic-confusion-in-token-merge",
+        "spatiotemporal-token-compression-gap",
+        "video-llm-visual-token-bottleneck"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "video-llm-visual-token-bottleneck",
+        "spatiotemporal-token-compression-gap",
+        "fixed-budget-long-video-understanding"
+      ],
+      "score": 0.5,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "adts",
+        "alignment",
+        "budget",
+        "dpc-knn",
+        "inner-llm",
+        "partition",
+        "pruning",
+        "tstm",
+        "video"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "ADTS",
+        "TSTM",
+        "video partition",
+        "inner-LLM pruning",
+        "DPC-kNN budget alignment"
+      ],
+      "score": 0.75,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "5-vl",
+        "8-gpu",
+        "accuracy",
+        "average",
+        "batch_size",
+        "budget",
+        "compression",
+        "fixed-token-budget",
+        "forward",
+        "latency",
+        "llava-onevision",
+        "llava-video",
+        "llm",
+        "lmms-eval",
+        "matched",
+        "prefilling",
+        "qwen2",
+        "ratio",
+        "relative",
+        "retention",
+        "score",
+        "single-gpu",
+        "tflops",
+        "time",
+        "token",
+        "ttft",
+        "understanding",
+        "video"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "LLaVA-OneVision video understanding",
+        "LLaVA-Video video understanding",
+        "Qwen2.5-VL video understanding",
+        "fixed-token-budget Qwen2.5-VL",
+        "matched retention ratio",
+        "matched average token budget",
+        "8-GPU lmms-eval batch_size 1",
+        "single-GPU latency benchmark"
+      ],
+      "score": 2.333,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "LLaVA-OneVision video understanding; LLaVA-Video video understanding; Qwen2.5-VL video understanding; fixed-token-budget Qwen2.5-VL; matched retention ratio; matched average token budget; 8-GPU lmms-eval batch_size 1; single-GPU latency benchmark"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "average score; relative accuracy; TFLOPs; prefilling time; TTFT; compression time; LLM forward time"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "VideoMME; EgoSchema; LongVideoBench; MVBench; MLVU; assets/videomme.jsonl; LMMs-Eval task datasets; HuggingFace VideoMME cache expected by efficiency script"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "NVIDIA A800 80G for main experiments; single NVIDIA A100 for efficiency; 8-GPU lmms-eval scripts; PyTorch; Transformers 4.57; LMMs-Eval; flash_attention_2; uv package management"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "ADTS; TSTM; video partition; inner-LLM pruning; DPC-kNN budget alignment; flashvid/__init__.py; flashvid/utils.py; flashvid/token_selection.py; flashvid/modeling_qwen2_5_vl.py; flashvid/llava_arch.py; scripts/llava_ov.sh; scripts/fixed_token_budget/flashvid.sh; playground/bench_efficiency.py; tools/flops/llava_ov.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:27Z",
+  "iteration": 1,
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "paper_title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

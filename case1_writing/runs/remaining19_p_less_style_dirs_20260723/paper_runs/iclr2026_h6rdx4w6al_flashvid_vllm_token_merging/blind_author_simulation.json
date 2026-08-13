@@ -1,0 +1,99 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:27Z",
+  "experiment_prediction": "benchmarks=LLaVA-OneVision video understanding; LLaVA-Video video understanding; Qwen2.5-VL video understanding; fixed-token-budget Qwen2.5-VL; metrics=average score; relative accuracy; TFLOPs; prefilling time; TTFT; compression time; LLM forward time; protocols=matched retention ratio; matched average token budget; 8-GPU lmms-eval batch_size 1; single-GPU latency benchmark",
+  "gap_prediction": "video-llm-visual-token-bottleneck; spatiotemporal-token-compression-gap; fixed-budget-long-video-understanding; stressors: fixed-location-temporal-merge-noise; semantic-confusion-in-token-merge; attention-only-selection-misses-diversity",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.071,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19262, 4952, 23\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "ADTS; TSTM; video partition; inner-LLM pruning; DPC-kNN budget alignment",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "paper_text_seen": false,
+  "paper_title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "playground/llava_ov_infer.py",
+        "playground/llava_vid_infer.py",
+        "llava/model/apply_delta.py",
+        "llava/model/multimodal_encoder/dev_eva_clip/eva_clip/pretrained.py",
+        "lmms-eval/miscs/test_llava.py",
+        "lmms-eval/miscs/test_scienceqa.py",
+        "lmms-eval/lmms_eval/evaluator.py",
+        "lmms-eval/lmms_eval/evaluator_utils.py",
+        "lmms-eval/lmms_eval/models/chat/vllm_generate.py",
+        "lmms-eval/lmms_eval/models/model_utils/qwen/qwen_generate_utils.py",
+        "lmms-eval/lmms_eval/loggers/evaluation_tracker.py",
+        "lmms-eval/lmms_eval/tasks/synthdog/donut_evaluator.py",
+        "lmms-eval/lmms_eval/tasks/plm_videobench/eval_utils.py",
+        "lmms-eval/lmms_eval/tasks/mmrefine/mmrefine_evals.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/zeroshot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/cot_zeroshot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/n_shot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/generative/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/cot_n_shot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/seephys/seephys_evals.py",
+        "lmms-eval/lmms_eval/tasks/hrbench/hrbench_evals.py",
+        "lmms-eval/lmms_eval/tasks/olympiadbench/testmini_utils.py",
+        "lmms-eval/lmms_eval/tasks/olympiadbench/olympiadbench_evals.py",
+        "lmms-eval/lmms_eval/tasks/charades_sta/eval_tvg.py",
+        "lmms-eval/lmms_eval/tasks/_task_utils/vqa_eval_metric.py",
+        "lmms-eval/lmms_eval/tasks/_task_utils/gpt_eval_utils.py",
+        "lmms-eval/lmms_eval/tasks/mmupd/mmupd_evals.py",
+        "lmms-eval/lmms_eval/tasks/vizwiz_vqa/_generate_config.py",
+        "lmms-eval/lmms_eval/tasks/ok_vqa/_generate_config.py",
+        "lmms-eval/lmms_eval/tasks/hallusion_bench/evaluate_hb.py"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 711,
+      "readme_files": [
+        "README.md",
+        "lmms-eval/README.md",
+        "lmms-eval/cicd/README.md",
+        "lmms-eval/docs/README.md",
+        "lmms-eval/lmms_eval/tui/README.md",
+        "lmms-eval/lmms_eval/tasks/plm_videobench/README.md",
+        "lmms-eval/lmms_eval/tasks/multilingual-llava-bench-in-the-wild/README.md",
+        "lmms-eval/lmms_eval/tasks/FALCONBench/README.md",
+        "lmms-eval/lmms_eval/tasks/gpqa/README.md",
+        "lmms-eval/lmms_eval/tasks/geometry3k/README.md"
+      ],
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+      "shell_file_count": 57,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 250,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ]
+}

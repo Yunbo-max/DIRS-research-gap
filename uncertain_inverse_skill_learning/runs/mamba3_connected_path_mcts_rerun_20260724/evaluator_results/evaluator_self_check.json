@@ -1,0 +1,51 @@
+{
+  "schema_version": "dirs.evaluator_self_check.v1",
+  "evaluator_mode": "fresh_strict_blind",
+  "allowed_inputs_read": [
+    "iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+    "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/style_profile.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/PROTOCOL.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/evaluator_packet.json"
+  ],
+  "all_allowed_inputs_read_completely": true,
+  "input_read_note": "The public chip was reread in contiguous fixed line segments after the initial terminal rendering was truncated; the segments covered the file from its first line through its closing brace.",
+  "repository_search_performed": false,
+  "internet_accessed": false,
+  "private_mapping_accessed": false,
+  "learned_dag_accessed": false,
+  "writer_rollouts_or_self_checks_accessed": false,
+  "path_ids_or_frequencies_accessed": false,
+  "expert_abstract_accessed": false,
+  "paper_full_text_accessed": false,
+  "earlier_mamba3_run_accessed": false,
+  "path_identity_visible": false,
+  "path_identity_inferred_or_guessed": false,
+  "drafts_evaluated_independently_against_public_chip": true,
+  "all_requested_dimensions_scored": true,
+  "overall_scores_are_holistic_not_formula_weighted": true,
+  "hard_failure_review_completed": true,
+  "all_six_draft_ids_present_once": true,
+  "strict_total_ranking_has_no_ties": true,
+  "reward_mapping_is_directly_available_by_draft_id": true,
+  "word_count_style_check": {
+    "recommended_target_words": 201,
+    "recommended_band": [
+      166,
+      236
+    ],
+    "all_reported_draft_word_counts_within_band": true
+  },
+  "hard_failure_summary": {
+    "draft_A": [],
+    "draft_B": [],
+    "draft_C": [],
+    "draft_D": [],
+    "draft_E": [],
+    "draft_F": []
+  },
+  "outputs_written": [
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/evaluator_results/anonymous_evaluations.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/evaluator_results/evaluator_self_check.json"
+  ],
+  "additional_files_written": false
+}

@@ -1,0 +1,6 @@
+{
+  "event": "loop_started",
+  "loop": 60,
+  "stage": "simulation_verify_repair",
+  "started_at_utc": "2026-07-21T19:13:56Z"
+}

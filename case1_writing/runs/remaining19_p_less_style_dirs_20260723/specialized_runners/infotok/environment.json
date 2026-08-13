@@ -1,0 +1,297 @@
+{
+  "artifact_kind": "infotok_environment_manifest",
+  "compileall_tokenizer": {
+    "cmd": [
+      "/opt/conda/bin/python",
+      "-m",
+      "compileall",
+      "-q",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/utils",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/checkpointer"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.125,
+    "stderr": "",
+    "stdout": "",
+    "timeout": false
+  },
+  "created_at_utc": "2026-07-24T13:33:34Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 180.66,
+      "temperature_c": 79,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8068,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 379.17,
+      "temperature_c": 87,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7816,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16397,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 182.64,
+      "temperature_c": 78,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8108,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16109,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 162.59,
+      "temperature_c": 80,
+      "utilization_gpu_pct": 100
+    }
+  ],
+  "import_probes": {
+    "apex": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('apex'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'apex'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "cosmos_predict1.tokenizer.inference.video_cli": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('cosmos_predict1.tokenizer.inference.video_cli'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.026,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 992, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 992, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 992, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'cosmos_predict1'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "decord": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('decord'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.155,
+      "stderr": "",
+      "stdout": "0.6.0\n",
+      "timeout": false
+    },
+    "diffusers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('diffusers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "hydra": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('hydra'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'hydra'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "imageio": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('imageio'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'imageio'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "mediapy": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('mediapy'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'mediapy'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "megatron": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('megatron'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'megatron'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "omegaconf": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('omegaconf'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'omegaconf'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "pynvml": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('pynvml'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pynvml'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "skimage": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('skimage'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'skimage'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "termcolor": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('termcolor'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'termcolor'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "token_bench": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('token_bench'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'token_bench'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.617,
+      "stderr": "",
+      "stdout": "2.6.0+cu124\n",
+      "timeout": false
+    },
+    "torchvision": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torchvision'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 2.8,
+      "stderr": "",
+      "stdout": "0.21.0+cu124\n",
+      "timeout": false
+    },
+    "transformer_engine": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('transformer_engine'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'transformer_engine'\n",
+      "stdout": "",
+      "timeout": false
+    }
+  },
+  "packages": {
+    "apex": null,
+    "decord": "0.6.0",
+    "diffusers": null,
+    "hydra-core": null,
+    "imageio": null,
+    "mediapy": null,
+    "megatron-core": null,
+    "omegaconf": null,
+    "pynvml": null,
+    "scikit-image": null,
+    "termcolor": null,
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformer-engine": null,
+    "transformers": "4.51.2"
+  },
+  "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+  "professional_hardware_expected_by_dag": [
+    "H100-80GB or A100-80GB recommended for inference",
+    "32 H100 GPUs reported for paper-scale training",
+    "8-GPU post-training path in script for non-debug training"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]"
+}

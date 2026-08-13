@@ -1,0 +1,325 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "task": "DIRS_strategy_combination_examples",
+  "writer_mode": "strictly_isolated_blind_composition",
+  "read_accounting": {
+    "cumulative_file_read_log": [
+      "iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+      "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/style_profile.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/04_learning_and_search_algorithms.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/09_learned_policy_vs_hard_constraints.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/10_autonomous_strategy_discovery.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/PROTOCOL.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/strategy_candidates.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/variants.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/selected_strategy.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/selected_abstract.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/writer_self_check.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_01/controller_feedback.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_02/strategy_candidates.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_02/variants.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_02/selected_strategy.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_02/selected_abstract.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_02/writer_self_check.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_02/controller_feedback.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_03/controller_feedback.json"
+    ],
+    "authored_round_03_context_reused_without_additional_disk_read": [
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_03/strategy_candidates.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_03/variants.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_03/selected_strategy.json",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_03/selected_abstract.md",
+      "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/round_03/writer_self_check.json"
+    ],
+    "files_read_outside_allowed_boundary": false
+  },
+  "write_log": [
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/combination_examples/COMBINATION_EXAMPLES.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/combination_examples/combination_graphs.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_autonomous_strategy_v2_20260724/combination_examples/writer_self_check.json"
+  ],
+  "forbidden_input_check": {
+    "hidden_mamba3_abstract_read": false,
+    "openreview_or_full_paper_read": false,
+    "old_run_mamba3_strict_writer_loop_20260724_read": false,
+    "other_mamba3_generated_text_outside_this_v2_run_read": false,
+    "other_repository_files_read": false,
+    "repository_wide_search_performed": false,
+    "internet_or_network_search_performed": false,
+    "expert_wording_or_dag_matching_attempted": false,
+    "expert_similarity_used_for_selection_or_ordering": false
+  },
+  "generation_claim_check": {
+    "trained_gflownet_claimed": false,
+    "trained_graph_sampler_claimed": false,
+    "posterior_calibration_claimed": false,
+    "reusable_strategy_or_combination_claimed": false,
+    "sampling_description": "Six autonomous, auditable compositions proposed by this writer from frozen S1-S6 contracts."
+  },
+  "word_count_check": {
+    "required_band": [
+      166,
+      236
+    ],
+    "abstracts": {
+      "C01_sparse_pareto_capsule": 166,
+      "C02_boundary_gated_mechanism_staircase": 176,
+      "C03_operating_point_evaluation_matrix": 169,
+      "C04_pareto_led_selective_binding": 175,
+      "C05_boundary_scoped_diagnostic_audit": 180,
+      "C06_context_gated_quality_speed_retrieval_fork": 179
+    },
+    "all_six_in_band": true
+  },
+  "fact_catalog": [
+    {
+      "fact_id": "CF01",
+      "claim": "Transformer attention has quadratic prefill compute and KV-cache memory that grows linearly with context; constant-state alternatives can lose capability or remain memory-bound at decode.",
+      "chip_paths": [
+        "$.problem_gap.summary",
+        "$.problem_gap.nodes[?(@.id=='gap_transformer_inference_cost')].props.failure_modes",
+        "$.problem_gap.nodes[?(@.id=='gap_linear_model_capability')].props.failure_modes",
+        "$.problem_gap.nodes[?(@.id=='gap_memory_bound_decode')].props.failure_modes"
+      ]
+    },
+    {
+      "fact_id": "CF02",
+      "claim": "Mamba-3 combines exponential-trapezoidal recurrence and a learned trap gate, B/C biases, data-dependent complex state dynamics, and SISO or rank-4 MIMO structure.",
+      "chip_paths": [
+        "$.method_mechanism.summary",
+        "$.method_mechanism.nodes[?(@.id=='module_exp_trap_recurrence')].props",
+        "$.method_mechanism.nodes[?(@.id=='module_complex_state_update')].props",
+        "$.method_mechanism.nodes[?(@.id=='module_mimo_ssm')].props"
+      ]
+    },
+    {
+      "fact_id": "CF03",
+      "claim": "The shared training protocol uses 100B FineWeb-Edu tokens and reports models through 1.5B parameters.",
+      "chip_paths": [
+        "$.method_mechanism.events[?(@.id=='training_pretraining_protocol')].claim",
+        "$.experimental_setting.nodes[?(@.id=='setting_pretraining_100b')].props"
+      ]
+    },
+    {
+      "fact_id": "CF04",
+      "claim": "At 1.5B, perplexities are 10.51 Transformer, 10.45 Gated DeltaNet, 10.47 Mamba-2, 10.35 SISO, and 10.24 MIMO; average accuracies are 55.4, 55.8, 55.7, 56.4, and 57.6 respectively.",
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_lm_1p5b')].props"
+      ]
+    },
+    {
+      "fact_id": "CF05",
+      "claim": "At 1.5B, MIMO improves perplexity by 0.11 and average accuracy by 1.2 points over SISO.",
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_mimo_increment')].props"
+      ]
+    },
+    {
+      "fact_id": "CF06",
+      "claim": "On H100 in BF16 at state size 128, SISO runs at 0.156 ms/token, MIMO at 0.179, Mamba-2 at 0.203, and Gated DeltaNet at 0.257.",
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_bf16_kernel_latency')].props.bf16_dstate128_ms_per_token",
+        "$.evaluation_validation.nodes[?(@.id=='eval_inference_latency')].props"
+      ]
+    },
+    {
+      "fact_id": "CF07",
+      "claim": "At 440M, full Mamba-3 perplexity is 15.72 versus 16.68 without bias and trap.",
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_component_ablation')].props"
+      ]
+    },
+    {
+      "fact_id": "CF08",
+      "claim": "Mamba-3 formal-state accuracies are 100.0 parity, 98.51 arithmetic without brackets, and 87.75 with brackets; Mamba-2 obtains 0.9, 47.81, and 0.88.",
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_state_tracking')].props",
+        "$.result_outcome.events[?(@.id=='outcome_state_tracking_gain')].claim"
+      ]
+    },
+    {
+      "fact_id": "CF09",
+      "claim": "Pure Mamba-3 remains weak or mixed on some real-world semi-structured and unstructured retrieval tasks.",
+      "chip_paths": [
+        "$.problem_gap.nodes[?(@.id=='failure_fixed_state_retrieval')].props",
+        "$.method_mechanism.events[?(@.id=='compat_fixed_state_retrieval_risk')].claim",
+        "$.limitations.items[1]"
+      ]
+    },
+    {
+      "fact_id": "CF10",
+      "claim": "Sparse or hybrid attention improves retrieval but reintroduces attention-related compute and memory cost.",
+      "chip_paths": [
+        "$.method_mechanism.nodes[?(@.id=='primitive_hybrid_attention_ratio')].props",
+        "$.method_mechanism.events[?(@.id=='compat_hybrid_adds_cost')].claim",
+        "$.limitations.items[2]"
+      ]
+    },
+    {
+      "fact_id": "CF11",
+      "claim": "Direct scaling beyond 1.5B, including 7B performance, remains untested.",
+      "chip_paths": [
+        "$.experimental_setting.summary",
+        "$.experimental_setting.events[?(@.id=='compat_7b_scaling_unproven')].claim",
+        "$.limitations.items[0]"
+      ]
+    },
+    {
+      "fact_id": "CF12",
+      "claim": "SISO is the faster reported Mamba-3 BF16 operating point at state size 128, while MIMO improves quality over SISO; this is setting-bounded.",
+      "chip_paths": [
+        "$.result_outcome.nodes[?(@.id=='result_lm_1p5b')].props",
+        "$.result_outcome.nodes[?(@.id=='result_mimo_increment')].props",
+        "$.result_outcome.nodes[?(@.id=='result_bf16_kernel_latency')].props.bf16_dstate128_ms_per_token",
+        "$.result_outcome.events[?(@.id=='outcome_latency_gain')].claim"
+      ]
+    },
+    {
+      "fact_id": "CF13",
+      "claim": "Mamba-3 advances a reported quality-efficiency frontier but does not solve all retrieval or establish universal superiority.",
+      "chip_paths": [
+        "$.result_outcome.summary",
+        "$.result_outcome.events[?(@.id=='outcome_latency_gain')].claim",
+        "$.limitations.summary"
+      ],
+      "claim_type": "bounded synthesis"
+    }
+  ],
+  "per_abstract_fact_support": {
+    "C01_sparse_pareto_capsule": {
+      "fact_ids": [
+        "CF01",
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF05",
+        "CF06",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12",
+        "CF13"
+      ],
+      "unsupported_claims_found": [],
+      "limitation_present": true,
+      "bounded_conclusion_present": true,
+      "status": "pass"
+    },
+    "C02_boundary_gated_mechanism_staircase": {
+      "fact_ids": [
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF05",
+        "CF06",
+        "CF07",
+        "CF08",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12",
+        "CF13"
+      ],
+      "unsupported_claims_found": [],
+      "limitation_present": true,
+      "bounded_conclusion_present": true,
+      "status": "pass"
+    },
+    "C03_operating_point_evaluation_matrix": {
+      "fact_ids": [
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF05",
+        "CF06",
+        "CF08",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12",
+        "CF13"
+      ],
+      "unsupported_claims_found": [],
+      "limitation_present": true,
+      "bounded_conclusion_present": true,
+      "status": "pass"
+    },
+    "C04_pareto_led_selective_binding": {
+      "fact_ids": [
+        "CF01",
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF05",
+        "CF06",
+        "CF07",
+        "CF08",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12",
+        "CF13"
+      ],
+      "unsupported_claims_found": [],
+      "limitation_present": true,
+      "bounded_conclusion_present": true,
+      "status": "pass"
+    },
+    "C05_boundary_scoped_diagnostic_audit": {
+      "fact_ids": [
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF06",
+        "CF07",
+        "CF08",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12",
+        "CF13"
+      ],
+      "unsupported_claims_found": [],
+      "limitation_present": true,
+      "bounded_conclusion_present": true,
+      "status": "pass"
+    },
+    "C06_context_gated_quality_speed_retrieval_fork": {
+      "fact_ids": [
+        "CF01",
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF05",
+        "CF06",
+        "CF07",
+        "CF08",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12",
+        "CF13"
+      ],
+      "unsupported_claims_found": [],
+      "limitation_present": true,
+      "bounded_conclusion_present": true,
+      "status": "pass"
+    }
+  },
+  "graph_structure_check": {
+    "combination_count": 6,
+    "sparse_minimal_subgraph_present": true,
+    "dual_strategy_combinations": 3,
+    "triple_strategy_combinations": 1,
+    "conditional_branch_combination_present": true,
+    "all_typed_graphs_acyclic": true,
+    "information_flows_surface_distinct": true,
+    "all_S1_through_S6_used": true
+  },
+  "stop_judgment": {
+    "task_complete": true,
+    "only_three_requested_files_written": true,
+    "additional_combination_search_attempted": false,
+    "reason": "The requested six structurally distinct, grounded combination examples and all audit artifacts are complete."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "artifact_kind": "nuwa_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "NuWa needs RTX 4090 runtime traces; no clean 4090 has >=12GB free and <30% util. GPUs: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 180.08}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 87, 'power_w': 388.7}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99, 'temperature_c': 78, 'power_w': 183.68}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 164.32}].",
+      "id": "clean_rtx4090_for_runtime_trace_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Paper/DAG expects Jetson Orin NX edge profiling; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "jetson_orin_nx_device_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Official NuWa repo has syntax errors before execution: method/get_anchor_model.py, method/get_clibration_data.py, method/utils.py",
+      "id": "official_repo_python_syntax_errors",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing imports needed for full recognition/detection/segmentation/runtime path: mmcv, mmdet, mmengine, fvcore, ptflops",
+      "id": "nuwa_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local model/checkpoint/config artifacts: timm_deit_pretrained_weights, vit_large_pretrained_weights, cifar_finetuned_vit_weights, mask_rcnn_swin_coco_checkpoint, mmdetection_swin_config",
+      "id": "nuwa_checkpoints_or_configs_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete verifier-comparable NuWa tables/figures/raw outputs were found for accuracy/pruning/compute/runtime/cost surfaces.",
+      "id": "full_pruning_benchmark_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-24T13:31:54Z",
+  "next_full_execution_if_unblocked": [
+    "fix or replace the official source snapshot so every NuWa method file compiles",
+    "install mmcv/mmdet/mmengine/fvcore/ptflops/pycocotools runtime stack",
+    "materialize ImageNet-1K, CIFAR-10, CIFAR-100, COCO2017, class-specific task files, and calibration tensors",
+    "materialize timm pretrained weights, CIFAR fine-tuned checkpoints, Mask-RCNN Swin checkpoint/config",
+    "run python main.py across model/dataset/task/pruning-rate grid including NuWa and baselines",
+    "record top-1/mAP, pruning rate, GFLOPs, params, latency, throughput, memory, GPU hours, AWS cost, RTX 4090 trace, Jetson Orin NX trace",
+    "compare result shapes to paper tables, figures, and paragraph claims before convergence"
+  ],
+  "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+  "paper_title": "NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices",
+  "professional_package_ready": false,
+  "status": "blocked_by_syntax_datasets_checkpoints_runtime_hardware_and_result_grid_requirements",
+  "support_checks": {
+    "checkpoints_checked": 5,
+    "compileall_repo_passed": false,
+    "datasets_checked": 6,
+    "repo_discovered_and_encoded": true,
+    "script_files_checked": 19
+  }
+}

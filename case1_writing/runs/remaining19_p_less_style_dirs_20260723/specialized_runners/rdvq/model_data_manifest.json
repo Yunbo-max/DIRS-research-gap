@@ -1,0 +1,201 @@
+{
+  "artifact_kind": "rdvq_model_data_manifest",
+  "candidate_output_artifacts": [],
+  "checkpoints": [
+    {
+      "hf_manifest": {
+        "file_count": 7,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 28
+          },
+          {
+            "path": "lam_0.8_tau_0.01.pt",
+            "size_bytes": 1007856746
+          },
+          {
+            "path": "lam_1.2_tau_0.01.pt",
+            "size_bytes": 1007856746
+          },
+          {
+            "path": "lam_12_tau_0.1.pt",
+            "size_bytes": 1007855640
+          },
+          {
+            "path": "lam_4.8_tau_0.1.pt",
+            "size_bytes": 1007856193
+          },
+          {
+            "path": "lam_7.2_tau_0.1.pt",
+            "size_bytes": 1007856193
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 28
+          },
+          {
+            "path": "lam_0.8_tau_0.01.pt",
+            "size_bytes": 1007856746
+          },
+          {
+            "path": "lam_1.2_tau_0.01.pt",
+            "size_bytes": 1007856746
+          },
+          {
+            "path": "lam_12_tau_0.1.pt",
+            "size_bytes": 1007855640
+          },
+          {
+            "path": "lam_4.8_tau_0.1.pt",
+            "size_bytes": 1007856193
+          },
+          {
+            "path": "lam_7.2_tau_0.1.pt",
+            "size_bytes": 1007856193
+          }
+        ],
+        "repo_id": "CVLUESTC/RDVQ",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 5039283065
+      },
+      "id": "rdvq_testing_checkpoints",
+      "ignored_local_matches": [
+        {
+          "file_count": 199,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ",
+          "size_human": "12M"
+        }
+      ],
+      "local_hints": [
+        "models--CVLUESTC--RDVQ",
+        "CVLUESTC/RDVQ",
+        "RDVQ"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "paper_role": "released testing weights for estimated-rate and real-bitstream RD curves",
+      "repo_id": "CVLUESTC/RDVQ"
+    }
+  ],
+  "created_at_utc": "2026-07-24T13:32:06Z",
+  "datasets_and_metric_artifacts": [
+    {
+      "id": "kodak_image_folder",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "Kodak",
+        "kodak"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Kodak ImageFolder-style image directory for RD curves"
+    },
+    {
+      "id": "div2k_val_image_folder",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "DIV2K_valid_HR",
+        "DIV2K_valid",
+        "div2k",
+        "DIV2K"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "DIV2K validation image directory for RD curves and ablations"
+    },
+    {
+      "id": "clic2020_test_image_folder",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "CLIC2020",
+        "CLIC_valid",
+        "clic"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "CLIC2020 test/valid image directory for RD curves"
+    },
+    {
+      "id": "imagenet_training_images",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "imagenet",
+        "ImageNet",
+        "ILSVRC"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "ImageNet 256 training images for tokenizer/entropy/RD training reproduction"
+    },
+    {
+      "id": "openimage_training_images",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "openimage",
+        "OpenImage",
+        "OpenImages"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "OpenImage/OpenImages images for high-resolution fine-tuning"
+    },
+    {
+      "id": "df2k_highres_images",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "DF2K",
+        "df2k"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "DF2K 512-2048 images for high-resolution fine-tuning"
+    },
+    {
+      "id": "fid_reference_tiles",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "256teles",
+        "fid_refs",
+        "FID_REF_ROOT"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "FID_REF_ROOT/<dataset>_256teles reference tiles for DIV2K/CLIC FID/KID"
+    }
+  ],
+  "not_promoted_support": [
+    "assets/performance.png, assets/visual.jpg, and assets/RD_curves.jpg",
+    "release_validate.sh support checks",
+    "ImageFolder directory name matches without enough top-level images",
+    "VGG perceptual cache weights",
+    "HF model listing without downloaded checkpoint files"
+  ],
+  "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+  "paper_result_surfaces": [
+    "Kodak estimated-rate RD curve summaries",
+    "Kodak real-bitstream RD curve summaries",
+    "DIV2K-val estimated and real-bitstream RD summaries",
+    "CLIC2020-test estimated and real-bitstream RD summaries",
+    "FID/KID over 256x256 overlapping patches",
+    "prefix-transfer rate-control sweep over TEST_TRANSFER_SLICES",
+    "full-resolution 2K-image inference timing on RTX 4090",
+    "high-resolution fine-tuning trace on RTX Pro 6000",
+    "DIV2K ablation table",
+    "raw reconstructed images and .bin real bitstreams",
+    "bpp, DISTS, LPIPS, FID, KID, CLIPIQA, MUSIQ, NIQE, PSNR, MS-SSIM"
+  ],
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ"
+}

@@ -1,0 +1,14 @@
+{
+  "event": "iteration_finished",
+  "iteration": 365,
+  "seed": 20261085,
+  "finished_at_utc": "2026-07-21T15:37:47Z",
+  "returncode": 0,
+  "converged": true,
+  "converged_at_loop": 24,
+  "completed_loops": 24,
+  "final_mean_replay_score": 0.975294,
+  "final_min_replay_score": 0.958234,
+  "snapshot_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_clean_longgoal/longgoal_iterations/iter_0365_seed_20261085_20260721T153508Z",
+  "log_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_clean_longgoal/longgoal_iterations/iter_0365_seed_20261085_20260721T153508Z.log"
+}

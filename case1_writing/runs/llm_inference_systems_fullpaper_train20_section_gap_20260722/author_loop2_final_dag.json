@@ -1,0 +1,550 @@
+{
+  "author_decisions": [
+    {
+      "because": "16/20 papers are not exact-rerun-ready under local constraints.",
+      "decision": "Reject exact-reproduction wording.",
+      "write_as": "proxy reproduction plus reproducibility boundary"
+    },
+    {
+      "because": "KV local-window RMSE reached 0.121248; token-merge RMSE reached 0.553301; sampling retained mass dropped to 0.029347.",
+      "decision": "Accept quality-guard gap.",
+      "write_as": "speed claims require paired quality/correctness metrics"
+    },
+    {
+      "because": "minimum effective speculative speedup was 0.000000.",
+      "decision": "Accept acceptance-limited speculative decoding gap.",
+      "write_as": "draft quality and acceptance distribution are core variables"
+    },
+    {
+      "because": "48/270 sparse controls failed to beat dense; quant-dequant was not faster than fp16 operation in the proxy.",
+      "decision": "Accept hardware-specificity gap.",
+      "write_as": "efficiency requires hardware-aware kernels and end-to-end measurement"
+    },
+    {
+      "because": "The measurements support tradeoff and reproducibility gaps, not a universal new algorithmic win.",
+      "decision": "Revise conclusion to bounded NeurIPS-systems claim.",
+      "write_as": "a strict paper should propose a measured backend-specific policy with artifacts and limits"
+    }
+  ],
+  "campaign_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_fullpaper_train20_section_gap_20260722/author_style_gpu_reproduction_campaign.json",
+  "campaign_status": {
+    "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_fullpaper_train20_section_gap_20260722/author_style_gpu_reproduction_campaign.json",
+    "ran": false,
+    "reason": "existing_campaign_loaded"
+  },
+  "completed_loops": 24,
+  "converged": true,
+  "created_at_utc": "2026-07-22T20:47:56Z",
+  "definition": "Author forms hypotheses, runs/reads experiments, makes decisions, revises claims, and writes conclusions.",
+  "edge_library": [
+    {
+      "id": "root.author_experiment_loop->H.reproducibility_gap",
+      "selected": true,
+      "source": "root.author_experiment_loop",
+      "support": 1.0,
+      "target": "H.reproducibility_gap"
+    },
+    {
+      "id": "root.author_experiment_loop->H.quality_guard_gap",
+      "selected": true,
+      "source": "root.author_experiment_loop",
+      "support": 1.0,
+      "target": "H.quality_guard_gap"
+    },
+    {
+      "id": "root.author_experiment_loop->H.hardware_specificity_gap",
+      "selected": true,
+      "source": "root.author_experiment_loop",
+      "support": 1.0,
+      "target": "H.hardware_specificity_gap"
+    },
+    {
+      "id": "H.reproducibility_gap->E.repo_exact_rerun_audit",
+      "selected": true,
+      "source": "H.reproducibility_gap",
+      "support": 1.0,
+      "target": "E.repo_exact_rerun_audit"
+    },
+    {
+      "id": "H.quality_guard_gap->E.gpu_campaign_baselines",
+      "selected": true,
+      "source": "H.quality_guard_gap",
+      "support": 1.0,
+      "target": "E.gpu_campaign_baselines"
+    },
+    {
+      "id": "H.hardware_specificity_gap->E.gpu_campaign_baselines",
+      "selected": true,
+      "source": "H.hardware_specificity_gap",
+      "support": 1.0,
+      "target": "E.gpu_campaign_baselines"
+    },
+    {
+      "id": "E.gpu_campaign_baselines->E.kv_cache_stress",
+      "selected": true,
+      "source": "E.gpu_campaign_baselines",
+      "support": 1.0,
+      "target": "E.kv_cache_stress"
+    },
+    {
+      "id": "E.gpu_campaign_baselines->E.token_merge_stress",
+      "selected": true,
+      "source": "E.gpu_campaign_baselines",
+      "support": 1.0,
+      "target": "E.token_merge_stress"
+    },
+    {
+      "id": "E.gpu_campaign_baselines->E.speculative_acceptance_stress",
+      "selected": true,
+      "source": "E.gpu_campaign_baselines",
+      "support": 1.0,
+      "target": "E.speculative_acceptance_stress"
+    },
+    {
+      "id": "E.gpu_campaign_baselines->E.sampling_mass_entropy_stress",
+      "selected": true,
+      "source": "E.gpu_campaign_baselines",
+      "support": 1.0,
+      "target": "E.sampling_mass_entropy_stress"
+    },
+    {
+      "id": "E.gpu_campaign_baselines->E.quantization_kernel_stress",
+      "selected": true,
+      "source": "E.gpu_campaign_baselines",
+      "support": 1.0,
+      "target": "E.quantization_kernel_stress"
+    },
+    {
+      "id": "E.gpu_campaign_baselines->E.sparse_kernel_stress",
+      "selected": true,
+      "source": "E.gpu_campaign_baselines",
+      "support": 1.0,
+      "target": "E.sparse_kernel_stress"
+    },
+    {
+      "id": "E.repo_exact_rerun_audit->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.repo_exact_rerun_audit",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "E.kv_cache_stress->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.kv_cache_stress",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "E.token_merge_stress->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.token_merge_stress",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "E.speculative_acceptance_stress->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.speculative_acceptance_stress",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "E.sampling_mass_entropy_stress->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.sampling_mass_entropy_stress",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "E.quantization_kernel_stress->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.quantization_kernel_stress",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "E.sparse_kernel_stress->M.raw_measurement_read",
+      "selected": true,
+      "source": "E.sparse_kernel_stress",
+      "support": 1.0,
+      "target": "M.raw_measurement_read"
+    },
+    {
+      "id": "M.raw_measurement_read->M.statistics_over_repeats",
+      "selected": true,
+      "source": "M.raw_measurement_read",
+      "support": 1.0,
+      "target": "M.statistics_over_repeats"
+    },
+    {
+      "id": "M.statistics_over_repeats->D.accept_reproducibility_gap",
+      "selected": true,
+      "source": "M.statistics_over_repeats",
+      "support": 1.0,
+      "target": "D.accept_reproducibility_gap"
+    },
+    {
+      "id": "M.statistics_over_repeats->D.accept_quality_guard_gap",
+      "selected": true,
+      "source": "M.statistics_over_repeats",
+      "support": 1.0,
+      "target": "D.accept_quality_guard_gap"
+    },
+    {
+      "id": "M.statistics_over_repeats->D.accept_acceptance_limited_gap",
+      "selected": true,
+      "source": "M.statistics_over_repeats",
+      "support": 1.0,
+      "target": "D.accept_acceptance_limited_gap"
+    },
+    {
+      "id": "M.statistics_over_repeats->D.accept_hardware_specificity_gap",
+      "selected": true,
+      "source": "M.statistics_over_repeats",
+      "support": 1.0,
+      "target": "D.accept_hardware_specificity_gap"
+    },
+    {
+      "id": "D.accept_reproducibility_gap->D.reject_exact_reproduction_claim",
+      "selected": true,
+      "source": "D.accept_reproducibility_gap",
+      "support": 1.0,
+      "target": "D.reject_exact_reproduction_claim"
+    },
+    {
+      "id": "D.accept_quality_guard_gap->D.revise_overbroad_speed_claim",
+      "selected": true,
+      "source": "D.accept_quality_guard_gap",
+      "support": 1.0,
+      "target": "D.revise_overbroad_speed_claim"
+    },
+    {
+      "id": "D.accept_acceptance_limited_gap->D.revise_overbroad_speed_claim",
+      "selected": true,
+      "source": "D.accept_acceptance_limited_gap",
+      "support": 1.0,
+      "target": "D.revise_overbroad_speed_claim"
+    },
+    {
+      "id": "D.accept_hardware_specificity_gap->D.revise_overbroad_speed_claim",
+      "selected": true,
+      "source": "D.accept_hardware_specificity_gap",
+      "support": 1.0,
+      "target": "D.revise_overbroad_speed_claim"
+    },
+    {
+      "id": "D.reject_exact_reproduction_claim->C.central_claim",
+      "selected": true,
+      "source": "D.reject_exact_reproduction_claim",
+      "support": 1.0,
+      "target": "C.central_claim"
+    },
+    {
+      "id": "D.revise_overbroad_speed_claim->C.central_claim",
+      "selected": true,
+      "source": "D.revise_overbroad_speed_claim",
+      "support": 1.0,
+      "target": "C.central_claim"
+    },
+    {
+      "id": "C.central_claim->C.paper_sections_to_write",
+      "selected": true,
+      "source": "C.central_claim",
+      "support": 1.0,
+      "target": "C.paper_sections_to_write"
+    },
+    {
+      "id": "C.paper_sections_to_write->A.appendix_artifacts",
+      "selected": true,
+      "source": "C.paper_sections_to_write",
+      "support": 1.0,
+      "target": "A.appendix_artifacts"
+    }
+  ],
+  "final_score": 1.008011,
+  "final_selected_edges": [
+    "C.central_claim->C.paper_sections_to_write",
+    "C.paper_sections_to_write->A.appendix_artifacts",
+    "D.accept_acceptance_limited_gap->D.revise_overbroad_speed_claim",
+    "D.accept_hardware_specificity_gap->D.revise_overbroad_speed_claim",
+    "D.accept_quality_guard_gap->D.revise_overbroad_speed_claim",
+    "D.accept_reproducibility_gap->D.reject_exact_reproduction_claim",
+    "D.reject_exact_reproduction_claim->C.central_claim",
+    "D.revise_overbroad_speed_claim->C.central_claim",
+    "E.gpu_campaign_baselines->E.kv_cache_stress",
+    "E.gpu_campaign_baselines->E.quantization_kernel_stress",
+    "E.gpu_campaign_baselines->E.sampling_mass_entropy_stress",
+    "E.gpu_campaign_baselines->E.sparse_kernel_stress",
+    "E.gpu_campaign_baselines->E.speculative_acceptance_stress",
+    "E.gpu_campaign_baselines->E.token_merge_stress",
+    "E.kv_cache_stress->M.raw_measurement_read",
+    "E.quantization_kernel_stress->M.raw_measurement_read",
+    "E.repo_exact_rerun_audit->M.raw_measurement_read",
+    "E.sampling_mass_entropy_stress->M.raw_measurement_read",
+    "E.sparse_kernel_stress->M.raw_measurement_read",
+    "E.speculative_acceptance_stress->M.raw_measurement_read",
+    "E.token_merge_stress->M.raw_measurement_read",
+    "H.hardware_specificity_gap->E.gpu_campaign_baselines",
+    "H.quality_guard_gap->E.gpu_campaign_baselines",
+    "H.reproducibility_gap->E.repo_exact_rerun_audit",
+    "M.raw_measurement_read->M.statistics_over_repeats",
+    "M.statistics_over_repeats->D.accept_acceptance_limited_gap",
+    "M.statistics_over_repeats->D.accept_hardware_specificity_gap",
+    "M.statistics_over_repeats->D.accept_quality_guard_gap",
+    "M.statistics_over_repeats->D.accept_reproducibility_gap",
+    "root.author_experiment_loop->H.hardware_specificity_gap",
+    "root.author_experiment_loop->H.quality_guard_gap",
+    "root.author_experiment_loop->H.reproducibility_gap"
+  ],
+  "final_selected_nodes": [
+    "A.appendix_artifacts",
+    "C.central_claim",
+    "C.paper_sections_to_write",
+    "D.accept_acceptance_limited_gap",
+    "D.accept_hardware_specificity_gap",
+    "D.accept_quality_guard_gap",
+    "D.accept_reproducibility_gap",
+    "D.reject_exact_reproduction_claim",
+    "D.revise_overbroad_speed_claim",
+    "E.gpu_campaign_baselines",
+    "E.kv_cache_stress",
+    "E.quantization_kernel_stress",
+    "E.repo_exact_rerun_audit",
+    "E.sampling_mass_entropy_stress",
+    "E.sparse_kernel_stress",
+    "E.speculative_acceptance_stress",
+    "E.token_merge_stress",
+    "H.hardware_specificity_gap",
+    "H.quality_guard_gap",
+    "H.reproducibility_gap",
+    "M.raw_measurement_read",
+    "M.statistics_over_repeats",
+    "root.author_experiment_loop"
+  ],
+  "node_library": [
+    {
+      "id": "root.author_experiment_loop",
+      "mandatory": true,
+      "role": "Loop 2 is the author doing experiments and making scientific decisions.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "H.reproducibility_gap",
+      "mandatory": false,
+      "role": "Hypothesis: exact systems claims are blocked without runnable artifacts.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "H.quality_guard_gap",
+      "mandatory": false,
+      "role": "Hypothesis: token efficiency needs quality/correctness guards.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "H.hardware_specificity_gap",
+      "mandatory": false,
+      "role": "Hypothesis: speedup requires hardware-aware implementation, not abstract sparsity/compression.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.repo_exact_rerun_audit",
+      "mandatory": true,
+      "role": "Audit 20 papers for repo, checkpoint, dataset, and API readiness.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.gpu_campaign_baselines",
+      "mandatory": true,
+      "role": "Run GPU baselines and controls with repeated seeds.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.kv_cache_stress",
+      "mandatory": false,
+      "role": "Run dense/local/top-k KV-style long-context stress tests.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.token_merge_stress",
+      "mandatory": false,
+      "role": "Run full-attention versus merge proxy controls.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.speculative_acceptance_stress",
+      "mandatory": false,
+      "role": "Run draft/target acceptance-limited speculative proxy.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.sampling_mass_entropy_stress",
+      "mandatory": false,
+      "role": "Run full softmax, top-k, top-p, entropy-adaptive sampling controls.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.quantization_kernel_stress",
+      "mandatory": false,
+      "role": "Run fp16 versus quant-dequant controls.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "E.sparse_kernel_stress",
+      "mandatory": false,
+      "role": "Run dense versus masked-sparse matvec controls.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "M.raw_measurement_read",
+      "mandatory": true,
+      "role": "Read raw GPU rows, not just summary prose.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "M.statistics_over_repeats",
+      "mandatory": true,
+      "role": "Aggregate repeated-seed means/stds before judging.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "D.accept_reproducibility_gap",
+      "mandatory": false,
+      "role": "Author decision: exact-rerun infrastructure gap survives.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "D.accept_quality_guard_gap",
+      "mandatory": false,
+      "role": "Author decision: speed claims need paired quality/correctness guards.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "D.accept_acceptance_limited_gap",
+      "mandatory": false,
+      "role": "Author decision: speculative speedup is acceptance-limited.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "D.accept_hardware_specificity_gap",
+      "mandatory": false,
+      "role": "Author decision: unstructured sparsity/compression needs hardware-aware kernels.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "D.reject_exact_reproduction_claim",
+      "mandatory": true,
+      "role": "Author decision: do not claim exact leaderboard reproduction from proxy tests.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "D.revise_overbroad_speed_claim",
+      "mandatory": true,
+      "role": "Author decision: soften any universal speedup claim.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "C.central_claim",
+      "mandatory": true,
+      "role": "Conclusion: strict systems gaps must be measured as backend-specific speed/quality/reproducibility tradeoffs.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "C.paper_sections_to_write",
+      "mandatory": true,
+      "role": "Write experiments/results/limitations from decisions and artifacts.",
+      "selected": true,
+      "support": 1.0
+    },
+    {
+      "id": "A.appendix_artifacts",
+      "mandatory": true,
+      "role": "Attach scripts, raw rows, traces, and blocked-rerun audit.",
+      "selected": true,
+      "support": 1.0
+    }
+  ],
+  "not_simulation": [
+    "not reviewer-only critique",
+    "not paper-reading summary",
+    "not GPU benchmark alone"
+  ],
+  "paid_external_api_invoked": false,
+  "private_holdout_read": false,
+  "simulation_type": "loop2_author_experiment_decision_simulation",
+  "summary": {
+    "blocked_exact_reruns": 16,
+    "families": [
+      "kv_cache_locality",
+      "quantization_compression",
+      "sampling_truncation",
+      "sparse_kernel_efficiency",
+      "speculative_decoding_proxy",
+      "token_merging"
+    ],
+    "kv": {
+      "dense_ms_mean": 0.1284425,
+      "local_ms_mean": 0.14337333333333332,
+      "local_speedup_vs_dense": 0.8958604575467312,
+      "max_local_rmse": 0.121248,
+      "topk_ms_mean": 0.18608333333333332,
+      "topk_speedup_vs_dense": 0.6902418271383788
+    },
+    "quantization": {
+      "base_ms_mean": 0.11222,
+      "max_rmse": 0.244543,
+      "qdq_speedup_vs_fp16_op": 0.32803486982279273,
+      "quant_dequant_ms_mean": 0.3420977777777778
+    },
+    "repeats": 30,
+    "repo_audit_count": 20,
+    "repo_status_counts": {
+      "blocked": 13,
+      "code_ready_needs_model_data": 4,
+      "paper_only_or_source_missing": 3
+    },
+    "rows": 2130,
+    "sampling": {
+      "max_entropy_delta": 5.790868,
+      "min_retained_mass": 0.029347
+    },
+    "sparse": {
+      "control_rows": 270,
+      "not_faster_fraction": 0.17777777777777778,
+      "not_faster_than_dense": 48
+    },
+    "speculative": {
+      "block_acceptance_std": 0.2785732966334394,
+      "mean_block_acceptance": 0.36041666666666666,
+      "mean_effective_speedup": 0.7236316666666667,
+      "min_effective_speedup": 0.0
+    },
+    "token_merging": {
+      "max_rmse": 0.553301,
+      "max_speedup_vs_full": 4.563125228185469,
+      "mean_speedup_vs_full": 2.0703052030019564
+    }
+  },
+  "wall_time_seconds": 33.514
+}

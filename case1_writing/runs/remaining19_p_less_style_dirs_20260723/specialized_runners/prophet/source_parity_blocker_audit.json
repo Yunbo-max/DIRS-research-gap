@@ -1,0 +1,943 @@
+{
+  "artifact_kind": "prophet_source_parity_blocker_audit",
+  "blocker_audits": [
+    {
+      "id": "dream7b_axis",
+      "next_required_artifact": "Exact Dream model id plus generation/evaluation wrapper matching the paper's simple-evals protocol.",
+      "paper_requirement": "Table 1 includes Dream-7B-Instruct full-step and Prophet rows across the benchmark suite.",
+      "professional_gate": "Do not substitute an arbitrary Dream checkpoint or LLaDA runner without an explicit parity node.",
+      "status": "evidence_bound_blocked_missing_exact_dream_operational_path",
+      "why_not_runnable_now": [
+        "The release advertises Dream compatibility but exposes eval_llada.py as the only benchmark harness.",
+        "The command examples and generation script main paths instantiate GSAI-ML/LLaDA-8B-Instruct.",
+        "No eval_dream.py, Dream model identifier, Dream mask-token check, or Dream prompt/scorer parity wrapper is present in the current release."
+      ]
+    },
+    {
+      "id": "top_k_margin_remasking",
+      "next_required_artifact": "Released or reconstructed top-k margin remasking definition with tests against static and Prophet branches.",
+      "paper_requirement": "Table 3b compares random, low-confidence, and top-k margin remasking.",
+      "professional_gate": "Do not count a hand-rolled top-k margin as paper reproduction unless Loop 1 adds an author-parity implementation node and verifier accepts it.",
+      "status": "evidence_bound_blocked_missing_released_top_k_margin_code_path",
+      "why_not_runnable_now": [
+        "generate.py implements low_confidence and random only.",
+        "generate_earlyexit.py implements low_confidence and random only.",
+        "Unknown remasking strategies raise NotImplementedError, so a top-k margin run would require new implementation beyond released-source parity."
+      ]
+    },
+    {
+      "id": "simple_evals_table1_prompt_scorer_parity",
+      "next_required_artifact": "Per-task simple-evals prompts, extraction rules, and Dream/LLaDA scorer parity encoded in DAG or released code.",
+      "paper_requirement": "Table 1 follows simple-evals prompts for LLaDA and Dream with generated-answer extraction.",
+      "professional_gate": "Do not let lm-eval defaults silently stand in for the paper's simple-evals protocol across the whole Table 1 grid.",
+      "status": "partially_runnable_for_gsm8k_custom_runner_but_table1_suite_parity_blocked",
+      "why_not_runnable_now": [
+        "The custom GSM8K node runs generated-answer extraction for the active full split.",
+        "The released benchmark script is an lm-evaluation-harness LLaDA integration, not the full simple-evals setup named in the paper.",
+        "Non-GSM8K Table 1 tasks require task-specific prompt/extractor parity before being accepted as paper-shaped results."
+      ]
+    },
+    {
+      "id": "table2_sdtt_fastdllm_combinations",
+      "next_required_artifact": "SDTT checkpoint/training recipe and Fast-dLLM integration runnable on the same GSM8K protocol.",
+      "paper_requirement": "Table 2 reports SDTT, SDTT+Prophet, Fast-dLLM, and Fast-dLLM+Prophet on GSM8K.",
+      "professional_gate": "Do not infer multiplicative speedup from paper text; require runnable SDTT/Fast-dLLM artifacts or keep this debt explicit.",
+      "status": "evidence_bound_blocked_missing_external_sdtt_fastdllm_artifacts",
+      "why_not_runnable_now": [
+        "The Prophet release does not include an SDTT-distilled checkpoint or distillation recipe artifact.",
+        "The Prophet release does not include Fast-dLLM integration code or a KV-cache/parallel-decoding runner.",
+        "Combining Prophet with either baseline requires exact external artifacts, not a proxy speed calculation."
+      ]
+    }
+  ],
+  "code_evidence": {
+    "baseline_generation": [
+      {
+        "file": "generate.py",
+        "id": "baseline_generate_signature",
+        "line": 31,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "def generate(model, prompt, steps=128, gen_length=128, block_length=128, temperature=0.,"
+      },
+      {
+        "file": "generate.py",
+        "id": "baseline_default_remasking",
+        "line": 32,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "cfg_scale=0., remasking='low_confidence', mask_id=126336, constraints=None):"
+      },
+      {
+        "file": "generate.py",
+        "id": "baseline_low_confidence_branch",
+        "line": 76,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "if remasking == 'low_confidence':"
+      },
+      {
+        "file": "generate.py",
+        "id": "baseline_random_branch",
+        "line": 79,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "elif remasking == 'random':"
+      },
+      {
+        "file": "generate.py",
+        "id": "baseline_unknown_remasking_rejected",
+        "line": 82,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "raise NotImplementedError(remasking)"
+      },
+      {
+        "file": "generate.py",
+        "id": "baseline_hardcoded_llada_model",
+        "line": 113,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "model = AutoModel.from_pretrained('GSAI-ML/LLaDA-8B-Instruct', trust_remote_code=True, torch_dtype=torch.bfloat16).to(device).eval()"
+      },
+      {
+        "file": "generate.py",
+        "id": "baseline_hardcoded_llada_tokenizer",
+        "line": 114,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "tokenizer = AutoTokenizer.from_pretrained('GSAI-ML/LLaDA-8B-Instruct', trust_remote_code=True)"
+      }
+    ],
+    "evaluation_harness": [
+      {
+        "file": "eval_llada.py",
+        "id": "llada_eval_docstring",
+        "line": 1,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "'''LLaDA evaluation harness with Prophet early exit support.'''"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "llada_only_model_registration",
+        "line": 49,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "@register_model(\"llada_dist\")"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "automodel_loader_from_model_path",
+        "line": 80,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "self.model = AutoModel.from_pretrained(model_path, trust_remote_code=True, torch_dtype=torch.bfloat16, **model_kwargs)"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "tokenizer_loader_from_model_path",
+        "line": 93,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "prophet_generation_branch",
+        "line": 283,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "if self.enable_early_exit:"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "baseline_generation_branch",
+        "line": 305,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "from generate import generate as generate_baseline"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "generated_answer_decode",
+        "line": 319,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "generated_answer = self.tokenizer.decode(generated_out[0][prompt.shape[1]:], skip_special_tokens=False)"
+      },
+      {
+        "file": "eval_llada.py",
+        "id": "generated_answer_retokenize",
+        "line": 325,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+        "text": "generated_answer_ids = self.tokenizer(generated_answer)[\"input_ids\"]"
+      }
+    ],
+    "prophet_generation": [
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_generate_signature",
+        "line": 52,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "def generate(model, prompt, steps=128, gen_length=128, block_length=128, temperature=0.,"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_default_remasking",
+        "line": 53,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "cfg_scale=0., remasking='low_confidence', mask_id=126336, constraints=None,"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_low_confidence_branch",
+        "line": 108,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "if remasking == 'low_confidence':"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_random_branch",
+        "line": 111,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "elif remasking == 'random':"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_unknown_remasking_rejected",
+        "line": 114,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "raise NotImplementedError(remasking)"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_hardcoded_llada_model",
+        "line": 197,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "model = AutoModel.from_pretrained('GSAI-ML/LLaDA-8B-Instruct', trust_remote_code=True, torch_dtype=torch.bfloat16).to(device).eval()"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "prophet_hardcoded_llada_tokenizer",
+        "line": 198,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "tokenizer = AutoTokenizer.from_pretrained('GSAI-ML/LLaDA-8B-Instruct', trust_remote_code=True)"
+      }
+    ],
+    "readme_claims_and_usage": [
+      {
+        "file": "README.md",
+        "id": "readme_title",
+        "line": 1,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "# Prophet: Fast Decoding for Diffusion Language Models"
+      },
+      {
+        "file": "README.md",
+        "id": "paper_title",
+        "line": 3,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "Official implementation of \"Diffusion Language Models Know the Answer Before Decoding\""
+      },
+      {
+        "file": "README.md",
+        "id": "dream_claim",
+        "line": 15,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "- **Model-agnostic**: Compatible with different DLMs (tested on LLaDA-8B and Dream-7B)"
+      },
+      {
+        "file": "README.md",
+        "id": "eval_command",
+        "line": 86,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "accelerate launch eval_llada.py \\"
+      },
+      {
+        "file": "README.md",
+        "id": "gsm8k_task",
+        "line": 87,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "--tasks gsm8k_cot_zeroshot \\"
+      },
+      {
+        "file": "README.md",
+        "id": "llada_model_registration",
+        "line": 88,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "--model llada_dist \\"
+      },
+      {
+        "file": "README.md",
+        "id": "llada_model_args",
+        "line": 89,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "--model_args model_path='/path/to/LLaDA-8B-Instruct',enable_early_exit=true,constraints_text=\"200:The|201:answer|202:is\",gen_length=256,steps=256,block_length=32"
+      },
+      {
+        "file": "README.md",
+        "id": "remasking_declared_options",
+        "line": 108,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "- `remasking`: Remasking strategy ('low_confidence' or 'random', default: 'low_confidence')"
+      },
+      {
+        "file": "README.md",
+        "id": "generate_earlyexit_component",
+        "line": 112,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "### `generate_earlyexit.py`"
+      },
+      {
+        "file": "README.md",
+        "id": "eval_llada_component",
+        "line": 120,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "### `eval_llada.py`"
+      }
+    ],
+    "released_eval_script": [
+      {
+        "file": "eval.sh",
+        "id": "accelerate_eval_llada",
+        "line": 6,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval.sh",
+        "text": "accelerate launch eval_llada.py \\"
+      },
+      {
+        "file": "eval.sh",
+        "id": "gsm8k_task_only",
+        "line": 7,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval.sh",
+        "text": "--tasks gsm8k_cot_zeroshot \\"
+      },
+      {
+        "file": "eval.sh",
+        "id": "llada_dist_only",
+        "line": 8,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval.sh",
+        "text": "--model llada_dist \\"
+      },
+      {
+        "file": "eval.sh",
+        "id": "llada_model_path_and_prophet_args",
+        "line": 9,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval.sh",
+        "text": "--model_args model_path='GSAI-ML/LLaDA-8B-Instruct',enable_early_exit=true,constraints_text=\"200:The|201:answer|202:is\",gen_length=256,steps=256,block_length=32,answer_length=5 \\"
+      }
+    ],
+    "repo_regex_hits": [
+      {
+        "file": "README.md",
+        "id": "dream:15",
+        "line": 15,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "- **Model-agnostic**: Compatible with different DLMs (tested on LLaDA-8B and Dream-7B)"
+      },
+      {
+        "file": "README.md",
+        "id": "remasking:108",
+        "line": 108,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md",
+        "text": "- `remasking`: Remasking strategy ('low_confidence' or 'random', default: 'low_confidence')"
+      },
+      {
+        "file": "generate.py",
+        "id": "top_k:95",
+        "line": 95,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "_, select_index = torch.topk(confidence[j], k=k)"
+      },
+      {
+        "file": "generate.py",
+        "id": "not_implemented:82",
+        "line": 82,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate.py",
+        "text": "raise NotImplementedError(remasking)"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "top_k:132",
+        "line": 132,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "top2_vals, _ = torch.topk(gen_logits[:, rel_pos, :], k=2, dim=-1)"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "top_k:161",
+        "line": 161,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "_, select_index = torch.topk(confidence[j], k=k)"
+      },
+      {
+        "file": "generate_earlyexit.py",
+        "id": "not_implemented:114",
+        "line": 114,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py",
+        "text": "raise NotImplementedError(remasking)"
+      }
+    ]
+  },
+  "counts": {
+    "blocker_count": 4,
+    "code_evidence_anchor_count": 43,
+    "paper_evidence_anchor_count": 72,
+    "runnable_new_node_count": 0
+  },
+  "created_at_utc": "2026-07-24T14:02:56Z",
+  "paper_evidence": {
+    "answer_extraction_axis": [
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dynamic_answer_extraction_note",
+        "line": 1516,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "We note that utilizing a suffix prompt does not constitute the use of oracle information. The answer"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "generate_and_extract_final_answer",
+        "line": 1525,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "\u2022 General reasoning (e.g., MMLU, ARC-C): These benchmarks consist of multiple-choice questions. The suffix prompt explicitly locates the position for the final prediction (e.g., \u201cA\u201d or \u201cB\u201d),"
+      }
+    ],
+    "paper_regex_hits": [
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:36",
+        "line": 36,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Empirical evaluations on LLaDA-8B and Dream-7B across multiple tasks show"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:110",
+        "line": 110,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "open-source implementations including LLaDA (Nie et al., 2025) and Dream (Ye et al., 2025)."
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:633",
+        "line": 633,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "2025) and Dream-7B (Ye et al., 2025). For each model, we compare two decoding strategies: Full"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:639",
+        "line": 639,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Table 1: Benchmark results on LLaDA-8B-Instruct and Dream-7B-Instruct. We report Accuracy"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:650",
+        "line": 650,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Dream-7B"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:786",
+        "line": 786,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "simple-evals for LLaDA and Dream, making the model reason step by step. Concretely, we set the"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:800",
+        "line": 800,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "refinement steps. Similarly, Dream-7B maintains competitive performance across benchmarks, with"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:812",
+        "line": 812,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "LLaDA-8B (30.5%) and even slightly improves it with Dream-7B (55.5% vs. 54.9%). Notably,"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:1047",
+        "line": 1047,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "termination points. Experiments on LLaDA-8B and Dream-7B demonstrate that Prophet achieves"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "dream:1201",
+        "line": 1201,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Kong. Dream 7b: Diffusion large language models. arXiv preprint arXiv:2508.15487, 2025."
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "simple_evals:786",
+        "line": 786,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "simple-evals for LLaDA and Dream, making the model reason step by step. Concretely, we set the"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:833",
+        "line": 833,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Time (Deschenaux & Gulcehre, 2025) (SDTT), a training-based method that reduces the number"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:834",
+        "line": 834,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "of inference steps. We implement a preliminary version of SDTT on LLaDA-8B-Instruct, distilling a standard 256-step teacher into a 128-step student model (2\u00d7 acceleration) and evaluate on"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:835",
+        "line": 835,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "GSM8K. As shown in Table 2a, SDTT effectively maintains accuracy (76.9%) while halving inference steps. Prophet Prophet achieves a competitive 1.63\u00d7 speedup with slightly higher accuracy"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:837",
+        "line": 837,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "SDTT are orthogonal and complementary. Crucially, Prophet and SDTT are complementary: applying Prophet\u2019s early-exit strategy on top of the SDTT-distilled student (Row 4) yields a 3.21\u00d7"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:847",
+        "line": 847,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "(a) Comparison with SDTT."
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:850",
+        "line": 850,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "SDTT (Distilled)"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:852",
+        "line": 852,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "SDTT + Prophet"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:1226",
+        "line": 1226,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "on preceding reasoning chains, Prophet correctly detects persistent uncertainty and defers termination to preserve correctness. Combining Prophet with trajectory compression methods such as SDTT"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt:1229",
+        "line": 1229,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "confirm this, with SDTT + Prophet achieving a 3.21\u00d7 speedup on GSM8K compared to 1.63\u00d7 for"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:138",
+        "line": 138,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "training-free approaches in this direction. Fast-dLLM (Wu et al., 2026) combines approximate"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:152",
+        "line": 152,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "confidence. Unlike methods such as Fast-dLLM that optimize the cost per step, Prophet reduces the"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:840",
+        "line": 840,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Comparison with KV cache-based acceleration. We compare against Fast-dLLM (Wu et al.,"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:842",
+        "line": 842,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "parallel decoding. We apply Prophet\u2019s early-exit mechanism on top of Fast-dLLM using LLaDA-8B"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:843",
+        "line": 843,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "on GSM8K. As shown in Table 2b, while Fast-dLLM alone achieves a 6.82\u00d7 speedup by reducing"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:856",
+        "line": 856,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "(b) Comparison with Fast-dLLM."
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:881",
+        "line": 881,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Fast-dLLM (KV Cache + Parallel)"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:883",
+        "line": 883,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Fast-dLLM + Prophet"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:1188",
+        "line": 1188,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Han, and Enze Xie. Fast-dllm: Training-free acceleration of diffusion llm by enabling kv cache"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm:1191",
+        "line": 1191,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Han, and Enze Xie. Fast-dLLM: Training-free acceleration of diffusion LLM by enabling KV"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "top_k_margin:957",
+        "line": 957,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Top-k margin"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "top_k_margin:1026",
+        "line": 1026,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "(random, low-confidence, top-k margin). Prophet consistently outperforms their static counterparts,"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "top_k_margin:1029",
+        "line": 1029,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "informed heuristics (low-confidence: +1.4; top-k margin: +0.7), indicating that Prophet\u2019s stopping"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table3:911",
+        "line": 911,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Table 3: Ablation study on step budget and remasking strategy.. (a) Accuracy vs. step budget under two generation lengths L. Prophet stops early (average steps in parentheses) yet matches/exceeds"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table3:1015",
+        "line": 1015,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Accuracy vs. step budget under different L. Table 3a summarizes GSM8K accuracy as we vary"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table3:1025",
+        "line": 1025,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Remasking strategy compatibility. Table 3b evaluates three off-the-shelf remasking heuristics"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table4:971",
+        "line": 971,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Table 4: Sensitivity to block length on GSM8K (semi-autoregressive updates). Prophet is less"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table4:1031",
+        "line": 1031,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Granularity of semi-autoregressive refinement (block length). Table 4 shows that static block"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "extract_final:1419",
+        "line": 1419,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "chain is incomplete, the model locks onto the correct final answer early in the process (highlighted"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "extract_final:1434",
+        "line": 1434,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "much white fiber , MASK MASK MASK 3 bolts . Final Answer : The answer is 3"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "extract_final:1443",
+        "line": 1443,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "of 3 bolts . Final Answer : The answer is 3"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "extract_final:1491",
+        "line": 1491,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Last Final Answer Change"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "extract_final:1505",
+        "line": 1505,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "the generation window, followed by mask tokens reserved for the final answer. The resulting sequence structure is: [Question] [MASKs for Reasoning Chain] The answer is"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "extract_final:1542",
+        "line": 1542,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "standard practice, we generate and extract the final answer rather than comparing log probabilities"
+      }
+    ],
+    "table1_and_model_axis": [
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "experiments_on_two_models",
+        "line": 626,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "demonstrate that Prophet achieves notable computational savings with negligible quality degradation"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "llada_and_dream_compare_full_prophet",
+        "line": 627,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "through comprehensive experiments across diverse benchmarks."
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table1_caption",
+        "line": 632,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "We conduct experiments on two state-of-the-art diffusion language models: LLaDA-8B (Nie et al.,"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table1_accuracy_metric",
+        "line": 633,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "2025) and Dream-7B (Ye et al., 2025). For each model, we compare two decoding strategies: Full"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table1_speed_eval_notes",
+        "line": 634,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "7"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "appendix_config_pointer",
+        "line": 635,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": ""
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "simple_evals_prompt",
+        "line": 779,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Our evaluation spans four capability domains to comprehensively assess Prophet\u2019s effectiveness. For"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "generation_length_policy",
+        "line": 780,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "general reasoning, we use MMLU (Hendrycks et al., 2021), ARC-Challenge (Clark et al., 2018),"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "greedy_deterministic_policy",
+        "line": 782,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "2021), and PIQA (Bisk et al., 2020). Mathematical and scientific reasoning are evaluated through"
+      }
+    ],
+    "table2_acceleration_axis": [
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt_method",
+        "line": 825,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "accelerate DLM inference, enhancing its practicality for real-world deployment."
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt_distillation_setup",
+        "line": 826,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "5.3"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt_table2a_claim",
+        "line": 827,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": ""
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "sdtt_prophet_combination",
+        "line": 829,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": ""
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm_method",
+        "line": 832,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "Comparison with distillation-based acceleration. We compare against Self-Distillation Through"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm_prophet_combination",
+        "line": 834,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "of inference steps. We implement a preliminary version of SDTT on LLaDA-8B-Instruct, distilling a standard 256-step teacher into a 128-step student model (2\u00d7 acceleration) and evaluate on"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "fastdllm_table2b_claim",
+        "line": 835,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "GSM8K. As shown in Table 2a, SDTT effectively maintains accuracy (76.9%) while halving inference steps. Prophet Prophet achieves a competitive 1.63\u00d7 speedup with slightly higher accuracy"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table2_caption",
+        "line": 838,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "speedup with negligible accuracy drop, demonstrating that distilled models retain the early answer"
+      }
+    ],
+    "table3_table4_ablation_axis": [
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table3_caption",
+        "line": 902,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "truncation by examining (i) sensitivity to the generation length L and available step budget, (ii)"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table3_remasking_caption",
+        "line": 903,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "compatibility with different remasking heuristics, and (iii) robustness to the granularity of semiautoregressive block updates. Together, these studies consistently show that Prophet\u2019s adaptive"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "top_k_margin_row",
+        "line": 948,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": ""
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "remasking_strategy_discussion",
+        "line": 1016,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "the number of refinement steps under two generation lengths (L = 256 and L = 128). Accuracy"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "three_remasking_heuristics",
+        "line": 1017,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "under a static step cap rises monotonically with more steps (e.g., 7.7% \u2192 22.5% \u2192 58.8% \u2192 76.2%"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "top_k_margin_gain",
+        "line": 1020,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "1.63\u00d7) and yields a higher score than the 256-step baseline (77.9% vs. 77.1%). When the target"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "table4_caption",
+        "line": 962,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": ""
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "block_length_discussion",
+        "line": 1022,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "using only \u2248 74 steps (saving \u2248 42%; 128/74 \u2248 1.73\u00d7). These results reaffirm that the gains are"
+      },
+      {
+        "file": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "id": "large_block_gains",
+        "line": 1026,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "text": "(random, low-confidence, top-k margin). Prophet consistently outperforms their static counterparts,"
+      }
+    ]
+  },
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "policy": {
+    "loop2_may_use_paper_oracle_values": false,
+    "missing_released_axes_must_be_explicitly_blocked_or_repaired_in_loop1": true,
+    "real_runnable_nodes_must_keep_running": true,
+    "reduced_or_proxy_results_can_converge": false
+  },
+  "recommended_loop1_update": {
+    "needed": false,
+    "reason": "The current DAG already treats these as operational artifact blockers; this audit strengthens the evidence channel."
+  },
+  "repository_snapshot": {
+    "git_status_short": [
+      "M eval_llada.py",
+      "?? __pycache__/"
+    ],
+    "local_head": "460afe41c7063a29a9893675aca07b985997bb83",
+    "released_file_count": 11,
+    "released_files": [
+      "README.md",
+      "__pycache__/generate.cpython-310.pyc",
+      "__pycache__/generate_earlyexit.cpython-310.pyc",
+      "analysis/collect_decoding_traj.sh",
+      "analysis/collect_decoding_traj_gsm8k.py",
+      "analysis/generate.py",
+      "analysis/visualize.ipynb",
+      "eval.sh",
+      "eval_llada.py",
+      "generate.py",
+      "generate_earlyexit.py"
+    ],
+    "remote": "origin\thttps://github.com/pixeli99/Prophet (fetch)\norigin\thttps://github.com/pixeli99/Prophet (push)",
+    "remote_heads": [
+      "460afe41c7063a29a9893675aca07b985997bb83\tHEAD",
+      "460afe41c7063a29a9893675aca07b985997bb83\trefs/heads/main"
+    ],
+    "remote_matches_local": true,
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+  },
+  "runnable_new_nodes": [],
+  "status": "evidence_bound_source_parity_blockers_ready",
+  "verifier_implication": {
+    "accepted_use": "support explicit blocker classification for paper-required axes that cannot be run from released artifacts",
+    "can_converge_from_this_audit_alone": false,
+    "still_required": [
+      "complete active full GSM8K paired run",
+      "complete or explicitly block Table 1 suite parity",
+      "complete running Table 3/4 ablation grid where code supports it",
+      "run paper comparator after final artifacts arrive"
+    ]
+  }
+}

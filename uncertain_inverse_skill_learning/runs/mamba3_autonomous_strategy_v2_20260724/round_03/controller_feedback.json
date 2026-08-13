@@ -1,0 +1,71 @@
+{
+  "schema_version": "dirs.autonomous_strategy.controller_feedback.v1",
+  "round": 3,
+  "evaluation_boundary": {
+    "writer_blind_to_hidden_expert_abstract": true,
+    "hidden_expert_abstract_used_for_this_evaluation": false,
+    "expert_dag_used": false,
+    "lexical_similarity_used": false,
+    "assessment_type": "public-evidence functional comparison"
+  },
+  "hard_checks": {
+    "unsupported_factual_claims_found": [],
+    "leakage_failure_reported_by_writer": [],
+    "all_variants_in_word_band": true,
+    "treatment_and_control_word_count_equal": true,
+    "reusable_skill_overclaim": false
+  },
+  "atomic_counterfactual_judgment": {
+    "treatment": "Variant A",
+    "control": "Variant B",
+    "preferred_for_configuration_role_recovery": "Variant A",
+    "preference_confidence": "moderate",
+    "reason": "A directly maps SISO to the reported faster operating point and MIMO to the reported quality-for-latency choice; B leaves the same role relation implicit.",
+    "guardrail_judgment": {
+      "factual_support_equal": true,
+      "coverage_equal": true,
+      "word_count_equal": true,
+      "all_other_words_reported_identical": true,
+      "directional_map_supported_in_reported_settings": true,
+      "universal_deployment_claim_made": false
+    },
+    "remaining_limitations": [
+      "Reader role recovery was judged by one controller rather than a blinded human panel.",
+      "The role map combines language-quality and one H100 kernel setting; transfer to other settings is untested."
+    ]
+  },
+  "strategy_decisions": [
+    {
+      "proposal_id": "S6_operating_point_decision_split",
+      "status": "local_strategy_hypothesis",
+      "confidence": "low_to_moderate",
+      "distinctive_function": "configuration-role and quality-latency decision recovery",
+      "reusable_skill": false
+    },
+    {
+      "proposal_id": "S5_salience_anchor_then_selective_bindings",
+      "status": "local_strategy_hypothesis",
+      "confidence": "low_to_moderate",
+      "distinctive_function": "early aggregate salience with component-local diagnostic bindings",
+      "reusable_skill": false
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "status": "candidate",
+      "distinctive_function": "early limitation calibration",
+      "reusable_skill": false
+    }
+  ],
+  "multimodal_judgment": {
+    "single_winner_declared": false,
+    "S6_vs_S5": "non_dominated",
+    "reason": "S6 is clearer for configuration choice; S5 is clearer for component-level mechanism-result mapping."
+  },
+  "pilot_stop_decision": {
+    "stop": true,
+    "reason": "The preregistered three-round pilot and reserved-novelty challenge are complete.",
+    "stopped_for_convergence": false,
+    "evidence_of_exhausted_strategy_search": false,
+    "important_observation": "A new non-cosmetic S6 proposal still appeared in the final round, so the run provides evidence against interpreting prior graph stability as exhausted discovery."
+  }
+}

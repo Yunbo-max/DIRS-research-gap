@@ -1,0 +1,19 @@
+{
+  "artifact_kind": "flashvid_flops_reproduction",
+  "command_result": {
+    "cmd": [
+      "python",
+      "tools/flops/llava_ov.py"
+    ],
+    "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+    "returncode": 0,
+    "seconds": 0.025,
+    "stderr": "",
+    "stdout": "LLaVA-OneVision theoretical computational cost: 48.82 TFLOPs\nFlashVID theoretical computational cost: 4.27 TFLOPs\n",
+    "timeout": false
+  },
+  "convergence_role": "analytic support for TFLOPs axis only; not a benchmark-table convergence artifact",
+  "created_at_utc": "2026-07-23T18:53:33Z",
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "status": "pass"
+}

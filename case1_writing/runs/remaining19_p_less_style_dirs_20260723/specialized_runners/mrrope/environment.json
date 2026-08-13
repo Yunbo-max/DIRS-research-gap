@@ -1,0 +1,115 @@
+{
+  "artifact_kind": "mrrope_environment_manifest",
+  "compileall_support_check": {
+    "cmd": [
+      "python",
+      "-m",
+      "compileall",
+      "-q",
+      "eval",
+      "scaled_rope",
+      "analysis"
+    ],
+    "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+    "returncode": 0,
+    "seconds": 0.09,
+    "stderr": "",
+    "stdout": "",
+    "timeout": false
+  },
+  "created_at_utc": "2026-07-23T18:53:14Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 2873,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 21343,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5190,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19023,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 17
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8168,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16049,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "import_support_checks": {
+    "llama_mrrope": {
+      "cmd": [
+        "python",
+        "-c",
+        "from scaled_rope.LlamaMrRoPE import LlamaMrRoPE; print('import_ok')"
+      ],
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+      "returncode": 0,
+      "seconds": 1.527,
+      "stderr": "",
+      "stdout": "import_ok\n",
+      "timeout": false
+    },
+    "model_loader_args": {
+      "cmd": [
+        "python",
+        "-c",
+        "from eval.model_loader import add_args; print('model_loader_ok')"
+      ],
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+      "returncode": 0,
+      "seconds": 3.357,
+      "stderr": "",
+      "stdout": "model_loader_ok\n",
+      "timeout": false
+    }
+  },
+  "nvidia_smi": {
+    "cmd": [
+      "nvidia-smi",
+      "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+      "--format=csv,noheader,nounits"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.048,
+    "stderr": "",
+    "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 2873, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19023, 5190, 17\n3, NVIDIA GeForce RTX 4090, 24564, 16049, 8168, 99\n",
+    "timeout": false
+  },
+  "packages": {
+    "accelerate": "1.11.0",
+    "bitsandbytes": null,
+    "datasets": "4.3.0",
+    "einops": "0.8.2",
+    "evaluate": "0.4.6",
+    "flash_attn": null,
+    "jieba": null,
+    "protobuf": "6.33.0",
+    "rouge": "1.0.1",
+    "sentencepiece": "0.2.1",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.2"
+  },
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "professional_runtime_note": "paper hardware was not specified, but supplement uses device_map=auto, FlashAttention 2 when --flash-attention is present, and 128K-token contexts",
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+  "supplement": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement"
+}

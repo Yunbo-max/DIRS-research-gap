@@ -1,0 +1,240 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ]
+  ],
+  "graph_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope_gap_dag_iter_02",
+  "nodes": [
+    {
+      "content": "MrRoPE: Mixed-radix Rotary Position Embedding | families=long_context_or_rope",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "RoPE context extension methods are diverse heuristics without a unified theory for choosing dimension-wise scaling.; Training-free long-context extension can distort local or middle-frequency positional information even when the final context window is longer.; 7B-scale long-context work needs cheap extension methods that avoid fine-tuning and preserve retrieval/dialogue behavior.",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "incomplete-cycle dimensions become out of distribution beyond pretraining length; uniform NTK scaling distorts high-frequency details; YaRN regressive middle-dimension scaling degrades shorter-context perplexity and ultra-long retrieval; benchmark gains may depend on RoPE model family and alpha/beta boundary choices",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "NTK; YaRN; GPT-4; Yi-34B-200K; Kimi-Chat; training-based context extension methods not compared under matched inference-only setting",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "mixed-radix RoPE framework; MrRoPE-Uni uniform middle-dimension conversion; MrRoPE-Pro progressive middle-dimension conversion; dimension boundary selection by beta_fast and beta_slow; attention magnitude scaling",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=Proofpile perplexity; NIAH; RULER; Infinite-Bench; LongBenchV2; metrics=perplexity; ROUGE-1 recall; RULER retrieval score; Infinite-Bench task accuracy; LongBenchV2 task score; protocols=ten Proofpile sequences over 128K tokens; NIAH varied context length and insertion depth; RULER 13 subtasks; Infinite-Bench 100 examples per subset from 100K to 128K; LongBenchV2 samples shorter than 128K",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=not specified in paper; supplementary scripts use device_map=auto and optional FlashAttention; runtimes=PyTorch; Transformers; FlashAttention 2; BitsAndBytes optional quantization",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp; code_artifacts=scaled_rope/LlamaMrRoPE.py; scaled_rope/patch.py; eval/model_loader.py; eval/perplexity.py; eval/neddle.py; eval/ruler.py; eval/infity.py; analysis/attn.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=Proofpile; RULER; Needle-In-A-Haystack; Infinite-Bench; LongBenchV2; data_artifacts=testset/pp-tokenized-llama3; testset/pp-tokenized-qwen2.5; testset/infity; RULER/LongBenchV2 datasets expected locally; implementation_statuses=code_inspected; github_repository_not_found; supplementary_archive_inspected",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "signature": "1aa9f7aa34752179",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "target_title": "MrRoPE: Mixed-radix Rotary Position Embedding"
+}

@@ -1,0 +1,105 @@
+{
+  "blockers": [
+    {
+      "detail": "Paper/DAG expects Blackwell RTX PRO 6000 and/or A100 traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "paper_hardware_class",
+      "status": "blocked"
+    },
+    {
+      "detail": "Visible GPUs are already memory-heavy or active; GPU 3 is occupied by the Prophet full run. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+      "id": "clean_gpu_slot_for_diffusion_grid",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local paper-scale model checkpoints: flux_dev, wan21_t2v_13b, wan21_t2v_14b, wan21_i2v_14b_720p, hunyuanvideo",
+      "id": "required_diffusion_checkpoints_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local prompt/evaluator artifacts: drawbench_200_prompts, vbench_944_prompts_and_tooling, cyclereward_eval, compressedvqa_eval",
+      "id": "prompt_metric_artifacts_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing required runtime packages/imports: diffusers, calflops, vbench, lpips, wan, hyvideo",
+      "id": "diffusion_metric_runtime_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "SeaCache scripts need patch/wrapper before full grid: flux_prompt_grid_break, hunyuan_threshold_hardcoded",
+      "id": "official_script_parity_for_full_grid",
+      "status": "blocked"
+    }
+  ],
+  "gpu_probe": {
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 8108,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16109,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 98
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 7796,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16417,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "status": "pass"
+  },
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "Wan2.1/seacache_generate.py",
+        "HunyuanVideo/seacache_generate.py",
+        "FLUX/seacache_generate.py"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 6,
+      "readme_files": [
+        "README.md",
+        "Wan2.1/README.md",
+        "HunyuanVideo/README.md",
+        "FLUX/README.md"
+      ],
+      "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache",
+      "shell_file_count": 0,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 6,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ],
+  "specialized_runner": {
+    "artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache",
+    "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/environment.json",
+    "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/model_data_manifest.json",
+    "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/official_script_manifest.json",
+    "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/professional_gate_result.json",
+    "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+    "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/seacache_specialized_verifier.json"
+  }
+}

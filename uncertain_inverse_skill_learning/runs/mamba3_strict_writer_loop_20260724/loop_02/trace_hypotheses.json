@@ -1,0 +1,319 @@
+{
+  "schema_version": "dirs.strict_writer.trace_hypotheses.v1",
+  "loop": 2,
+  "scope": "single-paper blind artifact reconstruction",
+  "feedback_boundary": {
+    "source": "loop_01/evaluator_feedback.json",
+    "expert_wording_received": false,
+    "expert_wording_inferred": false,
+    "feedback_used_as": "structural and functional constraints only"
+  },
+  "posterior_update": {
+    "policy": "Reweight loop-1 hypotheses by evidence fidelity, evaluator-identified artifact function, compression utility, and complexity while preserving alternatives.",
+    "loop_1_weights": {
+      "H1_branched_quality_efficiency": 0.39,
+      "H2_mechanism_ablation_fan_in": 0.29,
+      "H3_deployment_pareto_with_retrieval_branch": 0.19,
+      "H4_implementation_upward_grounding": 0.13
+    },
+    "loop_2_weights": {
+      "H1_comparative_quality_efficiency": 0.56,
+      "H2_mechanism_ablation_fan_in": 0.23,
+      "H3_deployment_pareto_with_retrieval_branch": 0.15,
+      "H4_implementation_upward_grounding": 0.06
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H1_comparative_quality_efficiency",
+      "parent_id": "H1_branched_quality_efficiency",
+      "label": "Comparative MIMO quality-efficiency fork-join",
+      "normalized_weight": 0.56,
+      "structural_signature": "two pressure roots -> method hub -> three mechanism branches; MIMO branch joins training and baseline context at an incremental-quality node and then joins one latency anchor at bounded synthesis",
+      "active_nodes": [
+        "gap_transformer_inference_cost",
+        "gap_linear_model_capability",
+        "method_mamba3",
+        "module_exp_trap_recurrence",
+        "module_complex_state_update",
+        "module_mimo_ssm",
+        "training_pretraining_protocol",
+        "result_lm_1p5b",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency"
+      ],
+      "artifact_functions": [
+        "motivate a joint quality-efficiency intervention",
+        "describe three coupled architectural mechanisms",
+        "state the MIMO increment over SISO and the strongest listed comparison",
+        "anchor the quality claim to one recurrent-decode comparison",
+        "produce a bounded joint conclusion"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "The public chip directly contains an incremental MIMO-over-SISO quality result.",
+          "paths": [
+            "$.result_outcome.nodes[1]",
+            "$.result_outcome.nodes[0]"
+          ]
+        },
+        {
+          "reason": "MIMO and Mamba-2 have directly comparable BF16 H100 d_state=128 kernel measurements.",
+          "paths": [
+            "$.result_outcome.nodes[4]",
+            "$.evaluation_validation.events[3]"
+          ]
+        },
+        {
+          "reason": "The feedback favors one comparative quality claim and one quality-efficiency anchor over three dense result blocks.",
+          "feedback_ids": [
+            "REP1",
+            "SEL1",
+            "EXE1"
+          ]
+        }
+      ],
+      "weight_delta": 0.17,
+      "weight_reason": "Raised because an explicit comparative-gain join repairs the missing artifact function and supports a single contribution argument without weakening provenance."
+    },
+    {
+      "id": "H2_mechanism_ablation_fan_in",
+      "parent_id": "H2_mechanism_ablation_fan_in",
+      "label": "Mechanism-first ablation fan-in",
+      "normalized_weight": 0.23,
+      "structural_signature": "three mechanism roots -> recurrence ablation, formal-state ablation, and MIMO quality/latency branches -> architecture inference",
+      "active_nodes": [
+        "module_exp_trap_recurrence",
+        "module_complex_state_update",
+        "module_mimo_ssm",
+        "result_component_ablation",
+        "result_state_tracking",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency",
+        "method_mamba3"
+      ],
+      "artifact_functions": [
+        "attribute gains to specific components",
+        "join heterogeneous ablations into an architecture claim"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "Component and formal-state ablations remain strong direct mechanism evidence.",
+          "paths": [
+            "$.result_outcome.nodes[2]",
+            "$.result_outcome.nodes[3]",
+            "$.evaluation_validation.events[2]"
+          ]
+        },
+        {
+          "reason": "Realizing all leaves would reproduce the density problem identified in loop 1.",
+          "feedback_ids": [
+            "SEL1",
+            "EXE1"
+          ]
+        }
+      ],
+      "weight_delta": -0.06,
+      "weight_reason": "Retained as the strongest mechanism alternative but downweighted because its natural realization spends the abstract budget on multiple result blocks."
+    },
+    {
+      "id": "H3_deployment_pareto_with_retrieval_branch",
+      "parent_id": "H3_deployment_pareto_with_retrieval_branch",
+      "label": "Deployment Pareto trace with retrieval-risk mitigation",
+      "normalized_weight": 0.15,
+      "structural_signature": "memory-bound decode root -> MIMO quality/latency fork; parallel retrieval-risk root -> hybrid mitigation and cost join",
+      "active_nodes": [
+        "gap_memory_bound_decode",
+        "module_mimo_ssm",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency",
+        "result_end_to_end_latency",
+        "failure_fixed_state_retrieval",
+        "primitive_hybrid_attention_ratio",
+        "compat_hybrid_adds_cost",
+        "setting_state_size_pareto"
+      ],
+      "artifact_functions": [
+        "express a deployment Pareto frontier",
+        "preserve the fixed-state retrieval risk",
+        "scope but not claim the state-size evaluation"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "Quality, kernel latency, end-to-end latency, and retrieval-risk evidence remain directly represented.",
+          "paths": [
+            "$.result_outcome.nodes[1]",
+            "$.result_outcome.nodes[4]",
+            "$.result_outcome.nodes[5]",
+            "$.problem_gap.nodes[4]"
+          ]
+        },
+        {
+          "reason": "The chip identifies a state-size Pareto sweep but supplies no matched-quality state-reduction outcome, so this hypothesis may scope that experiment only.",
+          "paths": [
+            "$.experimental_setting.nodes[1]"
+          ]
+        },
+        {
+          "reason": "Evaluator feedback assigns lower abstract priority to the retrieval qualifier.",
+          "feedback_ids": [
+            "SEL2"
+          ]
+        }
+      ],
+      "weight_delta": -0.04,
+      "weight_reason": "Retained for deployment analysis but downweighted because retrieval and end-to-end details are secondary to the central abstract contribution."
+    },
+    {
+      "id": "H4_implementation_upward_grounding",
+      "parent_id": "H4_implementation_upward_grounding",
+      "label": "Implementation-upward realization trace",
+      "normalized_weight": 0.06,
+      "structural_signature": "four code-anchor roots -> implementation join -> method realization -> test and latency leaves",
+      "active_nodes": [
+        "code_mamba3_module",
+        "code_siso_triton",
+        "code_mimo_tilelang",
+        "code_cute_decode",
+        "impl_forward_anchor",
+        "method_mamba3",
+        "impl_test_anchor",
+        "result_bf16_kernel_latency"
+      ],
+      "artifact_functions": [
+        "ground the method in executable kernels",
+        "connect implementation checks to latency"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "Official code anchors and tests provide direct implementation grounding.",
+          "paths": [
+            "$.implementation.events[0]",
+            "$.implementation.events[1]"
+          ]
+        },
+        {
+          "reason": "The loop-1 feedback identifies result selection and compression, not implementation grounding, as the active repair target.",
+          "feedback_ids": [
+            "REP1",
+            "SEL1",
+            "EXE1"
+          ]
+        }
+      ],
+      "weight_delta": -0.07,
+      "weight_reason": "Retained for posterior diversity but downweighted because implementation detail does not repair the missing headline comparative function."
+    }
+  ],
+  "feedback_dispositions": [
+    {
+      "feedback_id": "REP1",
+      "decision": "accepted",
+      "action": "Added a comparative-gain node grounded in result_mimo_increment and result_lm_1p5b."
+    },
+    {
+      "feedback_id": "REP2",
+      "decision": "not_accepted_due_to_evidence",
+      "action": "No matched-quality state-reduction result node was added.",
+      "reason": "The chip documents a 440M state-size Pareto sweep and its purpose but provides no matched-quality reduction result or value. Adding the requested outcome would be unsupported.",
+      "chip_path_checked": "$.experimental_setting.nodes[1]"
+    },
+    {
+      "feedback_id": "SEL1",
+      "decision": "accepted",
+      "action": "Pruned formal-state and retrieval result leaves from selected realization; retained them in posterior alternatives."
+    },
+    {
+      "feedback_id": "SEL2",
+      "decision": "accepted",
+      "action": "Removed the retrieval qualifier from the selected loop-2 sub-DAG and abstract."
+    },
+    {
+      "feedback_id": "EXE1",
+      "decision": "accepted",
+      "action": "Replaced raw three-block enumeration with one comparative quality claim and one latency comparison."
+    }
+  ],
+  "graph_diff_from_loop_01": {
+    "parent_selected_hypothesis": "H1_branched_quality_efficiency",
+    "child_selected_hypothesis": "H1_comparative_quality_efficiency",
+    "operations": [
+      {
+        "operation": "ADD_NODE",
+        "target": "n13_mimo_incremental_quality",
+        "input": [
+          "n6_mimo",
+          "n7_training_context",
+          "n8_lm_quality"
+        ],
+        "output": "MIMO-over-SISO perplexity and average-accuracy increment plus strongest listed non-Mamba-3 comparison",
+        "evidence_binding": [
+          "$.result_outcome.nodes[0]",
+          "$.result_outcome.nodes[1]"
+        ],
+        "artifact_function": "headline comparative quality contribution"
+      },
+      {
+        "operation": "DELETE_NODE",
+        "target": "n9_state_tracking",
+        "reason": "Retained in H2 but not realized in the selected abstract to reduce numeric density."
+      },
+      {
+        "operation": "DELETE_NODE",
+        "target": "n11_retrieval_boundary",
+        "reason": "Retained in H3 but omitted from selected realization because feedback assigns it lower artifact priority."
+      },
+      {
+        "operation": "UPDATE_NODE",
+        "target": "n8_lm_quality",
+        "before": "report 1.5B perplexity and average accuracy with named baselines",
+        "after": "supply absolute SISO/MIMO values and the strongest listed non-Mamba-3 average to the comparative-gain node"
+      },
+      {
+        "operation": "UPDATE_NODE",
+        "target": "n10_decode_latency",
+        "before": "report BF16 H100 d_state=128 SISO, MIMO, and Mamba-2 latency",
+        "after": "compare BF16 H100 d_state=128 MIMO latency with Mamba-2 as one efficiency anchor"
+      },
+      {
+        "operation": "UPDATE_NODE",
+        "target": "n12_bounded_synthesis",
+        "before": "conclude joint quality and recurrent-efficiency improvement with SISO/MIMO tradeoff and retrieval qualification",
+        "after": "conclude richer dynamics and MIMO can improve quality while preserving efficient recurrent decoding"
+      },
+      {
+        "operation": "REWIRE_EDGES",
+        "deleted": [
+          "n4_exp_trap -> n8_lm_quality",
+          "n5_complex_update -> n9_state_tracking",
+          "n6_mimo -> n8_lm_quality",
+          "n3_mamba3_architecture -> n11_retrieval_boundary",
+          "n8_lm_quality -> n12_bounded_synthesis",
+          "n9_state_tracking -> n12_bounded_synthesis",
+          "n11_retrieval_boundary -> n12_bounded_synthesis"
+        ],
+        "added": [
+          "n4_exp_trap -> n12_bounded_synthesis",
+          "n5_complex_update -> n12_bounded_synthesis",
+          "n6_mimo -> n13_mimo_incremental_quality",
+          "n7_training_context -> n13_mimo_incremental_quality",
+          "n8_lm_quality -> n13_mimo_incremental_quality",
+          "n13_mimo_incremental_quality -> n12_bounded_synthesis"
+        ]
+      }
+    ],
+    "accepted_structural_edits": 6,
+    "rejected_structural_edits": 1,
+    "rejected_edit": "Matched-quality recurrent-state reduction node, rejected for insufficient chip evidence."
+  },
+  "normalization_check": {
+    "weights_sum": 1.0,
+    "retained_count": 4,
+    "all_hypotheses_acyclic": true,
+    "structurally_distinct": true
+  },
+  "selection": {
+    "selected_hypothesis_id": "H1_comparative_quality_efficiency",
+    "selection_basis": "Highest posterior support after the evaluator-authorized comparative-gain repair, with lower realization cost and no unsupported state-size outcome."
+  }
+}

@@ -1,0 +1,883 @@
+{
+  "artifact_kind": "atoken_official_script_manifest",
+  "created_at_utc": "2026-07-23T18:53:02Z",
+  "license_manifest": {
+    "code_license_exists": true,
+    "code_license_head": "Copyright (C) 2025 Apple Inc. All Rights Reserved.\n\nIMPORTANT:  This Apple software is supplied to you by Apple\nInc. (\"Apple\") in consideration of your agreement to the following",
+    "model_license_exists": true,
+    "model_license_head": "Disclaimer: IMPORTANT: This Apple Machine Learning Research Model is specifically developed and released by Apple Inc. (\"Apple\") for the sole purpose of scientific research of artificial intelligence and machine-learning technology. \u201cApple Machine Learning Research Model\u201d means the model, including but not limited to algorithms, formulas, trained model weights, parameters, configurations, checkpoints, and any related materials (including documentation).\n\nThis Apple Machine Learning Research Model is provided to You by Apple in consideration of your agreement to the following terms, and your use, modification, creation of Model Derivatives, and or redistribution of the Apple Machine Learning Research Model constitutes acceptance of this Agreement. If You do not agree with these terms, please do not use, modify, create Model Derivatives of, or distribute this Apple Machine Learning Research Model or Model Derivatives.\n\n1.\tLicense Scope: In consideration of your agreement to abide by the following terms, and subject to these terms, Apple hereby grants you a personal, non- exclusive, worldwide, non-transferable, royalty-free, revocable, and limited license, to use, copy, modify, distribute, and create Model Derivatives (defined below) of the Apple Machine Learning Research Model exclusively for Research Purposes. You agree that any Model Derivatives You may create or that may be created for You will be limited to Research Purposes as well. \u201cResearch Purposes\u201d means non-commercial scientific research and academic development activities, such as experimentation, analysis, testing conducted by You with the sole intent to advance scientific knowledge and research. \u201cResearch Purposes\u201d does not include any commercial exploitation, product development or use in any commercial product or service.\n",
+    "model_license_mentions_research": true
+  },
+  "lightweight_repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION",
+  "lightweight_support_files": [
+    {
+      "exists": true,
+      "parsed": {
+        "declares_lighter_single_gpu_defaults": false,
+        "line_count": 45,
+        "mentions_paper_scale": true
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 3022
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [
+          "--batch_size",
+          "--data_dir",
+          "--depth_dec",
+          "--depth_enc",
+          "--device",
+          "--dim",
+          "--ema",
+          "--enc_lr_mult",
+          "--epochs",
+          "--heads",
+          "--img_size",
+          "--lr",
+          "--lr_min",
+          "--patch",
+          "--steps",
+          "--use_fsq",
+          "--w_gram",
+          "--w_l1",
+          "--w_lpips",
+          "--warmup"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "argparse",
+          "atoken.losses",
+          "atoken.schedule",
+          "atoken.utils",
+          "pathlib",
+          "torch",
+          "torch.nn",
+          "torch.optim",
+          "torch.utils.data"
+        ],
+        "line_count": 152,
+        "metric_mentions": [
+          "lpips"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/train_tf.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/train_tf.py",
+      "relative_path": "atoken/train_tf.py",
+      "size_bytes": 5526
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [
+          "--batch_size",
+          "--captions",
+          "--clip_len",
+          "--depth_dec",
+          "--depth_enc",
+          "--device",
+          "--dim",
+          "--distill",
+          "--ema",
+          "--enc_lr_mult",
+          "--epochs",
+          "--eval_interval",
+          "--frame_stride",
+          "--heads",
+          "--img_dir",
+          "--img_size",
+          "--include_voxels",
+          "--lr",
+          "--lr_min",
+          "--paper_preset",
+          "--patch",
+          "--patch_3d_h",
+          "--patch_3d_t",
+          "--patch_3d_w",
+          "--ratio_img_rec",
+          "--ratio_img_und",
+          "--ratio_video_rec",
+          "--ratio_video_und",
+          "--ratio_voxel_rec",
+          "--ratio_voxel_und",
+          "--stage",
+          "--steps",
+          "--tau",
+          "--teacher_model",
+          "--teacher_pretrained",
+          "--use_fsq",
+          "--vid_size",
+          "--video_captions",
+          "--video_dir",
+          "--voxel_dir",
+          "--voxel_size",
+          "--w_gram",
+          "--w_l1",
+          "--w_lpips",
+          "--w_sem",
+          "--warmup"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "argparse",
+          "atoken.data",
+          "atoken.distill",
+          "atoken.losses",
+          "atoken.schedule",
+          "atoken.utils",
+          "pathlib",
+          "torch",
+          "torch.nn",
+          "torch.optim",
+          "torch.utils.data",
+          "typing"
+        ],
+        "line_count": 309,
+        "metric_mentions": [
+          "lpips",
+          "psnr"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/train_curriculum.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/train_curriculum.py",
+      "relative_path": "atoken/train_curriculum.py",
+      "size_bytes": 13880
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "torch",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 34,
+        "metric_mentions": [
+          "accuracy",
+          "inception",
+          "psnr",
+          "rfid",
+          "rfvd"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/eval.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/eval.py",
+      "relative_path": "atoken/eval.py",
+      "size_bytes": 1134
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "atoken.models.patch",
+          "atoken.models.transformer",
+          "atoken.ops",
+          "atoken.quantizer.fsq",
+          "dataclasses",
+          "torch",
+          "torch.nn",
+          "typing"
+        ],
+        "line_count": 125,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/models/atoken_tf.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/models/atoken_tf.py",
+      "relative_path": "atoken/models/atoken_tf.py",
+      "size_bytes": 4414
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "atoken.models.patch3d",
+          "atoken.models.transformer",
+          "atoken.ops",
+          "atoken.quantizer.fsq",
+          "dataclasses",
+          "torch",
+          "torch.nn",
+          "typing"
+        ],
+        "line_count": 82,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/models/atoken_tf3d.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/models/atoken_tf3d.py",
+      "relative_path": "atoken/models/atoken_tf3d.py",
+      "size_bytes": 2694
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "dataclasses",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 111,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/quantizer/fsq.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/quantizer/fsq.py",
+      "relative_path": "atoken/quantizer/fsq.py",
+      "size_bytes": 4067
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 65,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/losses/gram.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/losses/gram.py",
+      "relative_path": "atoken/losses/gram.py",
+      "size_bytes": 2022
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "torch",
+          "torch.nn"
+        ],
+        "line_count": 24,
+        "metric_mentions": [
+          "lpips"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/losses/lpips_wrap.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/losses/lpips_wrap.py",
+      "relative_path": "atoken/losses/lpips_wrap.py",
+      "size_bytes": 711
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "torch",
+          "torch.nn",
+          "typing"
+        ],
+        "line_count": 41,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/losses/clip_distill.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/atoken/losses/clip_distill.py",
+      "relative_path": "atoken/losses/clip_distill.py",
+      "size_bytes": 1524
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "torch"
+        ],
+        "line_count": 35,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/scripts/demo_tf.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/scripts/demo_tf.py",
+      "relative_path": "scripts/demo_tf.py",
+      "size_bytes": 862
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "torch"
+        ],
+        "line_count": 46,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/scripts/demo_random.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION/scripts/demo_random.py",
+      "relative_path": "scripts/demo_random.py",
+      "size_bytes": 1113
+    }
+  ],
+  "official_files": [
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_urls": [
+          "https://ml-site.cdn-apple.com/models/atoken/3d_decode_gs.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s1.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s2.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-soc.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-sod.pt"
+        ],
+        "exists": true,
+        "license_summary": "Apple Sample Code License",
+        "line_count": 131,
+        "mentions_checkpoint_script": true,
+        "mentions_examples_not_benchmarks": true,
+        "mentions_flash_attn": true,
+        "mentions_gaussian_splatting": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/README.md",
+        "urls": [
+          "https://arxiv.org/abs/2509.14476",
+          "https://github.com/apple/ml-AToken.git",
+          "https://github.com/autonomousvision/mip-splatting",
+          "https://github.com/autonomousvision/mip-splatting.git",
+          "https://ml-site.cdn-apple.com/models/atoken/3d_decode_gs.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s1.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-soc-s2.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-soc.pt",
+          "https://ml-site.cdn-apple.com/models/atoken/atoken-sod.pt"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 4352
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "creates_checkpoints": true,
+        "exists": true,
+        "line_count": 32,
+        "mentions_trellis_or_gs": false,
+        "mutates_repo": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/download_checkpoints.sh",
+        "urls": [
+          "https://ml-site.cdn-apple.com/models/atoken"
+        ],
+        "wget_outputs": [
+          "checkpoints/3d_decode_gs.pt",
+          "checkpoints/atoken-soc-s1.pt",
+          "checkpoints/atoken-soc-s2.pt",
+          "checkpoints/atoken-soc.pt",
+          "checkpoints/atoken-sod.pt"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/download_checkpoints.sh",
+      "relative_path": "download_checkpoints.sh",
+      "size_bytes": 937
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "creates_checkpoints": false,
+        "exists": true,
+        "line_count": 75,
+        "mentions_trellis_or_gs": true,
+        "mutates_repo": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/install_gs.sh",
+        "urls": [
+          "https://github.com/microsoft/TRELLIS.git"
+        ],
+        "wget_outputs": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/install_gs.sh",
+      "relative_path": "install_gs.sh",
+      "size_bytes": 5081
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "dependencies": [
+          "atoken-inference",
+          "0.0.1",
+          "Inference Code for AToken",
+          "README.md",
+          ">=3.9,<3.12",
+          "torch>=2.0.0",
+          "torchvision>=0.15.0",
+          "numpy",
+          "einops>=0.6.0",
+          "safetensors>=0.3.0",
+          "pillow>=9.0.0",
+          "pyyaml>=6.0",
+          "transformers>=4.30.0",
+          "diffusers>=0.21.0",
+          "scipy",
+          "decord",
+          "open_clip_torch",
+          "imageio[ffmpeg]>=2.25.0",
+          "imageio-ffmpeg>=0.4.0",
+          "opencv-python>=4.7.0",
+          "decord>=0.6.0",
+          "absl-py>=2.0.0",
+          "webdataset>=0.2.0",
+          "ftfy>=6.0.0",
+          ".[full]",
+          "atoken-inference[full]",
+          "ninja>=1.11.0",
+          "packaging>=21.0",
+          "pytest>=7.0.0",
+          "pytest-cov>=4.0.0",
+          "ruff>=0.1.0",
+          "black>=23.0.0",
+          "setuptools>=61.0",
+          "wheel",
+          "numpy",
+          "setuptools.build_meta",
+          ".",
+          "atoken_inference*",
+          "py39",
+          "__init__.py",
+          "F401",
+          "E",
+          "F",
+          "W",
+          "I",
+          "E501",
+          "py39",
+          "py310",
+          "py311",
+          "third_party",
+          "    ",
+          "<?(http|https|gs|s3)://\\\\S+>?",
+          "yes",
+          "yes",
+          "pylint.basic",
+          "i",
+          "j",
+          "k",
+          "x",
+          "y",
+          "z",
+          "f",
+          "e",
+          "v",
+          "s",
+          "t",
+          "n",
+          "h",
+          "w",
+          "r",
+          "d",
+          "p",
+          "T",
+          "X",
+          "Y",
+          "Z",
+          "N",
+          "C",
+          "arguments-differ",
+          "too-many-locals",
+          "too-few-public-methods",
+          "too-many-instance-attributes",
+          "missing-module-docstring",
+          "missing-function-docstring",
+          "missing-class-docstring",
+          "abstract-method",
+          "too-many-arguments",
+          "too-many-statements",
+          "import-outside-toplevel",
+          "invalid-name",
+          "fixme",
+          "too-many-branches",
+          "duplicate-code",
+          "tests",
+          "test_*.py",
+          "Test*",
+          "test_*",
+          "-v --strict-markers",
+          "slow: marks tests as slow",
+          "gpu: marks tests that require GPU",
+          "video: marks tests that process video",
+          "WARNING",
+          "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)",
+          "%Y-%m-%d %H:%M:%S"
+        ],
+        "exists": true,
+        "line_count": 129,
+        "mentions_flash_optional": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/pyproject.toml",
+        "requires_python": [
+          ">=3.9,<3.12"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/pyproject.toml",
+      "relative_path": "pyproject.toml",
+      "size_bytes": 2905
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": true,
+        "checkpoint_literals": [
+          "checkpoints/atoken-soc.pt"
+        ],
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "imports": [
+          "PIL",
+          "atoken_inference.atoken_wrapper",
+          "atoken_inference.model.basic",
+          "atoken_inference.model.dataloader",
+          "atoken_inference.model.utils",
+          "imageio",
+          "os",
+          "torch",
+          "urllib.request"
+        ],
+        "line_count": 135,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/test_atoken.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/test_atoken.py",
+      "relative_path": "test_atoken.py",
+      "size_bytes": 4461
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/examples.ipynb",
+      "relative_path": "examples.ipynb",
+      "size_bytes": 9288723
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/LICENSE",
+      "relative_path": "LICENSE",
+      "size_bytes": 2317
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/MODEL-LICENSE",
+      "relative_path": "MODEL-LICENSE",
+      "size_bytes": 5710
+    },
+    {
+      "config_head": "---\nmodel:\n    class_name: models.pretrained.autoencoder_kl.AutoencoderKLTrain\n    model_cfg:\n        eval_imagenet_zeroshot: True\n        disentangle_itc_rec: &disentangle_itc_rec True\n        eval_fid: True\n        arch_cfg:\n            patch_size: [4, 16, 16]\n            in_channels: 3072\n            out_channels: 3072\n            latent_channels: &latent_channels 48\n            encoder_model_channels: 1152\n            encoder_num_blocks: 27\n            encoder_num_heads: 16\n            encoder_mlp_channels: 4304\n            encoder_attn_mode: \"full\"\n            encoder_pe_mode: \"joint\"\n            encoder_qk_rms_norm: False\n            encoder_use_bias: True\n            encoder_use_rms_norm: False\n            decoder_model_channels: 1152\n            decoder_num_blocks: 27\n            decoder_num_heads: 16\n            decoder_mlp_channels: 4304\n            decoder_attn_mode: \"full\"\n            decoder_pe_mode: \"joint\"\n            decoder_qk_rms_norm: True\n            decoder_use_bias: False\n            decoder_use_rms_norm: True\n            use_decoder: True",
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/configs/atoken-soc.yaml",
+      "relative_path": "configs/atoken-soc.yaml",
+      "size_bytes": 1078
+    },
+    {
+      "config_head": "---\nmodel:\n    class_name: models.pretrained.autoencoder_kl.AutoencoderKLTrain\n    model_cfg:\n        eval_imagenet_zeroshot: True\n        disentangle_itc_rec: &disentangle_itc_rec True\n        eval_fid: True\n        arch_cfg:\n            patch_size: [4, 16, 16]\n            in_channels: 3072\n            out_channels: 3072\n            latent_channels: &latent_channels 48\n            encoder_model_channels: 1152\n            encoder_num_blocks: 27\n            encoder_num_heads: 16\n            encoder_mlp_channels: 4304\n            encoder_attn_mode: \"full\"\n            encoder_pe_mode: \"joint\"\n            encoder_qk_rms_norm: False\n            encoder_use_bias: True\n            encoder_use_rms_norm: False\n            decoder_model_channels: 1152\n            decoder_num_blocks: 27\n            decoder_num_heads: 16\n            decoder_mlp_channels: 4304\n            decoder_attn_mode: \"full\"\n            decoder_pe_mode: \"joint\"\n            decoder_qk_rms_norm: True\n            decoder_use_bias: False\n            decoder_use_rms_norm: True\n            use_decoder: True\n            use_quantizer: True\n            quantizer_type: \"fsq\"\n            quantizer_codebook_size: 4096\n            quantizer_feature_dim: 48\n            quantizer_num_codebooks: 8\n            quantizer_chunk_size: 1",
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/configs/atoken-sod.yaml",
+      "relative_path": "configs/atoken-sod.yaml",
+      "size_bytes": 1299
+    },
+    {
+      "config_head": "---\nmodel:\n    class_name: models.pretrained.autoencoder_kl.AutoencoderKLTrain\n    model_cfg:\n        eval_imagenet_zeroshot: True\n        disentangle_itc_rec: &disentangle_itc_rec True\n        eval_fid: True\n        arch_cfg:\n            patch_size: [4, 16, 16]\n            in_channels: 3072\n            out_channels: 3072\n            latent_channels: &latent_channels 32\n            encoder_model_channels: 1152\n            encoder_num_blocks: 27\n            encoder_num_heads: 16\n            encoder_mlp_channels: 4304\n            encoder_attn_mode: \"full\"\n            encoder_pe_mode: \"joint\"\n            encoder_qk_rms_norm: False\n            encoder_use_bias: True\n            encoder_use_rms_norm: False\n            decoder_model_channels: 1152\n            decoder_num_blocks: 27\n            decoder_num_heads: 16\n            decoder_mlp_channels: 4304\n            decoder_attn_mode: \"full\"\n            decoder_pe_mode: \"joint\"\n            decoder_qk_rms_norm: True\n            decoder_use_bias: False\n            decoder_use_rms_norm: True\n            use_decoder: True",
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/configs/atoken-soc-s1.yaml",
+      "relative_path": "configs/atoken-soc-s1.yaml",
+      "size_bytes": 1078
+    },
+    {
+      "config_head": "---\nmodel:\n    class_name: models.pretrained.decoder_gs.SLatGaussianDecoderTrain\n    resolution: 64\n    model_channels: 768\n    latent_channels: 768\n    num_blocks: 12\n    num_heads: 12\n    mlp_channels: 3072\n    attn_mode: \"swin\"\n    window_size: 8\n    representation_config:\n        lr:\n            _xyz: 1.0\n            _features_dc: 1.0\n            _opacity: 1.0\n            _scaling: 1.0\n            _rotation: 0.1\n        perturb_offset: True\n        voxel_size: 1.5\n        num_gaussians: 32\n        2d_filter_kernel_size: 0.1\n        3d_filter_kernel_size: 9.0e-4\n        scaling_bias: 4.0e-3\n        opacity_bias: 0.1\n        scaling_activation: \"softplus\"\n    # pretrained: /mnt/decode_gs_ema.pt",
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/configs/3d_decode_gs.yaml",
+      "relative_path": "configs/3d_decode_gs.yaml",
+      "size_bytes": 706
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": true,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "imports": [
+          ".model.autoencoder_kl",
+          ".model.basic",
+          ".model.decoder_gs",
+          ".model.utils",
+          "dataclasses",
+          "safetensors.torch",
+          "torch",
+          "torch.nn",
+          "typing",
+          "yaml"
+        ],
+        "line_count": 330,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/atoken_wrapper.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/atoken_wrapper.py",
+      "relative_path": "atoken_inference/atoken_wrapper.py",
+      "size_bytes": 11235
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          ".basic",
+          ".finite_scaler_quantize",
+          ".linear",
+          ".lookup_free_quantize",
+          ".utils",
+          "dataclasses",
+          "diffusers.configuration_utils",
+          "diffusers.loaders.single_file_model",
+          "diffusers.models.autoencoders.vae",
+          "diffusers.models.modeling_outputs",
+          "diffusers.models.modeling_utils",
+          "diffusers.utils.accelerate_utils",
+          "einops",
+          "functools",
+          "numpy",
+          "re",
+          "torch",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 390,
+        "metric_mentions": [
+          "precision"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/autoencoder_kl.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/autoencoder_kl.py",
+      "relative_path": "atoken_inference/model/autoencoder_kl.py",
+      "size_bytes": 15604
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          ".base_module",
+          ".basic",
+          ".gs.random_utils",
+          ".gs.renderers.gaussian_render",
+          ".gs.representations",
+          ".linear",
+          ".utils",
+          "json",
+          "safetensors.torch",
+          "torch",
+          "torch.nn.functional",
+          "torchmetrics.image",
+          "typing"
+        ],
+        "line_count": 436,
+        "metric_mentions": [
+          "lpips",
+          "psnr",
+          "ssim"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/decoder_gs.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/decoder_gs.py",
+      "relative_path": "atoken_inference/model/decoder_gs.py",
+      "size_bytes": 17407
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "einops",
+          "math",
+          "torch",
+          "torch.amp",
+          "torch.nn",
+          "typing"
+        ],
+        "line_count": 254,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/finite_scaler_quantize.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/finite_scaler_quantize.py",
+      "relative_path": "atoken_inference/model/finite_scaler_quantize.py",
+      "size_bytes": 7914
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          ".basic",
+          "collections",
+          "einops",
+          "math",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional"
+        ],
+        "line_count": 469,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/lookup_free_quantize.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/lookup_free_quantize.py",
+      "relative_path": "atoken_inference/model/lookup_free_quantize.py",
+      "size_bytes": 17241
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          ".data_utils",
+          "PIL",
+          "einops",
+          "ftfy",
+          "functools",
+          "html",
+          "io",
+          "json",
+          "numpy",
+          "random",
+          "regex",
+          "string",
+          "torch",
+          "torch.nn.functional",
+          "transformers",
+          "typing"
+        ],
+        "line_count": 1046,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/sparse_preprocessors.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/model/sparse_preprocessors.py",
+      "relative_path": "atoken_inference/model/sparse_preprocessors.py",
+      "size_bytes": 35295
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "bfloat16_used": false,
+        "checkpoint_literals": [],
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "imports": [
+          "PIL",
+          "cv2",
+          "einops",
+          "json",
+          "numpy",
+          "torch",
+          "typing",
+          "utils3d"
+        ],
+        "line_count": 575,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/scripts/pack_multiview_feat.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken/atoken_inference/scripts/pack_multiview_feat.py",
+      "relative_path": "atoken_inference/scripts/pack_multiview_feat.py",
+      "size_bytes": 20371
+    }
+  ],
+  "official_repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken",
+  "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+  "paper_shaped_execution_matrix": {
+    "benchmarks": [
+      "image reconstruction table with PSNR, SSIM, LPIPS, rFID",
+      "video reconstruction table with PSNR, SSIM, LPIPS, rFVD",
+      "zero-shot ImageNet or equivalent accuracy table",
+      "image-text retrieval table with R@1 and matching baselines",
+      "video-text retrieval table with R@1 and matching baselines",
+      "MLLM image understanding replacement table",
+      "MLLM video understanding replacement table",
+      "text-to-image generation table with gFID, IS, precision",
+      "text-to-video generation table with rFVD/rFID-style generation metrics",
+      "image-to-3D synthesis table and qualitative outputs",
+      "stage/capacity scaling ablation including small-model degradation",
+      "raw reconstructed images/videos/3D outputs, metric JSON, timing and GPU traces"
+    ],
+    "official_inference": [
+      "download all five Apple CDN checkpoints into ml-atoken/checkpoints",
+      "load ATokenWrapper(config, checkpoint).cuda().to(torch.bfloat16)",
+      "run image, video, and 3D inference paths with task_types and GS decoder when required"
+    ],
+    "training_scale": [
+      "Stage 1 requires the DAG-recorded 64 H100 class run",
+      "Stages 2-3 require the DAG-recorded 256 H100 class run",
+      "single-GPU lightweight code is support only"
+    ],
+    "verifier_comparison": [
+      "compare reconstructed media, metrics JSON, GPU traces, and benchmark tables to paper evidence channels",
+      "accept only close paper-shaped result surfaces, not demo success"
+    ]
+  },
+  "support_only_findings": [
+    "test_atoken.py is an example reconstruction path, not the full paper benchmark grid",
+    "examples.ipynb is support only unless backed by all required checkpoints, datasets, and metrics",
+    "the lightweight repo declares lighter single-GPU defaults and cannot converge the paper",
+    "download URL reachability is not local checkpoint materialization"
+  ]
+}

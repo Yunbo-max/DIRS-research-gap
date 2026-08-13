@@ -1,0 +1,34 @@
+[
+  {
+    "id": "update.require_full_generation_timing_pipeline",
+    "reason": "GPU sampler-only proxy did not exactly match the paper Table 3 timing shape discussed in the efficiency paragraph.",
+    "success_criteria": [
+      "run Mistral-7B generations on GSM8K/GPQA or paper-equivalent prompts",
+      "measure average sampling time per token for epsilon, eta, min-p, mirostat, top-p, and p-less",
+      "compare p-less seconds/token against paper Table 3 anchors"
+    ],
+    "verifier_detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation"
+  },
+  {
+    "id": "update.require_cpu_ram_profile_figures16_17_table15",
+    "reason": "Verifier cannot compare the simulation to the paper's CPU/RAM figures and appendix Table 15 without CPU-time and memory instrumentation.",
+    "success_criteria": [
+      "instrument top-p, min-p, and p-less CPU processing time during generation",
+      "record RAM usage with the same binning/aggregation used for Figures 16 and 17 where possible",
+      "emit a Table 15-style CPU time and RAM summary",
+      "compare p-less CPU time and RAM against top-p and min-p paper anchors"
+    ],
+    "verifier_detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy."
+  },
+  {
+    "id": "update.require_exact_table_reproduction_artifacts",
+    "reason": "Verifier cannot accept exact numeric paper-table, paragraph, or figure reproduction from proxy measurements alone.",
+    "success_criteria": [
+      "obtain or build the full benchmark harness",
+      "run Llama-2-7B, Mistral-7B, and Llama3-70B settings where feasible",
+      "recompute Table 1 AUC, Table 2 Writing Prompts win-rate, Table 3 sampling-time tables, Figure 2 curves, and Figures 16/17 CPU/RAM profiles",
+      "store raw generations, scoring scripts, seeds, and hardware logs"
+    ],
+    "verifier_detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked."
+  }
+]

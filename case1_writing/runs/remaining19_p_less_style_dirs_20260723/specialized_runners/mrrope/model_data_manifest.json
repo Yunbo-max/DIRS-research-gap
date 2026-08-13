@@ -1,0 +1,1260 @@
+{
+  "artifact_kind": "mrrope_model_data_manifest",
+  "created_at_utc": "2026-07-23T18:53:19Z",
+  "hf_datasets": [
+    {
+      "file_count": 14,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2923
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 3356
+        },
+        {
+          "path": "code_debug.jsonl",
+          "size_bytes": 199894374
+        },
+        {
+          "path": "code_run.jsonl",
+          "size_bytes": 83354486
+        },
+        {
+          "path": "kv_retrieval.jsonl",
+          "size_bytes": 105107890
+        },
+        {
+          "path": "longbook_choice_eng.jsonl",
+          "size_bytes": 185904631
+        },
+        {
+          "path": "longbook_qa_chn.jsonl",
+          "size_bytes": 862848430
+        },
+        {
+          "path": "longbook_qa_eng.jsonl",
+          "size_bytes": 298297185
+        },
+        {
+          "path": "longbook_sum_eng.jsonl",
+          "size_bytes": 78601868
+        },
+        {
+          "path": "longdialogue_qa_eng.jsonl",
+          "size_bytes": 83629958
+        },
+        {
+          "path": "math_calc.jsonl",
+          "size_bytes": 6310562
+        },
+        {
+          "path": "math_find.jsonl",
+          "size_bytes": 41316181
+        },
+        {
+          "path": "number_string.jsonl",
+          "size_bytes": 277299890
+        },
+        {
+          "path": "passkey.jsonl",
+          "size_bytes": 277273340
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2923
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 3356
+        },
+        {
+          "path": "code_debug.jsonl",
+          "size_bytes": 199894374
+        },
+        {
+          "path": "code_run.jsonl",
+          "size_bytes": 83354486
+        },
+        {
+          "path": "kv_retrieval.jsonl",
+          "size_bytes": 105107890
+        },
+        {
+          "path": "longbook_choice_eng.jsonl",
+          "size_bytes": 185904631
+        },
+        {
+          "path": "longbook_qa_chn.jsonl",
+          "size_bytes": 862848430
+        },
+        {
+          "path": "longbook_qa_eng.jsonl",
+          "size_bytes": 298297185
+        },
+        {
+          "path": "longbook_sum_eng.jsonl",
+          "size_bytes": 78601868
+        },
+        {
+          "path": "longdialogue_qa_eng.jsonl",
+          "size_bytes": 83629958
+        },
+        {
+          "path": "math_calc.jsonl",
+          "size_bytes": 6310562
+        },
+        {
+          "path": "math_find.jsonl",
+          "size_bytes": 41316181
+        },
+        {
+          "path": "number_string.jsonl",
+          "size_bytes": 277299890
+        },
+        {
+          "path": "passkey.jsonl",
+          "size_bytes": 277273340
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "xinrongzhang2022/InfiniteBench",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 2499845074
+    },
+    {
+      "file_count": 15,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1789
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 2669346
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 1413085
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 1917086
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 2263110
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 1933576
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 1951823
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 1905906
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 382920
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 1841642
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 1873574
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 1516696
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 4285552
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 475024
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1789
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 2669346
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 1413085
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 1917086
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 2263110
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 1933576
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 1951823
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 1905906
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 382920
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 1841642
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 1873574
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 1516696
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 4285552
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 475024
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "SaylorTwift/RULER-4096-llama-3.1-tokenizer-chat-template",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 24433590
+    },
+    {
+      "file_count": 15,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1802
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 6204076
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 2741656
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 6123470
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 4760906
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 4717213
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 6168797
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 6114364
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 784459
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 6913590
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 6053251
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 5704659
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 9811538
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 868178
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1802
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 6204076
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 2741656
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 6123470
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 4760906
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 4717213
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 6168797
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 6114364
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 784459
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 6913590
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 6053251
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 5704659
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 9811538
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 868178
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "SaylorTwift/RULER-8192-llama-3.1-tokenizer-chat-template",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 66970420
+    },
+    {
+      "file_count": 15,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1804
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 13664350
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 5246821
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 21408373
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 10027395
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 10284635
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 21438968
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 21396096
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 1527989
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 21344207
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 21374581
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 18934337
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 20765900
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 1652596
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1804
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 13664350
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 5246821
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 21408373
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 10027395
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 10284635
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 21438968
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 21396096
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 1527989
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 21344207
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 21374581
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 18934337
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 20765900
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 1652596
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "SaylorTwift/RULER-16384-llama-3.1-tokenizer-chat-template",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 189070513
+    },
+    {
+      "file_count": 15,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1804
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 29325597
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 10932670
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 43917034
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 20143785
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 20488216
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 43956252
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 43910629
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 3058937
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 43846423
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 43878816
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 46399692
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 41177616
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 3162226
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1804
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 29325597
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 10932670
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 43917034
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 20143785
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 20488216
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 43956252
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 43910629
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 3058937
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 43846423
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 43878816
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 46399692
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 41177616
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 3162226
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "SaylorTwift/RULER-32768-llama-3.1-tokenizer-chat-template",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 394202158
+    },
+    {
+      "file_count": 15,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1815
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 60622277
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 21746854
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 89547802
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 40329068
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 40821057
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 89591451
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 89543642
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 5985817
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 89469326
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 89509659
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 95076610
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 86958489
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 6111244
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1815
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 60622277
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 21746854
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 89547802
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 40329068
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 40821057
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 89591451
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 89543642
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 5985817
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 89469326
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 89509659
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 95076610
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 86958489
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 6111244
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "SaylorTwift/RULER-65536-llama-3.1-tokenizer-chat-template",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 805317572
+    },
+    {
+      "file_count": 15,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1819
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 125038588
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 41747497
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 178831305
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 80858974
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 83326563
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 178860087
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 178818927
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 11940953
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 178742593
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 178773569
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 193014345
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 175162037
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 12025512
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2461
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 1819
+        },
+        {
+          "path": "data/cwe-00000-of-00001.parquet",
+          "size_bytes": 125038588
+        },
+        {
+          "path": "data/fwe-00000-of-00001.parquet",
+          "size_bytes": 41747497
+        },
+        {
+          "path": "data/niah_multikey_1-00000-of-00001.parquet",
+          "size_bytes": 178831305
+        },
+        {
+          "path": "data/niah_multikey_2-00000-of-00001.parquet",
+          "size_bytes": 80858974
+        },
+        {
+          "path": "data/niah_multikey_3-00000-of-00001.parquet",
+          "size_bytes": 83326563
+        },
+        {
+          "path": "data/niah_multiquery-00000-of-00001.parquet",
+          "size_bytes": 178860087
+        },
+        {
+          "path": "data/niah_multivalue-00000-of-00001.parquet",
+          "size_bytes": 178818927
+        },
+        {
+          "path": "data/niah_single_1-00000-of-00001.parquet",
+          "size_bytes": 11940953
+        },
+        {
+          "path": "data/niah_single_2-00000-of-00001.parquet",
+          "size_bytes": 178742593
+        },
+        {
+          "path": "data/niah_single_3-00000-of-00001.parquet",
+          "size_bytes": 178773569
+        },
+        {
+          "path": "data/qa_1-00000-of-00001.parquet",
+          "size_bytes": 193014345
+        },
+        {
+          "path": "data/qa_2-00000-of-00001.parquet",
+          "size_bytes": 175162037
+        },
+        {
+          "path": "data/vt-00000-of-00001.parquet",
+          "size_bytes": 12025512
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "SaylorTwift/RULER-131072-llama-3.1-tokenizer-chat-template",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 1617145230
+    }
+  ],
+  "hf_models": [
+    {
+      "file_count": 17,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "LICENSE",
+          "size_bytes": 7627
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 44044
+        },
+        {
+          "path": "USE_POLICY.md",
+          "size_bytes": 4691
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 855
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 184
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4976698672
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4999802720
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4915916176
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 1168138808
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 23950
+        },
+        {
+          "path": "original/consolidated.00.pth",
+          "size_bytes": 16060617592
+        },
+        {
+          "path": "original/params.json",
+          "size_bytes": 199
+        },
+        {
+          "path": "original/tokenizer.model",
+          "size_bytes": 2183982
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 296
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 9085657
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 55351
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "LICENSE",
+          "size_bytes": 7627
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 44044
+        },
+        {
+          "path": "USE_POLICY.md",
+          "size_bytes": 4691
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 855
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 184
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4976698672
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4999802720
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4915916176
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 1168138808
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 23950
+        },
+        {
+          "path": "original/consolidated.00.pth",
+          "size_bytes": 16060617592
+        },
+        {
+          "path": "original/params.json",
+          "size_bytes": 199
+        },
+        {
+          "path": "original/tokenizer.model",
+          "size_bytes": 2183982
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 296
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 9085657
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 55351
+        }
+      ],
+      "gated": "manual",
+      "private": false,
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "repo_type": "model",
+      "status": "available",
+      "total_size_bytes": 32132582323
+    },
+    {
+      "file_count": 12,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "LICENSE",
+          "size_bytes": 7388
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 4930
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 661
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 242
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671839
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size_bytes": 3968658944
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size_bytes": 2203268048
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 35581
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7031645
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 7305
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "LICENSE",
+          "size_bytes": 7388
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 4930
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 661
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 242
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671839
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size_bytes": 3968658944
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size_bytes": 2203268048
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 35581
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7031645
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 7305
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "gated": false,
+      "private": false,
+      "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+      "repo_type": "model",
+      "status": "available",
+      "total_size_bytes": 6183464935
+    }
+  ],
+  "hf_token_available": true,
+  "local_required_datasets": [
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/pp-tokenized-llama3",
+      "relative_path": "testset/pp-tokenized-llama3",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/pp-tokenized-qwen2.5",
+      "relative_path": "testset/pp-tokenized-qwen2.5",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/infity",
+      "relative_path": "testset/infity",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/longbenchv2",
+      "relative_path": "testset/longbenchv2",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/PaulGrahamEssays",
+      "relative_path": "testset/PaulGrahamEssays",
+      "size_bytes": null
+    }
+  ],
+  "local_required_models": [
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/models/llama3.1-8b-ins",
+      "relative_path": "models/llama3.1-8b-ins",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/models/qwen2.5-3b-ins",
+      "relative_path": "models/qwen2.5-3b-ins",
+      "size_bytes": null
+    }
+  ],
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "score_outputs_expected": [
+    "output/mrrope-llama3.csv",
+    "output/yarn-llama3.csv",
+    "output/2longbench-llama8b-radix.csv",
+    "output/2longbench-llama8b-yarn.csv",
+    "log/ruler_yarn.jsonl",
+    "results_infity/llama3.1-8b-ins/*.jsonl",
+    "log/<model>.png for NIAH visualization"
+  ]
+}

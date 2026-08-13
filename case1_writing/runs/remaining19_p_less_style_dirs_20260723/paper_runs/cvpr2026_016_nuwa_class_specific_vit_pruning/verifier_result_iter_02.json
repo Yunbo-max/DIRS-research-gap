@@ -1,0 +1,173 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "class_agnostic_pruning_limitation",
+        "class_detrimental_weights",
+        "class_specific_calibration_without_purification",
+        "class_specific_vit_compression",
+        "edge_vit_derivation",
+        "excessive_pruning_degradation",
+        "hardware_specific_quantization_caveat",
+        "multi_variant_derivation_cost",
+        "training_dependent_pruning_cost_explosion"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "class_specific_vit_compression",
+        "edge_vit_derivation",
+        "class_agnostic_pruning_limitation",
+        "multi_variant_derivation_cost"
+      ],
+      "score": 0.75,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "head_focus",
+        "mha_svd_pruning",
+        "mlp_closed_form_pruning",
+        "nuwa",
+        "optimization_based_fast_pruning",
+        "self_knowledge_purification"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "NuWa",
+        "Self_Knowledge_Purification",
+        "Optimization_based_Fast_Pruning",
+        "MHA_SVD_pruning",
+        "MLP_closed_form_pruning",
+        "head_focus"
+      ],
+      "score": 0.5,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "ablation_study",
+        "aws_cost",
+        "class_specific_accuracy_pruning_sweep",
+        "class_specific_imagenet_subtasks",
+        "component_ablation",
+        "derivation_cost_simulation",
+        "detection_segmentation_transfer",
+        "edge_runtime_table",
+        "gflops",
+        "gpu_hours",
+        "large_deployment_cost_simulation",
+        "latency_ms",
+        "map",
+        "memory_gb",
+        "parameters",
+        "pruning_rate",
+        "real_device_runtime_profiling",
+        "throughput_images_per_second",
+        "top1_accuracy",
+        "training_dependent_pruning_comparison",
+        "training_free_pruning_comparison"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "class_specific_ImageNet_subtasks",
+        "training_free_pruning_comparison",
+        "training_dependent_pruning_comparison",
+        "derivation_cost_simulation",
+        "edge_runtime_table",
+        "component_ablation",
+        "class_specific_accuracy_pruning_sweep",
+        "large_deployment_cost_simulation",
+        "real_device_runtime_profiling",
+        "detection_segmentation_transfer",
+        "ablation_study"
+      ],
+      "score": 1.75,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "class_specific_ImageNet_subtasks; training_free_pruning_comparison; training_dependent_pruning_comparison; derivation_cost_simulation; edge_runtime_table; component_ablation; class_specific_accuracy_pruning_sweep; large_deployment_cost_simulation; real_device_runtime_profiling; detection_segmentation_transfer; ablation_study"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "top1_accuracy; mAP; pruning_rate; GFLOPs; parameters; latency_ms; throughput_images_per_second; memory_GB; GPU_hours; AWS_cost"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet_1K; CIFAR_10; CIFAR_100; COCO2017; class_specific_dataloaders; calibration_data_loader; CVF_supplemental_zip; arxiv_pdf; CVF_pdf"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "NVIDIA_RTX_4090; NVIDIA_Jetson_Orin_NX; AWS_cost_simulation; PyTorch; timm_like_ViT; torchvision_detection_style; CUDA"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "NuWa; Self_Knowledge_Purification; Optimization_based_Fast_Pruning; MHA_SVD_pruning; MLP_closed_form_pruning; head_focus; main_py; method_nuwa_py; method_get_anchor_model_py; method_pruning_py; dataset_imagenet_py; dataset_coco_py; model_vit_py; model_swin_py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "iteration": 2,
+  "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+  "paper_title": "NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

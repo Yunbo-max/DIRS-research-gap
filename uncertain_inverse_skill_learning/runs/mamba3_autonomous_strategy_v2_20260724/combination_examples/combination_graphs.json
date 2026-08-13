@@ -1,0 +1,347 @@
+{
+  "schema_version": "dirs.strategy_combination_examples.v1",
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "generation_mode": "deprecated_macro_composition_stress_test",
+  "valid_dirs_mcts_samples": false,
+  "representation_correction": {
+    "error": "S1-S6 were treated as directly composable nodes although they are macro-strategy motifs.",
+    "preserved_use": "surface-output and information-budget ablations",
+    "not_evidence_for": [
+      "frontier-constrained DAG selection",
+      "MCTS search",
+      "trained graph sampling"
+    ],
+    "corrected_primitive_graph": "../flow_graph/primitive_skill_dag.json",
+    "macro_mapping": "../flow_graph/macro_motif_mapping.json"
+  },
+  "sampling_disclaimer": {
+    "trained_gflownet_claimed": false,
+    "posterior_calibration_claimed": false,
+    "expert_similarity_used": false,
+    "reusable_skill_claimed": false,
+    "description": "These are manually auditable writer-generated DAG samples, not samples from a trained graph model."
+  },
+  "combinations": [
+    {
+      "combination_id": "C01_sparse_pareto_capsule",
+      "category": "sparse_minimal_subgraph",
+      "strategy_nodes": [
+        {
+          "strategy_id": "S1",
+          "name": "result_first_pareto_ledger",
+          "role": "select and order one quality comparison, one latency tradeoff, and one boundary"
+        }
+      ],
+      "typed_edges": [],
+      "acyclic": true,
+      "context_gate": {
+        "activate_when": [
+          "word budget is near the lower allowed bound",
+          "system-level quality and latency are the primary reader questions",
+          "one limitation is sufficient for claim calibration"
+        ],
+        "deactivate_when": [
+          "component-level attribution is mandatory"
+        ]
+      },
+      "selection_reason": "A one-node graph tests the minimum strategy structure that still exposes the quality-efficiency tradeoff and retrieval boundary.",
+      "possible_failure": [
+        "Mechanism validation is compressed.",
+        "Readers may not recover why individual architectural changes matter."
+      ],
+      "information_budget": {
+        "aggregate_quality": "high",
+        "latency": "high",
+        "method": "medium",
+        "diagnostics": "low",
+        "limitations": "medium"
+      },
+      "realization_word_count": 166
+    },
+    {
+      "combination_id": "C02_boundary_gated_mechanism_staircase",
+      "category": "dual_strategy",
+      "strategy_nodes": [
+        {
+          "strategy_id": "S4",
+          "name": "boundary_first_contrast_loop",
+          "role": "establish the retrieval scope gate"
+        },
+        {
+          "strategy_id": "S2",
+          "name": "mechanism_ablation_staircase",
+          "role": "order three component-result bindings"
+        }
+      ],
+      "typed_edges": [
+        {
+          "source": "S4",
+          "target": "S2",
+          "type": "SCOPE_GATES",
+          "condition": "fixed-state retrieval risk is material"
+        }
+      ],
+      "acyclic": true,
+      "context_gate": {
+        "activate_when": [
+          "early boundedness is required",
+          "component-level diagnostic recovery is also required"
+        ],
+        "deactivate_when": [
+          "the aggregate result must appear in the opening"
+        ]
+      },
+      "selection_reason": "The boundary constrains all later positive evidence, while the staircase preserves local mechanism-test links.",
+      "possible_failure": [
+        "The contribution arrives late.",
+        "The abstract can become a sequence of measurements."
+      ],
+      "information_budget": {
+        "retrieval_boundary": "high",
+        "component_diagnostics": "high",
+        "aggregate_quality": "medium",
+        "latency": "medium"
+      },
+      "realization_word_count": 176
+    },
+    {
+      "combination_id": "C03_operating_point_evaluation_matrix",
+      "category": "dual_strategy",
+      "strategy_nodes": [
+        {
+          "strategy_id": "S6",
+          "name": "operating_point_decision_split",
+          "role": "assign SISO and MIMO decision roles"
+        },
+        {
+          "strategy_id": "S3",
+          "name": "evaluation_mosaic_with_scope_gate",
+          "role": "assign nonredundant functions to formal-state and retrieval evaluations"
+        }
+      ],
+      "typed_edges": [
+        {
+          "source": "S6",
+          "target": "S3",
+          "type": "ROLE_ASSIGNMENT_FEEDS",
+          "condition": "configuration choice is the primary question"
+        }
+      ],
+      "acyclic": true,
+      "context_gate": {
+        "activate_when": [
+          "the reader must choose between speed and quality operating points",
+          "heterogeneous evaluations need distinct interpretations"
+        ],
+        "deactivate_when": [
+          "recurrence ablations are the primary contribution"
+        ]
+      },
+      "selection_reason": "The decision split gives the evaluation mosaic a concrete entry point and prevents latency, formal-state, and retrieval evidence from being treated as interchangeable.",
+      "possible_failure": [
+        "Deployment framing may crowd out architectural novelty.",
+        "The role map is setting-specific."
+      ],
+      "information_budget": {
+        "configuration_choice": "high",
+        "aggregate_quality": "high",
+        "formal_state": "medium",
+        "retrieval": "medium",
+        "ablation": "none"
+      },
+      "realization_word_count": 169
+    },
+    {
+      "combination_id": "C04_pareto_led_selective_binding",
+      "category": "dual_strategy",
+      "strategy_nodes": [
+        {
+          "strategy_id": "S1",
+          "name": "result_first_pareto_ledger",
+          "role": "choose the early system-level ledger"
+        },
+        {
+          "strategy_id": "S5",
+          "name": "salience_anchor_then_selective_bindings",
+          "role": "bind a small number of diagnostic anchors"
+        }
+      ],
+      "typed_edges": [
+        {
+          "source": "S1",
+          "target": "S5",
+          "type": "LEDGER_SEEDS_ANCHOR",
+          "condition": "early aggregate salience and local validation are jointly required"
+        }
+      ],
+      "acyclic": true,
+      "context_gate": {
+        "activate_when": [
+          "the aggregate comparison must be immediately recoverable",
+          "at least two component checks must survive compression"
+        ],
+        "deactivate_when": [
+          "a limitation-first opening is required"
+        ]
+      },
+      "selection_reason": "S1 allocates the headline evidence budget; S5 prevents the method from becoming an unsupported list by attaching selective diagnostics.",
+      "possible_failure": [
+        "Mechanisms can look post hoc after a result-led opening.",
+        "The selected diagnostics may omit a reader's preferred component."
+      ],
+      "information_budget": {
+        "aggregate_quality": "very_high",
+        "recurrence_ablation": "medium",
+        "formal_state": "medium",
+        "latency": "medium",
+        "retrieval_boundary": "medium"
+      },
+      "realization_word_count": 175
+    },
+    {
+      "combination_id": "C05_boundary_scoped_diagnostic_audit",
+      "category": "triple_strategy",
+      "strategy_nodes": [
+        {
+          "strategy_id": "S4",
+          "name": "boundary_first_contrast_loop",
+          "role": "set the fixed-state scope boundary"
+        },
+        {
+          "strategy_id": "S3",
+          "name": "evaluation_mosaic_with_scope_gate",
+          "role": "assign each evaluation a distinct claim function"
+        },
+        {
+          "strategy_id": "S2",
+          "name": "mechanism_ablation_staircase",
+          "role": "order the resulting diagnostic bindings"
+        }
+      ],
+      "typed_edges": [
+        {
+          "source": "S4",
+          "target": "S3",
+          "type": "SCOPE_GATES",
+          "condition": "retrieval risk must constrain all positive claims"
+        },
+        {
+          "source": "S3",
+          "target": "S2",
+          "type": "EVAL_ROLE_ORDERS",
+          "condition": "diagnostic functions determine component order"
+        }
+      ],
+      "acyclic": true,
+      "context_gate": {
+        "activate_when": [
+          "the reader values evaluation interpretability over a single headline",
+          "both risk calibration and component attribution are required"
+        ],
+        "deactivate_when": [
+          "a compact deployment decision is the primary goal"
+        ]
+      },
+      "selection_reason": "The triple graph treats the abstract as a scoped diagnostic audit: boundary first, evaluation roles second, local bindings third.",
+      "possible_failure": [
+        "The narrative may resemble an audit checklist.",
+        "The aggregate contribution may be underemphasized.",
+        "Three strategies increase execution complexity."
+      ],
+      "information_budget": {
+        "retrieval_boundary": "high",
+        "recurrence_ablation": "high",
+        "formal_state": "high",
+        "aggregate_quality": "medium",
+        "latency": "medium"
+      },
+      "realization_word_count": 180
+    },
+    {
+      "combination_id": "C06_context_gated_quality_speed_retrieval_fork",
+      "category": "conditional_branch",
+      "strategy_nodes": [
+        {
+          "strategy_id": "S5",
+          "name": "salience_anchor_then_selective_bindings",
+          "role": "produce the common problem, method, and early quality anchor"
+        },
+        {
+          "strategy_id": "S6",
+          "name": "operating_point_decision_split",
+          "role": "serve the speed-versus-quality branch"
+        },
+        {
+          "strategy_id": "S4",
+          "name": "boundary_first_contrast_loop",
+          "role": "serve the sparse-evidence risk branch"
+        }
+      ],
+      "control_nodes": [
+        {
+          "node_id": "J6_bounded_synthesis",
+          "type": "JOIN",
+          "role": "merge activated branches without universalizing their claims"
+        }
+      ],
+      "typed_edges": [
+        {
+          "source": "S5",
+          "target": "S6",
+          "type": "CONDITIONAL_ACTIVATION",
+          "condition": "deployment_goal in {speed, quality, quality_latency_tradeoff}"
+        },
+        {
+          "source": "S5",
+          "target": "S4",
+          "type": "CONDITIONAL_ACTIVATION",
+          "condition": "retrieval_risk == high"
+        },
+        {
+          "source": "S6",
+          "target": "J6_bounded_synthesis",
+          "type": "JOINS_AT",
+          "condition": "S6 active"
+        },
+        {
+          "source": "S4",
+          "target": "J6_bounded_synthesis",
+          "type": "JOINS_AT",
+          "condition": "S4 active"
+        }
+      ],
+      "acyclic": true,
+      "context_gate": {
+        "branches": {
+          "speed_or_quality_choice": "activate S6",
+          "sparse_evidence_risk": "activate S4",
+          "both_binding": "activate S6 and S4 in parallel",
+          "neither_binding": "stop after the S5 core"
+        },
+        "realized_context": "both_binding"
+      },
+      "selection_reason": "A common salient core is followed only by context-relevant branches; the example activates both to show a valid fork-and-join realization.",
+      "possible_failure": [
+        "Activating both branches can erase conditional sparsity.",
+        "Branch joins may produce a generic conclusion.",
+        "Context gates are proposed, not learned or calibrated."
+      ],
+      "information_budget": {
+        "common_aggregate_anchor": "high",
+        "configuration_choice_branch": "high",
+        "retrieval_branch": "high",
+        "shared_diagnostics": "medium"
+      },
+      "realization_word_count": 179
+    }
+  ],
+  "coverage_checks": {
+    "combination_count": 6,
+    "sparse_minimal_subgraph_count": 1,
+    "dual_strategy_count": 3,
+    "triple_strategy_count": 1,
+    "conditional_branch_count": 1,
+    "all_graphs_acyclic": true,
+    "all_S1_S6_nodes_used_at_least_once": true
+  }
+}

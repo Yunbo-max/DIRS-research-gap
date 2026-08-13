@@ -1,0 +1,183 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ]
+  ],
+  "graph_id": "CVPR2026_030_spark_vlm_articulated_reconstruction_gap_dag_iter_01",
+  "nodes": [
+    {
+      "content": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge | families=3d_generation, visual_tokenizer, diffusion_cache, video_token_merging, reasoning_agents",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "single-image articulated objects are hard to convert into simulation-ready assets; image-to-3D and text-to-3D methods usually produce fused shapes rather than kinematic part meshes; appearance-driven part generation is not enough for motion-aware segmentation and URDF construction; template-free reconstruction needs part geometry and joint parameters from one RGB image",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "VLM can miscount object parts and produce over-segmented or under-segmented assets; VLM-generated part images can be texture-misaligned with the input; secondary joints such as handles and buttons are often missed; multi-DOF joints, compound mechanisms, and closed chains are outside the demonstrated scope; official GitHub repository is currently a placeholder without released source, checkpoints, training code, inference scripts, or preprocessed data",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "PartCrafter; OmniPart; URDFormer; Articulate-Anything; Articulate AnyMesh; ArtFormer; CAGE; PartCrafter; OmniPart; URDFormer",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "VLM structural reasoning; VLM part reference image generation; DINOv2 image encoder; part-articulated diffusion transformer; hierarchical graph attention; rectified flow mesh latent objective; VLM discrete joint re-prediction; differentiable forward kinematics; differentiable rendering silhouette optimization; Meshy texture synthesis",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=100-image GAPartNet articulated-object test set; metrics=Chamfer Distance; F-Score@0.1; F-Score@0.5; AxisErr; PivotErr; TypeErr; protocols=shape reconstruction against GAPartNet held-out articulated objects; URDF joint parameter evaluation against Articulate-Anything and Articulate AnyMesh; ablation of part guidance, data augmentation, joint optimization, and VLM re-prediction; qualitative simulator deployment in Isaac Sim",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=4 NVIDIA H100 GPUs; runtimes=PyTorch; PyTorch3D; Trimesh; Isaac Sim",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=not specified in the available footprint; code_artifacts=README.md placeholder; assets/SPARK_teaser.png; missing inference scripts; missing pretrained checkpoints; missing training code; missing data preprocessing scripts",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=PartNet-Mobility; GAPartNet; data_artifacts=PartNet-Mobility-derived augmented training set; GAPartNet 100-image evaluation set; preprocessed dataset announced but not released in repository; implementation_statuses=repository_present_no_source_code_inspected; paper_and_supplement_read; project_page_found; source_code_missing_from_official_repository",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [],
+  "signature": "8f88eabad71c396e",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+  "target_title": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge"
+}

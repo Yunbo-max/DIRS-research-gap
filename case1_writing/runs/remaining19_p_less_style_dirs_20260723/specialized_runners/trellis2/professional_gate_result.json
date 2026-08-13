@@ -1,0 +1,61 @@
+{
+  "artifact_kind": "trellis2_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Paper/DAG includes H100 runtime scaling; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "h100_runtime_scaling_hardware_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Official README says code verified on A100/H100; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "official_verified_a100_h100_environment_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No visible 24GB+ GPU has >=18GB free and <30% utilization for TRELLIS.2 inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 21343, 'memory_free_mib': 2873, 'utilization_gpu_pct': 15, 'temperature_c': 44, 'power_w': 64.75}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18631, 'memory_free_mib': 5586, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.92}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19037, 'memory_free_mib': 5177, 'utilization_gpu_pct': 17, 'temperature_c': 39, 'power_w': 20.16}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16049, 'memory_free_mib': 8168, 'utilization_gpu_pct': 99, 'temperature_c': 74, 'power_w': 249.36}]",
+      "id": "clean_24gb_gpu_slot_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local HF model snapshots/checkpoints: trellis2_4b_hf_weights.",
+      "id": "trellis2_4b_weights_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local datasets/preprocessed artifacts: objaverse_xl, abo, hssd, texverse, toys4k, sketchfab_featured, nanobanana_prompts, pbr_dumps, dual_grid, ovoxel_vxz, shape_latents, pbr_latents, render_cond.",
+      "id": "trellis2_datasets_or_preprocessed_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing official runtime/extension imports: flash_attn, nvdiffrast, nvdiffrec, cumesh, o_voxel, flexgemm, imageio, trimesh, gradio, lpips, kornia, easydict.",
+      "id": "trellis2_runtime_extensions_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete verifier-comparable 3D generation/reconstruction/texturing/scaling/user-study result grid was found.",
+      "id": "full_3d_result_grid_and_userstudy_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-23T18:53:02Z",
+  "next_full_execution_if_unblocked": [
+    "materialize microsoft/TRELLIS.2-4B checkpoints from Hugging Face",
+    "install PyTorch 2.6/CUDA 12.4 stack plus flash-attn, nvdiffrast, nvdiffrec, cumesh, o-voxel, flexgemm",
+    "materialize Objaverse-XL, ABO, HSSD, TexVerse, Toys4K, Sketchfab Featured, NanoBanana prompts, and all O-Voxel/PBR/latent/rendered-condition artifacts",
+    "run image-to-3D and shape-conditioned texturing pipelines on paper benchmark sets",
+    "run SC-VAE, resolution-scaling, and architecture-ablation surfaces when training artifacts/hardware are present",
+    "emit GLB/O-Voxel/raw render outputs, metric JSON, H100/A100 timing traces, user-study artifacts, and verifier table summaries"
+  ],
+  "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+  "paper_title": "Native and Compact Structured Latents for 3D Generation",
+  "professional_package_ready": false,
+  "status": "blocked_by_weights_datasets_runtime_hardware_and_result_grid_requirements",
+  "support_checks": {
+    "compileall_repo_passed": true,
+    "dataset_artifacts_checked": 13,
+    "model_manifests_checked": 1,
+    "repo_discovered_and_encoded": true,
+    "setup_syntax_ok": true
+  }
+}

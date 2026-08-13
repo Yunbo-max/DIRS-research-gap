@@ -1,0 +1,156 @@
+{
+  "checks": [
+    {
+      "detail": "leakage_hits=[]",
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": "sim=supported_by_dag_proxy; paper_gap=Sampling-based LLM decoding often needs task- and temperature-specific hyperparameter tuning. Fixed-threshold or single-token-relative truncation methods can degrade at high temper",
+      "name": "paper_paragraph_gap_claim",
+      "status": "pass"
+    },
+    {
+      "detail": "sim=supported_by_dag_formula; method paragraph describes full-distribution second moment and p-lessnorm relaxation",
+      "name": "paper_paragraph_method_mechanism",
+      "status": "pass"
+    },
+    {
+      "detail": "sim_rank=['p_lessnorm', 'p_less', 'min_p', 'top_p'], paper_anchor=Mistral p-less/p-lessnorm top/near-top on CSQA/GSM8K/QASC with GPQA exception",
+      "name": "paper_table1_reasoning_auc_shape",
+      "status": "pass"
+    },
+    {
+      "detail": "sim=supported_shape_only; figure evidence is accuracy-vs-temperature curve shape, not exact pixels",
+      "name": "paper_figure2_accuracy_temperature_curves",
+      "status": "pass"
+    },
+    {
+      "detail": "sim_rank=['p_lessnorm', 'p_less', 'min_p', 'top_p'], paper_anchor=Llama2 temp2 p-less 65.64 vs top-p/epsilon/eta 0.00",
+      "name": "paper_table2_high_temperature_writing_shape",
+      "status": "pass"
+    },
+    {
+      "detail": "paragraph claim says p-less remains relatively stable and superior at temperatures above 1.0.",
+      "name": "paper_paragraph_high_temperature_claim",
+      "status": "pass"
+    },
+    {
+      "detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation",
+      "name": "paper_table3_gpu_timing_shape",
+      "status": "partial"
+    },
+    {
+      "detail": "paragraph attributes efficiency to no sorting and no modal/default inclusion path; verifier still requires full generation timing for Table 3.",
+      "name": "paper_paragraph_efficiency_mechanism",
+      "status": "pass"
+    },
+    {
+      "detail": "Figure 15 code snippet corresponds to p_less threshold, mask, renormalize, multinomial sampler.",
+      "name": "paper_figure15_code_snippet",
+      "status": "pass"
+    },
+    {
+      "detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy.",
+      "name": "paper_figures16_17_cpu_ram",
+      "status": "blocked"
+    },
+    {
+      "detail": "paper_anchor=top-p CPU/RAM {'cpu_ms': 0.79, 'ram_gb': 2.535}, min-p {'cpu_ms': 0.83, 'ram_gb': 2.545}, p-less {'cpu_ms': 0.62, 'ram_gb': 2.456}; not measured by current simulator",
+      "name": "paper_appendix_table15_cpu_ram_values",
+      "status": "blocked"
+    },
+    {
+      "detail": "DAG-generated GPU probe reports no p-less/p-lessnorm empty-candidate fallback.",
+      "name": "bounded_candidate_set",
+      "status": "pass"
+    },
+    {
+      "detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked.",
+      "name": "exact_numeric_reproduction",
+      "status": "blocked"
+    }
+  ],
+  "created_at_utc": "2026-07-22T21:42:00Z",
+  "evidence_channels": {
+    "appendix_artifacts": [
+      "Appendix C.11 CPU/RAM profiling",
+      "code snippet"
+    ],
+    "figures": [
+      "Figure 2",
+      "Figure 15",
+      "Figures 16 and 17"
+    ],
+    "paragraphs": [
+      "gap/motivation",
+      "method mechanism",
+      "high-temperature result discussion",
+      "efficiency explanation"
+    ],
+    "tables": [
+      "Table 1",
+      "Table 2",
+      "Table 3",
+      "Table 15"
+    ]
+  },
+  "paper_numeric_anchors_compared_by_verifier_only": {
+    "table15_cpu_ms_ram_gb": {
+      "min_p": {
+        "cpu_ms": 0.83,
+        "ram_gb": 2.545
+      },
+      "p_less": {
+        "cpu_ms": 0.62,
+        "ram_gb": 2.456
+      },
+      "top_p": {
+        "cpu_ms": 0.79,
+        "ram_gb": 2.535
+      }
+    },
+    "table1_llama2_auc_p_less": {
+      "CSQA": 0.503,
+      "GPQA": 0.242,
+      "GSM8K": 0.267,
+      "QASC": 0.537
+    },
+    "table1_llama2_auc_p_lessnorm": {
+      "CSQA": 0.503,
+      "GPQA": 0.248,
+      "GSM8K": 0.267,
+      "QASC": 0.538
+    },
+    "table1_mistral_auc_p_less": {
+      "CSQA": 0.697,
+      "GPQA": 0.239,
+      "GSM8K": 0.562,
+      "QASC": 0.736
+    },
+    "table1_mistral_auc_p_lessnorm": {
+      "CSQA": 0.692,
+      "GPQA": 0.222,
+      "GSM8K": 0.564,
+      "QASC": 0.739
+    },
+    "table2_llama2_temp2_win_rate": {
+      "epsilon": 0.0,
+      "eta": 0.0,
+      "min_p": 48.94,
+      "mirostat": 26.88,
+      "p_less": 65.64,
+      "p_lessnorm": 59.29,
+      "top_p": 0.0
+    },
+    "table3_sampling_time_seconds_per_token": {
+      "epsilon": 0.02259,
+      "eta": 0.0221,
+      "min_p": 0.02497,
+      "mirostat": 0.02278,
+      "p_less": 0.01942,
+      "top_p": 0.02362
+    }
+  },
+  "score": 0.954545
+}

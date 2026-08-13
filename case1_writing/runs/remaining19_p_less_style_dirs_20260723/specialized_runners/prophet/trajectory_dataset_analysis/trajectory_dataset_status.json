@@ -1,0 +1,19 @@
+{
+  "artifact_kind": "prophet_trajectory_dataset_status",
+  "disk_snapshot": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda         15T  8.9T  4.9T  65% /tf/notebooks\n",
+  "finished_at_utc": "2026-07-23T19:40:16Z",
+  "pid": 77335,
+  "professional_gate": {
+    "all_expected_counts_present": true,
+    "full_dataset_expected_files": 17888,
+    "full_dataset_observed_files": 17888,
+    "not_reduced": true,
+    "paper_figure_logic": "first correct answer emergence percentage over correct trajectories at 25% and 50% decoding thresholds; GSM8K correctness is recomputed from generated pred_text vs gt_text following analysis/visualize.ipynb"
+  },
+  "repo_id": "YefanZhou98/DLM-Decoding-Analysis",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_first_emergence_rows.jsonl",
+  "snapshot_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/DLM-Decoding-Analysis",
+  "started_at_utc": "2026-07-23T19:35:13Z",
+  "status": "completed",
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_analysis_summary.json"
+}

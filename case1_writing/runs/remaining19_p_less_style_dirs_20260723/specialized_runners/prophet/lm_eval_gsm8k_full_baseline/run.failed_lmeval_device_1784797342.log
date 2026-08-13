@@ -1,0 +1,95 @@
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2026-07-23:09:58:54 INFO     [_cli.run:388] Selected Tasks: ['gsm8k_cot_zeroshot']
+2026-07-23:09:58:54 WARNING  [evaluator:184] pretrained=None appears to be an instruct or chat variant but chat template is not applied. Recommend setting `apply_chat_template`
+        (optionally `fewshot_as_multiturn`).
+2026-07-23:09:58:54 INFO     [evaluator:214] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-07-23:09:58:54 INFO     [evaluator:239] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'enable_early_exit': False, 'constraints_text': '200:The|201:answer|202:is', 'gen_length': 256, 'steps': 256, 'block_length': 32, 'answer_length': 5}
+Traceback (most recent call last):
+  File "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py", line 343, in <module>
+    cli_evaluate()
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/_cli/run.py", line 391, in _execute
+    results = simple_evaluate(
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/utils.py", line 575, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/evaluator.py", line 242, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_obj(
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/api/model.py", line 169, in create_from_arg_obj
+    return cls(**arg_dict, **additional_config)
+  File "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py", line 70, in __init__
+    accelerator = accelerate.Accelerator()
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/accelerator.py", line 461, in __init__
+    self.state = AcceleratorState(
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/state.py", line 912, in __init__
+    PartialState(cpu, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/state.py", line 313, in __init__
+    raise NotImplementedError(
+NotImplementedError: Using RTX 4000 series doesn't support faster communication broadband via P2P or IB. Please set `NCCL_P2P_DISABLE="1"` and `NCCL_IB_DISABLE="1" or use `accelerate launch` which will do this automatically.
+Traceback (most recent call last):
+  File "/opt/conda/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1235, in launch_command
+    simple_launcher(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 823, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/bin/python', 'eval_llada.py', '--tasks', 'gsm8k_cot_zeroshot', '--model', 'llada_dist', '--model_args', 'model_path=\'GSAI-ML/LLaDA-8B-Instruct\',enable_early_exit=false,constraints_text="200:The|201:answer|202:is",gen_length=256,steps=256,block_length=32,answer_length=5', '--output_path', '/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/lm_eval_gsm8k_full_baseline']' returned non-zero exit status 1.
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2026-07-23:10:01:33 INFO     [_cli.run:388] Selected Tasks: ['gsm8k_cot_zeroshot']
+2026-07-23:10:01:33 WARNING  [evaluator:184] pretrained=None appears to be an instruct or chat variant but chat template is not applied. Recommend setting `apply_chat_template`
+        (optionally `fewshot_as_multiturn`).
+2026-07-23:10:01:33 INFO     [evaluator:214] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-07-23:10:01:33 INFO     [evaluator:239] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'enable_early_exit': False, 'constraints_text': '200:The|201:answer|202:is', 'gen_length': 256, 'steps': 256, 'block_length': 32, 'answer_length': 5}
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:00<00:00, 124.91it/s]
+Traceback (most recent call last):
+  File "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py", line 343, in <module>
+    cli_evaluate()
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/_cli/run.py", line 391, in _execute
+    results = simple_evaluate(
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/utils.py", line 575, in _wrapper
+    return fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/evaluator.py", line 242, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_obj(
+  File "/opt/conda/lib/python3.10/site-packages/lm_eval/api/model.py", line 169, in create_from_arg_obj
+    return cls(**arg_dict, **additional_config)
+  File "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py", line 83, in __init__
+    self.device = torch.device(device)
+AttributeError: can't set attribute 'device'
+Traceback (most recent call last):
+  File "/opt/conda/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1235, in launch_command
+    simple_launcher(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 823, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/bin/python', 'eval_llada.py', '--tasks', 'gsm8k_cot_zeroshot', '--model', 'llada_dist', '--model_args', 'model_path=\'GSAI-ML/LLaDA-8B-Instruct\',enable_early_exit=false,constraints_text="200:The|201:answer|202:is",gen_length=256,steps=256,block_length=32,answer_length=5', '--output_path', '/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/lm_eval_gsm8k_full_baseline']' returned non-zero exit status 1.

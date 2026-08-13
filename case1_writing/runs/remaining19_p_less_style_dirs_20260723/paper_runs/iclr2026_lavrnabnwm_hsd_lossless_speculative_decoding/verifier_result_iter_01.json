@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "acceptance",
+        "after",
+        "calls",
+        "decoding",
+        "discarding",
+        "draft",
+        "early",
+        "efficiency",
+        "extra",
+        "fragility",
+        "gap",
+        "integration",
+        "intractability",
+        "joint",
+        "lossless",
+        "lossy",
+        "patch",
+        "prefixes",
+        "reject",
+        "rejection",
+        "speculative",
+        "target",
+        "threshold",
+        "tokenwise",
+        "useful",
+        "verifier"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "joint intractability in speculative decoding",
+        "tokenwise early rejection",
+        "lossless verifier efficiency gap"
+      ],
+      "score": 2.167,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "backward",
+        "branch",
+        "capped",
+        "distribution",
+        "divergence",
+        "eagle-3h",
+        "integration",
+        "longest-prefix",
+        "prefix",
+        "ratio",
+        "resampling",
+        "residual",
+        "scan"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "backward longest-prefix scan",
+        "capped prefix ratio",
+        "capped branch divergence",
+        "residual resampling distribution",
+        "EAGLE-3H integration"
+      ],
+      "score": 1.083,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "ablation",
+        "accepted",
+        "accuracy",
+        "block",
+        "comparison",
+        "decoding",
+        "draft-length",
+        "eagle",
+        "eagle-3h",
+        "efficiency",
+        "extended",
+        "gsm8k",
+        "length",
+        "llama3",
+        "lossless",
+        "multi-draft",
+        "qwen2",
+        "replacement",
+        "rrs",
+        "sec",
+        "single-draft",
+        "speculative",
+        "speed",
+        "target-size",
+        "temperature",
+        "tokens",
+        "verifier"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "single-draft Qwen2.5 speculative decoding",
+        "multi-draft RRS",
+        "LLaMA3.1 extended evaluation",
+        "EAGLE-3H GSM8K",
+        "lossless verifier comparison",
+        "temperature ablation",
+        "draft-length ablation",
+        "target-size ablation",
+        "multi-draft comparison",
+        "EAGLE verifier replacement"
+      ],
+      "score": 2.25,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "single-draft Qwen2.5 speculative decoding; multi-draft RRS; LLaMA3.1 extended evaluation; EAGLE-3H GSM8K; lossless verifier comparison; temperature ablation; draft-length ablation; target-size ablation; multi-draft comparison; EAGLE verifier replacement"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "Block Efficiency; Decoding Speed; accuracy; accepted length; tokens/sec"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "GSM8K; HumanEval; CNN/DailyMail; GSM8K test; HumanEval; CNN/DailyMail; repository result JSONL files for EAGLE-3H"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "single NVIDIA H20 96GB; 8 H20 GPUs for Llama-3.1-70B; H100 80GB; H200 141GB"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "backward longest-prefix scan; capped prefix ratio; capped branch divergence; residual resampling distribution; EAGLE-3H integration; algorithm.py; transformers/generation/utils.py; transformers/generation/candidate_generator.py; chain-of-thought-hub/gsm8k/eval_speculative_decoding_llm.py; compute_speculative_stats.py; EAGLE-3H/eagle_eval.sh; EAGLE-3H/performance_evaluation.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "iteration": 1,
+  "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+  "paper_title": "Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

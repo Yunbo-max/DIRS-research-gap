@@ -1,0 +1,732 @@
+{
+  "schema_version": "dirs.learned_connected_path_dag.v1",
+  "status": "learned_count_baseline_from_proxy_training_paths",
+  "source_trace": "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/training_trace.json",
+  "training_trace_count": 19,
+  "learning_rule": {
+    "node_support": "empirical inclusion count",
+    "edge_support": "empirical directed transition count",
+    "outgoing_edge_posterior": "Dirichlet-smoothed mean with alpha=1.0",
+    "path_support": "empirical count of complete connected directed paths",
+    "arbitrary_node_subset_sampling": false
+  },
+  "graph_hash_sha256": "023c8c923b98b6cb4cac7c4d2f5dccfe49fb6fe82dc89f32a903e36a85e38ef2",
+  "sources": [
+    "R1_abstract_as_argument"
+  ],
+  "sinks": [
+    "P1_length_and_placement_prior"
+  ],
+  "topological_order": [
+    "R1_abstract_as_argument",
+    "G1_problem_gap",
+    "C1_domain_context",
+    "O1_named_method_or_object",
+    "M1_architecture_or_mechanism",
+    "M2_efficiency_or_theory_detail",
+    "E1_evaluation_setup",
+    "E2_result_outcome",
+    "E3_quantitative_anchor",
+    "I1_interpretation_or_tradeoff",
+    "S1_bounded_takeaway",
+    "P1_length_and_placement_prior"
+  ],
+  "nodes": [
+    {
+      "id": "R1_abstract_as_argument",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "G1_problem_gap",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "C1_domain_context",
+      "support_count": 7,
+      "support_rate": 0.368421
+    },
+    {
+      "id": "O1_named_method_or_object",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "M1_architecture_or_mechanism",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "M2_efficiency_or_theory_detail",
+      "support_count": 14,
+      "support_rate": 0.736842
+    },
+    {
+      "id": "E1_evaluation_setup",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "E2_result_outcome",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "E3_quantitative_anchor",
+      "support_count": 15,
+      "support_rate": 0.789474
+    },
+    {
+      "id": "I1_interpretation_or_tradeoff",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "S1_bounded_takeaway",
+      "support_count": 19,
+      "support_rate": 1.0
+    },
+    {
+      "id": "P1_length_and_placement_prior",
+      "support_count": 19,
+      "support_rate": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "C1_domain_context",
+      "target": "O1_named_method_or_object",
+      "support_count": 7,
+      "support_rate": 0.368421,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "E1_evaluation_setup",
+      "target": "E2_result_outcome",
+      "support_count": 19,
+      "support_rate": 1.0,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "E2_result_outcome",
+      "target": "E3_quantitative_anchor",
+      "support_count": 15,
+      "support_rate": 0.789474,
+      "outgoing_posterior_mean": 0.761905
+    },
+    {
+      "source": "E2_result_outcome",
+      "target": "I1_interpretation_or_tradeoff",
+      "support_count": 4,
+      "support_rate": 0.210526,
+      "outgoing_posterior_mean": 0.238095
+    },
+    {
+      "source": "E3_quantitative_anchor",
+      "target": "I1_interpretation_or_tradeoff",
+      "support_count": 15,
+      "support_rate": 0.789474,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "G1_problem_gap",
+      "target": "C1_domain_context",
+      "support_count": 7,
+      "support_rate": 0.368421,
+      "outgoing_posterior_mean": 0.380952
+    },
+    {
+      "source": "G1_problem_gap",
+      "target": "O1_named_method_or_object",
+      "support_count": 12,
+      "support_rate": 0.631579,
+      "outgoing_posterior_mean": 0.619048
+    },
+    {
+      "source": "I1_interpretation_or_tradeoff",
+      "target": "S1_bounded_takeaway",
+      "support_count": 19,
+      "support_rate": 1.0,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "M1_architecture_or_mechanism",
+      "target": "E1_evaluation_setup",
+      "support_count": 5,
+      "support_rate": 0.263158,
+      "outgoing_posterior_mean": 0.285714
+    },
+    {
+      "source": "M1_architecture_or_mechanism",
+      "target": "M2_efficiency_or_theory_detail",
+      "support_count": 14,
+      "support_rate": 0.736842,
+      "outgoing_posterior_mean": 0.714286
+    },
+    {
+      "source": "M2_efficiency_or_theory_detail",
+      "target": "E1_evaluation_setup",
+      "support_count": 14,
+      "support_rate": 0.736842,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "O1_named_method_or_object",
+      "target": "M1_architecture_or_mechanism",
+      "support_count": 19,
+      "support_rate": 1.0,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "R1_abstract_as_argument",
+      "target": "G1_problem_gap",
+      "support_count": 19,
+      "support_rate": 1.0,
+      "outgoing_posterior_mean": 1.0
+    },
+    {
+      "source": "S1_bounded_takeaway",
+      "target": "P1_length_and_placement_prior",
+      "support_count": 19,
+      "support_rate": 1.0,
+      "outgoing_posterior_mean": 1.0
+    }
+  ],
+  "observed_paths": [
+    {
+      "path_id": "path_01",
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "edges": [
+        {
+          "source": "R1_abstract_as_argument",
+          "target": "G1_problem_gap"
+        },
+        {
+          "source": "G1_problem_gap",
+          "target": "O1_named_method_or_object"
+        },
+        {
+          "source": "O1_named_method_or_object",
+          "target": "M1_architecture_or_mechanism"
+        },
+        {
+          "source": "M1_architecture_or_mechanism",
+          "target": "M2_efficiency_or_theory_detail"
+        },
+        {
+          "source": "M2_efficiency_or_theory_detail",
+          "target": "E1_evaluation_setup"
+        },
+        {
+          "source": "E1_evaluation_setup",
+          "target": "E2_result_outcome"
+        },
+        {
+          "source": "E2_result_outcome",
+          "target": "E3_quantitative_anchor"
+        },
+        {
+          "source": "E3_quantitative_anchor",
+          "target": "I1_interpretation_or_tradeoff"
+        },
+        {
+          "source": "I1_interpretation_or_tradeoff",
+          "target": "S1_bounded_takeaway"
+        },
+        {
+          "source": "S1_bounded_takeaway",
+          "target": "P1_length_and_placement_prior"
+        }
+      ],
+      "support_count": 6,
+      "empirical_probability": 0.315789,
+      "training_cases": [
+        "CVPR2026_113_sat_structural_action_transformer",
+        "CVPR2026_136_segmote_token_moe_medical_segmentation",
+        "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+        "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+        "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+        "ICML2026_71127_coevol_no_neural_operator"
+      ]
+    },
+    {
+      "path_id": "path_02",
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "edges": [
+        {
+          "source": "R1_abstract_as_argument",
+          "target": "G1_problem_gap"
+        },
+        {
+          "source": "G1_problem_gap",
+          "target": "C1_domain_context"
+        },
+        {
+          "source": "C1_domain_context",
+          "target": "O1_named_method_or_object"
+        },
+        {
+          "source": "O1_named_method_or_object",
+          "target": "M1_architecture_or_mechanism"
+        },
+        {
+          "source": "M1_architecture_or_mechanism",
+          "target": "M2_efficiency_or_theory_detail"
+        },
+        {
+          "source": "M2_efficiency_or_theory_detail",
+          "target": "E1_evaluation_setup"
+        },
+        {
+          "source": "E1_evaluation_setup",
+          "target": "E2_result_outcome"
+        },
+        {
+          "source": "E2_result_outcome",
+          "target": "E3_quantitative_anchor"
+        },
+        {
+          "source": "E3_quantitative_anchor",
+          "target": "I1_interpretation_or_tradeoff"
+        },
+        {
+          "source": "I1_interpretation_or_tradeoff",
+          "target": "S1_bounded_takeaway"
+        },
+        {
+          "source": "S1_bounded_takeaway",
+          "target": "P1_length_and_placement_prior"
+        }
+      ],
+      "support_count": 4,
+      "empirical_probability": 0.210526,
+      "training_cases": [
+        "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+        "ICML2026_71039_discoformer_density_score_transformers",
+        "ICML2026_71192_context_parameter_updates",
+        "ICML2026_71193_focus_dilution_attention"
+      ]
+    },
+    {
+      "path_id": "path_03",
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "edges": [
+        {
+          "source": "R1_abstract_as_argument",
+          "target": "G1_problem_gap"
+        },
+        {
+          "source": "G1_problem_gap",
+          "target": "O1_named_method_or_object"
+        },
+        {
+          "source": "O1_named_method_or_object",
+          "target": "M1_architecture_or_mechanism"
+        },
+        {
+          "source": "M1_architecture_or_mechanism",
+          "target": "E1_evaluation_setup"
+        },
+        {
+          "source": "E1_evaluation_setup",
+          "target": "E2_result_outcome"
+        },
+        {
+          "source": "E2_result_outcome",
+          "target": "E3_quantitative_anchor"
+        },
+        {
+          "source": "E3_quantitative_anchor",
+          "target": "I1_interpretation_or_tradeoff"
+        },
+        {
+          "source": "I1_interpretation_or_tradeoff",
+          "target": "S1_bounded_takeaway"
+        },
+        {
+          "source": "S1_bounded_takeaway",
+          "target": "P1_length_and_placement_prior"
+        }
+      ],
+      "support_count": 3,
+      "empirical_probability": 0.157895,
+      "training_cases": [
+        "CVPR2026_069_mdcs_moame_survival_prediction",
+        "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+        "ICML2026_71083_any_order_gpt_mdm"
+      ]
+    },
+    {
+      "path_id": "path_04",
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "edges": [
+        {
+          "source": "R1_abstract_as_argument",
+          "target": "G1_problem_gap"
+        },
+        {
+          "source": "G1_problem_gap",
+          "target": "O1_named_method_or_object"
+        },
+        {
+          "source": "O1_named_method_or_object",
+          "target": "M1_architecture_or_mechanism"
+        },
+        {
+          "source": "M1_architecture_or_mechanism",
+          "target": "M2_efficiency_or_theory_detail"
+        },
+        {
+          "source": "M2_efficiency_or_theory_detail",
+          "target": "E1_evaluation_setup"
+        },
+        {
+          "source": "E1_evaluation_setup",
+          "target": "E2_result_outcome"
+        },
+        {
+          "source": "E2_result_outcome",
+          "target": "I1_interpretation_or_tradeoff"
+        },
+        {
+          "source": "I1_interpretation_or_tradeoff",
+          "target": "S1_bounded_takeaway"
+        },
+        {
+          "source": "S1_bounded_takeaway",
+          "target": "P1_length_and_placement_prior"
+        }
+      ],
+      "support_count": 3,
+      "empirical_probability": 0.157895,
+      "training_cases": [
+        "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+        "ICML2026_71098_secnet_event_cloud",
+        "ICML2026_71133_rational_transductors"
+      ]
+    },
+    {
+      "path_id": "path_05",
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "edges": [
+        {
+          "source": "R1_abstract_as_argument",
+          "target": "G1_problem_gap"
+        },
+        {
+          "source": "G1_problem_gap",
+          "target": "C1_domain_context"
+        },
+        {
+          "source": "C1_domain_context",
+          "target": "O1_named_method_or_object"
+        },
+        {
+          "source": "O1_named_method_or_object",
+          "target": "M1_architecture_or_mechanism"
+        },
+        {
+          "source": "M1_architecture_or_mechanism",
+          "target": "E1_evaluation_setup"
+        },
+        {
+          "source": "E1_evaluation_setup",
+          "target": "E2_result_outcome"
+        },
+        {
+          "source": "E2_result_outcome",
+          "target": "E3_quantitative_anchor"
+        },
+        {
+          "source": "E3_quantitative_anchor",
+          "target": "I1_interpretation_or_tradeoff"
+        },
+        {
+          "source": "I1_interpretation_or_tradeoff",
+          "target": "S1_bounded_takeaway"
+        },
+        {
+          "source": "S1_bounded_takeaway",
+          "target": "P1_length_and_placement_prior"
+        }
+      ],
+      "support_count": 2,
+      "empirical_probability": 0.105263,
+      "training_cases": [
+        "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+        "ICLR2026_ZBj3Qp1bYg_ebt"
+      ]
+    },
+    {
+      "path_id": "path_06",
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "edges": [
+        {
+          "source": "R1_abstract_as_argument",
+          "target": "G1_problem_gap"
+        },
+        {
+          "source": "G1_problem_gap",
+          "target": "C1_domain_context"
+        },
+        {
+          "source": "C1_domain_context",
+          "target": "O1_named_method_or_object"
+        },
+        {
+          "source": "O1_named_method_or_object",
+          "target": "M1_architecture_or_mechanism"
+        },
+        {
+          "source": "M1_architecture_or_mechanism",
+          "target": "M2_efficiency_or_theory_detail"
+        },
+        {
+          "source": "M2_efficiency_or_theory_detail",
+          "target": "E1_evaluation_setup"
+        },
+        {
+          "source": "E1_evaluation_setup",
+          "target": "E2_result_outcome"
+        },
+        {
+          "source": "E2_result_outcome",
+          "target": "I1_interpretation_or_tradeoff"
+        },
+        {
+          "source": "I1_interpretation_or_tradeoff",
+          "target": "S1_bounded_takeaway"
+        },
+        {
+          "source": "S1_bounded_takeaway",
+          "target": "P1_length_and_placement_prior"
+        }
+      ],
+      "support_count": 1,
+      "empirical_probability": 0.052632,
+      "training_cases": [
+        "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete"
+      ]
+    }
+  ],
+  "all_legal_source_to_sink_paths": [
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": true,
+      "support_count": 2
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": false,
+      "support_count": 0
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": true,
+      "support_count": 4
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": true,
+      "support_count": 1
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": true,
+      "support_count": 3
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": false,
+      "support_count": 0
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": true,
+      "support_count": 6
+    },
+    {
+      "nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "observed_in_training": true,
+      "support_count": 3
+    }
+  ],
+  "checks": {
+    "all_input_traces_are_connected_directed_paths": true,
+    "union_graph_is_acyclic": true,
+    "union_graph_source_count": 1,
+    "union_graph_sink_count": 1,
+    "observed_unique_path_count": 6,
+    "legal_union_path_count": 8
+  },
+  "claim_boundary": [
+    "The learned graph reflects extracted proxy traces, not verified historical author processes.",
+    "Unobserved union paths are structurally legal hypotheses, not learned successful paths.",
+    "No MCTS was run by this learner.",
+    "Context-conditioned path selection requires a separately trained or validated policy."
+  ]
+}

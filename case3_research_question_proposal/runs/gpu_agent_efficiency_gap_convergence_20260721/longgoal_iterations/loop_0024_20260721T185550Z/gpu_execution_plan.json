@@ -1,0 +1,135 @@
+{
+  "status": "execution_ready",
+  "gpu_probe": {
+    "available": true,
+    "gpu_count": 4,
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "24198 MiB",
+        "driver_version": "535.183.01"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "24198 MiB",
+        "driver_version": "535.183.01"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "23245 MiB",
+        "driver_version": "535.183.01"
+      },
+      {
+        "index": "3",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "24198 MiB",
+        "driver_version": "535.183.01"
+      }
+    ],
+    "command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv,noheader"
+  },
+  "repo_readiness": [
+    {
+      "name": "tau2-Bench",
+      "role": "conversational dual-control benchmark",
+      "repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/tau2-bench",
+      "exists": true,
+      "readiness_files": [
+        "README.md",
+        "pyproject.toml"
+      ],
+      "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+    },
+    {
+      "name": "SimuHome",
+      "role": "temporal smart-home simulator/verifier",
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SimuHome",
+      "exists": true,
+      "readiness_files": [
+        "README.md",
+        "pyproject.toml"
+      ],
+      "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+    },
+    {
+      "name": "Gaia2",
+      "role": "dynamic/asynchronous agent benchmark",
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments",
+      "exists": true,
+      "readiness_files": [
+        "README.md",
+        "docs/requirements.txt",
+        "gaia2-cli/README.md",
+        "pyproject.toml",
+        "requirements-dev.txt",
+        "requirements-gui.txt",
+        "requirements.txt"
+      ],
+      "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+    },
+    {
+      "name": "Speculative Actions",
+      "role": "latency-reducing reversible action speculation",
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action",
+      "exists": true,
+      "readiness_files": [
+        "README.md",
+        "chess-game/README.md",
+        "chess-game/pyproject.toml",
+        "chess-game/requirements.txt",
+        "e-commerce/README.md",
+        "hotpotqa/README.md",
+        "hotpotqa/requirements.txt",
+        "os-tuning/README.md",
+        "os-tuning/pyproject.toml",
+        "os-tuning/requirements.txt"
+      ],
+      "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+    },
+    {
+      "name": "AgentFlow",
+      "role": "planner/executor/verifier agent stack",
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/AgentFlow",
+      "exists": true,
+      "readiness_files": [
+        "README.md",
+        "agentflow/pyproject.toml",
+        "agentflow/requirements.txt",
+        "pyproject.toml"
+      ],
+      "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+    }
+  ],
+  "first_smoke_order": [
+    "SimuHome: run minimal simulator/verifier episode without model call",
+    "tau2-Bench: run CLI/import smoke and one tiny environment task",
+    "Speculative Actions: run reversible/read-only toy speculation task",
+    "Gaia2: run local scenario/parser/verifier smoke",
+    "AgentFlow: run import/config smoke before any model serving"
+  ],
+  "metrics_to_log": [
+    "task_success",
+    "state_verifier_pass_rate",
+    "tool_calls",
+    "tokens_in",
+    "tokens_out",
+    "wall_clock_latency",
+    "gpu_memory_peak_mb",
+    "gpu_utilization_snapshot",
+    "wrong_commit_count",
+    "speculation_hit_rate"
+  ],
+  "4090_policy": [
+    "prefer 7B/8B local models or model-free simulator smoke tests",
+    "avoid full multi-A100/H100 training",
+    "use subsets before full benchmark runs",
+    "record GPU count, memory, driver, and command line with every run"
+  ]
+}

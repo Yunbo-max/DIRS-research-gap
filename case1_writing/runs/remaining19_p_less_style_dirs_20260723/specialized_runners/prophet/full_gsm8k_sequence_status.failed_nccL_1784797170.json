@@ -1,0 +1,40 @@
+{
+  "artifact_kind": "prophet_full_gsm8k_sequential_lm_eval",
+  "convergence_role": "paper_shaped_long_running_evidence_until_verifier_accepts",
+  "cuda_visible_devices": "3",
+  "current_variant": null,
+  "finished_at_utc": "2026-07-23T08:58:55Z",
+  "runs": [
+    {
+      "cmd": [
+        "accelerate",
+        "launch",
+        "--num_processes",
+        "1",
+        "eval_llada.py",
+        "--tasks",
+        "gsm8k_cot_zeroshot",
+        "--model",
+        "llada_dist",
+        "--model_args",
+        "model_path='GSAI-ML/LLaDA-8B-Instruct',enable_early_exit=false,constraints_text=\"200:The|201:answer|202:is\",gen_length=256,steps=256,block_length=32,answer_length=5",
+        "--output_path",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/lm_eval_gsm8k_full_baseline"
+      ],
+      "cuda_visible_devices": "3",
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet",
+      "finished_at_utc": "2026-07-23T08:58:55Z",
+      "log_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/lm_eval_gsm8k_full_baseline/run.log",
+      "logical_gpu_mapping_note": "physical GPU 3 is logical cuda:0 inside this process",
+      "output_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/lm_eval_gsm8k_full_baseline",
+      "pid": 2543413,
+      "returncode": 1,
+      "seconds": 17.819,
+      "started_at_utc": "2026-07-23T08:58:38Z",
+      "status": "failed",
+      "variant": "baseline"
+    }
+  ],
+  "sequence_status": "failed_before_all_variants_finished",
+  "started_at_utc": "2026-07-23T08:58:38Z"
+}

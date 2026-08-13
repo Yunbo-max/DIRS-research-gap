@@ -1,0 +1,28 @@
+{
+  "contains_close_result_gate": true,
+  "contains_exact_debt_gate": true,
+  "contains_operational_execution_node": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T00:27:31Z",
+  "edge_count": 17,
+  "graph_id": "p_less_research_gap_skill_graph_iter_02",
+  "graph_signature": "8b87a185f2a8dfd5",
+  "input_contract": {
+    "only_input_file": "research_gap_skill_graph.json",
+    "oracle_numeric_results_visible": false,
+    "paper_text_visible": false,
+    "previous_memory_visible": false
+  },
+  "node_count": 14,
+  "paper_oracle_seen": false,
+  "paper_text_seen": false,
+  "predictions": {
+    "convergence_policy_understood": "close_gap_shape_can_converge_only_with_professional_scale_exact_artifacts_remain_debt",
+    "efficiency_shape": "p_less_fastest_or_near_fastest_in_full_generation",
+    "exact_reproduction_boundary": "not_exact_tables_unless_full_artifact_package_exists",
+    "gap": "Existing decoding samplers are brittle because they require hyperparameter tuning across task and temperature; fixed or single-token-relative thresholds can fail under high temperature, tail-token, or fallback cases.",
+    "high_temperature_shape": "p_less_stable_high_temperature",
+    "main_result_shape": "p_less_or_p_lessnorm_top_or_near_top",
+    "method": "A full-distribution second-moment threshold can remove sampler hyperparameters while adapting the retained token set; a normalized variant trades toward diversity."
+  }
+}

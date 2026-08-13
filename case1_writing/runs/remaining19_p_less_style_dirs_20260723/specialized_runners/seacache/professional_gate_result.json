@@ -1,0 +1,56 @@
+{
+  "artifact_kind": "seacache_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Paper/DAG expects Blackwell RTX PRO 6000 and/or A100 traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "paper_hardware_class",
+      "status": "blocked"
+    },
+    {
+      "detail": "Visible GPUs are already memory-heavy or active; GPU 3 is occupied by the Prophet full run. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+      "id": "clean_gpu_slot_for_diffusion_grid",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local paper-scale model checkpoints: flux_dev, wan21_t2v_13b, wan21_t2v_14b, wan21_i2v_14b_720p, hunyuanvideo",
+      "id": "required_diffusion_checkpoints_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local prompt/evaluator artifacts: drawbench_200_prompts, vbench_944_prompts_and_tooling, cyclereward_eval, compressedvqa_eval",
+      "id": "prompt_metric_artifacts_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing required runtime packages/imports: diffusers, calflops, vbench, lpips, wan, hyvideo",
+      "id": "diffusion_metric_runtime_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "SeaCache scripts need patch/wrapper before full grid: flux_prompt_grid_break, hunyuan_threshold_hardcoded",
+      "id": "official_script_parity_for_full_grid",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-24T13:31:58Z",
+  "next_full_execution_if_unblocked": [
+    "materialize FLUX.1-dev, Wan2.1 1.3B/14B, and HunyuanVideo checkpoints",
+    "materialize DrawBench, VBench, CycleReward, and CompressedVQA prompt/evaluator artifacts",
+    "patch/wrap FLUX prompt loop and Hunyuan threshold CLI so sweeps run across the full grid",
+    "run uncached 50-step references and SeaCache threshold sweeps with shared seeds",
+    "record latency, TFLOPs, refresh ratio, GPU/CPU/RAM traces, and raw generated media",
+    "score PSNR/LPIPS/SSIM, VBench, CycleReward, and CompressedVQA and compare to paper tables/figures"
+  ],
+  "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "paper_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+  "professional_package_ready": false,
+  "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+  "support_checks": {
+    "compileall_passed": true,
+    "dataset_metric_artifacts_checked": 4,
+    "model_manifests_checked": 6,
+    "repo_files_checked": 11,
+    "sea_filter_unit_passed": true
+  }
+}

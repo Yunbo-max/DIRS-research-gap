@@ -1,0 +1,10 @@
+[2026-07-23T09:14:58Z] loading dataset openai/gsm8k main test
+[2026-07-23T09:14:59Z] loading model GSAI-ML/LLaDA-8B-Instruct
+[2026-07-23T09:16:28Z] starting full GSM8K loop: total=1319 range=[0,1319) already_completed=0
+[2026-07-23T09:16:42Z] sample 0000 baseline: strict='' flex='18' gold='18' ok=True steps=256 sec=13.85
+[2026-07-23T09:16:54Z] sample 0000 prophet: strict='' flex='' gold='18' ok=False steps=216 sec=11.35
+[2026-07-23T09:17:07Z] sample 0001 baseline: strict='' flex='3' gold='3' ok=True steps=256 sec=12.75
+[2026-07-23T09:17:18Z] sample 0001 prophet: strict='' flex='3' gold='3' ok=True steps=216 sec=10.99
+[2026-07-23T09:17:32Z] sample 0002 baseline: strict='' flex='' gold='70000' ok=False steps=256 sec=13.94
+[2026-07-23T09:17:44Z] sample 0002 prophet: strict='' flex='120000' gold='70000' ok=False steps=212 sec=11.70
+[2026-07-23T09:17:57Z] sample 0003 baseline: strict='' flex='540' gold='540' ok=True steps=256 sec=12.99

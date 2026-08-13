@@ -1,0 +1,62 @@
+[
+  {
+    "id": "E1_evaluation_setup",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "E2_result_outcome",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "G1_problem_gap",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "I1_interpretation_or_tradeoff",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "M1_architecture_or_mechanism",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "O1_named_method_or_object",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "P1_length_and_placement_prior",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "R1_abstract_as_argument",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "S1_bounded_takeaway",
+    "support_count": 19,
+    "support_rate": 1.0
+  },
+  {
+    "id": "E3_quantitative_anchor",
+    "support_count": 15,
+    "support_rate": 0.7895
+  },
+  {
+    "id": "M2_efficiency_or_theory_detail",
+    "support_count": 14,
+    "support_rate": 0.7368
+  },
+  {
+    "id": "C1_domain_context",
+    "support_count": 7,
+    "support_rate": 0.3684
+  }
+]

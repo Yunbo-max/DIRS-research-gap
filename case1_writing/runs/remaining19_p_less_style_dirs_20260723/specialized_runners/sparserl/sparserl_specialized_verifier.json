@@ -1,0 +1,241 @@
+{
+  "created_at_utc": "2026-07-23T18:59:25Z",
+  "cuda_eval_summary": {
+    "CSR": {
+      "attempts": 6,
+      "compile_success": 6,
+      "correct": 6,
+      "mean_base_ms": 1.3216853333333334,
+      "mean_effective_candidate_ms": 0.06433539547536771,
+      "timeouts": 0
+    },
+    "ELL": {
+      "attempts": 6,
+      "compile_success": 5,
+      "correct": 5,
+      "mean_base_ms": 4.2825024,
+      "mean_effective_candidate_ms": 15.285470966933584,
+      "timeouts": 1
+    },
+    "SELL": {
+      "attempts": 6,
+      "compile_success": 6,
+      "correct": 1,
+      "mean_base_ms": 4.57344,
+      "mean_effective_candidate_ms": 109.44288188244938,
+      "timeouts": 0
+    }
+  },
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/paper_author_gap_dag.json",
+  "environment": {
+    "created_at_utc": "2026-07-23T18:53:42Z",
+    "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/paper_author_gap_dag.json",
+    "git_config_file_excerpt": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n[remote \"origin\"]\n\turl = https://github.com/QiWu-NCIC/SparseRL\n\tfetch = +refs/heads/*:refs/remotes/origin/*\n[branch \"main\"]\n\tremote = origin\n\tmerge = refs/heads/main\n",
+    "git_head_file": "ref: refs/heads/main",
+    "hostname": "9be0b5586206",
+    "logical_gpu_mapping_note": "CUDA_VISIBLE_DEVICES=3 makes the selected physical GPU appear as logical cuda:0 inside PyTorch; OOM messages may therefore say GPU 0 while referring to the selected visible device.",
+    "nvcc_version": {
+      "cmd": [
+        "nvcc",
+        "--version"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.013,
+      "stderr": "",
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Tue_Feb_27_16:19:38_PST_2024\nCuda compilation tools, release 12.4, V12.4.99\nBuild cuda_12.4.r12.4/compiler.33961263_0\n",
+      "timeout": false
+    },
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.069,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19042, 17\n3, NVIDIA GeForce RTX 4090, 24564, 16069, 99\n",
+      "timeout": false
+    },
+    "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.31",
+    "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+    "python_deps": {
+      "cmd": [
+        "python",
+        "-c",
+        "import torch, transformers, peft, scipy, numpy; print('torch', torch.__version__, 'cuda', torch.version.cuda); print('transformers', transformers.__version__); print('peft', peft.__version__); print('scipy', scipy.__version__); print('numpy', numpy.__version__)"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 4.538,
+      "stderr": "",
+      "stdout": "torch 2.6.0+cu124 cuda 12.4\ntransformers 4.51.2\npeft 0.17.1\nscipy 1.11.4\nnumpy 1.26.4\n",
+      "timeout": false
+    },
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL",
+    "selected_cuda_visible_devices": "3",
+    "which_nvcc": "/opt/conda/envs/tofu/bin/nvcc",
+    "which_python": "/opt/conda/bin/python"
+  },
+  "matrix_inventory": [
+    {
+      "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/176bit.mtx",
+      "name": "176bit.mtx",
+      "nnz": 82270,
+      "shape": [
+        7441,
+        7431
+      ]
+    },
+    {
+      "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/ACTIVSg2000.mtx",
+      "name": "ACTIVSg2000.mtx",
+      "nnz": 29336,
+      "shape": [
+        4000,
+        4000
+      ]
+    },
+    {
+      "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/gen2.mtx",
+      "name": "gen2.mtx",
+      "nnz": 81855,
+      "shape": [
+        1121,
+        3264
+      ]
+    },
+    {
+      "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/kineticBatchReactor_6.mtx",
+      "name": "kineticBatchReactor_6.mtx",
+      "nnz": 82500,
+      "shape": [
+        7773,
+        7773
+      ]
+    },
+    {
+      "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/lhr04.mtx",
+      "name": "lhr04.mtx",
+      "nnz": 82682,
+      "shape": [
+        4101,
+        4101
+      ]
+    },
+    {
+      "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/lhr04c.mtx",
+      "name": "lhr04c.mtx",
+      "nnz": 82682,
+      "shape": [
+        4101,
+        4101
+      ]
+    }
+  ],
+  "model_attempt_summary": {
+    "attempted": false,
+    "model_arg": null,
+    "returncode": null,
+    "seconds": null,
+    "timeout": null
+  },
+  "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+  "paper_title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL",
+  "runner_type": "sparse_cuda_kernel_quality_runner",
+  "verifier": {
+    "blind_contract_checked": {
+      "only_input_file": "paper_author_gap_dag.json",
+      "oracle_results_visible_to_loop2": false,
+      "paper_text_visible_to_loop2": false,
+      "previous_memory_visible_to_loop2": false,
+      "repo_paths_visible_only_if_encoded_in_dag": true,
+      "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+    },
+    "convergence_decision": "blocked_not_converged",
+    "created_at_utc": "2026-07-23T18:59:25Z",
+    "loop1_required_dag_update": [
+      "Add an executor node that explicitly runs full-nnz SpMV compile/correctness/timing on released Matrix Market samples.",
+      "Add an exact-model gate for Qwen3/DeepSeek-R1/static-codegen baselines before any pass@k claim.",
+      "Add explicit SpMM debt because the official minimal repo executor is SpMV-only.",
+      "Add paper-hardware gate distinguishing local RTX 4090 support from V100/A100 paper traces.",
+      "Tell loop2 to keep running only after generated-policy, pass@k, baseline, and dataset-scale nodes are satisfied.",
+      "Promote deterministic CUDA rows only as executor sanity evidence, never as final result-shape convergence."
+    ],
+    "model_policy_evidence": {
+      "attempted": false,
+      "has_generated_policy_run": false,
+      "returncode": null,
+      "timeout": null
+    },
+    "professional_package_ready": false,
+    "real_cuda_convergence_role": "support_only",
+    "real_cuda_executor_evidence": {
+      "attempted_rows": 18,
+      "correct_rows": 12,
+      "has_real_cuda_compile_run": true
+    },
+    "semantic_dag_nodes_checked": [
+      {
+        "content": "correct code generation misses execution latency; sparse matrix structure is dynamic input; compiler and runtime feedback is non-differentiable",
+        "id": "gap.paper_gap_claims",
+        "skill_role": "state the missing capability",
+        "type": "gap_hypothesis"
+      },
+      {
+        "content": "pretrained code LLM policy; sparse sinusoidal embedding; SFT alignment; PPO update; compiler/executor environment; hierarchical reward",
+        "id": "method.bind_gap_to_mechanism",
+        "skill_role": "make the solution answer the gap",
+        "type": "mechanism_binding"
+      },
+      {
+        "content": "benchmarks=SpMV; SpMM; metrics=pass@1; pass@5; pass@1000; compilation rate; GFLOPS; TFLOPS; speedup; protocols=compile generated CUDA; run functional check; time candidate kernel; compare with cuSPARSE or other baselines",
+        "id": "experiments.benchmark_metric_grid",
+        "skill_role": "design paper-shaped comparisons",
+        "type": "experiment_design"
+      }
+    ],
+    "status": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+    "support_only_reasons": [
+      "deterministic CUDA rows use canonical hand-authored CSR/ELL/SELL kernels, not generated SparseRL policy samples",
+      "the local matrix inventory contains six released sample Matrix Market files, not the paper-scale SuiteSparse and Deep Learning Matrix Collection grids",
+      "the failed Qwen3-8B repo-minimal attempt is an OOM/runtime blocker, not pass@k policy evidence",
+      "no SpMM executor, cuSPARSE/TVM-S/static-codegen baseline table, or V100/A100 paper-hardware trace has been produced"
+    ],
+    "unresolved_professional_debt": [
+      {
+        "id": "generated_kernel_policy_grid",
+        "needed": "generated kernels from the pretrained/SFT/RL policy, not only hand-authored canonical kernels",
+        "status": "unresolved"
+      },
+      {
+        "id": "pass_at_k_metrics",
+        "needed": "pass@1/pass@5/pass@1000 or equivalent sampling-grid measurements",
+        "status": "unresolved"
+      },
+      {
+        "id": "paper_dataset_scale",
+        "needed": "SuiteSparse and Deep Learning Matrix Collection coverage, not only six released sample matrices",
+        "status": "unresolved"
+      },
+      {
+        "id": "spmm_and_table_grid",
+        "needed": "SpMM executor and comparison rows in addition to SpMV",
+        "status": "unresolved"
+      },
+      {
+        "id": "baseline_comparison",
+        "needed": "cuSPARSE/TVM-S/static LLM/codegen baselines with GFLOPS/TFLOPS/speedup",
+        "status": "unresolved"
+      },
+      {
+        "id": "paper_hardware_match",
+        "needed": "paper-stated V100/A100 traces; current run records local RTX 4090 only",
+        "status": "unresolved"
+      }
+    ]
+  }
+}

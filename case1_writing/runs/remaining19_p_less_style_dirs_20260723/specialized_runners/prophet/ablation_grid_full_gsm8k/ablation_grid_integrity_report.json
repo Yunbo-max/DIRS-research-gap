@@ -1,0 +1,936 @@
+{
+  "artifact_kind": "prophet_ablation_grid_integrity_report",
+  "blocked_config_ids": [
+    "table4_block_length_8",
+    "table4_block_length_32",
+    "table4_block_length_64",
+    "table4_block_length_128"
+  ],
+  "campaign_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k",
+  "complete_config_ids": [
+    "table3a_static_L256_T16",
+    "table3a_static_L256_T32",
+    "table3a_static_L256_T64",
+    "table3a_static_L256_T128",
+    "table3a_prophet_L256_T256",
+    "table3a_static_L128_T16",
+    "table3a_static_L128_T32",
+    "table3a_static_L128_T64",
+    "table3a_static_L128_T128",
+    "table3a_prophet_L128_T128",
+    "table3b_remasking_random",
+    "table3b_remasking_low_confidence",
+    "table4_block_length_16"
+  ],
+  "configs": [
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "0",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L256_T16",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T16",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 59760,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T16/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T16/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T16/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T19:47:10Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "1",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L256_T32",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T32",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 59766,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T32/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T32/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T32/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T19:50:24Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "2",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L256_T64",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T64",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 59774,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T64/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T64/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T64/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T21:27:18Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "0",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L256_T128",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T128",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 85898,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T128/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T128/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T128/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T00:14:17Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "1",
+      "expected_variants": [
+        "prophet"
+      ],
+      "id": "table3a_prophet_L256_T256",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L256_T256",
+      "paper_role": "Table 3a Prophet adaptive-step row",
+      "pid": 88302,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "prophet": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L256_T256/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L256_T256/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "prophet": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L256_T256/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T23:28:02Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "2",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L128_T16",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 155943,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T21:52:15Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "2",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L128_T32",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T32",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 173113,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T32/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T32/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T32/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T22:36:02Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "3",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L128_T64",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 182534,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-23T23:47:13Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "1",
+      "expected_variants": [
+        "baseline"
+      ],
+      "id": "table3a_static_L128_T128",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T128",
+      "paper_role": "Table 3a static step-budget ablation",
+      "pid": 234935,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T128/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T128/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T128/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T01:03:49Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "0",
+      "expected_variants": [
+        "prophet"
+      ],
+      "id": "table3a_prophet_L128_T128",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L128_T128",
+      "paper_role": "Table 3a Prophet adaptive-step row",
+      "pid": 267051,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 1319,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "prophet": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L128_T128/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L128_T128/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "prophet": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L128_T128/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T05:34:57Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "3",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table3b_remasking_random",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_random",
+      "paper_role": "Table 3b remasking strategy compatibility",
+      "pid": 267608,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 2638,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319,
+          "prophet": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_random/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_random/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_random/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T09:19:04Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "1",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table3b_remasking_low_confidence",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_low_confidence",
+      "paper_role": "Table 3b remasking strategy compatibility",
+      "pid": 272915,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 2638,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319,
+          "prophet": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_low_confidence/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_low_confidence/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_low_confidence/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T07:27:21Z"
+    },
+    {
+      "completed_samples_status": 1310,
+      "cuda_visible_devices": "0",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table4_block_length_8",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8",
+      "paper_role": "Table 4 block-length sensitivity",
+      "pid": 278940,
+      "pid_alive": false,
+      "reasons": [
+        "process_not_alive_before_full_config_completion"
+      ],
+      "row_summary": {
+        "completed_samples_from_rows": 1310,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1309,
+        "metric_errors": [],
+        "row_count": 2620,
+        "sample_count_observed": 1310,
+        "variant_counts": {
+          "baseline": 1310,
+          "prophet": 1310
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8/per_sample_results.jsonl",
+      "status": "blocked_stopped_partial_artifact",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1310,
+            "summary_count": 1310
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 1310,
+            "summary_count": 1310
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "running_or_partial",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T11:22:59Z"
+    },
+    {
+      "completed_samples_status": 1319,
+      "cuda_visible_devices": "1",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table4_block_length_16",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_16",
+      "paper_role": "Table 4 block-length sensitivity",
+      "pid": 288071,
+      "pid_alive": false,
+      "reasons": [],
+      "row_summary": {
+        "completed_samples_from_rows": 1319,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 1318,
+        "metric_errors": [],
+        "row_count": 2638,
+        "sample_count_observed": 1319,
+        "variant_counts": {
+          "baseline": 1319,
+          "prophet": 1319
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_16/per_sample_results.jsonl",
+      "status": "pass_complete_jsonl_integrity",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_16/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 1319,
+            "summary_count": 1319
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "completed",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_16/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T10:35:58Z"
+    },
+    {
+      "completed_samples_status": 361,
+      "cuda_visible_devices": "3",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table4_block_length_32",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_32",
+      "paper_role": "Table 4 block-length sensitivity",
+      "pid": 296937,
+      "pid_alive": false,
+      "reasons": [
+        "process_not_alive_before_full_config_completion"
+      ],
+      "row_summary": {
+        "completed_samples_from_rows": 361,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 360,
+        "metric_errors": [],
+        "row_count": 722,
+        "sample_count_observed": 361,
+        "variant_counts": {
+          "baseline": 361,
+          "prophet": 361
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_32/per_sample_results.jsonl",
+      "status": "blocked_stopped_partial_artifact",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_32/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 361,
+            "summary_count": 361
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 361,
+            "summary_count": 361
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "running_or_partial",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_32/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T11:23:03Z"
+    },
+    {
+      "completed_samples_status": 252,
+      "cuda_visible_devices": "2",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table4_block_length_64",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64",
+      "paper_role": "Table 4 block-length sensitivity",
+      "pid": 333923,
+      "pid_alive": false,
+      "reasons": [
+        "process_not_alive_before_full_config_completion"
+      ],
+      "row_summary": {
+        "completed_samples_from_rows": 252,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [
+          {
+            "sample_index": 252,
+            "variants_present": [
+              "baseline"
+            ]
+          }
+        ],
+        "index_errors": [],
+        "last_sample_index": 252,
+        "metric_errors": [],
+        "row_count": 505,
+        "sample_count_observed": 253,
+        "variant_counts": {
+          "baseline": 253,
+          "prophet": 252
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64/per_sample_results.jsonl",
+      "status": "blocked_stopped_partial_artifact",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 1,
+            "row_count": 253,
+            "summary_count": 252
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 252,
+            "summary_count": 252
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "running_or_partial",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T11:23:01Z"
+    },
+    {
+      "completed_samples_status": 323,
+      "cuda_visible_devices": "1",
+      "expected_variants": [
+        "baseline",
+        "prophet"
+      ],
+      "id": "table4_block_length_128",
+      "json_parse_errors": [],
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_128",
+      "paper_role": "Table 4 block-length sensitivity",
+      "pid": 347595,
+      "pid_alive": false,
+      "reasons": [
+        "process_not_alive_before_full_config_completion"
+      ],
+      "row_summary": {
+        "completed_samples_from_rows": 323,
+        "duplicate_sample_variant_pairs": [],
+        "field_errors": [],
+        "first_sample_index": 0,
+        "incomplete_samples": [],
+        "index_errors": [],
+        "last_sample_index": 322,
+        "metric_errors": [],
+        "row_count": 646,
+        "sample_count_observed": 323,
+        "variant_counts": {
+          "baseline": 323,
+          "prophet": 323
+        }
+      },
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_128/per_sample_results.jsonl",
+      "status": "blocked_stopped_partial_artifact",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_128/status.json",
+      "summary_consistency": {
+        "deltas": {
+          "baseline": {
+            "delta": 0,
+            "row_count": 323,
+            "summary_count": 323
+          },
+          "prophet": {
+            "delta": 0,
+            "row_count": 323,
+            "summary_count": 323
+          }
+        },
+        "failed_variants": [],
+        "status": "pass_or_live_race",
+        "summary_status": "running_or_partial",
+        "summary_total_samples": 1319
+      },
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_128/summary.json",
+      "total_samples_status": 1319,
+      "updated_at_utc": "2026-07-24T11:23:05Z"
+    }
+  ],
+  "created_at_utc": "2026-07-24T14:02:55Z",
+  "manifest_blocked_config_ids": [
+    "table3b_remasking_top_k_margin",
+    "dream7b_axis"
+  ],
+  "manifest_blocked_configs": [
+    {
+      "id": "table3b_remasking_top_k_margin",
+      "paper_role": "Table 3b remasking strategy compatibility",
+      "reason": "The current released Prophet generate.py and generate_earlyexit.py support low_confidence and random remasking only. Hand-rolling top-k margin would not be exact professional reproduction evidence.",
+      "status": "blocked_by_missing_official_top_k_margin_remasking_implementation"
+    },
+    {
+      "id": "dream7b_axis",
+      "paper_role": "Dream-7B Table 1 axis",
+      "reason": "The active code path and current custom runner are LLaDA-specific; adding Dream-7B needs exact model loading, prompt/config parity, and a free GPU memory window.",
+      "status": "blocked_until_dream7b_exact_runner_and_memory_budget_are_resolved"
+    }
+  ],
+  "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+  "pending_config_ids": [],
+  "reasons": [
+    "table4_block_length_8",
+    "table4_block_length_32",
+    "table4_block_length_64",
+    "table4_block_length_128"
+  ],
+  "running_config_ids": [],
+  "status": "blocked_ablation_grid_integrity_failure"
+}

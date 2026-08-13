@@ -1,0 +1,67 @@
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2026-07-23:10:04:59 INFO     [_cli.run:388] Selected Tasks: ['gsm8k_cot_zeroshot']
+2026-07-23:10:04:59 WARNING  [evaluator:184] pretrained=None appears to be an instruct or chat variant but chat template is not applied. Recommend setting `apply_chat_template`
+        (optionally `fewshot_as_multiturn`).
+2026-07-23:10:04:59 INFO     [evaluator:214] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-07-23:10:04:59 INFO     [evaluator:239] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'enable_early_exit': False, 'constraints_text': '200:The|201:answer|202:is', 'gen_length': 256, 'steps': 256, 'block_length': 32, 'answer_length': 5}
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:00<00:00, 127.05it/s]
+2026-07-23:10:05:07 INFO     [evaluator_utils:446] Selected tasks:
+2026-07-23:10:05:07 INFO     [evaluator_utils:480] Task: gsm8k_cot_zeroshot (gsm8k/gsm8k-cot-zeroshot.yaml)
+2026-07-23:10:05:07 INFO     [evaluator:314] gsm8k_cot_zeroshot: Using gen_kwargs: {'until': ['Q:', '</s>', '<|im_end|>'], 'do_sample': False}
+2026-07-23:10:05:07 INFO     [api.task:312] Building contexts for gsm8k_cot_zeroshot on rank 0...
+  0%|          | 0/1319 [00:00<?, ?it/s] 11%|█▏        | 149/1319 [00:00<00:00, 1488.49it/s] 23%|██▎       | 298/1319 [00:00<00:00, 1488.69it/s] 34%|███▍      | 447/1319 [00:00<00:00, 1482.96it/s] 45%|████▌     | 597/1319 [00:00<00:00, 1487.94it/s] 57%|█████▋    | 746/1319 [00:00<00:00, 1488.48it/s] 68%|██████▊   | 898/1319 [00:00<00:00, 1498.08it/s] 80%|███████▉  | 1049/1319 [00:00<00:00, 1500.54it/s] 91%|█████████ | 1200/1319 [00:00<00:00, 1503.19it/s]100%|██████████| 1319/1319 [00:00<00:00, 1497.14it/s]
+2026-07-23:10:05:08 INFO     [evaluator:585] Running generate_until requests
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <enum 'ActivationType'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <enum 'ActivationType'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.configuration_llada.ActivationType has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <class 'transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.LayerNormBase'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <class 'transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.LayerNormBase'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.LayerNormBase has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <enum 'LayerNormType'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <enum 'LayerNormType'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.configuration_llada.LayerNormType has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <enum 'BlockType'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <enum 'BlockType'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.configuration_llada.BlockType has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <class 'transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.LLaDABlock'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <class 'transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.LLaDABlock'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.LLaDABlock has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <enum 'InitFnType'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <enum 'InitFnType'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.configuration_llada.InitFnType has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <enum 'ModuleType'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <enum 'ModuleType'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.modeling_llada.ModuleType has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot locate reference to <enum 'ActivationCheckpointingStrategy'>.
+  StockPickler.save(self, obj, save_persistent_id)
+/opt/conda/lib/python3.10/site-packages/dill/_dill.py:422: PicklingWarning: Cannot pickle <enum 'ActivationCheckpointingStrategy'>: transformers_modules.GSAI-ML.LLaDA-8B-Instruct.08b83a6feb34df1a6011b80c3c00c7563e963b07.configuration_llada.ActivationCheckpointingStrategy has recursive self-references that trigger a RecursionError.
+  StockPickler.save(self, obj, save_persistent_id)
+Traceback (most recent call last):
+  File "/opt/conda/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1235, in launch_command
+    simple_launcher(args)
+  File "/opt/conda/lib/python3.10/site-packages/accelerate/commands/launch.py", line 823, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/bin/python', 'eval_llada.py', '--tasks', 'gsm8k_cot_zeroshot', '--model', 'llada_dist', '--model_args', 'model_path=\'GSAI-ML/LLaDA-8B-Instruct\',enable_early_exit=false,constraints_text="200:The|201:answer|202:is",gen_length=256,steps=256,block_length=32,answer_length=5', '--output_path', '/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/lm_eval_gsm8k_full_baseline']' died with <Signals.SIGKILL: 9>.

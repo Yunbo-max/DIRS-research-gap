@@ -1,0 +1,370 @@
+{
+  "artifact_kind": "atoken_environment_manifest",
+  "compileall": {
+    "lightweight_repo": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.069,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "official_repo": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.04,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    }
+  },
+  "created_at_utc": "2026-07-23T18:53:03Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 2873,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 21343,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 61.89,
+      "temperature_c": 44,
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 20.57,
+      "temperature_c": 39,
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5191,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19023,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 20.85,
+      "temperature_c": 39,
+      "utilization_gpu_pct": 17
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8108,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16109,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 247.02,
+      "temperature_c": 74,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "import_probes": {
+    "PIL": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('PIL'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.025,
+      "stderr": "",
+      "stdout": "10.0.1\n",
+      "timeout": false
+    },
+    "cv2": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('cv2'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.181,
+      "stderr": "",
+      "stdout": "4.13.0\n",
+      "timeout": false
+    },
+    "decord": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('decord'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.164,
+      "stderr": "",
+      "stdout": "0.6.0\n",
+      "timeout": false
+    },
+    "diff_gaussian_rasterization": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('diff_gaussian_rasterization'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diff_gaussian_rasterization'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "diffusers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('diffusers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "flash_attn": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('flash_attn'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'flash_attn'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "ftfy": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('ftfy'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.071,
+      "stderr": "",
+      "stdout": "6.3.1\n",
+      "timeout": false
+    },
+    "imageio": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('imageio'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'imageio'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "numpy": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('numpy'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.136,
+      "stderr": "",
+      "stdout": "1.26.4\n",
+      "timeout": false
+    },
+    "open_clip": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('open_clip'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'open_clip'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "safetensors": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('safetensors'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.025,
+      "stderr": "",
+      "stdout": "0.6.2\n",
+      "timeout": false
+    },
+    "scipy": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('scipy'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.153,
+      "stderr": "",
+      "stdout": "1.11.4\n",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.552,
+      "stderr": "",
+      "stdout": "2.6.0+cu124\n",
+      "timeout": false
+    },
+    "torchvision": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torchvision'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 2.639,
+      "stderr": "",
+      "stdout": "0.21.0+cu124\n",
+      "timeout": false
+    },
+    "transformers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('transformers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.846,
+      "stderr": "",
+      "stdout": "4.51.2\n",
+      "timeout": false
+    },
+    "webdataset": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('webdataset'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'webdataset'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "yaml": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('yaml'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.04,
+      "stderr": "",
+      "stdout": "6.0.1\n",
+      "timeout": false
+    }
+  },
+  "packages": {
+    "Pillow": "10.0.1",
+    "PyYAML": "6.0.1",
+    "decord": "0.6.0",
+    "diffusers": null,
+    "einops": "0.8.2",
+    "flash-attn": null,
+    "ftfy": "6.3.1",
+    "imageio": null,
+    "ninja": null,
+    "numpy": "1.26.4",
+    "open-clip-torch": null,
+    "opencv-python": null,
+    "safetensors": "0.6.2",
+    "scipy": "1.11.4",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformers": "4.51.2",
+    "webdataset": null
+  },
+  "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+  "professional_hardware_expected_by_dag": [
+    "64 H100 GPUs for Stage 1 training",
+    "256 H100 GPUs for Stages 2-3 training",
+    "CUDA GPU with enough memory for official ATokenWrapper inference",
+    "Gaussian Splatting runtime for image-to-3D path"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "python_processes": {
+    "cmd": [
+      "bash",
+      "-lc",
+      "ps -eo pid,etime,stat,cmd | rg 'prophet_custom_full_gsm8k_runner|AToken|atoken|python' || true"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.007,
+    "stderr": "",
+    "stdout": "  14818       39:28 S    /root/.vscode-server/extensions/ms-python.vscode-python-envs-1.10.0-linux-x64/python-env-tools/bin/pet server\n  15658       39:24 Sl   /root/.vscode-server/bin/1b6a188127eeaf9194f945eb6eb89a657e93c54c/node /root/.vscode-server/extensions/ms-python.vscode-pylance-2025.9.1/dist/server.bundle.js --cancellationReceive=file:adffdd8664bafb815e5cb1229b53cfd74844bf82d9 --node-ipc --clientProcessId=14320\n  17789       36:59 Ss   bash -c cd /tf/notebooks && python yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b --run-label full_gsm8k_llada8b_resume_20260723 >> /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/stdout_stderr_resume_20260723.log 2>&1\n  17791       36:59 Rl   python yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b --run-label full_gsm8k_llada8b_resume_20260723\n  26169       24:02 Ss   python yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_goal_supervisor.py --interval-seconds 600\n  40927       00:17 Ss   python yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/professional_gate_sweep.py --scope evidence-bound --run --timeout-seconds 420\n  41561       00:00 S    /opt/conda/bin/python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/run_atoken_professional_gate.py\n  41575       00:00 S    bash -lc ps -eo pid,etime,stat,cmd | rg 'prophet_custom_full_gsm8k_runner|AToken|atoken|python' || true\n  41579       00:00 S    rg prophet_custom_full_gsm8k_runner|AToken|atoken|python\n",
+    "timeout": false
+  },
+  "shell_syntax": {
+    "download_checkpoints": {
+      "cmd": [
+        "bash",
+        "-n",
+        "download_checkpoints.sh"
+      ],
+      "cwd": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken",
+      "returncode": 0,
+      "seconds": 0.002,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "install_gs": {
+      "cmd": [
+        "bash",
+        "-n",
+        "install_gs.sh"
+      ],
+      "cwd": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken",
+      "returncode": 0,
+      "seconds": 0.002,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    }
+  }
+}

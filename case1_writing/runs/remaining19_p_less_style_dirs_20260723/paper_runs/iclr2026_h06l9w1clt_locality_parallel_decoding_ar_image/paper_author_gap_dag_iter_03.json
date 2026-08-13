@@ -1,0 +1,523 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.lpd_repo_script_gate"
+    ],
+    [
+      "ops.lpd_repo_script_gate",
+      "ops.lpd_model_data_gate"
+    ],
+    [
+      "ops.lpd_model_data_gate",
+      "ops.lpd_runtime_hardware_gate"
+    ],
+    [
+      "ops.lpd_runtime_hardware_gate",
+      "ops.lpd_full_result_grid"
+    ],
+    [
+      "ops.lpd_full_result_grid",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "ops.lpd_full_result_grid",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.explicit_blocker_after_lpd_preflight"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_lpd_repo_to_operational_gates"
+    ],
+    [
+      "loop1.required_update.update_lpd_repo_to_operational_gates",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation | families=speculative_or_early_decoding, visual_tokenizer, compression_vq, diffusion_cache, long_context_or_rope",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "raster AR image latency; naive parallel generation inconsistency; flat-token compatibility versus speed",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "same-step dependency conflict; query tokens generated independently; instruction token KV cache overhead; low relevance to speech/text-only work",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "raster counterpart; ARPG; RandAR; PAR; NAR; ZipAR; VAR; MaskGIT; DiT; SiT",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "position query tokens; same-step mutual visibility mask; locality-aware order; KV cache; VQGAN tokenizer",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=class-conditional image generation; text-to-image generation; latency profiling; metrics=FID; IS; precision; recall; latency; throughput; GenEval score; protocols=50k sample FID; A100 bf16 profiling; ablation under XL 256x256 setting",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=not specified in the available footprint; runtimes=not specified in the available footprint",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd; code_artifacts=models/lpd.py; models/mask.py; orders/lpd_order.py; engine.py; main.py; main_cache.py; scripts/eval/*.sh; scripts/train/*.sh",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=ImageNet 256x256; ImageNet 512x512; GenEval; data_artifacts=not specified in the available footprint; implementation_statuses=code_inspected; models_available_via_hf_collection",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Bind lpd repo and validate model, mask, order generation, cache, training, and evaluation scripts.",
+      "id": "ops.lpd_repo_script_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Materialize VQGAN tokenizer, HF LPD checkpoints, ImageNet 256/512, precomputed latents, GenEval, and generated orders.",
+      "id": "ops.lpd_model_data_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Install image-generation runtime and require A100 bf16 latency/throughput plus 8-GPU cache/training traces.",
+      "id": "ops.lpd_runtime_hardware_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "Run ImageNet 50k FID/IS/precision/recall, GenEval, latency/throughput, model-scale/step-count settings, and ablations.",
+      "id": "ops.lpd_full_result_grid",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_execution"
+    },
+    {
+      "content": "If any required repo, model, data, runtime, hardware, raw output, metric, or table/figure artifact is missing, block and feed exact requirements back into Loop 1.",
+      "id": "decision.explicit_blocker_after_lpd_preflight",
+      "skill_role": "paper-specific operational gate",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package', 'result_shape_comparison_ready']; required_updates=['update.lpd_repo_to_operational_gates']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": [
+              {
+                "detail": "Paper expects ['A100 bf16 profiling', '8-GPU training/cache path', 'ImageNet 256/512 plus GenEval scoring']; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+                "id": "a100_bf16_latency_trace_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No clean large-memory professional GPU slot is visible. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19, 'memory_free_mib': 24198, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 18.66}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18, 'memory_free_mib': 24198, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.63}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 403, 'memory_free_mib': 23810, 'utilization_gpu_pct':",
+                "id": "eight_gpu_training_or_cache_trace_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing runtime imports: torch_fidelity, flash_attn",
+                "id": "lpd_runtime_dependencies_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing required paper artifacts: vqgan_tokenizer, lpd_l_256_ckpt, lpd_xl_256_ckpt, lpd_xxl_256_ckpt, lpd_l_512_ckpt, lpd_xl_512_ckpt, generated_orders, imagenet_cache, eval_outputs, geneval_outputs",
+                "id": "lpd_required_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No complete verifier-comparable output grid found for: class-conditional ImageNet 256/512 50k-sample FID/IS/precision/recall; text-to-image GenEval score; latency and throughput profiling on A100 bf16; LPD-L/XL/XXL and 20/32/48 step settings; locality-order, mutual-visibility, group-size, and XL 256 ablations",
+                "id": "lpd_full_result_grid_missing",
+                "status": "blocked"
+              }
+            ],
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          },
+          {
+            "detail": "requires full paper-shaped benchmark outputs before comparison to paper evidence channels",
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.lpd_repo_to_operational_gates",
+            "reason": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid",
+            "success_criteria": [
+              "repo path encoded",
+              "paper-specific model/data materialization gate present",
+              "runtime/hardware gate present",
+              "full result-grid gate present",
+              "verifier compares only operational outputs against paper evidence"
+            ]
+          }
+        ],
+        "status": null
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_lpd_repo_to_operational_gates",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.lpd_repo_to_operational_gates",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "repo path encoded",
+        "paper-specific model/data materialization gate present",
+        "runtime/hardware gate present",
+        "full result-grid gate present",
+        "verifier compares only operational outputs against paper evidence"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "a100_bf16_latency_trace_missing",
+        "eight_gpu_training_or_cache_trace_missing",
+        "lpd_runtime_dependencies_missing",
+        "lpd_required_artifacts_missing",
+        "lpd_full_result_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T11:57:43Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+      ],
+      "source": "lpd_resolved_repo_professional_gate",
+      "status": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid"
+    },
+    {
+      "blocker_ids": [
+        "a100_bf16_latency_trace_missing",
+        "eight_gpu_training_or_cache_trace_missing",
+        "lpd_runtime_dependencies_missing",
+        "lpd_required_artifacts_missing",
+        "lpd_full_result_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T11:59:21Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+      ],
+      "source": "lpd_resolved_repo_professional_gate",
+      "status": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid"
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:02Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.lpd_repo_to_operational_gates"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    },
+    {
+      "blocker_ids": [
+        "a100_bf16_latency_trace_missing",
+        "eight_gpu_training_or_cache_trace_missing",
+        "lpd_runtime_dependencies_missing",
+        "lpd_required_artifacts_missing",
+        "lpd_full_result_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-24T13:33:32Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+      ],
+      "source": "lpd_resolved_repo_professional_gate",
+      "status": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid"
+    }
+  ],
+  "signature": "c57987405f3af25c",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+  "target_title": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation",
+  "updated_at_utc": "2026-07-24T12:33:09Z"
+}

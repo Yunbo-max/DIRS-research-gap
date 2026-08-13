@@ -1,0 +1,302 @@
+{
+  "schema_version": "dirs.strict_writer.trace_hypotheses.v1",
+  "loop": 1,
+  "scope": "single-paper blind artifact reconstruction",
+  "generation_policy": {
+    "candidate_source": "open-vocabulary claim and operation segmentation of the public chip",
+    "hard_constraints": [
+      "acyclic information flow",
+      "chip provenance for every factual node",
+      "no held-out target access",
+      "no unsupported bridge claims",
+      "abstract length must fall in the style-profile band"
+    ],
+    "weight_interpretation": "Normalized qualitative posterior mass from evidence coverage, dependency coherence, abstract utility, and complexity; these are loop-1 inference weights, not learned cross-paper probabilities."
+  },
+  "hypotheses": [
+    {
+      "id": "H1_branched_quality_efficiency",
+      "label": "Converging capability and hardware gaps with branched mechanism validation",
+      "normalized_weight": 0.39,
+      "structural_signature": "two roots -> one method hub -> three mechanism branches -> three heterogeneous validation leaves -> bounded synthesis, plus one caveat leaf",
+      "nodes": [
+        "gap_transformer_inference_cost",
+        "gap_linear_model_capability",
+        "gap_memory_bound_decode",
+        "method_mamba3",
+        "module_exp_trap_recurrence",
+        "module_complex_state_update",
+        "module_mimo_ssm",
+        "result_lm_1p5b",
+        "result_state_tracking",
+        "result_bf16_kernel_latency",
+        "failure_fixed_state_retrieval"
+      ],
+      "edge_groups": [
+        {
+          "relation": "jointly_motivate",
+          "sources": [
+            "gap_transformer_inference_cost",
+            "gap_linear_model_capability",
+            "gap_memory_bound_decode"
+          ],
+          "target": "method_mamba3"
+        },
+        {
+          "relation": "decomposes_into",
+          "source": "method_mamba3",
+          "targets": [
+            "module_exp_trap_recurrence",
+            "module_complex_state_update",
+            "module_mimo_ssm"
+          ]
+        },
+        {
+          "relation": "validated_by_specialized_evidence",
+          "pairs": [
+            [
+              "module_exp_trap_recurrence",
+              "result_lm_1p5b"
+            ],
+            [
+              "module_complex_state_update",
+              "result_state_tracking"
+            ],
+            [
+              "module_mimo_ssm",
+              "result_bf16_kernel_latency"
+            ]
+          ]
+        },
+        {
+          "relation": "bounded_by",
+          "source": "method_mamba3",
+          "target": "failure_fixed_state_retrieval"
+        }
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "The chip explicitly binds capability and hardware gaps to recurrence, complex-state, and MIMO changes.",
+          "paths": [
+            "$.problem_gap.events[0]",
+            "$.method_mechanism.summary",
+            "$.edges[4:8]"
+          ]
+        },
+        {
+          "reason": "Independent language-modeling, formal-state, and latency outcomes support a branched rather than single-chain trace.",
+          "paths": [
+            "$.result_outcome.events[0]",
+            "$.result_outcome.events[1]",
+            "$.result_outcome.events[2]"
+          ]
+        },
+        {
+          "reason": "The retrieval limitation prevents an unqualified synthesis.",
+          "paths": [
+            "$.problem_gap.nodes[4]",
+            "$.limitations.items[1:3]"
+          ]
+        }
+      ],
+      "weight_reason": "Highest coverage of the abstract-worthy quality, mechanism, and efficiency evidence with one explicit limitation; moderate complexity is justified by the chip's three distinct validation streams."
+    },
+    {
+      "id": "H2_mechanism_ablation_fan_in",
+      "label": "Mechanism-first ablation fan-in",
+      "normalized_weight": 0.29,
+      "structural_signature": "three independent mechanism roots -> three matched ablation or benchmark branches -> one architecture-level inference",
+      "nodes": [
+        "module_exp_trap_recurrence",
+        "module_complex_state_update",
+        "module_mimo_ssm",
+        "result_component_ablation",
+        "result_state_tracking",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency",
+        "method_mamba3"
+      ],
+      "edge_groups": [
+        {
+          "relation": "tested_by",
+          "pairs": [
+            [
+              "module_exp_trap_recurrence",
+              "result_component_ablation"
+            ],
+            [
+              "module_complex_state_update",
+              "result_state_tracking"
+            ],
+            [
+              "module_mimo_ssm",
+              "result_mimo_increment"
+            ],
+            [
+              "module_mimo_ssm",
+              "result_bf16_kernel_latency"
+            ]
+          ]
+        },
+        {
+          "relation": "jointly_support",
+          "sources": [
+            "result_component_ablation",
+            "result_state_tracking",
+            "result_mimo_increment",
+            "result_bf16_kernel_latency"
+          ],
+          "target": "method_mamba3"
+        }
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "The chip exposes unusually specific component ablations and formal-task comparisons.",
+          "paths": [
+            "$.result_outcome.nodes[1:4]",
+            "$.evaluation_validation.events[2]"
+          ]
+        },
+        {
+          "reason": "MIMO has both an incremental quality result and a distinct latency profile.",
+          "paths": [
+            "$.result_outcome.nodes[1]",
+            "$.result_outcome.nodes[4]"
+          ]
+        }
+      ],
+      "weight_reason": "Strong causal-artifact fit, but it gives less space to the motivating deployment gap and retrieval boundary than H1."
+    },
+    {
+      "id": "H3_deployment_pareto_with_retrieval_branch",
+      "label": "Deployment Pareto trace with retrieval-risk mitigation",
+      "normalized_weight": 0.19,
+      "structural_signature": "one deployment root -> quality/latency Pareto fork; parallel retrieval-risk root -> hybrid mitigation -> cost join",
+      "nodes": [
+        "gap_memory_bound_decode",
+        "module_mimo_ssm",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency",
+        "result_end_to_end_latency",
+        "failure_fixed_state_retrieval",
+        "primitive_hybrid_attention_ratio",
+        "compat_hybrid_adds_cost"
+      ],
+      "edge_groups": [
+        {
+          "relation": "motivates",
+          "source": "gap_memory_bound_decode",
+          "target": "module_mimo_ssm"
+        },
+        {
+          "relation": "induces_pareto_evidence",
+          "source": "module_mimo_ssm",
+          "targets": [
+            "result_mimo_increment",
+            "result_bf16_kernel_latency",
+            "result_end_to_end_latency"
+          ]
+        },
+        {
+          "relation": "mitigated_by_with_cost",
+          "source": "failure_fixed_state_retrieval",
+          "via": "primitive_hybrid_attention_ratio",
+          "target": "compat_hybrid_adds_cost"
+        }
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "The chip directly frames recurrent decode as memory-bound and MIMO as an arithmetic-intensity intervention.",
+          "paths": [
+            "$.problem_gap.nodes[3]",
+            "$.method_mechanism.nodes[5]"
+          ]
+        },
+        {
+          "reason": "Kernel and end-to-end results reveal different SISO/MIMO quality-latency choices.",
+          "paths": [
+            "$.result_outcome.nodes[1]",
+            "$.result_outcome.nodes[4]",
+            "$.result_outcome.nodes[5]"
+          ]
+        },
+        {
+          "reason": "Retrieval recovery is conditional because hybrid attention adds cost.",
+          "paths": [
+            "$.method_mechanism.events[3]",
+            "$.method_mechanism.events[4]"
+          ]
+        }
+      ],
+      "weight_reason": "Operationally distinctive and caveat-aware, but too deployment-centered to cover the full language-model and state-tracking contribution in a short abstract."
+    },
+    {
+      "id": "H4_implementation_upward_grounding",
+      "label": "Implementation-upward realization trace",
+      "normalized_weight": 0.13,
+      "structural_signature": "four code-anchor roots -> implementation join -> method realization -> test and latency leaves",
+      "nodes": [
+        "code_mamba3_module",
+        "code_siso_triton",
+        "code_mimo_tilelang",
+        "code_cute_decode",
+        "impl_forward_anchor",
+        "method_mamba3",
+        "impl_test_anchor",
+        "result_bf16_kernel_latency"
+      ],
+      "edge_groups": [
+        {
+          "relation": "jointly_realize",
+          "sources": [
+            "code_mamba3_module",
+            "code_siso_triton",
+            "code_mimo_tilelang",
+            "code_cute_decode"
+          ],
+          "target": "impl_forward_anchor"
+        },
+        {
+          "relation": "implements",
+          "source": "impl_forward_anchor",
+          "target": "method_mamba3"
+        },
+        {
+          "relation": "checked_or_profiled_by",
+          "source": "method_mamba3",
+          "targets": [
+            "impl_test_anchor",
+            "result_bf16_kernel_latency"
+          ]
+        }
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "The official implementation maps distinct SISO, MIMO, and decode paths to inspected kernels.",
+          "paths": [
+            "$.implementation.nodes[1:5]",
+            "$.implementation.events[0]"
+          ]
+        },
+        {
+          "reason": "Variable-length tests and H100 latency give executable grounding.",
+          "paths": [
+            "$.implementation.events[1]",
+            "$.result_outcome.nodes[4]"
+          ]
+        }
+      ],
+      "weight_reason": "Highly auditable but implementation-heavy for the target abstract style and insufficiently representative of the central quality evidence."
+    }
+  ],
+  "normalization_check": {
+    "weights_sum": 1.0,
+    "all_hypotheses_acyclic": true,
+    "structurally_distinct": true,
+    "retained_count": 4
+  },
+  "selection": {
+    "selected_hypothesis_id": "H1_branched_quality_efficiency",
+    "selection_basis": "Best joint evidence coverage and abstract utility under the recommended length band, while retaining the retrieval boundary and avoiding a universal linear writing route."
+  }
+}

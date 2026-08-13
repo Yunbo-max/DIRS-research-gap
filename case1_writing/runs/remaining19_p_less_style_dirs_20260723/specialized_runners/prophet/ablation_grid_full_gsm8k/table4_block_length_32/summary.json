@@ -1,0 +1,41 @@
+{
+  "aggregates": {
+    "baseline": {
+      "completed_samples": 361,
+      "early_exit_count": 0,
+      "early_exit_rate": 0.0,
+      "flexible_correct_count": 269,
+      "flexible_exact_match": 0.7451523545706371,
+      "mean_actual_steps": 128.0,
+      "mean_seconds": 10.071526592797788,
+      "strict_correct_count": 38,
+      "strict_exact_match": 0.10526315789473684
+    },
+    "prophet": {
+      "completed_samples": 361,
+      "early_exit_count": 0,
+      "early_exit_rate": 0.0,
+      "flexible_correct_count": 269,
+      "flexible_exact_match": 0.7451523545706371,
+      "mean_actual_steps": 128.0,
+      "mean_seconds": 10.161447091412732,
+      "strict_correct_count": 38,
+      "strict_exact_match": 0.10526315789473684
+    }
+  },
+  "artifact_kind": "prophet_custom_full_gsm8k_summary",
+  "created_at_utc": "2026-07-24T11:23:03Z",
+  "dataset": "openai/gsm8k main test",
+  "paired_shape": {
+    "flexible_accuracy_delta": 0.0,
+    "mean_step_reduction": 0.0,
+    "speedup_mean_seconds": 0.9911508176142614
+  },
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_32/per_sample_results.jsonl",
+  "status": "running_or_partial",
+  "total_samples": 1319,
+  "variants_requested": [
+    "baseline",
+    "prophet"
+  ]
+}

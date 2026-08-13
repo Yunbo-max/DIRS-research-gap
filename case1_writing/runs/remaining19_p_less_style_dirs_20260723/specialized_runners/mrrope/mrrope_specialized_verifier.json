@@ -1,0 +1,2241 @@
+{
+  "artifact_kind": "mrrope_specialized_verifier",
+  "blind_contract_checked": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T18:53:20Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_1j63fjyjkg_mrrope_mixed_radix_rope/paper_author_gap_dag.json",
+  "environment": {
+    "artifact_kind": "mrrope_environment_manifest",
+    "compileall_support_check": {
+      "cmd": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "eval",
+        "scaled_rope",
+        "analysis"
+      ],
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+      "returncode": 0,
+      "seconds": 0.09,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "created_at_utc": "2026-07-23T18:53:14Z",
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 2873,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 21343,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 5190,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19023,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 17
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8168,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16049,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "import_support_checks": {
+      "llama_mrrope": {
+        "cmd": [
+          "python",
+          "-c",
+          "from scaled_rope.LlamaMrRoPE import LlamaMrRoPE; print('import_ok')"
+        ],
+        "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+        "returncode": 0,
+        "seconds": 1.527,
+        "stderr": "",
+        "stdout": "import_ok\n",
+        "timeout": false
+      },
+      "model_loader_args": {
+        "cmd": [
+          "python",
+          "-c",
+          "from eval.model_loader import add_args; print('model_loader_ok')"
+        ],
+        "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+        "returncode": 0,
+        "seconds": 3.357,
+        "stderr": "",
+        "stdout": "model_loader_ok\n",
+        "timeout": false
+      }
+    },
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.048,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 2873, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19023, 5190, 17\n3, NVIDIA GeForce RTX 4090, 24564, 16049, 8168, 99\n",
+      "timeout": false
+    },
+    "packages": {
+      "accelerate": "1.11.0",
+      "bitsandbytes": null,
+      "datasets": "4.3.0",
+      "einops": "0.8.2",
+      "evaluate": "0.4.6",
+      "flash_attn": null,
+      "jieba": null,
+      "protobuf": "6.33.0",
+      "rouge": "1.0.1",
+      "sentencepiece": "0.2.1",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.51.2"
+    },
+    "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+    "professional_runtime_note": "paper hardware was not specified, but supplement uses device_map=auto, FlashAttention 2 when --flash-attention is present, and 128K-token contexts",
+    "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+    "supplement": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement"
+  },
+  "model_data_manifest": {
+    "artifact_kind": "mrrope_model_data_manifest",
+    "created_at_utc": "2026-07-23T18:53:19Z",
+    "hf_datasets": [
+      {
+        "file_count": 14,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2923
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 3356
+          },
+          {
+            "path": "code_debug.jsonl",
+            "size_bytes": 199894374
+          },
+          {
+            "path": "code_run.jsonl",
+            "size_bytes": 83354486
+          },
+          {
+            "path": "kv_retrieval.jsonl",
+            "size_bytes": 105107890
+          },
+          {
+            "path": "longbook_choice_eng.jsonl",
+            "size_bytes": 185904631
+          },
+          {
+            "path": "longbook_qa_chn.jsonl",
+            "size_bytes": 862848430
+          },
+          {
+            "path": "longbook_qa_eng.jsonl",
+            "size_bytes": 298297185
+          },
+          {
+            "path": "longbook_sum_eng.jsonl",
+            "size_bytes": 78601868
+          },
+          {
+            "path": "longdialogue_qa_eng.jsonl",
+            "size_bytes": 83629958
+          },
+          {
+            "path": "math_calc.jsonl",
+            "size_bytes": 6310562
+          },
+          {
+            "path": "math_find.jsonl",
+            "size_bytes": 41316181
+          },
+          {
+            "path": "number_string.jsonl",
+            "size_bytes": 277299890
+          },
+          {
+            "path": "passkey.jsonl",
+            "size_bytes": 277273340
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2923
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 3356
+          },
+          {
+            "path": "code_debug.jsonl",
+            "size_bytes": 199894374
+          },
+          {
+            "path": "code_run.jsonl",
+            "size_bytes": 83354486
+          },
+          {
+            "path": "kv_retrieval.jsonl",
+            "size_bytes": 105107890
+          },
+          {
+            "path": "longbook_choice_eng.jsonl",
+            "size_bytes": 185904631
+          },
+          {
+            "path": "longbook_qa_chn.jsonl",
+            "size_bytes": 862848430
+          },
+          {
+            "path": "longbook_qa_eng.jsonl",
+            "size_bytes": 298297185
+          },
+          {
+            "path": "longbook_sum_eng.jsonl",
+            "size_bytes": 78601868
+          },
+          {
+            "path": "longdialogue_qa_eng.jsonl",
+            "size_bytes": 83629958
+          },
+          {
+            "path": "math_calc.jsonl",
+            "size_bytes": 6310562
+          },
+          {
+            "path": "math_find.jsonl",
+            "size_bytes": 41316181
+          },
+          {
+            "path": "number_string.jsonl",
+            "size_bytes": 277299890
+          },
+          {
+            "path": "passkey.jsonl",
+            "size_bytes": 277273340
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "xinrongzhang2022/InfiniteBench",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 2499845074
+      },
+      {
+        "file_count": 15,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1789
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 2669346
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 1413085
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 1917086
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 2263110
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 1933576
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 1951823
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 1905906
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 382920
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 1841642
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 1873574
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 1516696
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 4285552
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 475024
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1789
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 2669346
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 1413085
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 1917086
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 2263110
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 1933576
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 1951823
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 1905906
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 382920
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 1841642
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 1873574
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 1516696
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 4285552
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 475024
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "SaylorTwift/RULER-4096-llama-3.1-tokenizer-chat-template",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 24433590
+      },
+      {
+        "file_count": 15,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1802
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 6204076
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 2741656
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 6123470
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 4760906
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 4717213
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 6168797
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 6114364
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 784459
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 6913590
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 6053251
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 5704659
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 9811538
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 868178
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1802
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 6204076
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 2741656
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 6123470
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 4760906
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 4717213
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 6168797
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 6114364
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 784459
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 6913590
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 6053251
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 5704659
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 9811538
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 868178
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "SaylorTwift/RULER-8192-llama-3.1-tokenizer-chat-template",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 66970420
+      },
+      {
+        "file_count": 15,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1804
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 13664350
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 5246821
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 21408373
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 10027395
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 10284635
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 21438968
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 21396096
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 1527989
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 21344207
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 21374581
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 18934337
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 20765900
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 1652596
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1804
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 13664350
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 5246821
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 21408373
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 10027395
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 10284635
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 21438968
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 21396096
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 1527989
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 21344207
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 21374581
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 18934337
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 20765900
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 1652596
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "SaylorTwift/RULER-16384-llama-3.1-tokenizer-chat-template",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 189070513
+      },
+      {
+        "file_count": 15,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1804
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 29325597
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 10932670
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 43917034
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 20143785
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 20488216
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 43956252
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 43910629
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 3058937
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 43846423
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 43878816
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 46399692
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 41177616
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 3162226
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1804
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 29325597
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 10932670
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 43917034
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 20143785
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 20488216
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 43956252
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 43910629
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 3058937
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 43846423
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 43878816
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 46399692
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 41177616
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 3162226
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "SaylorTwift/RULER-32768-llama-3.1-tokenizer-chat-template",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 394202158
+      },
+      {
+        "file_count": 15,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1815
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 60622277
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 21746854
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 89547802
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 40329068
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 40821057
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 89591451
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 89543642
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 5985817
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 89469326
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 89509659
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 95076610
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 86958489
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 6111244
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1815
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 60622277
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 21746854
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 89547802
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 40329068
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 40821057
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 89591451
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 89543642
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 5985817
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 89469326
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 89509659
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 95076610
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 86958489
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 6111244
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "SaylorTwift/RULER-65536-llama-3.1-tokenizer-chat-template",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 805317572
+      },
+      {
+        "file_count": 15,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1819
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 125038588
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 41747497
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 178831305
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 80858974
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 83326563
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 178860087
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 178818927
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 11940953
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 178742593
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 178773569
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 193014345
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 175162037
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 12025512
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 1819
+          },
+          {
+            "path": "data/cwe-00000-of-00001.parquet",
+            "size_bytes": 125038588
+          },
+          {
+            "path": "data/fwe-00000-of-00001.parquet",
+            "size_bytes": 41747497
+          },
+          {
+            "path": "data/niah_multikey_1-00000-of-00001.parquet",
+            "size_bytes": 178831305
+          },
+          {
+            "path": "data/niah_multikey_2-00000-of-00001.parquet",
+            "size_bytes": 80858974
+          },
+          {
+            "path": "data/niah_multikey_3-00000-of-00001.parquet",
+            "size_bytes": 83326563
+          },
+          {
+            "path": "data/niah_multiquery-00000-of-00001.parquet",
+            "size_bytes": 178860087
+          },
+          {
+            "path": "data/niah_multivalue-00000-of-00001.parquet",
+            "size_bytes": 178818927
+          },
+          {
+            "path": "data/niah_single_1-00000-of-00001.parquet",
+            "size_bytes": 11940953
+          },
+          {
+            "path": "data/niah_single_2-00000-of-00001.parquet",
+            "size_bytes": 178742593
+          },
+          {
+            "path": "data/niah_single_3-00000-of-00001.parquet",
+            "size_bytes": 178773569
+          },
+          {
+            "path": "data/qa_1-00000-of-00001.parquet",
+            "size_bytes": 193014345
+          },
+          {
+            "path": "data/qa_2-00000-of-00001.parquet",
+            "size_bytes": 175162037
+          },
+          {
+            "path": "data/vt-00000-of-00001.parquet",
+            "size_bytes": 12025512
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "SaylorTwift/RULER-131072-llama-3.1-tokenizer-chat-template",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 1617145230
+      }
+    ],
+    "hf_models": [
+      {
+        "file_count": 17,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 7627
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 44044
+          },
+          {
+            "path": "USE_POLICY.md",
+            "size_bytes": 4691
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 855
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 184
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4976698672
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4999802720
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4915916176
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1168138808
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 23950
+          },
+          {
+            "path": "original/consolidated.00.pth",
+            "size_bytes": 16060617592
+          },
+          {
+            "path": "original/params.json",
+            "size_bytes": 199
+          },
+          {
+            "path": "original/tokenizer.model",
+            "size_bytes": 2183982
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 296
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 9085657
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 55351
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 7627
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 44044
+          },
+          {
+            "path": "USE_POLICY.md",
+            "size_bytes": 4691
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 855
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 184
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4976698672
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4999802720
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4915916176
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1168138808
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 23950
+          },
+          {
+            "path": "original/consolidated.00.pth",
+            "size_bytes": 16060617592
+          },
+          {
+            "path": "original/params.json",
+            "size_bytes": 199
+          },
+          {
+            "path": "original/tokenizer.model",
+            "size_bytes": 2183982
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 296
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 9085657
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 55351
+          }
+        ],
+        "gated": "manual",
+        "private": false,
+        "repo_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 32132582323
+      },
+      {
+        "file_count": 12,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 7388
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 4930
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 661
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 242
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00002.safetensors",
+            "size_bytes": 3968658944
+          },
+          {
+            "path": "model-00002-of-00002.safetensors",
+            "size_bytes": 2203268048
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 35581
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 7388
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 4930
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 661
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 242
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00002.safetensors",
+            "size_bytes": 3968658944
+          },
+          {
+            "path": "model-00002-of-00002.safetensors",
+            "size_bytes": 2203268048
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 35581
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 6183464935
+      }
+    ],
+    "hf_token_available": true,
+    "local_required_datasets": [
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/pp-tokenized-llama3",
+        "relative_path": "testset/pp-tokenized-llama3",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/pp-tokenized-qwen2.5",
+        "relative_path": "testset/pp-tokenized-qwen2.5",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/infity",
+        "relative_path": "testset/infity",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/longbenchv2",
+        "relative_path": "testset/longbenchv2",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/testset/PaulGrahamEssays",
+        "relative_path": "testset/PaulGrahamEssays",
+        "size_bytes": null
+      }
+    ],
+    "local_required_models": [
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/models/llama3.1-8b-ins",
+        "relative_path": "models/llama3.1-8b-ins",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/models/qwen2.5-3b-ins",
+        "relative_path": "models/qwen2.5-3b-ins",
+        "size_bytes": null
+      }
+    ],
+    "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+    "score_outputs_expected": [
+      "output/mrrope-llama3.csv",
+      "output/yarn-llama3.csv",
+      "output/2longbench-llama8b-radix.csv",
+      "output/2longbench-llama8b-yarn.csv",
+      "log/ruler_yarn.jsonl",
+      "results_infity/llama3.1-8b-ins/*.jsonl",
+      "log/<model>.png for NIAH visualization"
+    ]
+  },
+  "official_script_manifest": {
+    "accepted_loop2_evidence": "full datasets, model checkpoints, patched RoPE model loading, raw outputs, scores, and timing/memory traces for the full benchmark grid",
+    "artifact_kind": "mrrope_official_script_manifest",
+    "created_at_utc": "2026-07-23T18:53:19Z",
+    "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+    "paper_shaped_execution_matrix": {
+      "infinite_bench": "evali.sh / eval/infity.py: InfiniteBench subsets with 100-example slices",
+      "longbenchv2": "evalb.sh / eval/longbench.py: LongBenchV2 long split under 131072 max tokens",
+      "niah": "evaln.sh: 8192 to 131072 length sweep",
+      "perplexity": "eval.sh: 10 Proofpile sequences, 131072-token tokenized datasets, MrRoPE vs YaRN",
+      "ruler": "evalr.sh / eval/ruler.py: RULER context lengths and subtasks"
+    },
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+    "scripts": [
+      {
+        "exists": true,
+        "line_count": 37,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--aggressive-memory",
+            "--custom-model-together",
+            "--dataset-min-tokens",
+            "--flash-attention",
+            "--max-tokens",
+            "--min-tokens",
+            "--original-max-position-embeddings",
+            "--output-file",
+            "--radix",
+            "--samples",
+            "--split",
+            "--tokenized",
+            "--tokens-step",
+            "--truncate",
+            "--yarn"
+          ],
+          "models": [
+            "models/llama3.1-8b-ins"
+          ],
+          "output_files": [
+            "output/mrrope-llama3.csv",
+            "output/yarn-llama3.csv"
+          ],
+          "python_entrypoints": [
+            "eval/perplexity.py",
+            "eval/perplexity.py"
+          ],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [
+              "16"
+            ],
+            "yarn": [
+              "16"
+            ]
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [
+              "131072",
+              "131072",
+              "131072"
+            ],
+            "e_len": [],
+            "max_tokens": [
+              "131072",
+              "131072"
+            ],
+            "min_tokens": [
+              "8192",
+              "8192"
+            ],
+            "s_len": [],
+            "step": [],
+            "tokens_step": [
+              "8192",
+              "8192"
+            ]
+          },
+          "tokenized_paths": [
+            "testset/pp-tokenized-llama2",
+            "testset/pp-tokenized-llama3",
+            "testset/pp-tokenized-qwen2.5"
+          ]
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval.sh",
+        "relative_path": "eval.sh"
+      },
+      {
+        "exists": true,
+        "line_count": 65,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--aggressive-memory",
+            "--filter-length",
+            "--max-tokens",
+            "--min-tokens",
+            "--original-max-position-embeddings",
+            "--output-file",
+            "--radix",
+            "--split",
+            "--yarn"
+          ],
+          "models": [
+            "meta-llama/Llama-2-7b-chat-hf",
+            "models/llama3.1-8b-ins",
+            "models/qwen2.5-3b-ins"
+          ],
+          "output_files": [
+            "./output/2longbench-llama8b-radix.csv",
+            "./output/2longbench-llama8b-yarn.csv",
+            "./output/longbench-llama-test2.csv",
+            "./output/longbench-llama-yarn.csv",
+            "./output/longbench-qwen3b-radix.csv",
+            "./output/longbench-qwen3b-yarn.csv"
+          ],
+          "python_entrypoints": [
+            "eval/longbench.py",
+            "eval/longbench.py",
+            "eval/longbench.py",
+            "eval/longbench.py",
+            "eval/longbench.py",
+            "eval/longbench.py"
+          ],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [
+              "16",
+              "4"
+            ],
+            "yarn": [
+              "10",
+              "16",
+              "16",
+              "4"
+            ]
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [
+              "40960",
+              "65536",
+              "131072",
+              "131072",
+              "131072",
+              "131072"
+            ],
+            "min_tokens": [
+              "40960"
+            ],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evalb.sh",
+        "relative_path": "evalb.sh"
+      },
+      {
+        "exists": true,
+        "line_count": 167,
+        "parsed": {
+          "data_dirs": [
+            "./testset/infity"
+          ],
+          "flags": [
+            "--data_dir",
+            "--flash-attention",
+            "--model_name",
+            "--model_path",
+            "--ntk",
+            "--original-max-position-embeddings",
+            "--radix",
+            "--start_idx",
+            "--stop_idx",
+            "--task",
+            "--yarn"
+          ],
+          "models": [
+            "llama3.1-8b-ins",
+            "models/llama3.1-8b-ins"
+          ],
+          "output_files": [],
+          "python_entrypoints": [
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py",
+            "eval/infity.py"
+          ],
+          "rope_variants": {
+            "ntk": [
+              "16",
+              "16",
+              "16"
+            ],
+            "radix": [
+              "16",
+              "16",
+              "16",
+              "16",
+              "16",
+              "16",
+              "16"
+            ],
+            "yarn": [
+              "16",
+              "16",
+              "16",
+              "16",
+              "16",
+              "16",
+              "16"
+            ]
+          },
+          "tasks": [
+            "code_debug",
+            "code_run",
+            "kv_retrieval",
+            "longdialogue_qa_eng",
+            "math_calc",
+            "math_find",
+            "number_string",
+            "passkey"
+          ],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evali.sh",
+        "relative_path": "evali.sh"
+      },
+      {
+        "exists": true,
+        "line_count": 21,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--e_len",
+            "--model_name",
+            "--model_provider",
+            "--model_version",
+            "--original-max-position-embeddings",
+            "--s_len",
+            "--step",
+            "--yarn"
+          ],
+          "models": [
+            "models/"
+          ],
+          "output_files": [],
+          "python_entrypoints": [
+            "eval/neddle.py"
+          ],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": [
+              "16"
+            ]
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [
+              "END"
+            ],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [
+              "START"
+            ],
+            "step": [
+              "STEP"
+            ],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evaln.sh",
+        "relative_path": "evaln.sh"
+      },
+      {
+        "exists": true,
+        "line_count": 11,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--flash-attention",
+            "--model",
+            "--original-max-position-embeddings",
+            "--radix",
+            "--yarn"
+          ],
+          "models": [
+            "models/llama3.1-8b-ins",
+            "models/qwen2.5-3b-ins"
+          ],
+          "output_files": [],
+          "python_entrypoints": [
+            "eval/ruler.py",
+            "eval/ruler.py"
+          ],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [
+              "4"
+            ],
+            "yarn": [
+              "16"
+            ]
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evalr.sh",
+        "relative_path": "evalr.sh"
+      },
+      {
+        "exists": true,
+        "line_count": 230,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--aggressive-memory",
+            "--dataset",
+            "--dataset-min-tokens",
+            "--feature",
+            "--hide-progress",
+            "--max-tokens",
+            "--min-tokens",
+            "--model",
+            "--output-file",
+            "--samples",
+            "--save-tokenized",
+            "--sliding-window",
+            "--split",
+            "--subset",
+            "--tokenized",
+            "--tokens-step",
+            "--truncate"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/perplexity.py",
+        "relative_path": "eval/perplexity.py"
+      },
+      {
+        "exists": true,
+        "line_count": 486,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--api_key",
+            "--e_len",
+            "--model_name",
+            "--model_name_suffix",
+            "--model_provider",
+            "--model_version",
+            "--s_len",
+            "--step"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/neddle.py",
+        "relative_path": "eval/neddle.py"
+      },
+      {
+        "exists": true,
+        "line_count": 133,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--context",
+            "--model",
+            "--samples",
+            "--tasks"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/ruler.py",
+        "relative_path": "eval/ruler.py"
+      },
+      {
+        "exists": true,
+        "line_count": 312,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--data_dir",
+            "--device",
+            "--model_name",
+            "--model_path",
+            "--output_dir",
+            "--start_idx",
+            "--stop_idx",
+            "--task",
+            "--verbose"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/infity.py",
+        "relative_path": "eval/infity.py"
+      },
+      {
+        "exists": true,
+        "line_count": 153,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--aggressive-memory",
+            "--filter-length",
+            "--limit",
+            "--max-tokens",
+            "--min-tokens",
+            "--model",
+            "--output-file",
+            "--print-choices",
+            "--split"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/longbench.py",
+        "relative_path": "eval/longbench.py"
+      },
+      {
+        "exists": true,
+        "line_count": 450,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/score_infity.py",
+        "relative_path": "eval/score_infity.py"
+      },
+      {
+        "exists": true,
+        "line_count": 141,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--adapter",
+            "--custom-model",
+            "--custom-model-mistral",
+            "--custom-model-together",
+            "--factor",
+            "--finetuned",
+            "--flash-attention",
+            "--gpt-neox-max-length",
+            "--load-in-4bit",
+            "--load-in-8bit",
+            "--max-position-embeddings",
+            "--no-use-cache",
+            "--ntk",
+            "--original-max-position-embeddings",
+            "--radix",
+            "--sliding-window-attention",
+            "--yarn"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/model_loader.py",
+        "relative_path": "eval/model_loader.py"
+      },
+      {
+        "exists": true,
+        "line_count": 141,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/scaled_rope/LlamaMrRoPE.py",
+        "relative_path": "scaled_rope/LlamaMrRoPE.py"
+      },
+      {
+        "exists": true,
+        "line_count": 25,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/scaled_rope/patch.py",
+        "relative_path": "scaled_rope/patch.py"
+      },
+      {
+        "exists": true,
+        "line_count": 196,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [
+            "--max-tokens",
+            "--min-tokens",
+            "--model"
+          ],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/analysis/attn.py",
+        "relative_path": "analysis/attn.py"
+      },
+      {
+        "exists": true,
+        "line_count": 13,
+        "parsed": {
+          "data_dirs": [],
+          "flags": [],
+          "models": [],
+          "output_files": [],
+          "python_entrypoints": [],
+          "rope_variants": {
+            "ntk": [],
+            "radix": [],
+            "yarn": []
+          },
+          "tasks": [],
+          "token_lengths": {
+            "dataset_min_tokens": [],
+            "e_len": [],
+            "max_tokens": [],
+            "min_tokens": [],
+            "s_len": [],
+            "step": [],
+            "tokens_step": []
+          },
+          "tokenized_paths": []
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/requirements.txt",
+        "relative_path": "requirements.txt"
+      }
+    ],
+    "source_distribution": "OpenReview supplementary archive"
+  },
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "paper_title": "MrRoPE: Mixed-radix Rotary Position Embedding",
+  "professional_gate": {
+    "artifact_kind": "mrrope_professional_gate_result",
+    "blockers": [
+      {
+        "detail": "queue reports GitHub repository not found; only OpenReview supplement archive is available",
+        "id": "source_distribution_supplement_only",
+        "status": "blocked"
+      },
+      {
+        "detail": "required local dataset paths are missing: testset/pp-tokenized-llama3, testset/pp-tokenized-qwen2.5, testset/infity, testset/longbenchv2, testset/PaulGrahamEssays",
+        "id": "local_long_context_datasets_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "supplement scripts expect missing local checkpoints: models/llama3.1-8b-ins, models/qwen2.5-3b-ins",
+        "id": "local_model_checkpoints_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "supplement benchmark scripts use --flash-attention, but flash-attn is not installed",
+        "id": "flash_attention_2_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "missing supplement dependencies: jieba",
+        "id": "supplement_python_dependencies_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "all visible GPUs have less than 16GiB free while another full GPU run is active; 128K model eval should wait for a clean device",
+        "id": "no_idle_large_memory_gpu_for_128k_eval",
+        "status": "blocked"
+      }
+    ],
+    "convergence_role": "professional operational gate; no reduced run is promoted",
+    "created_at_utc": "2026-07-23T18:53:20Z",
+    "next_full_execution_if_unblocked": [
+      "materialize Proofpile tokenized datasets, InfiniteBench, RULER/NIAH, LongBenchV2, and haystack data",
+      "materialize Llama3.1-8B and Qwen2.5 model checkpoints in supplement-expected locations",
+      "install FlashAttention 2 and supplement dependencies",
+      "run full MrRoPE/YaRN/NTK benchmark scripts and emit CSV/JSONL/raw generation outputs",
+      "compare table-shaped perplexity, NIAH, RULER, Infinite-Bench, and LongBenchV2 results to the paper evidence"
+    ],
+    "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+    "paper_title": "MrRoPE: Mixed-radix Rotary Position Embedding",
+    "professional_package_ready": false,
+    "status": "blocked_by_supplement_only_missing_datasets_models_runtime",
+    "support_checks": {
+      "compileall_and_imports_are_support_only": true,
+      "supplement_scripts_parsed": 16
+    }
+  },
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+  "supplement": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement",
+  "updated_at_utc": "2026-07-23T18:53:20Z",
+  "verifier": {
+    "convergence_decision": "not_converged_explicit_professional_blockers_after_operational_preflight",
+    "loop1_required_dag_update": [
+      "Add supplement script matrix gate.",
+      "Add local 128K dataset and model checkpoint gate.",
+      "Add FlashAttention/dependency/runtime gate.",
+      "Add full result artifact gate for CSV/JSONL/figure outputs.",
+      "Keep imports and tiny context probes as support only."
+    ],
+    "professional_package_ready": false,
+    "semantic_dag_nodes_checked": [
+      "gap.paper_gap_claims",
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface",
+      "ops.resolve_models_data"
+    ],
+    "status": "blocked_by_supplement_only_missing_datasets_models_runtime",
+    "unresolved_professional_debt": [
+      {
+        "detail": "queue reports GitHub repository not found; only OpenReview supplement archive is available",
+        "id": "source_distribution_supplement_only",
+        "status": "blocked"
+      },
+      {
+        "detail": "required local dataset paths are missing: testset/pp-tokenized-llama3, testset/pp-tokenized-qwen2.5, testset/infity, testset/longbenchv2, testset/PaulGrahamEssays",
+        "id": "local_long_context_datasets_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "supplement scripts expect missing local checkpoints: models/llama3.1-8b-ins, models/qwen2.5-3b-ins",
+        "id": "local_model_checkpoints_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "supplement benchmark scripts use --flash-attention, but flash-attn is not installed",
+        "id": "flash_attention_2_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "missing supplement dependencies: jieba",
+        "id": "supplement_python_dependencies_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "all visible GPUs have less than 16GiB free while another full GPU run is active; 128K model eval should wait for a clean device",
+        "id": "no_idle_large_memory_gpu_for_128k_eval",
+        "status": "blocked"
+      }
+    ]
+  }
+}

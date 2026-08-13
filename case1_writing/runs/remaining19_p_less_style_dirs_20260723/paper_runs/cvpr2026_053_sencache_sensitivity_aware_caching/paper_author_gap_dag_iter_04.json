@@ -1,0 +1,490 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.video_model_script_matrix"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.sensitivity_calibration_or_weight_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.video_checkpoint_gate"
+    ],
+    [
+      "ops.sensitivity_calibration_or_weight_gate",
+      "ops.video_model_script_matrix"
+    ],
+    [
+      "ops.video_checkpoint_gate",
+      "ops.video_model_script_matrix"
+    ],
+    [
+      "ops.video_model_script_matrix",
+      "ops.vbench_compbench_metric_gate"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.paper_video_hardware_runtime_gate"
+    ],
+    [
+      "ops.vbench_compbench_metric_gate",
+      "ops.paper_video_hardware_runtime_gate"
+    ],
+    [
+      "ops.paper_video_hardware_runtime_gate",
+      "ops.full_cached_uncached_artifact_gate"
+    ],
+    [
+      "ops.full_cached_uncached_artifact_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "decision.explicit_blocker_after_sencache_preflight"
+    ],
+    [
+      "decision.explicit_blocker_after_sencache_preflight",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_resolve_sencache_professional_blockers"
+    ],
+    [
+      "loop1.required_update.update_resolve_sencache_professional_blockers",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "CVPR2026_053_sencache_sensitivity_aware_caching_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching | families=diffusion_cache, video_token_merging",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "heuristic cache triggers; missing latent and timestep joint error model; static schedules ignore sample difficulty; video diffusion latency",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "first-order approximation drift; fixed epsilon suboptimality; model-specific porting; no explicit license; external checkpoints and sensitivity weights required",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "TeaCache; MagCache; global timestep/path optimization caches; Wan2.1; CogVideoX; LTX-Video",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "latent sensitivity norm; timestep sensitivity norm; epsilon tolerance gate; max consecutive cache length; cached residual reuse; finite-difference calibration",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=Wan2.1 T=50; CogVideoX T=50; LTX-Video T=50; VBench; LPIPS/PSNR/SSIM reference metrics; metrics=NFE; cache ratio; LPIPS; PSNR; SSIM; wall-clock latency; GFLOPs; consecutive-step MAE; protocols=compare at similar compute budgets; full VBench prompt set evaluation; 70 T2V-CompBench prompts for ablation; finite-difference calibration once per model; supplement 100-video MAE diagnostic",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=GH200 supplement latency; GPU inference for base video models; distributed calibration scripts; runtimes=PyTorch; Wan2.1; CogVideoX; LTX-Video; Diffusers; Hugging Face datasets",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache; code_artifacts=README.md; Wan2.1/sencache.py; Wan2.1/sensitivity_calculation.py; CogVideoX/sencache.py; CogVideoX/sensitivity_calculation_cogvid.py; LTX-Video/sencache.py; LTX-Video/sensitivity_calculation_LTX.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=MixKit calibration videos; VBench prompt set; T2V-CompBench ablation prompts; Hugging Face SenCache sensitivity weights; data_artifacts=sensitivity_wan21.npz expected by Wan script; sensitivity_ltx.npz expected by LTX script; HF Yassaman/SenCache sensitivity weights; external base-model checkpoints; test_prompt.json files; implementation_statuses=official_github_found; code_repo_cloned; code_inspected; precomputed_weights_referenced; results_not_rerun_locally; no_explicit_license_found; external_base_repos_required",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Resolve released Yassaman/SenCache .npz sensitivity weights or rerun finite-difference calibration on MixKit videos for Wan2.1, CogVideoX, and LTX-Video. Required artifacts include timesteps, J_x_norm, J_t_norm, sample counts, calibration logs, and GPU traces.",
+      "id": "ops.sensitivity_calibration_or_weight_gate",
+      "skill_role": "require sensitivity evidence before cached generation",
+      "type": "calibration_artifact_gate"
+    },
+    {
+      "content": "Use DAG-encoded Wan2.1/sencache.py, CogVideoX/sencache.py, LTX-Video/sencache.py, and their sensitivity_calculation scripts. Extract checkpoint path, prompt file, seed, T=50, sencache thresholds, K, cached/uncached flag, latency flag, and GFLOPs flag.",
+      "id": "ops.video_model_script_matrix",
+      "skill_role": "bind Loop 2 to official SenCache entrypoints",
+      "type": "operational_execution_matrix"
+    },
+    {
+      "content": "Resolve loadable Wan2.1 T2V, CogVideoX1.5-5B, and LTX-Video checkpoints. HF metadata alone is not enough; the author simulation needs local or directly loadable model artifacts.",
+      "id": "ops.video_checkpoint_gate",
+      "skill_role": "require loadable video diffusion checkpoints",
+      "type": "model_data_gate"
+    },
+    {
+      "content": "Resolve full VBench prompt set, T2V-CompBench 70-prompt ablation set, LPIPS/PSNR/SSIM reference scoring, NFE/cache-ratio logs, latency/GFLOPs traces, and supplement 100-video MAE diagnostic.",
+      "id": "ops.vbench_compbench_metric_gate",
+      "skill_role": "require paper prompt and scoring artifacts",
+      "type": "evaluation_artifact_gate"
+    },
+    {
+      "content": "Before claiming SenCache acceleration, verify GH200 supplement latency or comparable paper-approved video-diffusion hardware, CUDA/PyTorch/Diffusers runtime, decord/video IO, idle GPU capacity, and telemetry.",
+      "id": "ops.paper_video_hardware_runtime_gate",
+      "skill_role": "make latency and cache claims hardware-bound",
+      "type": "professional_hardware_gate"
+    },
+    {
+      "content": "Require full cached and uncached generation outputs for Wan2.1, CogVideoX, and LTX-Video, plus raw videos, skip-count logs, cache ratio, NFE, latency, GFLOPs, LPIPS, PSNR, SSIM, VBench, and MAE summaries.",
+      "id": "ops.full_cached_uncached_artifact_gate",
+      "skill_role": "make verifier comparison table-shaped",
+      "type": "professional_artifact_gate"
+    },
+    {
+      "content": "If sensitivity weights/calibration, model checkpoints, prompt/evaluator artifacts, hardware/runtime, or cached/uncached result-grid artifacts are absent, mark not converged and update the DAG instead of launching a one-prompt demo.",
+      "id": "decision.explicit_blocker_after_sencache_preflight",
+      "skill_role": "feed operational failure back into Loop 1",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements_after_specialized_runner; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package']; required_updates=['update.resolve_sencache_professional_blockers']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": {
+              "reason": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements"
+            },
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.resolve_sencache_professional_blockers",
+            "reason": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements",
+            "success_criteria": [
+              "run paper-appropriate cached/uncached video diffusion grid or provide equivalent exact artifacts",
+              "emit verifier-comparable NFE/cache/quality/latency/GFLOPs table shapes",
+              "do not count one-prompt demo files, syntax checks, or HF metadata as convergence"
+            ]
+          }
+        ],
+        "status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements_after_specialized_runner"
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_resolve_sencache_professional_blockers",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.resolve_sencache_professional_blockers",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "run paper-appropriate cached/uncached video diffusion grid or provide equivalent exact artifacts",
+        "emit verifier-comparable NFE/cache/quality/latency/GFLOPs table shapes",
+        "do not count one-prompt demo files, syntax checks, or HF metadata as convergence"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_not_rerun",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "paper_hardware_class",
+        "clean_gpu_slot_for_video_diffusion_grid",
+        "required_video_model_checkpoints_not_materialized",
+        "sensitivity_weights_or_calibration_outputs_missing",
+        "calibration_prompt_metric_artifacts_missing",
+        "video_diffusion_metric_runtime_missing",
+        "full_cached_uncached_result_grid_missing"
+      ],
+      "id": "update.add_sencache_sensitivity_model_metric_hardware_result_gates",
+      "reason": "specialized SenCache preflight found missing full paper-shaped sensitivity, video model, prompt/evaluator, runtime, hardware, and result-grid artifacts",
+      "success_criteria": [
+        "sensitivity calibration or released .npz weight gate encoded",
+        "Wan2.1/CogVideoX/LTX checkpoint gate encoded",
+        "VBench/T2V-CompBench/LPIPS/PSNR/SSIM metric gate encoded",
+        "GH200 or paper-approved video hardware gate encoded",
+        "full cached/uncached result-grid gate encoded",
+        "one-prompt test_prompt.json files remain support only"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:01Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.resolve_sencache_professional_blockers"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements_after_specialized_runner",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    }
+  ],
+  "signature": "45d6f77ec09fc186",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+  "target_title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching",
+  "updated_at_utc": "2026-07-24T12:33:09Z"
+}

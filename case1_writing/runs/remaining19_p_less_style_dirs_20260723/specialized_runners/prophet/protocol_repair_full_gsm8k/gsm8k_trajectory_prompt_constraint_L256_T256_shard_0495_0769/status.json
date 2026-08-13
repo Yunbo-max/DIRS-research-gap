@@ -1,0 +1,169 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 275,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "0",
+  "current_sample_index": 769,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 495,
+  "effective_stop_index_exclusive": 770,
+  "finished_at_utc": "2026-07-24T03:10:51Z",
+  "full_split_requested": false,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 15829, 24564, 3\n1, NVIDIA GeForce RTX 4090, 16109, 24564, 99\n2, NVIDIA GeForce RTX 4090, 16328, 24564, 99\n3, NVIDIA GeForce RTX 4090, 16069, 24564, 99",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "created_at_utc": "2026-07-24T03:10:37Z",
+      "exit_info": {
+        "actual_steps": 256,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 256
+      },
+      "flexible_exact_match": false,
+      "flexible_predicted_answer": "125",
+      "gen_length": 256,
+      "generated_text": "\n\nFirst, let's calculate Tanya's earnings for Monday:\n- She teaches 4 classes for 5 hours.\n- She earns $15 per hour.\n- She teaches more than 3 classes, so she gets an additional $5 per day.\n\nEarnings for Monday = (4 classes * 5 hours * $15/hour) + $5\nEarnings for Monday = $60 + $5 = $65\n\nNext, let's calculate Tanya's earnings for Wednesday:\n- She teaches 2 classes for 2 hours.\n- She earns $15 per hour.\n- She teaches fewer than 3 classes, so she gets no additional additional $5 per day.\n\nEarnings for Wednesday = (2 classes * 2 hours * $15/hour)\nEarnings for Wednesday = $60\n\nNow, let's calculate the total earnings for both days:\nTotal earnings = Earnings for Monday + Earnings for Wednesday\n= $65 + $60 = $125\n\n Answer: $125",
+      "gold_answer": "110",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "question": "Tanya is teaching at school. She earns $15 for every hour and an additional $5 per day if she teaches more than 3 classes. On Monday she teaches 4 classes for 5 hours, and on Wednesday 2 classes for 2 hours. How much did Tanya earn for these two days of teaching?",
+      "remasking": "low_confidence",
+      "sample_index": 769,
+      "seconds": 20.7979,
+      "steps": 256,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "125",
+      "variant": "baseline"
+    },
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "created_at_utc": "2026-07-24T03:10:51Z",
+      "exit_info": {
+        "actual_steps": 180,
+        "early_exit_triggered": true,
+        "exit_decision_step": 180,
+        "total_steps": 256
+      },
+      "flexible_exact_match": false,
+      "flexible_predicted_answer": "125",
+      "gen_length": 256,
+      "generated_text": "\n\nFirst, let's calculate Tanya's earnings for Monday:\n- She teaches 4 classes for 5 hours.\n- She earns $15 per hour.\n- She teaches more than 3 classes, so she gets an additional $5 per day.\n\nEarnings for Monday = (4 classes * 5 hours * $15/hour) + $5\nEarnings for Monday = $60 + $5 = $65\n\nNext, let's calculate Tanya's earnings for Wednesday:\n- She teaches 2 classes for 2 hours.\n- She earns $15 per hour.\n- She teaches fewer than 3 classes, so she gets no additional additional $5 per day.\n\nEarnings for Wednesday = (2 classes * 2 hours * $15/hour)\nEarnings for Wednesday = $60\n\nNow, let's add the earnings earnings for both days:\n\n earnings earnings = for + for for\n\n earnings = $66 + $66 = $ $255\n Answer: $125",
+      "gold_answer": "110",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "question": "Tanya is teaching at school. She earns $15 for every hour and an additional $5 per day if she teaches more than 3 classes. On Monday she teaches 4 classes for 5 hours, and on Wednesday 2 classes for 2 hours. How much did Tanya earn for these two days of teaching?",
+      "remasking": "low_confidence",
+      "sample_index": 769,
+      "seconds": 14.6029,
+      "steps": 256,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "125",
+      "variant": "prophet"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 0 is logical cuda:0 when CUDA_VISIBLE_DEVICES=0",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 255746,
+  "prompt_profile": "trajectory_gsm8k_cot",
+  "prompt_template_source": "named_prompt_profile",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769/per_sample_results.jsonl",
+  "run_label": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+  "running_summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 275,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 209,
+        "flexible_exact_match": 0.76,
+        "mean_actual_steps": 256.0,
+        "mean_seconds": 21.258721454545473,
+        "strict_correct_count": 203,
+        "strict_exact_match": 0.7381818181818182
+      },
+      "prophet": {
+        "completed_samples": 275,
+        "early_exit_count": 275,
+        "early_exit_rate": 1.0,
+        "flexible_correct_count": 202,
+        "flexible_exact_match": 0.7345454545454545,
+        "mean_actual_steps": 195.84727272727272,
+        "mean_seconds": 16.33921890909091,
+        "strict_correct_count": 196,
+        "strict_exact_match": 0.7127272727272728
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T03:10:51Z",
+    "dataset": "openai/gsm8k main test",
+    "paired_shape": {
+      "flexible_accuracy_delta": -0.025454545454545507,
+      "mean_step_reduction": 60.152727272727276,
+      "speedup_mean_seconds": 1.301085539818395
+    },
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769/per_sample_results.jsonl",
+    "status": "running_or_partial",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline",
+      "prophet"
+    ]
+  },
+  "started_at_utc": "2026-07-24T00:17:07Z",
+  "status": "completed",
+  "summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 275,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 209,
+        "flexible_exact_match": 0.76,
+        "mean_actual_steps": 256.0,
+        "mean_seconds": 21.258721454545473,
+        "strict_correct_count": 203,
+        "strict_exact_match": 0.7381818181818182
+      },
+      "prophet": {
+        "completed_samples": 275,
+        "early_exit_count": 275,
+        "early_exit_rate": 1.0,
+        "flexible_correct_count": 202,
+        "flexible_exact_match": 0.7345454545454545,
+        "mean_actual_steps": 195.84727272727272,
+        "mean_seconds": 16.33921890909091,
+        "strict_correct_count": 196,
+        "strict_exact_match": 0.7127272727272728
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T03:10:51Z",
+    "dataset": "openai/gsm8k main test",
+    "finished_at_utc": "2026-07-24T03:10:51Z",
+    "paired_shape": {
+      "flexible_accuracy_delta": -0.025454545454545507,
+      "mean_step_reduction": 60.152727272727276,
+      "speedup_mean_seconds": 1.301085539818395
+    },
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769/per_sample_results.jsonl",
+    "status": "completed",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline",
+      "prophet"
+    ]
+  },
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-24T03:10:51Z",
+  "variants": [
+    "baseline",
+    "prophet"
+  ]
+}

@@ -1,0 +1,2038 @@
+{
+  "created_at_utc": "2026-07-24T13:32:00Z",
+  "queue": [
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "LLaVA-OneVision video understanding; LLaVA-Video video understanding; Qwen2.5-VL video understanding; fixed-token-budget Qwen2.5-VL; matched retention ratio; matched average token budget; 8-GPU lmms-eval batch_size 1; single-GPU latency benchmark"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "average score; relative accuracy; TFLOPs; prefilling time; TTFT; compression time; LLM forward time"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "VideoMME; EgoSchema; LongVideoBench; MVBench; MLVU; assets/videomme.jsonl; LMMs-Eval task datasets; HuggingFace VideoMME cache expected by efficiency script"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "NVIDIA A800 80G for main experiments; single NVIDIA A100 for efficiency; 8-GPU lmms-eval scripts; PyTorch; Transformers 4.57; LMMs-Eval; flash_attention_2; uv package management"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "ADTS; TSTM; video partition; inner-LLM pruning; DPC-kNN budget alignment; flashvid/__init__.py; flashvid/utils.py; flashvid/token_selection.py; flashvid/modeling_qwen2_5_vl.py; flashvid/llava_arch.py; scripts/llava_ov.sh; scripts/fixed_token_budget/flashvid.sh; playground/bench_efficiency.py; tools/flops/llava_ov.py"
+        }
+      ],
+      "implementation_statuses": [
+        "code_inspected",
+        "released_code",
+        "result_recomputable_with_model_and_dataset_access",
+        "specialized_runner_preflight_completed",
+        "official_scripts_parsed",
+        "hf_model_manifests_available",
+        "videomme_jsonl_available",
+        "flops_script_reproduced",
+        "blocked_exact_hardware_runtime_data"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+      "priority": "high",
+      "professional_blocker": "blocked_by_exact_professional_runtime_and_data_requirements_after_specialized_runner",
+      "repo_exact_rerun_status": "code_ready_needs_model_data",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID"
+      ],
+      "runner_type": "vlm_video_token_merging_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "official main scripts request --num_processes 8; visible GPUs=4",
+            "id": "main_grid_hardware_gpu_count",
+            "status": "blocked"
+          },
+          {
+            "detail": "paper/DAG expects NVIDIA A800 80G for main experiments; visible GPUs are not A800 80G",
+            "id": "main_grid_hardware_gpu_class",
+            "status": "blocked"
+          },
+          {
+            "detail": "paper/DAG expects a single NVIDIA A100 for efficiency traces; visible GPUs are not A100",
+            "id": "efficiency_hardware_gpu_class",
+            "status": "blocked"
+          },
+          {
+            "detail": "README badge requires Transformers 4.57; environment has 4.51.2",
+            "id": "transformers_version_exactness",
+            "status": "blocked"
+          },
+          {
+            "detail": "official scripts request attn_implementation=flash_attention_2; flash-attn package is not installed",
+            "id": "flash_attention_runtime",
+            "status": "blocked"
+          },
+          {
+            "detail": "playground/bench_efficiency.py expects ~/.cache/huggingface/videomme/data videos; no populated cache was found",
+            "id": "videomme_video_cache",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/environment.json",
+        "flops_reproduction_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flops_reproduction.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/official_script_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flashvid_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_exact_professional_runtime_and_data_requirements",
+      "title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "SpMV; SpMM; compile generated CUDA; run functional check; time candidate kernel; compare with cuSPARSE or other baselines"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "pass@1; pass@5; pass@1000; compilation rate; GFLOPS; TFLOPS; speedup"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "SuiteSparse Matrix Collection; Deep Learning Matrix Collection; sample Matrix Market files in official repo; dataset/*.mtx sample matrices; sft_data/sft_samples.jsonl"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "Tesla V100; Tesla A100; PyTorch; Transformers; PEFT; CUDA nvcc; SciPy Matrix Market loader"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "pretrained code LLM policy; sparse sinusoidal embedding; SFT alignment; PPO update; compiler/executor environment; hierarchical reward; sparserl/embedding.py; sparserl/reward.py; sparserl/train_minimal.py; sparserl/train_sft.py; sparserl/codegen.py; sparserl/data.py; sparserl/model.py; sparserl/config.py"
+        }
+      ],
+      "implementation_statuses": [
+        "official minimal code inspected",
+        "full pretraining and SFT data deferred to future release",
+        "real_cuda_executor_sanity_support_only",
+        "generated_policy_grid_missing",
+        "passatk_grid_missing",
+        "spmm_grid_missing",
+        "paper_scale_dataset_grid_missing",
+        "v100_a100_hardware_trace_missing",
+        "dag_iter_03_operational_gates_added"
+      ],
+      "next_actions": [
+        "do not rerun deterministic hand-authored CUDA sanity as convergence",
+        "resolve/generated-policy path for Qwen3/DeepSeek/static/SparseRL candidates",
+        "run pass@1/pass@5/pass@1000 candidate sampling with raw candidate code and compiler logs",
+        "materialize paper-scale SuiteSparse and Deep Learning Matrix Collection manifests",
+        "add SpMM executor/result grid and baseline comparisons",
+        "collect V100/A100 traces or keep paper blocked"
+      ],
+      "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+      "priority": "high",
+      "professional_blocker": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+      "repo_exact_rerun_status": "code_ready_needs_model_data",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL"
+      ],
+      "runner_type": "sparse_cuda_kernel_quality_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl",
+      "specialized_runner_evidence": {
+        "model_policy_evidence": {
+          "attempted": true,
+          "has_generated_policy_run": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        "paper_verifier_iter_03_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/verifier_result_iter_03.json",
+        "real_cuda_convergence_role": "support_only",
+        "real_cuda_executor_evidence": {
+          "attempted_rows": 18,
+          "correct_rows": 12,
+          "has_real_cuda_compile_run": true
+        },
+        "support_only_reasons": [
+          "deterministic CUDA rows use canonical hand-authored CSR/ELL/SELL kernels, not generated SparseRL policy samples",
+          "the local matrix inventory contains six released sample Matrix Market files, not the paper-scale SuiteSparse and Deep Learning Matrix Collection grids",
+          "the failed Qwen3-8B repo-minimal attempt is an OOM/runtime blocker, not pass@k policy evidence",
+          "no SpMM executor, cuSPARSE/TVM-S/static-codegen baseline table, or V100/A100 paper-hardware trace has been produced"
+        ],
+        "unresolved_professional_debt": [
+          {
+            "id": "generated_kernel_policy_grid",
+            "needed": "generated kernels from the pretrained/SFT/RL policy, not only hand-authored canonical kernels",
+            "status": "unresolved"
+          },
+          {
+            "id": "pass_at_k_metrics",
+            "needed": "pass@1/pass@5/pass@1000 or equivalent sampling-grid measurements",
+            "status": "unresolved"
+          },
+          {
+            "id": "paper_dataset_scale",
+            "needed": "SuiteSparse and Deep Learning Matrix Collection coverage, not only six released sample matrices",
+            "status": "unresolved"
+          },
+          {
+            "id": "spmm_and_table_grid",
+            "needed": "SpMM executor and comparison rows in addition to SpMV",
+            "status": "unresolved"
+          },
+          {
+            "id": "baseline_comparison",
+            "needed": "cuSPARSE/TVM-S/static LLM/codegen baselines with GFLOPS/TFLOPS/speedup",
+            "status": "unresolved"
+          },
+          {
+            "id": "paper_hardware_match",
+            "needed": "paper-stated V100/A100 traces; current run records local RTX 4090 only",
+            "status": "unresolved"
+          }
+        ],
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/sparserl_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+      "title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "lm_evaluation_harness; simple_evals; GSM8K_trajectory_analysis; MMLU_trajectory_analysis; zero_shot_eval; 8_shot_planning_eval; full_step_vs_prophet; static_step_budget_ablation; block_length_ablation"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "accuracy; accuracy_delta; speedup; average_steps; first_correct_answer_emergence"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "MMLU; ARC_C; HellaSwag; TruthfulQA; WinoGrande; PIQA; GSM8K; GPQA; HumanEval; MBPP; YefanZhou98_DLM_Decoding_Analysis"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "cuda_gpus_required_for_repo_eval; PyTorch; Transformers; Accelerate; lm_evaluation_harness; datasets"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "answer_region_monitor; confidence_gap; phase_threshold_schedule; all_in_mask_fill; suffix_answer_constraint; generate_earlyexit_py; generate_py; eval_llada_py; eval_sh; analysis_collect_decoding_traj_gsm8k_py; analysis_visualize_ipynb"
+        }
+      ],
+      "implementation_statuses": [
+        "code_inspected",
+        "trajectory_dataset_available",
+        "Dream_specific_code_paths_not_observed_in_repo_snapshot",
+        "custom_full_gsm8k_on_gpu3_running",
+        "full_released_trajectory_dataset_downloading",
+        "full_released_trajectory_dataset_downloading_authenticated",
+        "full_released_trajectory_dataset_analyzing",
+        "live_verifier_refreshing_from_gpu_artifacts",
+        "live_jsonl_integrity_checking",
+        "full_ablation_grid_campaign_manifest_ready",
+        "full_table1_multibenchmark_campaign_manifest_ready",
+        "table2_acceleration_combination_campaign_manifest_ready",
+        "dream7b_axis_campaign_manifest_ready",
+        "source_parity_blocker_audit_ready",
+        "gsm8k_live_shape_risk_audit_ready",
+        "gsm8k_protocol_parity_audit_ready"
+      ],
+      "next_actions": [
+        "let full GSM8K baseline/Prophet paired split reach 1319/1319 samples",
+        "complete all configured trajectory analysis settings",
+        "resolve or explicitly block multi-benchmark grid debt",
+        "produce or explicitly block static step and block-length ablations",
+        "produce or explicitly block the Dream-7B axis",
+        "rerun verifier against paper tables, figures, paragraphs, and appendix evidence"
+      ],
+      "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+      "priority": "high",
+      "professional_blocker": "running_full_custom_gsm8k_on_gpu3_and_trajectory_analysis_pending_full_artifacts",
+      "repo_exact_rerun_status": "code_ready_needs_model_data",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+      ],
+      "runner_type": "llm_decoding_acceptance_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet",
+      "specialized_runner_evidence": {
+        "ablation_grid_campaign": {
+          "blocked_configs": [
+            {
+              "id": "table3b_remasking_top_k_margin",
+              "paper_role": "Table 3b remasking strategy compatibility",
+              "reason": "The current released Prophet generate.py and generate_earlyexit.py support low_confidence and random remasking only. Hand-rolling top-k margin would not be exact professional reproduction evidence.",
+              "status": "blocked_by_missing_official_top_k_margin_remasking_implementation"
+            },
+            {
+              "id": "dream7b_axis",
+              "paper_role": "Dream-7B Table 1 axis",
+              "reason": "The active code path and current custom runner are LLaDA-specific; adding Dream-7B needs exact model loading, prompt/config parity, and a free GPU memory window.",
+              "status": "blocked_until_dream7b_exact_runner_and_memory_budget_are_resolved"
+            }
+          ],
+          "completed_config_count": 13,
+          "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+          "pending_config_count": 4,
+          "runnable_config_count": 17,
+          "running_config_count": 0,
+          "status": "ready_waiting_for_gpu_capacity",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ABLATION_GRID_STATUS.md",
+          "updated_at_utc": "2026-07-24T14:02:54Z"
+        },
+        "ablation_grid_integrity": {
+          "blocked_config_ids": [
+            "table4_block_length_8",
+            "table4_block_length_32",
+            "table4_block_length_64",
+            "table4_block_length_128"
+          ],
+          "complete_config_ids": [
+            "table3a_static_L256_T16",
+            "table3a_static_L256_T32",
+            "table3a_static_L256_T64",
+            "table3a_static_L256_T128",
+            "table3a_prophet_L256_T256",
+            "table3a_static_L128_T16",
+            "table3a_static_L128_T32",
+            "table3a_static_L128_T64",
+            "table3a_static_L128_T128",
+            "table3a_prophet_L128_T128",
+            "table3b_remasking_random",
+            "table3b_remasking_low_confidence",
+            "table4_block_length_16"
+          ],
+          "manifest_blocked_config_ids": [
+            "table3b_remasking_top_k_margin",
+            "dream7b_axis"
+          ],
+          "manifest_blocked_configs": [
+            {
+              "id": "table3b_remasking_top_k_margin",
+              "paper_role": "Table 3b remasking strategy compatibility",
+              "reason": "The current released Prophet generate.py and generate_earlyexit.py support low_confidence and random remasking only. Hand-rolling top-k margin would not be exact professional reproduction evidence.",
+              "status": "blocked_by_missing_official_top_k_margin_remasking_implementation"
+            },
+            {
+              "id": "dream7b_axis",
+              "paper_role": "Dream-7B Table 1 axis",
+              "reason": "The active code path and current custom runner are LLaDA-specific; adding Dream-7B needs exact model loading, prompt/config parity, and a free GPU memory window.",
+              "status": "blocked_until_dream7b_exact_runner_and_memory_budget_are_resolved"
+            }
+          ],
+          "pending_config_ids": [],
+          "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_integrity_report.json",
+          "running_config_ids": [],
+          "status": "blocked_ablation_grid_integrity_failure",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ABLATION_GRID_INTEGRITY_STATUS.md",
+          "updated_at_utc": "2026-07-24T14:02:55Z"
+        },
+        "custom_full_gsm8k": {
+          "cuda_visible_devices": "3",
+          "full_gsm8k_complete": true,
+          "full_split_requested": true,
+          "jsonl_rows": 2638,
+          "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+          "paired_completed_samples": 1319,
+          "pid": 17791,
+          "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+          "running_summary": {
+            "aggregates": {
+              "baseline": {
+                "completed_samples": 1319,
+                "early_exit_count": 0,
+                "early_exit_rate": 0.0,
+                "flexible_correct_count": 1051,
+                "flexible_exact_match": 0.7968157695223654,
+                "mean_actual_steps": 256.0,
+                "mean_seconds": 18.258055572403336,
+                "strict_correct_count": 652,
+                "strict_exact_match": 0.4943138741470811
+              },
+              "prophet": {
+                "completed_samples": 1319,
+                "early_exit_count": 1319,
+                "early_exit_rate": 1.0,
+                "flexible_correct_count": 1015,
+                "flexible_exact_match": 0.7695223654283548,
+                "mean_actual_steps": 207.53297952994694,
+                "mean_seconds": 14.870602653525417,
+                "strict_correct_count": 708,
+                "strict_exact_match": 0.5367702805155421
+              }
+            },
+            "artifact_kind": "prophet_custom_full_gsm8k_summary",
+            "created_at_utc": "2026-07-23T22:06:20Z",
+            "dataset": "openai/gsm8k main test",
+            "finished_at_utc": "2026-07-23T22:06:20Z",
+            "paired_shape": {
+              "flexible_accuracy_delta": -0.027293404094010598,
+              "mean_step_reduction": 48.46702047005306,
+              "speedup_mean_seconds": 1.2277952681409887
+            },
+            "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+            "status": "completed",
+            "total_samples": 1319,
+            "variants_requested": [
+              "baseline",
+              "prophet"
+            ]
+          },
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/status.json",
+          "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+          "total_samples": 1319,
+          "updated_at_utc": "2026-07-23T22:06:20Z"
+        },
+        "dream7b_axis_campaign": {
+          "blocked_configs": [
+            {
+              "id": "dream_model_identifier_and_loader",
+              "paper_role": "Dream-7B-Instruct model axis",
+              "reason": "The paper reports Dream-7B-Instruct, but the released Prophet repo does not name a Dream model checkpoint or provide a Dream-specific AutoModel/eval wrapper.",
+              "status": "blocked_by_missing_exact_dream7b_model_identifier_and_loader"
+            },
+            {
+              "id": "dream_generation_function_parity",
+              "paper_role": "Dream-7B full-step and Prophet decoding mechanics",
+              "reason": "The generation code is documented and exemplified as LLaDA generation; using it for Dream without author parity checks could silently change mask IDs, scheduling, or logits semantics.",
+              "status": "blocked_by_missing_dream_generate_and_earlyexit_parity_code"
+            },
+            {
+              "id": "dream_simple_evals_prompt_scorer_parity",
+              "paper_role": "Dream-7B benchmark evaluator",
+              "reason": "The paper says LLaDA and Dream follow simple-evals prompts and generated-answer extraction, but the release only provides an lm-eval LLaDA integration.",
+              "status": "blocked_by_missing_exact_simple_evals_prompt_and_answer_extractor_for_dream"
+            },
+            {
+              "benchmarks": [
+                "MMLU",
+                "ARC-C",
+                "HellaSwag",
+                "TruthfulQA",
+                "WinoGrande",
+                "PIQA",
+                "GSM8K",
+                "GPQA",
+                "HumanEval",
+                "MBPP",
+                "Countdown",
+                "Sudoku"
+              ],
+              "id": "dream_table1_full_grid",
+              "paper_role": "Dream-7B Table 1 benchmark rows",
+              "reason": "All Dream Table 1 rows require the exact Dream runner plus enough free GPU memory for full non-reduced benchmark execution.",
+              "status": "blocked_until_dream_loader_prompt_scorer_and_gpu_budget_are_resolved"
+            }
+          ],
+          "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/dream7b_axis_campaign.json",
+          "runnable_config_count": 0,
+          "status": "explicit_dream7b_axis_blockers_recorded",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/DREAM7B_AXIS_STATUS.md",
+          "updated_at_utc": "2026-07-23T14:07:40Z"
+        },
+        "gsm8k_live_shape_risk_audit": {
+          "can_converge_from_this_audit_alone": false,
+          "do_not_stop_before_full_split": false,
+          "failing_metrics": [
+            "accuracy_delta",
+            "prophet_avg_steps",
+            "step_speedup"
+          ],
+          "loop2_author_can_read": false,
+          "paper_oracle_target_values_included": false,
+          "repair_axis_ids": [
+            "prompt_template_parity",
+            "suffix_constraint_semantics",
+            "answer_region_start_and_length",
+            "simple_evals_vs_lm_eval_protocol",
+            "generated_answer_extractor_parity",
+            "released_eval_harness_vs_custom_runner_semantics"
+          ],
+          "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json",
+          "status": "postcompletion_shape_mismatch_requires_loop1_dag_repair",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/GSM8K_LIVE_SHAPE_RISK_AUDIT.md",
+          "updated_at_utc": "2026-07-24T14:02:56Z"
+        },
+        "gsm8k_protocol_parity_audit": {
+          "can_converge_from_this_audit_alone": false,
+          "covered_repair_nodes": [
+            "protocol.prompt_template_parity_gate",
+            "runner.suffix_answer_region_parity_gate",
+            "protocol.simple_evals_vs_lmeval_harness_gate",
+            "scoring.generated_answer_extractor_parity_gate"
+          ],
+          "finding_statuses": {
+            "generated_answer_extractor_parity": "custom_extractor_not_exact_simple_evals_extractor",
+            "harness_parity": "custom_fallback_support_only_until_equivalence_audit",
+            "prompt_template_parity": "unknown",
+            "suffix_answer_region_parity": "matches_released_eval_formula_but_not_full_paper_protocol"
+          },
+          "loop2_author_can_read": false,
+          "paper_oracle_target_values_included": false,
+          "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_protocol_parity_audit.json",
+          "status": "protocol_parity_partial_with_repair_nodes_encoded",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/GSM8K_PROTOCOL_PARITY_AUDIT.md",
+          "updated_at_utc": "2026-07-24T14:02:56Z"
+        },
+        "live_integrity": {
+          "duplicate_pair_count": 0,
+          "gate_status": "pass",
+          "incomplete_sample_count": 0,
+          "json_parse_error_count": 0,
+          "paired_completed_samples_from_rows": 1319,
+          "reasons": [],
+          "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_live_integrity_report.json",
+          "row_count": 2638,
+          "status": "pass_complete_jsonl_integrity",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/PROPHET_LIVE_INTEGRITY_STATUS.md",
+          "summary_consistency": "pass_or_live_race",
+          "updated_at_utc": "2026-07-24T14:02:55Z"
+        },
+        "live_verifier": {
+          "converged": false,
+          "created_at_utc": "2026-07-24T14:02:56Z",
+          "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/verifier_result_iter_07_live.json",
+          "professional_package_ready": false,
+          "support_only_until": [
+            "GSM8K protocol repair rerun is produced or explicitly blocked after full-run result-shape mismatch",
+            "Table 1 threshold-dynamics repair candidates are produced or explicitly blocked after primary shape mismatch",
+            "multi-benchmark grid debt is resolved or explicitly blocked",
+            "Table 2 acceleration-combination debt is resolved or explicitly blocked",
+            "static step and block-length ablations are produced or explicitly blocked",
+            "Dream-7B axis is produced or explicitly blocked"
+          ]
+        },
+        "multibenchmark_grid_campaign": {
+          "blocked_configs": [
+            {
+              "id": "exact_simple_evals_prompt_and_answer_extractor",
+              "paper_role": "Table 1 exact evaluator parity for general/math/code/planning tasks",
+              "reason": "The paper says it follows simple-evals prompts and extracts generated final answers, but the released repo only contains lm-eval harness code. lm-eval full runs are useful operational parity candidates, not exact convergence evidence by themselves.",
+              "status": "blocked_until_exact_simple_evals_prompt_scorer_path_is_encoded_or_released"
+            },
+            {
+              "id": "main_text_vs_appendix_general_budget_conflict",
+              "paper_role": "Table 1 general-task L/T/B configuration",
+              "reason": "Main text states L=128 for general tasks, while Appendix Table 6 extraction lists L=64/T=64/B=16. The campaign records both candidate budgets and requires verifier resolution.",
+              "status": "blocked_until_verifier_resolves_L128_main_text_vs_L64_appendix_table6"
+            },
+            {
+              "id": "countdown_and_sudoku_simple_evals_planning_axis",
+              "paper_role": "Table 1 planning tasks",
+              "reason": "Countdown and Sudoku are not available in the local lm-eval task registry and the paper uses 8-shot simple-evals-style evaluation.",
+              "status": "blocked_by_missing_countdown_sudoku_task_ids_and_exact_8shot_simple_evals_runner"
+            },
+            {
+              "id": "dream7b_table1_axis",
+              "paper_role": "Table 1 Dream-7B multi-benchmark axis",
+              "reason": "The active released path and custom runner are LLaDA-specific. Dream-7B requires exact model loading, prompt/config parity, and a free GPU memory window.",
+              "status": "blocked_until_dream7b_exact_runner_model_loading_and_memory_budget_are_resolved"
+            }
+          ],
+          "completed_config_count": 0,
+          "linked_existing_artifact_count": 1,
+          "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/multibenchmark_grid_campaign.json",
+          "pending_config_count": 30,
+          "runnable_config_count": 30,
+          "running_config_count": 0,
+          "status": "ready_waiting_for_gpu_capacity_and_prompt_scorer_parity_resolution",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/MULTIBENCHMARK_GRID_STATUS.md",
+          "updated_at_utc": "2026-07-24T14:02:54Z"
+        },
+        "paper_result_comparison": {
+          "blockers": [
+            "blocked_gsm8k_result_shape_mismatch",
+            "table1_threshold_dynamics_repair:running",
+            "table1_multibenchmark_grid:pending_or_blocked",
+            "table2_acceleration_combinations:explicit_external_artifact_blockers_recorded",
+            "table3_table4_ablation_grid:pending_or_blocked",
+            "dream7b_axis:explicit_external_artifact_blockers_recorded"
+          ],
+          "gate_status": "blocked",
+          "primary_gsm8k_status": "blocked_gsm8k_result_shape_mismatch",
+          "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparison.json",
+          "status": "blocked_paper_result_comparison",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/PROPHET_PAPER_RESULT_COMPARISON_STATUS.md",
+          "trajectory_status": "pass_close_to_paper_trajectory_shape",
+          "updated_at_utc": "2026-07-24T14:02:56Z"
+        },
+        "source_parity_blocker_audit": {
+          "blocker_ids": [
+            "dream7b_axis",
+            "top_k_margin_remasking",
+            "simple_evals_table1_prompt_scorer_parity",
+            "table2_sdtt_fastdllm_combinations"
+          ],
+          "can_converge_from_this_audit_alone": false,
+          "remote_matches_local": true,
+          "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/source_parity_blocker_audit.json",
+          "runnable_new_node_count": 0,
+          "status": "evidence_bound_source_parity_blockers_ready",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/SOURCE_PARITY_BLOCKER_AUDIT.md",
+          "updated_at_utc": "2026-07-24T14:02:56Z"
+        },
+        "table2_acceleration_campaign": {
+          "blocked_configs": [
+            {
+              "id": "sdtt_distilled_student_row",
+              "paper_role": "Table 2a SDTT distilled row",
+              "reason": "The Prophet release does not include the preliminary SDTT implementation, distilled 128-step LLaDA checkpoint, training data recipe, or verification script.",
+              "status": "blocked_by_missing_sdtt_training_code_or_distilled_checkpoint"
+            },
+            {
+              "id": "sdtt_plus_prophet_row",
+              "paper_role": "Table 2a SDTT + Prophet row",
+              "reason": "Applying Prophet to the SDTT student requires the exact distilled model artifact and compatibility path for generate_earlyexit.py.",
+              "status": "blocked_by_missing_sdtt_checkpoint_and_prophet_integration_path"
+            },
+            {
+              "id": "fast_dllm_kv_cache_parallel_row",
+              "paper_role": "Table 2b Fast-dLLM row",
+              "reason": "The local Prophet repo does not contain Fast-dLLM KV-cache/parallel-decoding code, model patch, timing harness, or exact GSM8K evaluation script.",
+              "status": "blocked_by_missing_fast_dllm_code_patch_and_speed_harness"
+            },
+            {
+              "id": "fast_dllm_plus_prophet_row",
+              "paper_role": "Table 2b Fast-dLLM + Prophet row",
+              "reason": "The paper's combined row needs a Fast-dLLM runner that exposes Prophet's answer-region confidence monitor and terminates without continuing cache updates.",
+              "status": "blocked_by_missing_fast_dllm_prophet_combined_runner"
+            }
+          ],
+          "linked_existing_artifact_count": 2,
+          "linked_existing_complete_count": 0,
+          "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/table2_acceleration_campaign.json",
+          "runnable_config_count": 0,
+          "status": "running_waiting_for_full_gsm8k_linked_rows_and_external_artifacts",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/TABLE2_ACCELERATION_STATUS.md",
+          "updated_at_utc": "2026-07-23T14:07:40Z"
+        },
+        "trajectory_dataset": {
+          "current_setting": null,
+          "rows_written": 17888,
+          "settings_completed": 8,
+          "status": "completed",
+          "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_dataset_status.json",
+          "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_analysis_summary.json",
+          "total_settings": 8,
+          "trajectory_complete": true,
+          "updated_at_utc": null
+        }
+      },
+      "specialized_runner_status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory",
+      "title": "Diffusion Language Models Know the Answer Before Decoding"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "LongBench v1; LongBench v2; HELMET; RULER; Needle in a Haystack; MMLU; MATH-500; IFEval; temperature 0.6 for reasoning models; eight samples per problem; up to 128K input tokens and 10K output tokens; temperature 0 for non-reasoning base models"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "average pass@1; accuracy; length-controlled context bucket accuracy; retrieval pass rate; binary reward"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "HotpotQA; MuSiQue; 2WikiMultiHopQA; PG19; DAPO math; MATH; OldKingMeister/LoongRL-Train-Data; OldKingMeister/LoongRL-Train-Data"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "16 A100 GPUs for 7B; 8 MI300X GPUs for 14B; customized veRL; Ray; vLLM; SGLang; FSDP; ROCm MI300X patches; NVIDIA A100 install scripts"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "KeyChain data construction; UUID or high-entropy key-value chains; distractor document filling; Qwen2.5-32B difficulty filtering; two-way substring exact-match reward; three-stage RL curriculum; hard-mined Stage II"
+        }
+      ],
+      "implementation_statuses": [
+        "LoongRL code inspected at commit be1f096da289684a9cd50562f56f99b5be6ad3be",
+        "KeyChain code inspected at commit a958c9136011e3ebef1b9399c09b439578dde409",
+        "HF dataset public and ungated",
+        "specialized_runner_preflight_completed",
+        "official_grpo_scripts_parsed",
+        "hf_model_and_dataset_manifests_checked",
+        "blocked_exact_cluster_training_data_checkpoint_runtime"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+      "priority": "high",
+      "professional_blocker": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements_after_specialized_runner",
+      "repo_exact_rerun_status": "code_ready_needs_model_data",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL"
+      ],
+      "runner_type": "long_context_reasoning_rl_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "DAG/paper-shaped 7B training expects 16 A100 GPUs; visible A100 count=0, total visible GPUs=4",
+            "id": "loongrl_7b_training_gpu_topology",
+            "status": "blocked"
+          },
+          {
+            "detail": "DAG/paper-shaped 14B training expects 8 MI300X GPUs; visible MI300X count=0",
+            "id": "loongrl_14b_training_gpu_topology",
+            "status": "blocked"
+          },
+          {
+            "detail": "official long-context GRPO scripts request trainer.n_gpus_per_node=8; visible GPUs=4",
+            "id": "official_longcontext_script_gpu_count",
+            "status": "blocked"
+          },
+          {
+            "detail": "official GRPO scripts reference missing local parquet train files: /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet",
+            "id": "official_longcontext_training_data_paths_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "no local LoongRL-7B or LoongRL-14B checkpoint directory was found for full benchmark evaluation",
+            "id": "trained_loongrl_checkpoints_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "missing installed runtime packages needed by paper-shaped veRL/Ray/vLLM/SGLang flow: ray, vllm, sglang, flash_attn, verl",
+            "id": "cluster_rl_runtime_packages_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "MI300X/ROCm runtime path is not visible from rocm-smi, so the 14B MI300X paper route cannot run here",
+            "id": "rocm_mi300x_runtime_unavailable",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/official_script_manifest.json",
+        "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/professional_gate_result.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/loongrl_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+      "title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "FLUX.1-dev; HunyuanVideo; Wan2.1 1.3B; VBench; CycleReward; CompressedVQA; full 50-step uncached output as reference; shared initial random seed across methods; 200 DrawBench prompts for FLUX; 944 VBench prompts for T2V; cache threshold delta controls refresh ratio; TFLOPs measured with Calflops"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "latency; TFLOPs; PSNR; LPIPS; SSIM; CycleReward average rank; VBench dimensions; CompressedVQA; refresh ratio"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "DrawBench prompts; VBench prompts; CycleReward prompts/evaluation; CompressedVQA reference videos; DrawBench prompt set not bundled; VBench prompt set/tooling required; external FLUX checkpoints; external Wan2.1 checkpoints; external HunyuanVideo checkpoints"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "NVIDIA Blackwell Pro 6000; NVIDIA A100; CUDA/PyTorch inference; PyTorch; Diffusers; FLUX; Wan2.1; HunyuanVideo; VBench; Calflops"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "SEA filter; density/mean normalization; SEA-filtered relative L1; accumulated threshold gate; residual reuse; scheduler coefficient mapping; README.md; FLUX/util_seacache.py; FLUX/seacache_generate.py; Wan2.1/util_seacache.py; Wan2.1/seacache_generate.py; HunyuanVideo/util_seacache.py; HunyuanVideo/seacache_generate.py"
+        }
+      ],
+      "implementation_statuses": [
+        "official_github_found",
+        "code_repo_cloned",
+        "code_inspected",
+        "results_not_rerun_locally",
+        "no_explicit_license_found",
+        "external_model_dependencies_required",
+        "specialized_runner_preflight_completed",
+        "official_diffusion_scripts_parsed",
+        "model_dataset_metric_manifests_checked",
+        "sea_filter_unit_support_check_passed",
+        "blocked_exact_diffusion_model_data_hardware_runtime_script_parity"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+      "priority": "medium",
+      "professional_blocker": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements_after_specialized_runner",
+      "repo_exact_rerun_status": "blocked",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache"
+      ],
+      "runner_type": "diffusion_cache_latency_quality_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Paper/DAG expects Blackwell RTX PRO 6000 and/or A100 traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "paper_hardware_class",
+            "status": "blocked"
+          },
+          {
+            "detail": "Visible GPUs are already memory-heavy or active; GPU 3 is occupied by the Prophet full run. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+            "id": "clean_gpu_slot_for_diffusion_grid",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local paper-scale model checkpoints: flux_dev, wan21_t2v_13b, wan21_t2v_14b, wan21_i2v_14b_720p, hunyuanvideo",
+            "id": "required_diffusion_checkpoints_not_materialized",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local prompt/evaluator artifacts: drawbench_200_prompts, vbench_944_prompts_and_tooling, cyclereward_eval, compressedvqa_eval",
+            "id": "prompt_metric_artifacts_not_materialized",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing required runtime packages/imports: diffusers, calflops, vbench, lpips, wan, hyvideo",
+            "id": "diffusion_metric_runtime_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "SeaCache scripts need patch/wrapper before full grid: flux_prompt_grid_break, hunyuan_threshold_hardcoded",
+            "id": "official_script_parity_for_full_grid",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/official_script_manifest.json",
+        "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/professional_gate_result.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/seacache_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+      "title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "Wan2.1 T=50; CogVideoX T=50; LTX-Video T=50; VBench; LPIPS/PSNR/SSIM reference metrics; compare at similar compute budgets; full VBench prompt set evaluation; 70 T2V-CompBench prompts for ablation; finite-difference calibration once per model; supplement 100-video MAE diagnostic"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "NFE; cache ratio; LPIPS; PSNR; SSIM; wall-clock latency; GFLOPs; consecutive-step MAE"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "MixKit calibration videos; VBench prompt set; T2V-CompBench ablation prompts; Hugging Face SenCache sensitivity weights; sensitivity_wan21.npz expected by Wan script; sensitivity_ltx.npz expected by LTX script; HF Yassaman/SenCache sensitivity weights; external base-model checkpoints; test_prompt.json files"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "GH200 supplement latency; GPU inference for base video models; distributed calibration scripts; PyTorch; Wan2.1; CogVideoX; LTX-Video; Diffusers; Hugging Face datasets"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "latent sensitivity norm; timestep sensitivity norm; epsilon tolerance gate; max consecutive cache length; cached residual reuse; finite-difference calibration; README.md; Wan2.1/sencache.py; Wan2.1/sensitivity_calculation.py; CogVideoX/sencache.py; CogVideoX/sensitivity_calculation_cogvid.py; LTX-Video/sencache.py; LTX-Video/sensitivity_calculation_LTX.py"
+        }
+      ],
+      "implementation_statuses": [
+        "official_github_found",
+        "code_repo_cloned",
+        "code_inspected",
+        "precomputed_weights_referenced",
+        "results_not_rerun_locally",
+        "no_explicit_license_found",
+        "external_base_repos_required",
+        "specialized_runner_preflight_completed",
+        "official_sencache_scripts_parsed",
+        "sensitivity_weight_model_dataset_manifests_checked",
+        "blocked_exact_sensitivity_video_model_metric_runtime_hardware_grid"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+      "priority": "medium",
+      "professional_blocker": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements_after_specialized_runner",
+      "repo_exact_rerun_status": "blocked",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache"
+      ],
+      "runner_type": "diffusion_cache_latency_quality_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Paper/DAG expects GH200 supplement latency or comparable high-end video-diffusion traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "paper_hardware_class",
+            "status": "blocked"
+          },
+          {
+            "detail": "Visible GPUs are memory-heavy or active; GPU 3 is occupied by Prophet. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 100}]",
+            "id": "clean_gpu_slot_for_video_diffusion_grid",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local loadable checkpoints: wan21_t2v_13b, cogvideox_15_5b, ltx_video_091",
+            "id": "required_video_model_checkpoints_not_materialized",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local sensitivity .npz weights or calibration outputs: sensitivity_wan21, sensitivity_cogvid, sensitivity_ltx",
+            "id": "sensitivity_weights_or_calibration_outputs_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local calibration/prompt/evaluator artifacts: mixkit_calibration_videos, vbench_full_prompt_set, t2v_compbench_70_prompts",
+            "id": "calibration_prompt_metric_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing required runtime packages/imports: diffusers, lpips, vbench, wan",
+            "id": "video_diffusion_metric_runtime_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No raw cached/uncached Wan2.1, CogVideoX, and LTX outputs with VBench/LPIPS/PSNR/SSIM/latency/GFLOPs summaries were found.",
+            "id": "full_cached_uncached_result_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/official_script_manifest.json",
+        "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/professional_gate_result.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/sencache_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements",
+      "title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "Kodak/DIV2K/CLIC estimated-rate and real-bitstream RD curves, DIV2K ablation table, prefix-transfer rate-control sweep"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "bpp/cd_bpp, cd_bpp_real, DISTS, LPIPS, FID, KID, CLIPIQA, MUSIQ, NIQE, PSNR, MS-SSIM, profile/timing counters"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "CVLUESTC/RDVQ checkpoints; Kodak, DIV2K-val, CLIC2020-test; FID_REF_ROOT tiles; ImageNet/OpenImage/DF2K if full training/fine-tune reproduction is attempted"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "four RTX 4090 primary experiment traces, RTX Pro 6000 high-resolution fine-tune trace, clean CUDA telemetry, C++17/ninja tensor-rANS build"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "test.sh, test_Real.sh, my_inference.py, Real_Endecode_inference_single_stageAR.py, tensor-rANS codec, prefix transfer, RDVQ quantizer/tokenizer/AR transformer"
+        },
+        {
+          "id": "operational_preflight_blockers",
+          "required": "highres_finetune_hardware_class: Paper/DAG expects a single RTX Pro 6000 for high-resolution DF2K fine-tuning; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.; clean_gpu_slot_for_full_rd_grid: No visible RTX 4090 has at least 12GB free and low utilization. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 17}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]; rdvq_checkpoints_not_materialized: Missing local released RDVQ checkpoint files: rdvq_testing_checkpoints; rd_curve_datasets_or_fid_refs_missing: Missing local evaluation datasets/FID refs: kodak_image_folder, div2k_val_image_folder, clic2020_test_image_folder, fid_reference_tiles; training_and_highres_finetune_datasets_missing: Missing training/fine-tuning datasets for full author reproduction: imagenet_training_images, openimage_training_images, df2k_highres_images; compression_metric_runtime_missing: Missing required metric/codec runtime imports: cleanfid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja; release_validation_support_check_failed: scripts/release_validate.sh did not complete cleanly; inspect environment.json for stdout/stderr.; full_estimated_and_real_bitstream_result_grid_missing: No complete forward/Real metrics artifacts for Kodak, DIV2K, CLIC, prefix-transfer sweeps, and RD tables were found."
+        }
+      ],
+      "implementation_statuses": [
+        "blocked_exact_rdvq_checkpoint_dataset_runtime_hardware_grid",
+        "checkpoint_dataset_metric_manifests_checked",
+        "code_inspected",
+        "datasets_not_downloaded",
+        "license_metadata_inconsistent",
+        "official_rdvq_scripts_parsed",
+        "real_bitstream_not_generated",
+        "result_not_rerun",
+        "specialized_runner_preflight_completed",
+        "weights_not_downloaded"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+      "priority": "medium",
+      "professional_blocker": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements_after_specialized_runner",
+      "repo_exact_rerun_status": "blocked",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ"
+      ],
+      "runner_type": "compression_rate_distortion_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Paper/DAG expects a single RTX Pro 6000 for high-resolution DF2K fine-tuning; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "highres_finetune_hardware_class",
+            "status": "blocked"
+          },
+          {
+            "detail": "No visible RTX 4090 has at least 12GB free and low utilization. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 17}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+            "id": "clean_gpu_slot_for_full_rd_grid",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local released RDVQ checkpoint files: rdvq_testing_checkpoints",
+            "id": "rdvq_checkpoints_not_materialized",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local evaluation datasets/FID refs: kodak_image_folder, div2k_val_image_folder, clic2020_test_image_folder, fid_reference_tiles",
+            "id": "rd_curve_datasets_or_fid_refs_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing training/fine-tuning datasets for full author reproduction: imagenet_training_images, openimage_training_images, df2k_highres_images",
+            "id": "training_and_highres_finetune_datasets_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing required metric/codec runtime imports: cleanfid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja",
+            "id": "compression_metric_runtime_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "scripts/release_validate.sh did not complete cleanly; inspect environment.json for stdout/stderr.",
+            "id": "release_validation_support_check_failed",
+            "status": "blocked"
+          },
+          {
+            "detail": "No complete forward/Real metrics artifacts for Kodak, DIV2K, CLIC, prefix-transfer sweeps, and RD tables were found.",
+            "id": "full_estimated_and_real_bitstream_result_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/official_script_manifest.json",
+        "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/professional_gate_result.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/rdvq_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements",
+      "title": "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression"
+    },
+    {
+      "dag_iter_03_signature": "ae3bfe8ac298f3f1",
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "image/video reconstruction, zero-shot classification, image/video retrieval, MLLM replacement, T2I/T2V, image-to-3D, and scaling ablation tables"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "PSNR, SSIM, LPIPS, rFID, rFVD, accuracy, R@1, gFID, Inception Score, precision, timing and GPU traces"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "five Apple CDN checkpoints; DFN, Open Images, WebVid, TextVR, Panda70M, Objaverse, Cap3D, ImageNet, COCO, DAVIS, MSR-VTT"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "64 H100 Stage 1 and 256 H100 Stages 2-3 traces; clean CUDA inference slot; flash-attn and Gaussian Splatting runtime"
+        },
+        {
+          "id": "operational_preflight_blockers",
+          "required": "h100_training_scale_hardware_missing: DAG records 64 H100 Stage 1 and 256 H100 Stages 2-3; visible H100 count is 0; visible GPUs: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.; clean_gpu_slot_for_official_atoken_inference_missing: No visible GPU has >=18GB free and <30% utilization for official ATokenWrapper inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 21343, 'memory_free_mib': 2873, 'utilization_gpu_pct': 0, 'temperature_c': 44, 'power_w': 61.89}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18631, 'memory_free_mib': 5586, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.57}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19023, 'memory_free_mib': 5191, 'utilization_gpu_pct': 17, 'temperature_c': 39, 'power_w': 20.85}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99, 'temperature_c': 74, 'power_w': 247.02}]; apple_checkpoints_not_materialized: Official Apple checkpoint URLs exist but local .pt files are missing or empty: atoken_soc_continuous, atoken_sod_discrete, atoken_3d_decode_gs, atoken_soc_stage1, atoken_soc_stage2.; multimodal_training_eval_datasets_missing: Missing local dataset/materialized benchmark artifacts: dfn_training, open_images_training, webvid_video_training, textvr_retrieval, panda70m_video_training, objaverse_3d, cap3d_3d_text, imagenet_classification, coco_retrieval_generation, davis_video_reconstruction, msrvtt_video_text.; atoken_runtime_dependencies_missing: Missing imports needed for full official/video/GS path: diffusers, open_clip, imageio, webdataset, flash_attn, diff_gaussian_rasterization.; full_multitask_benchmark_grid_missing: No complete verifier-comparable AToken tables/figures/raw outputs were found for reconstruction, retrieval, MLLM, generation, 3D, and scaling surfaces."
+        }
+      ],
+      "implementation_statuses": [
+        "apple_checkpoint_urls_checked",
+        "checkpoint_links_found",
+        "checkpoints_not_materialized",
+        "code_inspected",
+        "compileall_passed",
+        "manual_seed_false",
+        "not_rerun",
+        "official_repo_found",
+        "official_scripts_parsed",
+        "professional_gate_blocked",
+        "research_only_model_license",
+        "specialized_runner_preflight_completed"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+      "priority": "medium",
+      "professional_blocker": "blocked_by_checkpoints_datasets_runtime_hardware_and_benchmark_grid_requirements",
+      "repo_exact_rerun_status": "blocked",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION"
+      ],
+      "runner_type": "visual_tokenizer_multitask_runner",
+      "specialized_runner_status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/ATOKEN_SPECIALIZED_STATUS.md",
+      "specialized_verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/atoken_specialized_verifier.json",
+      "title": "AToken: A Unified Tokenizer for Vision"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "Proofpile perplexity; NIAH; RULER; Infinite-Bench; LongBenchV2; ten Proofpile sequences over 128K tokens; NIAH varied context length and insertion depth; RULER 13 subtasks; Infinite-Bench 100 examples per subset from 100K to 128K; LongBenchV2 samples shorter than 128K"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "perplexity; ROUGE-1 recall; RULER retrieval score; Infinite-Bench task accuracy; LongBenchV2 task score"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "Proofpile; RULER; Needle-In-A-Haystack; Infinite-Bench; LongBenchV2; testset/pp-tokenized-llama3; testset/pp-tokenized-qwen2.5; testset/infity; RULER/LongBenchV2 datasets expected locally"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "not specified in paper; supplementary scripts use device_map=auto and optional FlashAttention; PyTorch; Transformers; FlashAttention 2; BitsAndBytes optional quantization"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "mixed-radix RoPE framework; MrRoPE-Uni uniform middle-dimension conversion; MrRoPE-Pro progressive middle-dimension conversion; dimension boundary selection by beta_fast and beta_slow; attention magnitude scaling; scaled_rope/LlamaMrRoPE.py; scaled_rope/patch.py; eval/model_loader.py; eval/perplexity.py; eval/neddle.py; eval/ruler.py; eval/infity.py; analysis/attn.py"
+        }
+      ],
+      "implementation_statuses": [
+        "code_inspected",
+        "github_repository_not_found",
+        "supplementary_archive_inspected",
+        "specialized_runner_preflight_completed",
+        "supplement_scripts_parsed",
+        "hf_model_and_dataset_manifests_checked",
+        "blocked_supplement_only_missing_datasets_models_runtime"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+      "priority": "medium",
+      "professional_blocker": "blocked_by_supplement_only_missing_datasets_models_runtime_after_specialized_runner",
+      "repo_exact_rerun_status": "paper_only_or_source_missing",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp"
+      ],
+      "runner_type": "long_context_position_encoding_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "queue reports GitHub repository not found; only OpenReview supplement archive is available",
+            "id": "source_distribution_supplement_only",
+            "status": "blocked"
+          },
+          {
+            "detail": "required local dataset paths are missing: testset/pp-tokenized-llama3, testset/pp-tokenized-qwen2.5, testset/infity, testset/longbenchv2, testset/PaulGrahamEssays",
+            "id": "local_long_context_datasets_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "supplement scripts expect missing local checkpoints: models/llama3.1-8b-ins, models/qwen2.5-3b-ins",
+            "id": "local_model_checkpoints_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "supplement benchmark scripts use --flash-attention, but flash-attn is not installed",
+            "id": "flash_attention_2_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "missing supplement dependencies: jieba",
+            "id": "supplement_python_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "all visible GPUs have less than 16GiB free while another full GPU run is active; 128K model eval should wait for a clean device",
+            "id": "no_idle_large_memory_gpu_for_128k_eval",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/official_script_manifest.json",
+        "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/professional_gate_result.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/mrrope_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_supplement_only_missing_datasets_models_runtime",
+      "title": "MrRoPE: Mixed-radix Rotary Position Embedding"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "class_specific_ImageNet_subtasks; training_free_pruning_comparison; training_dependent_pruning_comparison; derivation_cost_simulation; edge_runtime_table; component_ablation; class_specific_accuracy_pruning_sweep; large_deployment_cost_simulation; real_device_runtime_profiling; detection_segmentation_transfer; ablation_study"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "top1_accuracy; mAP; pruning_rate; GFLOPs; parameters; latency_ms; throughput_images_per_second; memory_GB; GPU_hours; AWS_cost"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet_1K; CIFAR_10; CIFAR_100; COCO2017; class_specific_dataloaders; calibration_data_loader; CVF_supplemental_zip; arxiv_pdf; CVF_pdf"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "NVIDIA_RTX_4090; NVIDIA_Jetson_Orin_NX; AWS_cost_simulation; PyTorch; timm_like_ViT; torchvision_detection_style; CUDA"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "NuWa; Self_Knowledge_Purification; Optimization_based_Fast_Pruning; MHA_SVD_pruning; MLP_closed_form_pruning; head_focus; main_py; method_nuwa_py; method_get_anchor_model_py; method_pruning_py; dataset_imagenet_py; dataset_coco_py; model_vit_py; model_swin_py"
+        }
+      ],
+      "implementation_statuses": [
+        "code_inspected",
+        "official_repo_cloned",
+        "supplemental_code_extracted",
+        "minimal_documentation",
+        "core_method_implemented",
+        "official_repo_discovered_and_encoded",
+        "official_scripts_parsed",
+        "source_compile_preflight_completed",
+        "blocked_by_source_runtime_datasets_checkpoints_and_devices"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+      "priority": "high",
+      "professional_blocker": "blocked_by_syntax_datasets_checkpoints_runtime_hardware_and_result_grid_requirements",
+      "repo_exact_rerun_status": "code_present_blocked_by_source_runtime_data_devices",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa"
+      ],
+      "runner_type": "edge_vit_pruning_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "NuWa needs RTX 4090 runtime traces; no clean 4090 has >=12GB free and <30% util. GPUs: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 180.08}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 87, 'power_w': 388.7}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99, 'temperature_c': 78, 'power_w': 183.68}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 164.32}].",
+            "id": "clean_rtx4090_for_runtime_trace_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Paper/DAG expects Jetson Orin NX edge profiling; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "jetson_orin_nx_device_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Official NuWa repo has syntax errors before execution: method/get_anchor_model.py, method/get_clibration_data.py, method/utils.py",
+            "id": "official_repo_python_syntax_errors",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing imports needed for full recognition/detection/segmentation/runtime path: mmcv, mmdet, mmengine, fvcore, ptflops",
+            "id": "nuwa_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing local model/checkpoint/config artifacts: timm_deit_pretrained_weights, vit_large_pretrained_weights, cifar_finetuned_vit_weights, mask_rcnn_swin_coco_checkpoint, mmdetection_swin_config",
+            "id": "nuwa_checkpoints_or_configs_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No complete verifier-comparable NuWa tables/figures/raw outputs were found for accuracy/pruning/compute/runtime/cost surfaces.",
+            "id": "full_pruning_benchmark_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/model_data_manifest.json",
+        "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/official_script_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/nuwa_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_syntax_datasets_checkpoints_runtime_hardware_and_result_grid_requirements",
+      "title": "NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "100-image GAPartNet articulated-object test set; shape reconstruction against GAPartNet held-out articulated objects; URDF joint parameter evaluation against Articulate-Anything and Articulate AnyMesh; ablation of part guidance, data augmentation, joint optimization, and VLM re-prediction; qualitative simulator deployment in Isaac Sim"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "Chamfer Distance; F-Score@0.1; F-Score@0.5; AxisErr; PivotErr; TypeErr"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "PartNet-Mobility; GAPartNet; PartNet-Mobility-derived augmented training set; GAPartNet 100-image evaluation set; preprocessed dataset announced but not released in repository"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "4 NVIDIA H100 GPUs; PyTorch; PyTorch3D; Trimesh; Isaac Sim"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "VLM structural reasoning; VLM part reference image generation; DINOv2 image encoder; part-articulated diffusion transformer; hierarchical graph attention; rectified flow mesh latent objective; VLM discrete joint re-prediction; differentiable forward kinematics; differentiable rendering silhouette optimization; Meshy texture synthesis; README.md placeholder; assets/SPARK_teaser.png; missing inference scripts; missing pretrained checkpoints; missing training code; missing data preprocessing scripts"
+        }
+      ],
+      "implementation_statuses": [
+        "repository_present_no_source_code_inspected",
+        "paper_and_supplement_read",
+        "project_page_found",
+        "source_code_missing_from_official_repository",
+        "official_repo_discovered_and_encoded",
+        "placeholder_repo_confirmed",
+        "professional_gate_blocked"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+      "priority": "high",
+      "professional_blocker": "blocked_by_placeholder_repo_unreleased_source_models_data_runtime_hardware_and_result_grid",
+      "repo_exact_rerun_status": "repo_present_placeholder_no_executable_source",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK"
+      ],
+      "runner_type": "3d_generation_reconstruction_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Repository contains only ['LICENSE', 'README.md', 'assets/SPARK_teaser.png']; no executable source/config/script is released.",
+            "id": "official_repo_placeholder_no_executable_source",
+            "status": "blocked"
+          },
+          {
+            "detail": "README TODO marks these as unreleased: - [ ] Provide a HuggingFace\ud83e\udd17 demo.; - [ ] Release inference scripts and pretrained checkpoints.; - [ ] Release training code and data preprocessing scripts.; - [ ] Release preprocessed dataset.",
+            "id": "readme_declares_core_artifacts_unreleased",
+            "status": "blocked"
+          },
+          {
+            "detail": "DAG expects 4 NVIDIA H100 GPUs; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "four_h100_hardware_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing runtime imports for full 3D/simulation path: pytorch3d, trimesh, isaacsim, open3d, kaolin",
+            "id": "spark_3d_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing released pretrained checkpoints, PartNet-Mobility/GAPartNet preprocessing, 100-image GAPartNet eval set, DINOv2/diffusion transformer configs, and VLM-generated part-reference artifacts.",
+            "id": "spark_models_data_checkpoints_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No structural-reasoning VLM runner, part-reference image-generation runner, or Meshy texture synthesis integration/API artifacts are present.",
+            "id": "spark_vlm_api_and_meshy_integration_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No verifier-comparable mesh/URDF/joint metric tables, ablations, Isaac Sim artifacts, raw outputs, or GPU traces are present.",
+            "id": "spark_full_3d_result_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark/environment.json",
+        "repo_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark/repo_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark/spark_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_placeholder_repo_unreleased_source_models_data_runtime_hardware_and_result_grid",
+      "title": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge"
+    },
+    {
+      "dag_iter_03_signature": "708adab776bbd98e",
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "3D reconstruction, image-to-3D, PBR texturing, SC-VAE ablation, resolution scaling, architecture ablations, H100 runtime, user study"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "MD, CD, F1, PSNR, LPIPS, CLIP, CLIP-N, ULIP-2, Uni3D, Pref%, timing, memory"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "microsoft/TRELLIS.2-4B; Objaverse-XL, ABO, HSSD, TexVerse, Toys4K, Sketchfab Featured, NanoBanana prompts; PBR dumps, dual grids, .vxz, latents, rendered conditions"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "H100 runtime traces, A100/H100 verified inference environment, clean 24GB+ CUDA slot, PyTorch 2.6/CUDA 12.4, extension build logs"
+        },
+        {
+          "id": "operational_preflight_blockers",
+          "required": "h100_runtime_scaling_hardware_missing: Paper/DAG includes H100 runtime scaling; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.; official_verified_a100_h100_environment_missing: Official README says code verified on A100/H100; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.; clean_24gb_gpu_slot_missing: No visible 24GB+ GPU has >=18GB free and <30% utilization for TRELLIS.2 inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 21343, 'memory_free_mib': 2873, 'utilization_gpu_pct': 15, 'temperature_c': 44, 'power_w': 64.75}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18631, 'memory_free_mib': 5586, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.92}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19037, 'memory_free_mib': 5177, 'utilization_gpu_pct': 17, 'temperature_c': 39, 'power_w': 20.16}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16049, 'memory_free_mib': 8168, 'utilization_gpu_pct': 99, 'temperature_c': 74, 'power_w': 249.36}]; trellis2_4b_weights_not_materialized: Missing local HF model snapshots/checkpoints: trellis2_4b_hf_weights.; trellis2_datasets_or_preprocessed_artifacts_missing: Missing local datasets/preprocessed artifacts: objaverse_xl, abo, hssd, texverse, toys4k, sketchfab_featured, nanobanana_prompts, pbr_dumps, dual_grid, ovoxel_vxz, shape_latents, pbr_latents, render_cond.; trellis2_runtime_extensions_missing: Missing official runtime/extension imports: flash_attn, nvdiffrast, nvdiffrec, cumesh, o_voxel, flexgemm, imageio, trimesh, gradio, lpips, kornia, easydict.; full_3d_result_grid_and_userstudy_missing: No complete verifier-comparable 3D generation/reconstruction/texturing/scaling/user-study result grid was found."
+        }
+      ],
+      "implementation_statuses": [
+        "Hugging Face weights not downloaded",
+        "O-Voxel conversion code inspected",
+        "hf_model_manifest_checked",
+        "official GitHub cloned",
+        "official_repo_path_discovered",
+        "pipeline code inspected",
+        "professional_gate_blocked",
+        "results not rerun",
+        "specialized_runner_preflight_completed",
+        "training/data toolkit inspected"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+      "priority": "external_blocked",
+      "professional_blocker": "blocked_by_weights_datasets_runtime_hardware_and_result_grid_requirements",
+      "repo_exact_rerun_status": "blocked",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2"
+      ],
+      "runner_type": "3d_generation_reconstruction_runner",
+      "specialized_runner_status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2/TRELLIS2_SPECIALIZED_STATUS.md",
+      "specialized_verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2/trellis2_specialized_verifier.json",
+      "title": "Native and Compact Structured Latents for 3D Generation"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "NSD; BOLD5000; GOD; COCO QA pairs; standardized fMRI train/test splits; five-run subject-averaged metrics; Qwen2.5 QA on reconstructed images; latent-space ablation; module ablation"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "PixCorr; SSIM; LPIPS; CLIP; Inception V3; QA accuracy; CKA; CCA; generalization gap"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "NSD; BOLD5000; Generic Object Decoding; COCO; NSD access-gated fMRI data; COCO images/captions; generated structured response npz files; best_keyword.json"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "two NVIDIA L40 GPUs with 48GB memory; CUDA 12.2 reported in README; PyTorch; transformers; diffusers; xformers; OpenAI API; langchain-openai; lpips"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "fMRI preprocessing; attribute/relationship search; structured description generation; fMRI-to-T5 model; object-centric cross-attention generation; src/my_model.py; src/gen_pipe.py; src/search_prompt/keyword_search.py; src/get_gpt_data.py; src/gpt_rewrite.py; src/train_model.py; src/run_gen.py"
+        }
+      ],
+      "implementation_statuses": [
+        "official repository cloned",
+        "source code inspected",
+        "NSD data requires terms/form access",
+        "OpenAI API key required for pipeline",
+        "official_repo_discovered_and_encoded",
+        "official_scripts_parsed",
+        "source_compile_checked",
+        "professional_gate_blocked"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+      "priority": "high",
+      "professional_blocker": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+      "repo_exact_rerun_status": "repo_present_needs_fmri_data_api_runtime_hardware_and_full_metric_grid",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "runner_type": "fmri_reconstruction_qa_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "README/DAG expect two NVIDIA L40 48GB GPUs; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "two_l40_48gb_hardware_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No clean >=45GB GPU is available for the paper-shaped PRISM reconstruction run. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16189, 'memory_free_mib': 8028, 'utilization_gpu_pct': 100, 'temperature_c': 79, 'power_w': 177.14}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98, 'temperature_c': 86, 'power_w': 320.22}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 77, 'power_w': 180.08}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 157.15}].",
+            "id": "clean_large_fmri_generation_gpu_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing imports for the released PRISM pipeline: diffusers, xformers, langchain_openai, lpips, retry",
+            "id": "prism_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing PRISM pipeline artifacts: best_keyword_json, train_structured_npz, val_structured_npz, test_structured_npz, trained_checkpoint_cur_best, generated_output_dir, metric_output_dir",
+            "id": "prism_pipeline_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No materialized NSD fMRI data for PRISM was found; README requires NSD terms/form access.",
+            "id": "nsd_access_gated_fmri_data_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No BOLD5000 benchmark artifacts found for PRISM verifier comparison.",
+            "id": "bold5000_benchmark_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No Generic Object Decoding benchmark artifacts found for PRISM verifier comparison.",
+            "id": "generic_object_decoding_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No PRISM-bound COCO image/caption/QA artifacts found for verifier comparison.",
+            "id": "coco_qa_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No complete PixCorr/SSIM/LPIPS/CLIP/Inception/QA/CKA/CCA/generalization-gap result grid was found.",
+            "id": "full_fmri_reconstruction_qa_metric_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/model_data_manifest.json",
+        "repo_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/repo_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/prism_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+      "title": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "SpotterQA; CaptainQA; Guess Who; human-human study; OpenRouter model evaluation; board-matched win rate; 60-game Guess Who transfer"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "accuracy; targeting F1; precision; recall; moves; questions; win rate; EIG; redundant questions; token cost"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "BATTLESHIP QA; Collaborative Battleship human trajectories; TextArena Guess Who; data/battleship-qa.csv; experiments/collaborative/contexts; project page demo/data"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "API-based evaluation through OpenRouter; no local GPU requirement for core scaffolding"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "Collaborative Battleship; Code Spotter; FastSampler; EIGCalculator; Bayes-Q; Bayes-M; Bayes-D; battleship/planner_captain.py; battleship/agents.py; battleship/fast_sampler.py; battleship/spotters.py; battleship/captains.py; run_captain_benchmarks.py; run_spotter_benchmarks.py"
+        }
+      ],
+      "implementation_statuses": [
+        "repo_cloned_and_inspected",
+        "MIT license",
+        "dataset_found",
+        "tests_present",
+        "official_repo_discovered_and_encoded",
+        "python311_required_current_python310_blocked",
+        "openrouter_api_key_missing",
+        "professional_gate_blocked",
+        "gpu_not_required_for_core_api_agent_experiments"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+      "priority": "high",
+      "professional_blocker": "blocked_by_python311_openrouter_full_agent_benchmark_and_guess_who_artifacts",
+      "repo_exact_rerun_status": "repo_present_waiting_for_python311_api_and_full_result_grid",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship"
+      ],
+      "runner_type": "agent_decision_benchmark_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship",
+      "specialized_runner_evidence": {
+        "api_runtime_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/api_runtime_manifest.json",
+        "blockers": [
+          {
+            "detail": "Current Python is 3.10; pyproject requires ^3.11 and tests fail on enum.StrEnum under Python 3.10.",
+            "id": "battleship_python311_runtime_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Selected tests did not collect/pass; see environment.json.",
+            "id": "battleship_unit_probe_failed_until_python311_runtime",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing runtime imports: lark",
+            "id": "battleship_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "battleship/agents.py constructs an OpenAI client with OpenRouter base_url and requires OPENROUTER_API_KEY.",
+            "id": "battleship_openrouter_api_key_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing data artifacts: readme_named_human_dataset_csv",
+            "id": "battleship_required_data_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Raw collaborative human-data directory exists but does not contain the paper-shaped game/round/stage trajectory files expected by README.",
+            "id": "battleship_raw_human_trajectory_files_incomplete",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing operational result directories/files: spotter_benchmark_results, captain_benchmark_results, guess_who_transfer_outputs, openrouter_model_eval_outputs, paper_metric_summary",
+            "id": "battleship_full_agent_benchmark_outputs_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Verifier cannot compare against paper tables/figures/paragraphs until SpotterQA, CaptainQA, human comparison, OpenRouter model grid, and Guess Who outputs are produced.",
+            "id": "battleship_result_shape_verifier_waiting_for_full_grid",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/model_data_manifest.json",
+        "repo_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/repo_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/battleship_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_python311_openrouter_full_agent_benchmark_and_guess_who_artifacts",
+      "title": "Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "video reconstruction at matched BPP16; TokenBench/DAVIS reconstruction; router optimality ablation; compressor ablation; latency comparison"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "BPP16; PSNR; SSIM; LPIPS; FVD; latency seconds per video; number of decoder passes"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "TokenBench; DAVIS; qyoo/tokenbench_240p; qyoo/davis_240p"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "H100-80GB or A100-80GB recommended; 32 H100 GPUs reported for paper-scale training"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "ELBO router; adaptive binary mask; ViT compressor; ViT decompressor; Cosmos discrete video tokenizer backbone; infotok_mse.pt checkpoint; exp_scripts/infotok_inference.sh; exp_scripts/infotok_posttrain.sh"
+        }
+      ],
+      "implementation_statuses": [
+        "repo_cloned_and_inspected",
+        "checkpoint_release_documented",
+        "official_repo_discovered_and_encoded",
+        "official_scripts_parsed",
+        "hf_manifests_reachable",
+        "professional_gate_blocked"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+      "priority": "high",
+      "professional_blocker": "blocked_by_hf_artifacts_runtime_hardware_training_scale_and_result_grid_requirements",
+      "repo_exact_rerun_status": "released_code_needs_hf_artifacts_runtime_hardware_and_full_grid",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok"
+      ],
+      "runner_type": "visual_tokenizer_multitask_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "README recommends H100-80GB/A100-80GB; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "h100_or_a100_80gb_runtime_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "DAG records 32 H100 GPUs for paper-scale training; visible H100 count is 0.",
+            "id": "paper_scale_32_h100_training_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No clean >=30GB free GPU is visible for official long-window inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 180.66}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16149, 'memory_free_mib': 8068, 'utilization_gpu_pct': 99, 'temperature_c': 87, 'power_w': 379.17}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 78, 'power_w': 182.64}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 100, 'temperature_c': 80, 'power_w': 162.59}].",
+            "id": "clean_large_gpu_slot_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing imports for full inference/training/evaluation path: diffusers, hydra, imageio, mediapy, megatron, omegaconf, pynvml, skimage, termcolor, apex, transformer_engine, token_bench",
+            "id": "infotok_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Public HF artifacts are reachable but not locally materialized: infotok_flex_checkpoint, tokenbench_240p, davis_240p",
+            "id": "infotok_hf_artifacts_not_materialized",
+            "status": "blocked"
+          },
+          {
+            "detail": "No complete TokenBench/DAVIS metric JSON, FVD/LPIPS, latency, decoder-pass, ablation, and baseline table outputs were found.",
+            "id": "full_reconstruction_metric_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/model_data_manifest.json",
+        "script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/official_script_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/infotok_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_hf_artifacts_runtime_hardware_training_scale_and_result_grid_requirements",
+      "title": "InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "single-draft Qwen2.5 speculative decoding; multi-draft RRS; LLaMA3.1 extended evaluation; EAGLE-3H GSM8K; lossless verifier comparison; temperature ablation; draft-length ablation; target-size ablation; multi-draft comparison; EAGLE verifier replacement"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "Block Efficiency; Decoding Speed; accuracy; accepted length; tokens/sec"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "GSM8K; HumanEval; CNN/DailyMail; GSM8K test; HumanEval; CNN/DailyMail; repository result JSONL files for EAGLE-3H"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "single NVIDIA H20 96GB; 8 H20 GPUs for Llama-3.1-70B; H100 80GB; H200 141GB"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "backward longest-prefix scan; capped prefix ratio; capped branch divergence; residual resampling distribution; EAGLE-3H integration; algorithm.py; transformers/generation/utils.py; transformers/generation/candidate_generator.py; chain-of-thought-hub/gsm8k/eval_speculative_decoding_llm.py; compute_speculative_stats.py; EAGLE-3H/eagle_eval.sh; EAGLE-3H/performance_evaluation.py"
+        }
+      ],
+      "implementation_statuses": [
+        "OpenReview PDF read",
+        "OpenReview API metadata read",
+        "arXiv 2601.05724 downloaded/read",
+        "official GitHub cloned",
+        "source code inspected",
+        "official_repo_discovered_and_encoded",
+        "official_scripts_parsed",
+        "professional_gate_blocked"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+      "priority": "high",
+      "professional_blocker": "blocked_by_model_data_hardware_transformers_patch_and_full_hsd_result_grid",
+      "repo_exact_rerun_status": "repo_present_waiting_for_professional_artifacts_and_full_result_grid",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Hierarchical-Speculative-Decoding"
+      ],
+      "runner_type": "llm_decoding_acceptance_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/hsd",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Paper expects ['single NVIDIA H20 96GB for Qwen2.5 experiments', '8 H20 GPUs for Llama-3.1-70B extended evaluation', 'H100 80GB and H200 141GB for supplementary hardware comparisons']; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "h20_96gb_or_h100_h200_hardware_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No clean large-memory professional GPU slot is visible. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 179.99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16149, 'memory_free_mib': 8068, 'utilization_gpu_pct': 99, 'temperature_c': 86, 'power_w': 384.59}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 77, 'power_w': 182.2}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16169, 'memory_free_mib': 8048, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 156.04}].",
+            "id": "llama70b_multigpu_h20_grid_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing runtime imports: auto_gptq, eagle",
+            "id": "hsd_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Repository compileall did not pass; see environment manifest.",
+            "id": "hsd_source_compile_or_patch_check_failed",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing required paper artifacts: gsm8k_tokenwise_result_jsonl, gsm8k_hsd_result_jsonl, gsm8k_multidraft_hsd_result_jsonl, humaneval_result_jsonl, cnndm_result_jsonl, table_metric_summary",
+            "id": "hsd_required_artifacts_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/hsd/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/hsd/model_data_manifest.json",
+        "repo_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/hsd/repo_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/hsd/hsd_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_model_data_hardware_transformers_patch_and_full_hsd_result_grid",
+      "title": "Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "CTI semicircle; Cancer reward-weighting; Reacher reward-weighting; ETTm2 quantile interpolation; dropout diffusion interpolation; withheld time evaluation; held-out reward weights; held-out quantiles; held-out dropout probabilities; metric parametrization ablation"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "negative log-likelihood; circle distance; average reward; mean squared error; Wasserstein distance; GPU-hours"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "conditional semicircles; DTR-Bench Cancer; Reacher-v2; ETTm2; two moons; NLOT/data/conditional_semicircles.pt; NLOT/data/reward_weighting_data_0_10.pt; NLOT/data/reward_weighting_hinge_data.pt; NLOT/data/reacher_data.pt; NLOT/data/quantile_data_new.pt; NLOT/data/diffusion_2moons_dropout.pt"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "Azure VM A100 GPU; Python 3.10; JAX; Flax; Hydra; PyTorch; stable-baselines3; Gymnasium/MuJoCo"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "conditional density potential; neural metric; Kantorovich potentials; CLOT maps; spline geodesic generator; FiLM conditioning; NLOT/train.py; NLOT/lagrangian_ot/metrics.py; NLOT/lagrangian_ot/lagrangian_potentials.py; NLOT/lagrangian_ot/neuraldual.py; hti_scripts/*.sh; DTR-Bench/*.py; quantile_regression/*.py; generative_dropout/*.py"
+        }
+      ],
+      "implementation_statuses": [
+        "code_inspected",
+        "repository_cloned",
+        "paper_pdf_extracted",
+        "official_repo_discovered_and_encoded",
+        "official_scripts_parsed",
+        "professional_gate_blocked"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+      "priority": "high",
+      "professional_blocker": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+      "repo_exact_rerun_status": "repo_present_waiting_for_professional_artifacts_and_full_result_grid",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "runner_type": "hyperparameter_trajectory_ot_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Paper records A100 VM runs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "a100_professional_gpu_trace_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing runtime imports: flax, hydra, omegaconf, stable_baselines3, gymnasium, mujoco",
+            "id": "clot_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing required paper artifacts: semicircle_surrogate_models, reward_eval_outputs, hinge_eval_outputs, reacher_eval_outputs, quantile_eval_outputs, dropout_eval_outputs",
+            "id": "clot_required_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No complete verifier-comparable output grid found for: CTI semicircle NLL and circle-distance grid; Cancer linear and hinge reward-weighting average reward; Reacher reward-weighting average reward; ETTm2 quantile interpolation MSE; dropout diffusion interpolation Wasserstein/density metrics; held-out time/hyperparameter and metric-parametrization ablations over seeds 0..19",
+            "id": "clot_full_result_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/model_data_manifest.json",
+        "repo_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/repo_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/clot_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+      "title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "ImageNet classification; CIFAR-100 KD; COCO2017 object detection; 300-epoch ImageNet training; 50-epoch COCO detection; component ablation; teacher-scale robustness"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "Top-1 accuracy; AP; AP50; AP75; APS; APM; APL"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet-1K; CIFAR-100; MS-COCO; ImageNet-1K; CIFAR-100; COCO2017"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "four NVIDIA H100 GPUs; PyTorch"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "multi-scale projectors; distillation head; task head; dynamic trade-off module; softmax-normalized amortized pi update; Algorithm 1 pseudocode; Equations 8-18; supplementary theorem proof"
+        }
+      ],
+      "implementation_statuses": [
+        "paper_text_grounded",
+        "github_repository_not_found",
+        "official_source_repo_not_found_verified",
+        "h100_hardware_required_current_4090_proxy_rejected",
+        "professional_gate_blocked",
+        "faithful_reimplementation_required_before_execution"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+      "priority": "high",
+      "professional_blocker": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+      "repo_exact_rerun_status": "blocked_no_official_repo_requires_faithful_reimplementation_and_full_h100_grid",
+      "repo_paths": [],
+      "runner_type": "distillation_tradeoff_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "OpenReview metadata, paper, supplement, status file, and local candidate repo scan do not provide an official DTO-KD source repo.",
+            "id": "dto_kd_official_source_repository_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Paper reports all experiments on four NVIDIA H100 GPUs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090; H100 count=0.",
+            "id": "dto_kd_four_h100_hardware_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing or unmaterialized dataset candidates: imagenet_1k, cifar100, coco2017",
+            "id": "dto_kd_required_datasets_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing teacher/student checkpoints or initialization artifacts: regnety_160_teacher, deit_tiny_student, deit_small_student, vidt_base_teacher, vidt_nano_tiny_small_students",
+            "id": "dto_kd_teacher_student_checkpoints_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No ImageNet 300-epoch, CIFAR-100 six-pair, COCO 50-epoch, ablation, teacher-scale, or Figure 3/4 raw outputs exist under the runner result root.",
+            "id": "dto_kd_full_training_grid_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Verifier needs outputs comparable to Table 1, Table 2, Table 3, Table 4, Table 5, Figure 3, and Figure 4 before accepting close result shape.",
+            "id": "dto_kd_result_shape_verifier_waiting_for_tables_figures",
+            "status": "blocked"
+          },
+          {
+            "detail": "Without official code, a faithful implementation from Algorithm 1 and Equations 8-18 must be created and validated before any experiment can count.",
+            "id": "dto_kd_reimplementation_required_but_unvalidated",
+            "status": "blocked"
+          }
+        ],
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd/model_data_manifest.json",
+        "source_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd/source_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd/dto_kd_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+      "title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation"
+    },
+    {
+      "exact_artifact_debt": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "class-conditional image generation; text-to-image generation; latency profiling; 50k sample FID; A100 bf16 profiling; ablation under XL 256x256 setting"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "FID; IS; precision; recall; latency; throughput; GenEval score"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet 256x256; ImageNet 512x512; GenEval"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "position query tokens; same-step mutual visibility mask; locality-aware order; KV cache; VQGAN tokenizer; models/lpd.py; models/mask.py; orders/lpd_order.py; engine.py; scripts/eval"
+        }
+      ],
+      "implementation_statuses": [
+        "code_inspected",
+        "models_available_via_hf_collection",
+        "official_repo_discovered_and_encoded",
+        "official_scripts_parsed",
+        "professional_gate_blocked"
+      ],
+      "next_actions": [
+        "resolve all DAG-named checkpoints/models/datasets/APIs",
+        "build a paper-shaped runner for the listed runner_type",
+        "run paper baselines plus method on the paper's stated benchmarks/metrics",
+        "emit raw outputs, scores, timing, GPU/CPU/RAM traces, and table/figure summaries",
+        "rerun the verifier; do not count reduced/proxy/syntax-only evidence"
+      ],
+      "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+      "priority": "high",
+      "professional_blocker": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid",
+      "repo_exact_rerun_status": "repo_present_waiting_for_professional_artifacts_and_full_result_grid",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+      ],
+      "runner_type": "diffusion_cache_latency_quality_runner",
+      "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/lpd",
+      "specialized_runner_evidence": {
+        "blockers": [
+          {
+            "detail": "Paper expects ['A100 bf16 profiling', '8-GPU training/cache path', 'ImageNet 256/512 plus GenEval scoring']; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+            "id": "a100_bf16_latency_trace_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No clean large-memory professional GPU slot is visible. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 180.73}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 86, 'power_w': 388.55}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 77, 'power_w': 181.71}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 162.56}].",
+            "id": "eight_gpu_training_or_cache_trace_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing runtime imports: torch_fidelity, flash_attn",
+            "id": "lpd_runtime_dependencies_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "Missing required paper artifacts: vqgan_tokenizer, lpd_l_256_ckpt, lpd_xl_256_ckpt, lpd_xxl_256_ckpt, lpd_l_512_ckpt, lpd_xl_512_ckpt, generated_orders, imagenet_cache, eval_outputs, geneval_outputs",
+            "id": "lpd_required_artifacts_missing",
+            "status": "blocked"
+          },
+          {
+            "detail": "No complete verifier-comparable output grid found for: class-conditional ImageNet 256/512 50k-sample FID/IS/precision/recall; text-to-image GenEval score; latency and throughput profiling on A100 bf16; LPD-L/XL/XXL and 20/32/48 step settings; locality-order, mutual-visibility, group-size, and XL 256 ablations",
+            "id": "lpd_full_result_grid_missing",
+            "status": "blocked"
+          }
+        ],
+        "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/lpd/environment.json",
+        "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/lpd/model_data_manifest.json",
+        "repo_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/lpd/repo_manifest.json",
+        "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/lpd/lpd_specialized_verifier.json"
+      },
+      "specialized_runner_status": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid",
+      "title": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation"
+    }
+  ],
+  "updated_at_utc": "2026-07-24T13:32:06Z"
+}

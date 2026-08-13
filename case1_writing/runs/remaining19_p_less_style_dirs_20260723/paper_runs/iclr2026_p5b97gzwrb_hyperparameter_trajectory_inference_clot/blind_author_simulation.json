@@ -1,0 +1,42 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "experiment_prediction": "benchmarks=CTI semicircle; Cancer reward-weighting; Reacher reward-weighting; ETTm2 quantile interpolation; dropout diffusion interpolation; metrics=negative log-likelihood; circle distance; average reward; mean squared error; Wasserstein distance; GPU-hours; protocols=withheld time evaluation; held-out reward weights; held-out quantiles; held-out dropout probabilities; metric parametrization ablation",
+  "gap_prediction": "post-deployment preference shift; expensive retraining for behavior hyperparameters; sparse hyperparameter anchors; conditional path feasibility; stressors: infeasible surrogate paths; chaotic hyperparameter dynamics; single-hyperparameter limitation; multi-dimensional locality breaks under naive 1D mappings",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.069,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 11\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19262, 4952, 6\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "conditional density potential; neural metric; Kantorovich potentials; CLOT maps; spline geodesic generator; FiLM conditioning",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+  "paper_text_seen": false,
+  "paper_title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_no_local_repository_encoded_in_dag",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": []
+}

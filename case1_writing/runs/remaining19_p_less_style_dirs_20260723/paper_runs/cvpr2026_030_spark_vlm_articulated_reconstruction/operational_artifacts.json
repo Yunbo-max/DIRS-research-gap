@@ -1,0 +1,23 @@
+{
+  "blockers": [
+    "no_local_repository_encoded_in_dag",
+    "missing"
+  ],
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.031,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 10\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19260, 4954, 7\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "repo_audits": []
+}

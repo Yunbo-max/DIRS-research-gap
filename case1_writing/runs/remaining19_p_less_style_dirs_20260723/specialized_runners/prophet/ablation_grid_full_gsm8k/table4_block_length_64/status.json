@@ -1,0 +1,126 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 252,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "2",
+  "current_sample_index": 252,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 0,
+  "effective_stop_index_exclusive": 1319,
+  "full_split_requested": true,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 15969, 24564, 100\n1, NVIDIA GeForce RTX 4090, 15949, 24564, 94\n2, NVIDIA GeForce RTX 4090, 16053, 24564, 35\n3, NVIDIA GeForce RTX 4090, 15989, 24564, 100",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 64,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-24T11:22:54Z",
+      "exit_info": {
+        "actual_steps": 128,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 128
+      },
+      "flexible_exact_match": true,
+      "flexible_predicted_answer": "70",
+      "gen_length": 128,
+      "generated_text": "\nStep 1: Start with the initial number of apps on Travis's tablet.\nTravis initially had 61 apps.\n\nStep 2: Subtract the number of apps he deleted.\nTravis deleted 9 apps, so we subtract 9 from 61.\n61 - 9 = 52\n\nStep 3: Add the number of apps he downloaded.\nTravis downloaded 18 apps, so we add 18 to 52.\n52 + 18 = 70\n\nThe final answer is \\boxed{70}.",
+      "gold_answer": "70",
+      "prompt_profile": "official_zero_shot",
+      "question": "Travis had 61 apps on his tablet. He deleted 9 apps he didn't use anymore and downloaded 18 more. How many apps are on his tablet now?",
+      "remasking": "low_confidence",
+      "sample_index": 251,
+      "seconds": 6.8179,
+      "steps": 128,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "baseline"
+    },
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 64,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-24T11:23:01Z",
+      "exit_info": {
+        "actual_steps": 128,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 128
+      },
+      "flexible_exact_match": true,
+      "flexible_predicted_answer": "70",
+      "gen_length": 128,
+      "generated_text": "\nStep 1: Start with the initial number of apps on Travis's tablet.\nTravis initially had 61 apps.\n\nStep 2: Subtract the number of apps he deleted.\nTravis deleted 9 apps, so we subtract 9 from 61.\n61 - 9 = 52\n\nStep 3: Add the number of apps he downloaded.\nTravis downloaded 18 apps, so we add 18 to 52.\n52 + 18 = 70\n\nThe final answer is \\boxed{70}.",
+      "gold_answer": "70",
+      "prompt_profile": "official_zero_shot",
+      "question": "Travis had 61 apps on his tablet. He deleted 9 apps he didn't use anymore and downloaded 18 more. How many apps are on his tablet now?",
+      "remasking": "low_confidence",
+      "sample_index": 251,
+      "seconds": 6.898,
+      "steps": 128,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "prophet"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 2 is logical cuda:0 when CUDA_VISIBLE_DEVICES=2",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 333923,
+  "prompt_profile": "official_zero_shot",
+  "prompt_template_source": "named_prompt_profile",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64/per_sample_results.jsonl",
+  "run_label": "table4_block_length_64",
+  "running_summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 252,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 161,
+        "flexible_exact_match": 0.6388888888888888,
+        "mean_actual_steps": 128.0,
+        "mean_seconds": 7.639926190476192,
+        "strict_correct_count": 19,
+        "strict_exact_match": 0.07539682539682539
+      },
+      "prophet": {
+        "completed_samples": 252,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 161,
+        "flexible_exact_match": 0.6388888888888888,
+        "mean_actual_steps": 128.0,
+        "mean_seconds": 7.745009920634922,
+        "strict_correct_count": 19,
+        "strict_exact_match": 0.07539682539682539
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T11:23:01Z",
+    "dataset": "openai/gsm8k main test",
+    "paired_shape": {
+      "flexible_accuracy_delta": 0.0,
+      "mean_step_reduction": 0.0,
+      "speedup_mean_seconds": 0.9864320728784663
+    },
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64/per_sample_results.jsonl",
+    "status": "running_or_partial",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline",
+      "prophet"
+    ]
+  },
+  "started_at_utc": "2026-07-24T10:16:51Z",
+  "status": "running",
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-24T11:23:01Z",
+  "variants": [
+    "baseline",
+    "prophet"
+  ]
+}

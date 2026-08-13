@@ -1,0 +1,156 @@
+{
+  "artifact_kind": "hsd_environment_manifest",
+  "compileall_repo": {
+    "cmd": [
+      "/opt/conda/bin/python",
+      "-m",
+      "compileall",
+      "-q",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Hierarchical-Speculative-Decoding"
+    ],
+    "cwd": null,
+    "returncode": 1,
+    "seconds": 0.106,
+    "stderr": "",
+    "stdout": "*** Error compiling '/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Hierarchical-Speculative-Decoding/transformers/generation/utils.py'...\nSorry: TabError: inconsistent use of tabs and spaces in indentation (utils.py, line 5366)\n",
+    "timeout": false
+  },
+  "created_at_utc": "2026-07-24T13:33:41Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 179.99,
+      "temperature_c": 79,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8068,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 384.59,
+      "temperature_c": 86,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7816,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16397,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 182.2,
+      "temperature_c": 77,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8048,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16169,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 156.04,
+      "temperature_c": 80,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "import_probes": {
+    "accelerate": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('accelerate'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.743,
+      "stderr": "",
+      "stdout": "1.11.0\n",
+      "timeout": false
+    },
+    "auto_gptq": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('auto_gptq'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'auto_gptq'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "datasets": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('datasets'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 2.47,
+      "stderr": "",
+      "stdout": "4.3.0\n",
+      "timeout": false
+    },
+    "eagle": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('eagle'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'eagle'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.567,
+      "stderr": "",
+      "stdout": "2.6.0+cu124\n",
+      "timeout": false
+    },
+    "transformers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('transformers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.902,
+      "stderr": "",
+      "stdout": "4.51.2\n",
+      "timeout": false
+    }
+  },
+  "packages": {
+    "accelerate": "1.11.0",
+    "auto_gptq": null,
+    "datasets": "4.3.0",
+    "eagle": null,
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.2"
+  },
+  "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+  "professional_hardware_expected_by_dag": [
+    "single NVIDIA H20 96GB for Qwen2.5 experiments",
+    "8 H20 GPUs for Llama-3.1-70B extended evaluation",
+    "H100 80GB and H200 141GB for supplementary hardware comparisons"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]"
+}

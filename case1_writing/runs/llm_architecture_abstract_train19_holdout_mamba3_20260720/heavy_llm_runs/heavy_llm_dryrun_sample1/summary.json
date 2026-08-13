@@ -1,0 +1,17 @@
+{
+  "output_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/heavy_llm_runs/heavy_llm_dryrun_sample1",
+  "completed_loops": 1,
+  "completed_training_samples": 1,
+  "total_training_evaluations": 1,
+  "dry_run": true,
+  "models": {
+    "editor": "gpt-5-mini",
+    "simulator": "gpt-5-mini",
+    "evaluator": "gpt-5-mini"
+  },
+  "score_count": 0,
+  "mean_overall_score": null,
+  "min_overall_score": null,
+  "max_overall_score": null,
+  "heldout_private_read": false
+}

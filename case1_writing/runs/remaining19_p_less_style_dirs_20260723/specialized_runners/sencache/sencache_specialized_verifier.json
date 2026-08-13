@@ -1,0 +1,1557 @@
+{
+  "artifact_kind": "sencache_specialized_verifier",
+  "blind_contract_checked": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-24T13:32:00Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_053_sencache_sensitivity_aware_caching/paper_author_gap_dag.json",
+  "environment": {
+    "artifact_kind": "sencache_environment_manifest",
+    "compileall_support_check": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.067,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "created_at_utc": "2026-07-24T13:31:58Z",
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 8108,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16109,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 7836,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16377,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 100
+      }
+    ],
+    "import_probes": {
+      "cv2": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('cv2'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.216,
+        "stderr": "",
+        "stdout": "4.13.0\n",
+        "timeout": false
+      },
+      "decord": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('decord'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.167,
+        "stderr": "",
+        "stdout": "0.6.0\n",
+        "timeout": false
+      },
+      "diffusers": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('diffusers'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "lpips": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('lpips'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'lpips'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "skimage": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('skimage'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'skimage'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "vbench": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('vbench'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.025,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'vbench'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "wan": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('wan'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'wan'\n",
+        "stdout": "",
+        "timeout": false
+      }
+    },
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.048,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 16109, 8108, 99\n1, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 99\n2, NVIDIA GeForce RTX 4090, 24564, 16377, 7836, 99\n3, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 100\n",
+      "timeout": false
+    },
+    "packages": {
+      "accelerate": "1.11.0",
+      "calflops": null,
+      "decord": "0.6.0",
+      "diffusers": null,
+      "huggingface_hub": "0.36.0",
+      "imageio": null,
+      "imageio-ffmpeg": null,
+      "lpips": null,
+      "opencv-python": null,
+      "scikit-image": null,
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.51.2",
+      "vbench": null,
+      "xfuser": null
+    },
+    "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+    "professional_hardware_expected_by_paper": [
+      "GH200 supplement latency traces",
+      "GPU inference for Wan2.1, CogVideoX, and LTX-Video full prompt grids"
+    ],
+    "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+    "python_processes": {
+      "cmd": [
+        "bash",
+        "-lc",
+        "ps -eo pid,etime,cmd | rg 'prophet_custom_full_gsm8k_runner|sencache.py|python' || true"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.007,
+      "stderr": "",
+      "stdout": "   2355    01:11:21 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 0 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2 --run-label table1_threshold_relaxed_6_4_2 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 6.0 --mid-threshold 4.0 --late-threshold 2.0\n   2465    01:11:18 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 1 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1 --run-label table1_threshold_relaxed_5_3_1 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 5.0 --mid-threshold 3.0 --late-threshold 1.0\n   2714    01:11:15 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 2 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5 --run-label table1_threshold_relaxed_4_2_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 4.0 --mid-threshold 2.0 --late-threshold 0.5\n   2903    01:11:12 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5 --run-label table1_threshold_relaxed_3_1p5_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 3.0 --mid-threshold 1.5 --late-threshold 0.5\n  12618    01:00:44 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_goal_supervisor.py --interval-seconds 60\n  79779       00:21 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/professional_gate_sweep.py --scope all --run --max-count 4 --timeout-seconds 180\n  80578       00:00 /opt/conda/bin/python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/run_sencache_professional_gate.py\n  80580       00:00 bash -lc ps -eo pid,etime,cmd | rg 'prophet_custom_full_gsm8k_runner|sencache.py|python' || true\n  80584       00:00 rg prophet_custom_full_gsm8k_runner|sencache.py|python\n",
+      "timeout": false
+    },
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache"
+  },
+  "model_data_manifest": {
+    "artifact_kind": "sencache_model_data_manifest",
+    "bundled_prompt_files": [
+      {
+        "line_count": 1,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/test_prompt.json",
+        "support_only": true
+      },
+      {
+        "line_count": 1,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/test_prompt.json",
+        "support_only": true
+      },
+      {
+        "line_count": 1,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/test_prompt.json",
+        "support_only": true
+      }
+    ],
+    "created_at_utc": "2026-07-24T13:32:00Z",
+    "datasets_and_metric_artifacts": [
+      {
+        "id": "mixkit_calibration_videos",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "MixKit",
+          "mixkit"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "MixKit calibration videos for finite-difference sensitivity calculation"
+      },
+      {
+        "id": "vbench_full_prompt_set",
+        "ignored_local_matches": [
+          {
+            "file_count": 5,
+            "is_dir": true,
+            "path": "/root/.cache/huggingface/hub/datasets--zai-org--LVBench",
+            "size_human": "40K"
+          },
+          {
+            "file_count": 1,
+            "is_dir": false,
+            "path": "/root/.cache/huggingface/datasets/_root_.cache_huggingface_datasets_hlt-lab___voicebench_advbench_0.0.0_b02edcef1330480be3a11bd6f7434ac32f05ad08.lock",
+            "size_human": "0"
+          }
+        ],
+        "local_hints": [
+          "VBench",
+          "vbench",
+          "vbench_prompts"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "full VBench prompt set for paper-scale video evaluation"
+      },
+      {
+        "id": "t2v_compbench_70_prompts",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "T2V-CompBench",
+          "t2v_compbench",
+          "T2VCompBench"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "70 T2V-CompBench prompts for ablation"
+      }
+    ],
+    "models": [
+      {
+        "hf_manifest": {
+          "file_count": 22,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2232
+            },
+            {
+              "path": "LICENSE.txt",
+              "size_bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16913
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/.DS_Store",
+              "size_bytes": 6148
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 249
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors",
+              "size_bytes": 5676070424
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2232
+            },
+            {
+              "path": "LICENSE.txt",
+              "size_bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16913
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/.DS_Store",
+              "size_bytes": 6148
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 249
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors",
+              "size_bytes": 5676070424
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            }
+          ],
+          "repo_id": "Wan-AI/Wan2.1-T2V-1.3B",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 17573837064
+        },
+        "id": "wan21_t2v_13b",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "Wan2.1-T2V-1.3B",
+          "models--Wan-AI--Wan2.1-T2V-1.3B"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "Wan2.1 T=50 cached and uncached video generation surface",
+        "repo_id": "Wan-AI/Wan2.1-T2V-1.3B"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 23,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1519
+            },
+            {
+              "path": "LICENSE",
+              "size_bytes": 5704
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 14645
+            },
+            {
+              "path": "README_zh.md",
+              "size_bytes": 9450
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 411
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 482
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 781
+            },
+            {
+              "path": "text_encoder/model-00001-of-00004.safetensors",
+              "size_bytes": 4989319680
+            },
+            {
+              "path": "text_encoder/model-00002-of-00004.safetensors",
+              "size_bytes": 4999830656
+            },
+            {
+              "path": "text_encoder/model-00003-of-00004.safetensors",
+              "size_bytes": 4865612720
+            },
+            {
+              "path": "text_encoder/model-00004-of-00004.safetensors",
+              "size_bytes": 4194506688
+            },
+            {
+              "path": "text_encoder/model.safetensors.index.json",
+              "size_bytes": 19886
+            },
+            {
+              "path": "tokenizer/added_tokens.json",
+              "size_bytes": 2593
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 20617
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 848
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+              "size_bytes": 4977695424
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+              "size_bytes": 4948039832
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+              "size_bytes": 1215733728
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 103074
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 871
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 862388596
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1519
+            },
+            {
+              "path": "LICENSE",
+              "size_bytes": 5704
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 14645
+            },
+            {
+              "path": "README_zh.md",
+              "size_bytes": 9450
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 411
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 482
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 781
+            },
+            {
+              "path": "text_encoder/model-00001-of-00004.safetensors",
+              "size_bytes": 4989319680
+            },
+            {
+              "path": "text_encoder/model-00002-of-00004.safetensors",
+              "size_bytes": 4999830656
+            },
+            {
+              "path": "text_encoder/model-00003-of-00004.safetensors",
+              "size_bytes": 4865612720
+            },
+            {
+              "path": "text_encoder/model-00004-of-00004.safetensors",
+              "size_bytes": 4194506688
+            },
+            {
+              "path": "text_encoder/model.safetensors.index.json",
+              "size_bytes": 19886
+            },
+            {
+              "path": "tokenizer/added_tokens.json",
+              "size_bytes": 2593
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 20617
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 848
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+              "size_bytes": 4977695424
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+              "size_bytes": 4948039832
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+              "size_bytes": 1215733728
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 103074
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 871
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 862388596
+            }
+          ],
+          "repo_id": "THUDM/CogVideoX1.5-5B",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 31054102404
+        },
+        "id": "cogvideox_15_5b",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "CogVideoX1.5-5B",
+          "models--THUDM--CogVideoX1.5-5B"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "CogVideoX T=50 cached and uncached video generation surface",
+        "repo_id": "THUDM/CogVideoX1.5-5B"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 18,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1519
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 2398
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 412
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 455
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 786
+            },
+            {
+              "path": "text_encoder/model-00001-of-00004.safetensors",
+              "size_bytes": 4989319680
+            },
+            {
+              "path": "text_encoder/model-00002-of-00004.safetensors",
+              "size_bytes": 4999830656
+            },
+            {
+              "path": "text_encoder/model-00003-of-00004.safetensors",
+              "size_bytes": 4865612720
+            },
+            {
+              "path": "text_encoder/model-00004-of-00004.safetensors",
+              "size_bytes": 4194506688
+            },
+            {
+              "path": "text_encoder/model.safetensors.index.json",
+              "size_bytes": 19886
+            },
+            {
+              "path": "tokenizer/added_tokens.json",
+              "size_bytes": 2593
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 20648
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 500
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors",
+              "size_bytes": 3846852608
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 1204
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 1869989796
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1519
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 2398
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 412
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 455
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 786
+            },
+            {
+              "path": "text_encoder/model-00001-of-00004.safetensors",
+              "size_bytes": 4989319680
+            },
+            {
+              "path": "text_encoder/model-00002-of-00004.safetensors",
+              "size_bytes": 4999830656
+            },
+            {
+              "path": "text_encoder/model-00003-of-00004.safetensors",
+              "size_bytes": 4865612720
+            },
+            {
+              "path": "text_encoder/model-00004-of-00004.safetensors",
+              "size_bytes": 4194506688
+            },
+            {
+              "path": "text_encoder/model.safetensors.index.json",
+              "size_bytes": 19886
+            },
+            {
+              "path": "tokenizer/added_tokens.json",
+              "size_bytes": 2593
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 20648
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 500
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors",
+              "size_bytes": 3846852608
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 1204
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 1869989796
+            }
+          ],
+          "repo_id": "a-r-r-o-w/LTX-Video-0.9.1-diffusers",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 24766956748
+        },
+        "id": "ltx_video_091",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "LTX-Video-0.9.1-diffusers",
+          "models--a-r-r-o-w--LTX-Video-0.9.1-diffusers"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "LTX-Video T=50 cached and uncached video generation surface",
+        "repo_id": "a-r-r-o-w/LTX-Video-0.9.1-diffusers"
+      }
+    ],
+    "not_promoted_support": [
+      "one-line test_prompt.json files",
+      "syntax/compile checks",
+      "HF metadata availability without local checkpoint materialization",
+      "released sensitivity metadata without model/evaluator generation artifacts"
+    ],
+    "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+    "paper_result_surfaces": [
+      "Wan2.1 T=50 cached and uncached generation",
+      "CogVideoX T=50 cached and uncached generation",
+      "LTX-Video T=50 cached and uncached generation",
+      "similar-compute comparisons against TeaCache and MagCache",
+      "VBench prompt-set evaluation",
+      "70-prompt T2V-CompBench ablation",
+      "supplement 100-video consecutive-step MAE diagnostic",
+      "NFE/cache-ratio measurements",
+      "LPIPS/PSNR/SSIM reference metrics",
+      "wall-clock latency and GFLOPs"
+    ],
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache",
+    "sensitivity_weights": [
+      {
+        "filename": "sensitivity_wan21.npz",
+        "id": "sensitivity_wan21",
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "Wan2.1 latent/timestep sensitivity norms used by the cache gate"
+      },
+      {
+        "filename": "sensitivity_cogvid.npz",
+        "id": "sensitivity_cogvid",
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "CogVideoX latent/timestep sensitivity norms used by the cache gate"
+      },
+      {
+        "filename": "sensitivity_ltx.npz",
+        "id": "sensitivity_ltx",
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "LTX-Video latent/timestep sensitivity norms used by the cache gate"
+      }
+    ],
+    "sensitivity_weights_hf_dataset": {
+      "file_count": 6,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2504
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 2405
+        },
+        {
+          "path": "embeddings_cache.pt",
+          "size_bytes": 2401423454
+        },
+        {
+          "path": "sensitivity_cogvid.npz",
+          "size_bytes": 1568
+        },
+        {
+          "path": "sensitivity_ltx.npz",
+          "size_bytes": 1368
+        },
+        {
+          "path": "sensitivity_wan21.npz",
+          "size_bytes": 1568
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 2504
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 2405
+        },
+        {
+          "path": "embeddings_cache.pt",
+          "size_bytes": 2401423454
+        },
+        {
+          "path": "sensitivity_cogvid.npz",
+          "size_bytes": 1568
+        },
+        {
+          "path": "sensitivity_ltx.npz",
+          "size_bytes": 1368
+        },
+        {
+          "path": "sensitivity_wan21.npz",
+          "size_bytes": 1568
+        }
+      ],
+      "repo_id": "Yassaman/SenCache",
+      "repo_type": "dataset",
+      "status": "available",
+      "total_size_bytes": 2401432867
+    }
+  },
+  "official_script_manifest": {
+    "artifact_kind": "sencache_official_script_manifest",
+    "created_at_utc": "2026-07-24T13:31:59Z",
+    "files": [
+      {
+        "exists": true,
+        "parsed": {
+          "commands": [],
+          "exists": true,
+          "line_count": 62,
+          "mentions_gh200": false,
+          "mentions_hf_sencache_dataset": true,
+          "mentions_mixkit": false,
+          "mentions_precomputed_weights": true,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/README.md"
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/README.md",
+        "relative_path": "README.md",
+        "size_bytes": 3186
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "commands": [
+            "python sencache.py \\\n  --ckpt_dir ./Wan2.1-T2V-1.3B \\\n  --task t2v-1.3B \\\n  --size 832*480 \\\n  --output_dir ./output \\\n  --offload_model True \\\n  --prompt_file ./test_prompt.json \\\n  --frame_num 81 \\\n  --sample_steps 50 \\\n  --sencache_K 3 \\\n  --sencache_thresh_main 2 \\\n  --sencache_thresh_start 0.045"
+          ],
+          "exists": true,
+          "line_count": 39,
+          "mentions_gh200": false,
+          "mentions_hf_sencache_dataset": false,
+          "mentions_mixkit": false,
+          "mentions_precomputed_weights": true,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/README.md"
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/README.md",
+        "relative_path": "Wan2.1/README.md",
+        "size_bytes": 1447
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "cli_flags": [
+            "--base_seed",
+            "--ckpt_dir",
+            "--dit_fsdp",
+            "--first_frame",
+            "--frame_num",
+            "--image",
+            "--last_frame",
+            "--measure_flops",
+            "--measure_latency",
+            "--no_sencache",
+            "--offload_model",
+            "--output_dir",
+            "--prompt",
+            "--prompt_extend_method",
+            "--prompt_extend_model",
+            "--prompt_extend_target_lang",
+            "--prompt_file",
+            "--ring_size",
+            "--sample_guide_scale",
+            "--sample_shift",
+            "--sample_solver",
+            "--sample_steps",
+            "--save_file",
+            "--sencache_K",
+            "--sencache_thresh_main",
+            "--sencache_thresh_start",
+            "--size",
+            "--src_mask",
+            "--src_ref_images",
+            "--src_video",
+            "--t5_cpu",
+            "--t5_fsdp",
+            "--task",
+            "--ulysses_size",
+            "--use_prompt_extend"
+          ],
+          "exists": true,
+          "has_flops_measurement": true,
+          "has_latency_measurement": true,
+          "has_prompt_file_loop": true,
+          "has_uncached_flag": true,
+          "hf_model_ids": [
+            "./sensitivity_wan21.npz",
+            "I/O",
+            "N/A",
+            "Ulysses/Ring",
+            "cond/uncond",
+            "videos/images.",
+            "z/t"
+          ],
+          "json_dependencies": [],
+          "line_count": 778,
+          "npz_dependencies": [],
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sencache.py",
+          "requires_calibration_video_json": false,
+          "requires_checkpoint_dir": true,
+          "requires_checkpoint_path": false,
+          "requires_decord_import": false,
+          "requires_diffusers_import": false,
+          "requires_wan_import": true,
+          "sample_step_fields": [
+            "sample_steps"
+          ],
+          "threshold_fields": [
+            "sencache_K",
+            "sencache_thresh_main",
+            "sencache_thresh_start"
+          ]
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sencache.py",
+        "relative_path": "Wan2.1/sencache.py",
+        "size_bytes": 32250
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "cli_flags": [
+            "--base_seed",
+            "--batch_size",
+            "--ckpt_dir",
+            "--dit_fsdp",
+            "--embedding_cache_path",
+            "--frame_num",
+            "--json_path",
+            "--max_samples",
+            "--num_power_iter",
+            "--num_t_steps",
+            "--num_train_timesteps",
+            "--num_workers",
+            "--offload_model",
+            "--output_dir",
+            "--ring_size",
+            "--sample_shift",
+            "--sample_solver",
+            "--size",
+            "--t5_cpu",
+            "--t5_fsdp",
+            "--task",
+            "--ulysses_size",
+            "--video_base_path"
+          ],
+          "exists": true,
+          "has_flops_measurement": false,
+          "has_latency_measurement": false,
+          "has_prompt_file_loop": false,
+          "has_uncached_flag": false,
+          "hf_model_ids": [
+            "./results_sensitivity_wan"
+          ],
+          "json_dependencies": [],
+          "line_count": 542,
+          "npz_dependencies": [],
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sensitivity_calculation.py",
+          "requires_calibration_video_json": true,
+          "requires_checkpoint_dir": true,
+          "requires_checkpoint_path": false,
+          "requires_decord_import": true,
+          "requires_diffusers_import": false,
+          "requires_wan_import": true,
+          "sample_step_fields": [
+            "num_t_steps"
+          ],
+          "threshold_fields": []
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sensitivity_calculation.py",
+        "relative_path": "Wan2.1/sensitivity_calculation.py",
+        "size_bytes": 22164
+      },
+      {
+        "exists": true,
+        "is_single_prompt_support_only": true,
+        "line_count": 1,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/test_prompt.json",
+        "relative_path": "Wan2.1/test_prompt.json",
+        "size_bytes": 496
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "commands": [],
+          "exists": true,
+          "line_count": 6,
+          "mentions_gh200": false,
+          "mentions_hf_sencache_dataset": false,
+          "mentions_mixkit": false,
+          "mentions_precomputed_weights": false,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/README.md"
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/README.md",
+        "relative_path": "CogVideoX/README.md",
+        "size_bytes": 196
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "cli_flags": [
+            "--ckpts_path",
+            "--fps",
+            "--generate_type",
+            "--guidance_scale",
+            "--height",
+            "--image_path",
+            "--negative_prompt",
+            "--no_sencache",
+            "--num_frames",
+            "--num_inference_steps",
+            "--output_dir",
+            "--prompt",
+            "--prompt_file",
+            "--seed",
+            "--sencache_K",
+            "--sencache_thresh_main",
+            "--sencache_thresh_start",
+            "--width"
+          ],
+          "exists": true,
+          "has_flops_measurement": false,
+          "has_latency_measurement": false,
+          "has_prompt_file_loop": true,
+          "has_uncached_flag": true,
+          "hf_model_ids": [
+            "./sensitivity_cogvid.npz",
+            "I/O",
+            "THUDM/CogVideoX1.5-5B"
+          ],
+          "json_dependencies": [],
+          "line_count": 487,
+          "npz_dependencies": [],
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sencache.py",
+          "requires_calibration_video_json": false,
+          "requires_checkpoint_dir": false,
+          "requires_checkpoint_path": true,
+          "requires_decord_import": false,
+          "requires_diffusers_import": true,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_inference_steps"
+          ],
+          "threshold_fields": [
+            "sencache_K",
+            "sencache_thresh_main",
+            "sencache_thresh_start"
+          ]
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sencache.py",
+        "relative_path": "CogVideoX/sencache.py",
+        "size_bytes": 19480
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "cli_flags": [
+            "--base_seed",
+            "--batch_size",
+            "--ckpts_path",
+            "--frame_num",
+            "--height",
+            "--json_path",
+            "--max_samples",
+            "--num_t_steps",
+            "--num_workers",
+            "--output_dir",
+            "--video_base_path",
+            "--width"
+          ],
+          "exists": true,
+          "has_flops_measurement": false,
+          "has_latency_measurement": false,
+          "has_prompt_file_loop": false,
+          "has_uncached_flag": false,
+          "hf_model_ids": [
+            "./results_sensitivity_cogvideox",
+            "THUDM/CogVideoX1.5-5B",
+            "Wan/SiT"
+          ],
+          "json_dependencies": [],
+          "line_count": 645,
+          "npz_dependencies": [],
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sensitivity_calculation_cogvid.py",
+          "requires_calibration_video_json": true,
+          "requires_checkpoint_dir": false,
+          "requires_checkpoint_path": true,
+          "requires_decord_import": true,
+          "requires_diffusers_import": true,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_t_steps"
+          ],
+          "threshold_fields": []
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sensitivity_calculation_cogvid.py",
+        "relative_path": "CogVideoX/sensitivity_calculation_cogvid.py",
+        "size_bytes": 24392
+      },
+      {
+        "exists": true,
+        "is_single_prompt_support_only": true,
+        "line_count": 1,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/test_prompt.json",
+        "relative_path": "CogVideoX/test_prompt.json",
+        "size_bytes": 496
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "commands": [],
+          "exists": true,
+          "line_count": 6,
+          "mentions_gh200": false,
+          "mentions_hf_sencache_dataset": false,
+          "mentions_mixkit": false,
+          "mentions_precomputed_weights": false,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/README.md"
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/README.md",
+        "relative_path": "LTX-Video/README.md",
+        "size_bytes": 196
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "cli_flags": [
+            "--ckpts_path",
+            "--decode_noise_scale",
+            "--decode_timestep",
+            "--fps",
+            "--height",
+            "--negative_prompt",
+            "--no_sencache",
+            "--num_frames",
+            "--num_inference_steps",
+            "--output_dir",
+            "--prompt",
+            "--prompt_file",
+            "--seed",
+            "--sencache_K",
+            "--sencache_thresh_main",
+            "--sencache_thresh_start",
+            "--width"
+          ],
+          "exists": true,
+          "has_flops_measurement": false,
+          "has_latency_measurement": false,
+          "has_prompt_file_loop": true,
+          "has_uncached_flag": true,
+          "hf_model_ids": [
+            "./sensitivity_ltx.npz",
+            "I/O",
+            "a-r-r-o-w/LTX-Video-0.9.1-diffusers"
+          ],
+          "json_dependencies": [],
+          "line_count": 436,
+          "npz_dependencies": [],
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sencache.py",
+          "requires_calibration_video_json": false,
+          "requires_checkpoint_dir": false,
+          "requires_checkpoint_path": true,
+          "requires_decord_import": false,
+          "requires_diffusers_import": true,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_inference_steps"
+          ],
+          "threshold_fields": [
+            "sencache_K",
+            "sencache_thresh_main",
+            "sencache_thresh_start"
+          ]
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sencache.py",
+        "relative_path": "LTX-Video/sencache.py",
+        "size_bytes": 16762
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "cli_flags": [
+            "--base_seed",
+            "--batch_size",
+            "--ckpts_path",
+            "--frame_num",
+            "--height",
+            "--json_path",
+            "--max_samples",
+            "--mu",
+            "--num_t_steps",
+            "--num_workers",
+            "--output_dir",
+            "--video_base_path",
+            "--width"
+          ],
+          "exists": true,
+          "has_flops_measurement": false,
+          "has_latency_measurement": false,
+          "has_prompt_file_loop": false,
+          "has_uncached_flag": false,
+          "hf_model_ids": [
+            "./results_sensitivity_ltx",
+            "H/W",
+            "SiT/Latte",
+            "a-r-r-o-w/LTX-Video-0.9.1-diffusers",
+            "speed/memory"
+          ],
+          "json_dependencies": [],
+          "line_count": 537,
+          "npz_dependencies": [],
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sensitivity_calculation_LTX.py",
+          "requires_calibration_video_json": true,
+          "requires_checkpoint_dir": false,
+          "requires_checkpoint_path": true,
+          "requires_decord_import": true,
+          "requires_diffusers_import": true,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_t_steps"
+          ],
+          "threshold_fields": []
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sensitivity_calculation_LTX.py",
+        "relative_path": "LTX-Video/sensitivity_calculation_LTX.py",
+        "size_bytes": 22120
+      },
+      {
+        "exists": true,
+        "is_single_prompt_support_only": true,
+        "line_count": 1,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/test_prompt.json",
+        "relative_path": "LTX-Video/test_prompt.json",
+        "size_bytes": 496
+      }
+    ],
+    "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+    "paper_shaped_execution_matrix": {
+      "accepted_loop2_evidence": "loadable model checkpoints, calibration weights or calibration reruns, raw generated videos, uncached references, logs with skip counts, timing/GFLOPs traces, quality metrics, and table summaries",
+      "baselines": [
+        "TeaCache",
+        "MagCache",
+        "standard uncached inference"
+      ],
+      "calibration": [
+        "MixKit calibration videos",
+        "finite-difference latent and timestep sensitivity calculation",
+        "sensitivity_wan21.npz, sensitivity_cogvid.npz, sensitivity_ltx.npz"
+      ],
+      "generation": [
+        "Wan2.1 T=50 cached and uncached variants",
+        "CogVideoX T=50 cached and uncached variants",
+        "LTX-Video T=50 cached and uncached variants",
+        "threshold sweeps and max consecutive skip K controls"
+      ],
+      "metrics": [
+        "NFE",
+        "cache ratio",
+        "LPIPS",
+        "PSNR",
+        "SSIM",
+        "latency",
+        "GFLOPs",
+        "MAE"
+      ]
+    },
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache",
+    "support_only_findings": [
+      {
+        "detail": "Each bundled test_prompt.json is a one-line prompt, not the full VBench or T2V-CompBench paper prompt set.",
+        "id": "bundled_test_prompt_single_example",
+        "status": "support_only"
+      }
+    ]
+  },
+  "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+  "paper_title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching",
+  "professional_gate": {
+    "artifact_kind": "sencache_professional_gate_result",
+    "blockers": [
+      {
+        "detail": "Paper/DAG expects GH200 supplement latency or comparable high-end video-diffusion traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+        "id": "paper_hardware_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "Visible GPUs are memory-heavy or active; GPU 3 is occupied by Prophet. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 100}]",
+        "id": "clean_gpu_slot_for_video_diffusion_grid",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local loadable checkpoints: wan21_t2v_13b, cogvideox_15_5b, ltx_video_091",
+        "id": "required_video_model_checkpoints_not_materialized",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local sensitivity .npz weights or calibration outputs: sensitivity_wan21, sensitivity_cogvid, sensitivity_ltx",
+        "id": "sensitivity_weights_or_calibration_outputs_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local calibration/prompt/evaluator artifacts: mixkit_calibration_videos, vbench_full_prompt_set, t2v_compbench_70_prompts",
+        "id": "calibration_prompt_metric_artifacts_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing required runtime packages/imports: diffusers, lpips, vbench, wan",
+        "id": "video_diffusion_metric_runtime_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "No raw cached/uncached Wan2.1, CogVideoX, and LTX outputs with VBench/LPIPS/PSNR/SSIM/latency/GFLOPs summaries were found.",
+        "id": "full_cached_uncached_result_grid_missing",
+        "status": "blocked"
+      }
+    ],
+    "convergence_role": "professional operational gate; no reduced run is promoted",
+    "created_at_utc": "2026-07-24T13:32:00Z",
+    "next_full_execution_if_unblocked": [
+      "materialize Wan2.1, CogVideoX, and LTX-Video checkpoints",
+      "download released Yassaman/SenCache sensitivity weights or rerun finite-difference calibration on MixKit videos",
+      "materialize VBench and T2V-CompBench prompt/evaluator artifacts",
+      "run cached and uncached variants for each model with matching T=50, seeds, K, and thresholds",
+      "emit raw videos, skip-count logs, NFE/cache ratio, latency/GFLOPs traces, and quality scores",
+      "compare simulated gap/results to the paper tables, paragraphs, figures, and supplement MAE diagnostic"
+    ],
+    "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+    "paper_title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching",
+    "professional_package_ready": false,
+    "status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements",
+    "support_checks": {
+      "compileall_passed": true,
+      "dataset_metric_artifacts_checked": 3,
+      "model_manifests_checked": 3,
+      "repo_files_checked": 13,
+      "sensitivity_weight_manifests_checked": 3
+    }
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache",
+  "updated_at_utc": "2026-07-24T13:32:00Z",
+  "verifier": {
+    "convergence_decision": "not_converged_explicit_professional_blockers_after_operational_preflight",
+    "loop1_required_dag_update": [
+      "Add sensitivity calibration or released .npz weight gate.",
+      "Add Wan2.1/CogVideoX/LTX script and checkpoint gates.",
+      "Add VBench/T2V-CompBench/LPIPS/PSNR/SSIM metric artifact gate.",
+      "Add GH200 or paper-approved video hardware runtime gate.",
+      "Add full cached/uncached result-grid gate.",
+      "Keep one-line prompt files, syntax checks, and metadata as support only."
+    ],
+    "professional_package_ready": false,
+    "semantic_dag_nodes_checked": [
+      "gap.paper_gap_claims",
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface",
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    "status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements",
+    "unresolved_professional_debt": [
+      {
+        "detail": "Paper/DAG expects GH200 supplement latency or comparable high-end video-diffusion traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+        "id": "paper_hardware_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "Visible GPUs are memory-heavy or active; GPU 3 is occupied by Prophet. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 100}]",
+        "id": "clean_gpu_slot_for_video_diffusion_grid",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local loadable checkpoints: wan21_t2v_13b, cogvideox_15_5b, ltx_video_091",
+        "id": "required_video_model_checkpoints_not_materialized",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local sensitivity .npz weights or calibration outputs: sensitivity_wan21, sensitivity_cogvid, sensitivity_ltx",
+        "id": "sensitivity_weights_or_calibration_outputs_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local calibration/prompt/evaluator artifacts: mixkit_calibration_videos, vbench_full_prompt_set, t2v_compbench_70_prompts",
+        "id": "calibration_prompt_metric_artifacts_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing required runtime packages/imports: diffusers, lpips, vbench, wan",
+        "id": "video_diffusion_metric_runtime_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "No raw cached/uncached Wan2.1, CogVideoX, and LTX outputs with VBench/LPIPS/PSNR/SSIM/latency/GFLOPs summaries were found.",
+        "id": "full_cached_uncached_result_grid_missing",
+        "status": "blocked"
+      }
+    ]
+  }
+}

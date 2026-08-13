@@ -1,0 +1,65 @@
+{
+  "artifact_kind": "dto_kd_source_manifest",
+  "candidate_repos_checked": [
+    {
+      "exists": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pgm_text_distill_sdtt",
+      "readme_title_head": "# Partition Generative Modeling - Distillation for text\nThis branch can be used to distill both MDLM and PGM on OpenWebText. The scripts are located in `scripts`. This codebase is based on [the original SDTT codebase](https://github.com/jdeschena/sdtt). After distillation of the models, you can use the text pretrain branch to sample and evaluate the generative perplexity of the checkpoints.",
+      "rejected_as_exact_dto_kd_repo": true
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/attn-dynamics-basis",
+      "readme_title_head": "# How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Interpretability\n\n[**Shawn Im**](https://shawn-im.github.io/)<sup>1</sup>, [**Changdae Oh**](https://changdaeoh.github.io/)<sup>1</sup>, [**Zhen Fang**](https://fang-zhen.github.io/)<sup>2</sup>, [**Yixuan Li**](https://pages.cs.wisc.edu/~sharonli/)<sup>1</sup>\n\n<sup>1</sup>University of Wisconsin\u2013Madison, <sup>2</sup>University of Technology Sydney\n\n> Semantic associations such as the link between ``bird'' and ``flew'' are foundational for language modeling as they enable models to go beyond memorization and instead generalize and generate coherent text. Understanding how these associations are learned and represented in language models is essential for connecting deep learning with linguistic theory and developing a mechanistic foundation for large language models. In this work, we analyze how these associations emerge from natural language data in attention-based language models through the lens of training dynamics. By leveraging a leading-term approximation of the gradients, we develop closed-form expressions for the weights at early stages of training that explain how semantic associations first take shape. Through our analysis, we reveal that each set of weights of the transformer has closed-form expressions as simple compositions of three basis functions--bigram, token-interchangeability, and context mappings--reflecting the statistics in the text corpus and uncover how each component of the transformer captures the semantic association based on these compositions. Experiments on real-world LLMs demonstrate that our theoretical weight characterizations closely match the learned weights, and qualitative analyses further guide us on how our theorem shines light on interpreting the learned association in transformers.\n",
+      "rejected_as_exact_dto_kd_repo": true
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CoCo",
+      "readme_title_head": "<div align=\"center\">\n  <h1>CoCo: Compactness and Consistency for Deep Graph Clustering</h1>\n  <p align=\"center\">\n    <strong>A Deep Graph Clustering Framework.</strong>\n  </p>\n  <p align=\"center\" style=\"font-size: 0; line-height: 0;\">\n    <a href=\"https://openreview.net/pdf?id=9jdQLmPUHW\" style=\"text-decoration: none; display: inline-block; margin: 0 2px;\">\n      <img alt=\"Paper\" src=\"https://img.shields.io/badge/Paper-PDF-2ea44f?style=flat&logo=adobe\" style=\"vertical-align: middle;\" />",
+      "rejected_as_exact_dto_kd_repo": true
+    }
+  ],
+  "created_at_utc": "2026-07-23T18:53:41Z",
+  "official_source_repo_found": false,
+  "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+  "paper_title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+  "source_files": {
+    "chip": {
+      "contains_code_url_absent_note": true,
+      "exists": true,
+      "line_count": 850,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation.chip.json",
+      "size_bytes": 31879
+    },
+    "forum_html": {
+      "contains_code_url_absent_note": false,
+      "exists": true,
+      "line_count": 33,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_QMItTyQW92_openreview_forum.html",
+      "size_bytes": 173310
+    },
+    "paper_text": {
+      "contains_code_url_absent_note": false,
+      "exists": true,
+      "line_count": 875,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_QMItTyQW92_openreview.txt",
+      "size_bytes": 62183
+    },
+    "status_file": {
+      "contains_code_url_absent_note": false,
+      "exists": true,
+      "line_count": 36,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/status/ICLR2026_QMItTyQW92_source_status.txt",
+      "size_bytes": 2735
+    },
+    "supplement_text": {
+      "contains_code_url_absent_note": false,
+      "exists": true,
+      "line_count": 207,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_QMItTyQW92_supplementary.txt",
+      "size_bytes": 9938
+    }
+  },
+  "support_only_warning": "Paper PDF/supplement/status facts can repair the DAG but cannot substitute for runnable source and generated training outputs."
+}

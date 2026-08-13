@@ -1,0 +1,123 @@
+{
+  "artifact_kind": "dag_only_blind_author_simulation",
+  "author_decision": "continue_table1_threshold_repair_and_table4_full_grid_until_verifier_accepts_or_names_narrower_blocker",
+  "convergence_allowed_from_this_simulation": false,
+  "created_at_utc": "2026-07-24T10:42:44Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/paper_author_gap_dag.json",
+  "dag_signature": "3cbcd6e9736df6f7",
+  "encoded_artifact_summaries": [
+    {
+      "artifact_kind": "prophet_table1_threshold_repair_campaign",
+      "config_status_counts": {
+        "pending": 4
+      },
+      "created_at_utc": "2026-07-24T10:41:06Z",
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_repair_campaign.json",
+      "size_bytes": 6169
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/TABLE1_THRESHOLD_REPAIR_STATUS.md",
+      "size_bytes": 1594
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_table1_threshold_repair_launcher.py",
+      "size_bytes": 13923
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/multi_gpu_professional_scheduler.py",
+      "size_bytes": 20399
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparator.py",
+      "size_bytes": 31925
+    },
+    {
+      "artifact_kind": "prophet_live_specialized_verifier",
+      "created_at_utc": "2026-07-24T10:41:15Z",
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_specialized_verifier.json",
+      "size_bytes": 80195,
+      "status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory"
+    },
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_summary",
+      "created_at_utc": "2026-07-23T22:06:20Z",
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+      "size_bytes": 1413,
+      "status": "completed"
+    }
+  ],
+  "gpu_probe": {
+    "status": "pass",
+    "stderr_tail": "",
+    "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 15989, 8228, 99\n1, NVIDIA GeForce RTX 4090, 24564, 16009, 8208, 98\n2, NVIDIA GeForce RTX 4090, 24564, 16235, 7979, 100\n3, NVIDIA GeForce RTX 4090, 24564, 15969, 8248, 99\n"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "operational_plan_visible_from_dag": [
+    {
+      "node_id": "protocol.trajectory_vs_table1_prompt_family_split",
+      "oracle_values_exposed_to_loop2": false,
+      "skill_role": "separate suffix-emergence simulation evidence from Table 1 benchmark reproduction evidence",
+      "type": "protocol_boundary_gate"
+    },
+    {
+      "node_id": "verifier.table1_protocol_candidate_selection_gate",
+      "oracle_values_exposed_to_loop2": false,
+      "skill_role": "select the right full operational candidate before comparing against paper Table 1",
+      "type": "verifier_protocol_selection_gate"
+    },
+    {
+      "node_id": "protocol.table1_threshold_dynamics_repair_gate",
+      "oracle_values_exposed_to_loop2": false,
+      "skill_role": "turn complete-but-wrong Table 1 GSM8K shape into a full-split confidence-threshold dynamics campaign",
+      "type": "protocol_repair_gate"
+    },
+    {
+      "node_id": "ops.launch_table1_threshold_repair_full_gsm8k",
+      "oracle_values_exposed_to_loop2": false,
+      "skill_role": "schedule full-split Table 1 threshold repair candidates on free GPUs after current one-paper nodes clear",
+      "type": "gpu_execution_node"
+    },
+    {
+      "node_id": "reviewer.compare_table1_threshold_candidate_shape",
+      "oracle_values_exposed_to_loop2": false,
+      "skill_role": "compare completed threshold candidates to paper evidence without exposing oracle targets to Loop 2",
+      "type": "reviewer_result_shape_gate"
+    }
+  ],
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_text_seen": false,
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "Table1 threshold repair candidates are queued but not completed; Table4 still running; other professional debts remain",
+  "raw_artifact_level": "full operational GSM8K baseline plus pending full-split Table1 threshold repair candidates and running ablations",
+  "reduced_or_proxy_used_for_convergence": false,
+  "strict_next_action": "when a GPU frees, scheduler should finish pending Table4 block_length_128, then launch full-split Table1 threshold candidates before broader spillover",
+  "verifier_feedback_visible_only_as_non_oracle_labels": {
+    "converged": false,
+    "failed_metric_ids": [
+      "accuracy_delta",
+      "prophet_avg_steps",
+      "step_speedup"
+    ],
+    "paper_comparison_status": "blocked_paper_result_comparison",
+    "primary_gsm8k_status": "blocked_gsm8k_result_shape_mismatch",
+    "status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory",
+    "threshold_campaign_status": "ready_waiting_for_gpu_capacity"
+  }
+}

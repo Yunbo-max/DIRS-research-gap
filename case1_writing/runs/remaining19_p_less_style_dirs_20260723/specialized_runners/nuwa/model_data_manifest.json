@@ -1,0 +1,440 @@
+{
+  "artifact_kind": "nuwa_model_data_manifest",
+  "checkpoints": [
+    {
+      "hints": [
+        "deit_base_patch16_224",
+        "deit_small_patch16_224",
+        "deit_tiny_patch16_224"
+      ],
+      "id": "timm_deit_pretrained_weights",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "repo_expected_paths": [],
+      "required": "timm pretrained DeiT weights for ImageNet experiments"
+    },
+    {
+      "hints": [
+        "vit_large_patch16_224",
+        "vit_large"
+      ],
+      "id": "vit_large_pretrained_weights",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "repo_expected_paths": [],
+      "required": "ViT-Large pretrained weights for scaling/ablation if paper grid requires it"
+    },
+    {
+      "hints": [
+        "deit_base(cifar10).pt",
+        "deit_small(cifar10).pt",
+        "deit_base(cifar100).pt",
+        "vit_large(cifar100).pt"
+      ],
+      "id": "cifar_finetuned_vit_weights",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "repo_expected_paths": [
+        "/root/autodl-pvt/nuwa/data/param/cifar10",
+        "/root/autodl-pvt/nuwa/data/param/cifar100"
+      ],
+      "required": "CIFAR-specific fine-tuned checkpoints loaded by model/utils.py"
+    },
+    {
+      "hints": [
+        "mask_rcnn_swin-t-p4-w7_fpn_1x_coco_20210902_120937-9d6b7cfa.pth"
+      ],
+      "id": "mask_rcnn_swin_coco_checkpoint",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "repo_expected_paths": [
+        "/root/autodl-pvt/nuwa/model/weights/mask_rcnn_swin-t-p4-w7_fpn_1x_coco_20210902_120937-9d6b7cfa.pth"
+      ],
+      "required": "Mask-RCNN Swin-T COCO checkpoint for detection/segmentation transfer"
+    },
+    {
+      "hints": [
+        "mask-rcnn_swin-t-p4-w7_fpn_1x_coco.py"
+      ],
+      "id": "mmdetection_swin_config",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "repo_expected_paths": [
+        "/root/autodl-pvt/nuwa/mmdetection/configs/swin/mask-rcnn_swin-t-p4-w7_fpn_1x_coco.py"
+      ],
+      "required": "mmdetection config used by model/swin.py"
+    }
+  ],
+  "created_at_utc": "2026-07-24T13:31:54Z",
+  "datasets": [
+    {
+      "hints": [
+        "imagenet",
+        "ILSVRC2012",
+        "ImageNet"
+      ],
+      "id": "imagenet_1k_train_val",
+      "ignored_local_matches": [
+        {
+          "file_count": 10,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/imagenet",
+          "size_human": "48K"
+        },
+        {
+          "file_count": 10,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/imagenet",
+          "size_human": "48K"
+        }
+      ],
+      "local_matches": [
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/imagenet.py",
+          "size_human": "2026"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/__pycache__/imagenet.cpython-310.pyc",
+          "size_human": "2306"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/dataset/imagenet.py",
+          "size_human": "2026"
+        }
+      ],
+      "materialized_locally": true,
+      "repo_expected_roots": [
+        "/root/autodl-pvt/nuwa/data/dataset/imagenet"
+      ],
+      "required": "ImageNet-1K train/val with class-specific subtask labels"
+    },
+    {
+      "hints": [
+        "CIFAR10",
+        "cifar10"
+      ],
+      "id": "cifar10",
+      "ignored_local_matches": [
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/cifar10",
+          "size_human": "16K"
+        },
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/cifar100",
+          "size_human": "16K"
+        },
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/cifar10",
+          "size_human": "16K"
+        },
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/cifar100",
+          "size_human": "16K"
+        }
+      ],
+      "local_matches": [
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar10.py",
+          "size_human": "1227"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar100.py",
+          "size_human": "1231"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/__pycache__/cifar100.cpython-310.pyc",
+          "size_human": "1297"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/__pycache__/cifar10.cpython-310.pyc",
+          "size_human": "1292"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/dataset/cifar10.py",
+          "size_human": "1227"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/dataset/cifar100.py",
+          "size_human": "1231"
+        }
+      ],
+      "materialized_locally": true,
+      "repo_expected_roots": [
+        "/root/autodl-pvt/nuwa/data/dataset/CIFAR10"
+      ],
+      "required": "CIFAR-10 class-specific derivation benchmark"
+    },
+    {
+      "hints": [
+        "CIFAR100",
+        "cifar100"
+      ],
+      "id": "cifar100",
+      "ignored_local_matches": [
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/cifar100",
+          "size_human": "16K"
+        },
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/cifar100",
+          "size_human": "16K"
+        }
+      ],
+      "local_matches": [
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar100.py",
+          "size_human": "1231"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/__pycache__/cifar100.cpython-310.pyc",
+          "size_human": "1297"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/dataset/cifar100.py",
+          "size_human": "1231"
+        }
+      ],
+      "materialized_locally": true,
+      "repo_expected_roots": [
+        "/root/autodl-pvt/nuwa/data/dataset/CIFAR100"
+      ],
+      "required": "CIFAR-100 class-specific derivation benchmark"
+    },
+    {
+      "hints": [
+        "coco",
+        "COCO2017",
+        "annotations"
+      ],
+      "id": "coco2017_detection_segmentation",
+      "ignored_local_matches": [
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/coco",
+          "size_human": "16K"
+        },
+        {
+          "file_count": 0,
+          "is_dir": true,
+          "path": "/root/.cache/huggingface/hub/datasets--likaixin--ScreenSpot-v2-variants/snapshots/aa4d83b6833d77d3bb3b7cb769951e2db80052b6/annotations",
+          "size_human": "4.0K"
+        },
+        {
+          "file_count": 3,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/coco",
+          "size_human": "16K"
+        }
+      ],
+      "local_matches": [
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/coco.py",
+          "size_human": "5282"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/__pycache__/coco.cpython-310.pyc",
+          "size_human": "4924"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/dataset/coco.py",
+          "size_human": "5282"
+        }
+      ],
+      "materialized_locally": true,
+      "repo_expected_roots": [
+        "/root/autodl-pub/datasets/coco"
+      ],
+      "required": "COCO detection/segmentation transfer benchmark"
+    },
+    {
+      "hints": [
+        "sub_task",
+        "T1-10",
+        "subtask"
+      ],
+      "id": "class_specific_subtasks",
+      "ignored_local_matches": [
+        {
+          "file_count": 19,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task",
+          "size_human": "100K"
+        },
+        {
+          "file_count": 19,
+          "is_dir": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task",
+          "size_human": "100K"
+        }
+      ],
+      "local_matches": [
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/cifar100/T1-10.txt",
+          "size_human": "37"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/data/sub_task/imagenet/T1-10.txt",
+          "size_human": "48"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/cifar100/T1-10.txt",
+          "size_human": "37"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/data/sub_task/imagenet/T1-10.txt",
+          "size_human": "48"
+        }
+      ],
+      "materialized_locally": true,
+      "repo_expected_roots": [
+        "/root/autodl-pvt/nuwa/data/sub_task"
+      ],
+      "required": "task files mapping ImageNet/CIFAR/COCO classes to edge-device subtasks"
+    },
+    {
+      "hints": [
+        "activation",
+        "feature",
+        "calibration",
+        "clibration"
+      ],
+      "id": "calibration_features",
+      "ignored_local_matches": [],
+      "local_matches": [
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_clibration_data.py",
+          "size_human": "10030"
+        },
+        {
+          "file_count": 1,
+          "is_dir": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/supplemental/CVPR2026_016_nuwa/38177_supp/src/method/get_clibration_data.py",
+          "size_human": "10030"
+        }
+      ],
+      "materialized_locally": true,
+      "repo_expected_roots": [
+        "/root/autodl-pvt/nuwa/data/activation",
+        "/root/autodl-pvt/nuwa/data/feature"
+      ],
+      "required": "activation/calibration feature tensors used by self-knowledge purification and SVD pruning"
+    }
+  ],
+  "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+  "paper_shaped_outputs_required": [
+    "class-specific ImageNet accuracy/pruning-rate/GFLOPs tables",
+    "training-free versus training-dependent pruning comparisons",
+    "Magnitude/Wanda/Numerical/X-Pruner/DC-ViT/RECAP/MDP baseline comparison",
+    "derivation-cost table with GPU hours/AWS cost simulation",
+    "edge-device latency/throughput/memory table on RTX 4090 and Jetson Orin NX",
+    "component ablation for self-knowledge purification, MHA SVD, MLP closed-form pruning, head focus, target architecture",
+    "class-specific accuracy-pruning sweeps",
+    "large deployment cost simulation",
+    "COCO detection/segmentation transfer table with mAP",
+    "raw stdout, JSON metrics, checkpoints/masks, timing traces, memory traces, and device traces"
+  ],
+  "supplemental_oracle_side_artifacts": [
+    {
+      "exists": true,
+      "file_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/pdf/CVPR2026_016_nuwa_supplemental.zip",
+      "size_human": "377375"
+    },
+    {
+      "exists": true,
+      "file_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/pdf/CVPR2026_016_nuwa_arxiv.pdf",
+      "size_human": "8673341"
+    },
+    {
+      "exists": true,
+      "file_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/pdf/CVPR2026_016_nuwa_cvf.pdf",
+      "size_human": "7885280"
+    }
+  ],
+  "verifier_comparable_result_candidates": [
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/professional_gate_result.json",
+      "size_human": "3724"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/micro_debug_qwen25vl3b_around1/summary_metrics.json",
+      "size_human": "659"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/preflight_around10/summary_metrics.json",
+      "size_human": "308"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/micro_qwen25vl3b_around5/summary_metrics.json",
+      "size_human": "714"
+    }
+  ]
+}

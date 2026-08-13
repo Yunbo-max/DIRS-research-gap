@@ -1,0 +1,35 @@
+[2026-07-23T09:29:43Z] downloading full trajectory dataset YefanZhou98/DLM-Decoding-Analysis to /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/DLM-Decoding-Analysis
+[2026-07-23T09:30:17Z] failed: HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/YefanZhou98/DLM-Decoding-Analysis/xet-read-token/91beb881acaa0b6edfccd88e8d19c08ec5e1225b (Request ID: Root=1-6a61e2ee-0bb989343ced8501040e24da;2dbe735e-9541-4d17-8c11-fca1a7c2da58)
+
+We had to rate limit your IP (129.169.49.216). To continue using our service, create a HF account or login to your existing account, and make sure you pass a HF_TOKEN if you're using the API.
+[2026-07-23T09:31:45Z] failed: HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/YefanZhou98/DLM-Decoding-Analysis?blobs=True (Request ID: Root=1-6a61e347-409687341d8fdf1d6aa7b282;3581eafd-b3a0-4a9e-b1f7-726b342906a6)
+
+We had to rate limit your IP (129.169.49.216). To continue using our service, create a HF account or login to your existing account, and make sure you pass a HF_TOKEN if you're using the API.
+[2026-07-23T09:33:18Z] downloading full trajectory dataset YefanZhou98/DLM-Decoding-Analysis to /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/DLM-Decoding-Analysis
+[2026-07-23T09:37:39Z] failed: HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/YefanZhou98/DLM-Decoding-Analysis/xet-read-token/91beb881acaa0b6edfccd88e8d19c08ec5e1225b (Request ID: Root=1-6a61e4a8-74f79b5e5099ea5c79c51ccc;e936711a-0369-467a-99de-b37bd4385eae)
+
+We had to rate limit your IP (129.169.49.216). To continue using our service, create a HF account or login to your existing account, and make sure you pass a HF_TOKEN if you're using the API.
+[2026-07-23T09:39:18Z] downloading full trajectory dataset YefanZhou98/DLM-Decoding-Analysis to /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/DLM-Decoding-Analysis
+[2026-07-23T12:06:22Z] starting full trajectory emergence analysis
+[2026-07-23T12:06:23Z] loading tokenizer GSAI-ML/LLaDA-8B-Instruct for MMLU answer emergence checks
+[2026-07-23T12:06:25Z] analyzing gsm8k_low_conf_none_block32 files=1319 expected=1319
+[2026-07-23T12:22:06Z] analyzing gsm8k_low_conf_constraint_block32 files=1319 expected=1319
+[2026-07-23T12:39:24Z] analyzing gsm8k_random_none_block256 files=1319 expected=1319
+[2026-07-23T13:20:13Z] analyzing gsm8k_random_constraint_block256 files=1319 expected=1319
+[2026-07-23T14:22:24Z] analyzing mmlu_low_confidence_none_block128 files=3153 expected=3153
+[2026-07-23T15:16:52Z] analyzing mmlu_low_confidence_constraint_block128 files=3153 expected=3153
+[2026-07-23T15:33:18Z] analyzing mmlu_random_none_block128 files=3153 expected=3153
+[2026-07-23T15:41:03Z] analyzing mmlu_random_constraint_block128 files=3153 expected=3153
+[2026-07-23T15:47:08Z] trajectory analysis complete
+[2026-07-23T19:35:15Z] downloading full trajectory dataset YefanZhou98/DLM-Decoding-Analysis to /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/DLM-Decoding-Analysis
+[2026-07-23T19:35:30Z] starting full trajectory emergence analysis
+[2026-07-23T19:35:30Z] loading tokenizer GSAI-ML/LLaDA-8B-Instruct for MMLU answer emergence checks
+[2026-07-23T19:35:30Z] analyzing gsm8k_low_conf_none_block32 files=1319 expected=1319
+[2026-07-23T19:36:12Z] analyzing gsm8k_low_conf_constraint_block32 files=1319 expected=1319
+[2026-07-23T19:36:48Z] analyzing gsm8k_random_none_block256 files=1319 expected=1319
+[2026-07-23T19:37:07Z] analyzing gsm8k_random_constraint_block256 files=1319 expected=1319
+[2026-07-23T19:37:26Z] analyzing mmlu_low_confidence_none_block128 files=3153 expected=3153
+[2026-07-23T19:38:27Z] analyzing mmlu_low_confidence_constraint_block128 files=3153 expected=3153
+[2026-07-23T19:39:22Z] analyzing mmlu_random_none_block128 files=3153 expected=3153
+[2026-07-23T19:39:45Z] analyzing mmlu_random_constraint_block128 files=3153 expected=3153
+[2026-07-23T19:40:16Z] trajectory analysis complete

@@ -1,0 +1,49 @@
+{
+  "schema_version": "dirs.strict_writer.final_report.v2",
+  "date": "2026-07-24",
+  "status": "completed_over_constrained_baseline",
+  "legacy_stop_loop": 5,
+  "scores": [
+    {"loop": 1, "overall": 0.875},
+    {"loop": 2, "overall": 0.937, "delta": 0.062},
+    {"loop": 3, "overall": 0.959, "delta": 0.022},
+    {"loop": 4, "overall": 0.966, "delta": 0.007},
+    {"loop": 5, "overall": 0.966, "delta": 0.0}
+  ],
+  "stop_evidence_under_legacy_protocol": {
+    "stable_transitions": ["loop_03_to_loop_04", "loop_04_to_loop_05"],
+    "hard_failures": 0,
+    "typed_graph_unchanged": true,
+    "accepted_structural_edits": 0,
+    "score_delta_below_0_01": true
+  },
+  "loop_05_integrity": {
+    "abstract_sha256": "bb13444cd661fe923f729577057e707f91149c0df4535a662352eea1460d337f",
+    "selected_subdag_sha256": "9af5cbd1b8409b7bcd51daa3b12e6d7103046f6b1b49e5ffc165a6a302d4a689",
+    "trace_hypotheses_sha256": "ce54e5c4b64864211f4fdabd248149c1be755b1fb3a81423bee9a8f2adf5e6c4",
+    "writer_self_check_sha256": "e37bdffdf80e8d60951f3f678ea1c6a0d4fe14eac2fdb57fe833f9db24de7870",
+    "word_count": 183,
+    "posterior_weights": {
+      "H1_comparative_quality_capability_efficiency": 0.65,
+      "H2_mechanism_ablation_fan_in": 0.22,
+      "H3_deployment_pareto_with_retrieval_branch": 0.10,
+      "H4_implementation_upward_grounding": 0.03
+    }
+  },
+  "methodological_correction": {
+    "factual_claims_require_task_evidence": true,
+    "self_inferred_strategies_may_be_novel": true,
+    "expert_wording_is_not_ground_truth": true,
+    "one_exact_dag_is_not_required": true,
+    "autonomous_strategy_discovery_tested_in_this_run": false,
+    "successor_protocol": "PROTOCOL_V2_AUTONOMOUS_STRATEGY.md"
+  },
+  "claim_boundary": [
+    "no historical author-process recovery claim",
+    "no unique expert DAG claim",
+    "no general DIRS convergence claim",
+    "no autonomous strategy discovery claim",
+    "no GFlowNet convergence claim",
+    "no cross-paper transfer claim"
+  ]
+}

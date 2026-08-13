@@ -1,0 +1,211 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "7b-scale",
+        "alpha",
+        "are",
+        "avoid",
+        "become",
+        "behavior",
+        "beta",
+        "beyond",
+        "boundary",
+        "can",
+        "cheap",
+        "choices",
+        "choosing",
+        "context",
+        "degrades",
+        "depend",
+        "details",
+        "dialogue",
+        "dimension-wise",
+        "dimensions",
+        "distort",
+        "distorts",
+        "distribution",
+        "diverse",
+        "even",
+        "extension",
+        "family",
+        "final",
+        "fine-tuning",
+        "gains"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "RoPE context extension methods are diverse heuristics without a unified theory for choosing dimension-wise scaling.",
+        "Training-free long-context extension can distort local or middle-frequency positional information even when the final context window is longer.",
+        "7B-scale long-context work needs cheap extension methods that avoid fine-tuning and preserve retrieval/dialogue behavior."
+      ],
+      "score": 5.25,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "attention",
+        "beta_fast",
+        "beta_slow",
+        "boundary",
+        "conversion",
+        "dimension",
+        "framework",
+        "magnitude",
+        "middle-dimension",
+        "mixed-radix",
+        "mrrope-pro",
+        "mrrope-uni",
+        "progressive",
+        "rope",
+        "scaling",
+        "selection",
+        "uniform"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "mixed-radix RoPE framework",
+        "MrRoPE-Uni uniform middle-dimension conversion",
+        "MrRoPE-Pro progressive middle-dimension conversion",
+        "dimension boundary selection by beta_fast and beta_slow",
+        "attention magnitude scaling"
+      ],
+      "score": 1.417,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "100",
+        "100k",
+        "128k",
+        "accuracy",
+        "context",
+        "depth",
+        "examples",
+        "infinite-bench",
+        "insertion",
+        "length",
+        "longbenchv2",
+        "niah",
+        "over",
+        "per",
+        "perplexity",
+        "proofpile",
+        "recall",
+        "retrieval",
+        "rouge-1",
+        "ruler",
+        "samples",
+        "score",
+        "sequences",
+        "shorter",
+        "subset",
+        "subtasks",
+        "task",
+        "ten",
+        "than",
+        "tokens"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "Proofpile perplexity",
+        "NIAH",
+        "RULER",
+        "Infinite-Bench",
+        "LongBenchV2",
+        "ten Proofpile sequences over 128K tokens",
+        "NIAH varied context length and insertion depth",
+        "RULER 13 subtasks",
+        "Infinite-Bench 100 examples per subset from 100K to 128K",
+        "LongBenchV2 samples shorter than 128K"
+      ],
+      "score": 2.583,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "Proofpile perplexity; NIAH; RULER; Infinite-Bench; LongBenchV2; ten Proofpile sequences over 128K tokens; NIAH varied context length and insertion depth; RULER 13 subtasks; Infinite-Bench 100 examples per subset from 100K to 128K; LongBenchV2 samples shorter than 128K"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "perplexity; ROUGE-1 recall; RULER retrieval score; Infinite-Bench task accuracy; LongBenchV2 task score"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "Proofpile; RULER; Needle-In-A-Haystack; Infinite-Bench; LongBenchV2; testset/pp-tokenized-llama3; testset/pp-tokenized-qwen2.5; testset/infity; RULER/LongBenchV2 datasets expected locally"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "not specified in paper; supplementary scripts use device_map=auto and optional FlashAttention; PyTorch; Transformers; FlashAttention 2; BitsAndBytes optional quantization"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "mixed-radix RoPE framework; MrRoPE-Uni uniform middle-dimension conversion; MrRoPE-Pro progressive middle-dimension conversion; dimension boundary selection by beta_fast and beta_slow; attention magnitude scaling; scaled_rope/LlamaMrRoPE.py; scaled_rope/patch.py; eval/model_loader.py; eval/perplexity.py; eval/neddle.py; eval/ruler.py; eval/infity.py; analysis/attn.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "iteration": 2,
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "paper_title": "MrRoPE: Mixed-radix Rotary Position Embedding",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

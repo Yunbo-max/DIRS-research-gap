@@ -1,0 +1,204 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "conflict",
+        "data-free",
+        "directionally",
+        "distillation",
+        "dominance",
+        "dynamic",
+        "fixed-weight",
+        "found",
+        "gradient",
+        "gradients",
+        "handled",
+        "ignores",
+        "loss-weight",
+        "manual",
+        "misaligned",
+        "not",
+        "objective",
+        "official",
+        "one",
+        "other",
+        "repository",
+        "source",
+        "suppresses",
+        "task",
+        "tuning"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "fixed-weight KD ignores dynamic conflict",
+        "gradient conflict",
+        "gradient dominance",
+        "manual loss-weight tuning"
+      ],
+      "score": 2.083,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "amortized",
+        "distillation",
+        "dynamic",
+        "head",
+        "module",
+        "multi-scale",
+        "projectors",
+        "softmax-normalized",
+        "task",
+        "trade-off",
+        "update"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "multi-scale projectors",
+        "distillation head",
+        "task head",
+        "dynamic trade-off module",
+        "softmax-normalized amortized pi update"
+      ],
+      "score": 0.917,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "300-epoch",
+        "50-epoch",
+        "ablation",
+        "accuracy",
+        "ap50",
+        "ap75",
+        "apl",
+        "apm",
+        "aps",
+        "cifar-100",
+        "classification",
+        "coco",
+        "coco2017",
+        "component",
+        "detection",
+        "imagenet",
+        "object",
+        "robustness",
+        "teacher-scale",
+        "top-1"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "ImageNet classification",
+        "CIFAR-100 KD",
+        "COCO2017 object detection",
+        "300-epoch ImageNet training",
+        "50-epoch COCO detection",
+        "component ablation",
+        "teacher-scale robustness"
+      ],
+      "score": 1.667,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "ImageNet classification; CIFAR-100 KD; COCO2017 object detection; 300-epoch ImageNet training; 50-epoch COCO detection; component ablation; teacher-scale robustness"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "Top-1 accuracy; AP; AP50; AP75; APS; APM; APL"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet-1K; CIFAR-100; MS-COCO; ImageNet-1K; CIFAR-100; COCO2017"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "four NVIDIA H100 GPUs; PyTorch"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "multi-scale projectors; distillation head; task head; dynamic trade-off module; softmax-normalized amortized pi update; Algorithm 1 pseudocode; Equations 8-18; supplementary theorem proof"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "iteration": 1,
+  "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+  "paper_title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

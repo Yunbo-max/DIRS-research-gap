@@ -1,0 +1,93 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 2,
+  "selected_proposal_id": "S5_salience_anchor_then_selective_bindings",
+  "selected_variant": "A",
+  "status": "local_strategy_hypothesis_pending_controller",
+  "status_reason": "Writer-side functional inspection supports the predicted direction against a matched control, but self-evaluation is not calibrated acceptance evidence. Controller evaluation is still required, and no cross-paper transfer evidence exists.",
+  "autonomous_edit": {
+    "parent": "S2_mechanism_ablation_staircase",
+    "delete_operations": [
+      "Require local diagnostic steps to precede the aggregate result.",
+      "Give each available absolute measurement comparable rhetorical weight."
+    ],
+    "add_operations": [
+      "Place one system-level comparative anchor by the third sentence.",
+      "Use one discriminative numeric contrast per local mechanism role.",
+      "Keep each selected mechanism and diagnostic adjacent.",
+      "State SISO/MIMO non-dominance explicitly."
+    ],
+    "origin_boundary": "The controller reported outcome-level salience and compression issues. The writer independently diagnosed hierarchy competition and designed the anchor, numeric-budget, adjacency, and non-dominance operations."
+  },
+  "matched_counterfactual": {
+    "control_variant": "B",
+    "intervention": "Detach the mechanism list from separately grouped evaluation results and delay the aggregate quality result.",
+    "held_approximately_constant": {
+      "factual_units": true,
+      "numeric_anchors": true,
+      "word_band": true,
+      "professional_prose": true,
+      "scope_boundaries": true
+    },
+    "writer_observation": [
+      "Variant A exposes the aggregate quality contribution in sentence three; Variant B exposes it only after latency, ablation, and retrieval.",
+      "Variant A labels the recurrence ablation, complex-state diagnostic, and MIMO tradeoff locally; Variant B requires readers to recover those roles across separated blocks.",
+      "Both variants remain factually grounded and contain the same central evidence, so the observed structural difference is consistent with the predicted strategy effect."
+    ],
+    "falsification_boundary": "This writer observation is not a blind preference result. If controller judgments do not favor A on early salience and mechanism-result recoverability, or find a factual/compression regression, the local hypothesis should return to candidate or be rejected."
+  },
+  "functional_comparison": {
+    "method": "decomposed qualitative comparison with no scalar sum and no expert-similarity signal",
+    "dimensions": {
+      "factual_support": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "functional_role_coverage": {
+        "A": "complete and hierarchical",
+        "B": "complete but evaluation-grouped",
+        "C": "complete with limitation priority"
+      },
+      "mechanism_result_coherence": {
+        "A": "three selected local bindings are adjacent",
+        "B": "facts are preserved but bindings require cross-block reconstruction",
+        "C": "two diagnostics are grouped as context rather than fully mapped"
+      },
+      "importance_weighted_selection": {
+        "A": "aggregate comparison appears early; local numbers are selective",
+        "B": "aggregate comparison is delayed",
+        "C": "retrieval boundary receives the opening budget"
+      },
+      "bounded_claims": {
+        "A": "retrieval, latency non-dominance, and scale boundaries explicit",
+        "B": "retrieval, attribution, and scale boundaries explicit",
+        "C": "strongest early retrieval boundary"
+      },
+      "clarity_and_compression": {
+        "A": "clear hierarchy with 196 words",
+        "B": "grammatical but more table-like at 212 words",
+        "C": "shortest at 181 words but less contribution-forward"
+      }
+    },
+    "selection": "A is preferred provisionally because it preserves the incumbent's local coherence while repairing hierarchy and numeric competition. C remains a viable alternative when early calibration is valued more than immediate contribution salience."
+  },
+  "retained_multimodality": [
+    {
+      "proposal_id": "S2_mechanism_ablation_staircase",
+      "status": "candidate",
+      "reason": "May remain preferable for contexts that prioritize full local attribution over early aggregate salience."
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "status": "candidate",
+      "realization": "Variant C",
+      "reason": "Offers a distinct limitation-led organization and stronger early calibration."
+    }
+  ],
+  "promotion_boundary": {
+    "reusable_skill": false,
+    "reason": "One paper cannot establish transfer, calibration, or reusable utility.",
+    "maximum_after_controller": "local_strategy_hypothesis"
+  }
+}

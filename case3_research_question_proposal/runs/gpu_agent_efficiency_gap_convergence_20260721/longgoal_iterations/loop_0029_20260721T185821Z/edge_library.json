@@ -1,0 +1,77 @@
+[
+  {
+    "source": "T1_domain_topic",
+    "target": "P1_recent_pattern",
+    "relation": "conditions"
+  },
+  {
+    "source": "P1_recent_pattern",
+    "target": "U1_unresolved_uncertainty",
+    "relation": "reveals"
+  },
+  {
+    "source": "U1_unresolved_uncertainty",
+    "target": "C1_missing_condition",
+    "relation": "narrows_to"
+  },
+  {
+    "source": "C1_missing_condition",
+    "target": "M1_mechanism_hypothesis",
+    "relation": "motivates"
+  },
+  {
+    "source": "M1_mechanism_hypothesis",
+    "target": "O1_target_object",
+    "relation": "binds"
+  },
+  {
+    "source": "O1_target_object",
+    "target": "Q1_research_question",
+    "relation": "forms"
+  },
+  {
+    "source": "Q1_research_question",
+    "target": "E1_possible_evidence",
+    "relation": "requires"
+  },
+  {
+    "source": "E1_possible_evidence",
+    "target": "X0_gpu_probe",
+    "relation": "requires_hardware_check"
+  },
+  {
+    "source": "X0_gpu_probe",
+    "target": "X1_repo_readiness",
+    "relation": "conditions"
+  },
+  {
+    "source": "X1_repo_readiness",
+    "target": "X2_smoke_benchmark_plan",
+    "relation": "enables"
+  },
+  {
+    "source": "X2_smoke_benchmark_plan",
+    "target": "X3_budget_metric_schema",
+    "relation": "measures"
+  },
+  {
+    "source": "X3_budget_metric_schema",
+    "target": "X4_execution_verifier",
+    "relation": "gates"
+  },
+  {
+    "source": "X4_execution_verifier",
+    "target": "S1_bounded_scope",
+    "relation": "bounds"
+  },
+  {
+    "source": "S1_bounded_scope",
+    "target": "G4_gap_evidence_audit",
+    "relation": "audits"
+  },
+  {
+    "source": "G4_gap_evidence_audit",
+    "target": "V4_gap_verdict",
+    "relation": "decides"
+  }
+]

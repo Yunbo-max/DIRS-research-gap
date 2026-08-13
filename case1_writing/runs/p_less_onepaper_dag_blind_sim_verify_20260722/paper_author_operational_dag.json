@@ -1,0 +1,449 @@
+{
+  "blind_simulation_contract": {
+    "forbidden_inputs": [
+      "paper_oracle_results.json",
+      "paper_section_evidence_table.json",
+      "author_style_gpu_reproduction_campaign.json",
+      "onepaper_dag_blind_gpu_update_loop_summary.json",
+      "paper text files",
+      "prior reports or traces"
+    ],
+    "only_input_file": "paper_author_operational_dag.json",
+    "proxy_sampler_measurements_allowed_for_convergence": false,
+    "real_execution_required": true
+  },
+  "convergence_gate": {
+    "proxy_only_result": "automatic_blocked",
+    "requires": [
+      "official repo cloned at recorded commit",
+      "official p-less sampler imported",
+      "target model checkpoints available or blocked with exact access reason",
+      "benchmark data splits available or blocked with exact access reason",
+      "raw generations produced for all required paper experiment cells",
+      "reasoning AUC, writing win-rate, timing, CPU/RAM artifacts emitted",
+      "verifier comparison over tables, paragraph claims/values, figures, and appendix artifacts"
+    ]
+  },
+  "created_at_utc": "2026-07-22T22:13:27Z",
+  "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_operational_author_dag_v1",
+  "datasets": {
+    "reasoning": [
+      {
+        "hf_candidates": [
+          {
+            "config": null,
+            "id": "tau/commonsense_qa",
+            "split": "validation"
+          }
+        ],
+        "paper_name": "CSQA"
+      },
+      {
+        "hf_candidates": [
+          {
+            "config": "gpqa_diamond",
+            "id": "Idavidrein/gpqa",
+            "split": "train"
+          }
+        ],
+        "paper_name": "GPQA"
+      },
+      {
+        "hf_candidates": [
+          {
+            "config": "main",
+            "id": "openai/gsm8k",
+            "split": "test"
+          }
+        ],
+        "paper_name": "GSM8K"
+      },
+      {
+        "hf_candidates": [
+          {
+            "config": null,
+            "id": "allenai/qasc",
+            "split": "validation"
+          }
+        ],
+        "paper_name": "QASC"
+      }
+    ],
+    "writing": [
+      {
+        "hf_candidates": [
+          {
+            "config": null,
+            "id": "euclaise/writingprompts",
+            "split": "train"
+          }
+        ],
+        "paper_name": "Writing Prompts"
+      }
+    ]
+  },
+  "edges": [
+    [
+      "root.operational_author_loop",
+      "source.clone_official_repo"
+    ],
+    [
+      "source.clone_official_repo",
+      "source.validate_sampler_code"
+    ],
+    [
+      "source.validate_sampler_code",
+      "env.verify_dependencies"
+    ],
+    [
+      "env.verify_dependencies",
+      "model.resolve_target_checkpoints"
+    ],
+    [
+      "env.verify_dependencies",
+      "data.resolve_benchmark_splits"
+    ],
+    [
+      "model.resolve_target_checkpoints",
+      "harness.write_generation_runner"
+    ],
+    [
+      "data.resolve_benchmark_splits",
+      "harness.write_generation_runner"
+    ],
+    [
+      "harness.write_generation_runner",
+      "harness.smoke_real_model_generation"
+    ],
+    [
+      "harness.write_generation_runner",
+      "harness.reduced_mistral_gsm8k_generation"
+    ],
+    [
+      "harness.write_generation_runner",
+      "exp.table1_reasoning_auc"
+    ],
+    [
+      "exp.table1_reasoning_auc",
+      "exp.figure2_temperature_curves"
+    ],
+    [
+      "harness.write_generation_runner",
+      "exp.table2_writing_prompts"
+    ],
+    [
+      "harness.write_generation_runner",
+      "exp.table3_full_generation_timing"
+    ],
+    [
+      "harness.write_generation_runner",
+      "exp.figures16_17_table15_cpu_ram"
+    ],
+    [
+      "exp.table1_reasoning_auc",
+      "eval.score_reasoning"
+    ],
+    [
+      "exp.table2_writing_prompts",
+      "eval.score_writing"
+    ],
+    [
+      "eval.score_reasoning",
+      "verifier.package_artifacts"
+    ],
+    [
+      "eval.score_writing",
+      "verifier.package_artifacts"
+    ],
+    [
+      "exp.table3_full_generation_timing",
+      "verifier.package_artifacts"
+    ],
+    [
+      "exp.figures16_17_table15_cpu_ram",
+      "verifier.package_artifacts"
+    ],
+    [
+      "verifier.package_artifacts",
+      "decision.claim_gate"
+    ]
+  ],
+  "experiments": {
+    "figure2_temperature_curves": {
+      "kind": "figure_from_table1_runs",
+      "metric": "accuracy by temperature curves",
+      "minimum_for_exact_claim": "same raw runs as Table 1 plus plotting artifact"
+    },
+    "figures16_17_table15_cpu_ram": {
+      "kind": "generation_cpu_ram_profile",
+      "methods": [
+        "top_p",
+        "min_p",
+        "p_less"
+      ],
+      "metric": "CPU processing time and RAM usage during generation",
+      "minimum_for_exact_claim": "CPU/RAM traces binned into figure-style summaries and Table 15-style values"
+    },
+    "table1_reasoning_auc": {
+      "datasets": [
+        "CSQA",
+        "GPQA",
+        "GSM8K",
+        "QASC"
+      ],
+      "kind": "real_model_generation_evaluation",
+      "metric": "accuracy-vs-temperature AUC",
+      "minimum_for_exact_claim": "all target models, all four datasets, all temperatures, all samplers, required seed policy",
+      "models": [
+        "Llama-2-7B-Chat",
+        "Mistral-7B-Instruct",
+        "Llama3-70B-Instruct"
+      ],
+      "samplers": [
+        "top_p",
+        "min_p",
+        "epsilon",
+        "eta",
+        "mirostat",
+        "p_less",
+        "p_lessnorm"
+      ],
+      "temperatures": [
+        0.5,
+        0.7,
+        1.0,
+        1.5,
+        2.0
+      ]
+    },
+    "table2_writing_prompts": {
+      "dataset": "Writing Prompts",
+      "kind": "real_model_generation_preference_or_length_controlled_scoring",
+      "metric": "length-controlled win rate against default sampling reference",
+      "minimum_for_exact_claim": "100 prompts, reference generations, scoring method, all samplers",
+      "samplers": [
+        "top_p",
+        "min_p",
+        "epsilon",
+        "eta",
+        "mirostat",
+        "p_less",
+        "p_lessnorm"
+      ],
+      "temperatures": [
+        0.5,
+        0.7,
+        1.0,
+        1.5,
+        2.0
+      ]
+    },
+    "table3_sampling_time": {
+      "datasets": [
+        "GSM8K",
+        "GPQA"
+      ],
+      "kind": "full_generation_timing",
+      "metric": "average sampling seconds per generated token during model generation",
+      "minimum_for_exact_claim": "instrument per-token time inside the model generation loop; do not use sampler-only tensor timing",
+      "model": "Mistral-7B-Instruct"
+    }
+  },
+  "generated_scripts": {
+    "generation_harness": {
+      "path": "operational_p_less_generation_harness.py",
+      "purpose": "run real Transformers generation with official p-less sampler functions and baseline samplers",
+      "required_outputs": [
+        "raw_generations.jsonl",
+        "sampling_time_by_token.jsonl",
+        "cpu_ram_profile.jsonl",
+        "run_manifest.json"
+      ]
+    }
+  },
+  "models": {
+    "smoke_only": [
+      {
+        "hf_id": "sshleifer/tiny-gpt2",
+        "purpose": "real Transformers generation path validation only; never accepted as paper result"
+      }
+    ],
+    "target_exact": [
+      {
+        "access_note": "manual gated; exact rerun blocks without accepted HF access token",
+        "hf_candidates": [
+          "meta-llama/Llama-2-7b-chat-hf"
+        ],
+        "paper_name": "Llama-2-7B-Chat"
+      },
+      {
+        "access_note": "ungated; feasible on one 4090 for reduced sample rerun",
+        "hf_candidates": [
+          "mistralai/Mistral-7B-Instruct-v0.2",
+          "mistralai/Mistral-7B-Instruct-v0.3"
+        ],
+        "paper_name": "Mistral-7B-Instruct"
+      },
+      {
+        "access_note": "manual gated and likely multi-GPU/quantization required",
+        "hf_candidates": [
+          "meta-llama/Meta-Llama-3-70B-Instruct"
+        ],
+        "paper_name": "Llama3-70B-Instruct"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "action": "execute the paper's reproduction workflow from DAG instructions",
+      "id": "root.operational_author_loop",
+      "type": "author_loop"
+    },
+    {
+      "action": "clone primary repo then fallback if needed",
+      "id": "source.clone_official_repo",
+      "type": "download_code"
+    },
+    {
+      "action": "import official p_less_samplers.py and verify expected functions",
+      "id": "source.validate_sampler_code",
+      "type": "code_validation"
+    },
+    {
+      "action": "verify torch, transformers, datasets, accelerate, huggingface_hub, psutil",
+      "id": "env.verify_dependencies",
+      "type": "environment_check"
+    },
+    {
+      "action": "probe or download exact target model checkpoints named by DAG",
+      "id": "model.resolve_target_checkpoints",
+      "type": "model_download_plan"
+    },
+    {
+      "action": "probe or load benchmark splits named by DAG",
+      "id": "data.resolve_benchmark_splits",
+      "type": "data_download_plan"
+    },
+    {
+      "action": "write operational_p_less_generation_harness.py from DAG schema",
+      "id": "harness.write_generation_runner",
+      "type": "code_generation"
+    },
+    {
+      "action": "optional tiny real-model generation; cannot satisfy paper result gate",
+      "id": "harness.smoke_real_model_generation",
+      "type": "smoke_real_execution"
+    },
+    {
+      "action": "optional real Mistral-7B + GSM8K generation to produce non-exact but paper-model/paper-data artifacts",
+      "id": "harness.reduced_mistral_gsm8k_generation",
+      "type": "reduced_target_execution"
+    },
+    {
+      "action": "run exact target model/dataset/sampler/temperature grid and compute AUC",
+      "id": "exp.table1_reasoning_auc",
+      "type": "paper_experiment"
+    },
+    {
+      "action": "plot accuracy-temperature curves from Table 1 raw runs",
+      "id": "exp.figure2_temperature_curves",
+      "type": "paper_figure_reproduction"
+    },
+    {
+      "action": "run writing prompt generations and length-controlled scoring",
+      "id": "exp.table2_writing_prompts",
+      "type": "paper_experiment"
+    },
+    {
+      "action": "measure sampling time per token inside full Mistral generation",
+      "id": "exp.table3_full_generation_timing",
+      "type": "paper_experiment"
+    },
+    {
+      "action": "measure CPU time and RAM during generation",
+      "id": "exp.figures16_17_table15_cpu_ram",
+      "type": "paper_appendix_experiment"
+    },
+    {
+      "action": "score exact-answer reasoning tasks and aggregate AUC",
+      "id": "eval.score_reasoning",
+      "type": "evaluation"
+    },
+    {
+      "action": "score writing generations with length-controlled preference protocol",
+      "id": "eval.score_writing",
+      "type": "evaluation"
+    },
+    {
+      "action": "emit manifest, raw generations, timing traces, CPU/RAM traces, and table summaries",
+      "id": "verifier.package_artifacts",
+      "type": "artifact_package"
+    },
+    {
+      "action": "claim only exact reproduced channels; otherwise block and request DAG update",
+      "id": "decision.claim_gate",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "operational_policy": {
+    "allowed_intermediate": [
+      "repo clone",
+      "dependency check",
+      "model access/download check",
+      "dataset access/download check",
+      "tiny real-model smoke test only for harness validation",
+      "reduced feasible target-model generation test marked non-exact"
+    ],
+    "claim_gate": "paper_table_paragraph_figure_appendix_claims_require_real_reproduction_artifacts_or_blocked_status",
+    "do_not_accept": [
+      "synthetic random-logit sampler timing as paper timing",
+      "shape-only results as exact paper table reproduction",
+      "model-info probe as model-generation experiment",
+      "tiny-model smoke test as paper result"
+    ]
+  },
+  "resources": {
+    "cache_root_env": "HF_HOME",
+    "local_gpu_class": "single RTX 4090 is enough for Mistral-7B microbenchmark and smoke reruns; exact Llama3-70B requires multi-GPU or a smaller verified reproduction profile",
+    "preferred_gpu": "select_lowest_used_cuda_device"
+  },
+  "samplers": {
+    "implemented_from_official_repo": [
+      "p_less",
+      "p_lessnorm"
+    ],
+    "implemented_in_generated_harness": [
+      "top_p",
+      "min_p",
+      "epsilon",
+      "eta",
+      "mirostat"
+    ],
+    "paper_methods": [
+      "top_p",
+      "min_p",
+      "epsilon",
+      "eta",
+      "mirostat",
+      "p_less",
+      "p_lessnorm"
+    ]
+  },
+  "signature": "1acf5c26f450b5ab",
+  "source_code": {
+    "expected_head_if_available": "a681f23682a329099306eea9cf7b1dd0447e2eec",
+    "fallback_repo_url": "https://github.com/ryttry/p-less.git",
+    "official_sampler_file": "p_less_samplers.py",
+    "official_sampler_functions": [
+      "p_less_decode",
+      "p_less_norm_decode"
+    ],
+    "primary_repo_url": "https://github.com/ryttry/p-less-sampling.git",
+    "required_files": [
+      "README.md",
+      "p_less_samplers.py",
+      "p_less_examples.ipynb"
+    ]
+  },
+  "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+}

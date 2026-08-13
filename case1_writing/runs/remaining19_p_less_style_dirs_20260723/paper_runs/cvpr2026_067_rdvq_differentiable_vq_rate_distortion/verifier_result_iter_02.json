@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "adaptation",
+        "adjustment",
+        "blockage",
+        "dependencies",
+        "fidelity",
+        "heavy",
+        "license",
+        "limited",
+        "metadata",
+        "mismatch",
+        "range",
+        "rate",
+        "rate-gradient",
+        "reproduction",
+        "sensitivity",
+        "soft-hard",
+        "structural",
+        "temperature",
+        "test-time",
+        "ultra-low-bitrate"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "VQ rate-gradient blockage",
+        "ultra-low-bitrate structural fidelity",
+        "test-time rate adaptation"
+      ],
+      "score": 1.667,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "bitstream",
+        "completion",
+        "entropy",
+        "masked",
+        "multi-scale",
+        "prefix",
+        "relaxation",
+        "soft",
+        "tensor-rans",
+        "tokenizer",
+        "transformer"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "soft VQ relaxation",
+        "multi-scale VQ tokenizer",
+        "masked Transformer entropy model",
+        "prefix completion",
+        "tensor-rANS bitstream"
+      ],
+      "score": 0.917,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "256x256",
+        "ablation",
+        "bitrate",
+        "bitstream",
+        "bpp",
+        "clic2020",
+        "clic2020-test",
+        "clipiqa",
+        "control",
+        "curves",
+        "dists",
+        "div2k",
+        "div2k-val",
+        "estimated",
+        "fid",
+        "full-resolution",
+        "kid",
+        "kodak",
+        "lpips",
+        "ms-ssim",
+        "musiq",
+        "niqe",
+        "over",
+        "overlapping",
+        "patches",
+        "prefix-transfer",
+        "psnr",
+        "rate",
+        "real",
+        "sweep"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "Kodak RD curves",
+        "DIV2K-val RD curves",
+        "CLIC2020-test RD curves",
+        "DIV2K-val ablation table",
+        "estimated bitrate evaluation",
+        "real bitstream evaluation",
+        "full-resolution inference",
+        "FID/KID over overlapping 256x256 patches",
+        "prefix-transfer rate control sweep"
+      ],
+      "score": 2.667,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_datasets_not_downloaded+not_downloaded+not_rerun+result_not_rerun+weights_not_downloaded",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "Kodak RD curves; DIV2K-val RD curves; CLIC2020-test RD curves; DIV2K-val ablation table; estimated bitrate evaluation; real bitstream evaluation; full-resolution inference; FID/KID over overlapping 256x256 patches; prefix-transfer rate control sweep"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "bpp; DISTS; LPIPS; FID; KID; CLIPIQA; MUSIQ; NIQE; PSNR; MS-SSIM"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet; OpenImage; DF2K; Kodak; DIV2K validation; CLIC2020 test; ImageFolder-style image directories; FID_REF_ROOT/<dataset>_256teles; Hugging Face checkpoints not downloaded"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "four NVIDIA RTX 4090 GPUs for primary experiments; single NVIDIA RTX Pro 6000 GPU for DF2K high-resolution fine-tuning; NVIDIA RTX 4090 for 2K-image inference timing; PyTorch; torchrun/DDP; torchvision; pyiqa; cleanfid; pytorch-msssim; tensor-rANS C++17 extension"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "soft VQ relaxation; multi-scale VQ tokenizer; masked Transformer entropy model; prefix completion; tensor-rANS bitstream; tokenizer/tokenizer_image/models/quantizer.py; tokenizer/tokenizer_image/models/vq_model.py; tokenizer/tokenizer_image/models/ar_transformer.py; tokenizer/tokenizer_image/training/train_vq.py; my_inference.py; Real_Endecode_inference_single_stageAR.py; test.sh; test_Real.sh; utils/bitstream_container.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "iteration": 2,
+  "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+  "paper_title": "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_datasets_not_downloaded+not_downloaded+not_rerun+result_not_rerun+weights_not_downloaded",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

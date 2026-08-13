@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "alignment",
+        "bias",
+        "compact",
+        "cost",
+        "dependency",
+        "efficient",
+        "field",
+        "gap",
+        "generation",
+        "geometry-material",
+        "gpu",
+        "high-resolution",
+        "large",
+        "latents",
+        "limits",
+        "memory",
+        "native",
+        "non-rerun",
+        "public",
+        "reproduction",
+        "requirement",
+        "resolution",
+        "risk",
+        "takedown",
+        "topology",
+        "voxel",
+        "weight"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "native compact 3D latents",
+        "field topology limits",
+        "geometry-material alignment",
+        "high-resolution efficient 3D generation"
+      ],
+      "score": 2.25,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "attributes",
+        "autoencoding",
+        "dual",
+        "early-pruning",
+        "flexible",
+        "flow",
+        "grid",
+        "o-voxel",
+        "pbr",
+        "residual",
+        "sc-vae",
+        "shape",
+        "slat",
+        "sparse",
+        "structure",
+        "texture",
+        "upsampler",
+        "volumetric"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "O-Voxel",
+        "Flexible Dual Grid",
+        "volumetric PBR attributes",
+        "SC-VAE",
+        "sparse residual autoencoding",
+        "early-pruning upsampler",
+        "sparse structure flow",
+        "shape SLat flow",
+        "texture SLat flow"
+      ],
+      "score": 1.5,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "100",
+        "ablation",
+        "ablations",
+        "abo",
+        "about",
+        "architecture",
+        "asset",
+        "attribute",
+        "clip",
+        "clip-n",
+        "comparison",
+        "generation",
+        "h100",
+        "image",
+        "image-to-3d",
+        "lpips",
+        "participant",
+        "pbr",
+        "pref",
+        "prompt",
+        "psnr",
+        "reconstruction",
+        "resolution",
+        "runtime",
+        "sc-vae",
+        "scaling",
+        "shaded-image",
+        "shape-conditioned",
+        "sketchfab",
+        "study"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "3D asset reconstruction",
+        "image-to-3D generation",
+        "shape-conditioned PBR texture generation",
+        "SC-VAE ablation",
+        "test-time resolution scaling",
+        "user study",
+        "Toys4K and Sketchfab reconstruction",
+        "100 image prompt generation comparison",
+        "about 40 participant user study",
+        "PBR attribute and shaded-image reconstruction",
+        "architecture ablations",
+        "H100 runtime scaling"
+      ],
+      "score": 3.0,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag+not_downloaded",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "3D asset reconstruction; image-to-3D generation; shape-conditioned PBR texture generation; SC-VAE ablation; test-time resolution scaling; user study; Toys4K and Sketchfab reconstruction; 100 image prompt generation comparison; about 40 participant user study; PBR attribute and shaded-image reconstruction; architecture ablations; H100 runtime scaling"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "MD; CD; F1; PSNR; LPIPS; CLIP; CLIP-N; ULIP-2; Uni3D; Pref%"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "Objaverse-XL; ABO; HSSD; TexVerse; Toys4K; Sketchfab Featured; NanoBanana image prompts; TRELLIS.2-4B Hugging Face weights; O-Voxel .vxz assets; PBR dumps; rendered conditioning views; Toys4K assets; Sketchfab Featured assets"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "H100; A100; 24GB+ NVIDIA GPU; Linux CUDA workstation; Python 3.8+; PyTorch 2.6; CUDA 12.4; flash-attn; xformers optional; nvdiffrast; nvdiffrec; cumesh; o-voxel; flexgemm"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "O-Voxel; Flexible Dual Grid; volumetric PBR attributes; SC-VAE; sparse residual autoencoding; early-pruning upsampler; sparse structure flow; shape SLat flow; texture SLat flow; trellis2/pipelines/trellis2_image_to_3d.py; trellis2/pipelines/trellis2_texturing.py; o-voxel/o_voxel/convert/flexible_dual_grid.py; o-voxel/o_voxel/convert/volumetic_attr.py; example.py; example_texturing.py; data_toolkit"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "iteration": 2,
+  "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+  "paper_title": "Native and Compact Structured Latents for 3D Generation",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag+not_downloaded",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

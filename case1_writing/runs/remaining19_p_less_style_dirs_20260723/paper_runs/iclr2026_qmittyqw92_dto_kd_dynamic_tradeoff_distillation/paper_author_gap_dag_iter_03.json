@@ -1,0 +1,536 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.dto_kd_source_availability_gate"
+    ],
+    [
+      "ops.dto_kd_source_availability_gate",
+      "ops.dto_kd_h100_hardware_gate"
+    ],
+    [
+      "ops.dto_kd_h100_hardware_gate",
+      "ops.dto_kd_dataset_checkpoint_gate"
+    ],
+    [
+      "ops.dto_kd_dataset_checkpoint_gate",
+      "ops.dto_kd_faithful_reimplementation_gate"
+    ],
+    [
+      "ops.dto_kd_faithful_reimplementation_gate",
+      "ops.dto_kd_full_training_grid"
+    ],
+    [
+      "ops.dto_kd_full_training_grid",
+      "ops.dto_kd_metric_table_verifier_gate"
+    ],
+    [
+      "ops.dto_kd_metric_table_verifier_gate",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "ops.dto_kd_full_training_grid",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.explicit_blocker_after_dto_kd_preflight"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_dto_kd_external_source_and_full_training_contract"
+    ],
+    [
+      "loop1.required_update.update_dto_kd_external_source_and_full_training_contract",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation | families=systems_token_efficiency",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "fixed-weight KD ignores dynamic conflict; gradient conflict; gradient dominance; manual loss-weight tuning",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "directionally misaligned task and distillation gradients; one objective suppresses the other; data-free distillation not handled; no official source repository found",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "fixed-weight KD; DeiT KD; Token-Matching; VKD; ReviewKD++; MaskedKD; SRD; recent CVPR/ECCV/AAAI/NeurIPS KD methods; official benchmark baselines from DeiT and ViDT",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "multi-scale projectors; distillation head; task head; dynamic trade-off module; softmax-normalized amortized pi update",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=ImageNet classification; CIFAR-100 KD; COCO2017 object detection; metrics=Top-1 accuracy; AP; AP50; AP75; APS; APM; APL; protocols=300-epoch ImageNet training; 50-epoch COCO detection; component ablation; teacher-scale robustness",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=four NVIDIA H100 GPUs; runtimes=PyTorch",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=official source repository not found; code_artifacts=Algorithm 1; Equations 8-18; supplementary theorem proof; requires faithful reimplementation or official release before Loop 2 execution can converge",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=ImageNet-1K; CIFAR-100; MS-COCO; data_artifacts=ImageNet-1K; CIFAR-100; COCO2017; implementation_statuses=paper_text_grounded; github_repository_not_found",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Confirm no official DTO-KD code repo in OpenReview metadata, paper, supplement, status file, or local candidate repos; reject unrelated KD repos.",
+      "id": "ops.dto_kd_source_availability_gate",
+      "skill_role": "paper-specific external-source gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Require four NVIDIA H100 traces for the paper-shaped ImageNet/CIFAR/COCO training grid.",
+      "id": "ops.dto_kd_h100_hardware_gate",
+      "skill_role": "paper-specific external-source gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Resolve ImageNet-1K, CIFAR-100, COCO2017, RegNetY-160, DeiT Tiny/Small, ViDT-base, and ViDT nano/tiny/small artifacts.",
+      "id": "ops.dto_kd_dataset_checkpoint_gate",
+      "skill_role": "paper-specific external-source gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "If official code remains absent, implement Algorithm 1 and Equations 8-18 exactly enough to run classification/detection objectives.",
+      "id": "ops.dto_kd_faithful_reimplementation_gate",
+      "skill_role": "paper-specific external-source gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run ImageNet 300-epoch, CIFAR-100 six-pair, COCO 50-epoch, component ablation, teacher-scale robustness, and dynamic-pi/error-analysis protocols.",
+      "id": "ops.dto_kd_full_training_grid",
+      "skill_role": "paper-specific external-source gate",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Compare operational outputs against Table 1-5 and Figure 3-4; close shape can pass only from generated artifacts.",
+      "id": "ops.dto_kd_metric_table_verifier_gate",
+      "skill_role": "paper-specific external-source gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Block if source, H100 hardware, datasets, teacher/student checkpoints, full training outputs, or table/figure metric summaries are missing; feed exact debt into Loop 1.",
+      "id": "decision.explicit_blocker_after_dto_kd_preflight",
+      "skill_role": "paper-specific external-source gate",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid; converged=False; professional_ready=False; blocked_checks=['official_repo_source', 'gpu_requirement_interpretation', 'professional_artifact_package', 'result_shape_comparison_ready']; required_updates=['update.dto_kd_external_source_and_full_training_contract']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": "No official source repository found.",
+            "name": "official_repo_source",
+            "status": "blocked"
+          },
+          {
+            "detail": "Paper requires four H100; local RTX 4090 run would be reduced/proxy.",
+            "name": "gpu_requirement_interpretation",
+            "status": "blocked"
+          },
+          {
+            "detail": [
+              {
+                "detail": "OpenReview metadata, paper, supplement, status file, and local candidate repo scan do not provide an official DTO-KD source repo.",
+                "id": "dto_kd_official_source_repository_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Paper reports all experiments on four NVIDIA H100 GPUs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090; H100 count=0.",
+                "id": "dto_kd_four_h100_hardware_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing or unmaterialized dataset candidates: imagenet_1k, cifar100, coco2017",
+                "id": "dto_kd_required_datasets_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing teacher/student checkpoints or initialization artifacts: regnety_160_teacher, deit_tiny_student, deit_small_student, vidt_base_teacher, vidt_nano_tiny_small_students",
+                "id": "dto_kd_teacher_student_checkpoints_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No ImageNet 300-epoch, CIFAR-100 six-pair, COCO 50-epoch, ablation, teacher-scale, or Figure 3/4 raw outputs exist under the runner result root.",
+                "id": "dto_kd_full_training_grid_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Verifier needs outputs comparable to Table 1, Table 2, Table 3, Table 4, Table 5, Figure 3, and Figure 4 before accepting close result shape.",
+                "id": "dto_kd_result_shape_verifier_waiting_for_tables_figures",
+                "status": "blocked"
+              },
+              {
+                "detail": "Without official code, a faithful implementation from Algorithm 1 and Equations 8-18 must be created and validated before any experiment can count.",
+                "id": "dto_kd_reimplementation_required_but_unvalidated",
+                "status": "blocked"
+              }
+            ],
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          },
+          {
+            "detail": "requires full outputs for Table 1-5 and Figure 3-4 comparison.",
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.dto_kd_external_source_and_full_training_contract",
+            "reason": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+            "success_criteria": [
+              "official repo or faithful implementation exists",
+              "four-H100/data/checkpoint artifacts materialized",
+              "full ImageNet/CIFAR/COCO training outputs generated",
+              "verifier compares operational results to paper table and figure targets"
+            ]
+          }
+        ],
+        "status": null
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "official_repo_source",
+        "gpu_requirement_interpretation",
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_dto_kd_external_source_and_full_training_contract",
+      "oracle_values_exposed_to_loop2": false,
+      "required_update_id": "update.dto_kd_external_source_and_full_training_contract",
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "official repo or faithful implementation exists",
+        "four-H100/data/checkpoint artifacts materialized",
+        "full ImageNet/CIFAR/COCO training outputs generated",
+        "verifier compares operational results to paper table and figure targets"
+      ],
+      "type": "verifier_required_dag_repair"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "dto_kd_official_source_repository_missing",
+        "dto_kd_four_h100_hardware_missing",
+        "dto_kd_required_datasets_missing",
+        "dto_kd_teacher_student_checkpoints_missing",
+        "dto_kd_full_training_grid_missing",
+        "dto_kd_result_shape_verifier_waiting_for_tables_figures",
+        "dto_kd_reimplementation_required_but_unvalidated"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:13:12Z",
+      "iteration": 3,
+      "source": "dto_kd_external_professional_gate",
+      "status": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid"
+    },
+    {
+      "blocker_check_names": [
+        "official_repo_source",
+        "gpu_requirement_interpretation",
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:49:03Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.dto_kd_external_source_and_full_training_contract"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-23T18:40:25Z"
+    },
+    {
+      "blocker_ids": [
+        "dto_kd_official_source_repository_missing",
+        "dto_kd_four_h100_hardware_missing",
+        "dto_kd_required_datasets_missing",
+        "dto_kd_teacher_student_checkpoints_missing",
+        "dto_kd_full_training_grid_missing",
+        "dto_kd_result_shape_verifier_waiting_for_tables_figures",
+        "dto_kd_reimplementation_required_but_unvalidated"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T18:53:41Z",
+      "iteration": 3,
+      "source": "dto_kd_external_professional_gate",
+      "status": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid"
+    }
+  ],
+  "signature": "da619c1b5cec4ccc",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+  "target_title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+  "updated_at_utc": "2026-07-23T18:40:25Z"
+}

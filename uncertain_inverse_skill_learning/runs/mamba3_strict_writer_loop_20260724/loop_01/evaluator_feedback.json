@@ -1,0 +1,63 @@
+{
+  "schema_version": "dirs.strict_writer.evaluator_feedback.v1",
+  "loop": 1,
+  "blind_boundary": {
+    "writer_output_frozen_before_target_read": true,
+    "writer_output_sha256_recorded": true,
+    "expert_wording_in_feedback": false
+  },
+  "scores": {
+    "evidence_fidelity": 0.98,
+    "problem_and_gap_function": 0.92,
+    "method_mechanism_function": 0.96,
+    "headline_result_selection": 0.69,
+    "expert_artifact_function_coverage": 0.82,
+    "coherence_and_compression": 0.84,
+    "bounded_claims": 0.96,
+    "overall": 0.875
+  },
+  "hard_failures": [],
+  "error_attribution": {
+    "representation_errors": [
+      {
+        "id": "REP1",
+        "problem": "The selected graph does not contain an explicit artifact node for the incremental quality contribution of the MIMO variant relative to the base variant and strongest comparison.",
+        "authorized_edit": "Add or activate a chip-grounded comparative-gain node; do not copy target wording."
+      },
+      {
+        "id": "REP2",
+        "problem": "The selected graph does not explicitly represent the matched-quality reduction in recurrent state requirement, which is a compact quality-efficiency bridge.",
+        "authorized_edit": "Add or activate a state-size efficiency node if directly supported by the public chip."
+      }
+    ],
+    "selection_errors": [
+      {
+        "id": "SEL1",
+        "problem": "Three dense blocks of raw benchmark, formal-task, and kernel numbers consume too much of the abstract budget.",
+        "repair": "Prefer one model-quality comparison and one quality-efficiency anchor; retain other evidence in posterior alternatives rather than realizing every leaf."
+      },
+      {
+        "id": "SEL2",
+        "problem": "The retrieval limitation is valid but receives more abstract budget than its role warrants relative to the central model contribution.",
+        "repair": "Keep it as a low-mass qualifier or omit it if the final synthesis remains bounded."
+      }
+    ],
+    "execution_errors": [
+      {
+        "id": "EXE1",
+        "problem": "The output reads partly like a compressed result table rather than a single contribution argument.",
+        "repair": "Convert raw result enumeration into comparative claims while preserving exact chip support."
+      }
+    ],
+    "evaluation_errors": [],
+    "data_or_evidence_errors": []
+  },
+  "required_next_loop_tests": [
+    "Retain at least three trace hypotheses and update their weights rather than collapsing to one path.",
+    "Propose an explicit graph diff before freezing the loop-2 selected sub-DAG.",
+    "Do not add a node unless its input, output, evidence binding, and artifact function are stated.",
+    "Keep the next abstract inside the learned length band.",
+    "List all files read and confirm that forbidden target files remain unread."
+  ],
+  "feedback_level": "structural_and_functional_only_no_expert_phrases"
+}

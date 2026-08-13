@@ -1,0 +1,17 @@
+{
+  "pid": 1259344,
+  "started_at_utc": "2026-07-21T18:44:16Z",
+  "run_dir": "/tf/notebooks/yunbo/DIRS/case3_research_question_proposal/runs/gpu_agent_efficiency_gap_convergence_20260721",
+  "harness": "/tf/notebooks/yunbo/DIRS/case3_research_question_proposal/runs/gpu_agent_efficiency_gap_convergence_20260721/run_gap_convergence.py",
+  "duration_seconds": 86400,
+  "min_loops": 100,
+  "max_loops": 10000,
+  "stable_window": 20,
+  "loop_sleep_seconds": 30,
+  "stop_after_converged": false,
+  "reset_events": true,
+  "runtime": "local_deterministic_dirs_case3_case4_no_api",
+  "training_set": "20 selected code-fit papers",
+  "focus": "learn how to find a good research gap",
+  "control_verifier": "/tf/notebooks/yunbo/DIRS/case3_research_question_proposal/runs/gpu_agent_efficiency_gap_convergence_20260721/verify_longgoal_gap_control.py"
+}

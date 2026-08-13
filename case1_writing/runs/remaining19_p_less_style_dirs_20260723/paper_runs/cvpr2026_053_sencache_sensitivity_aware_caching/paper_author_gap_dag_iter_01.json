@@ -1,0 +1,185 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ]
+  ],
+  "graph_id": "CVPR2026_053_sencache_sensitivity_aware_caching_gap_dag_iter_01",
+  "nodes": [
+    {
+      "content": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching | families=diffusion_cache, video_token_merging",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "heuristic cache triggers; missing latent and timestep joint error model; static schedules ignore sample difficulty; video diffusion latency",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "first-order approximation drift; fixed epsilon suboptimality; model-specific porting; no explicit license; external checkpoints and sensitivity weights required",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "TeaCache; MagCache; global timestep/path optimization caches; Wan2.1; CogVideoX; LTX-Video",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "latent sensitivity norm; timestep sensitivity norm; epsilon tolerance gate; max consecutive cache length; cached residual reuse; finite-difference calibration",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=Wan2.1 T=50; CogVideoX T=50; LTX-Video T=50; VBench; LPIPS/PSNR/SSIM reference metrics; metrics=NFE; cache ratio; LPIPS; PSNR; SSIM; wall-clock latency; GFLOPs; consecutive-step MAE; protocols=compare at similar compute budgets; full VBench prompt set evaluation; 70 T2V-CompBench prompts for ablation; finite-difference calibration once per model; supplement 100-video MAE diagnostic",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=GH200 supplement latency; GPU inference for base video models; distributed calibration scripts; runtimes=PyTorch; Wan2.1; CogVideoX; LTX-Video; Diffusers; Hugging Face datasets",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache; code_artifacts=README.md; Wan2.1/sencache.py; Wan2.1/sensitivity_calculation.py; CogVideoX/sencache.py; CogVideoX/sensitivity_calculation_cogvid.py; LTX-Video/sencache.py; LTX-Video/sensitivity_calculation_LTX.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=MixKit calibration videos; VBench prompt set; T2V-CompBench ablation prompts; Hugging Face SenCache sensitivity weights; data_artifacts=sensitivity_wan21.npz expected by Wan script; sensitivity_ltx.npz expected by LTX script; HF Yassaman/SenCache sensitivity weights; external base-model checkpoints; test_prompt.json files; implementation_statuses=official_github_found; code_repo_cloned; code_inspected; precomputed_weights_referenced; results_not_rerun_locally; no_explicit_license_found; external_base_repos_required",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [],
+  "signature": "75c1e9d77030a2f1",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+  "target_title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching"
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "dirs.autonomous_strategy.controller_feedback.v1",
+  "round": 2,
+  "evaluation_boundary": {
+    "hidden_expert_abstract_used": false,
+    "expert_dag_used": false,
+    "lexical_similarity_used": false,
+    "assessment_type": "public-evidence functional comparison"
+  },
+  "hard_checks": {
+    "unsupported_factual_claims_found": [],
+    "leakage_failure": [],
+    "all_variants_in_word_band": true,
+    "reusable_skill_overclaim": false
+  },
+  "matched_comparison_judgment": {
+    "preferred_variant": "A",
+    "preference_confidence": "moderate",
+    "A_over_B_reasons": [
+      "The system-level comparison is recoverable earlier.",
+      "The recurrence ablation, state-dynamics diagnostic, and MIMO tradeoff remain locally associated with their method roles.",
+      "The information hierarchy is clearer despite preserving the central factual units."
+    ],
+    "B_retained_strengths": [
+      "Factual support and scope boundaries remain strong.",
+      "The control is grammatical and within the same style band."
+    ],
+    "comparison_limitations": [
+      "The intervention changes an operation bundle rather than one atomic operation.",
+      "The variants differ by 16 words and by connective wording, so causal attribution is not isolated.",
+      "The judgment is one controller's qualitative functional assessment, not a calibrated human preference result."
+    ]
+  },
+  "functional_assessment_of_selected_A": {
+    "factual_support": "pass",
+    "functional_role_coverage": "pass",
+    "mechanism_result_coherence": "pass",
+    "importance_weighted_selection": "improved_from_round_01",
+    "bounded_claims": "pass",
+    "clarity_and_compression": "improved_but_not_final",
+    "remaining_execution_issue": "The sentence announcing how supporting evidence is organized is meta-discourse; it spends surface budget explaining the strategy instead of realizing it."
+  },
+  "promotion_decision": {
+    "proposal_id": "S5_salience_anchor_then_selective_bindings",
+    "status": "local_strategy_hypothesis",
+    "confidence": "low_to_moderate",
+    "scope": "this Mamba-3 chip and this writer/controller comparison only",
+    "reason": "The writer autonomously proposed the operation bundle, retained factual grounding, stated a falsifiable prediction, and its matched realization was functionally preferred to the disrupted control.",
+    "reusable_skill": false,
+    "transfer_required": true
+  },
+  "outcome_level_feedback_for_round_03": [
+    "The autonomous S5 bundle is provisionally useful on this case, but the current intervention does not identify which operation in the bundle creates the gain.",
+    "The selected realization still contains meta-discourse that describes evidence organization rather than directly communicating the contribution.",
+    "Use the reserved novelty budget: independently propose a new strategy or a genuinely different recombination, not merely a cosmetic rewrite of S5.",
+    "Design one narrower counterfactual or challenge that can reject your own preferred explanation.",
+    "Retain multiple non-dominated strategies if the new candidate wins on a different function."
+  ],
+  "stop_decision": {
+    "stop": false,
+    "reason": "The preregistered novelty challenge round remains."
+  }
+}

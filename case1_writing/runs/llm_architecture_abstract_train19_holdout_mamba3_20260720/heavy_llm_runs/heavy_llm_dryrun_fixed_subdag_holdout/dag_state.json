@@ -1,0 +1,194 @@
+{
+  "nodes": [
+    "R1_abstract_as_argument",
+    "G1_problem_gap",
+    "C1_domain_context",
+    "O1_named_method_or_object",
+    "M1_architecture_or_mechanism",
+    "M2_efficiency_or_theory_detail",
+    "E1_evaluation_setup",
+    "E2_result_outcome",
+    "E3_quantitative_anchor",
+    "I1_interpretation_or_tradeoff",
+    "S1_bounded_takeaway",
+    "P1_length_and_placement_prior"
+  ],
+  "edges": [
+    "C1_domain_context->O1_named_method_or_object",
+    "E1_evaluation_setup->E2_result_outcome",
+    "E2_result_outcome->E3_quantitative_anchor",
+    "E2_result_outcome->I1_interpretation_or_tradeoff",
+    "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+    "G1_problem_gap->C1_domain_context",
+    "G1_problem_gap->O1_named_method_or_object",
+    "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+    "M1_architecture_or_mechanism->E1_evaluation_setup",
+    "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+    "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+    "O1_named_method_or_object->M1_architecture_or_mechanism",
+    "R1_abstract_as_argument->G1_problem_gap",
+    "S1_bounded_takeaway->P1_length_and_placement_prior"
+  ],
+  "node_weights": {
+    "C1_domain_context": 0.3684,
+    "E1_evaluation_setup": 1.0,
+    "E2_result_outcome": 1.0,
+    "E3_quantitative_anchor": 0.7895,
+    "G1_problem_gap": 1.0,
+    "I1_interpretation_or_tradeoff": 1.0,
+    "M1_architecture_or_mechanism": 1.0,
+    "M2_efficiency_or_theory_detail": 0.7368,
+    "O1_named_method_or_object": 1.0,
+    "P1_length_and_placement_prior": 1.0,
+    "R1_abstract_as_argument": 1.0,
+    "S1_bounded_takeaway": 1.0
+  },
+  "edge_weights": {
+    "C1_domain_context->O1_named_method_or_object": 0.3684,
+    "E1_evaluation_setup->E2_result_outcome": 1.0,
+    "E2_result_outcome->E3_quantitative_anchor": 0.7895,
+    "E2_result_outcome->I1_interpretation_or_tradeoff": 0.2105,
+    "E3_quantitative_anchor->I1_interpretation_or_tradeoff": 0.7895,
+    "G1_problem_gap->C1_domain_context": 0.3684,
+    "G1_problem_gap->O1_named_method_or_object": 0.6316,
+    "I1_interpretation_or_tradeoff->S1_bounded_takeaway": 1.0,
+    "M1_architecture_or_mechanism->E1_evaluation_setup": 0.2632,
+    "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail": 0.7368,
+    "M2_efficiency_or_theory_detail->E1_evaluation_setup": 0.7368,
+    "O1_named_method_or_object->M1_architecture_or_mechanism": 1.0,
+    "R1_abstract_as_argument->G1_problem_gap": 1.0,
+    "S1_bounded_takeaway->P1_length_and_placement_prior": 1.0
+  },
+  "feedback_log": [
+    {
+      "loop": 1,
+      "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+      "score": null,
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ],
+      "unsupported_claim_count": 0,
+      "missing_claim_count": 0,
+      "no_jump_count": 0,
+      "feedback_for_editor": ""
+    },
+    {
+      "loop": 1,
+      "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+      "score": null,
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ],
+      "unsupported_claim_count": 0,
+      "missing_claim_count": 0,
+      "no_jump_count": 0,
+      "feedback_for_editor": ""
+    }
+  ],
+  "loop_updates": [
+    {
+      "loop": 1,
+      "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+      "score": null,
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ],
+      "unsupported_claim_count": 0,
+      "missing_claim_count": 0,
+      "no_jump_count": 0,
+      "feedback_for_editor": ""
+    },
+    {
+      "loop": 1,
+      "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+      "score": null,
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ],
+      "unsupported_claim_count": 0,
+      "missing_claim_count": 0,
+      "no_jump_count": 0,
+      "feedback_for_editor": ""
+    }
+  ]
+}

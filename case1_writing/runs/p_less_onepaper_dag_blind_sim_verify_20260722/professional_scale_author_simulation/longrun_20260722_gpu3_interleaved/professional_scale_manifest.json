@@ -1,0 +1,124 @@
+{
+  "created_at_utc": "2026-07-22T22:53:54Z",
+  "dataset_records": {
+    "csqa": {
+      "limit": 100,
+      "loaded_rows": 100,
+      "name": "csqa",
+      "shot_count": 8,
+      "status": "pass"
+    },
+    "gsm8k": {
+      "limit": 100,
+      "loaded_rows": 100,
+      "name": "gsm8k",
+      "shot_count": 8,
+      "status": "pass"
+    },
+    "qasc": {
+      "limit": 100,
+      "loaded_rows": 100,
+      "name": "qasc",
+      "shot_count": 8,
+      "status": "pass"
+    },
+    "writingprompts": {
+      "limit": 100,
+      "loaded_rows": 100,
+      "name": "writingprompts",
+      "shot_count": 0,
+      "status": "pass"
+    }
+  },
+  "datasets": [
+    "gsm8k",
+    "csqa",
+    "qasc",
+    "writingprompts"
+  ],
+  "device": "cuda:0",
+  "gpu_snapshot_start": {
+    "created_at_utc": "2026-07-22T22:53:54Z",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_free_mib": 4043,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 20174,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 18
+      },
+      {
+        "index": 1,
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      },
+      {
+        "index": 2,
+        "memory_free_mib": 5032,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19182,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 20
+      },
+      {
+        "index": 3,
+        "memory_free_mib": 9866,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 14351,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      }
+    ],
+    "raw": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 20174, 4043, 18\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19182, 5032, 20\n3, NVIDIA GeForce RTX 4090, 24564, 14351, 9866, 0\n"
+    }
+  },
+  "hf_home": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_shared_hf_cache",
+  "max_new_tokens": 64,
+  "max_prompts_per_dataset": 100,
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.2",
+  "outputs": {
+    "cpu_ram_profile": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved/cpu_ram_profile.jsonl",
+    "raw_generations": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved/raw_generations.jsonl",
+    "sampling_time_by_token": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved/sampling_time_by_token.jsonl",
+    "scores": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved/scores.jsonl",
+    "status": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved/professional_scale_status.json"
+  },
+  "planned_generations": 14000,
+  "professional_scale_for_gap_convergence": true,
+  "reduced_or_small_run": false,
+  "repo_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/external/p-less-sampling",
+  "samplers": [
+    "top_p",
+    "min_p",
+    "epsilon",
+    "eta",
+    "mirostat",
+    "p_less",
+    "p_lessnorm"
+  ],
+  "scale": "professional_paper_shaped_long_run",
+  "scale_gate": {
+    "gate_reasons": [],
+    "loaded_dataset_count": 4,
+    "loaded_prompt_count": 400,
+    "planned_generations": 14000,
+    "professional_scale_for_gap_convergence": true,
+    "reduced_or_small_run": false,
+    "scale": "professional_paper_shaped_long_run"
+  },
+  "schedule": "interleaved_by_prompt_index_then_dataset_then_temperature_then_sampler",
+  "temperatures": [
+    0.5,
+    0.7,
+    1.0,
+    1.5,
+    2.0
+  ]
+}

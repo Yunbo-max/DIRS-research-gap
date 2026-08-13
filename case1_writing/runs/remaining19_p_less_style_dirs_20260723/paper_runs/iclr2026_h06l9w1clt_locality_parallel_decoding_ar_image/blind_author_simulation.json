@@ -1,0 +1,42 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "experiment_prediction": "benchmarks=class-conditional image generation; text-to-image generation; latency profiling; metrics=FID; IS; precision; recall; latency; throughput; GenEval score; protocols=50k sample FID; A100 bf16 profiling; ablation under XL 256x256 setting",
+  "gap_prediction": "raster AR image latency; naive parallel generation inconsistency; flat-token compatibility versus speed; stressors: same-step dependency conflict; query tokens generated independently; instruction token KV cache overhead; low relevance to speech/text-only work",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.032,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 11\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19262, 4952, 6\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "position query tokens; same-step mutual visibility mask; locality-aware order; KV cache; VQGAN tokenizer",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+  "paper_text_seen": false,
+  "paper_title": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_no_local_repository_encoded_in_dag",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": []
+}

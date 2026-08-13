@@ -1,0 +1,81 @@
+{
+  "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+  "evidence_strings_used_by_verifier_only": {
+    "evaluation_evidence": "The paper evaluates math/logical reasoning accuracy on CSQA, GPQA, GSM8K, and QASC; creative-writing length-controlled win rate on Writing Prompts; human preference for Llama2-7B Writing Prompts outputs; diversity via n-gram repetition diversity; generation length; and inference efficiency via sampling time, CPU time, RAM usage, and pairwise t-tests. Baselines include top-p, min-p, epsilon-sampling, eta-sampling, Mirostat, greedy decoding, and beam search.",
+    "experimental_setting_evidence": "Main experiments use Llama-2-7B-Chat, Mistral-7B-Instruct, and Llama3-70B-Instruct over temperatures 0.5, 0.7, 1.0, 1.5, and 2.0. Reasoning tasks use CSQA, GPQA, GSM8K, and QASC, with 8-shot chain-of-thought prompts for CSQA/GSM8K/QASC. Writing Prompts uses 100 sampled prompts and default sampling at temperature 1.0 as reference. Llama2-7B reasoning results average three random seeds; Mistral-7B and Llama3-70B use one seed due to compute constraints. Appendix experiments include DeepSeek-R1-Distill-Qwen-7B and generalized k-order thresholds.",
+    "gap_evidence": "Sampling-based LLM decoding often needs task- and temperature-specific hyperparameter tuning. Fixed-threshold or single-token-relative truncation methods can degrade at high temperature, admit too many low-quality tail tokens, or require edge-case fallbacks when the candidate set becomes empty.",
+    "method_evidence": "p-less computes a threshold from the entire temperature-adjusted token distribution: L[P] = sum_i p_i^2, interpretable as the probability of a correct random guess, the exponential of negative Renyi-2 collision entropy, and a second-moment statistic. Tokens with probability at least L[P] are retained and renormalized before sampling. p-lessnorm relaxes the threshold to (|V| * sum_i p_i^2 - 1) / (|V| - 1), favoring diversity when coherence pressure can be lower.",
+    "result_and_limitation_evidence": "p-less and p-lessnorm have top or near-top AUC across most reasoning datasets and models. Table 1 reports, for example, Mistral-7B AUCs of p-less/p-lessnorm: CSQA 0.697/0.692, GPQA 0.239/0.222, GSM8K 0.562/0.564, QASC 0.736/0.739; Llama2-7B p-less/p-lessnorm: CSQA 0.503/0.503, GPQA 0.242/0.248, GSM8K 0.267/0.267, QASC 0.537/0.538. On Writing Prompts, p-less is stable at high temperature: Llama2-7B p-less wins 65.64 at temperature 2.0 while top-p, epsilon, and eta collapse to 0.00. Sampling time is lowest for p-less at 0.01942 seconds per token versus min-p 0.02497 and top-p 0.02362."
+  },
+  "oracle_visibility": "verifier_only_not_copied_to_blind_workspace",
+  "paper_claims": {
+    "bounded_candidate_set": true,
+    "efficiency": "p-less has the lowest reported average sampling time per token in Table 3.",
+    "exact_full_reproduction_locally": "blocked_by_missing_full_evaluation_pipeline",
+    "gap": "Sampling methods need task/temperature hyperparameter tuning; fixed or single-token thresholds degrade or require fallbacks.",
+    "high_temperature_writing": "p-less remains stable at high temperature while top-p, epsilon, and eta collapse in the reported Writing Prompts setting.",
+    "hyperparameter_free": true,
+    "main_auc": "p-less and p-lessnorm are top or near-top across most reasoning datasets and models.",
+    "method": "p-less uses the full distribution second moment sum_i p_i^2 as a dynamic threshold; p-lessnorm relaxes it.",
+    "sort_free_threshold": true
+  },
+  "reported_numeric_anchors": {
+    "table15_cpu_ms_ram_gb": {
+      "min_p": {
+        "cpu_ms": 0.83,
+        "ram_gb": 2.545
+      },
+      "p_less": {
+        "cpu_ms": 0.62,
+        "ram_gb": 2.456
+      },
+      "top_p": {
+        "cpu_ms": 0.79,
+        "ram_gb": 2.535
+      }
+    },
+    "table1_llama2_auc_p_less": {
+      "CSQA": 0.503,
+      "GPQA": 0.242,
+      "GSM8K": 0.267,
+      "QASC": 0.537
+    },
+    "table1_llama2_auc_p_lessnorm": {
+      "CSQA": 0.503,
+      "GPQA": 0.248,
+      "GSM8K": 0.267,
+      "QASC": 0.538
+    },
+    "table1_mistral_auc_p_less": {
+      "CSQA": 0.697,
+      "GPQA": 0.239,
+      "GSM8K": 0.562,
+      "QASC": 0.736
+    },
+    "table1_mistral_auc_p_lessnorm": {
+      "CSQA": 0.692,
+      "GPQA": 0.222,
+      "GSM8K": 0.564,
+      "QASC": 0.739
+    },
+    "table2_llama2_temp2_win_rate": {
+      "epsilon": 0.0,
+      "eta": 0.0,
+      "min_p": 48.94,
+      "mirostat": 26.88,
+      "p_less": 65.64,
+      "p_lessnorm": 59.29,
+      "top_p": 0.0
+    },
+    "table3_sampling_time_seconds_per_token": {
+      "epsilon": 0.02259,
+      "eta": 0.0221,
+      "min_p": 0.02497,
+      "mirostat": 0.02278,
+      "p_less": 0.01942,
+      "top_p": 0.02362
+    }
+  },
+  "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+  "venue": "ICLR 2026 Oral"
+}

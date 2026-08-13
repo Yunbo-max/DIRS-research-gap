@@ -1,0 +1,234 @@
+{
+  "schema_version": "dirs.strict_writer.self_check.v1",
+  "loop": 3,
+  "word_count": 185,
+  "sentence_count": 9,
+  "style_profile_check": {
+    "recommended_target_words": 201,
+    "recommended_band": [
+      166,
+      236
+    ],
+    "within_band": true,
+    "surface_experimental_detail_compressed": true,
+    "omitted_from_surface_but_retained_in_graph": [
+      "Llama-3.1 tokenizer",
+      "2K context",
+      "lower model-scale endpoints"
+    ]
+  },
+  "factual_claims": [
+    {
+      "claim_id": "C1",
+      "abstract_sentence": 1,
+      "claim": "Attention prefill scales quadratically with context and KV-cache memory linearly, while recurrent alternatives can trail in capability or fail to use GPU decode hardware efficiently.",
+      "chip_evidence_paths": [
+        "$.problem_gap.summary",
+        "$.problem_gap.nodes[1].props.failure_modes",
+        "$.problem_gap.nodes[2].props.failure_modes",
+        "$.problem_gap.nodes[3].props.failure_modes"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C2",
+      "abstract_sentence": 2,
+      "claim": "Mamba-3 is an inference-first state-space architecture that jointly changes recurrence, state dynamics, and I/O structure.",
+      "chip_evidence_paths": [
+        "$.problem_gap.events[0].claim",
+        "$.method_mechanism.nodes[0].props"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C3",
+      "abstract_sentence": 3,
+      "claim": "Mamba-3 combines exponential-trapezoidal recurrence and trap interpolation, complex updates as data-dependent rotations, and rank-4 MIMO intended to raise decode arithmetic intensity.",
+      "chip_evidence_paths": [
+        "$.method_mechanism.nodes[4].props",
+        "$.method_mechanism.nodes[5].props",
+        "$.method_mechanism.nodes[6].props"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C4",
+      "abstract_sentence": 4,
+      "claim": "The model preserves linear-time processing with a fixed-size recurrent state.",
+      "chip_evidence_paths": [
+        "$.problem_gap.summary",
+        "$.method_mechanism.nodes[0].props.objective",
+        "$.method_mechanism.events[3].claim"
+      ],
+      "support": "direct architecture characterization"
+    },
+    {
+      "claim_id": "C5",
+      "abstract_sentence": 5,
+      "claim": "Models are pretrained up to 1.5B parameters on 100B FineWeb-Edu tokens.",
+      "chip_evidence_paths": [
+        "$.evaluation_validation.events[0].setting",
+        "$.experimental_setting.nodes[0].props"
+      ],
+      "support": "direct and surface-compressed"
+    },
+    {
+      "claim_id": "C6",
+      "abstract_sentence": 6,
+      "claim": "At 1.5B, MIMO moves from SISO's 10.35 perplexity and 56.4 average accuracy to 10.24 and 57.6; the highest listed non-Mamba-3 average is 55.8.",
+      "chip_evidence_paths": [
+        "$.result_outcome.nodes[0].props.fineweb_edu_ppl",
+        "$.result_outcome.nodes[0].props.average_accuracy",
+        "$.result_outcome.nodes[1].props.claim"
+      ],
+      "support": "direct values and direct incremental comparison"
+    },
+    {
+      "claim_id": "C7",
+      "abstract_sentence": 7,
+      "claim": "The complex-valued update produces substantial formal state-tracking gains over Mamba-2 and ablated variants.",
+      "chip_evidence_paths": [
+        "$.method_mechanism.nodes[5].props.effect",
+        "$.result_outcome.nodes[2].props",
+        "$.result_outcome.events[1].claim",
+        "$.evaluation_validation.events[2]"
+      ],
+      "support": "direct qualitative compression of quantitative and ablation evidence"
+    },
+    {
+      "claim_id": "C8",
+      "abstract_sentence": 8,
+      "claim": "At BF16 H100 d_state=128, MIMO kernel latency is 0.179 ms per token compared with Mamba-2 at 0.203 ms per token.",
+      "chip_evidence_paths": [
+        "$.result_outcome.nodes[4].props.bf16_dstate128_ms_per_token",
+        "$.evaluation_validation.nodes[3].props"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C9",
+      "abstract_sentence": 9,
+      "claim": "The reported comparisons support a bounded conclusion that richer state-space dynamics and MIMO improve quality while preserving efficient recurrent decoding.",
+      "chip_evidence_paths": [
+        "$.result_outcome.summary",
+        "$.result_outcome.events[0].claim",
+        "$.result_outcome.events[1].claim",
+        "$.result_outcome.events[2].claim"
+      ],
+      "support": "bounded synthesis"
+    }
+  ],
+  "unsupported_claim_audit": {
+    "unsupported_claims_found": [],
+    "all_quantitative_values_traced": true,
+    "matched_quality_state_reduction_claim_made": false,
+    "DATA1_status": "evidence_shortage",
+    "DATA1_reason": "$.experimental_setting.nodes[1] describes a state-size Pareto sweep but the chip contains no direct matched-quality state-reduction outcome.",
+    "no_7b_result_claim": true,
+    "no_general_dirs_convergence_claim": true,
+    "no_historical_author_process_claim": true,
+    "no_gflownet_training_claim": true,
+    "no_cross_paper_learning_claim": true
+  },
+  "hard_failures": {
+    "count": 0,
+    "items": []
+  },
+  "exact_structural_edits_from_loop_02": [
+    {
+      "operation": "PRESERVE_NODE",
+      "target": "n13_mimo_incremental_quality",
+      "reason": "Supported by direct chip evidence and accepted loop-2 evaluation."
+    },
+    {
+      "operation": "ADD_NODE",
+      "target": "n14_complex_capability_validation",
+      "input": [
+        "n5_complex_update",
+        "formal state-tracking comparison evidence"
+      ],
+      "output": "qualitative capability gain over Mamba-2 and ablated variants",
+      "evidence_binding": [
+        "$.result_outcome.nodes[2]",
+        "$.result_outcome.events[1]",
+        "$.evaluation_validation.events[2]"
+      ],
+      "artifact_function": "compact capability validation"
+    },
+    {
+      "operation": "UPDATE_NODE",
+      "target": "n7_training_context",
+      "change": "full surface protocol -> scale, corpus, and token count only; full protocol remains in graph evidence"
+    },
+    {
+      "operation": "UPDATE_NODE",
+      "target": "n12_bounded_synthesis",
+      "change": "add qualitative capability-validation input"
+    },
+    {
+      "operation": "DELETE_EDGE",
+      "target": "n5_complex_update -> n12_bounded_synthesis"
+    },
+    {
+      "operation": "ADD_EDGE",
+      "target": "n5_complex_update -> n14_complex_capability_validation"
+    },
+    {
+      "operation": "ADD_EDGE",
+      "target": "n14_complex_capability_validation -> n12_bounded_synthesis"
+    },
+    {
+      "operation": "REJECT_NODE",
+      "target": "matched_quality_recurrent_state_reduction",
+      "feedback_id": "DATA1",
+      "reason": "The result is absent from the public chip."
+    }
+  ],
+  "feedback_application_check": {
+    "REP3": "accepted through n14_complex_capability_validation without raw-score enumeration",
+    "SEL3": "accepted by compressing training details in surface realization",
+    "DATA1": "preserved as an evidence shortage",
+    "comparative_gain_node": "preserved"
+  },
+  "graph_execution_check": {
+    "graph_diff_recorded_before_freeze": true,
+    "selected_subdag_frozen_before_writing": true,
+    "selected_signature_changed_after_freeze": false,
+    "acyclic": true,
+    "all_nodes_reach_synthesis": true,
+    "trace_hypotheses_retained": 4,
+    "hypothesis_weights_normalized": true
+  },
+  "leakage_check": {
+    "forbidden_files_read": [],
+    "internet_used": false,
+    "repository_search_used": false,
+    "existing_mamba3_material_outside_allowed_inputs_read": false,
+    "expert_wording_reconstruction_attempted": false
+  },
+  "files_read_during_loop_03": [
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/evaluator_feedback.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/trace_hypotheses.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/selected_subdag.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/abstract.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/writer_self_check.json"
+  ],
+  "files_read_cumulative_through_loop_03": [
+    "iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+    "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/style_profile.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/04_learning_and_search_algorithms.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/09_learned_policy_vs_hard_constraints.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/PROTOCOL.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_01/trace_hypotheses.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_01/selected_subdag.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_01/abstract.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_01/writer_self_check.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_01/evaluator_feedback.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/trace_hypotheses.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/selected_subdag.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/abstract.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/writer_self_check.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/loop_02/evaluator_feedback.json"
+  ],
+  "stop_declaration": "Loop 3 complete. No loop-4 work was performed."
+}

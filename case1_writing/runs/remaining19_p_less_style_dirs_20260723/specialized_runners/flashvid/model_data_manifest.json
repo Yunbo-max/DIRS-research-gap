@@ -1,0 +1,680 @@
+{
+  "artifact_kind": "flashvid_model_data_manifest",
+  "created_at_utc": "2026-07-23T18:53:32Z",
+  "datasets": {
+    "assets_videomme_jsonl": {
+      "exists": true,
+      "first_record": {
+        "answer": "C",
+        "category": "Knowledge",
+        "duration": "short",
+        "input": "Select the best answer to the following multiple-choice question based on the video and the subtitles. Respond with only the letter (A, B, C, or D) of the correct option.\nWhen demonstrating the Germany modern Christmas tree is initially decorated with apples, candles and berries, which kind of the decoration has the largest number?\nA. Apples.\nB. Candles.\nC. Berries.\nD. The three kinds are of the same number.\n\nAnswer with the option's letter from the given choices directly.",
+        "question_id": "001-1",
+        "sub_category": "Humanity & History",
+        "task_category": "Counting Problem",
+        "videoID": "fFjv93ACGo8"
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/assets/videomme.jsonl",
+      "record_count": 2700
+    },
+    "lmms_eval_task_dirs": {
+      "egoschema": [
+        "egoschema",
+        "egoschema/egoschema.yaml",
+        "egoschema/egoschema_mcppl.yaml",
+        "egoschema/egoschema_subset.yaml",
+        "egoschema/egoschema_subset_mcppl.yaml"
+      ],
+      "longvideobench_val_v": [
+        "longvideobench/longvideobench_val_v.yaml"
+      ],
+      "mlvu_test": [
+        "mlvu/mlvu_test.yaml"
+      ],
+      "mvbench": [
+        "mvbench",
+        "mvbench/mvbench.yaml",
+        "mvbench/mvbench_action_antonym.yaml",
+        "mvbench/mvbench_action_count.yaml",
+        "mvbench/mvbench_action_localization.yaml",
+        "mvbench/mvbench_action_prediction.yaml",
+        "mvbench/mvbench_action_sequence.yaml",
+        "mvbench/mvbench_character_order.yaml",
+        "mvbench/mvbench_counterfactual_inference.yaml",
+        "mvbench/mvbench_egocentric_navigation.yaml",
+        "mvbench/mvbench_episodic_reasoning.yaml",
+        "mvbench/mvbench_fine_grained_action.yaml",
+        "mvbench/mvbench_fine_grained_pose.yaml",
+        "mvbench/mvbench_moving_attribute.yaml",
+        "mvbench/mvbench_moving_count.yaml",
+        "mvbench/mvbench_moving_direction.yaml",
+        "mvbench/mvbench_object_existence.yaml",
+        "mvbench/mvbench_object_interaction.yaml",
+        "mvbench/mvbench_object_shuffle.yaml",
+        "mvbench/mvbench_scene_transition.yaml",
+        "mvbench/mvbench_state_change.yaml",
+        "mvbench/mvbench_unexpected_action.yaml"
+      ],
+      "videomme": [
+        "videomme",
+        "videomme/convert_mcq_oe/videomme_convert_mcq_oe.yaml",
+        "videomme/gt_none_option/videomme_gt_none_option.yaml",
+        "videomme/no_visual/videomme_no_visual.yaml",
+        "videomme/number_option/videomme_number_option.yaml",
+        "videomme/random_choice/videomme_random_choice.yaml",
+        "videomme/revert_oe_mcq/videomme_revert_oe_mcq.yaml",
+        "videomme/video_only_abcd/videomme_video_only_abcd.yaml",
+        "videomme/videomme.yaml",
+        "videomme/videomme_long.yaml",
+        "videomme/videomme_long_w_subtitle.yaml",
+        "videomme/videomme_w_subtitle.yaml"
+      ]
+    },
+    "videomme_hf_cache_candidates": [
+      {
+        "exists": false,
+        "file_count": 0,
+        "path": "/root/.cache/huggingface/videomme/data",
+        "size_human": null
+      },
+      {
+        "exists": false,
+        "file_count": 0,
+        "path": "/tf/notebooks/.cache/huggingface/videomme/data",
+        "size_human": null
+      }
+    ]
+  },
+  "hf_token_available": true,
+  "models": [
+    {
+      "file_count": 18,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 9719
+        },
+        {
+          "path": "added_tokens.json",
+          "size_bytes": 101
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 3023
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 248
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671853
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4877668032
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4932751008
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4994571904
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 1255812224
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 80832
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 393
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 367
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7028227
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 1539
+        },
+        {
+          "path": "trainer_state.json",
+          "size_bytes": 2253346
+        },
+        {
+          "path": "training_args.bin",
+          "size_bytes": 7928
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 9719
+        },
+        {
+          "path": "added_tokens.json",
+          "size_bytes": 101
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 3023
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 248
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671853
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4877668032
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4932751008
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4994571904
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 1255812224
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 80832
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 393
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 367
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7028227
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 1539
+        },
+        {
+          "path": "trainer_state.json",
+          "size_bytes": 2253346
+        },
+        {
+          "path": "training_args.bin",
+          "size_bytes": 7928
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "repo_id": "lmms-lab/llava-onevision-qwen2-7b-ov",
+      "repo_type": "model",
+      "status": "available",
+      "total_size_bytes": 16074639096
+    },
+    {
+      "file_count": 18,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7557
+        },
+        {
+          "path": "added_tokens.json",
+          "size_bytes": 100
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 3104
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 248
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671853
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4877668032
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4932751008
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4994571904
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 1255812224
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 80832
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 392
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 367
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7028015
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 1538
+        },
+        {
+          "path": "trainer_state.json",
+          "size_bytes": 2297844
+        },
+        {
+          "path": "training_args.bin",
+          "size_bytes": 7864
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7557
+        },
+        {
+          "path": "added_tokens.json",
+          "size_bytes": 100
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 3104
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 248
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671853
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4877668032
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4932751008
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4994571904
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 1255812224
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 80832
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 392
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 367
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7028015
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 1538
+        },
+        {
+          "path": "trainer_state.json",
+          "size_bytes": 2297844
+        },
+        {
+          "path": "training_args.bin",
+          "size_bytes": 7864
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "repo_id": "lmms-lab/LLaVA-Video-7B-Qwen2",
+      "repo_type": "model",
+      "status": "available",
+      "total_size_bytes": 16074681234
+    },
+    {
+      "file_count": 16,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 18574
+        },
+        {
+          "path": "chat_template.json",
+          "size_bytes": 1050
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 1374
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 216
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671839
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "size_bytes": 3900233256
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "size_bytes": 3864726320
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "size_bytes": 3864726424
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "size_bytes": 3864733680
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "size_bytes": 1089994880
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 57619
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 350
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7031645
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 5702
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 18574
+        },
+        {
+          "path": "chat_template.json",
+          "size_bytes": 1050
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 1374
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 216
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671839
+        },
+        {
+          "path": "model-00001-of-00005.safetensors",
+          "size_bytes": 3900233256
+        },
+        {
+          "path": "model-00002-of-00005.safetensors",
+          "size_bytes": 3864726320
+        },
+        {
+          "path": "model-00003-of-00005.safetensors",
+          "size_bytes": 3864726424
+        },
+        {
+          "path": "model-00004-of-00005.safetensors",
+          "size_bytes": 3864733680
+        },
+        {
+          "path": "model-00005-of-00005.safetensors",
+          "size_bytes": 1089994880
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 57619
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 350
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7031645
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 5702
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "repo_type": "model",
+      "status": "available",
+      "total_size_bytes": 16595981281
+    },
+    {
+      "file_count": 16,
+      "files_head": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7133
+        },
+        {
+          "path": "chat_template.json",
+          "size_bytes": 5499
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 1474
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 269
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671839
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4902275944
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4915962496
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4999831048
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 2716270024
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 67759
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 390
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7032403
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 10868
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size_bytes": 385
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "files_tail": [
+        {
+          "path": ".gitattributes",
+          "size_bytes": 1519
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7133
+        },
+        {
+          "path": "chat_template.json",
+          "size_bytes": 5499
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 1474
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 269
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671839
+        },
+        {
+          "path": "model-00001-of-00004.safetensors",
+          "size_bytes": 4902275944
+        },
+        {
+          "path": "model-00002-of-00004.safetensors",
+          "size_bytes": 4915962496
+        },
+        {
+          "path": "model-00003-of-00004.safetensors",
+          "size_bytes": 4999831048
+        },
+        {
+          "path": "model-00004-of-00004.safetensors",
+          "size_bytes": 2716270024
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 67759
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 390
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 7032403
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 10868
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size_bytes": 385
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833
+        }
+      ],
+      "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "repo_type": "model",
+      "status": "available",
+      "total_size_bytes": 17545915883
+    }
+  ],
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging"
+}

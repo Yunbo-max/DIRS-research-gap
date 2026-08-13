@@ -1,0 +1,2176 @@
+{
+  "artifact_kind": "seacache_specialized_verifier",
+  "blind_contract_checked": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-24T13:31:58Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_052_seacache_spectral_evolution_cache/paper_author_gap_dag.json",
+  "environment": {
+    "artifact_kind": "seacache_environment_manifest",
+    "compileall_support_check": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.213,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "created_at_utc": "2026-07-24T13:31:54Z",
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 8108,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16109,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 98
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 7796,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16417,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "import_probes": {
+      "calflops": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('calflops'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.023,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'calflops'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "diffusers": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('diffusers'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "hyvideo": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('hyvideo'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.023,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'hyvideo'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "lpips": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('lpips'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.023,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'lpips'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "skimage": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('skimage'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.023,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'skimage'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "vbench": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('vbench'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'vbench'\n",
+        "stdout": "",
+        "timeout": false
+      },
+      "wan": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "import importlib; m=importlib.import_module('wan'); print(getattr(m, '__version__', 'imported'))"
+        ],
+        "cwd": null,
+        "returncode": 1,
+        "seconds": 0.024,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'wan'\n",
+        "stdout": "",
+        "timeout": false
+      }
+    },
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.053,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 16109, 8108, 99\n1, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 98\n2, NVIDIA GeForce RTX 4090, 24564, 16417, 7796, 99\n3, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 99\n",
+      "timeout": false
+    },
+    "packages": {
+      "accelerate": "1.11.0",
+      "calflops": null,
+      "diffusers": null,
+      "flash-attn": null,
+      "huggingface_hub": "0.36.0",
+      "loguru": "0.7.3",
+      "lpips": null,
+      "opencv-python": null,
+      "scikit-image": null,
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.51.2",
+      "vbench": null,
+      "xfuser": null
+    },
+    "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+    "professional_hardware_expected_by_paper": [
+      "NVIDIA RTX PRO 6000 Blackwell for README latency examples",
+      "NVIDIA A100 for paper/DAG diffusion evaluation surface"
+    ],
+    "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+    "python_processes": {
+      "cmd": [
+        "bash",
+        "-lc",
+        "ps -eo pid,etime,cmd | rg 'prophet_custom_full_gsm8k_runner|seacache_generate|python' || true"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.007,
+      "stderr": "",
+      "stdout": "   2355    01:11:17 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 0 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2 --run-label table1_threshold_relaxed_6_4_2 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 6.0 --mid-threshold 4.0 --late-threshold 2.0\n   2465    01:11:14 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 1 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1 --run-label table1_threshold_relaxed_5_3_1 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 5.0 --mid-threshold 3.0 --late-threshold 1.0\n   2714    01:11:11 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 2 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5 --run-label table1_threshold_relaxed_4_2_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 4.0 --mid-threshold 2.0 --late-threshold 0.5\n   2903    01:11:08 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5 --run-label table1_threshold_relaxed_3_1p5_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 3.0 --mid-threshold 1.5 --late-threshold 0.5\n  12618    01:00:40 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_goal_supervisor.py --interval-seconds 60\n  79779       00:17 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/professional_gate_sweep.py --scope all --run --max-count 4 --timeout-seconds 180\n  80410       00:00 /opt/conda/bin/python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/run_seacache_professional_gate.py\n  80423       00:00 bash -lc ps -eo pid,etime,cmd | rg 'prophet_custom_full_gsm8k_runner|seacache_generate|python' || true\n  80428       00:00 rg prophet_custom_full_gsm8k_runner|seacache_generate|python\n",
+      "timeout": false
+    },
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache",
+    "sea_filter_unit_support_check": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib.util\nimport torch\npath = '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/util_seacache.py'\nspec = importlib.util.spec_from_file_location(\"util_seacache\", path)\nmod = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(mod)\nclass S:\n    sigmas = torch.linspace(1.0, 0.0, 8)\n    num_inference_steps = 8\nx = torch.randn(1, 4, 4, 4)\ny = mod.apply_sea_with_scheduler(x, S(), 3, dims=(-2, -3), norm_mode=\"mean\")\nprint({\"shape\": list(y.shape), \"finite\": bool(torch.isfinite(y).all()), \"rel_l1\": round(mod.rel_l1(y, x), 6)})"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.641,
+      "stderr": "",
+      "stdout": "{'shape': [1, 4, 4, 4], 'finite': True, 'rel_l1': 0.188544}\n",
+      "timeout": false
+    }
+  },
+  "model_data_manifest": {
+    "artifact_kind": "seacache_model_data_manifest",
+    "created_at_utc": "2026-07-24T13:31:58Z",
+    "datasets_and_metric_artifacts": [
+      {
+        "id": "drawbench_200_prompts",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "DrawBench",
+          "drawbench",
+          "prompts/drawbench",
+          "drawbench_prompts"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "200 DrawBench prompts for FLUX.1-dev T2I evaluation"
+      },
+      {
+        "id": "vbench_944_prompts_and_tooling",
+        "ignored_local_matches": [
+          {
+            "file_count": 5,
+            "is_dir": true,
+            "path": "/root/.cache/huggingface/hub/datasets--zai-org--LVBench",
+            "size_human": "40K"
+          }
+        ],
+        "local_hints": [
+          "VBench",
+          "vbench",
+          "prompts/vbench",
+          "vbench_prompts"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "944 VBench prompts plus VBench scoring dimensions for T2V evaluation"
+      },
+      {
+        "id": "cyclereward_eval",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "CycleReward",
+          "cyclereward"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "CycleReward prompt/evaluation tooling and average-rank scoring"
+      },
+      {
+        "id": "compressedvqa_eval",
+        "ignored_local_matches": [],
+        "local_hints": [
+          "CompressedVQA",
+          "compressedvqa"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "required": "CompressedVQA reference/evaluation artifacts for video quality scoring"
+      }
+    ],
+    "models": [
+      {
+        "hf_manifest": {
+          "file_count": 29,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1655
+            },
+            {
+              "path": "LICENSE.md",
+              "size_bytes": 18621
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 4394
+            },
+            {
+              "path": "ae.safetensors",
+              "size_bytes": 335304388
+            },
+            {
+              "path": "dev_grid.jpg",
+              "size_bytes": 1301528
+            },
+            {
+              "path": "flux1-dev.safetensors",
+              "size_bytes": 23802932552
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 536
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 273
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 613
+            },
+            {
+              "path": "text_encoder/model.safetensors",
+              "size_bytes": 246144352
+            },
+            {
+              "path": "text_encoder_2/config.json",
+              "size_bytes": 782
+            },
+            {
+              "path": "text_encoder_2/model-00001-of-00002.safetensors",
+              "size_bytes": 4994582224
+            },
+            {
+              "path": "text_encoder_2/model-00002-of-00002.safetensors",
+              "size_bytes": 4530066360
+            },
+            {
+              "path": "text_encoder_2/model.safetensors.index.json",
+              "size_bytes": 19885
+            },
+            {
+              "path": "tokenizer/merges.txt",
+              "size_bytes": 524619
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 588
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 705
+            },
+            {
+              "path": "tokenizer/vocab.json",
+              "size_bytes": 1059962
+            },
+            {
+              "path": "tokenizer_2/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer_2/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer_2/tokenizer.json",
+              "size_bytes": 2424235
+            },
+            {
+              "path": "tokenizer_2/tokenizer_config.json",
+              "size_bytes": 20817
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 378
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+              "size_bytes": 9983040304
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+              "size_bytes": 9949328904
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+              "size_bytes": 3870584832
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 121262
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 820
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 167666902
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1655
+            },
+            {
+              "path": "LICENSE.md",
+              "size_bytes": 18621
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 4394
+            },
+            {
+              "path": "ae.safetensors",
+              "size_bytes": 335304388
+            },
+            {
+              "path": "dev_grid.jpg",
+              "size_bytes": 1301528
+            },
+            {
+              "path": "flux1-dev.safetensors",
+              "size_bytes": 23802932552
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 536
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 273
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 613
+            },
+            {
+              "path": "text_encoder/model.safetensors",
+              "size_bytes": 246144352
+            },
+            {
+              "path": "text_encoder_2/config.json",
+              "size_bytes": 782
+            },
+            {
+              "path": "text_encoder_2/model-00001-of-00002.safetensors",
+              "size_bytes": 4994582224
+            },
+            {
+              "path": "text_encoder_2/model-00002-of-00002.safetensors",
+              "size_bytes": 4530066360
+            },
+            {
+              "path": "text_encoder_2/model.safetensors.index.json",
+              "size_bytes": 19885
+            },
+            {
+              "path": "tokenizer/merges.txt",
+              "size_bytes": 524619
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 588
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 705
+            },
+            {
+              "path": "tokenizer/vocab.json",
+              "size_bytes": 1059962
+            },
+            {
+              "path": "tokenizer_2/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer_2/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer_2/tokenizer.json",
+              "size_bytes": 2424235
+            },
+            {
+              "path": "tokenizer_2/tokenizer_config.json",
+              "size_bytes": 20817
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 378
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+              "size_bytes": 9983040304
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+              "size_bytes": 9949328904
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+              "size_bytes": 3870584832
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 121262
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 820
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 167666902
+            }
+          ],
+          "repo_id": "black-forest-labs/FLUX.1-dev",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 57885946690
+        },
+        "id": "flux_dev",
+        "ignored_local_matches": [],
+        "kind": "hf_model",
+        "local_hints": [
+          "models--black-forest-labs--FLUX.1-dev"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "FLUX.1-dev 50-step T2I reference and SeaCache sweeps",
+        "repo_id": "black-forest-labs/FLUX.1-dev"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 28,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1668
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 3681
+            },
+            {
+              "path": "ae.safetensors",
+              "size_bytes": 335304388
+            },
+            {
+              "path": "flux1-schnell.safetensors",
+              "size_bytes": 23782506688
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 536
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 274
+            },
+            {
+              "path": "schnell_grid.jpeg",
+              "size_bytes": 1671111
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 613
+            },
+            {
+              "path": "text_encoder/model.safetensors",
+              "size_bytes": 246144352
+            },
+            {
+              "path": "text_encoder_2/config.json",
+              "size_bytes": 782
+            },
+            {
+              "path": "text_encoder_2/model-00001-of-00002.safetensors",
+              "size_bytes": 4994582224
+            },
+            {
+              "path": "text_encoder_2/model-00002-of-00002.safetensors",
+              "size_bytes": 4530066360
+            },
+            {
+              "path": "text_encoder_2/model.safetensors.index.json",
+              "size_bytes": 19885
+            },
+            {
+              "path": "tokenizer/merges.txt",
+              "size_bytes": 524619
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 588
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 705
+            },
+            {
+              "path": "tokenizer/vocab.json",
+              "size_bytes": 1059962
+            },
+            {
+              "path": "tokenizer_2/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer_2/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer_2/tokenizer.json",
+              "size_bytes": 2424235
+            },
+            {
+              "path": "tokenizer_2/tokenizer_config.json",
+              "size_bytes": 20817
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 321
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+              "size_bytes": 9962580296
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+              "size_bytes": 9949328904
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+              "size_bytes": 3870584832
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 120822
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 774
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 167666902
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1668
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 3681
+            },
+            {
+              "path": "ae.safetensors",
+              "size_bytes": 335304388
+            },
+            {
+              "path": "flux1-schnell.safetensors",
+              "size_bytes": 23782506688
+            },
+            {
+              "path": "model_index.json",
+              "size_bytes": 536
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "size_bytes": 274
+            },
+            {
+              "path": "schnell_grid.jpeg",
+              "size_bytes": 1671111
+            },
+            {
+              "path": "text_encoder/config.json",
+              "size_bytes": 613
+            },
+            {
+              "path": "text_encoder/model.safetensors",
+              "size_bytes": 246144352
+            },
+            {
+              "path": "text_encoder_2/config.json",
+              "size_bytes": 782
+            },
+            {
+              "path": "text_encoder_2/model-00001-of-00002.safetensors",
+              "size_bytes": 4994582224
+            },
+            {
+              "path": "text_encoder_2/model-00002-of-00002.safetensors",
+              "size_bytes": 4530066360
+            },
+            {
+              "path": "text_encoder_2/model.safetensors.index.json",
+              "size_bytes": 19885
+            },
+            {
+              "path": "tokenizer/merges.txt",
+              "size_bytes": 524619
+            },
+            {
+              "path": "tokenizer/special_tokens_map.json",
+              "size_bytes": 588
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "size_bytes": 705
+            },
+            {
+              "path": "tokenizer/vocab.json",
+              "size_bytes": 1059962
+            },
+            {
+              "path": "tokenizer_2/special_tokens_map.json",
+              "size_bytes": 2543
+            },
+            {
+              "path": "tokenizer_2/spiece.model",
+              "size_bytes": 791656
+            },
+            {
+              "path": "tokenizer_2/tokenizer.json",
+              "size_bytes": 2424235
+            },
+            {
+              "path": "tokenizer_2/tokenizer_config.json",
+              "size_bytes": 20817
+            },
+            {
+              "path": "transformer/config.json",
+              "size_bytes": 321
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+              "size_bytes": 9962580296
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+              "size_bytes": 9949328904
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+              "size_bytes": 3870584832
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 120822
+            },
+            {
+              "path": "vae/config.json",
+              "size_bytes": 774
+            },
+            {
+              "path": "vae/diffusion_pytorch_model.safetensors",
+              "size_bytes": 167666902
+            }
+          ],
+          "repo_id": "black-forest-labs/FLUX.1-schnell",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 57845410538
+        },
+        "id": "flux_schnell_support",
+        "ignored_local_matches": [],
+        "kind": "hf_model",
+        "local_hints": [
+          "models--black-forest-labs--FLUX.1-schnell"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "support model only; not a substitute for FLUX.1-dev paper grid",
+        "repo_id": "black-forest-labs/FLUX.1-schnell"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 22,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2232
+            },
+            {
+              "path": "LICENSE.txt",
+              "size_bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16913
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/.DS_Store",
+              "size_bytes": 6148
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 249
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors",
+              "size_bytes": 5676070424
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2232
+            },
+            {
+              "path": "LICENSE.txt",
+              "size_bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16913
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/.DS_Store",
+              "size_bytes": 6148
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 249
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors",
+              "size_bytes": 5676070424
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            }
+          ],
+          "repo_id": "Wan-AI/Wan2.1-T2V-1.3B",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 17573837064
+        },
+        "id": "wan21_t2v_13b",
+        "ignored_local_matches": [],
+        "kind": "local_or_hf_model",
+        "local_hints": [
+          "Wan2.1-T2V-1.3B",
+          "models--Wan-AI--Wan2.1-T2V-1.3B"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "Wan2.1 1.3B T2V latency/quality result surface",
+        "repo_id": "Wan-AI/Wan2.1-T2V-1.3B"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 27,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2244
+            },
+            {
+              "path": "LICENSE.txt",
+              "size_bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16981
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 250
+            },
+            {
+              "path": "diffusion_pytorch_model-00001-of-00006.safetensors",
+              "size_bytes": 9887603256
+            },
+            {
+              "path": "diffusion_pytorch_model-00002-of-00006.safetensors",
+              "size_bytes": 9839059648
+            },
+            {
+              "path": "diffusion_pytorch_model-00003-of-00006.safetensors",
+              "size_bytes": 9839059744
+            },
+            {
+              "path": "diffusion_pytorch_model-00004-of-00006.safetensors",
+              "size_bytes": 9839059744
+            },
+            {
+              "path": "diffusion_pytorch_model-00005-of-00006.safetensors",
+              "size_bytes": 9839059744
+            },
+            {
+              "path": "diffusion_pytorch_model-00006-of-00006.safetensors",
+              "size_bytes": 7910235256
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 96805
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2244
+            },
+            {
+              "path": "LICENSE.txt",
+              "size_bytes": 11357
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16981
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 250
+            },
+            {
+              "path": "diffusion_pytorch_model-00001-of-00006.safetensors",
+              "size_bytes": 9887603256
+            },
+            {
+              "path": "diffusion_pytorch_model-00002-of-00006.safetensors",
+              "size_bytes": 9839059648
+            },
+            {
+              "path": "diffusion_pytorch_model-00003-of-00006.safetensors",
+              "size_bytes": 9839059744
+            },
+            {
+              "path": "diffusion_pytorch_model-00004-of-00006.safetensors",
+              "size_bytes": 9839059744
+            },
+            {
+              "path": "diffusion_pytorch_model-00005-of-00006.safetensors",
+              "size_bytes": 9839059744
+            },
+            {
+              "path": "diffusion_pytorch_model-00006-of-00006.safetensors",
+              "size_bytes": 7910235256
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 96805
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            }
+          ],
+          "repo_id": "Wan-AI/Wan2.1-T2V-14B",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 69051934770
+        },
+        "id": "wan21_t2v_14b",
+        "ignored_local_matches": [],
+        "kind": "local_or_hf_model",
+        "local_hints": [
+          "Wan2.1-T2V-14B",
+          "models--Wan-AI--Wan2.1-T2V-14B"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "Wan2.1 14B T2V latency/quality result surface",
+        "repo_id": "Wan-AI/Wan2.1-T2V-14B"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 32,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 2249
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 16149
+            },
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 250
+            },
+            {
+              "path": "diffusion_pytorch_model-00001-of-00007.safetensors",
+              "size_bytes": 9847223624
+            },
+            {
+              "path": "diffusion_pytorch_model-00002-of-00007.safetensors",
+              "size_bytes": 9797021016
+            },
+            {
+              "path": "diffusion_pytorch_model-00003-of-00007.safetensors",
+              "size_bytes": 9797041744
+            },
+            {
+              "path": "diffusion_pytorch_model-00004-of-00007.safetensors",
+              "size_bytes": 9692142864
+            },
+            {
+              "path": "diffusion_pytorch_model-00005-of-00007.safetensors",
+              "size_bytes": 9692142864
+            },
+            {
+              "path": "diffusion_pytorch_model-00006-of-00007.safetensors",
+              "size_bytes": 9692142864
+            },
+            {
+              "path": "diffusion_pytorch_model-00007-of-00007.safetensors",
+              "size_bytes": 7061933536
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 116451
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth",
+              "size_bytes": 4772359047
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            },
+            {
+              "path": "xlm-roberta-large/sentencepiece.bpe.model",
+              "size_bytes": 5069051
+            },
+            {
+              "path": "xlm-roberta-large/special_tokens_map.json",
+              "size_bytes": 280
+            }
+          ],
+          "files_tail": [
+            {
+              "path": "Wan2.1_VAE.pth",
+              "size_bytes": 507609880
+            },
+            {
+              "path": "assets/comp_effic.png",
+              "size_bytes": 1793594
+            },
+            {
+              "path": "assets/data_for_diff_stage.jpg",
+              "size_bytes": 528268
+            },
+            {
+              "path": "assets/i2v_res.png",
+              "size_bytes": 891681
+            },
+            {
+              "path": "assets/logo.png",
+              "size_bytes": 56322
+            },
+            {
+              "path": "assets/t2v_res.jpg",
+              "size_bytes": 301030
+            },
+            {
+              "path": "assets/vben_1.3b_vs_sota.png",
+              "size_bytes": 515765
+            },
+            {
+              "path": "assets/vben_vs_sota.png",
+              "size_bytes": 1552119
+            },
+            {
+              "path": "assets/video_dit_arch.jpg",
+              "size_bytes": 643369
+            },
+            {
+              "path": "assets/video_vae_res.jpg",
+              "size_bytes": 212586
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 250
+            },
+            {
+              "path": "diffusion_pytorch_model-00001-of-00007.safetensors",
+              "size_bytes": 9847223624
+            },
+            {
+              "path": "diffusion_pytorch_model-00002-of-00007.safetensors",
+              "size_bytes": 9797021016
+            },
+            {
+              "path": "diffusion_pytorch_model-00003-of-00007.safetensors",
+              "size_bytes": 9797041744
+            },
+            {
+              "path": "diffusion_pytorch_model-00004-of-00007.safetensors",
+              "size_bytes": 9692142864
+            },
+            {
+              "path": "diffusion_pytorch_model-00005-of-00007.safetensors",
+              "size_bytes": 9692142864
+            },
+            {
+              "path": "diffusion_pytorch_model-00006-of-00007.safetensors",
+              "size_bytes": 9692142864
+            },
+            {
+              "path": "diffusion_pytorch_model-00007-of-00007.safetensors",
+              "size_bytes": 7061933536
+            },
+            {
+              "path": "diffusion_pytorch_model.safetensors.index.json",
+              "size_bytes": 116451
+            },
+            {
+              "path": "examples/i2v_input.JPG",
+              "size_bytes": 250628
+            },
+            {
+              "path": "google/umt5-xxl/special_tokens_map.json",
+              "size_bytes": 6623
+            },
+            {
+              "path": "google/umt5-xxl/spiece.model",
+              "size_bytes": 4548313
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer.json",
+              "size_bytes": 16837417
+            },
+            {
+              "path": "google/umt5-xxl/tokenizer_config.json",
+              "size_bytes": 61728
+            },
+            {
+              "path": "models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth",
+              "size_bytes": 4772359047
+            },
+            {
+              "path": "models_t5_umt5-xxl-enc-bf16.pth",
+              "size_bytes": 11361920418
+            },
+            {
+              "path": "xlm-roberta-large/sentencepiece.bpe.model",
+              "size_bytes": 5069051
+            },
+            {
+              "path": "xlm-roberta-large/special_tokens_map.json",
+              "size_bytes": 280
+            },
+            {
+              "path": "xlm-roberta-large/tokenizer.json",
+              "size_bytes": 17082660
+            },
+            {
+              "path": "xlm-roberta-large/tokenizer_config.json",
+              "size_bytes": 418
+            }
+          ],
+          "repo_id": "Wan-AI/Wan2.1-I2V-14B-720P",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 82272024808
+        },
+        "id": "wan21_i2v_14b_720p",
+        "ignored_local_matches": [],
+        "kind": "local_or_hf_model",
+        "local_hints": [
+          "Wan2.1-I2V-14B-720P",
+          "models--Wan-AI--Wan2.1-I2V-14B-720P"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "Wan2.1 14B I2V latency/quality result surface",
+        "repo_id": "Wan-AI/Wan2.1-I2V-14B-720P"
+      },
+      {
+        "hf_manifest": {
+          "file_count": 10,
+          "files_head": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1519
+            },
+            {
+              "path": "LICENSE",
+              "size_bytes": 15302
+            },
+            {
+              "path": "Notice",
+              "size_bytes": 18975
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 23743
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 39
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states.pt",
+              "size_bytes": 25642314002
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8.pt",
+              "size_bytes": 13185233506
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8_map.pt",
+              "size_bytes": 103890
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/vae/config.json",
+              "size_bytes": 785
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/vae/pytorch_model.pt",
+              "size_bytes": 986000558
+            }
+          ],
+          "files_tail": [
+            {
+              "path": ".gitattributes",
+              "size_bytes": 1519
+            },
+            {
+              "path": "LICENSE",
+              "size_bytes": 15302
+            },
+            {
+              "path": "Notice",
+              "size_bytes": 18975
+            },
+            {
+              "path": "README.md",
+              "size_bytes": 23743
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 39
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states.pt",
+              "size_bytes": 25642314002
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8.pt",
+              "size_bytes": 13185233506
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8_map.pt",
+              "size_bytes": 103890
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/vae/config.json",
+              "size_bytes": 785
+            },
+            {
+              "path": "hunyuan-video-t2v-720p/vae/pytorch_model.pt",
+              "size_bytes": 986000558
+            }
+          ],
+          "repo_id": "tencent/HunyuanVideo",
+          "repo_type": "model",
+          "status": "available",
+          "total_size_bytes": 39813712319
+        },
+        "id": "hunyuanvideo",
+        "ignored_local_matches": [
+          {
+            "file_count": 5,
+            "is_dir": true,
+            "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo",
+            "size_human": "48K"
+          }
+        ],
+        "kind": "local_or_hf_model",
+        "local_hints": [
+          "HunyuanVideo",
+          "models--tencent--HunyuanVideo"
+        ],
+        "local_matches": [],
+        "materialized_locally": false,
+        "paper_role": "HunyuanVideo T2V latency/quality result surface",
+        "repo_id": "tencent/HunyuanVideo"
+      }
+    ],
+    "not_promoted_support": [
+      "README one-prompt latency examples",
+      "syntax/compile checks",
+      "SEA filter unit check",
+      "HF repo metadata availability without local checkpoint materialization"
+    ],
+    "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+    "paper_result_surfaces": [
+      "FLUX.1-dev full 50-step uncached reference",
+      "FLUX.1-dev SeaCache threshold sweep",
+      "Wan2.1 1.3B full 50-step uncached reference",
+      "Wan2.1 1.3B SeaCache threshold sweep",
+      "HunyuanVideo full 50-step uncached reference",
+      "HunyuanVideo SeaCache threshold sweep",
+      "latency traces",
+      "TFLOPs traces via Calflops",
+      "PSNR/LPIPS/SSIM tables",
+      "CycleReward average-rank table",
+      "VBench dimension scores",
+      "CompressedVQA scores",
+      "refresh-ratio measurements"
+    ],
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache"
+  },
+  "official_script_manifest": {
+    "artifact_kind": "seacache_official_script_manifest",
+    "created_at_utc": "2026-07-24T13:31:57Z",
+    "files": [
+      {
+        "exists": true,
+        "parsed": {
+          "declared_latency_rows": [],
+          "exists": true,
+          "line_count": 61,
+          "mentions_a100": false,
+          "mentions_blackwell": false,
+          "mentions_calflops": false,
+          "mentions_vbench": true,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/README.md",
+          "python_commands": []
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/README.md",
+        "relative_path": "README.md",
+        "size_bytes": 3217
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "declared_latency_rows": [
+            [
+              "FLUX.1 [dev]",
+              "SeaCache (\u03b4 = 0.3)",
+              "SeaCache (\u03b4 = 0.6)"
+            ],
+            [
+              ":------------------------:",
+              ":----------------------:",
+              ":----------------------:"
+            ],
+            [
+              "18.0 s",
+              "9.4 s",
+              "6.4 s"
+            ]
+          ],
+          "exists": true,
+          "line_count": 50,
+          "mentions_a100": false,
+          "mentions_blackwell": true,
+          "mentions_calflops": false,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/README.md",
+          "python_commands": [
+            "python seacache_generate.py",
+            "python seacache_generate.py \\\n  --prompt \"a high-resolution photo of a panda drinking coffee in a cozy cafe\" \\\n  --output_dir ./outputs \\\n  --seacache_thresh 0.3"
+          ]
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/README.md",
+        "relative_path": "FLUX/README.md",
+        "size_bytes": 1358
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "breaks_after_first_prompt": true,
+          "cli_flags": [
+            "--dtype",
+            "--guidance",
+            "--height",
+            "--model_id",
+            "--model_name",
+            "--num_images_per_prompt",
+            "--num_inference_steps",
+            "--offload",
+            "--output_dir",
+            "--prompt",
+            "--prompt_file",
+            "--seacache_thresh",
+            "--seed",
+            "--width"
+          ],
+          "exists": true,
+          "hardcoded_thresholds": [],
+          "has_prompt_file_loop": true,
+          "hf_model_ids": [
+            "black-forest-labs/FLUX.1-dev",
+            "black-forest-labs/FLUX.1-schnell",
+            "usr/bin"
+          ],
+          "line_count": 468,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/seacache_generate.py",
+          "requires_checkpoint_dir": false,
+          "requires_hyvideo_import": false,
+          "requires_model_base": false,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_inference_steps"
+          ],
+          "threshold_fields": [
+            "seacache_thresh"
+          ],
+          "uses_diffusers_from_pretrained": true
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/seacache_generate.py",
+        "relative_path": "FLUX/seacache_generate.py",
+        "size_bytes": 17385
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "breaks_after_first_prompt": false,
+          "cli_flags": [],
+          "exists": true,
+          "hardcoded_thresholds": [],
+          "has_prompt_file_loop": false,
+          "hf_model_ids": [
+            "VP/DDPM-style"
+          ],
+          "line_count": 199,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/util_seacache.py",
+          "requires_checkpoint_dir": false,
+          "requires_hyvideo_import": false,
+          "requires_model_base": false,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_inference_steps"
+          ],
+          "threshold_fields": [],
+          "uses_diffusers_from_pretrained": false
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/util_seacache.py",
+        "relative_path": "FLUX/util_seacache.py",
+        "size_bytes": 5740
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "declared_latency_rows": [
+            [
+              "Original",
+              "SeaCache (\u03b4 = 0.2)",
+              "SeaCache (\u03b4 = 0.35)"
+            ],
+            [
+              ":---------------:",
+              ":-----------------------------------:",
+              ":-----------------------------------:"
+            ],
+            [
+              "2 min 56 sec",
+              "1min 24 sec",
+              "56 sec"
+            ],
+            [
+              "Original",
+              "SeaCache (\u03b4 = 0.2)",
+              "SeaCache (\u03b4 = 0.4)"
+            ],
+            [
+              ":---------------:",
+              ":-----------------------------------:",
+              ":-----------------------------------:"
+            ],
+            [
+              "15 min 11 sec",
+              "7 min 31 sec",
+              "4 min 53 sec"
+            ],
+            [
+              "Original",
+              "SeaCache (\u03b4 = 0.2)",
+              "SeaCache (\u03b4 = 0.4)"
+            ],
+            [
+              ":---------------:",
+              ":-----------------------------------:",
+              ":-----------------------------------:"
+            ],
+            [
+              "51 min 13 sec",
+              "25 min 32 sec",
+              "16 min 30 sec"
+            ],
+            [
+              "<img src=\"https://github.com/user-attachments/assets/711cb5da-414a-4460-9ea0-d81f96faf881\" height=\"256\" />",
+              "<video src=\"https://github.com/user-attachments/assets/71ee1ace-9b9d-4e12-a0ae-0ec9b5f9d68d\" controls muted playsinline height=\"200\"></video>",
+              "*a basket of french fries in a fryer*"
+            ],
+            [
+              "Original",
+              "SeaCache (\u03b4 = 0.2)",
+              "SeaCache (\u03b4 = 0.4)"
+            ],
+            [
+              ":---------------:",
+              ":-----------------------------------:",
+              ":-----------------------------------:"
+            ],
+            [
+              "52 min 5 sec",
+              "25 min 3 sec",
+              "16 min 50 sec"
+            ]
+          ],
+          "exists": true,
+          "line_count": 87,
+          "mentions_a100": false,
+          "mentions_blackwell": true,
+          "mentions_calflops": false,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/README.md",
+          "python_commands": []
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/README.md",
+        "relative_path": "Wan2.1/README.md",
+        "size_bytes": 4076
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "breaks_after_first_prompt": false,
+          "cli_flags": [
+            "--base_seed",
+            "--ckpt_dir",
+            "--dit_fsdp",
+            "--frame_num",
+            "--image",
+            "--offload_model",
+            "--prompt",
+            "--prompt_extend_method",
+            "--prompt_extend_model",
+            "--prompt_extend_target_lang",
+            "--ring_size",
+            "--sample_guide_scale",
+            "--sample_shift",
+            "--sample_solver",
+            "--sample_steps",
+            "--save_file",
+            "--seacache_thresh",
+            "--size",
+            "--t5_cpu",
+            "--t5_fsdp",
+            "--task",
+            "--ulysses_size",
+            "--use_prompt_extend",
+            "--use_ret_steps"
+          ],
+          "exists": true,
+          "hardcoded_thresholds": [],
+          "has_prompt_file_loop": false,
+          "hf_model_ids": [
+            "examples/i2v_input.JPG"
+          ],
+          "line_count": 1039,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/seacache_generate.py",
+          "requires_checkpoint_dir": true,
+          "requires_hyvideo_import": false,
+          "requires_model_base": false,
+          "requires_wan_import": true,
+          "sample_step_fields": [
+            "sample_steps"
+          ],
+          "threshold_fields": [
+            "seacache_thresh"
+          ],
+          "uses_diffusers_from_pretrained": false
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/seacache_generate.py",
+        "relative_path": "Wan2.1/seacache_generate.py",
+        "size_bytes": 38896
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "breaks_after_first_prompt": false,
+          "cli_flags": [],
+          "exists": true,
+          "hardcoded_thresholds": [],
+          "has_prompt_file_loop": false,
+          "hf_model_ids": [
+            "VP/DDPM-style"
+          ],
+          "line_count": 199,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/util_seacache.py",
+          "requires_checkpoint_dir": false,
+          "requires_hyvideo_import": false,
+          "requires_model_base": false,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_inference_steps"
+          ],
+          "threshold_fields": [],
+          "uses_diffusers_from_pretrained": false
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/util_seacache.py",
+        "relative_path": "Wan2.1/util_seacache.py",
+        "size_bytes": 5740
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "declared_latency_rows": [
+            [
+              "Original",
+              "SeaCache (\u03b4 = 0.2)",
+              "SeaCache (\u03b4 = 0.4)"
+            ],
+            [
+              ":---------------:",
+              ":-----------------------------------:",
+              ":-----------------------------------:"
+            ],
+            [
+              "5 min 32 sec",
+              "2 min 30 sec",
+              "1 min 40 sec"
+            ]
+          ],
+          "exists": true,
+          "line_count": 50,
+          "mentions_a100": false,
+          "mentions_blackwell": true,
+          "mentions_calflops": false,
+          "mentions_vbench": false,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/README.md",
+          "python_commands": [
+            "cd HunyuanVideo\n\npython3 seacache_generate.py \\\n    --video-size 720 1280 \\\n    --video-length 33 \\\n    --infer-steps 50 \\\n    --prompt \"A cat walks on the grass, realistic style.\" \\\n    --flow-reverse \\\n    --use-cpu-offload \\\n    --save-path ./seacache_results \\\n    --rel_l1_thresh 0.20"
+          ]
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/README.md",
+        "relative_path": "HunyuanVideo/README.md",
+        "size_bytes": 1884
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "breaks_after_first_prompt": false,
+          "cli_flags": [],
+          "exists": true,
+          "hardcoded_thresholds": [
+            "0.20"
+          ],
+          "has_prompt_file_loop": false,
+          "hf_model_ids": [],
+          "line_count": 267,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/seacache_generate.py",
+          "requires_checkpoint_dir": false,
+          "requires_hyvideo_import": true,
+          "requires_model_base": true,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "infer_steps"
+          ],
+          "threshold_fields": [
+            "rel_l1_thresh"
+          ],
+          "uses_diffusers_from_pretrained": false
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/seacache_generate.py",
+        "relative_path": "HunyuanVideo/seacache_generate.py",
+        "size_bytes": 10055
+      },
+      {
+        "exists": true,
+        "parsed": {
+          "breaks_after_first_prompt": false,
+          "cli_flags": [],
+          "exists": true,
+          "hardcoded_thresholds": [],
+          "has_prompt_file_loop": false,
+          "hf_model_ids": [
+            "VP/DDPM-style"
+          ],
+          "line_count": 199,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/util_seacache.py",
+          "requires_checkpoint_dir": false,
+          "requires_hyvideo_import": false,
+          "requires_model_base": false,
+          "requires_wan_import": false,
+          "sample_step_fields": [
+            "num_inference_steps"
+          ],
+          "threshold_fields": [],
+          "uses_diffusers_from_pretrained": false
+        },
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/util_seacache.py",
+        "relative_path": "HunyuanVideo/util_seacache.py",
+        "size_bytes": 5740
+      },
+      {
+        "exists": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/assets/overview.jpg",
+        "relative_path": "assets/overview.jpg",
+        "size_bytes": 146969
+      }
+    ],
+    "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+    "paper_shaped_execution_matrix": {
+      "accepted_loop2_evidence": "raw generated images/videos, reference outputs, metric logs, timing traces, GPU/CPU/RAM traces, prompt lists, seeds, thresholds, and table/figure summaries",
+      "baselines": [
+        "uncached full 50-step reference",
+        "SeaCache threshold sweeps",
+        "near-miss cache baselines from paper: TeaCache, TaylorSeer, ToCa, Delta-DiT, DiCache"
+      ],
+      "datasets": [
+        "200 DrawBench prompts",
+        "944 VBench prompts",
+        "CycleReward prompt/eval set",
+        "CompressedVQA reference/eval artifacts"
+      ],
+      "metrics": [
+        "latency",
+        "TFLOPs via Calflops",
+        "PSNR",
+        "LPIPS",
+        "SSIM",
+        "CycleReward average rank",
+        "VBench dimensions",
+        "CompressedVQA",
+        "refresh ratio"
+      ],
+      "models": [
+        "FLUX.1-dev",
+        "Wan2.1 1.3B",
+        "Wan2.1 14B",
+        "HunyuanVideo"
+      ]
+    },
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache",
+    "script_parity_findings": [
+      {
+        "detail": "FLUX/seacache_generate.py breaks after the first prompt, so the 200-prompt FLUX grid cannot run from the script as-is.",
+        "id": "flux_prompt_grid_break",
+        "status": "needs_patch_or_wrapper"
+      },
+      {
+        "detail": "HunyuanVideo/seacache_generate.py hard-codes rel_l1_thresh=0.20 even though README describes a threshold argument/sweep.",
+        "id": "hunyuan_threshold_hardcoded",
+        "status": "needs_patch_or_wrapper"
+      }
+    ]
+  },
+  "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "paper_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+  "professional_gate": {
+    "artifact_kind": "seacache_professional_gate_result",
+    "blockers": [
+      {
+        "detail": "Paper/DAG expects Blackwell RTX PRO 6000 and/or A100 traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+        "id": "paper_hardware_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "Visible GPUs are already memory-heavy or active; GPU 3 is occupied by the Prophet full run. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+        "id": "clean_gpu_slot_for_diffusion_grid",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local paper-scale model checkpoints: flux_dev, wan21_t2v_13b, wan21_t2v_14b, wan21_i2v_14b_720p, hunyuanvideo",
+        "id": "required_diffusion_checkpoints_not_materialized",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local prompt/evaluator artifacts: drawbench_200_prompts, vbench_944_prompts_and_tooling, cyclereward_eval, compressedvqa_eval",
+        "id": "prompt_metric_artifacts_not_materialized",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing required runtime packages/imports: diffusers, calflops, vbench, lpips, wan, hyvideo",
+        "id": "diffusion_metric_runtime_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "SeaCache scripts need patch/wrapper before full grid: flux_prompt_grid_break, hunyuan_threshold_hardcoded",
+        "id": "official_script_parity_for_full_grid",
+        "status": "blocked"
+      }
+    ],
+    "convergence_role": "professional operational gate; no reduced run is promoted",
+    "created_at_utc": "2026-07-24T13:31:58Z",
+    "next_full_execution_if_unblocked": [
+      "materialize FLUX.1-dev, Wan2.1 1.3B/14B, and HunyuanVideo checkpoints",
+      "materialize DrawBench, VBench, CycleReward, and CompressedVQA prompt/evaluator artifacts",
+      "patch/wrap FLUX prompt loop and Hunyuan threshold CLI so sweeps run across the full grid",
+      "run uncached 50-step references and SeaCache threshold sweeps with shared seeds",
+      "record latency, TFLOPs, refresh ratio, GPU/CPU/RAM traces, and raw generated media",
+      "score PSNR/LPIPS/SSIM, VBench, CycleReward, and CompressedVQA and compare to paper tables/figures"
+    ],
+    "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+    "paper_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+    "professional_package_ready": false,
+    "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+    "support_checks": {
+      "compileall_passed": true,
+      "dataset_metric_artifacts_checked": 4,
+      "model_manifests_checked": 6,
+      "repo_files_checked": 11,
+      "sea_filter_unit_passed": true
+    }
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache",
+  "updated_at_utc": "2026-07-24T13:31:58Z",
+  "verifier": {
+    "convergence_decision": "not_converged_explicit_professional_blockers_after_operational_preflight",
+    "loop1_required_dag_update": [
+      "Add official diffusion model script matrix gate.",
+      "Add FLUX/Wan/Hunyuan loadable checkpoint gate.",
+      "Add DrawBench/VBench/CycleReward/CompressedVQA prompt and evaluator gate.",
+      "Add Blackwell/A100 latency/TFLOPs hardware gate.",
+      "Add full prompt-grid and threshold-sweep script parity gate.",
+      "Keep one-prompt demos, syntax checks, and unit checks as support only."
+    ],
+    "professional_package_ready": false,
+    "semantic_dag_nodes_checked": [
+      "gap.paper_gap_claims",
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface",
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+    "unresolved_professional_debt": [
+      {
+        "detail": "Paper/DAG expects Blackwell RTX PRO 6000 and/or A100 traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+        "id": "paper_hardware_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "Visible GPUs are already memory-heavy or active; GPU 3 is occupied by the Prophet full run. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+        "id": "clean_gpu_slot_for_diffusion_grid",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local paper-scale model checkpoints: flux_dev, wan21_t2v_13b, wan21_t2v_14b, wan21_i2v_14b_720p, hunyuanvideo",
+        "id": "required_diffusion_checkpoints_not_materialized",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing local prompt/evaluator artifacts: drawbench_200_prompts, vbench_944_prompts_and_tooling, cyclereward_eval, compressedvqa_eval",
+        "id": "prompt_metric_artifacts_not_materialized",
+        "status": "blocked"
+      },
+      {
+        "detail": "Missing required runtime packages/imports: diffusers, calflops, vbench, lpips, wan, hyvideo",
+        "id": "diffusion_metric_runtime_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "SeaCache scripts need patch/wrapper before full grid: flux_prompt_grid_break, hunyuan_threshold_hardcoded",
+        "id": "official_script_parity_for_full_grid",
+        "status": "blocked"
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "experiment_prediction": "benchmarks=LongBench v1; LongBench v2; HELMET; RULER; Needle in a Haystack; MMLU; MATH-500; IFEval; metrics=average pass@1; accuracy; length-controlled context bucket accuracy; retrieval pass rate; binary reward; protocols=temperature 0.6 for reasoning models; eight samples per problem; up to 128K input tokens and 10K output tokens; temperature 0 for non-reasoning base models",
+  "gap_prediction": "long-context models often retrieve shallowly but fail to plan and reason across distractor-heavy evidence; short-context RL induces reasoning patterns but does not directly teach long-context retrieval plus reasoning; high-difficulty verifiable long-context RL data are scarce; full-length 128K RL rollouts are prohibitively expensive; stressors: model entangles retrieval and reasoning without an explicit plan; regular long-context QA data yields smaller gains than KeyChain data; LLM-as-a-judge rewards add cost and reward-hacking risk; KeyChain tasks may over-specialize to synthetic key tracing if not tested on out-of-domain long-context tasks",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.051,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19260, 4954, 6\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "KeyChain data construction; UUID or high-entropy key-value chains; distractor document filling; Qwen2.5-32B difficulty filtering; two-way substring exact-match reward; three-stage RL curriculum; hard-mined Stage II",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+  "paper_text_seen": false,
+  "paper_title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "verl/recipe/prime/prime_ray_trainer.py",
+        "verl/scripts/data_synth/test_parquet.py",
+        "verl/verl/utils/reward_score/prime_code/testing_util.py",
+        "verl/verl/trainer/main_eval.py",
+        "verl/verl/trainer/fsdp_sft_trainer.py",
+        "verl/verl/trainer/ppo/ray_trainer.py",
+        "verl/tests/checkpoint/test_fsdp_ckpt.py",
+        "verl/tests/checkpoint/test_megatron_ckpt.py",
+        "verl/tests/gpu_utility/test_ops.py",
+        "verl/tests/gpu_utility/test_torch_functional.py",
+        "verl/tests/gpu_utility/test_memory_buffers.py",
+        "verl/tests/sanity/test_import.py",
+        "verl/tests/sandbox/test_sandbox.py",
+        "verl/tests/distributed/test_tensor_dict.py",
+        "verl/tests/ray/test_check_worker_alive.py",
+        "verl/tests/ray/test_data_transfer.py",
+        "verl/tests/ray/test_driverfunc_to_worker.py",
+        "verl/tests/ray/test_colocated_workers.py",
+        "verl/tests/ray/test_worker_group_basics.py",
+        "verl/tests/ray/test_worker_group_torch.py",
+        "verl/tests/ray/test_ray_local_envs.py",
+        "verl/tests/ray/test_rvdz.py",
+        "verl/tests/ray/test_high_level_scheduling_api.py",
+        "verl/tests/rollout/test_sglang_spmd.py",
+        "verl/tests/rollout/test_vllm_hf_loader.py",
+        "verl/tests/rollout/test_vllm_spmd.py",
+        "verl/tests/utility/test_tensor_dict_utilities.py",
+        "verl/tests/model/test_transformer.py",
+        "verl/tests/model/test_transformers_ulysses.py",
+        "verl/tests/verl/utils/dataset/test_rm_dataset.py"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 302,
+      "readme_files": [
+        "README.md",
+        "verl/README.md",
+        "verl/docs/README.md",
+        "verl/verl/utils/dataset/README.md",
+        "verl/verl/models/README.md",
+        "verl/examples/split_placement/README.md",
+        "verl/tests/ray/detached_worker/README.md",
+        "verl/tests/e2e/arithmetic_sequence/rl/README.md"
+      ],
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL",
+      "shell_file_count": 119,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 250,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ]
+}

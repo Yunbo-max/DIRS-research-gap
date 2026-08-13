@@ -1,0 +1,416 @@
+{
+  "completed_generations": 220,
+  "coverage": 0.015714285714285715,
+  "created_at_utc": "2026-07-22T22:52:51Z",
+  "elapsed_seconds": 392.224,
+  "gpu_snapshot": {
+    "created_at_utc": "2026-07-22T22:52:51Z",
+    "gpus": [
+      {
+        "index": 0,
+        "memory_free_mib": 4043,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 20174,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      },
+      {
+        "index": 1,
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      },
+      {
+        "index": 2,
+        "memory_free_mib": 5030,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19183,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 19
+      },
+      {
+        "index": 3,
+        "memory_free_mib": 9236,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 14981,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 82
+      }
+    ],
+    "raw": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 20174, 4043, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19183, 5030, 19\n3, NVIDIA GeForce RTX 4090, 24564, 14981, 9236, 82\n"
+    }
+  },
+  "planned_generations": 14000,
+  "professional_scale_for_gap_convergence": true,
+  "scale": "professional_paper_shaped_long_run",
+  "scale_gate": {
+    "gate_reasons": [],
+    "loaded_dataset_count": 4,
+    "loaded_prompt_count": 400,
+    "planned_generations": 14000,
+    "professional_scale_for_gap_convergence": true,
+    "reduced_or_small_run": false,
+    "scale": "professional_paper_shaped_long_run"
+  },
+  "score_summary": {
+    "cell_count": 35,
+    "cells": [
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "epsilon",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.14285714285714285
+      },
+      {
+        "correct": 2,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "eta",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.2857142857142857
+      },
+      {
+        "correct": 2,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "min_p",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.2857142857142857
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "mirostat",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "p_less",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.14285714285714285
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "p_lessnorm",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.14285714285714285
+      },
+      {
+        "correct": 3,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "top_p",
+        "temperature": 0.5,
+        "usable": 0,
+        "value": 0.42857142857142855
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "epsilon",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.14285714285714285
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "eta",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 2,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "min_p",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.2857142857142857
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "mirostat",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_less",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_lessnorm",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 7,
+        "sampler": "top_p",
+        "temperature": 0.7,
+        "usable": 0,
+        "value": 0.14285714285714285
+      },
+      {
+        "correct": 2,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "epsilon",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.3333333333333333
+      },
+      {
+        "correct": 2,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "eta",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.3333333333333333
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "min_p",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "mirostat",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_less",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_lessnorm",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "top_p",
+        "temperature": 1.0,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "epsilon",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "eta",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "min_p",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "mirostat",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_less",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 1,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_lessnorm",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.16666666666666666
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "top_p",
+        "temperature": 1.5,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "epsilon",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "eta",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "min_p",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "mirostat",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_less",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.0
+      },
+      {
+        "correct": 2,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "p_lessnorm",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.3333333333333333
+      },
+      {
+        "correct": 0,
+        "dataset": "gsm8k",
+        "metric": "accuracy",
+        "n": 6,
+        "sampler": "top_p",
+        "temperature": 2.0,
+        "usable": 0,
+        "value": 0.0
+      }
+    ]
+  },
+  "status": "running"
+}

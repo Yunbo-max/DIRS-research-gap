@@ -1,0 +1,229 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "assumptions",
+        "cache",
+        "checkpoints",
+        "derivation",
+        "deviate",
+        "diffusion",
+        "distances",
+        "entangle",
+        "explicit",
+        "external",
+        "fail",
+        "hand-tuned",
+        "independence",
+        "latency",
+        "latent",
+        "latent-space",
+        "learned",
+        "license",
+        "may",
+        "mismatch",
+        "noise",
+        "pixel-domain",
+        "power-law",
+        "raw",
+        "refresh",
+        "repositories",
+        "repository",
+        "required",
+        "schedules",
+        "signal"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "raw cache distances entangle signal and noise",
+        "static or hand-tuned refresh schedules",
+        "diffusion inference latency",
+        "latent-space spectral mismatch"
+      ],
+      "score": 2.833,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "accumulated",
+        "coefficient",
+        "density",
+        "filter",
+        "gate",
+        "mapping",
+        "mean",
+        "normalization",
+        "relative",
+        "residual",
+        "reuse",
+        "scheduler",
+        "sea",
+        "sea-filtered",
+        "threshold"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "SEA filter",
+        "density/mean normalization",
+        "SEA-filtered relative L1",
+        "accumulated threshold gate",
+        "residual reuse",
+        "scheduler coefficient mapping"
+      ],
+      "score": 1.25,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "1-dev",
+        "200",
+        "50-step",
+        "944",
+        "across",
+        "average",
+        "cache",
+        "calflops",
+        "compressedvqa",
+        "controls",
+        "cyclereward",
+        "delta",
+        "dimensions",
+        "drawbench",
+        "flux",
+        "full",
+        "hunyuanvideo",
+        "initial",
+        "latency",
+        "lpips",
+        "measured",
+        "output",
+        "prompts",
+        "psnr",
+        "random",
+        "rank",
+        "ratio",
+        "reference",
+        "refresh",
+        "seed"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "FLUX.1-dev",
+        "HunyuanVideo",
+        "Wan2.1 1.3B",
+        "VBench",
+        "CycleReward",
+        "CompressedVQA",
+        "full 50-step uncached output as reference",
+        "shared initial random seed across methods",
+        "200 DrawBench prompts for FLUX",
+        "944 VBench prompts for T2V",
+        "cache threshold delta controls refresh ratio",
+        "TFLOPs measured with Calflops"
+      ],
+      "score": 3.167,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_not_rerun",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "FLUX.1-dev; HunyuanVideo; Wan2.1 1.3B; VBench; CycleReward; CompressedVQA; full 50-step uncached output as reference; shared initial random seed across methods; 200 DrawBench prompts for FLUX; 944 VBench prompts for T2V; cache threshold delta controls refresh ratio; TFLOPs measured with Calflops"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "latency; TFLOPs; PSNR; LPIPS; SSIM; CycleReward average rank; VBench dimensions; CompressedVQA; refresh ratio"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "DrawBench prompts; VBench prompts; CycleReward prompts/evaluation; CompressedVQA reference videos; DrawBench prompt set not bundled; VBench prompt set/tooling required; external FLUX checkpoints; external Wan2.1 checkpoints; external HunyuanVideo checkpoints"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "NVIDIA Blackwell Pro 6000; NVIDIA A100; CUDA/PyTorch inference; PyTorch; Diffusers; FLUX; Wan2.1; HunyuanVideo; VBench; Calflops"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "SEA filter; density/mean normalization; SEA-filtered relative L1; accumulated threshold gate; residual reuse; scheduler coefficient mapping; README.md; FLUX/util_seacache.py; FLUX/seacache_generate.py; Wan2.1/util_seacache.py; Wan2.1/seacache_generate.py; HunyuanVideo/util_seacache.py; HunyuanVideo/seacache_generate.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "iteration": 1,
+  "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "paper_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_not_rerun",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

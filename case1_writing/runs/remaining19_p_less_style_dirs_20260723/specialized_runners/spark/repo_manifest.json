@@ -1,0 +1,101 @@
+{
+  "artifact_kind": "spark_repo_manifest",
+  "created_at_utc": "2026-07-23T18:52:46Z",
+  "file_count_excluding_git": 3,
+  "files": [
+    {
+      "file_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK/LICENSE",
+      "relative_path": "LICENSE",
+      "size_human": "1066"
+    },
+    {
+      "file_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK/README.md",
+      "readme": {
+        "declares_future_release": true,
+        "line_count": 43,
+        "todo_lines": [
+          "- [ ] Provide a HuggingFace\ud83e\udd17 demo.",
+          "- [ ] Release inference scripts and pretrained checkpoints.",
+          "- [ ] Release training code and data preprocessing scripts.",
+          "- [ ] Release preprocessed dataset."
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2512.01629",
+          "https://arxiv.org/abs/2512.01629}",
+          "https://heyumeng.com/",
+          "https://heyumeng.com/SPARK/index.html",
+          "https://img.shields.io/badge/arXiv-2512.01629-b31b1b.svg?logo=arXiv",
+          "https://img.shields.io/badge/\ud83c\udfe0-Project%20Page-blue.svg",
+          "https://jlu227.wixsite.com/kay-lu",
+          "https://www.math.ucla.edu/~cffjiang/",
+          "https://yangzzzy.github.io/",
+          "https://yingjiang96.github.io/"
+        ]
+      },
+      "relative_path": "README.md",
+      "size_human": "1750"
+    },
+    {
+      "file_count": 1,
+      "image_probe": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-c",
+          "from PIL import Image; p='/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK/assets/SPARK_teaser.png'; im=Image.open(p); print(im.size, im.mode)"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.082,
+        "stderr": "",
+        "stdout": "(2400, 1200) RGBA\n",
+        "timeout": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK/assets/SPARK_teaser.png",
+      "relative_path": "assets/SPARK_teaser.png",
+      "size_human": "4248257"
+    }
+  ],
+  "git": {
+    "dubious_ownership_expected_in_this_container": true,
+    "head": {
+      "cmd": [
+        "git",
+        "-C",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": null,
+      "returncode": 128,
+      "seconds": 0.001,
+      "stderr": "fatal: detected dubious ownership in repository at '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "remote": {
+      "cmd": [
+        "git",
+        "-C",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK",
+        "remote",
+        "-v"
+      ],
+      "cwd": null,
+      "returncode": 128,
+      "seconds": 0.001,
+      "stderr": "fatal: detected dubious ownership in repository at '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK\n",
+      "stdout": "",
+      "timeout": false
+    }
+  },
+  "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK",
+  "repo_exists": true,
+  "support_only_findings": [
+    "README and teaser image prove repository presence only",
+    "README TODO explicitly says inference scripts, pretrained checkpoints, training code, preprocessing scripts, and preprocessed dataset are not released",
+    "no Python source, configs, checkpoints, datasets, or runnable commands are present in the repo"
+  ]
+}

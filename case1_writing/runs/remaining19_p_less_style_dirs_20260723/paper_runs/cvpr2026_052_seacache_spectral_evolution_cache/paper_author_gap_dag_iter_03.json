@@ -1,0 +1,529 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.diffusion_model_script_matrix"
+    ],
+    [
+      "ops.diffusion_model_script_matrix",
+      "ops.full_prompt_grid_script_parity_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.external_model_checkpoint_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.prompt_metric_dataset_gate"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.paper_hardware_latency_gate"
+    ],
+    [
+      "ops.full_prompt_grid_script_parity_gate",
+      "ops.external_model_checkpoint_gate"
+    ],
+    [
+      "ops.external_model_checkpoint_gate",
+      "ops.prompt_metric_dataset_gate"
+    ],
+    [
+      "ops.prompt_metric_dataset_gate",
+      "ops.paper_hardware_latency_gate"
+    ],
+    [
+      "ops.paper_hardware_latency_gate",
+      "ops.full_latency_quality_artifact_gate"
+    ],
+    [
+      "ops.full_latency_quality_artifact_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "decision.explicit_blocker_after_seacache_preflight"
+    ],
+    [
+      "decision.explicit_blocker_after_seacache_preflight",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_resolve_seacache_professional_blockers"
+    ],
+    [
+      "loop1.required_update.update_resolve_seacache_professional_blockers",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "CVPR2026_052_seacache_spectral_evolution_cache_gap_dag_iter_03",
+  "nodes": [
+    {
+      "content": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models | families=diffusion_cache, visual_tokenizer, compression_vq, video_token_merging",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "raw cache distances entangle signal and noise; static or hand-tuned refresh schedules; diffusion inference latency; latent-space spectral mismatch",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "power-law/stationarity/independence assumptions may fail; learned latent spectra may deviate from pixel-domain derivation; no explicit repository license; external model repositories and checkpoints required",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "TeaCache; TaylorSeer; ToCa; Delta-DiT; vanilla fewer-step sampling; DiCache; FLUX.1-dev full 50-step reference; HunyuanVideo full 50-step reference; Wan2.1 1.3B full 50-step reference",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "SEA filter; density/mean normalization; SEA-filtered relative L1; accumulated threshold gate; residual reuse; scheduler coefficient mapping",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=FLUX.1-dev; HunyuanVideo; Wan2.1 1.3B; VBench; CycleReward; CompressedVQA; metrics=latency; TFLOPs; PSNR; LPIPS; SSIM; CycleReward average rank; VBench dimensions; CompressedVQA; refresh ratio; protocols=full 50-step uncached output as reference; shared initial random seed across methods; 200 DrawBench prompts for FLUX; 944 VBench prompts for T2V; cache threshold delta controls refresh ratio; TFLOPs measured with Calflops",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=NVIDIA Blackwell Pro 6000; NVIDIA A100; CUDA/PyTorch inference; runtimes=PyTorch; Diffusers; FLUX; Wan2.1; HunyuanVideo; VBench; Calflops",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache; code_artifacts=README.md; FLUX/util_seacache.py; FLUX/seacache_generate.py; Wan2.1/util_seacache.py; Wan2.1/seacache_generate.py; HunyuanVideo/util_seacache.py; HunyuanVideo/seacache_generate.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=DrawBench prompts; VBench prompts; CycleReward prompts/evaluation; CompressedVQA reference videos; data_artifacts=DrawBench prompt set not bundled; VBench prompt set/tooling required; external FLUX checkpoints; external Wan2.1 checkpoints; external HunyuanVideo checkpoints; implementation_statuses=official_github_found; code_repo_cloned; code_inspected; results_not_rerun_locally; no_explicit_license_found; external_model_dependencies_required",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Use DAG-encoded SeaCache scripts for FLUX, Wan2.1, and HunyuanVideo. Extract prompt source, model id/checkpoint dir, seed, sample steps, threshold, output path, and model-specific cache hook before any generation run.",
+      "id": "ops.diffusion_model_script_matrix",
+      "skill_role": "bind Loop 2 to official SeaCache entrypoints",
+      "type": "operational_execution_matrix"
+    },
+    {
+      "content": "Resolve local or HF checkpoints for FLUX.1-dev, Wan2.1 T2V 1.3B, Wan2.1 T2V/I2V 14B, and HunyuanVideo. HF metadata availability alone is not enough; the simulation needs loadable checkpoints.",
+      "id": "ops.external_model_checkpoint_gate",
+      "skill_role": "require paper-scale diffusion checkpoints",
+      "type": "model_data_gate"
+    },
+    {
+      "content": "Resolve 200 DrawBench prompts, 944 VBench prompts, CycleReward evaluation, CompressedVQA artifacts, and PSNR/LPIPS/SSIM scoring paths. Missing prompt or evaluator artifacts block Loop 2.",
+      "id": "ops.prompt_metric_dataset_gate",
+      "skill_role": "require verifier-comparable prompts and metrics",
+      "type": "evaluation_artifact_gate"
+    },
+    {
+      "content": "Before claiming SeaCache acceleration, verify paper-compatible Blackwell RTX PRO 6000 and/or A100 hardware, CUDA/PyTorch versions, idle GPU capacity, timing method, Calflops TFLOPs path, and GPU/CPU/RAM traces.",
+      "id": "ops.paper_hardware_latency_gate",
+      "skill_role": "make latency and TFLOPs claims hardware-bound",
+      "type": "professional_hardware_gate"
+    },
+    {
+      "content": "Patch or wrap FLUX/seacache_generate.py so prompt_file runs the full 200-prompt grid, and expose/use Hunyuan rel_l1_thresh for threshold sweeps instead of hard-coding only one value.",
+      "id": "ops.full_prompt_grid_script_parity_gate",
+      "skill_role": "prevent one-prompt script behavior from passing as paper grid",
+      "type": "script_parity_gate"
+    },
+    {
+      "content": "Require uncached 50-step references and SeaCache outputs for all paper surfaces, plus raw media, latency, TFLOPs, refresh ratio, PSNR, LPIPS, SSIM, VBench, CycleReward, and CompressedVQA summaries.",
+      "id": "ops.full_latency_quality_artifact_gate",
+      "skill_role": "make verifier comparison table-shaped",
+      "type": "professional_artifact_gate"
+    },
+    {
+      "content": "If any model checkpoint, prompt/evaluator artifact, script parity requirement, hardware/runtime gate, or paper-shaped score artifact is absent, mark not converged and update the DAG instead of launching a reduced demo.",
+      "id": "decision.explicit_blocker_after_seacache_preflight",
+      "skill_role": "feed operational failure back into Loop 1",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements_after_specialized_runner; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package']; required_updates=['update.resolve_seacache_professional_blockers']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": {
+              "reason": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements"
+            },
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.resolve_seacache_professional_blockers",
+            "reason": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+            "success_criteria": [
+              "run paper-appropriate diffusion model grid or provide equivalent exact operational artifacts",
+              "emit verifier-comparable latency/quality/refresh/TFLOPs table shapes",
+              "do not count one-prompt demos, syntax checks, or util-unit tests as convergence"
+            ]
+          }
+        ],
+        "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements_after_specialized_runner"
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_resolve_seacache_professional_blockers",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.resolve_seacache_professional_blockers",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "run paper-appropriate diffusion model grid or provide equivalent exact operational artifacts",
+        "emit verifier-comparable latency/quality/refresh/TFLOPs table shapes",
+        "do not count one-prompt demos, syntax checks, or util-unit tests as convergence"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_not_rerun",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "paper_hardware_class",
+        "clean_gpu_slot_for_diffusion_grid",
+        "required_diffusion_checkpoints_not_materialized",
+        "prompt_metric_artifacts_not_materialized",
+        "diffusion_metric_runtime_missing",
+        "official_script_parity_for_full_grid"
+      ],
+      "id": "update.add_seacache_model_data_hardware_script_quality_gates",
+      "reason": "specialized SeaCache preflight found missing full paper-shaped diffusion checkpoints, prompts, evaluators, hardware/runtime, and script parity",
+      "success_criteria": [
+        "official FLUX/Wan/Hunyuan script matrix encoded",
+        "model checkpoint materialization gate encoded",
+        "DrawBench/VBench/CycleReward/CompressedVQA artifact gate encoded",
+        "Blackwell/A100 timing and TFLOPs hardware gate encoded",
+        "full prompt-grid and threshold-sweep script parity gate encoded",
+        "reduced one-prompt demos remain non-convergent"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "paper_hardware_class",
+        "clean_gpu_slot_for_diffusion_grid",
+        "required_diffusion_checkpoints_not_materialized",
+        "prompt_metric_artifacts_not_materialized",
+        "diffusion_metric_runtime_missing",
+        "official_script_parity_for_full_grid"
+      ],
+      "id": "update.add_seacache_model_data_hardware_script_quality_gates",
+      "reason": "specialized SeaCache preflight found missing full paper-shaped diffusion checkpoints, prompts, evaluators, hardware/runtime, and script parity",
+      "success_criteria": [
+        "official FLUX/Wan/Hunyuan script matrix encoded",
+        "model checkpoint materialization gate encoded",
+        "DrawBench/VBench/CycleReward/CompressedVQA artifact gate encoded",
+        "Blackwell/A100 timing and TFLOPs hardware gate encoded",
+        "full prompt-grid and threshold-sweep script parity gate encoded",
+        "reduced one-prompt demos remain non-convergent"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:00Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.resolve_seacache_professional_blockers"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements_after_specialized_runner",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    },
+    {
+      "blocker_ids": [
+        "paper_hardware_class",
+        "clean_gpu_slot_for_diffusion_grid",
+        "required_diffusion_checkpoints_not_materialized",
+        "prompt_metric_artifacts_not_materialized",
+        "diffusion_metric_runtime_missing",
+        "official_script_parity_for_full_grid"
+      ],
+      "id": "update.add_seacache_model_data_hardware_script_quality_gates",
+      "reason": "specialized SeaCache preflight found missing full paper-shaped diffusion checkpoints, prompts, evaluators, hardware/runtime, and script parity",
+      "success_criteria": [
+        "official FLUX/Wan/Hunyuan script matrix encoded",
+        "model checkpoint materialization gate encoded",
+        "DrawBench/VBench/CycleReward/CompressedVQA artifact gate encoded",
+        "Blackwell/A100 timing and TFLOPs hardware gate encoded",
+        "full prompt-grid and threshold-sweep script parity gate encoded",
+        "reduced one-prompt demos remain non-convergent"
+      ]
+    }
+  ],
+  "signature": "bc787c39d4c4ed03",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "target_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+  "updated_at_utc": "2026-07-24T13:31:58Z"
+}

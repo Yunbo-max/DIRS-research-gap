@@ -1,0 +1,32 @@
+[2026-07-23T09:31:45Z] failed: HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/YefanZhou98/DLM-Decoding-Analysis?blobs=True (Request ID: Root=1-6a61e347-409687341d8fdf1d6aa7b282;3581eafd-b3a0-4a9e-b1f7-726b342906a6)
+
+We had to rate limit your IP (129.169.49.216). To continue using our service, create a HF account or login to your existing account, and make sure you pass a HF_TOKEN if you're using the API.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 402, in hf_raise_for_status
+    response.raise_for_status()
+  File "/opt/conda/lib/python3.10/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/YefanZhou98/DLM-Decoding-Analysis?blobs=True
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_trajectory_dataset_acquire_analyze.py", line 456, in <module>
+    main()
+  File "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_trajectory_dataset_acquire_analyze.py", line 360, in main
+    manifest = dataset_manifest()
+  File "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_trajectory_dataset_acquire_analyze.py", line 140, in dataset_manifest
+    info = api.repo_info(REPO_ID, repo_type="dataset", files_metadata=True)
+  File "/opt/conda/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2867, in repo_info
+    return method(
+  File "/opt/conda/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2731, in dataset_info
+    hf_raise_for_status(r)
+  File "/opt/conda/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 475, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/YefanZhou98/DLM-Decoding-Analysis?blobs=True (Request ID: Root=1-6a61e347-409687341d8fdf1d6aa7b282;3581eafd-b3a0-4a9e-b1f7-726b342906a6)
+
+We had to rate limit your IP (129.169.49.216). To continue using our service, create a HF account or login to your existing account, and make sure you pass a HF_TOKEN if you're using the API.

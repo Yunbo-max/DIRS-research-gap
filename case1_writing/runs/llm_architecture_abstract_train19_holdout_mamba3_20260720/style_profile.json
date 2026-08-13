@@ -1,0 +1,20 @@
+{
+  "domain": "LLM Architecture / Attention / State Space Models",
+  "train_paper_count": 19,
+  "holdout_paper_count": 1,
+  "abstract_word_count": {
+    "min": 114,
+    "median": 201,
+    "mean": 236.63,
+    "max": 446
+  },
+  "abstract_sentence_count": {
+    "median": 8,
+    "mean": 10.47
+  },
+  "recommended_target_words": 201,
+  "recommended_band": [
+    166,
+    236
+  ]
+}

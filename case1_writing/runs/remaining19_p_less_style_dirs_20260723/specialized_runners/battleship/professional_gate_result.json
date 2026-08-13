@@ -1,0 +1,76 @@
+{
+  "artifact_kind": "battleship_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Current Python is 3.10; pyproject requires ^3.11 and tests fail on enum.StrEnum under Python 3.10.",
+      "id": "battleship_python311_runtime_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Selected tests did not collect/pass; see environment.json.",
+      "id": "battleship_unit_probe_failed_until_python311_runtime",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing runtime imports: lark",
+      "id": "battleship_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "battleship/agents.py constructs an OpenAI client with OpenRouter base_url and requires OPENROUTER_API_KEY.",
+      "id": "battleship_openrouter_api_key_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing data artifacts: readme_named_human_dataset_csv",
+      "id": "battleship_required_data_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Raw collaborative human-data directory exists but does not contain the paper-shaped game/round/stage trajectory files expected by README.",
+      "id": "battleship_raw_human_trajectory_files_incomplete",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing operational result directories/files: spotter_benchmark_results, captain_benchmark_results, guess_who_transfer_outputs, openrouter_model_eval_outputs, paper_metric_summary",
+      "id": "battleship_full_agent_benchmark_outputs_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Verifier cannot compare against paper tables/figures/paragraphs until SpotterQA, CaptainQA, human comparison, OpenRouter model grid, and Guess Who outputs are produced.",
+      "id": "battleship_result_shape_verifier_waiting_for_full_grid",
+      "status": "blocked"
+    }
+  ],
+  "converged": false,
+  "convergence_role": "repo resolution and operational preflight only; no reduced/proxy/static evidence is promoted",
+  "created_at_utc": "2026-07-23T18:53:31Z",
+  "next_full_execution_if_unblocked": [
+    "switch to Python 3.11+ environment and install repo with Poetry or editable pip",
+    "configure OPENROUTER_API_KEY and exact paper model list without leaking secrets",
+    "run full spotter benchmark scripts over paper configurations",
+    "run full captain game benchmark scripts over paper captains, boards, and seeds",
+    "materialize or run Guess Who transfer protocol outputs",
+    "emit raw outputs, token costs, timing, metric summaries, and verifier-comparable table/figure JSON/CSV"
+  ],
+  "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+  "paper_shaped_outputs_required": [
+    "SpotterQA model grid with DirectSpotter, CodeSpotter, CoT/history variants, and OpenRouter LLMs",
+    "CaptainQA / Collaborative Battleship game grid with Random, MAP, EIG, Bayes-Q/M/D, and LLMDecisionCaptain",
+    "human-human trajectory comparison on board-matched contexts",
+    "Guess Who 60-game transfer outputs, not a figure-only asset",
+    "accuracy, targeting F1, precision, recall, moves, questions, win rate, EIG, redundant-question, and token-cost summaries",
+    "raw per-question/per-game outputs plus table/figure-comparable metric JSON/CSV"
+  ],
+  "paper_title": "Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People",
+  "professional_package_ready": false,
+  "status": "blocked_by_python311_openrouter_full_agent_benchmark_and_guess_who_artifacts",
+  "support_checks": {
+    "data_artifacts_checked": 7,
+    "gpu_required_for_core_experiments": false,
+    "openrouter_key_present": false,
+    "operational_output_artifacts_checked": 5,
+    "python311_gate_passed": false,
+    "repo_discovered_and_encoded": true
+  }
+}

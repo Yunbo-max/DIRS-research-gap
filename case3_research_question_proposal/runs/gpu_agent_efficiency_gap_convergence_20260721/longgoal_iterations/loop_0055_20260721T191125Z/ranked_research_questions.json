@@ -1,0 +1,183 @@
+[
+  {
+    "id": "Q1_budgeted_state_verifying_agents",
+    "question": "Can a 7B/8B tool agent improve dynamic multi-turn task success by planning under an explicit joint budget for tokens, tool latency, GPU time, and simulator-verified state reliability?",
+    "needs": [
+      "simulator_state_verifier",
+      "tool_agent_planning",
+      "dynamic_async_tasks",
+      "cost_latency_budget",
+      "small_model_feasible"
+    ],
+    "experiment": "Run tau2-Bench, SimuHome, and Gaia2 subsets with a Qwen/Llama-class local agent. Compare baseline ReAct against a budget-aware planner that rejects plans failing simulator/verifier checks.",
+    "supported_dimensions": 5,
+    "required_dimensions": 5,
+    "support_papers": [
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+    ],
+    "scores": {
+      "grounding": 2,
+      "novelty": 2,
+      "feasibility": 2,
+      "expected_insight": 2,
+      "experiment_path": 2,
+      "scope_control": 2,
+      "total": 12
+    },
+    "decision": "pursue_now"
+  },
+  {
+    "id": "Q2_reversible_speculative_tool_actions",
+    "question": "When agent actions are typed by reversibility, can speculative tool-call prefetch reduce p95 latency without increasing wrong or unsafe committed actions?",
+    "needs": [
+      "speculation_reversibility",
+      "tool_agent_planning",
+      "cost_latency_budget",
+      "simulator_state_verifier"
+    ],
+    "experiment": "Use Speculative Actions plus tau2/SimuHome traces. Allow speculation only for reversible reads/prefetches, then measure hit rate, latency, extra token cost, and commit errors.",
+    "supported_dimensions": 4,
+    "required_dimensions": 4,
+    "support_papers": [
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+    ],
+    "scores": {
+      "grounding": 2,
+      "novelty": 2,
+      "feasibility": 2,
+      "expected_insight": 2,
+      "experiment_path": 2,
+      "scope_control": 2,
+      "total": 12
+    },
+    "decision": "pursue_now"
+  },
+  {
+    "id": "Q3_token_memory_policy_for_agents",
+    "question": "Can token, cache, and decoding-efficiency methods be converted into agent-level memory policies that preserve task state while reducing GPU memory and generation cost?",
+    "needs": [
+      "decoding_token_memory",
+      "cost_latency_budget",
+      "tool_agent_planning",
+      "small_model_feasible"
+    ],
+    "experiment": "Combine p-less/WeDLM-style decoding probes with multi-turn agent benchmarks. Track state-recall accuracy, final task success, token count, KV/cache footprint proxy, and latency.",
+    "supported_dimensions": 4,
+    "required_dimensions": 4,
+    "support_papers": [
+      "Differentiable Model Predictive Control on the GPU",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+    ],
+    "scores": {
+      "grounding": 2,
+      "novelty": 2,
+      "feasibility": 2,
+      "expected_insight": 2,
+      "experiment_path": 2,
+      "scope_control": 2,
+      "total": 12
+    },
+    "decision": "pursue_now"
+  },
+  {
+    "id": "Q4_gpu_headroom_topic_selector",
+    "question": "Can prescriptive scaling and GPU microbenchmarks identify which agent benchmarks still have 4090-reachable headroom for meaningful 7B method improvements?",
+    "needs": [
+      "benchmark_headroom",
+      "gpu_efficiency",
+      "small_model_feasible",
+      "cost_latency_budget"
+    ],
+    "experiment": "Fit prescriptive boundaries over public agent/eval results, then run FlashSketch or decoding microbenchmarks to estimate evaluation cost before selecting final benchmark subsets.",
+    "supported_dimensions": 4,
+    "required_dimensions": 4,
+    "support_papers": [
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+    ],
+    "scores": {
+      "grounding": 2,
+      "novelty": 2,
+      "feasibility": 2,
+      "expected_insight": 2,
+      "experiment_path": 2,
+      "scope_control": 2,
+      "total": 12
+    },
+    "decision": "pursue_now"
+  },
+  {
+    "id": "Q5_coordination_overhead_in_multi_agent_7b_systems",
+    "question": "For 7B multi-agent systems, when does coordination improve accuracy enough to offset extra calls, latency, and context overhead?",
+    "needs": [
+      "tool_agent_planning",
+      "cost_latency_budget",
+      "benchmark_headroom",
+      "small_model_feasible"
+    ],
+    "experiment": "Run OMAC-lite and AgentFlow-style controllers on HumanEval/MATH/tool tasks, logging marginal accuracy per extra call, token, and second.",
+    "supported_dimensions": 4,
+    "required_dimensions": 4,
+    "support_papers": [
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+    ],
+    "scores": {
+      "grounding": 2,
+      "novelty": 2,
+      "feasibility": 2,
+      "expected_insight": 2,
+      "experiment_path": 2,
+      "scope_control": 2,
+      "total": 12
+    },
+    "decision": "pursue_now"
+  }
+]

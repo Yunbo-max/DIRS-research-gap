@@ -1,0 +1,14 @@
+{
+  "pid": 658514,
+  "started_at_utc": "2026-07-20T23:20:22Z",
+  "run_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_clean_longgoal",
+  "duration_seconds": 86400,
+  "min_loops": 24,
+  "max_loops": 1000,
+  "mcts_rollouts": 5000,
+  "stable_window": 10,
+  "base_seed": 20260720,
+  "stop_after_converged": false,
+  "runtime": "local_deterministic_no_api",
+  "blind_rule": "do not open holdout_private_after_generation.json"
+}

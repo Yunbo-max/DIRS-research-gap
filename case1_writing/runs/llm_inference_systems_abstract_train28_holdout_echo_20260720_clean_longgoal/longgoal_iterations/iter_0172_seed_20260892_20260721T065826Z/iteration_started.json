@@ -1,0 +1,8 @@
+{
+  "event": "iteration_started",
+  "iteration": 172,
+  "seed": 20260892,
+  "started_at_utc": "2026-07-21T06:58:26Z",
+  "snapshot_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_clean_longgoal/longgoal_iterations/iter_0172_seed_20260892_20260721T065826Z",
+  "log_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_clean_longgoal/longgoal_iterations/iter_0172_seed_20260892_20260721T065826Z.log"
+}

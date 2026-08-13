@@ -1,0 +1,375 @@
+{
+  "schema_version": "dirs.anonymous_evaluations.v1",
+  "evaluation_mode": "fresh_strict_blind",
+  "score_scale": {
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "higher_is_better": true
+  },
+  "overall_score_policy": "holistic professional preference; not computed from a preset weighted formula",
+  "evaluations": [
+    {
+      "draft_id": "draft_A",
+      "scores": {
+        "evidence_fidelity": 0.93,
+        "problem_gap": 0.96,
+        "method_clarity": 0.96,
+        "evaluation_setup_function": 0.96,
+        "result_salience": 0.82,
+        "interpretation_coherence": 0.94,
+        "boundedness_and_compression": 0.95
+      },
+      "overall_preference_score": 0.879,
+      "confidence": 0.96,
+      "hard_failures": [],
+      "factual_checks": [
+        {
+          "claim": "Mamba-3 combines exponential-trapezoidal recurrence, learned trap interpolation, data-dependent complex rotations, and MIMO projections.",
+          "status": "supported",
+          "grounding": "Public chip method mechanism."
+        },
+        {
+          "claim": "MIMO targets arithmetic intensity while fused SISO targets lower latency.",
+          "status": "supported",
+          "grounding": "Public chip method and BF16 latency results."
+        },
+        {
+          "claim": "Evaluation includes language modeling, downstream tasks, retrieval, formal state tracking, and kernel/end-to-end latency against the named baselines.",
+          "status": "supported",
+          "grounding": "Public chip evaluation pipelines and experiment bindings."
+        },
+        {
+          "claim": "Fixed-state recurrence can miss sparse facts, and hybrid attention improves retrieval at additional attention cost.",
+          "status": "supported",
+          "grounding": "Public chip retrieval limitation and compatibility events."
+        }
+      ],
+      "major_strengths": [
+        "Builds a complete motivation-to-mechanism-to-evaluation-to-limitation arc.",
+        "Explains the functional distinction between MIMO and SISO particularly clearly.",
+        "Keeps scale transfer, retrieval robustness, and portability claims appropriately bounded."
+      ],
+      "major_weaknesses": [
+        "The result paragraph is entirely qualitative despite several compact, discriminative numbers being available.",
+        "The broad claim of better recurrent decoding is correct but less memorable and auditable than a concrete latency comparison.",
+        "The opening spends slightly more space restating the general SSM premise than the strongest competing drafts."
+      ]
+    },
+    {
+      "draft_id": "draft_B",
+      "scores": {
+        "evidence_fidelity": 0.98,
+        "problem_gap": 0.95,
+        "method_clarity": 0.95,
+        "evaluation_setup_function": 0.98,
+        "result_salience": 0.96,
+        "interpretation_coherence": 0.96,
+        "boundedness_and_compression": 0.96
+      },
+      "overall_preference_score": 0.942,
+      "confidence": 0.98,
+      "hard_failures": [],
+      "factual_checks": [
+        {
+          "claim": "Training spans 180M to 1.5B parameters on 100B FineWeb-Edu tokens.",
+          "status": "supported",
+          "grounding": "Public chip experimental setting."
+        },
+        {
+          "claim": "The main MIMO path uses rank 4.",
+          "status": "supported",
+          "grounding": "Public chip method mechanism."
+        },
+        {
+          "claim": "At 1.5B, MIMO obtains 10.24 perplexity and 57.6 average accuracy.",
+          "status": "supported",
+          "grounding": "Public chip 1.5B language-model result."
+        },
+        {
+          "claim": "SISO reaches 0.156 ms/token for BF16 with state size 128.",
+          "status": "supported",
+          "grounding": "Public chip BF16 kernel-latency result."
+        },
+        {
+          "claim": "Pure fixed-state retrieval is mixed and hybrid attention adds back attention cost.",
+          "status": "supported",
+          "grounding": "Public chip retrieval limitation."
+        }
+      ],
+      "major_strengths": [
+        "Uses one quality result and one efficiency result to substantiate both halves of the central contribution.",
+        "Makes the MIMO-quality versus SISO-latency operating-point distinction explicit.",
+        "Provides a precise training/evaluation frame and closes with appropriate scale and portability limits."
+      ],
+      "major_weaknesses": [
+        "Formal state tracking is listed and claimed but not quantified, so the complex-rotation mechanism receives less direct validation than in drafts C and E.",
+        "The opening's two-obstacle framing is effective but slightly generic.",
+        "The hardware number is a kernel setting, not an end-to-end result; the wording remains correct but readers must retain that distinction."
+      ]
+    },
+    {
+      "draft_id": "draft_C",
+      "scores": {
+        "evidence_fidelity": 0.98,
+        "problem_gap": 0.96,
+        "method_clarity": 0.94,
+        "evaluation_setup_function": 0.97,
+        "result_salience": 0.97,
+        "interpretation_coherence": 0.98,
+        "boundedness_and_compression": 0.98
+      },
+      "overall_preference_score": 0.952,
+      "confidence": 0.98,
+      "hard_failures": [],
+      "factual_checks": [
+        {
+          "claim": "Attention has quadratic prefill cost and an expanding KV cache.",
+          "status": "supported",
+          "grounding": "Public chip problem gap."
+        },
+        {
+          "claim": "Models from 180M to 1.5B are trained on 100B FineWeb-Edu tokens.",
+          "status": "supported",
+          "grounding": "Public chip experimental setting."
+        },
+        {
+          "claim": "At 1.5B, MIMO reaches 10.24 perplexity and 57.6 average accuracy.",
+          "status": "supported",
+          "grounding": "Public chip 1.5B language-model result."
+        },
+        {
+          "claim": "On bracketed arithmetic, Mamba-3 scores 87.75 versus 0.88 for Mamba-2.",
+          "status": "supported",
+          "grounding": "Public chip formal state-tracking result."
+        },
+        {
+          "claim": "The official implementation is released and requires specialized kernels.",
+          "status": "supported",
+          "grounding": "Public chip implementation and limitations."
+        }
+      ],
+      "major_strengths": [
+        "Pairs a headline language-model result with an unusually salient mechanism-linked state-tracking comparison.",
+        "The interpretation directly connects richer recurrent dynamics to capability while preserving the retrieval caveat.",
+        "Achieves a strong evidence density and clean argumentative flow in 203 reported words."
+      ],
+      "major_weaknesses": [
+        "Efficiency improvement is not quantified, even though inference efficiency is half of the stated gap.",
+        "The method sentence compresses several components so tightly that the functional role of MIMO is less explicit than in drafts B and D.",
+        "The release claim is valid but contributes less scientific salience than a concrete latency result would."
+      ]
+    },
+    {
+      "draft_id": "draft_D",
+      "scores": {
+        "evidence_fidelity": 0.99,
+        "problem_gap": 0.95,
+        "method_clarity": 0.98,
+        "evaluation_setup_function": 0.97,
+        "result_salience": 0.99,
+        "interpretation_coherence": 0.99,
+        "boundedness_and_compression": 0.97
+      },
+      "overall_preference_score": 0.965,
+      "confidence": 0.99,
+      "hard_failures": [],
+      "factual_checks": [
+        {
+          "claim": "Mamba-3 uses exponential-trapezoidal recurrence, a learned trap gate, complex rotations, and rank-4 MIMO.",
+          "status": "supported",
+          "grounding": "Public chip method mechanism."
+        },
+        {
+          "claim": "MIMO raises arithmetic intensity while SISO is the lower-latency variant.",
+          "status": "supported",
+          "grounding": "Public chip mechanism and latency results."
+        },
+        {
+          "claim": "At 1.5B, MIMO attains 10.24 perplexity and 57.6 average accuracy.",
+          "status": "supported",
+          "grounding": "Public chip 1.5B language-model result."
+        },
+        {
+          "claim": "At BF16 and state size 128, SISO uses 0.156 ms/token versus 0.203 for Mamba-2.",
+          "status": "supported",
+          "grounding": "Public chip BF16 kernel-latency result."
+        },
+        {
+          "claim": "Pure recurrence is uneven on hard retrieval, while hybrid attention recovers retrieval at added attention cost.",
+          "status": "supported",
+          "grounding": "Public chip retrieval evidence and limitations."
+        }
+      ],
+      "major_strengths": [
+        "Most completely substantiates the paper's joint quality-efficiency thesis with exact numbers on both axes.",
+        "Explains the function of each major mechanism and turns the SISO/MIMO distinction into a clear practical interpretation.",
+        "Includes matched training scale, strong baselines, retrieval and state-tracking coverage, plus disciplined scale and hardware bounds."
+      ],
+      "major_weaknesses": [
+        "The evaluation sentence could identify downstream language benchmarks more explicitly rather than leaving average accuracy implicit.",
+        "The opening is accurate but conventional.",
+        "At 214 reported words it remains within the target band, though it is less compressed than draft C."
+      ]
+    },
+    {
+      "draft_id": "draft_E",
+      "scores": {
+        "evidence_fidelity": 0.98,
+        "problem_gap": 0.97,
+        "method_clarity": 0.93,
+        "evaluation_setup_function": 0.98,
+        "result_salience": 0.97,
+        "interpretation_coherence": 0.95,
+        "boundedness_and_compression": 0.97
+      },
+      "overall_preference_score": 0.935,
+      "confidence": 0.98,
+      "hard_failures": [],
+      "factual_checks": [
+        {
+          "claim": "State-space models use fixed recurrent state and linear sequence processing.",
+          "status": "supported",
+          "grounding": "Public chip problem gap and method."
+        },
+        {
+          "claim": "Evaluation covers matched 180M to 1.5B models trained on 100B FineWeb-Edu tokens, language tasks, retrieval, formal state tracking, and H100 kernel/end-to-end latency.",
+          "status": "supported",
+          "grounding": "Public chip experimental setting and evaluation pipelines."
+        },
+        {
+          "claim": "At 1.5B, MIMO obtains 10.24 perplexity and 57.6 average accuracy versus 10.47 and 55.7 for Mamba-2.",
+          "status": "supported",
+          "grounding": "Public chip 1.5B language-model result."
+        },
+        {
+          "claim": "Bracketed arithmetic accuracy is 87.75 for Mamba-3 and 0.88 for Mamba-2.",
+          "status": "supported",
+          "grounding": "Public chip formal state-tracking result."
+        },
+        {
+          "claim": "Current evidence ends at 1.5B and depends on specialized GPU implementations.",
+          "status": "supported",
+          "grounding": "Public chip limitations."
+        }
+      ],
+      "major_strengths": [
+        "Gives direct baseline-relative numbers for both aggregate language quality and formal state tracking.",
+        "Defines the evaluation suite and scale unusually completely.",
+        "States the sparse-evidence problem early and returns to it as a bounded interpretation."
+      ],
+      "major_weaknesses": [
+        "It reports no latency number or explicit MIMO arithmetic-intensity mechanism, weakening the efficiency half of the contribution.",
+        "The interpretation 'results favor richer state dynamics' is plausible and supported, but it does not separate which component is validated by which result as sharply as draft C.",
+        "The method is accurate but more enumerative than functional."
+      ]
+    },
+    {
+      "draft_id": "draft_F",
+      "scores": {
+        "evidence_fidelity": 0.94,
+        "problem_gap": 0.93,
+        "method_clarity": 0.94,
+        "evaluation_setup_function": 0.95,
+        "result_salience": 0.85,
+        "interpretation_coherence": 0.97,
+        "boundedness_and_compression": 0.98
+      },
+      "overall_preference_score": 0.889,
+      "confidence": 0.96,
+      "hard_failures": [],
+      "factual_checks": [
+        {
+          "claim": "Mamba-3 combines exponential-trapezoidal recurrence, trap interpolation, complex rotations, and MIMO projections in a Llama-style stack.",
+          "status": "supported",
+          "grounding": "Public chip method mechanism."
+        },
+        {
+          "claim": "MIMO increases arithmetic intensity and SISO offers a faster operating point.",
+          "status": "supported",
+          "grounding": "Public chip method and latency results."
+        },
+        {
+          "claim": "Evaluation uses matched FineWeb-Edu training and language, retrieval, state-tracking, kernel, and end-to-end latency tests against the named baselines.",
+          "status": "supported",
+          "grounding": "Public chip evaluation validation."
+        },
+        {
+          "claim": "The MIMO variant is not always fastest, and hybrid attention restores some attention cost.",
+          "status": "supported",
+          "grounding": "Public chip quality-latency tradeoff and hybrid limitation."
+        }
+      ],
+      "major_strengths": [
+        "Exceptionally smooth and compact synthesis of the quality-efficiency tradeoff.",
+        "Clearly distinguishes the functions of the MIMO and SISO paths.",
+        "The closing interpretation is cautious about scale, retrieval, and portability."
+      ],
+      "major_weaknesses": [
+        "No exact result is reported, so the central empirical claims are less auditable and less memorable.",
+        "Training scale and token budget are omitted, reducing the reader's ability to bound the evidence until the final generic larger-scale caveat.",
+        "The phrase 'across these settings' slightly compresses heterogeneous outcomes even though retrieval is immediately qualified."
+      ]
+    }
+  ],
+  "reward_by_draft_id": {
+    "draft_A": 0.879,
+    "draft_B": 0.942,
+    "draft_C": 0.952,
+    "draft_D": 0.965,
+    "draft_E": 0.935,
+    "draft_F": 0.889
+  },
+  "strict_ranking": [
+    {
+      "rank": 1,
+      "draft_id": "draft_D"
+    },
+    {
+      "rank": 2,
+      "draft_id": "draft_C"
+    },
+    {
+      "rank": 3,
+      "draft_id": "draft_B"
+    },
+    {
+      "rank": 4,
+      "draft_id": "draft_E"
+    },
+    {
+      "rank": 5,
+      "draft_id": "draft_F"
+    },
+    {
+      "rank": 6,
+      "draft_id": "draft_A"
+    }
+  ],
+  "pairwise_rationales": [
+    {
+      "preferred": "draft_D",
+      "over": "draft_C",
+      "rationale": "D quantifies both quality and latency and makes the MIMO/SISO operating tradeoff explicit; C is slightly tighter and has stronger mechanism-linked formal evidence but leaves efficiency unquantified."
+    },
+    {
+      "preferred": "draft_C",
+      "over": "draft_B",
+      "rationale": "C's bracketed-arithmetic contrast directly validates richer state dynamics and its argument is more compressed; B better balances quality and latency numbers but gives weaker direct evidence for the state-tracking mechanism."
+    },
+    {
+      "preferred": "draft_B",
+      "over": "draft_E",
+      "rationale": "B better represents the paper's joint quality-efficiency contribution by reporting both a quality point and a kernel-latency point; E has stronger formal-state evidence but leaves the efficiency result qualitative."
+    },
+    {
+      "preferred": "draft_E",
+      "over": "draft_F",
+      "rationale": "E provides exact baseline-relative quality and formal-state results plus a more explicit scale bound; F is smoother but its empirical claims remain entirely qualitative."
+    },
+    {
+      "preferred": "draft_F",
+      "over": "draft_A",
+      "rationale": "Both are factually sound and non-numeric, but F is more compressed and turns the MIMO/SISO distinction into a cleaner quality-efficiency interpretation; A offers a fuller evaluation inventory but a less salient result section."
+    }
+  ]
+}

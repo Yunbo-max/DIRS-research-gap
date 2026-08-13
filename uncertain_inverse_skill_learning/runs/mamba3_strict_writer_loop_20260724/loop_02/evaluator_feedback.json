@@ -1,0 +1,58 @@
+{
+  "schema_version": "dirs.strict_writer.evaluator_feedback.v1",
+  "loop": 2,
+  "blind_boundary": {
+    "writer_output_frozen_before_evaluation": true,
+    "expert_wording_in_feedback": false
+  },
+  "scores": {
+    "evidence_fidelity": 0.99,
+    "problem_and_gap_function": 0.94,
+    "method_mechanism_function": 0.97,
+    "headline_result_selection": 0.88,
+    "expert_artifact_function_coverage": 0.87,
+    "coherence_and_compression": 0.94,
+    "bounded_claims": 0.97,
+    "overall": 0.937
+  },
+  "score_delta_from_loop_01": 0.062,
+  "hard_failures": [],
+  "accepted_improvements": [
+    "The result section now functions as a comparative contribution rather than a table dump.",
+    "The selected graph has a clear comparative-gain join and one efficiency anchor.",
+    "The writer correctly rejected an evaluator-requested result that was not supported by the public chip."
+  ],
+  "error_attribution": {
+    "representation_errors": [
+      {
+        "id": "REP3",
+        "problem": "The selected graph describes the complex-state mechanism but no longer contains a compact capability-validation output for that branch.",
+        "authorized_edit": "Add or reactivate a qualitative capability-validation node grounded in the public formal-task evidence; avoid enumerating all raw scores."
+      }
+    ],
+    "selection_errors": [
+      {
+        "id": "SEL3",
+        "problem": "Tokenizer and context-length details consume realization budget that could express what the complex-state branch demonstrably enables.",
+        "repair": "Keep experimental scoping in the graph but compress its surface realization."
+      }
+    ],
+    "execution_errors": [],
+    "evaluation_errors": [],
+    "data_or_evidence_errors": [
+      {
+        "id": "DATA1",
+        "problem": "The available chip does not contain the compact matched-quality state-size outcome requested in loop 1, although it records that such a sweep exists.",
+        "repair": "Do not invent or infer the missing outcome; record it as an evidence shortage."
+      }
+    ]
+  },
+  "required_next_loop_tests": [
+    "Run at least loop 3 as required by the preregistered minimum.",
+    "Retain at least three posterior trace hypotheses.",
+    "Preserve the comparative-gain node unless evidence-based evaluation rejects it.",
+    "Test whether a qualitative capability node improves functional coverage without reintroducing numeric density.",
+    "Record all graph edits and rejected edits before freezing the next sub-DAG."
+  ],
+  "feedback_level": "structural_and_functional_only_no_expert_phrases"
+}

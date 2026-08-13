@@ -1,0 +1,176 @@
+{
+  "date": "2026-07-22",
+  "domain": "LLM Inference / Systems / Token Efficiency",
+  "paper_count": 20,
+  "selection_rule": "First 20 training chip paths from the completed abstract longgoal training_trace.json; private holdout not read.",
+  "evidence_table": "paper_section_evidence_table.json",
+  "source_coverage_counts": {
+    "local_text_artifact_present": 20,
+    "local_pdf_artifact_present": 20,
+    "introduction": 20,
+    "related_work": 14,
+    "method": 20,
+    "experiments": 20,
+    "results": 20,
+    "limitations": 20,
+    "appendix_or_supplement": 20
+  },
+  "learned_gap_definition": "A full-paper research gap is a constraint mismatch that remains after the closest prior family is granted fairly; it becomes credible only when method, experiments, ablations, and limitations all bind back to that same mismatch.",
+  "nodes": [
+    {
+      "id": "intro.deployment_pressure",
+      "section": "introduction",
+      "role": "Establish why the problem matters now: speed, memory, latency, long context, token count, compression rate, correctness, serving cost, or hardware efficiency."
+    },
+    {
+      "id": "intro.prior_family_map",
+      "section": "introduction",
+      "role": "Name the current method family and grant what it already solves."
+    },
+    {
+      "id": "intro.failure_mode",
+      "section": "introduction",
+      "role": "State the exact way existing systems break under the target constraint."
+    },
+    {
+      "id": "intro.gap_claim",
+      "section": "introduction",
+      "role": "Convert the failure mode into a bounded, non-strawman research gap."
+    },
+    {
+      "id": "intro.method_need",
+      "section": "introduction",
+      "role": "Explain why the gap requires a new mechanism rather than only more data, compute, or tuning."
+    },
+    {
+      "id": "related.closest_baselines",
+      "section": "related_work",
+      "role": "Identify the closest baseline systems or method families."
+    },
+    {
+      "id": "related.axis_of_difference",
+      "section": "related_work",
+      "role": "Separate the new paper along the relevant axis: losslessness, adaptivity, hardware fit, semantic preservation, rate control, or training-free deployment."
+    },
+    {
+      "id": "related.near_miss_handling",
+      "section": "related_work",
+      "role": "Admit partial prior solutions and narrow the remaining gap."
+    },
+    {
+      "id": "method.object_definition",
+      "section": "method",
+      "role": "Define the introduced object: tokenizer, cache policy, verifier, sampler, pruning framework, kernel generator, trajectory surrogate, or data/training pipeline."
+    },
+    {
+      "id": "method.mechanism_delta",
+      "section": "method",
+      "role": "State the mechanism change relative to the closest baseline family."
+    },
+    {
+      "id": "method.constraint_binding",
+      "section": "method",
+      "role": "Tie each design choice to the gap constraint: latency, memory, exactness, rate-distortion, quality, stability, hardware, or data efficiency."
+    },
+    {
+      "id": "method.operational_steps",
+      "section": "method",
+      "role": "Make the method executable as a pipeline, architecture, update rule, gating rule, or algorithm."
+    },
+    {
+      "id": "method.theory_or_invariant",
+      "section": "method",
+      "role": "Use theory or invariants only when present: losslessness, rate objective, optimal transport geometry, sensitivity estimate, or position scaling."
+    },
+    {
+      "id": "experiments.axis_match",
+      "section": "experiments",
+      "role": "Map every experiment to a gap axis: speed, memory, rate, quality, exactness, robustness, generality, or hardware."
+    },
+    {
+      "id": "experiments.baseline_strength",
+      "section": "experiments",
+      "role": "Use closest strong baselines rather than weak defaults."
+    },
+    {
+      "id": "experiments.metric_pairing",
+      "section": "experiments",
+      "role": "Pair efficiency metrics with correctness or quality metrics."
+    },
+    {
+      "id": "experiments.scale_or_stress",
+      "section": "experiments",
+      "role": "Stress the claimed constraint through larger models, longer contexts, higher compression, higher temperatures, larger draft lengths, or hardware settings."
+    },
+    {
+      "id": "experiments.ablation_or_control",
+      "section": "experiments",
+      "role": "Test the claimed mechanism, not only the final score."
+    },
+    {
+      "id": "results.primary_table_read",
+      "section": "results",
+      "role": "Read the main table as evidence for the original gap."
+    },
+    {
+      "id": "results.tradeoff_interpretation",
+      "section": "results",
+      "role": "Interpret whether the method improves the target constraint without losing the paired metric."
+    },
+    {
+      "id": "results.exception_scan",
+      "section": "results",
+      "role": "Name saturation, weak settings, hardware limits, or quality regressions when present."
+    },
+    {
+      "id": "results.mechanism_attribution",
+      "section": "results",
+      "role": "Use ablations or controls to argue why the mechanism explains the gain."
+    },
+    {
+      "id": "results.scope_boundary",
+      "section": "discussion_or_limitations",
+      "role": "Preserve limitations and avoid universal claims."
+    }
+  ],
+  "edges": [
+    ["intro.deployment_pressure", "intro.prior_family_map"],
+    ["intro.prior_family_map", "intro.failure_mode"],
+    ["intro.failure_mode", "intro.gap_claim"],
+    ["intro.gap_claim", "intro.method_need"],
+    ["intro.gap_claim", "related.closest_baselines"],
+    ["related.closest_baselines", "related.axis_of_difference"],
+    ["related.axis_of_difference", "related.near_miss_handling"],
+    ["intro.method_need", "method.object_definition"],
+    ["method.object_definition", "method.mechanism_delta"],
+    ["method.mechanism_delta", "method.constraint_binding"],
+    ["method.constraint_binding", "method.operational_steps"],
+    ["method.operational_steps", "method.theory_or_invariant"],
+    ["method.constraint_binding", "experiments.axis_match"],
+    ["experiments.axis_match", "experiments.baseline_strength"],
+    ["experiments.baseline_strength", "experiments.metric_pairing"],
+    ["experiments.metric_pairing", "experiments.scale_or_stress"],
+    ["experiments.scale_or_stress", "experiments.ablation_or_control"],
+    ["experiments.ablation_or_control", "results.primary_table_read"],
+    ["results.primary_table_read", "results.tradeoff_interpretation"],
+    ["results.tradeoff_interpretation", "results.exception_scan"],
+    ["results.exception_scan", "results.mechanism_attribution"],
+    ["results.mechanism_attribution", "results.scope_boundary"]
+  ],
+  "gap_taxonomy": [
+    "fragmentation_or_unification_gap",
+    "constraint_mismatch_gap",
+    "static_policy_gap",
+    "exactness_versus_speed_gap",
+    "objective_misalignment_gap",
+    "mechanism_specificity_gap"
+  ],
+  "anti_rewards": [
+    "Do not claim a broad topic is missing when prior work already covers it.",
+    "Do not write efficient without naming the saved resource.",
+    "Do not let result tables drift away from the introduction gap.",
+    "Do not attribute gains to a mechanism without an ablation, control, sensitivity study, or theorem.",
+    "Do not use one metric when the gap is a tradeoff.",
+    "Do not hide limitations; use them to bound the learned gap."
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "checks": [
+    {
+      "detail": "leakage_hits=[]",
+      "name": "blind_input_contract",
+      "ok": true,
+      "weight": 0.18
+    },
+    {
+      "detail": "p_less fallback=0.000",
+      "name": "bounded_candidate_set",
+      "ok": true,
+      "weight": 0.12
+    },
+    {
+      "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+      "name": "hyperparameter_free",
+      "ok": true,
+      "weight": 0.1
+    },
+    {
+      "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+      "name": "main_auc_shape",
+      "ok": false,
+      "weight": 0.16
+    },
+    {
+      "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+      "name": "high_temperature_writing_shape",
+      "ok": true,
+      "weight": 0.16
+    },
+    {
+      "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071913, fastest=0.00052969",
+      "name": "efficiency_shape",
+      "ok": true,
+      "weight": 0.14
+    },
+    {
+      "detail": "blocked_by_missing_full_evaluation_pipeline",
+      "name": "exact_reproduction_boundary",
+      "ok": true,
+      "weight": 0.1
+    },
+    {
+      "detail": "detail_level=1, node_count=7",
+      "name": "dag_detail_sufficiency",
+      "ok": false,
+      "weight": 0.04
+    }
+  ],
+  "converged_ready": false,
+  "created_at_utc": "2026-07-22T21:21:15Z",
+  "missing": [
+    "main_auc_shape",
+    "dag_detail_sufficiency"
+  ],
+  "oracle_numeric_anchors_used_by_verifier": {
+    "table15_cpu_ms_ram_gb": {
+      "min_p": {
+        "cpu_ms": 0.83,
+        "ram_gb": 2.545
+      },
+      "p_less": {
+        "cpu_ms": 0.62,
+        "ram_gb": 2.456
+      },
+      "top_p": {
+        "cpu_ms": 0.79,
+        "ram_gb": 2.535
+      }
+    },
+    "table1_llama2_auc_p_less": {
+      "CSQA": 0.503,
+      "GPQA": 0.242,
+      "GSM8K": 0.267,
+      "QASC": 0.537
+    },
+    "table1_llama2_auc_p_lessnorm": {
+      "CSQA": 0.503,
+      "GPQA": 0.248,
+      "GSM8K": 0.267,
+      "QASC": 0.538
+    },
+    "table1_mistral_auc_p_less": {
+      "CSQA": 0.697,
+      "GPQA": 0.239,
+      "GSM8K": 0.562,
+      "QASC": 0.736
+    },
+    "table1_mistral_auc_p_lessnorm": {
+      "CSQA": 0.692,
+      "GPQA": 0.222,
+      "GSM8K": 0.564,
+      "QASC": 0.739
+    },
+    "table2_llama2_temp2_win_rate": {
+      "epsilon": 0.0,
+      "eta": 0.0,
+      "min_p": 48.94,
+      "mirostat": 26.88,
+      "p_less": 65.64,
+      "p_lessnorm": 59.29,
+      "top_p": 0.0
+    },
+    "table3_sampling_time_seconds_per_token": {
+      "epsilon": 0.02259,
+      "eta": 0.0221,
+      "min_p": 0.02497,
+      "mirostat": 0.02278,
+      "p_less": 0.01942,
+      "top_p": 0.02362
+    }
+  },
+  "score": 0.8,
+  "suggestions": [
+    "add artifact gate and verifier table-slot anchors without numeric oracle values"
+  ]
+}

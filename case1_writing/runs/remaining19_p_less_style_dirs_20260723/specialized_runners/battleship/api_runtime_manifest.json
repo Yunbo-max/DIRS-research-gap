@@ -1,0 +1,17 @@
+{
+  "api_key_presence": {
+    "ANTHROPIC_API_KEY": false,
+    "GOOGLE_API_KEY": false,
+    "OPENAI_API_KEY": true,
+    "OPENROUTER_API_KEY": false
+  },
+  "artifact_kind": "battleship_api_runtime_manifest",
+  "code_api_surface": {
+    "agents_py_openrouter_base_url": "https://openrouter.ai/api/v1",
+    "required_env_var_from_code": "OPENROUTER_API_KEY"
+  },
+  "created_at_utc": "2026-07-23T18:53:31Z",
+  "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+  "paper_runtime_interpretation": "Core experiments are API/model-agent and symbolic sampler experiments; local GPU is not the deciding execution resource for this paper.",
+  "secret_policy": "Only boolean key presence is recorded; secret values are never written."
+}

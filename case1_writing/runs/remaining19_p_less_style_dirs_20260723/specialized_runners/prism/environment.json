@@ -1,0 +1,255 @@
+{
+  "artifact_kind": "prism_environment_manifest",
+  "compileall_src": {
+    "cmd": [
+      "/opt/conda/bin/python",
+      "-m",
+      "compileall",
+      "-q",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.033,
+    "stderr": "",
+    "stdout": "",
+    "timeout": false
+  },
+  "created_at_utc": "2026-07-24T13:32:46Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 8028,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16189,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 177.14,
+      "temperature_c": 79,
+      "utilization_gpu_pct": 100
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 320.22,
+      "temperature_c": 86,
+      "utilization_gpu_pct": 98
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7816,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16397,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 180.08,
+      "temperature_c": 77,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 157.15,
+      "temperature_c": 80,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "import_probes": {
+    "PIL": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('PIL'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.025,
+      "stderr": "",
+      "stdout": "10.0.1\n",
+      "timeout": false
+    },
+    "diffusers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('diffusers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'diffusers'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "langchain": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('langchain'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'langchain'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "langchain_openai": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('langchain_openai'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'langchain_openai'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "lpips": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('lpips'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'lpips'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "openai": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('openai'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.674,
+      "stderr": "",
+      "stdout": "2.43.0\n",
+      "timeout": false
+    },
+    "retry": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('retry'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'retry'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "sklearn": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('sklearn'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.893,
+      "stderr": "",
+      "stdout": "1.7.2\n",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.597,
+      "stderr": "",
+      "stdout": "2.6.0+cu124\n",
+      "timeout": false
+    },
+    "torchvision": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torchvision'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 2.771,
+      "stderr": "",
+      "stdout": "0.21.0+cu124\n",
+      "timeout": false
+    },
+    "transformers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('transformers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.866,
+      "stderr": "",
+      "stdout": "4.51.2\n",
+      "timeout": false
+    },
+    "xformers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('xformers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'xformers'\n",
+      "stdout": "",
+      "timeout": false
+    }
+  },
+  "openai_api_key_present": true,
+  "openai_api_key_value_recorded": false,
+  "packages": {
+    "diffusers": null,
+    "langchain": null,
+    "langchain-openai": null,
+    "lpips": null,
+    "openai": "2.43.0",
+    "pillow": "10.0.1",
+    "retry": null,
+    "scikit-learn": "1.7.2",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformers": "4.51.2",
+    "xformers": null
+  },
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "professional_hardware_expected_by_dag": [
+    "two NVIDIA L40 48GB GPUs",
+    "CUDA 12.2",
+    "OpenAI API access for keyword generation and structured text generation"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "quick_start_syntax": {
+    "cmd": [
+      "bash",
+      "-n",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/quick_start.sh"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.001,
+    "stderr": "",
+    "stdout": "",
+    "timeout": false
+  }
+}

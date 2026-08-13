@@ -1,0 +1,92 @@
+{
+  "schema_version": "dirs.macro_motif_mapping.v1",
+  "primitive_graph_id": "mamba3_abstract_primitive_flow_candidate_v1",
+  "status": "inferred_local_mapping_not_transfer_validated",
+  "principle": "S1-S6 expand into primitive subgraphs and constraints; they are not directly sampled as atomic nodes.",
+  "motifs": [
+    {
+      "macro_id": "S1_result_first_pareto_ledger",
+      "primitive_nodes": [
+        "v_aggregate_quality",
+        "v_latency_comparison",
+        "v_information_budget"
+      ],
+      "required_partial_order": [
+        ["v_aggregate_quality", "v_information_budget"],
+        ["v_latency_comparison", "v_information_budget"]
+      ],
+      "realization_constraint": "allocate aggregate quality and latency before optional component detail"
+    },
+    {
+      "macro_id": "S2_mechanism_ablation_staircase",
+      "primitive_nodes": [
+        "v_recurrence_binding",
+        "v_state_binding",
+        "v_operating_point_map",
+        "v_information_budget"
+      ],
+      "required_dependencies": {
+        "v_operating_point_map": [
+          "v_aggregate_quality",
+          "v_latency_comparison"
+        ]
+      },
+      "realization_constraint": "keep each selected mechanism adjacent to its validation in the content plan"
+    },
+    {
+      "macro_id": "S3_evaluation_mosaic_with_scope_gate",
+      "primitive_nodes": [
+        "v_aggregate_quality",
+        "v_state_binding",
+        "v_latency_comparison",
+        "v_retrieval_scope",
+        "v_information_budget"
+      ],
+      "realization_constraint": "assign nonredundant functional roles before allocating surface budget"
+    },
+    {
+      "macro_id": "S4_boundary_first_contrast_loop",
+      "primitive_nodes": [
+        "v_retrieval_scope",
+        "v_information_budget"
+      ],
+      "required_partial_order": [
+        ["v_retrieval_scope", "v_information_budget"]
+      ],
+      "realization_constraint": "scope positive claims with the selected boundary"
+    },
+    {
+      "macro_id": "S5_salience_anchor_then_selective_bindings",
+      "primitive_nodes": [
+        "v_aggregate_quality",
+        "v_information_budget"
+      ],
+      "dependency_group": {
+        "type": "SELECT_K",
+        "minimum": 1,
+        "maximum": 2,
+        "members": [
+          "v_recurrence_binding",
+          "v_state_binding",
+          "v_operating_point_map"
+        ]
+      },
+      "realization_constraint": "place aggregate anchor before selected local bindings"
+    },
+    {
+      "macro_id": "S6_operating_point_decision_split",
+      "primitive_nodes": [
+        "v_aggregate_quality",
+        "v_latency_comparison",
+        "v_operating_point_map",
+        "v_information_budget"
+      ],
+      "required_partial_order": [
+        ["v_aggregate_quality", "v_operating_point_map"],
+        ["v_latency_comparison", "v_operating_point_map"],
+        ["v_operating_point_map", "v_information_budget"]
+      ],
+      "realization_constraint": "state setting-bounded configuration roles without universalizing them"
+    }
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T12:21:46Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.sparserl_spmv_cuda_executor_sanity"
+    ],
+    [
+      "ops.sparserl_spmv_cuda_executor_sanity",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.sparserl_dataset_scale_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.sparserl_generated_policy_gate"
+    ],
+    [
+      "ops.sparserl_dataset_scale_gate",
+      "ops.sparserl_pass_at_k_sampling_grid"
+    ],
+    [
+      "ops.sparserl_generated_policy_gate",
+      "ops.sparserl_pass_at_k_sampling_grid"
+    ],
+    [
+      "ops.sparserl_pass_at_k_sampling_grid",
+      "ops.sparserl_spmm_executor_gate"
+    ],
+    [
+      "ops.sparserl_spmm_executor_gate",
+      "ops.sparserl_baseline_comparison_gate"
+    ],
+    [
+      "ops.sparserl_baseline_comparison_gate",
+      "ops.sparserl_v100_a100_hardware_gate"
+    ],
+    [
+      "ops.sparserl_v100_a100_hardware_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.sparserl_result_shape_verifier"
+    ],
+    [
+      "reviewer.sparserl_result_shape_verifier",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.sparserl_result_shape_verifier",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_sparserl_loop2_requires_generated_policy_passatk_full_grid"
+    ],
+    [
+      "loop1.required_update.update_sparserl_loop2_requires_generated_policy_passatk_full_grid",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning | families=sparse_cuda_rl, diffusion_cache",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "correct code generation misses execution latency; sparse matrix structure is dynamic input; compiler and runtime feedback is non-differentiable",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "large LLMs generate similar static kernels; closed models can be correct but slow; highly irregular matrices can favor cuSPARSE; compile/run feedback creates high training cost",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Qwen3; DeepSeek-R1; CodeT5; CodeRL; PPOCoder; GPT-5; Claude Sonnet 4; cuSPARSE; TVM-S; GPT-5",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "pretrained code LLM policy; sparse sinusoidal embedding; SFT alignment; PPO update; compiler/executor environment; hierarchical reward",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=SpMV; SpMM; metrics=pass@1; pass@5; pass@1000; compilation rate; GFLOPS; TFLOPS; speedup; protocols=compile generated CUDA; run functional check; time candidate kernel; compare with cuSPARSE or other baselines",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=Tesla V100; Tesla A100; runtimes=PyTorch; Transformers; PEFT; CUDA nvcc; SciPy Matrix Market loader",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL; code_artifacts=sparserl/embedding.py; sparserl/reward.py; sparserl/train_minimal.py; sparserl/train_sft.py; sparserl/codegen.py; sparserl/data.py; sparserl/model.py; sparserl/config.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=SuiteSparse Matrix Collection; Deep Learning Matrix Collection; sample Matrix Market files in official repo; data_artifacts=dataset/*.mtx sample matrices; sft_data/sft_samples.jsonl; implementation_statuses=official minimal code inspected; full pretraining and SFT data deferred to future release",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Compile and time full-nnz SpMV CSR/ELL/SELL kernels on the six released Matrix Market samples; record correctness, timing, GPU mapping, and skipped formats; mark as support_only unless generated-policy/pass@k/baseline/full-dataset gates also pass.",
+      "id": "ops.sparserl_spmv_cuda_executor_sanity",
+      "skill_role": "prove the local CUDA executor can compile, run, and time sample kernels without treating this as paper convergence",
+      "type": "operational_execution_support_only"
+    },
+    {
+      "content": "Resolve SuiteSparse Matrix Collection and Deep Learning Matrix Collection matrices used by the paper, with manifest, dimensions, nnz, task split, and exact mapping to SpMV/SpMM tables; six repo sample matrices are insufficient.",
+      "id": "ops.sparserl_dataset_scale_gate",
+      "skill_role": "recover the paper-scale matrix suite before claiming result-shape match",
+      "type": "operational_dependency_gate"
+    },
+    {
+      "content": "Load or train the paper policy path for Qwen3/DeepSeek-R1/static-codegen/SparseRL candidates, including sparse sinusoidal embedding, SFT alignment, PPO update, compiler executor feedback, and hierarchical reward; hand-authored kernels are sanity checks only.",
+      "id": "ops.sparserl_generated_policy_gate",
+      "skill_role": "ensure Loop 2 uses generated kernels from the learned policy, not hand-authored CUDA motifs",
+      "type": "operational_dependency_gate"
+    },
+    {
+      "content": "Generate enough CUDA candidates per matrix/task to compute pass@1, pass@5, pass@1000 or paper-equivalent sampling metrics; keep raw candidate code, compile logs, correctness logs, runtime timings, and seed/sample IDs.",
+      "id": "ops.sparserl_pass_at_k_sampling_grid",
+      "skill_role": "produce the sampling evidence needed by SparseRL tables",
+      "type": "experiment_execution_gate"
+    },
+    {
+      "content": "Run SpMM generation, compilation, correctness, and timing in addition to SpMV; SpMV-only evidence cannot satisfy the paper result grid.",
+      "id": "ops.sparserl_spmm_executor_gate",
+      "skill_role": "cover the second sparse-kernel task family",
+      "type": "experiment_execution_gate"
+    },
+    {
+      "content": "Run cuSPARSE, TVM-S, static LLM/codegen, Qwen3, DeepSeek-R1, CodeT5/CodeRL/PPOCoder/GPT-5/Claude-style baseline rows as available from paper artifacts; emit GFLOPS/TFLOPS/speedup and compilation-rate tables.",
+      "id": "ops.sparserl_baseline_comparison_gate",
+      "skill_role": "compare learned policy outputs against the paper baseline axis",
+      "type": "experiment_execution_gate"
+    },
+    {
+      "content": "Collect paper-stated Tesla V100 and Tesla A100 traces, or explicitly block; local RTX 4090 CUDA runs are support/debug evidence and cannot by themselves match paper tables.",
+      "id": "ops.sparserl_v100_a100_hardware_gate",
+      "skill_role": "separate local support evidence from paper hardware claims",
+      "type": "systems_hardware_gate"
+    },
+    {
+      "content": "Accept close SparseRL result shape only if generated-policy pass@k, SpMV, SpMM, baseline, dataset-scale, and V100/A100 hardware gates all provide raw artifacts; otherwise feed missing gate IDs back into Loop 1.",
+      "id": "reviewer.sparserl_result_shape_verifier",
+      "skill_role": "compare simulation outputs with the paper tables, figures, and paragraph claims",
+      "type": "verification"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid; converged=False; professional_ready=False; blocked_checks=['real_cuda_executor_sanity', 'generated_policy_passatk_grid', 'paper_scale_result_grid', 'result_shape_comparison_ready']; required_updates=['update.sparserl_loop2_requires_generated_policy_passatk_full_grid']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": "{'attempted_rows': 18, 'convergence_role': 'support_only', 'correct_rows': 12, 'has_real_cuda_compile_run': True, 'reasons': ['deterministic CUDA rows use canonical hand-authored CSR/ELL/SELL kernels, not generated SparseRL policy samples', 'the local matrix inventory contains six released sample Matrix Market files, not the paper-scale SuiteSparse and Deep Learning Matrix Collection grids', 'the failed Qwen3-8B repo-minimal attempt is an OOM/runtime blocker, not pass@k policy evidence', 'no SpMM executor, cuSPARSE/TVM-S/static-codegen baseline table, or V100/A100 paper-hardware trace has been",
+            "name": "real_cuda_executor_sanity",
+            "status": "support_only"
+          },
+          {
+            "detail": [
+              {
+                "id": "generated_kernel_policy_grid",
+                "needed": "generated kernels from the pretrained/SFT/RL policy, not only hand-authored canonical kernels",
+                "status": "unresolved"
+              },
+              {
+                "id": "pass_at_k_metrics",
+                "needed": "pass@1/pass@5/pass@1000 or equivalent sampling-grid measurements",
+                "status": "unresolved"
+              }
+            ],
+            "name": "generated_policy_passatk_grid",
+            "status": "blocked"
+          },
+          {
+            "detail": [
+              {
+                "id": "paper_dataset_scale",
+                "needed": "SuiteSparse and Deep Learning Matrix Collection coverage, not only six released sample matrices",
+                "status": "unresolved"
+              },
+              {
+                "id": "spmm_and_table_grid",
+                "needed": "SpMM executor and comparison rows in addition to SpMV",
+                "status": "unresolved"
+              },
+              {
+                "id": "baseline_comparison",
+                "needed": "cuSPARSE/TVM-S/static LLM/codegen baselines with GFLOPS/TFLOPS/speedup",
+                "status": "unresolved"
+              },
+              {
+                "id": "paper_hardware_match",
+                "needed": "paper-stated V100/A100 traces; current run records local RTX 4090 only",
+                "status": "unresolved"
+              }
+            ],
+            "name": "paper_scale_result_grid",
+            "status": "blocked"
+          },
+          {
+            "detail": "requires generated SparseRL policy samples, pass@k, SpMV+SpMM, baselines, full matrix collections, and V100/A100 traces before comparison to paper evidence channels",
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.sparserl_loop2_requires_generated_policy_passatk_full_grid",
+            "reason": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+            "success_criteria": [
+              "deterministic CUDA executor sanity remains support_only",
+              "generated SparseRL/Qwen3/DeepSeek/static policy candidates are produced",
+              "pass@1/pass@5/pass@1000 metrics are computed from raw candidate logs",
+              "SpMV and SpMM tables cover paper-scale SuiteSparse and Deep Learning matrix collections",
+              "cuSPARSE/TVM-S/static-codegen baseline comparisons and V100/A100 hardware traces exist",
+              "verifier compares close result shape against paper tables, figures, and paragraphs"
+            ]
+          }
+        ],
+        "status": null
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "real_cuda_executor_sanity",
+        "generated_policy_passatk_grid",
+        "paper_scale_result_grid",
+        "result_shape_comparison_ready"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_sparserl_loop2_requires_generated_policy_passatk_full_grid",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.sparserl_loop2_requires_generated_policy_passatk_full_grid",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "deterministic CUDA executor sanity remains support_only",
+        "generated SparseRL/Qwen3/DeepSeek/static policy candidates are produced",
+        "pass@1/pass@5/pass@1000 metrics are computed from raw candidate logs",
+        "SpMV and SpMM tables cover paper-scale SuiteSparse and Deep Learning matrix collections",
+        "cuSPARSE/TVM-S/static-codegen baseline comparisons and V100/A100 hardware traces exist",
+        "verifier compares close result shape against paper tables, figures, and paragraphs"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "id": "update.sparserl_loop2_requires_generated_policy_passatk_full_grid",
+      "reason": "SparseRL produced real CUDA executor sanity evidence, but verifier rejected convergence because the simulation still lacked generated policy samples, pass@k grid, SpMM, baselines, full matrix collections, and V100/A100 traces.",
+      "success_criteria": [
+        "keep deterministic hand-authored CUDA rows as support_only",
+        "run generated SparseRL/Qwen3/DeepSeek/static candidates through compiler executor",
+        "emit pass@1/pass@5/pass@1000 sampling metrics with raw candidate logs",
+        "cover SpMV and SpMM across paper-scale SuiteSparse and Deep Learning Matrix Collection manifests",
+        "compare against cuSPARSE/TVM-S/static-codegen baselines on paper hardware or block explicitly"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "real_cuda_executor_sanity",
+        "generated_policy_passatk_grid",
+        "paper_scale_result_grid",
+        "result_shape_comparison_ready"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:49:03Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.sparserl_loop2_requires_generated_policy_passatk_full_grid"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    }
+  ],
+  "signature": "b8d0406a5389ba65",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false,
+    "sparserl_minimum_for_convergence": "generated-policy pass@k SpMV+SpMM grid across paper-scale matrices with baseline comparisons and V100/A100 or explicitly accepted paper-hardware traces",
+    "support_only_cuda_rows_are_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+  "target_title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+  "updated_at_utc": "2026-07-24T12:33:09Z"
+}

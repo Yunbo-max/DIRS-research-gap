@@ -1,0 +1,118 @@
+{
+  "artifact_kind": "prophet_dream7b_table1_axis_campaign",
+  "blocked_configs": [
+    {
+      "id": "dream_model_identifier_and_loader",
+      "paper_role": "Dream-7B-Instruct model axis",
+      "reason": "The paper reports Dream-7B-Instruct, but the released Prophet repo does not name a Dream model checkpoint or provide a Dream-specific AutoModel/eval wrapper.",
+      "status": "blocked_by_missing_exact_dream7b_model_identifier_and_loader"
+    },
+    {
+      "id": "dream_generation_function_parity",
+      "paper_role": "Dream-7B full-step and Prophet decoding mechanics",
+      "reason": "The generation code is documented and exemplified as LLaDA generation; using it for Dream without author parity checks could silently change mask IDs, scheduling, or logits semantics.",
+      "status": "blocked_by_missing_dream_generate_and_earlyexit_parity_code"
+    },
+    {
+      "id": "dream_simple_evals_prompt_scorer_parity",
+      "paper_role": "Dream-7B benchmark evaluator",
+      "reason": "The paper says LLaDA and Dream follow simple-evals prompts and generated-answer extraction, but the release only provides an lm-eval LLaDA integration.",
+      "status": "blocked_by_missing_exact_simple_evals_prompt_and_answer_extractor_for_dream"
+    },
+    {
+      "benchmarks": [
+        "MMLU",
+        "ARC-C",
+        "HellaSwag",
+        "TruthfulQA",
+        "WinoGrande",
+        "PIQA",
+        "GSM8K",
+        "GPQA",
+        "HumanEval",
+        "MBPP",
+        "Countdown",
+        "Sudoku"
+      ],
+      "id": "dream_table1_full_grid",
+      "paper_role": "Dream-7B Table 1 benchmark rows",
+      "reason": "All Dream Table 1 rows require the exact Dream runner plus enough free GPU memory for full non-reduced benchmark execution.",
+      "status": "blocked_until_dream_loader_prompt_scorer_and_gpu_budget_are_resolved"
+    }
+  ],
+  "config_statuses": {},
+  "convergence_role": "professional artifact plan for Dream-7B Table 1 axis; no run can converge without exact Dream loader, generation parity, prompt/scorer parity, and GPU memory",
+  "created_at_utc": "2026-07-23T14:07:40Z",
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 3586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 20978,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5933,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 4
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5360,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19204,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 5
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8515,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16049,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "launch_result": {
+    "launched": false,
+    "reason": "no_runnable_configs_without_exact_dream7b_loader_and_generation_parity"
+  },
+  "linked_existing_artifacts": [],
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "repository_evidence": {
+    "dream_mentions": [
+      "README.md:15:- **Model-agnostic**: Compatible with different DLMs (tested on LLaDA-8B and Dream-7B)"
+    ],
+    "files": [
+      "README.md",
+      "__pycache__/generate.cpython-310.pyc",
+      "__pycache__/generate_earlyexit.cpython-310.pyc",
+      "analysis/collect_decoding_traj.sh",
+      "analysis/collect_decoding_traj_gsm8k.py",
+      "analysis/generate.py",
+      "analysis/visualize.ipynb",
+      "eval.sh",
+      "eval_llada.py",
+      "generate.py",
+      "generate_earlyexit.py"
+    ],
+    "llada_only_signals": [
+      "eval_llada.py registers model name llada_dist",
+      "generate.py and generate_earlyexit.py examples instantiate GSAI-ML/LLaDA-8B-Instruct",
+      "no eval_dream.py, Dream-specific generate wrapper, or Dream model identifier is present in the release"
+    ],
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+  },
+  "runnable_configs": [],
+  "strict_policy": {
+    "exact_dream_model_parity_required": true,
+    "full_benchmark_required": true,
+    "paper_target_scores_visible_to_loop2": false,
+    "reduced_or_small_runs_allowed_to_converge": false
+  }
+}

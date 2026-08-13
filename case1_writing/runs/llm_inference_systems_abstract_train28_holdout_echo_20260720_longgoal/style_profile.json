@@ -1,0 +1,20 @@
+{
+  "domain": "LLM Inference / Systems / Token Efficiency",
+  "train_paper_count": 28,
+  "holdout_paper_count": 1,
+  "abstract_word_count": {
+    "min": 150,
+    "median": 212.5,
+    "mean": 254.79,
+    "max": 443
+  },
+  "abstract_sentence_count": {
+    "median": 9.0,
+    "mean": 10.75
+  },
+  "recommended_target_words": 212,
+  "recommended_band": [
+    177,
+    247
+  ]
+}

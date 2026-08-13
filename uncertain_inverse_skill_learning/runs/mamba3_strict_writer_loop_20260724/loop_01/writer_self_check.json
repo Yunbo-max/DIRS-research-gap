@@ -1,0 +1,152 @@
+{
+  "schema_version": "dirs.strict_writer.self_check.v1",
+  "loop": 1,
+  "word_count": 210,
+  "sentence_count": 9,
+  "style_profile_check": {
+    "recommended_target_words": 201,
+    "recommended_band": [
+      166,
+      236
+    ],
+    "within_band": true,
+    "evidence_path": "$.recommended_target_words and $.recommended_band in style_profile.json"
+  },
+  "factual_claims": [
+    {
+      "claim_id": "C1",
+      "abstract_sentence": 1,
+      "claim": "Transformers have quadratic attention-prefill compute and linearly growing KV-cache memory, whereas fixed-state alternatives can lose capability and remain inefficient on GPU decode.",
+      "chip_evidence_paths": [
+        "$.problem_gap.nodes[1].props.failure_modes",
+        "$.problem_gap.nodes[2].props.failure_modes",
+        "$.problem_gap.nodes[3].props.failure_modes"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C2",
+      "abstract_sentence": 2,
+      "claim": "Mamba-3 is an inference-first state-space architecture that changes recurrence, state update, and I/O structure.",
+      "chip_evidence_paths": [
+        "$.problem_gap.summary",
+        "$.problem_gap.events[0].claim",
+        "$.method_mechanism.nodes[0].props"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C3",
+      "abstract_sentence": 3,
+      "claim": "Mamba-3 uses exponential-trapezoidal recurrence with a learned trap gate, a complex update with data-dependent rotations, and a rank-4 MIMO path intended to raise arithmetic intensity.",
+      "chip_evidence_paths": [
+        "$.method_mechanism.nodes[4].props",
+        "$.method_mechanism.nodes[5].props",
+        "$.method_mechanism.nodes[6].props"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C4",
+      "abstract_sentence": 4,
+      "claim": "Models from 180M through 1.5B are pretrained on 100B FineWeb-Edu tokens with the Llama-3.1 tokenizer and 2K context.",
+      "chip_evidence_paths": [
+        "$.evaluation_validation.events[0].setting",
+        "$.experimental_setting.nodes[0].props"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C5",
+      "abstract_sentence": 5,
+      "claim": "At 1.5B, Mamba-3 MIMO has 10.24 perplexity and 57.6 average accuracy, against Transformer 10.51/55.4, Mamba-2 10.47/55.7, and Gated DeltaNet 10.45/55.8.",
+      "chip_evidence_paths": [
+        "$.result_outcome.nodes[0].props.fineweb_edu_ppl",
+        "$.result_outcome.nodes[0].props.average_accuracy"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C6",
+      "abstract_sentence": 6,
+      "claim": "On three formal state-tracking tasks, Mamba-3 scores 100.0, 98.51, and 87.75 percent, compared with Mamba-2 at 0.9, 47.81, and 0.88 percent.",
+      "chip_evidence_paths": [
+        "$.result_outcome.nodes[2].props.mamba3_accuracy",
+        "$.result_outcome.nodes[2].props.mamba2_accuracy",
+        "$.evaluation_validation.nodes[2].props.tasks"
+      ],
+      "support": "direct"
+    },
+    {
+      "claim_id": "C7",
+      "abstract_sentence": 7,
+      "claim": "For BF16 H100 kernel latency at state size 128, Mamba-3 SISO takes 0.156 ms per token, Mamba-2 takes 0.203 ms, and Mamba-3 MIMO takes 0.179 ms; MIMO is the stronger quality point.",
+      "chip_evidence_paths": [
+        "$.result_outcome.nodes[4].props.bf16_dstate128_ms_per_token",
+        "$.result_outcome.nodes[0].props.average_accuracy",
+        "$.result_outcome.nodes[1].props.claim"
+      ],
+      "support": "direct comparison across reported result nodes"
+    },
+    {
+      "claim_id": "C8",
+      "abstract_sentence": 8,
+      "claim": "Pure Mamba-3 is weaker on some semi-structured and unstructured retrieval tasks, motivating hybrid attention for sparse-fact retention.",
+      "chip_evidence_paths": [
+        "$.problem_gap.nodes[4].props",
+        "$.method_mechanism.nodes[7].props",
+        "$.method_mechanism.events[3].claim",
+        "$.limitations.items[1:3]"
+      ],
+      "support": "direct, with motivation bounded to the chip's stated recovery mechanism"
+    },
+    {
+      "claim_id": "C9",
+      "abstract_sentence": 9,
+      "claim": "The reported results jointly support improved language-model quality and recurrent inference efficiency, with a SISO/MIMO quality-latency tradeoff.",
+      "chip_evidence_paths": [
+        "$.result_outcome.summary",
+        "$.result_outcome.events[0].claim",
+        "$.result_outcome.events[2].claim"
+      ],
+      "support": "bounded synthesis"
+    }
+  ],
+  "unsupported_claim_audit": {
+    "unsupported_claims_found": [],
+    "claim_count_checked": 9,
+    "all_quantitative_values_traced": true,
+    "no_7b_result_claim": true,
+    "no_general_dirs_convergence_claim": true,
+    "no_historical_author_process_claim": true,
+    "no_gflownet_training_claim": true,
+    "no_cross_paper_learning_claim": true,
+    "caveats": [
+      "The abstract does not claim that 1.5B evidence transfers to 7B.",
+      "The final synthesis is limited to the reported architecture and experiments.",
+      "Retrieval weakness is preserved rather than suppressed."
+    ]
+  },
+  "graph_execution_check": {
+    "selected_subdag_frozen_before_writing": true,
+    "selected_signature_changed_during_writing": false,
+    "acyclic": true,
+    "trace_hypotheses_retained": 4,
+    "hypothesis_weights_normalized": true
+  },
+  "leakage_check": {
+    "forbidden_files_read": [],
+    "internet_used": false,
+    "repository_search_used": false,
+    "existing_mamba3_abstract_or_generation_read": false,
+    "heldout_target_visible": false
+  },
+  "files_read_declaration": [
+    "iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+    "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/style_profile.json",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/04_learning_and_search_algorithms.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/09_learned_policy_vs_hard_constraints.md",
+    "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_strict_writer_loop_20260724/PROTOCOL.md"
+  ],
+  "stop_declaration": "Loop 1 complete. No loop-2 work was performed."
+}

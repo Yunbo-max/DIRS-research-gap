@@ -1,0 +1,66 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "experiment_prediction": "benchmarks=FLUX.1-dev; HunyuanVideo; Wan2.1 1.3B; VBench; CycleReward; CompressedVQA; metrics=latency; TFLOPs; PSNR; LPIPS; SSIM; CycleReward average rank; VBench dimensions; CompressedVQA; refresh ratio; protocols=full 50-step uncached output as reference; shared initial random seed across methods; 200 DrawBench prompts for FLUX; 944 VBench prompts for T2V; cache threshold delta controls refresh ratio; TFLOPs measured with Calflops",
+  "gap_prediction": "raw cache distances entangle signal and noise; static or hand-tuned refresh schedules; diffusion inference latency; latent-space spectral mismatch; stressors: power-law/stationarity/independence assumptions may fail; learned latent spectra may deviate from pixel-domain derivation; no explicit repository license; external model repositories and checkpoints required",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.052,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19273, 4940, 22\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "SEA filter; density/mean normalization; SEA-filtered relative L1; accumulated threshold gate; residual reuse; scheduler coefficient mapping",
+  "oracle_results_seen": false,
+  "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "paper_text_seen": false,
+  "paper_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_not_rerun",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "Wan2.1/seacache_generate.py",
+        "HunyuanVideo/seacache_generate.py",
+        "FLUX/seacache_generate.py"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 6,
+      "readme_files": [
+        "README.md",
+        "Wan2.1/README.md",
+        "HunyuanVideo/README.md",
+        "FLUX/README.md"
+      ],
+      "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache",
+      "shell_file_count": 0,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 6,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ]
+}

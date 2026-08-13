@@ -1,0 +1,2366 @@
+{
+  "artifact_kind": "loongrl_specialized_verifier",
+  "blind_contract_checked": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T18:53:37Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_o29e01q6bv_loongrl_long_context_reasoning/paper_author_gap_dag.json",
+  "environment": {
+    "artifact_kind": "loongrl_environment_manifest",
+    "compileall_support_check": {
+      "cmd": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "verl/examples/data_preprocess",
+        "verl/verl/utils/reward_score",
+        "verl/verl/trainer/main_ppo.py",
+        "verl/verl/trainer/main_eval.py"
+      ],
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL",
+      "returncode": 0,
+      "seconds": 0.063,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "created_at_utc": "2026-07-23T18:53:35Z",
+    "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl",
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 2873,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 21343,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 5150,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19064,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 23
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.072,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 2873, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19064, 5149, 22\n3, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 99\n",
+      "timeout": false
+    },
+    "packages": {
+      "accelerate": "1.11.0",
+      "datasets": "4.3.0",
+      "deepspeed": null,
+      "flash_attn": null,
+      "python_runtime": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+      "ray": null,
+      "sglang": null,
+      "tensordict": null,
+      "torch": "2.6.0+cu124",
+      "transformers": "4.51.2",
+      "verl": null,
+      "vllm": null,
+      "wandb": "0.22.2",
+      "xformers": null
+    },
+    "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+    "professional_hardware_expectation": {
+      "loongrl_14b_training": "8 x AMD MI300X GPUs according to DAG/paper evidence",
+      "loongrl_7b_training": "16 x NVIDIA A100 GPUs according to DAG/paper evidence",
+      "official_longcontext_scripts": "trainer.n_gpus_per_node=8 and cluster Ray/veRL/vLLM rollout"
+    },
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL",
+    "rocm_smi": {
+      "cmd": [
+        "bash",
+        "-lc",
+        "command -v rocm-smi && rocm-smi --showproductname"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.004,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "torch_probe": {
+      "cmd": [
+        "python",
+        "-c",
+        "import torch, json; print(json.dumps({'cuda_available': torch.cuda.is_available(), 'cuda_version': torch.version.cuda, 'hip_version': getattr(torch.version, 'hip', None), 'device_count': torch.cuda.device_count(), 'devices': [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]}))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.72,
+      "stderr": "",
+      "stdout": "{\"cuda_available\": true, \"cuda_version\": \"12.4\", \"hip_version\": null, \"device_count\": 4, \"devices\": [\"NVIDIA GeForce RTX 4090\", \"NVIDIA GeForce RTX 4090\", \"NVIDIA GeForce RTX 4090\", \"NVIDIA GeForce RTX 4090\"]}\n",
+      "timeout": false
+    }
+  },
+  "model_data_manifest": {
+    "artifact_kind": "loongrl_model_data_manifest",
+    "benchmark_artifact_hints": [
+      "LongBench",
+      "LongBench v2",
+      "HELMET",
+      "RULER",
+      "Needle in a Haystack",
+      "MMLU",
+      "MATH-500",
+      "IFEval"
+    ],
+    "created_at_utc": "2026-07-23T18:53:37Z",
+    "datasets": [
+      {
+        "file_count": 8,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "2wikimqa_filtered_distractor_256_start_idx2500_end_idx5000_seq16384/train.parquet",
+            "size_bytes": 204614841
+          },
+          {
+            "path": "2wikimqa_qwen_filtered_start_idx0_end_idx2500_seq16384/train.parquet",
+            "size_bytes": 84671130
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 4510
+          },
+          {
+            "path": "hotpotqa_filtered_distractor_256_start_idx2500_end_idx5000_seq16384/train.parquet",
+            "size_bytes": 240859824
+          },
+          {
+            "path": "hotpotqa_qwen_filtered_start_idx0_end_idx2500_seq16384/train.parquet",
+            "size_bytes": 91212333
+          },
+          {
+            "path": "musique_filtered_distractor_256_start_idx2500_end_idx5000_seq16384/train.parquet",
+            "size_bytes": 238082110
+          },
+          {
+            "path": "musique_qwen_filtered_start_idx0_end_idx2500_seq16384/train.parquet",
+            "size_bytes": 96819293
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 2461
+          },
+          {
+            "path": "2wikimqa_filtered_distractor_256_start_idx2500_end_idx5000_seq16384/train.parquet",
+            "size_bytes": 204614841
+          },
+          {
+            "path": "2wikimqa_qwen_filtered_start_idx0_end_idx2500_seq16384/train.parquet",
+            "size_bytes": 84671130
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 4510
+          },
+          {
+            "path": "hotpotqa_filtered_distractor_256_start_idx2500_end_idx5000_seq16384/train.parquet",
+            "size_bytes": 240859824
+          },
+          {
+            "path": "hotpotqa_qwen_filtered_start_idx0_end_idx2500_seq16384/train.parquet",
+            "size_bytes": 91212333
+          },
+          {
+            "path": "musique_filtered_distractor_256_start_idx2500_end_idx5000_seq16384/train.parquet",
+            "size_bytes": 238082110
+          },
+          {
+            "path": "musique_qwen_filtered_start_idx0_end_idx2500_seq16384/train.parquet",
+            "size_bytes": 96819293
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "OldKingMeister/LoongRL-Train-Data",
+        "repo_type": "dataset",
+        "status": "available",
+        "total_size_bytes": 956266502
+      }
+    ],
+    "hf_token_available": true,
+    "local_checkpoint_candidates": [
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/mnt/longcontext/models/siyuan/llama3/Llama-3.1-8B-Instruct",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/scratch/nishang/Qwen2.5-32B",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/scratch/nishang/Qwen2.5-32B-Instruct",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/Qwen2.5-7B",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/Qwen2.5-7B-Instruct",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/Qwen2.5-32B",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/Qwen2.5-32B-Instruct",
+        "size_bytes": null
+      }
+    ],
+    "local_training_data_paths_from_official_scripts": [
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet",
+        "size_bytes": null
+      }
+    ],
+    "models": [
+      {
+        "file_count": 14,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 3819
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 686
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 138
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 3945441440
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 3864726352
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 3864726424
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 3556377672
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 27752
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7228
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 3819
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 686
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 138
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 3945441440
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 3864726352
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 3864726424
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 3556377672
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 27752
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7228
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2.5-7B",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 15242804690
+      },
+      {
+        "file_count": 14,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6240
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 243
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 3945441440
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 3864726352
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 3864726424
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 3556377672
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 27752
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6240
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 243
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 3945441440
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 3864726352
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 3864726424
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 3556377672
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 27752
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 15242807270
+      },
+      {
+        "file_count": 18,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6010
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 242
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00008.safetensors",
+            "size_bytes": 3885154816
+          },
+          {
+            "path": "model-00002-of-00008.safetensors",
+            "size_bytes": 3995327992
+          },
+          {
+            "path": "model-00003-of-00008.safetensors",
+            "size_bytes": 3995328080
+          },
+          {
+            "path": "model-00004-of-00008.safetensors",
+            "size_bytes": 3995338432
+          },
+          {
+            "path": "model-00005-of-00008.safetensors",
+            "size_bytes": 3979624824
+          },
+          {
+            "path": "model-00006-of-00008.safetensors",
+            "size_bytes": 3995328080
+          },
+          {
+            "path": "model-00007-of-00008.safetensors",
+            "size_bytes": 3995328080
+          },
+          {
+            "path": "model-00008-of-00008.safetensors",
+            "size_bytes": 1698703696
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 47472
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6010
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 242
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00008.safetensors",
+            "size_bytes": 3885154816
+          },
+          {
+            "path": "model-00002-of-00008.safetensors",
+            "size_bytes": 3995327992
+          },
+          {
+            "path": "model-00003-of-00008.safetensors",
+            "size_bytes": 3995328080
+          },
+          {
+            "path": "model-00004-of-00008.safetensors",
+            "size_bytes": 3995338432
+          },
+          {
+            "path": "model-00005-of-00008.safetensors",
+            "size_bytes": 3979624824
+          },
+          {
+            "path": "model-00006-of-00008.safetensors",
+            "size_bytes": 3995328080
+          },
+          {
+            "path": "model-00007-of-00008.safetensors",
+            "size_bytes": 3995328080
+          },
+          {
+            "path": "model-00008-of-00008.safetensors",
+            "size_bytes": 1698703696
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 47472
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 29551688871
+      },
+      {
+        "file_count": 27,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 3795
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 664
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 138
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00017.safetensors",
+            "size_bytes": 3916519128
+          },
+          {
+            "path": "model-00002-of-00017.safetensors",
+            "size_bytes": 3900847488
+          },
+          {
+            "path": "model-00003-of-00017.safetensors",
+            "size_bytes": 3900847488
+          },
+          {
+            "path": "model-00004-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00005-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00006-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00007-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00008-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00009-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00010-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00011-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00012-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00013-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00014-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00015-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00016-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00017-of-00017.safetensors",
+            "size_bytes": 3098609680
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 63248
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          }
+        ],
+        "files_tail": [
+          {
+            "path": "README.md",
+            "size_bytes": 3795
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 664
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 138
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00017.safetensors",
+            "size_bytes": 3916519128
+          },
+          {
+            "path": "model-00002-of-00017.safetensors",
+            "size_bytes": 3900847488
+          },
+          {
+            "path": "model-00003-of-00017.safetensors",
+            "size_bytes": 3900847488
+          },
+          {
+            "path": "model-00004-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00005-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00006-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00007-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00008-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00009-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00010-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00011-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00012-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00013-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00014-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00015-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00016-of-00017.safetensors",
+            "size_bytes": 3900847536
+          },
+          {
+            "path": "model-00017-of-00017.safetensors",
+            "size_bytes": 3098609680
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 63248
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7228
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2.5-32B",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 65539410004
+      },
+      {
+        "file_count": 27,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11343
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6010
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 242
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00017.safetensors",
+            "size_bytes": 3916539832
+          },
+          {
+            "path": "model-00002-of-00017.safetensors",
+            "size_bytes": 3900847496
+          },
+          {
+            "path": "model-00003-of-00017.safetensors",
+            "size_bytes": 3900847480
+          },
+          {
+            "path": "model-00004-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00005-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00006-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00007-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00008-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00009-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00010-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00011-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00012-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00013-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00014-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00015-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00016-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00017-of-00017.safetensors",
+            "size_bytes": 3098588976
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 63248
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          }
+        ],
+        "files_tail": [
+          {
+            "path": "README.md",
+            "size_bytes": 6010
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 242
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00017.safetensors",
+            "size_bytes": 3916539832
+          },
+          {
+            "path": "model-00002-of-00017.safetensors",
+            "size_bytes": 3900847496
+          },
+          {
+            "path": "model-00003-of-00017.safetensors",
+            "size_bytes": 3900847480
+          },
+          {
+            "path": "model-00004-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00005-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00006-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00007-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00008-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00009-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00010-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00011-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00012-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00013-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00014-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00015-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00016-of-00017.safetensors",
+            "size_bytes": 3900847544
+          },
+          {
+            "path": "model-00017-of-00017.safetensors",
+            "size_bytes": 3098588976
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 63248
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 7305
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 65539412503
+      },
+      {
+        "file_count": 14,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11344
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6577
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 243
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 3945426872
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 3864726352
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 3864726408
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 3556392240
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 27752
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7028015
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 1288
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 11344
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6577
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 663
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 243
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 3945426872
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 3864726352
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 3864726408
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 3556392240
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 27752
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7028015
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 1288
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "Qwen/Qwen2-7B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 15242797945
+      },
+      {
+        "file_count": 11,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 1064
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 15994
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 680
+          },
+          {
+            "path": "figures/benchmark.jpg",
+            "size_bytes": 777314
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 181
+          },
+          {
+            "path": "model-00001-of-000002.safetensors",
+            "size_bytes": 8606596466
+          },
+          {
+            "path": "model-00002-of-000002.safetensors",
+            "size_bytes": 6624675384
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 28090
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031660
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 3071
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 1064
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 15994
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 680
+          },
+          {
+            "path": "figures/benchmark.jpg",
+            "size_bytes": 777314
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 181
+          },
+          {
+            "path": "model-00001-of-000002.safetensors",
+            "size_bytes": 8606596466
+          },
+          {
+            "path": "model-00002-of-000002.safetensors",
+            "size_bytes": 6624675384
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 28090
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031660
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 3071
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 15239131423
+      },
+      {
+        "file_count": 13,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 1064
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 15994
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 664
+          },
+          {
+            "path": "figures/benchmark.jpg",
+            "size_bytes": 777314
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 181
+          },
+          {
+            "path": "model-00001-of-000004.safetensors",
+            "size_bytes": 8714116464
+          },
+          {
+            "path": "model-00002-of-000004.safetensors",
+            "size_bytes": 8667059663
+          },
+          {
+            "path": "model-00003-of-000004.safetensors",
+            "size_bytes": 8667059711
+          },
+          {
+            "path": "model-00004-of-000004.safetensors",
+            "size_bytes": 3491898034
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 48050
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031660
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 3071
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 1064
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 15994
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 664
+          },
+          {
+            "path": "figures/benchmark.jpg",
+            "size_bytes": 777314
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 181
+          },
+          {
+            "path": "model-00001-of-000004.safetensors",
+            "size_bytes": 8714116464
+          },
+          {
+            "path": "model-00002-of-000004.safetensors",
+            "size_bytes": 8667059663
+          },
+          {
+            "path": "model-00003-of-000004.safetensors",
+            "size_bytes": 8667059711
+          },
+          {
+            "path": "model-00004-of-000004.safetensors",
+            "size_bytes": 3491898034
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 48050
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031660
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 3071
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 29548013389
+      },
+      {
+        "file_count": 17,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 1064
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 15994
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 664
+          },
+          {
+            "path": "figures/benchmark.jpg",
+            "size_bytes": 777314
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 181
+          },
+          {
+            "path": "model-00001-of-000008.safetensors",
+            "size_bytes": 8792578462
+          },
+          {
+            "path": "model-00002-of-000008.safetensors",
+            "size_bytes": 8776906899
+          },
+          {
+            "path": "model-00003-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00004-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00005-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00006-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00007-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00008-of-000008.safetensors",
+            "size_bytes": 4073821536
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 64018
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031660
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 3071
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 1064
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 15994
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 664
+          },
+          {
+            "path": "figures/benchmark.jpg",
+            "size_bytes": 777314
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 181
+          },
+          {
+            "path": "model-00001-of-000008.safetensors",
+            "size_bytes": 8792578462
+          },
+          {
+            "path": "model-00002-of-000008.safetensors",
+            "size_bytes": 8776906899
+          },
+          {
+            "path": "model-00003-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00004-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00005-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00006-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00007-of-000008.safetensors",
+            "size_bytes": 8776906927
+          },
+          {
+            "path": "model-00008-of-000008.safetensors",
+            "size_bytes": 4073821536
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 64018
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031660
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 3071
+          }
+        ],
+        "gated": false,
+        "private": false,
+        "repo_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 65535737017
+      },
+      {
+        "file_count": 17,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 7627
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 44044
+          },
+          {
+            "path": "USE_POLICY.md",
+            "size_bytes": 4691
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 855
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 184
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4976698672
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4999802720
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4915916176
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1168138808
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 23950
+          },
+          {
+            "path": "original/consolidated.00.pth",
+            "size_bytes": 16060617592
+          },
+          {
+            "path": "original/params.json",
+            "size_bytes": 199
+          },
+          {
+            "path": "original/tokenizer.model",
+            "size_bytes": 2183982
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 296
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 9085657
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 55351
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "LICENSE",
+            "size_bytes": 7627
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 44044
+          },
+          {
+            "path": "USE_POLICY.md",
+            "size_bytes": 4691
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 855
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 184
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4976698672
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4999802720
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4915916176
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1168138808
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 23950
+          },
+          {
+            "path": "original/consolidated.00.pth",
+            "size_bytes": 16060617592
+          },
+          {
+            "path": "original/params.json",
+            "size_bytes": 199
+          },
+          {
+            "path": "original/tokenizer.model",
+            "size_bytes": 2183982
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 296
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 9085657
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 55351
+          }
+        ],
+        "gated": "manual",
+        "private": false,
+        "repo_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 32132582323
+      }
+    ],
+    "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+    "reward_function_files": [
+      "verl/verl/utils/reward_score/__init__.py",
+      "verl/verl/utils/reward_score/code_server.py",
+      "verl/verl/utils/reward_score/docmath.py",
+      "verl/verl/utils/reward_score/docqa.py",
+      "verl/verl/utils/reward_score/geo3k.py",
+      "verl/verl/utils/reward_score/gsm8k.py",
+      "verl/verl/utils/reward_score/long.py",
+      "verl/verl/utils/reward_score/longcontext_choice.py",
+      "verl/verl/utils/reward_score/longcontext_qa.py",
+      "verl/verl/utils/reward_score/longcontext_qa_llm_judge.py",
+      "verl/verl/utils/reward_score/math.py",
+      "verl/verl/utils/reward_score/math_dapo.py",
+      "verl/verl/utils/reward_score/math_verify.py",
+      "verl/verl/utils/reward_score/mathqa_choice.py",
+      "verl/verl/utils/reward_score/ruler_multi.py",
+      "verl/verl/utils/reward_score/sentence_needle.py"
+    ],
+    "trained_loongrl_checkpoint_candidates": [
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/mnt/longcontext/models/siyuan/LoongRL-7B",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/mnt/longcontext/models/siyuan/LoongRL-14B",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/LoongRL-7B",
+        "size_bytes": null
+      },
+      {
+        "exists": false,
+        "is_dir": false,
+        "is_file": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/LoongRL-14B",
+        "size_bytes": null
+      }
+    ]
+  },
+  "official_script_manifest": {
+    "artifact_kind": "loongrl_official_script_manifest",
+    "created_at_utc": "2026-07-23T18:53:35Z",
+    "full_paper_execution_matrix": {
+      "accepted_loop2_evidence": "trained checkpoints plus benchmark raw outputs, scoring logs, timing/compute traces, and verifier-comparable tables",
+      "evaluation": [
+        "LongBench",
+        "LongBench v2",
+        "HELMET",
+        "RULER",
+        "Needle in a Haystack",
+        "MMLU",
+        "MATH-500",
+        "IFEval"
+      ],
+      "training": [
+        "cluster GRPO for LoongRL-7B on long-context/math mixtures",
+        "cluster GRPO for LoongRL-14B with MI300X path",
+        "three-stage curriculum and hard-mined Stage II encoded as artifact debt"
+      ]
+    },
+    "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL",
+    "scripts": [
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 98,
+        "parsed_keys": {
+          "exports": {
+            "REDIS_URI": "redis://localhost:6379"
+          },
+          "huggingface_cli_downloads": [
+            "Qwen/Qwen2.5-7B",
+            "Qwen/Qwen2.5-7B-Instruct",
+            "Qwen/Qwen2.5-32B",
+            "Qwen/Qwen2.5-32B-Instruct"
+          ]
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/install_mi300.sh",
+        "relative_path": "install_mi300.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 47,
+        "parsed_keys": {},
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/scripts/install_a100x8.sh",
+        "relative_path": "verl/scripts/install_a100x8.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 39,
+        "parsed_keys": {},
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/scripts/install_mi300x8.sh",
+        "relative_path": "verl/scripts/install_mi300x8.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": true,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 50,
+        "parsed_keys": {
+          "actor_rollout_ref.actor.optim.lr": [
+            "1e-6"
+          ],
+          "actor_rollout_ref.model.path": [
+            "Qwen/Qwen2-7B-Instruct"
+          ],
+          "actor_rollout_ref.rollout.gpu_memory_utilization": [
+            "0.6"
+          ],
+          "actor_rollout_ref.rollout.n": [
+            "8"
+          ],
+          "actor_rollout_ref.rollout.name": [
+            "vllm"
+          ],
+          "actor_rollout_ref.rollout.tensor_model_parallel_size": [
+            "2"
+          ],
+          "algorithm.adv_estimator": [
+            "grpo"
+          ],
+          "data.max_prompt_length": [
+            "8192"
+          ],
+          "data.max_response_length": [
+            "1024"
+          ],
+          "data.train_batch_size": [
+            "1024"
+          ],
+          "data.train_files": [
+            "$train_files"
+          ],
+          "data.val_batch_size": [
+            "1312"
+          ],
+          "data.val_files": [
+            "$test_files"
+          ],
+          "exports": {
+            "VLLM_ATTENTION_BACKEND": "XFORMERS"
+          },
+          "test_files": "['/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/test.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/test.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/test.parquet']",
+          "train_files": "['/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet']",
+          "trainer.n_gpus_per_node": [
+            "8"
+          ],
+          "trainer.nnodes": [
+            "1"
+          ],
+          "trainer.reward_rejection_sampling": [
+            "True"
+          ],
+          "trainer.total_epochs": [
+            "1"
+          ]
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/grpo_trainer/run_qwen2-7b_seq_balance_longcontext.sh",
+        "relative_path": "verl/examples/grpo_trainer/run_qwen2-7b_seq_balance_longcontext.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": true,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 50,
+        "parsed_keys": {
+          "actor_rollout_ref.actor.optim.lr": [
+            "1e-6"
+          ],
+          "actor_rollout_ref.model.path": [
+            "/mnt/longcontext/models/siyuan/llama3/Llama-3.1-8B-Instruct"
+          ],
+          "actor_rollout_ref.rollout.gpu_memory_utilization": [
+            "0.6"
+          ],
+          "actor_rollout_ref.rollout.n": [
+            "8"
+          ],
+          "actor_rollout_ref.rollout.name": [
+            "vllm"
+          ],
+          "actor_rollout_ref.rollout.tensor_model_parallel_size": [
+            "2"
+          ],
+          "algorithm.adv_estimator": [
+            "grpo"
+          ],
+          "data.max_prompt_length": [
+            "8192"
+          ],
+          "data.max_response_length": [
+            "1024"
+          ],
+          "data.train_batch_size": [
+            "1024"
+          ],
+          "data.train_files": [
+            "$train_files"
+          ],
+          "data.val_batch_size": [
+            "1312"
+          ],
+          "data.val_files": [
+            "$test_files"
+          ],
+          "exports": {
+            "VLLM_ATTENTION_BACKEND": "XFORMERS"
+          },
+          "test_files": "['/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/test.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/test.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/test.parquet']",
+          "train_files": "['/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet', '/mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet']",
+          "trainer.n_gpus_per_node": [
+            "8"
+          ],
+          "trainer.nnodes": [
+            "1"
+          ],
+          "trainer.reward_rejection_sampling": [
+            "True"
+          ],
+          "trainer.total_epochs": [
+            "1"
+          ]
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/grpo_trainer/run_llama31-8b_seq_balance_longcontext.sh",
+        "relative_path": "verl/examples/grpo_trainer/run_llama31-8b_seq_balance_longcontext.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": true,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 49,
+        "parsed_keys": {
+          "actor_rollout_ref.actor.optim.lr": [
+            "5e-7"
+          ],
+          "actor_rollout_ref.model.path": [
+            "/scratch/nishang/Qwen2.5-32B"
+          ],
+          "actor_rollout_ref.rollout.gpu_memory_utilization": [
+            "0.5"
+          ],
+          "actor_rollout_ref.rollout.n": [
+            "8"
+          ],
+          "actor_rollout_ref.rollout.name": [
+            "vllm"
+          ],
+          "actor_rollout_ref.rollout.tensor_model_parallel_size": [
+            "2"
+          ],
+          "algorithm.adv_estimator": [
+            "grpo"
+          ],
+          "data.max_prompt_length": [
+            "1024"
+          ],
+          "data.max_response_length": [
+            "2048"
+          ],
+          "data.train_batch_size": [
+            "1024"
+          ],
+          "data.train_files": [
+            "$train_files"
+          ],
+          "data.val_batch_size": [
+            "1024"
+          ],
+          "data.val_files": [
+            "$test_files"
+          ],
+          "reward_model.reward_manager": [
+            "prime"
+          ],
+          "test_files": "['/scratch/nishang/data/aime2024/test.parquet']",
+          "train_files": "['/scratch/nishang/data/merged_data_deepscaler_openr1_130k/train.parquet']",
+          "trainer.n_gpus_per_node": [
+            "8"
+          ],
+          "trainer.nnodes": [
+            "2"
+          ],
+          "trainer.total_epochs": [
+            "20"
+          ]
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/grpo_trainer/run_qwen2.5-32b_math-mix1.sh",
+        "relative_path": "verl/examples/grpo_trainer/run_qwen2.5-32b_math-mix1.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": false,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": true,
+          "to_parquet": false
+        },
+        "exists": true,
+        "kind": "shell",
+        "line_count": 58,
+        "parsed_keys": {
+          "actor_rollout_ref.actor.optim.lr": [
+            "1e-6"
+          ],
+          "actor_rollout_ref.model.path": [
+            "/scratch/nishang/Qwen2.5-32B-Instruct"
+          ],
+          "actor_rollout_ref.rollout.gpu_memory_utilization": [
+            "0.5"
+          ],
+          "actor_rollout_ref.rollout.n": [
+            "64"
+          ],
+          "actor_rollout_ref.rollout.name": [
+            "vllm"
+          ],
+          "actor_rollout_ref.rollout.tensor_model_parallel_size": [
+            "2"
+          ],
+          "algorithm.adv_estimator": [
+            "grpo"
+          ],
+          "data.max_prompt_length": [
+            "2048"
+          ],
+          "data.max_response_length": [
+            "8192"
+          ],
+          "data.train_batch_size": [
+            "128"
+          ],
+          "data.train_files": [
+            "$train_files"
+          ],
+          "data.val_batch_size": [
+            "1024"
+          ],
+          "data.val_files": [
+            "$test_files"
+          ],
+          "reward_model.reward_manager": [
+            "server"
+          ],
+          "test_files": "['/scratch/nishang/data/template_aime2024/test.parquet']",
+          "train_files": "['/scratch/nishang/data/template_orz_math_57k/train.parquet', '/scratch/nishang/data/template_code_data/train.parquet']",
+          "trainer.n_gpus_per_node": [
+            "8"
+          ],
+          "trainer.nnodes": [
+            "4"
+          ],
+          "trainer.total_epochs": [
+            "20"
+          ]
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/grpo_trainer/run_qwen2.5-32b-ins_math-code-orz-dapo.sh",
+        "relative_path": "verl/examples/grpo_trainer/run_qwen2.5-32b-ins_math-code-orz-dapo.sh"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": true,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": true
+        },
+        "exists": true,
+        "kind": "python",
+        "line_count": 121,
+        "parsed_keys": {},
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/data_preprocess/longcontextqa_like_dataset_system.py",
+        "relative_path": "verl/examples/data_preprocess/longcontextqa_like_dataset_system.py"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": true,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": true
+        },
+        "exists": true,
+        "kind": "python",
+        "line_count": 114,
+        "parsed_keys": {},
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/data_preprocess/ruler_niah_dataset_system.py",
+        "relative_path": "verl/examples/data_preprocess/ruler_niah_dataset_system.py"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": true,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": true
+        },
+        "exists": true,
+        "kind": "python",
+        "line_count": 131,
+        "parsed_keys": {},
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/data_preprocess/sentence_needle_dataset_system.py",
+        "relative_path": "verl/examples/data_preprocess/sentence_needle_dataset_system.py"
+      },
+      {
+        "entrypoint_mentions": {
+          "dataset_from_json": true,
+          "main_eval": false,
+          "main_generation": false,
+          "main_ppo": false,
+          "to_parquet": true
+        },
+        "exists": true,
+        "kind": "python",
+        "line_count": 70,
+        "parsed_keys": {},
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL/verl/examples/data_preprocess/dapo17k_dataset_system.py",
+        "relative_path": "verl/examples/data_preprocess/dapo17k_dataset_system.py"
+      }
+    ]
+  },
+  "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+  "paper_title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+  "professional_gate": {
+    "artifact_kind": "loongrl_professional_gate_result",
+    "blockers": [
+      {
+        "detail": "DAG/paper-shaped 7B training expects 16 A100 GPUs; visible A100 count=0, total visible GPUs=4",
+        "id": "loongrl_7b_training_gpu_topology",
+        "status": "blocked"
+      },
+      {
+        "detail": "DAG/paper-shaped 14B training expects 8 MI300X GPUs; visible MI300X count=0",
+        "id": "loongrl_14b_training_gpu_topology",
+        "status": "blocked"
+      },
+      {
+        "detail": "official long-context GRPO scripts request trainer.n_gpus_per_node=8; visible GPUs=4",
+        "id": "official_longcontext_script_gpu_count",
+        "status": "blocked"
+      },
+      {
+        "detail": "official GRPO scripts reference missing local parquet train files: /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet",
+        "id": "official_longcontext_training_data_paths_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "no local LoongRL-7B or LoongRL-14B checkpoint directory was found for full benchmark evaluation",
+        "id": "trained_loongrl_checkpoints_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "missing installed runtime packages needed by paper-shaped veRL/Ray/vLLM/SGLang flow: ray, vllm, sglang, flash_attn, verl",
+        "id": "cluster_rl_runtime_packages_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "MI300X/ROCm runtime path is not visible from rocm-smi, so the 14B MI300X paper route cannot run here",
+        "id": "rocm_mi300x_runtime_unavailable",
+        "status": "blocked"
+      }
+    ],
+    "convergence_role": "professional operational gate; no reduced run is promoted",
+    "created_at_utc": "2026-07-23T18:53:37Z",
+    "next_full_execution_if_unblocked": [
+      "materialize official training parquet files and trained LoongRL checkpoints",
+      "run 7B training on 16 A100 or equivalent paper-approved topology",
+      "run 14B training/evaluation on 8 MI300X route or paper-approved equivalent",
+      "evaluate LongBench v1/v2, HELMET, RULER/NIAH, MMLU, MATH-500, and IFEval with the paper protocols",
+      "emit raw generations, scores, length buckets, timing/compute traces, and table-shaped summaries"
+    ],
+    "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+    "paper_title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+    "professional_package_ready": false,
+    "status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+    "support_checks": {
+      "compileall_passed": true,
+      "hf_dataset_manifest_checked": 1,
+      "hf_model_manifest_checked": 10,
+      "official_scripts_parsed": 11
+    }
+  },
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL",
+  "updated_at_utc": "2026-07-23T18:53:37Z",
+  "verifier": {
+    "convergence_decision": "not_converged_explicit_professional_blockers_after_operational_preflight",
+    "loop1_required_dag_update": [
+      "Add official long-context GRPO script matrix gate.",
+      "Add 16 A100 / 8 MI300X cluster hardware runtime gate.",
+      "Add released training data plus trained LoongRL checkpoint gate.",
+      "Add full benchmark raw-output and metric-shape artifact gate.",
+      "Keep repo import, compileall, and tiny training probes as support only."
+    ],
+    "professional_package_ready": false,
+    "semantic_dag_nodes_checked": [
+      "gap.paper_gap_claims",
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface",
+      "ops.resolve_models_data"
+    ],
+    "status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+    "unresolved_professional_debt": [
+      {
+        "detail": "DAG/paper-shaped 7B training expects 16 A100 GPUs; visible A100 count=0, total visible GPUs=4",
+        "id": "loongrl_7b_training_gpu_topology",
+        "status": "blocked"
+      },
+      {
+        "detail": "DAG/paper-shaped 14B training expects 8 MI300X GPUs; visible MI300X count=0",
+        "id": "loongrl_14b_training_gpu_topology",
+        "status": "blocked"
+      },
+      {
+        "detail": "official long-context GRPO scripts request trainer.n_gpus_per_node=8; visible GPUs=4",
+        "id": "official_longcontext_script_gpu_count",
+        "status": "blocked"
+      },
+      {
+        "detail": "official GRPO scripts reference missing local parquet train files: /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet",
+        "id": "official_longcontext_training_data_paths_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "no local LoongRL-7B or LoongRL-14B checkpoint directory was found for full benchmark evaluation",
+        "id": "trained_loongrl_checkpoints_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "missing installed runtime packages needed by paper-shaped veRL/Ray/vLLM/SGLang flow: ray, vllm, sglang, flash_attn, verl",
+        "id": "cluster_rl_runtime_packages_missing",
+        "status": "blocked"
+      },
+      {
+        "detail": "MI300X/ROCm runtime path is not visible from rocm-smi, so the 14B MI300X paper route cannot run here",
+        "id": "rocm_mi300x_runtime_unavailable",
+        "status": "blocked"
+      }
+    ]
+  }
+}

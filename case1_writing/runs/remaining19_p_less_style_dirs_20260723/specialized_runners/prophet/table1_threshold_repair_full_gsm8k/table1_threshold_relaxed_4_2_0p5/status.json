@@ -1,0 +1,82 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 379,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "2",
+  "current_sample_index": 379,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 0,
+  "effective_stop_index_exclusive": 1319,
+  "full_split_requested": true,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 16169, 24564, 99\n1, NVIDIA GeForce RTX 4090, 16129, 24564, 98\n2, NVIDIA GeForce RTX 4090, 16321, 24564, 5\n3, NVIDIA GeForce RTX 4090, 16129, 24564, 99",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-24T14:03:29Z",
+      "exit_info": {
+        "actual_steps": 205,
+        "early_exit_triggered": true,
+        "exit_decision_step": 205,
+        "total_steps": 256
+      },
+      "flexible_exact_match": true,
+      "flexible_predicted_answer": "15",
+      "gen_length": 256,
+      "generated_text": "\nTo determine how many socks Lindsay has missed, we need to follow these steps:\n\n1. Calculate the total number of socks Lindsay has washed.\n2. Subtract the number of socks she has washed from the total number of socks that need washing.\n\nFirst, let's calculate the total number of socks Lindsay has washed:\n- She washes 10 pairs of socks. Since each pair consists of 2 socks, she washes \\(10 \\times 2 = 20\\) socks from the pairs.\n- She also washes 15 loose socks.\n\nSo, the total number of socks she has washed is:\n\\[ 20 + 15 = 35 \\]\n\nNext, we subtract the number of socks she has washed from the total number of socks that need washing:\n\\[ 50 - 35 = 15 \\]\n\nTherefore, Lindsay has missed 15 socks.\n\n The answer is:boxed{15}\\",
+      "gold_answer": "15",
+      "prompt_profile": "official_zero_shot",
+      "question": "Lindsay is doing the laundry, and thinks she has missed some socks. There are 50 socks that need washing. If she washes 10 pairs of socks and 15 loose socks, how many socks has Lindsay missed?",
+      "remasking": "low_confidence",
+      "sample_index": 378,
+      "seconds": 20.1119,
+      "steps": 256,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "prophet"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 2 is logical cuda:0 when CUDA_VISIBLE_DEVICES=2",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 2714,
+  "prompt_profile": "official_zero_shot",
+  "prompt_template_source": "named_prompt_profile",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5/per_sample_results.jsonl",
+  "run_label": "table1_threshold_relaxed_4_2_0p5",
+  "running_summary": {
+    "aggregates": {
+      "prophet": {
+        "completed_samples": 379,
+        "early_exit_count": 379,
+        "early_exit_rate": 1.0,
+        "flexible_correct_count": 204,
+        "flexible_exact_match": 0.5382585751978892,
+        "mean_actual_steps": 164.1820580474934,
+        "mean_seconds": 15.676002638522426,
+        "strict_correct_count": 121,
+        "strict_exact_match": 0.31926121372031663
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T14:03:29Z",
+    "dataset": "openai/gsm8k main test",
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5/per_sample_results.jsonl",
+    "status": "running_or_partial",
+    "total_samples": 1319,
+    "variants_requested": [
+      "prophet"
+    ]
+  },
+  "started_at_utc": "2026-07-24T12:20:46Z",
+  "status": "running",
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-24T14:03:29Z",
+  "variants": [
+    "prophet"
+  ]
+}

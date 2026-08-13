@@ -1,0 +1,86 @@
+{
+  "artifact_kind": "clot_specialized_verifier",
+  "artifact_paths": {
+    "dag_iter_03": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_p5b97gzwrb_hyperparameter_trajectory_inference_clot/paper_author_gap_dag_iter_03.json",
+    "environment": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/environment.json",
+    "model_data_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/model_data_manifest.json",
+    "professional_gate": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/professional_gate_result.json",
+    "repo_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/repo_manifest.json"
+  },
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true,
+        "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "name": "repo_path_encoded",
+      "status": "pass"
+    },
+    {
+      "detail": "repo compile, README tables, assets, and partial candidates cannot converge",
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        {
+          "detail": "Paper records A100 VM runs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+          "id": "a100_professional_gpu_trace_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing runtime imports: flax, hydra, omegaconf, stable_baselines3, gymnasium, mujoco",
+          "id": "clot_runtime_dependencies_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing required paper artifacts: semicircle_surrogate_models, reward_eval_outputs, hinge_eval_outputs, reacher_eval_outputs, quantile_eval_outputs, dropout_eval_outputs",
+          "id": "clot_required_artifacts_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No complete verifier-comparable output grid found for: CTI semicircle NLL and circle-distance grid; Cancer linear and hinge reward-weighting average reward; Reacher reward-weighting average reward; ETTm2 quantile interpolation MSE; dropout diffusion interpolation Wasserstein/density metrics; held-out time/hyperparameter and metric-parametrization ablations over seeds 0..19",
+          "id": "clot_full_result_grid_missing",
+          "status": "blocked"
+        }
+      ],
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": "requires full paper-shaped benchmark outputs before comparison to paper evidence channels",
+      "name": "result_shape_comparison_ready",
+      "status": "blocked"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T18:53:40Z",
+  "iteration": 3,
+  "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+  "paper_title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.clot_repo_to_operational_gates",
+      "reason": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+      "success_criteria": [
+        "repo path encoded",
+        "paper-specific model/data materialization gate present",
+        "runtime/hardware gate present",
+        "full result-grid gate present",
+        "verifier compares only operational outputs against paper evidence"
+      ]
+    }
+  ]
+}

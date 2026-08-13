@@ -1,0 +1,65 @@
+{
+  "schema_version": "dirs.autonomous_strategy.final_report.v1",
+  "date": "2026-07-24",
+  "status": "completed_single_case_blind_v2_pilot",
+  "rounds": 3,
+  "stop_reason": "preregistered_pilot_budget_complete",
+  "stopped_for_convergence": false,
+  "writer_blind_boundary": {
+    "fresh_context": true,
+    "hidden_abstract_read_reported": false,
+    "full_paper_read_reported": false,
+    "old_strict_run_read_reported": false,
+    "repository_search_reported": false,
+    "internet_reported": false,
+    "expert_similarity_objective_used": false,
+    "os_level_read_audit_available": false
+  },
+  "outputs": {
+    "unique_strategy_ids": [
+      "S1_result_first_pareto_ledger",
+      "S2_mechanism_ablation_staircase",
+      "S3_evaluation_mosaic_with_scope_gate",
+      "S4_boundary_first_contrast_loop",
+      "S5_salience_anchor_then_selective_bindings",
+      "S6_operating_point_decision_split"
+    ],
+    "abstract_variants": 9,
+    "unsupported_factual_claims_found_by_controller": 0
+  },
+  "local_strategy_hypotheses": [
+    {
+      "id": "S5_salience_anchor_then_selective_bindings",
+      "confidence": "low_to_moderate",
+      "support": "round_02 bundled matched comparison",
+      "reusable_skill": false
+    },
+    {
+      "id": "S6_operating_point_decision_split",
+      "confidence": "low_to_moderate",
+      "support": "round_03 atomic equal-length role-map comparison",
+      "reusable_skill": false
+    }
+  ],
+  "non_dominance": {
+    "S5": "component-level mechanism-result mapping",
+    "S6": "configuration choice and operating-role recovery",
+    "single_correct_dag_required": false
+  },
+  "loop_interpretation": {
+    "first_local_support_round": 2,
+    "novel_non_cosmetic_strategy_still_found_in_round_3": true,
+    "strategy_search_exhausted": false
+  },
+  "limitations": [
+    "one paper",
+    "one writer",
+    "one qualitative controller",
+    "controller was not historically blind to the expert target",
+    "no OS-level file-read audit",
+    "no blinded human preference panel",
+    "no cross-paper transfer",
+    "no statistical calibration",
+    "no trained conditional GFlowNet"
+  ]
+}

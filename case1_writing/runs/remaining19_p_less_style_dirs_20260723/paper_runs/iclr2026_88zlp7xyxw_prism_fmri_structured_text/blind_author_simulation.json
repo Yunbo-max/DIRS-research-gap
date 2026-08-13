@@ -1,0 +1,42 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "experiment_prediction": "benchmarks=NSD; BOLD5000; GOD; COCO QA pairs; metrics=PixCorr; SSIM; LPIPS; CLIP; Inception V3; QA accuracy; CKA; CCA; generalization gap; protocols=standardized fMRI train/test splits; five-run subject-averaged metrics; Qwen2.5 QA on reconstructed images; latent-space ablation; module ablation",
+  "gap_prediction": "latent-space choice for fMRI reconstruction; vision-latent assumption; object/attribute/relation binding errors; stressors: object omission; attribute misbinding; caption hallucination; fixed two-object bottleneck",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.048,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19260, 4954, 20\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "fMRI preprocessing; attribute/relationship search; structured description generation; fMRI-to-T5 model; object-centric cross-attention generation",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "paper_text_seen": false,
+  "paper_title": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_no_local_repository_encoded_in_dag",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": []
+}

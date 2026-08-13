@@ -1,0 +1,68 @@
+{
+  "artifact_kind": "infotok_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "README recommends H100-80GB/A100-80GB; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "h100_or_a100_80gb_runtime_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "DAG records 32 H100 GPUs for paper-scale training; visible H100 count is 0.",
+      "id": "paper_scale_32_h100_training_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No clean >=30GB free GPU is visible for official long-window inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 79, 'power_w': 180.66}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16149, 'memory_free_mib': 8068, 'utilization_gpu_pct': 99, 'temperature_c': 87, 'power_w': 379.17}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 78, 'power_w': 182.64}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 100, 'temperature_c': 80, 'power_w': 162.59}].",
+      "id": "clean_large_gpu_slot_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing imports for full inference/training/evaluation path: diffusers, hydra, imageio, mediapy, megatron, omegaconf, pynvml, skimage, termcolor, apex, transformer_engine, token_bench",
+      "id": "infotok_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Public HF artifacts are reachable but not locally materialized: infotok_flex_checkpoint, tokenbench_240p, davis_240p",
+      "id": "infotok_hf_artifacts_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete TokenBench/DAVIS metric JSON, FVD/LPIPS, latency, decoder-pass, ablation, and baseline table outputs were found.",
+      "id": "full_reconstruction_metric_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no default-video or README-table evidence is promoted",
+  "created_at_utc": "2026-07-24T13:33:41Z",
+  "next_full_execution_if_unblocked": [
+    "materialize qyoo/infotok-flex, qyoo/tokenbench_240p, and qyoo/davis_240p",
+    "install exact InfoTok/Cosmos runtime plus TokenBench metric repo",
+    "run exp_scripts/infotok_inference.sh only as smoke, not convergence",
+    "run full TokenBench/DAVIS reconstruction with avg_rate 0.75 and 0.5 plus global_elbo/elbo strategy variants",
+    "compute PSNR, SSIM, LPIPS, FVD, BPP16, latency seconds/video, and decoder-pass counts",
+    "run router/compressor ablations and baseline comparisons where released code/data permit",
+    "emit raw videos, mask visualizations, metric JSON, timing/GPU traces, and compare to paper tables/figures/paragraphs"
+  ],
+  "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+  "paper_shaped_outputs_required": [
+    "TokenBench and DAVIS reconstruction at matched BPP16/token-rate",
+    "PSNR, SSIM, LPIPS, FVD, BPP16, latency seconds per video, decoder-pass counts",
+    "global_elbo versus elbo routing comparison",
+    "fixed Cosmos-DV and ElasticTok/OmniTokenizer/Open-MAGVIT2 baseline comparison",
+    "router optimality ablation",
+    "compressor ablation",
+    "post-training/full-training trace for 32-H100 scale claim",
+    "raw reconstructed videos, masks/token bars, metric JSON, timing/GPU traces, and table summaries"
+  ],
+  "paper_title": "InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression",
+  "professional_package_ready": false,
+  "status": "blocked_by_hf_artifacts_runtime_hardware_training_scale_and_result_grid_requirements",
+  "support_checks": {
+    "compileall_tokenizer_passed": true,
+    "hf_artifacts_checked": 3,
+    "inference_script_syntax_ok": true,
+    "posttrain_script_syntax_ok": true,
+    "repo_discovered_and_encoded": true,
+    "script_files_checked": 13
+  }
+}

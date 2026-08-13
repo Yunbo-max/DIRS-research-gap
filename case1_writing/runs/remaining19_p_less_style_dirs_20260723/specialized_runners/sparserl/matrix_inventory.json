@@ -1,0 +1,56 @@
+[
+  {
+    "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/176bit.mtx",
+    "name": "176bit.mtx",
+    "nnz": 82270,
+    "shape": [
+      7441,
+      7431
+    ]
+  },
+  {
+    "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/ACTIVSg2000.mtx",
+    "name": "ACTIVSg2000.mtx",
+    "nnz": 29336,
+    "shape": [
+      4000,
+      4000
+    ]
+  },
+  {
+    "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/gen2.mtx",
+    "name": "gen2.mtx",
+    "nnz": 81855,
+    "shape": [
+      1121,
+      3264
+    ]
+  },
+  {
+    "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/kineticBatchReactor_6.mtx",
+    "name": "kineticBatchReactor_6.mtx",
+    "nnz": 82500,
+    "shape": [
+      7773,
+      7773
+    ]
+  },
+  {
+    "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/lhr04.mtx",
+    "name": "lhr04.mtx",
+    "nnz": 82682,
+    "shape": [
+      4101,
+      4101
+    ]
+  },
+  {
+    "artifact_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL/dataset/lhr04c.mtx",
+    "name": "lhr04c.mtx",
+    "nnz": 82682,
+    "shape": [
+      4101,
+      4101
+    ]
+  }
+]

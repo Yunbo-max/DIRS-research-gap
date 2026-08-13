@@ -1,0 +1,561 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.prism_repo_script_gate"
+    ],
+    [
+      "ops.prism_repo_script_gate",
+      "ops.prism_fmri_dataset_access_gate"
+    ],
+    [
+      "ops.prism_fmri_dataset_access_gate",
+      "ops.prism_openai_structured_text_gate"
+    ],
+    [
+      "ops.prism_openai_structured_text_gate",
+      "ops.prism_runtime_hardware_gate"
+    ],
+    [
+      "ops.prism_runtime_hardware_gate",
+      "ops.prism_full_reconstruction_qa_grid"
+    ],
+    [
+      "ops.prism_full_reconstruction_qa_grid",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "ops.prism_full_reconstruction_qa_grid",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.explicit_blocker_after_prism_preflight"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_prism_repo_to_full_fmri_operational_gates"
+    ],
+    [
+      "loop1.required_update.update_prism_repo_to_full_fmri_operational_gates",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI | families=speculative_or_early_decoding, structured_text_or_fmri, visual_tokenizer, 3d_generation",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "latent-space choice for fMRI reconstruction; vision-latent assumption; object/attribute/relation binding errors",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "object omission; attribute misbinding; caption hallucination; fixed two-object bottleneck",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Takagi; Mindvis; Mindeye1; MindBridge; NeuralDiffuser; Mindeye2; Mde2+SDXL; CLIP text latent; LDM latent; Mindeye2",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "fMRI preprocessing; attribute/relationship search; structured description generation; fMRI-to-T5 model; object-centric cross-attention generation",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=NSD; BOLD5000; GOD; COCO QA pairs; metrics=PixCorr; SSIM; LPIPS; CLIP; Inception V3; QA accuracy; CKA; CCA; generalization gap; protocols=standardized fMRI train/test splits; five-run subject-averaged metrics; Qwen2.5 QA on reconstructed images; latent-space ablation; module ablation",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=two NVIDIA L40 GPUs with 48GB memory; CUDA 12.2 reported in README; runtimes=PyTorch; transformers; diffusers; xformers; OpenAI API; langchain-openai; lpips",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM; code_artifacts=src/quick_start.sh; src/search_prompt/keyword_generator.py; src/get_gpt_data.py; src/gpt_rewrite.py; src/train_model.py; src/run_gen.py; src/my_model.py; src/gen_pipe.py; src/env.yml; README.md",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=NSD; BOLD5000; Generic Object Decoding; COCO; data_artifacts=NSD access-gated fMRI data; COCO images/captions; generated structured response npz files; best_keyword.json; implementation_statuses=official repository cloned; source code inspected; NSD data requires terms/form access; OpenAI API key required for pipeline",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Resolve PRISM repo, parse quick_start.sh/env.yml, compile source, and record the keyword, GPT-data, training, and generation entrypoints.",
+      "id": "ops.prism_repo_script_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Materialize NSD under access terms plus BOLD5000, Generic Object Decoding, and COCO image/caption/QA artifacts on PRISM splits.",
+      "id": "ops.prism_fmri_dataset_access_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run API-backed keyword and structured-text stages to produce best_keyword.json and train/val/test structured response npz artifacts.",
+      "id": "ops.prism_openai_structured_text_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Install diffusers/xformers/langchain-openai/lpips/retry stack and require two L40-48GB/CUDA-12.2-class execution traces for paper-shaped reconstruction.",
+      "id": "ops.prism_runtime_hardware_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "Run fMRI-to-structured-text training, image generation, latent/module ablations, PixCorr/SSIM/LPIPS/CLIP/Inception/QA/CKA/CCA/generalization-gap scoring, and GPU traces.",
+      "id": "ops.prism_full_reconstruction_qa_grid",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_execution"
+    },
+    {
+      "content": "If fMRI data, API artifacts, runtime, hardware, checkpoints, metric outputs, or ablation grid are missing, block and feed exact requirements back into Loop 1.",
+      "id": "decision.explicit_blocker_after_prism_preflight",
+      "skill_role": "paper-specific operational gate",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package', 'result_shape_comparison_ready']; required_updates=['update.prism_repo_to_full_fmri_operational_gates']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": [
+              {
+                "detail": "README/DAG expect two NVIDIA L40 48GB GPUs; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+                "id": "two_l40_48gb_hardware_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No clean >=45GB GPU is available for the paper-shaped PRISM reconstruction run. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19, 'memory_free_mib': 24198, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 19.33}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18, 'memory_free_mib': 24198, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.85}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 406, 'memory_free_mib': 23807",
+                "id": "clean_large_fmri_generation_gpu_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing imports for the released PRISM pipeline: diffusers, xformers, langchain_openai, lpips, retry",
+                "id": "prism_runtime_dependencies_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing PRISM pipeline artifacts: best_keyword_json, train_structured_npz, val_structured_npz, test_structured_npz, trained_checkpoint_cur_best, generated_output_dir, metric_output_dir",
+                "id": "prism_pipeline_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No materialized NSD fMRI data for PRISM was found; README requires NSD terms/form access.",
+                "id": "nsd_access_gated_fmri_data_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No BOLD5000 benchmark artifacts found for PRISM verifier comparison.",
+                "id": "bold5000_benchmark_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No Generic Object Decoding benchmark artifacts found for PRISM verifier comparison.",
+                "id": "generic_object_decoding_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No PRISM-bound COCO image/caption/QA artifacts found for verifier comparison.",
+                "id": "coco_qa_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No complete PixCorr/SSIM/LPIPS/CLIP/Inception/QA/CKA/CCA/generalization-gap result grid was found.",
+                "id": "full_fmri_reconstruction_qa_metric_grid_missing",
+                "status": "blocked"
+              }
+            ],
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          },
+          {
+            "detail": "requires PRISM fMRI reconstruction/QA metric grid before comparison to paper evidence channels",
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.prism_repo_to_full_fmri_operational_gates",
+            "reason": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+            "success_criteria": [
+              "repo path encoded",
+              "fMRI dataset/materialization gate present",
+              "OpenAI structured-text artifact gate present",
+              "runtime/hardware gate present",
+              "full reconstruction/QA/ablation metric grid gate present"
+            ]
+          }
+        ],
+        "status": null
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_prism_repo_to_full_fmri_operational_gates",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.prism_repo_to_full_fmri_operational_gates",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "repo path encoded",
+        "fMRI dataset/materialization gate present",
+        "OpenAI structured-text artifact gate present",
+        "runtime/hardware gate present",
+        "full reconstruction/QA/ablation metric grid gate present"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "two_l40_48gb_hardware_missing",
+        "clean_large_fmri_generation_gpu_missing",
+        "prism_runtime_dependencies_missing",
+        "prism_pipeline_artifacts_missing",
+        "bold5000_benchmark_artifacts_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T11:47:56Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "source": "prism_specialized_professional_gate",
+      "status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid"
+    },
+    {
+      "blocker_ids": [
+        "two_l40_48gb_hardware_missing",
+        "clean_large_fmri_generation_gpu_missing",
+        "prism_runtime_dependencies_missing",
+        "prism_pipeline_artifacts_missing",
+        "nsd_access_gated_fmri_data_missing",
+        "bold5000_benchmark_artifacts_missing",
+        "generic_object_decoding_artifacts_missing",
+        "coco_qa_artifacts_missing",
+        "full_fmri_reconstruction_qa_metric_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T11:49:24Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "source": "prism_specialized_professional_gate",
+      "status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid"
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:02Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.prism_repo_to_full_fmri_operational_gates"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    },
+    {
+      "blocker_ids": [
+        "two_l40_48gb_hardware_missing",
+        "clean_large_fmri_generation_gpu_missing",
+        "prism_runtime_dependencies_missing",
+        "prism_pipeline_artifacts_missing",
+        "nsd_access_gated_fmri_data_missing",
+        "bold5000_benchmark_artifacts_missing",
+        "generic_object_decoding_artifacts_missing",
+        "coco_qa_artifacts_missing",
+        "full_fmri_reconstruction_qa_metric_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-24T13:33:21Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "source": "prism_specialized_professional_gate",
+      "status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid"
+    }
+  ],
+  "signature": "4660083e62637f99",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "target_title": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI",
+  "updated_at_utc": "2026-07-24T12:33:09Z"
+}

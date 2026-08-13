@@ -1,0 +1,502 @@
+{
+  "claim_gate": {
+    "proxy_sampler_measurement_used": false,
+    "reason": "operational stages did not produce exact paper table/figure/appendix artifact package",
+    "status": "blocked"
+  },
+  "created_at_utc": "2026-07-22T22:15:47Z",
+  "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_operational_author_dag_v1_iter_1_updated",
+  "dag_signature": "5573bbcacae4acb7",
+  "dataset_probe": {
+    "datasets": [
+      {
+        "candidates": [
+          {
+            "config": null,
+            "configs": [
+              "default"
+            ],
+            "id": "tau/commonsense_qa",
+            "metadata_status": "pass",
+            "sample_keys": [
+              "id",
+              "question",
+              "question_concept",
+              "choices",
+              "answerKey"
+            ],
+            "smoke_load_status": "pass",
+            "split": "validation"
+          }
+        ],
+        "group": "reasoning",
+        "paper_name": "CSQA"
+      },
+      {
+        "candidates": [
+          {
+            "config": "gpqa_diamond",
+            "config_probe_warning": "Dataset 'Idavidrein/gpqa' is a gated dataset on the Hub. You must be authenticated to access it.",
+            "error": "Dataset 'Idavidrein/gpqa' is a gated dataset on the Hub. You must be authenticated to access it.",
+            "id": "Idavidrein/gpqa",
+            "metadata_status": "blocked",
+            "smoke_load_status": "blocked",
+            "split": "train"
+          }
+        ],
+        "group": "reasoning",
+        "paper_name": "GPQA"
+      },
+      {
+        "candidates": [
+          {
+            "config": "main",
+            "configs": [
+              "main",
+              "socratic"
+            ],
+            "id": "openai/gsm8k",
+            "metadata_status": "pass",
+            "sample_keys": [
+              "question",
+              "answer"
+            ],
+            "smoke_load_status": "pass",
+            "split": "test"
+          }
+        ],
+        "group": "reasoning",
+        "paper_name": "GSM8K"
+      },
+      {
+        "candidates": [
+          {
+            "config": null,
+            "configs": [
+              "default"
+            ],
+            "id": "allenai/qasc",
+            "metadata_status": "pass",
+            "sample_keys": [
+              "id",
+              "question",
+              "choices",
+              "answerKey",
+              "fact1",
+              "fact2",
+              "combinedfact",
+              "formatted_question"
+            ],
+            "smoke_load_status": "pass",
+            "split": "validation"
+          }
+        ],
+        "group": "reasoning",
+        "paper_name": "QASC"
+      },
+      {
+        "candidates": [
+          {
+            "config": null,
+            "configs": [
+              "default"
+            ],
+            "id": "euclaise/writingprompts",
+            "metadata_status": "pass",
+            "sample_keys": [
+              "prompt",
+              "story"
+            ],
+            "smoke_load_status": "pass",
+            "split": "train"
+          }
+        ],
+        "group": "writing",
+        "paper_name": "Writing Prompts"
+      }
+    ],
+    "load_smoke": true,
+    "status": "blocked"
+  },
+  "decision_trace": [
+    {
+      "created_at_utc": "2026-07-22T22:14:56Z",
+      "decision": "execute DAG nodes in topological paper workflow order",
+      "node": "root.operational_author_loop"
+    },
+    {
+      "decision": "download official code before experiments",
+      "node": "source.clone_official_repo",
+      "result_status": "pass"
+    },
+    {
+      "decision": "check package availability before model/data downloads",
+      "node": "env.verify_dependencies",
+      "result_status": "pass"
+    },
+    {
+      "decision": "use official sampler functions rather than reimplemented proxy for p-less/p-lessnorm",
+      "node": "source.validate_sampler_code",
+      "result_status": "pass"
+    },
+    {
+      "decision": "probe/download exact paper model candidates named by DAG",
+      "node": "model.resolve_target_checkpoints",
+      "result_status": "blocked"
+    },
+    {
+      "decision": "probe/load exact benchmark splits named by DAG",
+      "node": "data.resolve_benchmark_splits",
+      "result_status": "blocked"
+    },
+    {
+      "decision": "write the concrete python file that later paper experiments must run",
+      "node": "harness.write_generation_runner",
+      "result_status": "pass"
+    },
+    {
+      "decision": "real model smoke validates harness only and cannot satisfy paper-result gate",
+      "node": "harness.smoke_real_model_generation",
+      "result_status": "pass"
+    },
+    {
+      "decision": "real target-model/data generation is useful but remains non-exact until full grid runs",
+      "node": "harness.reduced_mistral_gsm8k_generation",
+      "result_status": "pass"
+    },
+    {
+      "decision": "paper experiment remains blocked unless exact raw artifacts exist",
+      "node": "exp.figure2_temperature_curves",
+      "result_status": "blocked"
+    },
+    {
+      "decision": "paper experiment remains blocked unless exact raw artifacts exist",
+      "node": "exp.figures16_17_table15_cpu_ram",
+      "result_status": "blocked"
+    },
+    {
+      "decision": "paper experiment remains blocked unless exact raw artifacts exist",
+      "node": "exp.table1_reasoning_auc",
+      "result_status": "blocked"
+    },
+    {
+      "decision": "paper experiment remains blocked unless exact raw artifacts exist",
+      "node": "exp.table2_writing_prompts",
+      "result_status": "blocked"
+    },
+    {
+      "decision": "paper experiment remains blocked unless exact raw artifacts exist",
+      "node": "exp.table3_sampling_time",
+      "result_status": "blocked"
+    }
+  ],
+  "dependencies": {
+    "packages": [
+      {
+        "package": "torch",
+        "status": "pass",
+        "version": "2.6.0+cu124"
+      },
+      {
+        "package": "transformers",
+        "status": "pass",
+        "version": "4.51.2"
+      },
+      {
+        "package": "datasets",
+        "status": "pass",
+        "version": "4.3.0"
+      },
+      {
+        "package": "accelerate",
+        "status": "pass",
+        "version": "1.11.0"
+      },
+      {
+        "package": "huggingface_hub",
+        "status": "pass",
+        "version": "0.36.0"
+      },
+      {
+        "package": "psutil",
+        "status": "pass",
+        "version": "5.9.0"
+      }
+    ],
+    "status": "pass"
+  },
+  "device": "cuda:0",
+  "device_info": {
+    "chosen": {
+      "index": 3,
+      "memory_free_mib": 24195,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 21,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_percent": 0
+    },
+    "cuda_available": true,
+    "gpus": [
+      {
+        "index": 0,
+        "memory_free_mib": 4071,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 20146,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      },
+      {
+        "index": 1,
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      },
+      {
+        "index": 2,
+        "memory_free_mib": 4948,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19266,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 7
+      },
+      {
+        "index": 3,
+        "memory_free_mib": 24195,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 21,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_percent": 0
+      }
+    ],
+    "visible_physical_gpu": 3
+  },
+  "generated_harness": {
+    "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/operational_p_less_generation_harness.py",
+    "script_name": "operational_p_less_generation_harness.py",
+    "status": "pass"
+  },
+  "model_probe": {
+    "gated_blockers": [
+      "Llama-2-7B-Chat",
+      "Llama3-70B-Instruct"
+    ],
+    "status": "blocked",
+    "target_models": [
+      {
+        "access_note": "manual gated; exact rerun blocks without accepted HF access token",
+        "candidates": [
+          {
+            "download_status": "blocked_missing_hf_token_or_manual_access",
+            "gated": "manual",
+            "hf_id": "meta-llama/Llama-2-7b-chat-hf",
+            "info_status": "pass",
+            "private": false,
+            "sha": "f5db02db724555f92da89c216ac04704f23d4590"
+          }
+        ],
+        "paper_name": "Llama-2-7B-Chat"
+      },
+      {
+        "access_note": "ungated; feasible on one 4090 for reduced sample rerun",
+        "candidates": [
+          {
+            "download_status": "metadata_downloaded",
+            "gated": false,
+            "hf_id": "mistralai/Mistral-7B-Instruct-v0.2",
+            "info_status": "pass",
+            "private": false,
+            "sha": "63a8b081895390a26e140280378bc85ec8bce07a",
+            "snapshot_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/hf_cache/models--mistralai--Mistral-7B-Instruct-v0.2/snapshots/63a8b081895390a26e140280378bc85ec8bce07a"
+          },
+          {
+            "download_status": "not_attempted",
+            "gated": false,
+            "hf_id": "mistralai/Mistral-7B-Instruct-v0.3",
+            "info_status": "pass",
+            "private": false,
+            "sha": "c170c708c41dac9275d15a8fff4eca08d52bab71"
+          }
+        ],
+        "paper_name": "Mistral-7B-Instruct"
+      },
+      {
+        "access_note": "manual gated and likely multi-GPU/quantization required",
+        "candidates": [
+          {
+            "download_status": "blocked_missing_hf_token_or_manual_access",
+            "gated": "manual",
+            "hf_id": "meta-llama/Meta-Llama-3-70B-Instruct",
+            "info_status": "pass",
+            "private": false,
+            "sha": "50fd307e57011801c7833c87efa1984ddf2db42f"
+          }
+        ],
+        "paper_name": "Llama3-70B-Instruct"
+      }
+    ],
+    "token_present": false
+  },
+  "only_input_file_read": "paper_author_operational_dag.json",
+  "paper_experiments": {
+    "figure2_temperature_curves": {
+      "kind": "figure_from_table1_runs",
+      "minimum_for_exact_claim": "same raw runs as Table 1 plus plotting artifact",
+      "reason": "not_run_exact_grid_yet",
+      "status": "blocked"
+    },
+    "figures16_17_table15_cpu_ram": {
+      "kind": "generation_cpu_ram_profile",
+      "minimum_for_exact_claim": "CPU/RAM traces binned into figure-style summaries and Table 15-style values",
+      "reason": "not_run_exact_grid_yet",
+      "status": "blocked"
+    },
+    "table1_reasoning_auc": {
+      "kind": "real_model_generation_evaluation",
+      "minimum_for_exact_claim": "all target models, all four datasets, all temperatures, all samplers, required seed policy",
+      "reason": "not_run_exact_grid_yet",
+      "status": "blocked"
+    },
+    "table2_writing_prompts": {
+      "kind": "real_model_generation_preference_or_length_controlled_scoring",
+      "minimum_for_exact_claim": "100 prompts, reference generations, scoring method, all samplers",
+      "reason": "not_run_exact_grid_yet",
+      "status": "blocked"
+    },
+    "table3_sampling_time": {
+      "kind": "full_generation_timing",
+      "minimum_for_exact_claim": "instrument per-token time inside the model generation loop; do not use sampler-only tensor timing",
+      "reason": "not_run_exact_grid_yet",
+      "status": "blocked"
+    }
+  },
+  "reduced_target_model_generation": {
+    "cmd_result": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "operational_p_less_generation_harness.py",
+        "--repo-dir",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/external/p-less-sampling",
+        "--model-id",
+        "mistralai/Mistral-7B-Instruct-v0.2",
+        "--output-dir",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/artifacts/reduced_mistral_gsm8k_generation",
+        "--sampler",
+        "p_less",
+        "--sampler",
+        "p_lessnorm",
+        "--sampler",
+        "top_p",
+        "--sampler",
+        "min_p",
+        "--temperature",
+        "1.0",
+        "--max-new-tokens",
+        "16",
+        "--device",
+        "cuda:0",
+        "--prompt",
+        "Question: Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nLet's think step by step."
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace",
+      "elapsed_s": 26.918,
+      "returncode": 0,
+      "stderr_tail": "\nLoading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]\nLoading checkpoint shards:  33%|\u2588\u2588\u2588\u258e      | 1/3 [00:14<00:29, 14.90s/it]\nLoading checkpoint shards:  67%|\u2588\u2588\u2588\u2588\u2588\u2588\u258b   | 2/3 [00:15<00:06,  6.39s/it]\nLoading checkpoint shards: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 3/3 [00:16<00:00,  3.85s/it]\nLoading checkpoint shards: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 3/3 [00:16<00:00,  5.39s/it]\n",
+      "stdout_tail": "",
+      "timed_out": false
+    },
+    "dataset": "openai/gsm8k/main/test",
+    "exact_paper_claim": false,
+    "model_id": "mistralai/Mistral-7B-Instruct-v0.2",
+    "output_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/artifacts/reduced_mistral_gsm8k_generation",
+    "prompt_info": {
+      "answer_present_for_later_scoring": true,
+      "sample_keys": [
+        "answer",
+        "question"
+      ],
+      "status": "pass"
+    },
+    "reason_not_exact": "single-model single-temperature reduced generation, not full paper grid",
+    "status": "pass"
+  },
+  "repo": {
+    "attempts": [
+      {
+        "cmd": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/ryttry/p-less-sampling.git",
+          "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/external/p-less-sampling"
+        ],
+        "cwd": null,
+        "elapsed_s": 0.506,
+        "returncode": 0,
+        "stderr_tail": "Cloning into '/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/external/p-less-sampling'...\n",
+        "stdout_tail": "",
+        "timed_out": false
+      }
+    ],
+    "files": [
+      "LICENSE",
+      "README.md",
+      "p_less_examples.ipynb",
+      "p_less_samplers.py"
+    ],
+    "head": "a681f23682a329099306eea9cf7b1dd0447e2eec",
+    "repo_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/external/p-less-sampling",
+    "status": "pass"
+  },
+  "sampler_validation": {
+    "functions": [
+      "p_less_decode",
+      "p_less_norm_decode"
+    ],
+    "status": "pass",
+    "unit_check": "sampled from valid toy probability tensor"
+  },
+  "smoke_real_model_generation": {
+    "cmd_result": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "operational_p_less_generation_harness.py",
+        "--repo-dir",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/external/p-less-sampling",
+        "--model-id",
+        "sshleifer/tiny-gpt2",
+        "--output-dir",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/artifacts/smoke_real_model_generation",
+        "--sampler",
+        "p_less",
+        "--sampler",
+        "p_lessnorm",
+        "--temperature",
+        "1.0",
+        "--max-new-tokens",
+        "12",
+        "--device",
+        "cuda:0",
+        "--prompt",
+        "In one short sentence, language model decoding is"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace",
+      "elapsed_s": 7.497,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "timed_out": false
+    },
+    "output_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace/artifacts/smoke_real_model_generation",
+    "status": "pass"
+  },
+  "subprocess": {
+    "elapsed_s": 52.504,
+    "returncode": 0,
+    "stderr_tail": "\nFetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]\nFetching 8 files:  12%|\u2588\u258e        | 1/8 [00:00<00:02,  3.10it/s]\nFetching 8 files:  75%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c  | 6/8 [00:00<00:00, 16.66it/s]\nFetching 8 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 8/8 [00:00<00:00,  8.14it/s]\n",
+    "stdout_tail": ""
+  },
+  "workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/operational_dag_reproduction_loop/iter_02/blind_workspace"
+}

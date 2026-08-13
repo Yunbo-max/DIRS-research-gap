@@ -1,0 +1,190 @@
+{
+  "artifact_kind": "dto_kd_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "OpenReview metadata, paper, supplement, status file, and local candidate repo scan do not provide an official DTO-KD source repo.",
+      "id": "dto_kd_official_source_repository_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Paper reports all experiments on four NVIDIA H100 GPUs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090; H100 count=0.",
+      "id": "dto_kd_four_h100_hardware_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing or unmaterialized dataset candidates: imagenet_1k, cifar100, coco2017",
+      "id": "dto_kd_required_datasets_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing teacher/student checkpoints or initialization artifacts: regnety_160_teacher, deit_tiny_student, deit_small_student, vidt_base_teacher, vidt_nano_tiny_small_students",
+      "id": "dto_kd_teacher_student_checkpoints_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No ImageNet 300-epoch, CIFAR-100 six-pair, COCO 50-epoch, ablation, teacher-scale, or Figure 3/4 raw outputs exist under the runner result root.",
+      "id": "dto_kd_full_training_grid_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Verifier needs outputs comparable to Table 1, Table 2, Table 3, Table 4, Table 5, Figure 3, and Figure 4 before accepting close result shape.",
+      "id": "dto_kd_result_shape_verifier_waiting_for_tables_figures",
+      "status": "blocked"
+    },
+    {
+      "detail": "Without official code, a faithful implementation from Algorithm 1 and Equations 8-18 must be created and validated before any experiment can count.",
+      "id": "dto_kd_reimplementation_required_but_unvalidated",
+      "status": "blocked"
+    }
+  ],
+  "converged": false,
+  "convergence_role": "external-source blocker and paper-contract DAG repair; no unrelated repo or reduced GPU proxy is promoted",
+  "created_at_utc": "2026-07-23T18:53:41Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 2873,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 21343,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 18.96,
+      "temperature_c": 40,
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 20.9,
+      "temperature_c": 39,
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5168,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19046,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 20.78,
+      "temperature_c": 39,
+      "utilization_gpu_pct": 19
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8148,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16069,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 234.95,
+      "temperature_c": 74,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "next_full_execution_if_unblocked": [
+    "obtain official source or implement DTO-KD faithfully from Algorithm 1 and Equations 8-18",
+    "materialize ImageNet-1K, CIFAR-100, COCO2017, RegNetY-160, DeiT Tiny/Small, and ViDT teacher/student checkpoints",
+    "run four-H100 paper-shaped training grids, not a local 4090 debug proxy",
+    "emit raw per-run logs, seeds, metric JSON/CSV, GPU traces, and table/figure summaries",
+    "verify close result shape against Table 1-5 and Figure 3-4 targets"
+  ],
+  "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+  "paper_shaped_outputs_required": [
+    "official or faithfully reimplemented DTO-KD training code from Algorithm 1 and Equations 8-18",
+    "four-H100 training logs and environment traces",
+    "ImageNet-1K 300-epoch RegNetY-160 to DeiT-Ti/DeiT-S distillation outputs",
+    "CIFAR-100 six-pair KD grid against FitNet/RKD/PKT/KD/OFD/CRD/DIST/ReviewKD/DKD/ReviewKD++ baselines",
+    "COCO2017 ViDT-nano/tiny/small 50-epoch distillation outputs against ViDT, Token-Matching, and VkD",
+    "component ablation outputs for projector optimization, DTO, and gradient clipping",
+    "teacher-scale robustness outputs and Figure 3/4 dynamic-pi/error-analysis data"
+  ],
+  "paper_table_targets": {
+    "figures_3_4": {
+      "required": "dynamic pi trajectories and TIDE classification/localization error analysis"
+    },
+    "table_1_imagenet_top1": {
+      "DTO-KD_S": 83.1,
+      "DTO-KD_Ti": 79.7,
+      "protocol": "300 epochs ImageNet-1K, RegNetY-160 teacher, DeiT Tiny/Small students"
+    },
+    "table_2_cifar100_top1": {
+      "DTO-KD_values": [
+        72.35,
+        75.68,
+        76.4,
+        70.9,
+        77.95,
+        78.22
+      ],
+      "protocol": "six CIFAR-100 homogeneous/heterogeneous teacher-student pairs"
+    },
+    "table_3_coco_detection": {
+      "DTO-KD_nano_AP": 43.7,
+      "DTO-KD_small_AP": 49.6,
+      "DTO-KD_tiny_AP": 47.4,
+      "protocol": "50 epochs COCO2017 ViDT distillation from ViDT-base teacher"
+    },
+    "table_4_ablation": {
+      "baseline_AP_AP50_AP75": [
+        41.0,
+        59.2,
+        42.8
+      ],
+      "full_projector_dto_gradclip_AP_AP50_AP75": [
+        43.7,
+        63.1,
+        46.8
+      ]
+    },
+    "table_5_teacher_scale": {
+      "claim": "DTO-KD is best for nano/tiny students with both ViDT-small and ViDT-base teachers"
+    }
+  },
+  "paper_title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+  "professional_package_ready": false,
+  "status": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+  "support_checks": {
+    "candidate_repo_count": 3,
+    "h100_count": 0,
+    "official_source_repo_found": false,
+    "result_candidate_count": 0,
+    "source_files_checked": {
+      "chip": {
+        "contains_code_url_absent_note": true,
+        "exists": true,
+        "line_count": 850,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation.chip.json",
+        "size_bytes": 31879
+      },
+      "forum_html": {
+        "contains_code_url_absent_note": false,
+        "exists": true,
+        "line_count": 33,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_QMItTyQW92_openreview_forum.html",
+        "size_bytes": 173310
+      },
+      "paper_text": {
+        "contains_code_url_absent_note": false,
+        "exists": true,
+        "line_count": 875,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_QMItTyQW92_openreview.txt",
+        "size_bytes": 62183
+      },
+      "status_file": {
+        "contains_code_url_absent_note": false,
+        "exists": true,
+        "line_count": 36,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/status/ICLR2026_QMItTyQW92_source_status.txt",
+        "size_bytes": 2735
+      },
+      "supplement_text": {
+        "contains_code_url_absent_note": false,
+        "exists": true,
+        "line_count": 207,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_QMItTyQW92_supplementary.txt",
+        "size_bytes": 9938
+      }
+    }
+  }
+}

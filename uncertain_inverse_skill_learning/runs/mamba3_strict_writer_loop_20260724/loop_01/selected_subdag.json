@@ -1,0 +1,200 @@
+{
+  "schema_version": "dirs.strict_writer.selected_subdag.v1",
+  "loop": 1,
+  "selected_hypothesis_id": "H1_branched_quality_efficiency",
+  "frozen": true,
+  "freeze_point": "before abstract realization",
+  "mutation_after_freeze": false,
+  "context": {
+    "artifact": "research-paper abstract",
+    "target_words": 201,
+    "allowed_word_band": [
+      166,
+      236
+    ],
+    "evidence_source": "public Mamba-3 chip only"
+  },
+  "nodes": [
+    {
+      "id": "n1_transformer_cost_pressure",
+      "type": "problem_pressure",
+      "chip_ref": "$.problem_gap.nodes[1]",
+      "output_contract": "bounded statement of attention prefill and KV-cache scaling"
+    },
+    {
+      "id": "n2_linear_capability_pressure",
+      "type": "problem_pressure",
+      "chip_ref": "$.problem_gap.nodes[2]",
+      "output_contract": "bounded statement of capability and recurrent-decode limitations"
+    },
+    {
+      "id": "n3_mamba3_architecture",
+      "type": "method_hub",
+      "chip_ref": "$.method_mechanism.nodes[0]",
+      "output_contract": "identify Mamba-3 and its joint architecture objective"
+    },
+    {
+      "id": "n4_exp_trap",
+      "type": "mechanism",
+      "chip_ref": "$.method_mechanism.nodes[4]",
+      "output_contract": "state exponential-trapezoidal recurrence and learned trap interpolation"
+    },
+    {
+      "id": "n5_complex_update",
+      "type": "mechanism",
+      "chip_ref": "$.method_mechanism.nodes[5]",
+      "output_contract": "state complex-valued, data-dependent rotation mechanism"
+    },
+    {
+      "id": "n6_mimo",
+      "type": "mechanism",
+      "chip_ref": "$.method_mechanism.nodes[6]",
+      "output_contract": "state rank-4 MIMO path and arithmetic-intensity purpose"
+    },
+    {
+      "id": "n7_training_context",
+      "type": "evaluation_context",
+      "chip_ref": "$.evaluation_validation.events[0]",
+      "output_contract": "bind scale, data, tokenizer, and context length"
+    },
+    {
+      "id": "n8_lm_quality",
+      "type": "quality_result",
+      "chip_ref": "$.result_outcome.nodes[0]",
+      "output_contract": "report 1.5B perplexity and average accuracy with named baselines"
+    },
+    {
+      "id": "n9_state_tracking",
+      "type": "mechanism_result",
+      "chip_ref": "$.result_outcome.nodes[2]",
+      "output_contract": "report three Mamba-3 and Mamba-2 formal-task accuracies"
+    },
+    {
+      "id": "n10_decode_latency",
+      "type": "efficiency_result",
+      "chip_ref": "$.result_outcome.nodes[4]",
+      "output_contract": "report BF16 H100 d_state=128 SISO, MIMO, and Mamba-2 latency"
+    },
+    {
+      "id": "n11_retrieval_boundary",
+      "type": "limitation",
+      "chip_ref": "$.problem_gap.nodes[4]",
+      "output_contract": "qualify pure-model retrieval and motivate conditional hybrid attention"
+    },
+    {
+      "id": "n12_bounded_synthesis",
+      "type": "artifact_synthesis",
+      "chip_ref": "$.result_outcome.summary",
+      "output_contract": "conclude only joint quality and recurrent-efficiency improvement with an explicit SISO/MIMO tradeoff"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n1_transformer_cost_pressure",
+      "target": "n3_mamba3_architecture",
+      "type": "motivates"
+    },
+    {
+      "source": "n2_linear_capability_pressure",
+      "target": "n3_mamba3_architecture",
+      "type": "motivates"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n4_exp_trap",
+      "type": "decomposes_into"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n5_complex_update",
+      "type": "decomposes_into"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n6_mimo",
+      "type": "decomposes_into"
+    },
+    {
+      "source": "n7_training_context",
+      "target": "n8_lm_quality",
+      "type": "scopes"
+    },
+    {
+      "source": "n4_exp_trap",
+      "target": "n8_lm_quality",
+      "type": "contributes_to_architecture_under_test"
+    },
+    {
+      "source": "n5_complex_update",
+      "target": "n9_state_tracking",
+      "type": "validated_by"
+    },
+    {
+      "source": "n6_mimo",
+      "target": "n8_lm_quality",
+      "type": "validated_by"
+    },
+    {
+      "source": "n6_mimo",
+      "target": "n10_decode_latency",
+      "type": "profiled_by"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n11_retrieval_boundary",
+      "type": "bounded_by"
+    },
+    {
+      "source": "n8_lm_quality",
+      "target": "n12_bounded_synthesis",
+      "type": "supports"
+    },
+    {
+      "source": "n9_state_tracking",
+      "target": "n12_bounded_synthesis",
+      "type": "supports"
+    },
+    {
+      "source": "n10_decode_latency",
+      "target": "n12_bounded_synthesis",
+      "type": "supports"
+    },
+    {
+      "source": "n11_retrieval_boundary",
+      "target": "n12_bounded_synthesis",
+      "type": "qualifies"
+    }
+  ],
+  "execution_order": [
+    [
+      "n1_transformer_cost_pressure",
+      "n2_linear_capability_pressure",
+      "n7_training_context"
+    ],
+    [
+      "n3_mamba3_architecture"
+    ],
+    [
+      "n4_exp_trap",
+      "n5_complex_update",
+      "n6_mimo",
+      "n11_retrieval_boundary"
+    ],
+    [
+      "n8_lm_quality",
+      "n9_state_tracking",
+      "n10_decode_latency"
+    ],
+    [
+      "n12_bounded_synthesis"
+    ]
+  ],
+  "validation": {
+    "acyclic": true,
+    "all_factual_nodes_have_chip_refs": true,
+    "all_required_outputs_reachable": true,
+    "dangling_nodes": [],
+    "universal_template_assumed": false,
+    "structure_note": "The selected graph is a context-specific fork-join with parallel mechanism validation and a limitation qualifier, not a fixed gap-to-method-to-result chain."
+  }
+}

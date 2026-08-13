@@ -1,0 +1,349 @@
+{
+  "blind_simulation_contract": {
+    "dag_contains_oracle_numeric_results": false,
+    "oracle_hidden_from_simulator": true,
+    "simulator_allowed_user_data_files": [
+      "paper_author_dag.json"
+    ],
+    "simulator_forbidden_user_data_files": [
+      "paper_section_evidence_table.json",
+      "paper_oracle_results.json",
+      "author_style_gpu_reproduction_campaign.json",
+      "loop1_loop2_20paper_author_cycle.json",
+      "paper text files",
+      "prior reports or traces"
+    ]
+  },
+  "created_at_utc": "2026-07-22T21:21:15Z",
+  "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v2",
+  "detail_level": 2,
+  "edges": [
+    [
+      "root.author_simulation",
+      "gap.hyperparameter_brittleness"
+    ],
+    [
+      "gap.hyperparameter_brittleness",
+      "method.p_less_threshold"
+    ],
+    [
+      "method.p_less_threshold",
+      "method.p_lessnorm_threshold"
+    ],
+    [
+      "method.p_less_threshold",
+      "exp.threshold_invariant_probe"
+    ],
+    [
+      "method.p_less_threshold",
+      "exp.reasoning_quality_proxy"
+    ],
+    [
+      "exp.threshold_invariant_probe",
+      "decision.claim_boundary"
+    ],
+    [
+      "exp.reasoning_quality_proxy",
+      "decision.claim_boundary"
+    ],
+    [
+      "exp.threshold_invariant_probe",
+      "exp.high_temperature_writing_proxy"
+    ],
+    [
+      "exp.baseline_control_panel",
+      "exp.high_temperature_writing_proxy"
+    ],
+    [
+      "gap.hyperparameter_brittleness",
+      "exp.baseline_control_panel"
+    ]
+  ],
+  "experiment_recipes": {
+    "claim_slots": {
+      "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+      "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+      "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+      "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+      "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+    },
+    "distribution_grid": {
+      "entropy_regimes": [
+        "peaked_reasoning",
+        "mixed_reasoning",
+        "flat_creative"
+      ],
+      "samples_per_temperature": 32,
+      "seed": 20260722,
+      "temperatures": [
+        0.5,
+        0.7,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "vocab_size": 4096
+    },
+    "operation_cost_model": {
+      "base_linear_scan": 1.0,
+      "default_inclusion_penalty": 0.35,
+      "hyperparameter_tuning_penalty": 0.2,
+      "normalization_extra_scan": 0.1,
+      "second_moment_extra_scan": 0.15,
+      "sorting_penalty": 1.75,
+      "uses_oracle_timing": false
+    },
+    "samplers": {
+      "epsilon": {
+        "hyperparameters": {
+          "epsilon": 0.0005
+        },
+        "kind": "fixed_probability_threshold",
+        "needs_sort": false
+      },
+      "eta": {
+        "hyperparameters": {
+          "epsilon": 0.0005
+        },
+        "kind": "entropy_scaled_fixed_threshold",
+        "needs_sort": false
+      },
+      "min_p": {
+        "hyperparameters": {
+          "alpha": 0.05
+        },
+        "kind": "modal_relative_threshold",
+        "needs_sort": false
+      },
+      "mirostat": {
+        "hyperparameters": {
+          "target_surprisal": 5.0
+        },
+        "kind": "target_surprisal_proxy",
+        "needs_sort": true
+      },
+      "p_less": {
+        "hyperparameters": {},
+        "kind": "second_moment_threshold",
+        "needs_sort": false
+      },
+      "p_lessnorm": {
+        "hyperparameters": {},
+        "kind": "normalized_second_moment_threshold",
+        "needs_sort": false
+      },
+      "top_p": {
+        "hyperparameters": {
+          "p": 0.9
+        },
+        "kind": "cumulative_mass_threshold",
+        "needs_sort": true
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "root.author_simulation",
+      "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+      "type": "author_loop"
+    },
+    {
+      "id": "gap.hyperparameter_brittleness",
+      "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+      "type": "gap_hypothesis"
+    },
+    {
+      "formula": "threshold = sum_i p_i^2",
+      "id": "method.p_less_threshold",
+      "properties": [
+        "full_distribution",
+        "hyperparameter_free",
+        "bounded_nonempty_candidate_set",
+        "sort_free_threshold"
+      ],
+      "type": "method_mechanism"
+    },
+    {
+      "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+      "id": "method.p_lessnorm_threshold",
+      "properties": [
+        "relaxed_threshold",
+        "higher_diversity",
+        "bounded_nonempty_candidate_set"
+      ],
+      "type": "method_variant"
+    },
+    {
+      "id": "exp.threshold_invariant_probe",
+      "metrics": [
+        "empty_candidate_rate",
+        "retained_mass",
+        "candidate_count",
+        "top_token_retained_rate"
+      ],
+      "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+      "type": "experiment_recipe"
+    },
+    {
+      "id": "exp.reasoning_quality_proxy",
+      "metrics": [
+        "quality_proxy_auc",
+        "temperature_stability"
+      ],
+      "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+      "type": "experiment_recipe"
+    },
+    {
+      "id": "decision.claim_boundary",
+      "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+      "type": "author_decision"
+    },
+    {
+      "id": "exp.high_temperature_writing_proxy",
+      "metrics": [
+        "high_temp_robustness_score",
+        "fallback_rate",
+        "tail_mass_penalty"
+      ],
+      "purpose": "stress creative-writing-like high-temperature distributions and collapse/fallback behavior",
+      "type": "experiment_recipe"
+    },
+    {
+      "baselines": [
+        "top_p",
+        "min_p",
+        "epsilon",
+        "eta",
+        "mirostat"
+      ],
+      "control_logic": "compare fixed, cumulative, modal-relative, entropy-scaled, and target-surprisal truncation",
+      "id": "exp.baseline_control_panel",
+      "type": "baseline_inventory"
+    }
+  ],
+  "previous_verification_summary": {
+    "checks": [
+      {
+        "detail": "leakage_hits=[]",
+        "name": "blind_input_contract",
+        "ok": true,
+        "weight": 0.18
+      },
+      {
+        "detail": "p_less fallback=0.000",
+        "name": "bounded_candidate_set",
+        "ok": true,
+        "weight": 0.12
+      },
+      {
+        "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+        "name": "hyperparameter_free",
+        "ok": true,
+        "weight": 0.1
+      },
+      {
+        "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+        "name": "main_auc_shape",
+        "ok": false,
+        "weight": 0.16
+      },
+      {
+        "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+        "name": "high_temperature_writing_shape",
+        "ok": true,
+        "weight": 0.16
+      },
+      {
+        "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071913, fastest=0.00052969",
+        "name": "efficiency_shape",
+        "ok": true,
+        "weight": 0.14
+      },
+      {
+        "detail": "blocked_by_missing_full_evaluation_pipeline",
+        "name": "exact_reproduction_boundary",
+        "ok": true,
+        "weight": 0.1
+      },
+      {
+        "detail": "detail_level=1, node_count=7",
+        "name": "dag_detail_sufficiency",
+        "ok": false,
+        "weight": 0.04
+      }
+    ],
+    "converged_ready": false,
+    "created_at_utc": "2026-07-22T21:21:15Z",
+    "missing": [
+      "main_auc_shape",
+      "dag_detail_sufficiency"
+    ],
+    "oracle_numeric_anchors_used_by_verifier": {
+      "table15_cpu_ms_ram_gb": {
+        "min_p": {
+          "cpu_ms": 0.83,
+          "ram_gb": 2.545
+        },
+        "p_less": {
+          "cpu_ms": 0.62,
+          "ram_gb": 2.456
+        },
+        "top_p": {
+          "cpu_ms": 0.79,
+          "ram_gb": 2.535
+        }
+      },
+      "table1_llama2_auc_p_less": {
+        "CSQA": 0.503,
+        "GPQA": 0.242,
+        "GSM8K": 0.267,
+        "QASC": 0.537
+      },
+      "table1_llama2_auc_p_lessnorm": {
+        "CSQA": 0.503,
+        "GPQA": 0.248,
+        "GSM8K": 0.267,
+        "QASC": 0.538
+      },
+      "table1_mistral_auc_p_less": {
+        "CSQA": 0.697,
+        "GPQA": 0.239,
+        "GSM8K": 0.562,
+        "QASC": 0.736
+      },
+      "table1_mistral_auc_p_lessnorm": {
+        "CSQA": 0.692,
+        "GPQA": 0.222,
+        "GSM8K": 0.564,
+        "QASC": 0.739
+      },
+      "table2_llama2_temp2_win_rate": {
+        "epsilon": 0.0,
+        "eta": 0.0,
+        "min_p": 48.94,
+        "mirostat": 26.88,
+        "p_less": 65.64,
+        "p_lessnorm": 59.29,
+        "top_p": 0.0
+      },
+      "table3_sampling_time_seconds_per_token": {
+        "epsilon": 0.02259,
+        "eta": 0.0221,
+        "min_p": 0.02497,
+        "mirostat": 0.02278,
+        "p_less": 0.01942,
+        "top_p": 0.02362
+      }
+    },
+    "score": 0.8,
+    "suggestions": [
+      "add artifact gate and verifier table-slot anchors without numeric oracle values"
+    ]
+  },
+  "signature": "4bf9626763360c2a",
+  "target_paper_stub": {
+    "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+    "domain": "LLM Inference / Systems / Token Efficiency",
+    "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+  }
+}

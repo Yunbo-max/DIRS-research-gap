@@ -1,0 +1,1425 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "ops.official_harness_failure_diagnosis"
+    ],
+    [
+      "ops.official_harness_failure_diagnosis",
+      "ops.custom_full_split_runner"
+    ],
+    [
+      "ops.custom_full_split_runner",
+      "reviewer.compare_custom_full_runner"
+    ],
+    [
+      "reviewer.compare_custom_full_runner",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_custom_full_runner",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "ops.official_harness_failure_diagnosis"
+    ],
+    [
+      "ops.custom_full_split_runner",
+      "metrics.answer_extraction_guard"
+    ],
+    [
+      "metrics.answer_extraction_guard",
+      "reviewer.compare_custom_full_runner"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.full_trajectory_dataset_analysis"
+    ],
+    [
+      "ops.full_trajectory_dataset_analysis",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "ops.full_trajectory_dataset_analysis",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.trajectory_metric_semantics_repair"
+    ],
+    [
+      "loop1.required_update.trajectory_metric_semantics_repair",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "loop1.required_update.trajectory_metric_semantics_repair",
+      "ops.trajectory_author_notebook_correctness_semantics"
+    ],
+    [
+      "ops.trajectory_author_notebook_correctness_semantics",
+      "ops.full_trajectory_dataset_analysis"
+    ],
+    [
+      "ops.trajectory_author_notebook_correctness_semantics",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.source_parity_blocker_audit"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.source_parity_blocker_audit"
+    ],
+    [
+      "ops.source_parity_blocker_audit",
+      "ops.dream7b_source_parity_gate"
+    ],
+    [
+      "ops.source_parity_blocker_audit",
+      "ops.top_k_margin_source_parity_gate"
+    ],
+    [
+      "ops.source_parity_blocker_audit",
+      "ops.simple_evals_prompt_scorer_parity_gate"
+    ],
+    [
+      "ops.source_parity_blocker_audit",
+      "ops.sdtt_fastdllm_external_artifact_gate"
+    ],
+    [
+      "ops.dream7b_source_parity_gate",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "ops.top_k_margin_source_parity_gate",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "ops.simple_evals_prompt_scorer_parity_gate",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "ops.sdtt_fastdllm_external_artifact_gate",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "ops.source_parity_blocker_audit",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "ops.source_parity_blocker_audit",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "ops.custom_full_split_runner",
+      "verifier.gsm8k_live_shape_risk_audit"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "verifier.gsm8k_live_shape_risk_audit"
+    ],
+    [
+      "verifier.gsm8k_live_shape_risk_audit",
+      "loop1.required_update.gsm8k_protocol_shape_repair"
+    ],
+    [
+      "loop1.required_update.gsm8k_protocol_shape_repair",
+      "protocol.prompt_template_parity_gate"
+    ],
+    [
+      "ops.simple_evals_prompt_scorer_parity_gate",
+      "protocol.prompt_template_parity_gate"
+    ],
+    [
+      "protocol.prompt_template_parity_gate",
+      "runner.suffix_answer_region_parity_gate"
+    ],
+    [
+      "runner.suffix_answer_region_parity_gate",
+      "protocol.simple_evals_vs_lmeval_harness_gate"
+    ],
+    [
+      "metrics.answer_extraction_guard",
+      "scoring.generated_answer_extractor_parity_gate"
+    ],
+    [
+      "protocol.simple_evals_vs_lmeval_harness_gate",
+      "scoring.generated_answer_extractor_parity_gate"
+    ],
+    [
+      "scoring.generated_answer_extractor_parity_gate",
+      "reviewer.compare_custom_full_runner"
+    ],
+    [
+      "protocol.simple_evals_vs_lmeval_harness_gate",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "runner.suffix_answer_region_parity_gate",
+      "ops.custom_full_split_runner"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.gsm8k_postcompletion_protocol_shape_repair"
+    ],
+    [
+      "loop1.required_update.gsm8k_postcompletion_protocol_shape_repair",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "loop1.required_update.gsm8k_postcompletion_protocol_shape_repair",
+      "ops.one_paper_gpu_scheduler_priority"
+    ],
+    [
+      "ops.one_paper_gpu_scheduler_priority",
+      "ops.gsm8k_protocol_repair_sharded_full_split_runner"
+    ],
+    [
+      "protocol.prompt_template_parity_gate",
+      "ops.gsm8k_protocol_repair_sharded_full_split_runner"
+    ],
+    [
+      "runner.suffix_answer_region_parity_gate",
+      "ops.gsm8k_protocol_repair_sharded_full_split_runner"
+    ],
+    [
+      "protocol.simple_evals_vs_lmeval_harness_gate",
+      "ops.gsm8k_protocol_repair_sharded_full_split_runner"
+    ],
+    [
+      "scoring.generated_answer_extractor_parity_gate",
+      "ops.gsm8k_protocol_repair_sharded_full_split_runner"
+    ],
+    [
+      "ops.gsm8k_protocol_repair_sharded_full_split_runner",
+      "ops.gsm8k_protocol_repair_merge_gate"
+    ],
+    [
+      "ops.gsm8k_protocol_repair_merge_gate",
+      "reviewer.compare_protocol_repair_merged_shape"
+    ],
+    [
+      "reviewer.compare_protocol_repair_merged_shape",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_protocol_repair_merged_shape",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.compare_protocol_repair_merged_shape",
+      "decision.continue_or_block_after_professional_verifier"
+    ]
+  ],
+  "graph_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding_gap_dag_iter_11",
+  "nodes": [
+    {
+      "content": "Diffusion Language Models Know the Answer Before Decoding | families=speculative_or_early_decoding, diffusion_cache, sparse_cuda_rl, reasoning_agents",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "dlm_inference_latency; fixed_budget_over_refinement; structured_answer_region_decoding",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "premature_commit_wrong_answer; open_ended_answer_boundary_missing; confidence_miscalibration; block_size_brittleness",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "full_step_decoding; static_step_budget; random_remasking; low_confidence_remasking; top_k_margin_remasking; SDTT; Fast_dLLM; Fast_dLLM; SDTT",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "answer_region_monitor; confidence_gap; phase_threshold_schedule; all_in_mask_fill; suffix_answer_constraint",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=lm_evaluation_harness; simple_evals; GSM8K_trajectory_analysis; MMLU_trajectory_analysis; metrics=accuracy; accuracy_delta; speedup; average_steps; first_correct_answer_emergence; protocols=zero_shot_eval; 8_shot_planning_eval; full_step_vs_prophet; static_step_budget_ablation; block_length_ablation",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=cuda_gpus_required_for_repo_eval; runtimes=PyTorch; Transformers; Accelerate; lm_evaluation_harness; datasets",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet; code_artifacts=generate_earlyexit_py; generate_py; eval_llada_py; eval_sh; analysis_collect_decoding_traj_gsm8k_py; analysis_visualize_ipynb",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=MMLU; ARC_C; HellaSwag; TruthfulQA; WinoGrande; PIQA; GSM8K; GPQA; HumanEval; MBPP; data_artifacts=YefanZhou98_DLM_Decoding_Analysis; implementation_statuses=code_inspected; trajectory_dataset_available; Dream_specific_code_paths_not_observed_in_repo_snapshot",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "If official lm-evaluation-harness loads model/data but exits before result artifacts, record the missing table evidence as blocker; diagnose logs, GPU mapping, NCCL, memory, and harness compatibility.",
+      "id": "ops.official_harness_failure_diagnosis",
+      "skill_role": "turn a failed real run into a DAG repair rather than a stop condition",
+      "type": "operational_blocker_diagnosis"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/status.json"
+      ],
+      "content": "Run the full openai/gsm8k main test split (1319 samples) with GSAI-ML/LLaDA-8B-Instruct on CUDA GPU, official gsm8k_cot_zeroshot prompt Q/A shape, constraints_text=200:The|201:answer|202:is, gen_length=256, steps=256, block_length=32, low_confidence remasking, baseline generate.py, Prophet generate_earlyexit.py, per-sample JSONL, timings, actual_steps, exact-match metrics, and GPU snapshots.",
+      "id": "ops.custom_full_split_runner",
+      "skill_role": "produce non-reduced paper-shaped results when the official harness cannot complete",
+      "type": "operational_execution_fallback"
+    },
+    {
+      "content": "Accept close result shape only if the custom runner completes the full split with the same model, dataset, prompt family, constraints, steps, block length, decoding variants, answer extraction metrics, raw outputs, timing traces, and average-step evidence; otherwise keep exact artifact debt active and loop back to DAG repair.",
+      "id": "reviewer.compare_custom_full_runner",
+      "skill_role": "decide whether custom full split artifacts can stand in for official lm-eval output",
+      "type": "verification"
+    },
+    {
+      "content": "For GSM8K Prophet outputs, score generated_text with both strict paper/lm-eval pattern and flexible numeric extraction; handle The answer is \\boxed{N}, $\\boxed{N}$, commas, dollars, and trailing punctuation. If a metric parser bug is found, preserve the partial run as support-only, patch the scorer, and restart the full split.",
+      "id": "metrics.answer_extraction_guard",
+      "skill_role": "prevent false verifier failure from answer parser mismatch",
+      "type": "metric_validation"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_dataset_status.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_analysis_summary.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_first_emergence_rows.jsonl"
+      ],
+      "content": "Download full YefanZhou98/DLM-Decoding-Analysis dataset (all four GSM8K trajectory folders and all four MMLU trajectory folders), verify expected file counts, compute first-correct-answer-emergence distributions, 25%/50% threshold rates, correctness counts, histogram counts, and per-setting summaries using the paper notebook logic. This path is full released-artifact analysis, not a reduced sample.",
+      "id": "ops.full_trajectory_dataset_analysis",
+      "skill_role": "reproduce paper figure evidence from released full trajectory artifacts",
+      "type": "operational_artifact_analysis"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_07_live.json; status=blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory; converged=False; professional_ready=False; blocked_checks=['paper_result_target_comparison', 'ablation_grid_campaign_ready', 'multibenchmark_grid_campaign_ready', 'table2_acceleration_campaign_ready', 'dream7b_axis_campaign_ready', 'result_shape_comparison_ready', 'paper_result_comparison', 'unresolved_professional_debt', 'ablation_grid_campaign', 'multibenchmark_grid_campaign', 'table2_acceleration_campaign', 'dream7b_axis_campaign', 'trajectory_metric_semantics_audit', 'support_only_until']; required_updates=['gsm8k_postcompletion_protocol_shape_repair']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": {
+              "blockers": [
+                "blocked_gsm8k_result_shape_mismatch",
+                "table1_multibenchmark_grid:pending_or_blocked",
+                "table2_acceleration_combinations:explicit_external_artifact_blockers_recorded",
+                "table3_table4_ablation_grid:running",
+                "dream7b_axis:explicit_external_artifact_blockers_recorded"
+              ],
+              "explicit_debt_comparison": {
+                "dream7b_axis": {
+                  "blocked_config_ids": [
+                    "dream_model_identifier_and_loader",
+                    "dream_generation_function_parity",
+                    "dream_simple_evals_prompt_scorer_parity",
+                    "dream_table1_full_grid"
+                  ],
+                  "completed_config_count": 0,
+                  "linked_existing_artifact_count": 0,
+                  "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/dream7b_axis_campaign.json",
+                  "needed": "Dream-7B Table 1 axis or explicit external blocker.",
+                  "pending_config_count": 0,
+                  "runnable_config_count": 0,
+                  "status": "explicit_external_artifact_blockers_recorded"
+                },
+                "gsm8k_protocol_repair": {
+                  "blocked_config_ids": [],
+                  "completed_config_count": 4,
+                  "linked_existing_artifact_count": 0,
+                  "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/protocol_repair_campaign.json",
+                  "merged_artifact": {
+                    "status": "completed"
+                  },
+                  "needed": "Verifier-required full GSM8K rerun or rescore after protocol-shape mismatch.",
+                  "pending_config_count": 1,
+                  "runnable_config_count": 5,
+                  "status": "ready_for_result_value_comparison"
+                },
+                "table1_multibenchmark_grid": {
+                  "blocked_config_ids": [
+                    "exact_simple_evals_prompt_and_answer_extractor",
+                    "main_text_vs_appendix_general_budget_conflict",
+                    "countdown_and_sudoku_simple_evals_planning_axis",
+                    "dream7b_table1_axis"
+                  ],
+                  "completed_config_count": 0,
+                  "linked_existing_artifact_count": 1,
+                  "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/multibenchmark_grid_campaign.json",
+                  "pending_config_count": 30,
+                  "runnable_config_count": 30,
+                  "status": "pending_or_blocked"
+                },
+                "table2_acceleration_combinations": {
+                  "blocked_config_ids": [
+                    "sdtt_distilled_student_row",
+                    "sdtt_plus_prophet_row",
+                    "fast_dllm_kv_cache_parallel_row",
+                    "fast_dllm_plus_prophet_row"
+                  ],
+                  "completed_config_count": 0,
+                  "linked_existing_artifact_count": 2,
+                  "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/table2_acceleration_campaign.json",
+                  "needed": "SDTT, SDTT+Prophet, Fast-dLLM, and Fast-dLLM+Prophet GSM8K comparison.",
+                  "pending_config_count": 0,
+                  "runnable_config_count": 0,
+                  "status": "explicit_external_artifact_blockers_recorded"
+                },
+                "table3_table4_ablation_grid": {
+                  "blocked_config_ids": [
+                    "table3b_remasking_top_k_margin",
+                    "dream7b_axis"
+                  ],
+                  "completed_config_count": 12,
+                  "linked_existing_artifact_count": 0,
+                  "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+                  "pending_config_count": 1,
+                  "runnable_config_count": 17,
+                  "status": "running"
+                }
+              },
+              "primary_gsm8k_comparison": {
+                "status": "blocked_gsm8k_result_shape_mismatch"
+              },
+              "status": "blocked_paper_result_comparison",
+              "trajectory_comparison": {
+                "semantics_audit": {
+                  "status": "completed_metric_semantics_audit"
+                },
+                "status": "pass_close_to_paper_trajectory_shape"
+              }
+            },
+            "name": "paper_result_target_comparison",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "blocked_config_ids": [
+                "table3b_remasking_top_k_margin",
+                "dream7b_axis"
+              ],
+              "completed_config_count": 12,
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+              "pending_config_count": 1,
+              "runnable_config_count": 17,
+              "status": "running_full_ablation_grid"
+            },
+            "name": "ablation_grid_campaign_ready",
+            "status": "running"
+          },
+          {
+            "detail": {
+              "blocked_config_ids": [
+                "exact_simple_evals_prompt_and_answer_extractor",
+                "main_text_vs_appendix_general_budget_conflict",
+                "countdown_and_sudoku_simple_evals_planning_axis",
+                "dream7b_table1_axis"
+              ],
+              "completed_config_count": 0,
+              "linked_existing_artifact_count": 1,
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/multibenchmark_grid_campaign.json",
+              "pending_config_count": 30,
+              "runnable_config_count": 30,
+              "status": "ready_waiting_for_gpu_capacity_and_prompt_scorer_parity_resolution"
+            },
+            "name": "multibenchmark_grid_campaign_ready",
+            "status": "running"
+          },
+          {
+            "detail": {
+              "blocked_config_ids": [
+                "sdtt_distilled_student_row",
+                "sdtt_plus_prophet_row",
+                "fast_dllm_kv_cache_parallel_row",
+                "fast_dllm_plus_prophet_row"
+              ],
+              "linked_existing_artifact_count": 2,
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/table2_acceleration_campaign.json",
+              "runnable_config_count": 0,
+              "status": "running_waiting_for_full_gsm8k_linked_rows_and_external_artifacts"
+            },
+            "name": "table2_acceleration_campaign_ready",
+            "status": "running"
+          },
+          {
+            "detail": {
+              "blocked_config_ids": [
+                "dream_model_identifier_and_loader",
+                "dream_generation_function_parity",
+                "dream_simple_evals_prompt_scorer_parity",
+                "dream_table1_full_grid"
+              ],
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/dream7b_axis_campaign.json",
+              "runnable_config_count": 0,
+              "status": "explicit_dream7b_axis_blockers_recorded"
+            },
+            "name": "dream7b_axis_campaign_ready",
+            "status": "blocked"
+          },
+          {
+            "detail": [
+              "GSM8K protocol repair rerun is produced or explicitly blocked after full-run result-shape mismatch",
+              "multi-benchmark grid debt is resolved or explicitly blocked",
+              "Table 2 acceleration-combination debt is resolved or explicitly blocked",
+              "static step and block-length ablations are produced or explicitly blocked",
+              "Dream-7B axis is produced or explicitly blocked"
+            ],
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "blockers": [
+                "blocked_gsm8k_result_shape_mismatch",
+                "table1_multibenchmark_grid:pending_or_blocked",
+                "table2_acceleration_combinations:explicit_external_artifact_blockers_recorded",
+                "table3_table4_ablation_grid:running",
+                "dream7b_axis:explicit_external_artifact_blockers_recorded"
+              ],
+              "status": "blocked_paper_result_comparison"
+            },
+            "name": "paper_result_comparison",
+            "status": "blocked"
+          },
+          {
+            "detail": [
+              {
+                "id": "full_step_vs_prophet_gsm8k",
+                "needed": "Full GSM8K zero-shot baseline and Prophet results with accuracy, steps, speed, and raw rows.",
+                "status": "complete"
+              },
+              {
+                "id": "trajectory_analysis_all_settings",
+                "needed": "DLM-Decoding-Analysis trajectory evidence for configured settings.",
+                "status": "complete"
+              },
+              {
+                "id": "gsm8k_protocol_repair",
+                "needed": "Full GSM8K prompt/constraint/scoring repair rerun after postcompletion result-shape mismatch.",
+                "status": "completed_full_protocol_repair_merged_artifact"
+              },
+              {
+                "id": "multi_benchmark_grid",
+                "needed": "MMLU, ARC-C, HellaSwag, TruthfulQA, WinoGrande, PIQA, GPQA, HumanEval, MBPP and planning settings.",
+                "status": "ready_waiting_for_gpu_capacity_and_prompt_scorer_parity_resolution"
+              },
+              {
+                "id": "table2_acceleration_combinations",
+                "needed": "SDTT, SDTT+Prophet, Fast-dLLM, and Fast-dLLM+Prophet GSM8K comparison.",
+                "status": "running_waiting_for_full_gsm8k_linked_rows_and_external_artifacts"
+              },
+              {
+                "id": "static_step_and_block_length_ablations",
+                "needed": "Static-step budget and block-length ablations.",
+                "status": "running_full_ablation_grid"
+              },
+              {
+                "id": "dream_model_axis",
+                "needed": "Dream-7B axis or explicit code/data blocker.",
+                "status": "explicit_dream7b_axis_blockers_recorded"
+              }
+            ],
+            "name": "unresolved_professional_debt",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "completed_config_count": 12,
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+              "pending_config_count": 1,
+              "runnable_config_count": 17,
+              "status": "running_full_ablation_grid"
+            },
+            "name": "ablation_grid_campaign",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "completed_config_count": 0,
+              "linked_existing_artifact_count": 1,
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/multibenchmark_grid_campaign.json",
+              "pending_config_count": 30,
+              "runnable_config_count": 30,
+              "status": "ready_waiting_for_gpu_capacity_and_prompt_scorer_parity_resolution"
+            },
+            "name": "multibenchmark_grid_campaign",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "linked_existing_artifact_count": 2,
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/table2_acceleration_campaign.json",
+              "runnable_config_count": 0,
+              "status": "running_waiting_for_full_gsm8k_linked_rows_and_external_artifacts"
+            },
+            "name": "table2_acceleration_campaign",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/dream7b_axis_campaign.json",
+              "runnable_config_count": 0,
+              "status": "explicit_dream7b_axis_blockers_recorded"
+            },
+            "name": "dream7b_axis_campaign",
+            "status": "blocked"
+          },
+          {
+            "detail": {
+              "status": "completed_metric_semantics_audit"
+            },
+            "name": "trajectory_metric_semantics_audit",
+            "status": "blocked"
+          },
+          {
+            "detail": [
+              "GSM8K protocol repair rerun is produced or explicitly blocked after full-run result-shape mismatch",
+              "multi-benchmark grid debt is resolved or explicitly blocked",
+              "Table 2 acceleration-combination debt is resolved or explicitly blocked",
+              "static step and block-length ablations are produced or explicitly blocked",
+              "Dream-7B axis is produced or explicitly blocked"
+            ],
+            "name": "support_only_until",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "artifact_family": "full_gsm8k_baseline_prophet_result_shape",
+            "failed_metric_ids": [
+              "accuracy_delta",
+              "prophet_avg_steps",
+              "step_speedup"
+            ],
+            "id": "gsm8k_postcompletion_protocol_shape_repair",
+            "oracle_values_exposed_to_loop2": false,
+            "protocol_finding_statuses": {
+              "generated_answer_extractor_parity": "custom_extractor_not_exact_simple_evals_extractor",
+              "harness_parity": "custom_fallback_support_only_until_equivalence_audit",
+              "prompt_template_parity": "unknown",
+              "suffix_answer_region_parity": "matches_released_eval_formula_but_not_full_paper_protocol"
+            },
+            "reason": "The completed full-split GSM8K operational artifact does not match the paper-shape verifier. Loop 2 must treat this as a protocol/runner/scoring repair problem, not as convergence evidence and not as a generic paper-reading mismatch.",
+            "repair_axis_ids": [
+              "prompt_template_parity",
+              "suffix_constraint_semantics",
+              "answer_region_start_and_length",
+              "simple_evals_vs_lm_eval_protocol",
+              "generated_answer_extractor_parity",
+              "released_eval_harness_vs_custom_runner_semantics"
+            ],
+            "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json",
+            "risk_audit_status": "postcompletion_shape_mismatch_requires_loop1_dag_repair",
+            "success_criteria": [
+              "Add or activate DAG-only nodes for prompt template parity, suffix constraints, answer-region start/length, evaluation harness parity, and generated-answer extraction parity.",
+              "Do not expose paper target table values or paper text to Loop 2; only encode non-oracle repair axes and repo/config artifact requirements.",
+              "Run or rescore the full GSM8K artifact through the repaired protocol path, or record an explicit source/artifact blocker if the exact path is unavailable.",
+              "Verifier must compare final accuracy, step, speed, and result-direction shape against the paper evidence channels after the repaired artifact exists."
+            ]
+          }
+        ],
+        "status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory"
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "paper_result_target_comparison",
+        "ablation_grid_campaign_ready",
+        "multibenchmark_grid_campaign_ready",
+        "table2_acceleration_campaign_ready",
+        "dream7b_axis_campaign_ready",
+        "result_shape_comparison_ready",
+        "paper_result_comparison",
+        "unresolved_professional_debt",
+        "ablation_grid_campaign",
+        "multibenchmark_grid_campaign",
+        "table2_acceleration_campaign",
+        "dream7b_axis_campaign",
+        "trajectory_metric_semantics_audit",
+        "support_only_until"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Completed trajectory artifacts do not match the paper-shape verifier for one or more first-emergence settings. Loop 2 must treat this as a simulation/DAG mismatch, not as a missing artifact.",
+      "failed_simulation_setting_ids": [
+        "gsm8k_low_conf_constraint_block32"
+      ],
+      "id": "loop1.required_update.trajectory_metric_semantics_repair",
+      "oracle_values_exposed_to_loop2": false,
+      "required_update_id": "trajectory_metric_semantics_repair",
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "Add a DAG node that audits first-emergence metric semantics without reading paper oracle values.",
+        "Check denominator choice, correct-row filtering, 25%/50% step thresholds, constraint-token handling, and block-length mapping.",
+        "Name the failed simulation setting IDs only, then rerun or re-score the trajectory artifact from DAG instructions.",
+        "Verifier comparison must move from blocked trajectory mismatch to pass or to a more specific operational blocker."
+      ],
+      "type": "verifier_required_dag_repair"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/analysis/visualize.ipynb",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_trajectory_dataset_acquire_analyze.py",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_analysis_summary.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_metric_semantics_audit.json"
+      ],
+      "content": "For GSM8K trajectory figure reproduction, do not trust the stale correct flag stored in released .pt files. Recompute correctness exactly as analysis/visualize.ipynb: extract the final numeric answer from pred_text using the Answer: regex with fallback to the last number, normalize dollars/commas/decimals, compare to normalized gt_text, then compute first answer-token emergence over those recomputed-correct trajectories. Keep the author notebook step policy: scan x0_history at ans_pos for pred_token_id through all non-final steps, append the final step, use the first match, divide by total steps, and report <=25% and <=50% threshold rates. Record stored-correct disagreement counts as evidence. This is a DAG-visible author-style metric decision; paper target values remain verifier-only.",
+      "failed_simulation_setting_ids": [
+        "gsm8k_low_conf_constraint_block32"
+      ],
+      "id": "ops.trajectory_author_notebook_correctness_semantics",
+      "oracle_values_exposed_to_loop2": false,
+      "skill_role": "make released trajectory figure reproduction follow author notebook semantics before verifier comparison",
+      "success_criteria": [
+        "GSM8K trajectory summaries include correct_source=author_notebook_gsm8k_recomputed_final_answer.",
+        "The constrained GSM8K setting records stale .pt correct-flag disagreements rather than treating them as final correctness.",
+        "Trajectory verifier moves the constrained setting from blocked_by_constraint_initial_state_semantics to pass_close_to_paper_trajectory_shape or to a narrower artifact/code blocker.",
+        "No paper target percentages are exposed to the DAG-only author simulation."
+      ],
+      "type": "metric_semantics_repair"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/source_parity_blocker_audit.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/SOURCE_PARITY_BLOCKER_AUDIT.md"
+      ],
+      "content": "Inspect released Prophet repo, current remote commit, paper-required experiment axes, and code entrypoints before deciding whether Loop 2 can execute Dream-7B, top-k margin remasking, simple-evals Table 1 parity, or SDTT/Fast-dLLM combinations. This node supports explicit blockers only; it cannot by itself converge the paper.",
+      "id": "ops.source_parity_blocker_audit",
+      "inputs": [
+        "released_repo_snapshot",
+        "paper_required_axis_names_encoded_in_dag",
+        "no_paper_oracle_result_values"
+      ],
+      "no_oracle_values_exposed_to_loop2": true,
+      "outputs": [
+        "source_parity_blocker_audit",
+        "evidence_bound_blocker_ids",
+        "runnable_new_nodes"
+      ],
+      "skill_role": "separate runnable paper experiments from missing released artifact axes",
+      "type": "operational_source_parity_audit"
+    },
+    {
+      "blocked_if_missing": [
+        "exact_dream7b_model_identifier",
+        "dream_generation_function_parity",
+        "dream_simple_evals_prompt_scorer_parity"
+      ],
+      "content": "Require exact Dream-7B model identifier, mask-token/generation parity, Dream-compatible Prophet/full-step runner, and simple-evals prompt/scorer parity. If the released repo only exposes LLaDA eval paths and no Dream wrapper, route Dream-7B Table 1 axis to explicit artifact blocker rather than a proxy run.",
+      "current_evidence_status": "evidence_bound_blocked_missing_exact_dream_operational_path",
+      "id": "ops.dream7b_source_parity_gate",
+      "paper_evidence_channels": [
+        "Table 1 model axis",
+        "experimental setup model list",
+        "simple-evals prompt paragraph"
+      ],
+      "skill_role": "decide whether Dream-7B Table 1 rows are runnable without inventing author code",
+      "type": "operational_artifact_gate"
+    },
+    {
+      "blocked_if_missing": [
+        "released_top_k_margin_remasking_definition",
+        "baseline_top_k_margin_code_path",
+        "prophet_top_k_margin_code_path"
+      ],
+      "content": "Before running Table 3b remasking ablations, inspect baseline and Prophet generation functions for top-k margin support. If released code implements only low_confidence and random and raises NotImplementedError for other strategies, block top-k margin unless Loop 1 adds an author-parity implementation node with tests.",
+      "current_evidence_status": "evidence_bound_blocked_missing_released_top_k_margin_code_path",
+      "id": "ops.top_k_margin_source_parity_gate",
+      "paper_evidence_channels": [
+        "Table 3b caption",
+        "remasking strategy paragraph"
+      ],
+      "skill_role": "decide whether Table 3b top-k margin remasking can be reproduced from released code",
+      "type": "operational_artifact_gate"
+    },
+    {
+      "blocked_if_missing": [
+        "per_task_simple_evals_prompts",
+        "per_task_answer_extractors",
+        "planning_8shot_protocol",
+        "dream_llada_scorer_parity"
+      ],
+      "content": "For each Table 1 task, require the prompt family, generation length, answer extraction/scoring rule, zero-shot or 8-shot setting, and model-specific runner to match the paper. The custom GSM8K full split can continue as a real node, but non-GSM8K Table 1 claims remain pending or blocked until per-task simple-evals parity is encoded.",
+      "current_evidence_status": "partially_runnable_for_gsm8k_custom_runner_but_table1_suite_parity_blocked",
+      "id": "ops.simple_evals_prompt_scorer_parity_gate",
+      "paper_evidence_channels": [
+        "Table 1 caption",
+        "benchmark paragraph",
+        "Appendix configuration table"
+      ],
+      "skill_role": "prevent lm-eval defaults from masquerading as full Table 1 simple-evals reproduction",
+      "type": "operational_protocol_gate"
+    },
+    {
+      "blocked_if_missing": [
+        "sdtt_distilled_student_artifact",
+        "sdtt_plus_prophet_runner",
+        "fastdllm_integration_runner",
+        "fastdllm_plus_prophet_runner"
+      ],
+      "content": "Require SDTT distilled student checkpoint or distillation recipe and Fast-dLLM integration runnable under the same GSM8K protocol before producing Table 2 rows. Do not infer SDTT+Prophet or Fast-dLLM+Prophet speedups from paper text or arithmetic alone.",
+      "current_evidence_status": "evidence_bound_blocked_missing_external_sdtt_fastdllm_artifacts",
+      "id": "ops.sdtt_fastdllm_external_artifact_gate",
+      "paper_evidence_channels": [
+        "Table 2 caption",
+        "SDTT paragraph",
+        "Fast-dLLM paragraph"
+      ],
+      "skill_role": "decide whether Table 2 acceleration combinations can be run rather than inferred",
+      "type": "operational_external_baseline_gate"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/GSM8K_LIVE_SHAPE_RISK_AUDIT.md"
+      ],
+      "content": "Read only verifier-side live GSM8K summary and paper-comparison statuses after or near full-split completion. This node may name protocol repair axes, but cannot converge the paper, cannot expose paper oracle target values to Loop 2, and cannot treat partial rows as convergence evidence.",
+      "convergence_allowed": false,
+      "id": "verifier.gsm8k_live_shape_risk_audit",
+      "inputs": [
+        "custom_full_gsm8k_summary",
+        "paper_result_comparison_statuses_without_oracle_targets",
+        "paper_author_gap_dag"
+      ],
+      "outputs": [
+        "monitoring_only_risk_status",
+        "non_oracle_protocol_repair_axes",
+        "do_not_stop_before_full_split"
+      ],
+      "skill_role": "prepare Loop 1 repair axes when real GSM8K result shape drifts from paper verifier",
+      "type": "verifier_only_monitoring_audit",
+      "visibility_contract": {
+        "loop2_author_can_read": false,
+        "paper_oracle_target_values_included": false,
+        "verifier_can_read": true
+      }
+    },
+    {
+      "content": "If the full 1319-sample GSM8K comparison remains outside tolerance, update Loop 2 with exact prompt, suffix, answer-region, harness, and scorer parity gates. Trigger only from final verifier comparison or monitoring risk audit; do not include paper target metric values.",
+      "id": "loop1.required_update.gsm8k_protocol_shape_repair",
+      "no_oracle_values_exposed_to_loop2": true,
+      "skill_role": "turn final GSM8K shape mismatch into protocol-level Loop 2 repair rather than stopping",
+      "success_criteria": [
+        "Full split is complete before repair is activated.",
+        "Repair nodes encode protocol/code parity without paper oracle result values.",
+        "Rerun or rescore uses real full artifacts, not reduced samples.",
+        "Verifier moves to pass-close result shape or to a narrower operational blocker."
+      ],
+      "trigger": "full_split_complete_and_primary_gsm8k_comparison_has_failing_metrics",
+      "type": "verifier_required_dag_repair"
+    },
+    {
+      "blocked_if_missing": [
+        "exact_gsm8k_prompt_template",
+        "chat_template_or_raw_prompt_decision",
+        "zero_shot_cot_prefix",
+        "suffix_prompt_boundary"
+      ],
+      "content": "Recover the runnable prompt template from encoded DAG/repo artifacts and released evaluator paths, including any chat template, zero-shot chain-of-thought prefix, suffix prompt, and task-specific formatting. If exact simple-evals prompt parity is unavailable, mark the Table 1/GSM8K shape claim as blocked or rerun with the closest explicitly named parity candidate.",
+      "id": "protocol.prompt_template_parity_gate",
+      "no_oracle_values_exposed_to_loop2": true,
+      "skill_role": "force exact evaluation prompt/template parity before interpreting GSM8K result shape",
+      "type": "operational_protocol_gate"
+    },
+    {
+      "blocked_if_missing": [
+        "suffix_constraint_token_ids",
+        "answer_start_pos",
+        "answer_length",
+        "block_length",
+        "generation_length",
+        "early_commit_threshold_schedule"
+      ],
+      "content": "Before claiming Prophet step savings, verify the constrained suffix tokens, answer_start_pos, answer_length, block length, generation length, and final-answer monitor match the released runner or encoded paper protocol. A mismatch here changes exit timing and must trigger rerun/rescore rather than a conclusion.",
+      "id": "runner.suffix_answer_region_parity_gate",
+      "no_oracle_values_exposed_to_loop2": true,
+      "skill_role": "bind Prophet early-commit semantics to the exact final-answer region",
+      "type": "operational_runner_gate"
+    },
+    {
+      "content": "Classify each result as exact simple-evals parity, released lm-eval parity, or custom full-split fallback. Exact paper-table convergence requires the paper scorer path or an evidence-bound equivalence audit; fallback full-split evidence remains support-only until verifier accepts shape closeness.",
+      "id": "protocol.simple_evals_vs_lmeval_harness_gate",
+      "no_oracle_values_exposed_to_loop2": true,
+      "outputs": [
+        "harness_parity_class",
+        "fallback_support_only_flag",
+        "rerun_or_rescore_requirement"
+      ],
+      "skill_role": "separate exact paper scorer parity from released lm-eval fallback evidence",
+      "type": "operational_harness_gate"
+    },
+    {
+      "content": "Audit strict and flexible GSM8K generated-answer extraction against released evaluator behavior. Preserve raw rows, compare extraction disagreements, and only change scoring when the DAG/repo/protocol evidence supports it. If rescoring changes the result shape, rerun verifier before any gap claim is promoted.",
+      "id": "scoring.generated_answer_extractor_parity_gate",
+      "inputs": [
+        "per_sample_results_jsonl",
+        "released_eval_scoring_code",
+        "metric_answer_extraction_guard"
+      ],
+      "no_oracle_values_exposed_to_loop2": true,
+      "outputs": [
+        "extractor_parity_status",
+        "rescored_summary_if_supported",
+        "raw_row_preservation_status"
+      ],
+      "skill_role": "prevent accuracy-delta mismatch caused by generated-answer extraction semantics",
+      "type": "metric_validation"
+    },
+    {
+      "artifact_family": "full_gsm8k_baseline_prophet_result_shape",
+      "content": "The completed full-split GSM8K operational artifact does not match the paper-shape verifier. Loop 2 must treat this as a protocol/runner/scoring repair problem, not as convergence evidence and not as a generic paper-reading mismatch.",
+      "failed_metric_ids": [
+        "accuracy_delta",
+        "prophet_avg_steps",
+        "step_speedup"
+      ],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.gsm8k_postcompletion_protocol_shape_repair",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {
+        "generated_answer_extractor_parity": "custom_extractor_not_exact_simple_evals_extractor",
+        "harness_parity": "custom_fallback_support_only_until_equivalence_audit",
+        "prompt_template_parity": "unknown",
+        "suffix_answer_region_parity": "matches_released_eval_formula_but_not_full_paper_protocol"
+      },
+      "repair_axis_ids": [
+        "prompt_template_parity",
+        "suffix_constraint_semantics",
+        "answer_region_start_and_length",
+        "simple_evals_vs_lm_eval_protocol",
+        "generated_answer_extractor_parity",
+        "released_eval_harness_vs_custom_runner_semantics"
+      ],
+      "required_update_id": "gsm8k_postcompletion_protocol_shape_repair",
+      "risk_audit_status": "postcompletion_shape_mismatch_requires_loop1_dag_repair",
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "Add or activate DAG-only nodes for prompt template parity, suffix constraints, answer-region start/length, evaluation harness parity, and generated-answer extraction parity.",
+        "Do not expose paper target table values or paper text to Loop 2; only encode non-oracle repair axes and repo/config artifact requirements.",
+        "Run or rescore the full GSM8K artifact through the repaired protocol path, or record an explicit source/artifact blocker if the exact path is unavailable.",
+        "Verifier must compare final accuracy, step, speed, and result-direction shape against the paper evidence channels after the repaired artifact exists."
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/multi_gpu_professional_scheduler.py",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/multi_gpu_professional_scheduler_report.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_goal_supervisor.py"
+      ],
+      "content": "Use the one-paper-first scheduler on GPU pool 0,1,2,3. Priority order while Prophet has runnable nodes is: GSM8K protocol-repair full-split shards, then ablation grid, then multibenchmark candidates. Do not spill to another paper while a verifier-critical Prophet GPU node is pending and runnable.",
+      "convergence_allowed": false,
+      "id": "ops.one_paper_gpu_scheduler_priority",
+      "no_oracle_values_exposed_to_loop2": true,
+      "outputs": [
+        "gpu_claims",
+        "launch_history",
+        "pending_verifier_critical_jobs"
+      ],
+      "skill_role": "allocate available GPUs to the active paper before spillover",
+      "type": "operational_scheduler_gate"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_gsm8k_protocol_repair_launcher.py",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/protocol_repair_campaign.json"
+      ],
+      "commands_encoded_for_loop2": [
+        "python prophet_gsm8k_protocol_repair_launcher.py --launch-next --gpu <free_gpu> --min-free-mib 21000",
+        "python multi_gpu_professional_scheduler.py --gpu-pool 0,1,2,3 --min-free-mib 21000 --max-launches 4"
+      ],
+      "content": "Run the repaired GSM8K protocol candidate with GSAI-ML/LLaDA-8B-Instruct, variants baseline and Prophet, gen_length=256, steps=256, block_length=32, low_confidence remasking, prompt_profile=trajectory_gsm8k_cot, constraints_text=220:Answer, answer_start_offset=220. Execute the existing monolithic full-split run plus supplemental non-overlapping shards over sample ranges 220-494, 495-769, 770-1044, and 1045-1318. Each shard is a full-test-split component, not a reduced experiment, and must preserve per-sample JSONL, timing, actual_steps, generated text, exact-match fields, GPU status, and status/summary JSON.",
+      "id": "ops.gsm8k_protocol_repair_sharded_full_split_runner",
+      "no_oracle_values_exposed_to_loop2": true,
+      "outputs": [
+        "protocol_repair_config_statuses",
+        "per_sample_results_jsonl_by_shard",
+        "merged_protocol_repair_candidate"
+      ],
+      "shard_plan": [
+        {
+          "id": "gsm8k_trajectory_prompt_constraint_L256_T256",
+          "max_samples": null,
+          "role": "monolithic_prefix_and_fallback",
+          "start_index": 0
+        },
+        {
+          "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+          "max_samples": 275,
+          "start_index": 220
+        },
+        {
+          "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+          "max_samples": 275,
+          "start_index": 495
+        },
+        {
+          "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044",
+          "max_samples": 275,
+          "start_index": 770
+        },
+        {
+          "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318",
+          "max_samples": 274,
+          "start_index": 1045
+        }
+      ],
+      "skill_role": "rerun verifier-required GSM8K protocol repair as full-split shards",
+      "success_criteria": [
+        "Every sample index 0-1318 has both baseline and Prophet rows after merge.",
+        "Partial shard rows remain monitoring/support-only.",
+        "No paper target metric values are encoded in the run command or shard plan.",
+        "Verifier receives a merged full-split artifact, not isolated shard summaries."
+      ],
+      "type": "operational_execution_repair"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_per_sample_results.jsonl",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_status.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_summary.json"
+      ],
+      "content": "Merge monolithic and shard per-sample JSONL by (sample_index, variant), with shard rows allowed to fill missing ranges and later rows replacing duplicate keys only for the same protocol candidate. Mark the merged artifact completed only when 1319 paired samples are present for baseline and Prophet. Write merged_per_sample_results.jsonl, merged_status.json, and merged_summary.json with aggregate accuracy, timing, actual_steps, early-exit rate, and paired-shape summaries.",
+      "convergence_allowed": false,
+      "id": "ops.gsm8k_protocol_repair_merge_gate",
+      "no_oracle_values_exposed_to_loop2": true,
+      "outputs": [
+        "merged_full_split_summary",
+        "merged_full_split_status",
+        "missing_sample_count"
+      ],
+      "skill_role": "turn sharded full-split rows into one verifier-comparable artifact",
+      "success_criteria": [
+        "merged_status.status is completed and paired_completed_samples is 1319 before verifier comparison can promote it.",
+        "merged_summary preserves raw aggregate fields and rows_path.",
+        "The merge itself performs no paper-target comparison and sees no oracle table values."
+      ],
+      "type": "operational_artifact_merge_gate"
+    },
+    {
+      "content": "After the merged protocol-repair artifact is complete, the verifier compares its accuracy, accuracy delta, Prophet average steps, speed/step reduction, and result direction against the paper tables/figures/result paragraphs. Close result shape can pass; missing rows, partial merged artifacts, or unchanged mismatch must feed back as narrower DAG repair or explicit operational blockers. This node is verifier-side and may read paper evidence channels, but Loop 2 only sees the non-oracle gate and artifact paths.",
+      "id": "reviewer.compare_protocol_repair_merged_shape",
+      "inputs": [
+        "merged_full_split_summary",
+        "paper_result_comparison_verifier_only"
+      ],
+      "paper_evidence_channels": [
+        "Table 1",
+        "Table 3a",
+        "result paragraphs",
+        "appendix/eval configuration evidence"
+      ],
+      "skill_role": "compare the repaired merged artifact against paper evidence channels after completion",
+      "success_criteria": [
+        "Verifier status moves to pass_close_to_paper_gsm8k_result_shape or names a narrower operational blocker.",
+        "If result shape still fails, Loop1 updates the DAG again rather than stopping or claiming convergence.",
+        "Partial merged rows are never convergence evidence."
+      ],
+      "type": "verification",
+      "visibility_contract": {
+        "loop2_author_can_read": false,
+        "paper_oracle_target_values_included": false,
+        "verifier_can_read": true
+      }
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "id": "update.add_non_reduced_custom_full_split_runner_after_lm_eval_sigkill",
+      "reason": "The official lm-eval full GSM8K job loaded LLaDA and built all 1319 contexts but died at generate_until with SIGKILL before producing result artifacts; no-result GPU use cannot converge.",
+      "success_criteria": [
+        "launch a full-split custom runner, not a reduced proxy",
+        "stream raw per-sample outputs and timing to JSONL",
+        "compute baseline-vs-Prophet accuracy, speed, and actual-step summaries",
+        "compare close result shape to paper tables, figures, and text before accepting"
+      ]
+    },
+    {
+      "id": "update.add_answer_extraction_guard_after_boxed_metric_bug",
+      "reason": "First full-split sample showed Prophet produced a correct boxed answer, but the flexible parser selected trailing punctuation and marked it blank.",
+      "success_criteria": [
+        "boxed numeric answers score correctly",
+        "parser ignores dollar-only or punctuation-only spans",
+        "partial metric-bug run is preserved as support-only",
+        "clean full-split run restarts from sample 0"
+      ]
+    },
+    {
+      "id": "update.add_full_released_trajectory_dataset_analysis_node",
+      "reason": "The paper DAG requires GSM8K/MMLU trajectory figure evidence; GPU 3 is occupied by the full GSM8K decoding run, but the paper releases full precomputed trajectories for CPU analysis.",
+      "success_criteria": [
+        "download or verify all 17,890 released trajectory files",
+        "observe all expected GSM8K/MMLU folder counts",
+        "compute emergence histograms and 25%/50% rates over full folders",
+        "feed summaries to verifier without claiming generated benchmark convergence"
+      ]
+    },
+    {
+      "id": "update.trajectory_download_rate_limit_retry_with_token_and_throttle",
+      "reason": "Full trajectory dataset download hit Hugging Face 429 rate limit after 498 files when using high-parallel public snapshot fetch.",
+      "success_criteria": [
+        "explicitly pass cached HF token",
+        "resume partial snapshot",
+        "reduce max_workers to 1",
+        "preserve 429 as operational blocker if throttled token retry also fails"
+      ]
+    },
+    {
+      "id": "update.pass_hf_token_to_manifest_and_snapshot_download",
+      "reason": "Throttled token retry still failed at repo_info manifest call because the manifest request did not explicitly pass the cached HF token.",
+      "success_criteria": [
+        "construct HfApi with cached token",
+        "pass the same token to snapshot_download",
+        "do not print token contents",
+        "retry with max_workers=1 and resume partial 498-file snapshot"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "paper_result_target_comparison",
+        "ablation_grid_campaign_ready",
+        "multibenchmark_grid_campaign_ready",
+        "table2_acceleration_campaign_ready",
+        "dream7b_axis_campaign_ready",
+        "result_shape_comparison_ready",
+        "paper_result_comparison",
+        "unresolved_professional_debt",
+        "ablation_grid_campaign",
+        "multibenchmark_grid_campaign",
+        "table2_acceleration_campaign",
+        "dream7b_axis_campaign",
+        "trajectory_metric_semantics_audit",
+        "support_only_until"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:02Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 11,
+      "required_update_ids": [
+        "gsm8k_postcompletion_protocol_shape_repair"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T10:18:27Z"
+    },
+    {
+      "id": "update.add_author_notebook_gsm8k_trajectory_correctness_semantics",
+      "reason": "The verifier isolated a constrained GSM8K trajectory mismatch. Author analysis/visualize.ipynb recomputes GSM8K correctness from pred_text vs gt_text, while the prior Loop 2 trajectory analyzer trusted stale .pt correct flags.",
+      "status": "implemented_pending_rerun",
+      "success_criteria": [
+        "GSM8K trajectory summaries include correct_source=author_notebook_gsm8k_recomputed_final_answer.",
+        "The constrained GSM8K setting records stale .pt correct-flag disagreements rather than treating them as final correctness.",
+        "Trajectory verifier moves the constrained setting from blocked_by_constraint_initial_state_semantics to pass_close_to_paper_trajectory_shape or to a narrower artifact/code blocker.",
+        "No paper target percentages are exposed to the DAG-only author simulation."
+      ],
+      "updated_at_utc": "2026-07-23T19:34:50Z"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/source_parity_blocker_audit.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/SOURCE_PARITY_BLOCKER_AUDIT.md"
+      ],
+      "id": "update.add_source_parity_blocker_gates",
+      "reason": "The live verifier now has an evidence-bound source-parity audit distinguishing runnable Prophet nodes from paper-required axes missing released code/model/protocol artifacts.",
+      "status": "implemented",
+      "success_criteria": [
+        "Loop 2 sees a DAG node for released-source parity before attempting Dream-7B, top-k margin, simple-evals Table 1, or SDTT/Fast-dLLM rows.",
+        "Missing axes become explicit artifact blockers rather than reduced/proxy experiments.",
+        "The source-parity audit cannot by itself converge the paper and exposes no paper oracle result values to Loop 2.",
+        "Reviewer comparison still requires full GSM8K, runnable ablations, and final paper evidence-channel comparison."
+      ],
+      "updated_at_utc": "2026-07-23T20:06:19Z"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/GSM8K_LIVE_SHAPE_RISK_AUDIT.md"
+      ],
+      "id": "update.add_gsm8k_live_shape_protocol_repair_gates",
+      "reason": "The verifier-only GSM8K live shape risk audit flags likely final mismatch in accuracy delta, Prophet average steps, and step speedup while keeping partial rows support-only. The DAG now encodes non-oracle prompt, suffix, answer-region, harness, and scorer parity gates for the next Loop 1/Loop 2 repair if the full split remains outside tolerance.",
+      "status": "implemented_monitoring_only_until_full_split",
+      "success_criteria": [
+        "Loop 2 still receives only the DAG and encoded repo/artifact paths, not paper oracle target values.",
+        "Partial GSM8K rows remain non-convergent until 1319/1319 paired samples complete.",
+        "If final GSM8K shape fails, repair activates exact prompt/template, suffix/answer-region, harness, and generated-answer extractor gates.",
+        "Verifier either accepts close result shape after rerun/rescore or names a narrower explicit operational blocker."
+      ],
+      "updated_at_utc": "2026-07-23T20:23:07Z"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/protocol_repair_campaign.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_summary.json"
+      ],
+      "id": "update.add_protocol_repair_sharded_merge_nodes",
+      "reason": "The verifier-critical GSM8K protocol repair was monolithic on one GPU. Loop 1 now exposes a non-oracle sharded full-split execution and merge gate so Loop 2 can use all active-paper GPUs and the verifier can compare a complete merged artifact.",
+      "status": "implemented_running",
+      "success_criteria": [
+        "DAG names the scheduler priority, shard plan, merge artifact, and verifier handoff.",
+        "Loop 2 can launch repair shards from DAG-encoded scripts/paths without reading paper text or oracle result values.",
+        "Merged artifact reaches 1319 paired samples before any convergence comparison.",
+        "Verifier compares the merged result against paper evidence channels and either accepts close shape or emits a narrower update."
+      ],
+      "updated_at_utc": "2026-07-23T23:52:36Z"
+    }
+  ],
+  "signature": "de532d6c3c2cf0ef",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "target_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "updated_at_utc": "2026-07-24T10:18:27Z"
+}

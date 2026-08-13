@@ -1,0 +1,105 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 1319,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "3",
+  "current_sample_index": 1318,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 0,
+  "effective_stop_index_exclusive": 1319,
+  "finished_at_utc": "2026-07-23T23:47:13Z",
+  "full_split_requested": true,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 16069, 24564, 100\n1, NVIDIA GeForce RTX 4090, 15969, 24564, 99\n2, NVIDIA GeForce RTX 4090, 16484, 24564, 99\n3, NVIDIA GeForce RTX 4090, 15809, 24564, 36",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-23T23:47:13Z",
+      "exit_info": {
+        "actual_steps": 64,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 64
+      },
+      "flexible_exact_match": true,
+      "flexible_predicted_answer": "14",
+      "gen_length": 128,
+      "generated_text": "\n1. There are 7 pizzas.\n2. Each pizza is cut into 8 slices.\n3. Therefore, the total number of slices is \\(7 \\times 8 = 56\\).\n\n4. Henry and his 3 friends make a total of 4 people.\n5. To find out how many slices each person can have, we divide the total number of slices by the number of people:\n   \\[\n   \\frac{56}{4} = 14\n   \\]\n\nSo, each person can have \\boxed{14} slices.",
+      "gold_answer": "14",
+      "question": "Henry and 3 of his friends order 7 pizzas for lunch. Each pizza is cut into 8 slices. If Henry and his friends want to share the pizzas equally, how many slices can each of them have?",
+      "remasking": "low_confidence",
+      "sample_index": 1318,
+      "seconds": 3.8385,
+      "steps": 64,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "baseline"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 3 is logical cuda:0 when CUDA_VISIBLE_DEVICES=3",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 182534,
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/per_sample_results.jsonl",
+  "run_label": "table3a_static_L128_T64",
+  "running_summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 1319,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 942,
+        "flexible_exact_match": 0.714177407126611,
+        "mean_actual_steps": 64.0,
+        "mean_seconds": 4.272051478392719,
+        "strict_correct_count": 79,
+        "strict_exact_match": 0.05989385898407885
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-23T23:47:13Z",
+    "dataset": "openai/gsm8k main test",
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/per_sample_results.jsonl",
+    "status": "completed",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline"
+    ]
+  },
+  "started_at_utc": "2026-07-23T22:06:55Z",
+  "status": "completed",
+  "summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 1319,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 942,
+        "flexible_exact_match": 0.714177407126611,
+        "mean_actual_steps": 64.0,
+        "mean_seconds": 4.272051478392719,
+        "strict_correct_count": 79,
+        "strict_exact_match": 0.05989385898407885
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-23T23:47:13Z",
+    "dataset": "openai/gsm8k main test",
+    "finished_at_utc": "2026-07-23T23:47:13Z",
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/per_sample_results.jsonl",
+    "status": "completed",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline"
+    ]
+  },
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-23T23:47:13Z",
+  "variants": [
+    "baseline"
+  ]
+}

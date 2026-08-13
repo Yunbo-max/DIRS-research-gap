@@ -1,0 +1,322 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "ops.official_harness_failure_diagnosis"
+    ],
+    [
+      "ops.official_harness_failure_diagnosis",
+      "ops.custom_full_split_runner"
+    ],
+    [
+      "ops.custom_full_split_runner",
+      "reviewer.compare_custom_full_runner"
+    ],
+    [
+      "reviewer.compare_custom_full_runner",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_custom_full_runner",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "ops.official_harness_failure_diagnosis"
+    ],
+    [
+      "ops.custom_full_split_runner",
+      "metrics.answer_extraction_guard"
+    ],
+    [
+      "metrics.answer_extraction_guard",
+      "reviewer.compare_custom_full_runner"
+    ]
+  ],
+  "graph_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Diffusion Language Models Know the Answer Before Decoding | families=speculative_or_early_decoding, diffusion_cache, sparse_cuda_rl, reasoning_agents",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "dlm_inference_latency; fixed_budget_over_refinement; structured_answer_region_decoding",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "premature_commit_wrong_answer; open_ended_answer_boundary_missing; confidence_miscalibration; block_size_brittleness",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "full_step_decoding; static_step_budget; random_remasking; low_confidence_remasking; top_k_margin_remasking; SDTT; Fast_dLLM; Fast_dLLM; SDTT",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "answer_region_monitor; confidence_gap; phase_threshold_schedule; all_in_mask_fill; suffix_answer_constraint",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=lm_evaluation_harness; simple_evals; GSM8K_trajectory_analysis; MMLU_trajectory_analysis; metrics=accuracy; accuracy_delta; speedup; average_steps; first_correct_answer_emergence; protocols=zero_shot_eval; 8_shot_planning_eval; full_step_vs_prophet; static_step_budget_ablation; block_length_ablation",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=cuda_gpus_required_for_repo_eval; runtimes=PyTorch; Transformers; Accelerate; lm_evaluation_harness; datasets",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet; code_artifacts=generate_earlyexit_py; generate_py; eval_llada_py; eval_sh; analysis_collect_decoding_traj_gsm8k_py; analysis_visualize_ipynb",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=MMLU; ARC_C; HellaSwag; TruthfulQA; WinoGrande; PIQA; GSM8K; GPQA; HumanEval; MBPP; data_artifacts=YefanZhou98_DLM_Decoding_Analysis; implementation_statuses=code_inspected; trajectory_dataset_available; Dream_specific_code_paths_not_observed_in_repo_snapshot",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "If official lm-evaluation-harness loads model/data but exits before result artifacts, record the missing table evidence as blocker; diagnose logs, GPU mapping, NCCL, memory, and harness compatibility.",
+      "id": "ops.official_harness_failure_diagnosis",
+      "skill_role": "turn a failed real run into a DAG repair rather than a stop condition",
+      "type": "operational_blocker_diagnosis"
+    },
+    {
+      "artifact_paths": [
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/status.json"
+      ],
+      "content": "Run the full openai/gsm8k main test split (1319 samples) with GSAI-ML/LLaDA-8B-Instruct on CUDA GPU, official gsm8k_cot_zeroshot prompt Q/A shape, constraints_text=200:The|201:answer|202:is, gen_length=256, steps=256, block_length=32, low_confidence remasking, baseline generate.py, Prophet generate_earlyexit.py, per-sample JSONL, timings, actual_steps, exact-match metrics, and GPU snapshots.",
+      "id": "ops.custom_full_split_runner",
+      "skill_role": "produce non-reduced paper-shaped results when the official harness cannot complete",
+      "type": "operational_execution_fallback"
+    },
+    {
+      "content": "Accept close result shape only if the custom runner completes the full split with the same model, dataset, prompt family, constraints, steps, block length, decoding variants, answer extraction metrics, raw outputs, timing traces, and average-step evidence; otherwise keep exact artifact debt active and loop back to DAG repair.",
+      "id": "reviewer.compare_custom_full_runner",
+      "skill_role": "decide whether custom full split artifacts can stand in for official lm-eval output",
+      "type": "verification"
+    },
+    {
+      "content": "For GSM8K Prophet outputs, score generated_text with both strict paper/lm-eval pattern and flexible numeric extraction; handle The answer is \\boxed{N}, $\\boxed{N}$, commas, dollars, and trailing punctuation. If a metric parser bug is found, preserve the partial run as support-only, patch the scorer, and restart the full split.",
+      "id": "metrics.answer_extraction_guard",
+      "skill_role": "prevent false verifier failure from answer parser mismatch",
+      "type": "metric_validation"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "id": "update.add_non_reduced_custom_full_split_runner_after_lm_eval_sigkill",
+      "reason": "The official lm-eval full GSM8K job loaded LLaDA and built all 1319 contexts but died at generate_until with SIGKILL before producing result artifacts; no-result GPU use cannot converge.",
+      "success_criteria": [
+        "launch a full-split custom runner, not a reduced proxy",
+        "stream raw per-sample outputs and timing to JSONL",
+        "compute baseline-vs-Prophet accuracy, speed, and actual-step summaries",
+        "compare close result shape to paper tables, figures, and text before accepting"
+      ]
+    },
+    {
+      "id": "update.add_answer_extraction_guard_after_boxed_metric_bug",
+      "reason": "First full-split sample showed Prophet produced a correct boxed answer, but the flexible parser selected trailing punctuation and marked it blank.",
+      "success_criteria": [
+        "boxed numeric answers score correctly",
+        "parser ignores dollar-only or punctuation-only spans",
+        "partial metric-bug run is preserved as support-only",
+        "clean full-split run restarts from sample 0"
+      ]
+    }
+  ],
+  "signature": "fdf4e700ad20e412",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "target_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "updated_at_utc": "2026-07-23T09:19:12Z"
+}

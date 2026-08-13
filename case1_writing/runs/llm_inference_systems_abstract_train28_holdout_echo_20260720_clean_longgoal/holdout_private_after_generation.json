@@ -1,0 +1,11 @@
+{
+  "chip_id": "ICML2026_71057_echo_elastic_speculative_decoding",
+  "title": "ECHO: Elastic Speculative Decoding with Sparse Gating for High-Concurrency Scenarios",
+  "original_abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71057_echo.txt",
+  "original_abstract_sha256": "bb68ffde2eac77c082659f96d98f1e0216b0e1301ee857c098937256ce0887b7",
+  "original_abstract_word_count": 99,
+  "source_paths_tried": [
+    "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71057_echo.txt"
+  ],
+  "read_after": "Read only after blind generation and verification are complete."
+}

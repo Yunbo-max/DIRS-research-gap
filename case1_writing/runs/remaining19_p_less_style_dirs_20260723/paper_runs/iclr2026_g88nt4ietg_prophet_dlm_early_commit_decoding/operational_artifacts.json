@@ -1,0 +1,121 @@
+{
+  "artifact_kind": "dag_only_operational_artifact_inventory",
+  "blockers": [
+    "dream7b_axis_external_artifacts_blocked",
+    "table1_multibenchmark_grid_pending_or_blocked",
+    "table1_primary_candidate_selected_but_shape_rejected",
+    "table1_threshold_repair_candidates_pending_full_split",
+    "table2_external_artifacts_blocked_or_linked_incomplete",
+    "table4_ablation_grid_running"
+  ],
+  "created_at_utc": "2026-07-23T23:53:24Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/paper_author_gap_dag.json",
+  "dag_signature": "3cbcd6e9736df6f7",
+  "encoded_artifact_summaries": [
+    {
+      "artifact_kind": "prophet_table1_threshold_repair_campaign",
+      "config_status_counts": {
+        "pending": 4
+      },
+      "created_at_utc": "2026-07-24T10:41:06Z",
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_repair_campaign.json",
+      "size_bytes": 6169
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/TABLE1_THRESHOLD_REPAIR_STATUS.md",
+      "size_bytes": 1594
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_table1_threshold_repair_launcher.py",
+      "size_bytes": 13923
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/multi_gpu_professional_scheduler.py",
+      "size_bytes": 20399
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparator.py",
+      "size_bytes": 31925
+    },
+    {
+      "artifact_kind": "prophet_live_specialized_verifier",
+      "created_at_utc": "2026-07-24T10:41:15Z",
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_specialized_verifier.json",
+      "size_bytes": 80195,
+      "status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory"
+    },
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_summary",
+      "created_at_utc": "2026-07-23T22:06:20Z",
+      "exists": true,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+      "size_bytes": 1413,
+      "status": "completed"
+    }
+  ],
+  "gpu_probe": {
+    "status": "pass",
+    "stderr_tail": "",
+    "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 15989, 8228, 99\n1, NVIDIA GeForce RTX 4090, 24564, 16069, 8148, 99\n2, NVIDIA GeForce RTX 4090, 24564, 16309, 7904, 99\n3, NVIDIA GeForce RTX 4090, 24564, 16009, 8208, 99\n"
+  },
+  "no_paper_text_or_oracle_values_read": true,
+  "prophet_live_verifier": {
+    "ablation_grid_integrity_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_integrity_report.json",
+    "ablation_grid_integrity_status": "blocked_ablation_grid_integrity_failure",
+    "ablation_grid_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+    "ablation_grid_status": "ready_waiting_for_gpu_capacity",
+    "converged": false,
+    "dream7b_axis_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/dream7b_axis_campaign.json",
+    "dream7b_axis_status": "explicit_dream7b_axis_blockers_recorded",
+    "gsm8k_live_shape_risk_audit_loop2_author_can_read": false,
+    "gsm8k_live_shape_risk_audit_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json",
+    "gsm8k_live_shape_risk_audit_status": "postcompletion_shape_mismatch_requires_loop1_dag_repair",
+    "gsm8k_protocol_parity_audit_loop2_author_can_read": false,
+    "gsm8k_protocol_parity_audit_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_protocol_parity_audit.json",
+    "gsm8k_protocol_parity_audit_status": "protocol_parity_partial_with_repair_nodes_encoded",
+    "gsm8k_table1_protocol_selection_audit_loop2_author_can_read": false,
+    "gsm8k_table1_protocol_selection_audit_primary_status_after_selection_repair": "blocked_gsm8k_result_shape_mismatch",
+    "gsm8k_table1_protocol_selection_audit_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_table1_protocol_selection_audit.json",
+    "gsm8k_table1_protocol_selection_audit_status": "completed_table1_candidate_selection_repaired_primary_still_mismatch",
+    "integrity_gate_status": "pass",
+    "integrity_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_live_integrity_report.json",
+    "integrity_status": "pass_complete_jsonl_integrity",
+    "multibenchmark_grid_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/multibenchmark_grid_campaign.json",
+    "multibenchmark_grid_status": "ready_waiting_for_gpu_capacity_and_prompt_scorer_parity_resolution",
+    "paired_completed_samples": 1319,
+    "paper_comparison_gate_status": "blocked",
+    "paper_comparison_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparison.json",
+    "paper_comparison_status": "blocked_paper_result_comparison",
+    "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/verifier_result_iter_07_live.json",
+    "source_parity_audit_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/source_parity_blocker_audit.json",
+    "source_parity_audit_status": "evidence_bound_source_parity_blockers_ready",
+    "specialized_verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_specialized_verifier.json",
+    "status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory",
+    "table1_threshold_repair_baseline_full_split_ready": true,
+    "table1_threshold_repair_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_repair_campaign.json",
+    "table1_threshold_repair_status": "running_full_table1_threshold_repair_candidates",
+    "table2_acceleration_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/table2_acceleration_campaign.json",
+    "table2_acceleration_status": "running_waiting_for_full_gsm8k_linked_rows_and_external_artifacts",
+    "total_samples": 1319,
+    "trajectory_rows_written": 17888,
+    "trajectory_settings_completed": 8,
+    "trajectory_total_settings": 8,
+    "updated_at_utc": "2026-07-24T14:02:56Z"
+  },
+  "table1_threshold_repair_campaign": {
+    "baseline_full_split_ready": true,
+    "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_repair_campaign.json",
+    "oracle_values_exposed_to_loop2": false,
+    "pending_config_count": 4,
+    "runnable_config_count": 4,
+    "status": "ready_waiting_for_gpu_capacity",
+    "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/TABLE1_THRESHOLD_REPAIR_STATUS.md"
+  },
+  "updated_at_utc": "2026-07-24T10:42:44Z"
+}

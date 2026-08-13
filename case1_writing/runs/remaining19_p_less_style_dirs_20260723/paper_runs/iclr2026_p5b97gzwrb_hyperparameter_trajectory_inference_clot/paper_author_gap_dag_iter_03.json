@@ -1,0 +1,509 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:27Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.clot_repo_script_gate"
+    ],
+    [
+      "ops.clot_repo_script_gate",
+      "ops.clot_model_data_gate"
+    ],
+    [
+      "ops.clot_model_data_gate",
+      "ops.clot_runtime_hardware_gate"
+    ],
+    [
+      "ops.clot_runtime_hardware_gate",
+      "ops.clot_full_result_grid"
+    ],
+    [
+      "ops.clot_full_result_grid",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "ops.clot_full_result_grid",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.explicit_blocker_after_clot_preflight"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_clot_repo_to_operational_gates"
+    ],
+    [
+      "loop1.required_update.update_clot_repo_to_operational_gates",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport | families=diffusion_cache, long_context_or_rope, sparse_cuda_rl, reasoning_agents",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "post-deployment preference shift; expensive retraining for behavior hyperparameters; sparse hyperparameter anchors; conditional path feasibility",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "infeasible surrogate paths; chaotic hyperparameter dynamics; single-hyperparameter limitation; multi-dimensional locality breaks under naive 1D mappings",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Direct; CFM; MFM; NLOT; KI; K_theta; KI-U_hat; CFM; MFM; NLOT",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "conditional density potential; neural metric; Kantorovich potentials; CLOT maps; spline geodesic generator; FiLM conditioning",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=CTI semicircle; Cancer reward-weighting; Reacher reward-weighting; ETTm2 quantile interpolation; dropout diffusion interpolation; metrics=negative log-likelihood; circle distance; average reward; mean squared error; Wasserstein distance; GPU-hours; protocols=withheld time evaluation; held-out reward weights; held-out quantiles; held-out dropout probabilities; metric parametrization ablation",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=Azure VM A100 GPU; runtimes=Python 3.10; JAX; Flax; Hydra; PyTorch; stable-baselines3; Gymnasium/MuJoCo",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference; code_artifacts=NLOT/train.py; NLOT/lagrangian_ot/metrics.py; NLOT/lagrangian_ot/lagrangian_potentials.py; NLOT/lagrangian_ot/neuraldual.py; hti_scripts/*.sh; DTR-Bench/*.py; quantile_regression/*.py; generative_dropout/*.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=conditional semicircles; DTR-Bench Cancer; Reacher-v2; ETTm2; two moons; data_artifacts=NLOT/data/conditional_semicircles.pt; NLOT/data/reward_weighting_data_0_10.pt; NLOT/data/reward_weighting_hinge_data.pt; NLOT/data/reacher_data.pt; NLOT/data/quantile_data_new.pt; NLOT/data/diffusion_2moons_dropout.pt; implementation_statuses=code_inspected; repository_cloned; paper_pdf_extracted",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Bind hyperparameter-trajectory-inference repo and validate NLOT, hti_scripts, DTR-Bench, quantile, and dropout code surfaces.",
+      "id": "ops.clot_repo_script_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Materialize included HTI tensors plus all trained surrogate checkpoints, evaluation plots, wandb/metric exports, and seed logs.",
+      "id": "ops.clot_model_data_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Install JAX/Flax/Hydra/PyTorch/stable-baselines3/Gymnasium/MuJoCo stack and require A100 GPU-hour traces.",
+      "id": "ops.clot_runtime_hardware_gate",
+      "skill_role": "paper-specific operational gate",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "Run seeds 0..19 across semicircle, cancer, reacher, ETTm2, dropout, held-out hyperparameter/time, and metric ablations.",
+      "id": "ops.clot_full_result_grid",
+      "skill_role": "paper-specific operational gate",
+      "type": "operational_execution"
+    },
+    {
+      "content": "If any required repo, model, data, runtime, hardware, raw output, metric, or table/figure artifact is missing, block and feed exact requirements back into Loop 1.",
+      "id": "decision.explicit_blocker_after_clot_preflight",
+      "skill_role": "paper-specific operational gate",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package', 'result_shape_comparison_ready']; required_updates=['update.clot_repo_to_operational_gates']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": [
+              {
+                "detail": "Paper records A100 VM runs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+                "id": "a100_professional_gpu_trace_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing runtime imports: flax, hydra, omegaconf, stable_baselines3, gymnasium, mujoco",
+                "id": "clot_runtime_dependencies_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing required paper artifacts: semicircle_surrogate_models, reward_eval_outputs, hinge_eval_outputs, reacher_eval_outputs, quantile_eval_outputs, dropout_eval_outputs",
+                "id": "clot_required_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No complete verifier-comparable output grid found for: CTI semicircle NLL and circle-distance grid; Cancer linear and hinge reward-weighting average reward; Reacher reward-weighting average reward; ETTm2 quantile interpolation MSE; dropout diffusion interpolation Wasserstein/density metrics; held-out time/hyperparameter and metric-parametrization ablations over seeds 0..19",
+                "id": "clot_full_result_grid_missing",
+                "status": "blocked"
+              }
+            ],
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          },
+          {
+            "detail": "requires full paper-shaped benchmark outputs before comparison to paper evidence channels",
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.clot_repo_to_operational_gates",
+            "reason": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+            "success_criteria": [
+              "repo path encoded",
+              "paper-specific model/data materialization gate present",
+              "runtime/hardware gate present",
+              "full result-grid gate present",
+              "verifier compares only operational outputs against paper evidence"
+            ]
+          }
+        ],
+        "status": null
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_clot_repo_to_operational_gates",
+      "oracle_values_exposed_to_loop2": false,
+      "required_update_id": "update.clot_repo_to_operational_gates",
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "repo path encoded",
+        "paper-specific model/data materialization gate present",
+        "runtime/hardware gate present",
+        "full result-grid gate present",
+        "verifier compares only operational outputs against paper evidence"
+      ],
+      "type": "verifier_required_dag_repair"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "a100_professional_gpu_trace_missing",
+        "clot_runtime_dependencies_missing",
+        "clot_required_artifacts_missing",
+        "clot_full_result_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T11:57:31Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "source": "clot_resolved_repo_professional_gate",
+      "status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid"
+    },
+    {
+      "blocker_ids": [
+        "a100_professional_gpu_trace_missing",
+        "clot_runtime_dependencies_missing",
+        "clot_required_artifacts_missing",
+        "clot_full_result_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T11:59:12Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "source": "clot_resolved_repo_professional_gate",
+      "status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid"
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:49:03Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.clot_repo_to_operational_gates"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-23T18:40:25Z"
+    },
+    {
+      "blocker_ids": [
+        "a100_professional_gpu_trace_missing",
+        "clot_runtime_dependencies_missing",
+        "clot_required_artifacts_missing",
+        "clot_full_result_grid_missing"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T18:53:40Z",
+      "iteration": 3,
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+      ],
+      "source": "clot_resolved_repo_professional_gate",
+      "status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid"
+    }
+  ],
+  "signature": "3becb51f235d3b01",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+  "target_title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport",
+  "updated_at_utc": "2026-07-23T18:40:25Z"
+}

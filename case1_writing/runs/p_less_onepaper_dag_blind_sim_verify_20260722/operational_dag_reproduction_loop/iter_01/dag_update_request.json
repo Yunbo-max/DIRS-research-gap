@@ -1,0 +1,82 @@
+[
+  {
+    "id": "update.operational_exact_model_download_and_access",
+    "reason": "The blind agent did not have all exact paper target checkpoints available for generation.",
+    "success_criteria": [
+      "record HF ids, access/gating status, snapshot commit, cache path, and disk footprint for Llama-2-7B-Chat, Mistral-7B-Instruct, and Llama3-70B-Instruct",
+      "obtain manual-gated model access where required or declare a paper-faithful substituted-model profile before claiming any result",
+      "load at least the feasible 7B target model on GPU and emit raw generation/timing artifacts"
+    ],
+    "verifier_detail": "status=blocked gated_blockers=['Llama-2-7B-Chat', 'Llama3-70B-Instruct']; exact paper models require checkpoint availability"
+  },
+  {
+    "id": "update.operational_dataset_download_and_prompt_builder",
+    "reason": "The blind agent did not load every benchmark split/prompt source required by the paper.",
+    "success_criteria": [
+      "download/load CSQA, GPQA, GSM8K, QASC, and Writing Prompts splits",
+      "write prompt builders including 8-shot chain-of-thought demonstrations where required",
+      "store sampled prompt ids, seeds, and serialized prompts for verifier comparison"
+    ],
+    "verifier_detail": "status=blocked load_smoke=True"
+  },
+  {
+    "id": "update.run_table1_reasoning_auc_exact_grid",
+    "reason": "Missing exact reproduction artifact for paper_table1_reasoning_auc_real_artifacts.",
+    "success_criteria": [
+      "run the DAG-named model/data/sampler command instead of any synthetic proxy",
+      "store raw generations, per-token timing, CPU/RAM traces, scoring outputs, and aggregation code",
+      "allow verifier to compare against hidden paper tables, paragraph values, figures, and appendix artifacts"
+    ],
+    "verifier_detail": "status=blocked reason=not_run_exact_grid_yet minimum=all target models, all four datasets, all temperatures, all samplers, required seed policy"
+  },
+  {
+    "id": "update.render_figure2_from_raw_table1_runs",
+    "reason": "Missing exact reproduction artifact for paper_figure2_temperature_curves_real_artifacts.",
+    "success_criteria": [
+      "run the DAG-named model/data/sampler command instead of any synthetic proxy",
+      "store raw generations, per-token timing, CPU/RAM traces, scoring outputs, and aggregation code",
+      "allow verifier to compare against hidden paper tables, paragraph values, figures, and appendix artifacts"
+    ],
+    "verifier_detail": "status=blocked reason=not_run_exact_grid_yet minimum=same raw runs as Table 1 plus plotting artifact"
+  },
+  {
+    "id": "update.run_table2_writing_prompt_scoring",
+    "reason": "Missing exact reproduction artifact for paper_table2_writing_prompts_real_artifacts.",
+    "success_criteria": [
+      "run the DAG-named model/data/sampler command instead of any synthetic proxy",
+      "store raw generations, per-token timing, CPU/RAM traces, scoring outputs, and aggregation code",
+      "allow verifier to compare against hidden paper tables, paragraph values, figures, and appendix artifacts"
+    ],
+    "verifier_detail": "status=blocked reason=not_run_exact_grid_yet minimum=100 prompts, reference generations, scoring method, all samplers"
+  },
+  {
+    "id": "update.run_table3_full_generation_timing",
+    "reason": "Missing exact reproduction artifact for paper_table3_sampling_time_real_artifacts.",
+    "success_criteria": [
+      "run the DAG-named model/data/sampler command instead of any synthetic proxy",
+      "store raw generations, per-token timing, CPU/RAM traces, scoring outputs, and aggregation code",
+      "allow verifier to compare against hidden paper tables, paragraph values, figures, and appendix artifacts"
+    ],
+    "verifier_detail": "status=blocked reason=not_run_exact_grid_yet minimum=instrument per-token time inside the model generation loop; do not use sampler-only tensor timing"
+  },
+  {
+    "id": "update.run_figures16_17_table15_cpu_ram_profile",
+    "reason": "Missing exact reproduction artifact for paper_figures16_17_table15_cpu_ram_real_artifacts.",
+    "success_criteria": [
+      "run the DAG-named model/data/sampler command instead of any synthetic proxy",
+      "store raw generations, per-token timing, CPU/RAM traces, scoring outputs, and aggregation code",
+      "allow verifier to compare against hidden paper tables, paragraph values, figures, and appendix artifacts"
+    ],
+    "verifier_detail": "status=blocked reason=not_run_exact_grid_yet minimum=CPU/RAM traces binned into figure-style summaries and Table 15-style values"
+  },
+  {
+    "id": "update.require_verifier_ready_artifact_package",
+    "reason": "The verifier cannot compare all evidence channels without a complete result package.",
+    "success_criteria": [
+      "emit table1_reasoning_auc.json, figure2_temperature_curves.json/png, table2_writing_prompts.json, table3_sampling_time.json, figures16_17_cpu_ram.json/png, table15_cpu_ram.json",
+      "include raw inputs/outputs and hardware logs",
+      "do not mark Loop 2 converged until every evidence-channel check is pass"
+    ],
+    "verifier_detail": "verifier cannot compare exact table values, paragraph claims, figures, and appendix artifacts until raw generation/timing/CPU-RAM artifacts exist"
+  }
+]

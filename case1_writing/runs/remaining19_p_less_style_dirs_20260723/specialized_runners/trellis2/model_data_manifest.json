@@ -1,0 +1,403 @@
+{
+  "artifact_kind": "trellis2_model_data_manifest",
+  "candidate_output_artifacts": [
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2/professional_gate_result.json",
+      "size_human": "3951"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/micro_debug_qwen25vl3b_around1/summary_metrics.json",
+      "size_human": "659"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/preflight_around10/summary_metrics.json",
+      "size_human": "308"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/outputs/mindcube_esa_v0/micro_qwen25vl3b_around5/summary_metrics.json",
+      "size_human": "714"
+    }
+  ],
+  "created_at_utc": "2026-07-23T18:53:02Z",
+  "datasets_and_preprocessed_artifacts": [
+    {
+      "hints": [
+        "ObjaverseXL",
+        "Objaverse-XL",
+        "ObjaverseXL_sketchfab"
+      ],
+      "id": "objaverse_xl",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Objaverse-XL training/reconstruction assets"
+    },
+    {
+      "hints": [
+        "ABO",
+        "abo"
+      ],
+      "id": "abo",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "ABO 3D assets"
+    },
+    {
+      "hints": [
+        "HSSD",
+        "hssd"
+      ],
+      "id": "hssd",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "HSSD 3D assets"
+    },
+    {
+      "hints": [
+        "TexVerse",
+        "texverse"
+      ],
+      "id": "texverse",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "TexVerse texture/PBR assets"
+    },
+    {
+      "hints": [
+        "Toys4K",
+        "Toys4k",
+        "toys4k"
+      ],
+      "id": "toys4k",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Toys4K reconstruction benchmark"
+    },
+    {
+      "hints": [
+        "SketchfabFeatured",
+        "SketchfabPicked",
+        "Sketchfab Featured",
+        "sketchfab"
+      ],
+      "id": "sketchfab_featured",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "Sketchfab Featured/Picked reconstruction benchmark"
+    },
+    {
+      "hints": [
+        "NanoBanana",
+        "nanobanana",
+        "image_prompts"
+      ],
+      "id": "nanobanana_prompts",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "100 image prompts for image-to-3D comparison"
+    },
+    {
+      "hints": [
+        "pbr_dumps",
+        "pbr_dump"
+      ],
+      "id": "pbr_dumps",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "PBR dumps from data toolkit"
+    },
+    {
+      "hints": [
+        "dual_grid",
+        "dual_grid_256",
+        "dual_grid_512"
+      ],
+      "id": "dual_grid",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "O-Voxel/Flexible Dual Grid assets"
+    },
+    {
+      "hints": [
+        ".vxz",
+        "vxz"
+      ],
+      "id": "ovoxel_vxz",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "serialized O-Voxel .vxz assets"
+    },
+    {
+      "hints": [
+        "shape_latents",
+        "shape_enc"
+      ],
+      "id": "shape_latents",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "encoded shape latents"
+    },
+    {
+      "hints": [
+        "pbr_latents",
+        "tex_enc"
+      ],
+      "id": "pbr_latents",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "encoded PBR/texture latents"
+    },
+    {
+      "hints": [
+        "renders_cond",
+        "render_cond"
+      ],
+      "id": "render_cond",
+      "ignored_local_matches": [],
+      "local_matches": [],
+      "materialized_locally": false,
+      "required": "conditioning view renders"
+    }
+  ],
+  "models": [
+    {
+      "hf_manifest": {
+        "file_count": 22,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6417
+          },
+          {
+            "path": "ckpts/shape_dec_next_dc_f16c32_fp16.json",
+            "size_bytes": 678
+          },
+          {
+            "path": "ckpts/shape_dec_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 948490494
+          },
+          {
+            "path": "ckpts/shape_enc_next_dc_f16c32_fp16.json",
+            "size_bytes": 653
+          },
+          {
+            "path": "ckpts/shape_enc_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 708797208
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16.safetensors",
+            "size_bytes": 2584574424
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16.safetensors",
+            "size_bytes": 2584574424
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16.safetensors",
+            "size_bytes": 2584672728
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16.safetensors",
+            "size_bytes": 2584672728
+          },
+          {
+            "path": "ckpts/ss_flow_img_dit_1_3B_64_bf16.json",
+            "size_bytes": 467
+          },
+          {
+            "path": "ckpts/ss_flow_img_dit_1_3B_64_bf16.safetensors",
+            "size_bytes": 2584426920
+          },
+          {
+            "path": "ckpts/tex_dec_next_dc_f16c32_fp16.json",
+            "size_bytes": 705
+          },
+          {
+            "path": "ckpts/tex_dec_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 948458812
+          },
+          {
+            "path": "ckpts/tex_enc_next_dc_f16c32_fp16.json",
+            "size_bytes": 676
+          },
+          {
+            "path": "ckpts/tex_enc_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 708797208
+          },
+          {
+            "path": "pipeline.json",
+            "size_bytes": 4186
+          },
+          {
+            "path": "texturing_pipeline.json",
+            "size_bytes": 2965
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 6417
+          },
+          {
+            "path": "ckpts/shape_dec_next_dc_f16c32_fp16.json",
+            "size_bytes": 678
+          },
+          {
+            "path": "ckpts/shape_dec_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 948490494
+          },
+          {
+            "path": "ckpts/shape_enc_next_dc_f16c32_fp16.json",
+            "size_bytes": 653
+          },
+          {
+            "path": "ckpts/shape_enc_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 708797208
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16.safetensors",
+            "size_bytes": 2584574424
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16.safetensors",
+            "size_bytes": 2584574424
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16.safetensors",
+            "size_bytes": 2584672728
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16.json",
+            "size_bytes": 458
+          },
+          {
+            "path": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16.safetensors",
+            "size_bytes": 2584672728
+          },
+          {
+            "path": "ckpts/ss_flow_img_dit_1_3B_64_bf16.json",
+            "size_bytes": 467
+          },
+          {
+            "path": "ckpts/ss_flow_img_dit_1_3B_64_bf16.safetensors",
+            "size_bytes": 2584426920
+          },
+          {
+            "path": "ckpts/tex_dec_next_dc_f16c32_fp16.json",
+            "size_bytes": 705
+          },
+          {
+            "path": "ckpts/tex_dec_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 948458812
+          },
+          {
+            "path": "ckpts/tex_enc_next_dc_f16c32_fp16.json",
+            "size_bytes": 676
+          },
+          {
+            "path": "ckpts/tex_enc_next_dc_f16c32_fp16.safetensors",
+            "size_bytes": 708797208
+          },
+          {
+            "path": "pipeline.json",
+            "size_bytes": 4186
+          },
+          {
+            "path": "texturing_pipeline.json",
+            "size_bytes": 2965
+          }
+        ],
+        "repo_id": "microsoft/TRELLIS.2-4B",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 16237485044
+      },
+      "id": "trellis2_4b_hf_weights",
+      "ignored_local_matches": [],
+      "local_hints": [
+        "models--microsoft--TRELLIS.2-4B",
+        "TRELLIS.2-4B",
+        "microsoft/TRELLIS.2-4B"
+      ],
+      "local_matches": [],
+      "materialized_locally": false,
+      "paper_role": "4B pretrained model for image-to-3D and shape-conditioned texturing",
+      "repo_id": "microsoft/TRELLIS.2-4B",
+      "repo_type": "model"
+    }
+  ],
+  "not_promoted_support": [
+    "example images and example_texturing mesh",
+    "README H100 timing table",
+    "HF model card metadata without local snapshots",
+    "syntax/import checks without full benchmark outputs"
+  ],
+  "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+  "paper_result_surfaces": [
+    "3D asset reconstruction table with MD, CD, and F1",
+    "image-to-3D generation comparison over 100 prompts",
+    "shape-conditioned PBR texture generation with PSNR, LPIPS, CLIP, CLIP-N",
+    "SC-VAE ablation and architecture ablations",
+    "test-time resolution scaling at 512^3, 1024^3, and 1536^3",
+    "H100/A100 runtime table and memory/latency traces",
+    "Toys4K and Sketchfab reconstruction results",
+    "about 40 participant user-study Pref% artifacts",
+    "raw GLB/mesh/O-Voxel outputs, rendered videos/images, metrics JSON, and table summaries"
+  ],
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2"
+}

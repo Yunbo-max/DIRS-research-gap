@@ -1,0 +1,224 @@
+{
+  "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v4",
+  "dag_signature": "75668a3938c6d228",
+  "detail_level": 4,
+  "fallback_rates": {
+    "epsilon": 0.0,
+    "eta": 0.0,
+    "min_p": 0.0,
+    "mirostat": 0.0,
+    "p_less": 0.0,
+    "p_lessnorm": 0.0,
+    "top_p": 0.0
+  },
+  "grid_summary": {
+    "distribution_count": 480,
+    "entropy_regimes": [
+      "peaked_reasoning",
+      "mixed_reasoning",
+      "flat_creative"
+    ],
+    "temperatures": [
+      0.5,
+      0.7,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "vocab_size": 4096
+  },
+  "method_summaries": [
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.36731724395877996,
+      "mean_candidate_count": 160.1875,
+      "mean_quality_proxy": 0.5683696737720493,
+      "mean_retained_mass": 0.687696359825175,
+      "mean_seconds_per_distribution": 0.000530847935200048,
+      "method": "epsilon",
+      "needs_sort": false,
+      "temperature_quality": {
+        "0.5": 0.6923983797024705,
+        "0.7": 0.7116697808773221,
+        "1.0": 0.7031457203628947,
+        "1.5": 0.38204725725225813,
+        "2.0": 0.35258723066530195
+      },
+      "top_token_retained_rate": 1.0
+    },
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.4046482918236271,
+      "mean_candidate_count": 1821.4645833333334,
+      "mean_quality_proxy": 0.5883075512048203,
+      "mean_retained_mass": 0.9642942931503978,
+      "mean_seconds_per_distribution": 0.001809384359997542,
+      "method": "eta",
+      "needs_sort": false,
+      "temperature_quality": {
+        "0.5": 0.6923983797024705,
+        "0.7": 0.7177059923870389,
+        "1.0": 0.7221368002873377,
+        "1.5": 0.41770667217590646,
+        "2.0": 0.3915899114713474
+      },
+      "top_token_retained_rate": 1.0
+    },
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.6435998411514093,
+      "mean_candidate_count": 141.39583333333334,
+      "mean_quality_proxy": 0.6036148061772137,
+      "mean_retained_mass": 0.5596923387163849,
+      "mean_seconds_per_distribution": 0.0005739006378765528,
+      "method": "min_p",
+      "needs_sort": false,
+      "temperature_quality": {
+        "0.5": 0.5629874166466408,
+        "0.7": 0.5605393581736193,
+        "1.0": 0.6073475737629902,
+        "1.5": 0.6385347958174612,
+        "2.0": 0.6486648864853575
+      },
+      "top_token_retained_rate": 1.0
+    },
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.5514865682381366,
+      "mean_candidate_count": 39.8875,
+      "mean_quality_proxy": 0.3683352829621431,
+      "mean_retained_mass": 0.18478962830592402,
+      "mean_seconds_per_distribution": 0.0017495580725759889,
+      "method": "mirostat",
+      "needs_sort": true,
+      "temperature_quality": {
+        "0.5": 0.14379152790371613,
+        "0.7": 0.22278569094668568,
+        "1.0": 0.37212605948404126,
+        "1.5": 0.5449870820813597,
+        "2.0": 0.5579860543949137
+      },
+      "top_token_retained_rate": 0.2
+    },
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.6525096775406024,
+      "mean_candidate_count": 46.92916666666667,
+      "mean_quality_proxy": 0.5292457863898324,
+      "mean_retained_mass": 0.37766216903562433,
+      "mean_seconds_per_distribution": 0.0007220679287759898,
+      "method": "p_less",
+      "needs_sort": false,
+      "temperature_quality": {
+        "0.5": 0.47479218820220476,
+        "0.7": 0.4139461912960694,
+        "1.0": 0.4524711973696823,
+        "1.5": 0.6121266677253081,
+        "2.0": 0.6928926873558962
+      },
+      "top_token_retained_rate": 1.0
+    },
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.6809439116820132,
+      "mean_candidate_count": 310.6041666666667,
+      "mean_quality_proxy": 0.5427805449520321,
+      "mean_retained_mass": 0.4396618323105541,
+      "mean_seconds_per_distribution": 0.000730519541442239,
+      "method": "p_lessnorm",
+      "needs_sort": false,
+      "temperature_quality": {
+        "0.5": 0.47479218820220476,
+        "0.7": 0.4157134503395173,
+        "1.0": 0.46150926285441307,
+        "1.5": 0.6301607374143273,
+        "2.0": 0.7317270859496984
+      },
+      "top_token_retained_rate": 1.0
+    },
+    {
+      "empty_or_fallback_rate": 0.0,
+      "high_temp_quality_proxy": 0.4989983134057759,
+      "mean_candidate_count": 1401.8958333333333,
+      "mean_quality_proxy": 0.5982734058611023,
+      "mean_retained_mass": 0.905242977253669,
+      "mean_seconds_per_distribution": 0.001501499677154546,
+      "method": "top_p",
+      "needs_sort": true,
+      "temperature_quality": {
+        "0.5": 0.6102039521672639,
+        "0.7": 0.6671744554742703,
+        "1.0": 0.7159919948524266,
+        "1.5": 0.5127925964251604,
+        "2.0": 0.4852040303863921
+      },
+      "top_token_retained_rate": 1.0
+    }
+  ],
+  "operation_cost_proxy": {
+    "epsilon": 1.55,
+    "eta": 1.55,
+    "min_p": 1.2,
+    "mirostat": 3.3000000000000003,
+    "p_less": 1.15,
+    "p_lessnorm": 1.25,
+    "top_p": 2.95
+  },
+  "predictions": {
+    "bounded_candidate_set": true,
+    "efficiency_shape": "p_less_fastest_or_tied_fastest",
+    "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+    "high_temperature_writing_shape": "p_less_stable_high_temperature",
+    "hyperparameter_free": true,
+    "reasoning_auc_shape": "not_supported"
+  },
+  "rankings": {
+    "high_temp_quality_proxy": [
+      "p_lessnorm",
+      "p_less",
+      "min_p",
+      "mirostat",
+      "top_p",
+      "eta",
+      "epsilon"
+    ],
+    "operation_cost_proxy": [
+      "p_less",
+      "min_p",
+      "p_lessnorm",
+      "epsilon",
+      "eta",
+      "top_p",
+      "mirostat"
+    ],
+    "quality_proxy": [
+      "min_p",
+      "top_p",
+      "eta",
+      "epsilon",
+      "p_lessnorm",
+      "p_less",
+      "mirostat"
+    ],
+    "speed_proxy": [
+      "epsilon",
+      "min_p",
+      "p_less",
+      "p_lessnorm",
+      "top_p",
+      "mirostat",
+      "eta"
+    ]
+  },
+  "simulator_contract": {
+    "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_04/blind_workspace",
+    "forbidden_memory_seen": false,
+    "only_user_data_input": "paper_author_dag.json",
+    "paper_evidence_seen": false,
+    "paper_oracle_seen": false
+  },
+  "subprocess": {
+    "returncode": 0,
+    "runtime_seconds": 5.808
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "dirs.stochastic_prefix_path_mcts_validation.v1",
+  "graph_id_matches": true,
+  "scenario_count": 2,
+  "audited_simulation_count": 384,
+  "audited_decision_count": 3803,
+  "audited_backpropagation_count": 3803,
+  "violation_count": 0,
+  "passed": true,
+  "violations": []
+}

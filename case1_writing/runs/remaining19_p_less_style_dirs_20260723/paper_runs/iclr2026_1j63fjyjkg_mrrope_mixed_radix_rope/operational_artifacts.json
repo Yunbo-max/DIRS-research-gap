@@ -1,0 +1,212 @@
+{
+  "blockers": [
+    {
+      "detail": "queue reports GitHub repository not found; only OpenReview supplement archive is available",
+      "id": "source_distribution_supplement_only",
+      "status": "blocked"
+    },
+    {
+      "detail": "required local dataset paths are missing: testset/pp-tokenized-llama3, testset/pp-tokenized-qwen2.5, testset/infity, testset/longbenchv2, testset/PaulGrahamEssays",
+      "id": "local_long_context_datasets_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "supplement scripts expect missing local checkpoints: models/llama3.1-8b-ins, models/qwen2.5-3b-ins",
+      "id": "local_model_checkpoints_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "supplement benchmark scripts use --flash-attention, but flash-attn is not installed",
+      "id": "flash_attention_2_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "missing supplement dependencies: jieba",
+      "id": "supplement_python_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "all visible GPUs have less than 16GiB free while another full GPU run is active; 128K model eval should wait for a clean device",
+      "id": "no_idle_large_memory_gpu_for_128k_eval",
+      "status": "blocked"
+    }
+  ],
+  "gpu_probe": {
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 2873,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 21343,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 5190,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19023,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 17
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8168,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16049,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "status": "pass"
+  },
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "__MACOSX/supplement/eval/._eval_utils.py",
+        "supplement/eval/eval_utils.py",
+        "__MACOSX/supplement/._evali.sh",
+        "__MACOSX/supplement/._evalb.sh",
+        "__MACOSX/supplement/._evaln.sh",
+        "__MACOSX/supplement/._eval.sh",
+        "__MACOSX/supplement/._evalr.sh",
+        "supplement/evalr.sh",
+        "supplement/evali.sh",
+        "supplement/eval.sh",
+        "supplement/evaln.sh",
+        "supplement/evalb.sh"
+      ],
+      "exists": true,
+      "git_head": null,
+      "python_file_count": 40,
+      "readme_files": [
+        "supplement/README.md"
+      ],
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+      "shell_file_count": 10,
+      "status": "code_inventory_has_syntax_errors",
+      "syntax_checked_python_files": 40,
+      "syntax_error_count": 20,
+      "syntax_errors": [
+        {
+          "file": "__MACOSX/supplement/analysis/._attn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._infity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._score_infity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._eval_utils.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._model_loader.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._prompt_infity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._neddle.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._longbench.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._perplexity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._viz_neddle.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._ruler.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._patch.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._LlamaMrRoPE.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._configuration_mistral.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._LLamaNTKScaledRotaryEmbedding.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._modeling_llama_yarn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._modeling_mistral_yarn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._modeling_llama_together_yarn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._LlamaYaRNScaledRotaryEmbedding.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._configuration_llama.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        }
+      ]
+    }
+  ],
+  "specialized_runner": {
+    "artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope",
+    "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/environment.json",
+    "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/model_data_manifest.json",
+    "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/official_script_manifest.json",
+    "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/professional_gate_result.json",
+    "status": "blocked_by_supplement_only_missing_datasets_models_runtime",
+    "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/mrrope_specialized_verifier.json"
+  }
+}

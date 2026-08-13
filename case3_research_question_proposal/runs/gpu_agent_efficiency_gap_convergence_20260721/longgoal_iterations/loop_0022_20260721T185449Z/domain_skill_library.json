@@ -1,0 +1,1365 @@
+{
+  "run_id": "gpu_agent_efficiency_gap_convergence_20260721",
+  "input_shortlist": "/tf/notebooks/yunbo/fit_papers_for_gpu_simulation_research_gap_20260721.md",
+  "papers": [
+    {
+      "rank": 1,
+      "title": "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71171_tau2_bench_dual_control_agents.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/tau2-bench",
+      "github": "",
+      "fit_reason": "benchmark framework, user simulator, environment tools, pass^k metrics; hardware note includes T4, so 4090 is a good fit.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 5,
+        "tool_agent_planning": 4,
+        "gpu_efficiency": 2,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 5
+      }
+    },
+    {
+      "rank": 2,
+      "title": "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_LCS1WsGvha_simuhome_smart_home_llm_agents.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SimuHome",
+      "github": "https://github.com/holi-lab/SimuHome",
+      "fit_reason": "stateful simulator, ReAct runner, verifier/scoring loop, small-model settings; hardware note includes T4.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 6,
+        "tool_agent_planning": 5,
+        "dynamic_async_tasks": 3,
+        "cost_latency_budget": 1,
+        "gpu_efficiency": 1,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 6
+      }
+    },
+    {
+      "rank": 3,
+      "title": "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_9gw03JpKK4_gaia2.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments",
+      "github": "https://github.com/facebookresearch/meta-agents-research-environments",
+      "fit_reason": "dynamic/asynchronous agent environments, write-action verifiers, cost/latency analysis; good for simulation-backed gap claims.",
+      "code_inspection_status": "code_inspected_official_are_gaia2_repository",
+      "features": {
+        "simulator_state_verifier": 3,
+        "tool_agent_planning": 6,
+        "dynamic_async_tasks": 3,
+        "cost_latency_budget": 5,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 4,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 4,
+      "title": "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_Mf5AleTUVK_agentflow.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/AgentFlow",
+      "github": "https://github.com/lupantech/AgentFlow",
+      "fit_reason": "runnable modular agent system, planner/executor/verifier/memory/tools, 7B planner checkpoint; full training is larger, but evaluation and small ablations fit 4090.",
+      "code_inspection_status": "code_inspected_official_agentflow_repo_readme_train_config_rollout_solver_planner_executor_verifier_memory_tools_benchmark_scripts_hf_model_manifest",
+      "features": {
+        "simulator_state_verifier": 2,
+        "tool_agent_planning": 5,
+        "dynamic_async_tasks": 2,
+        "cost_latency_budget": 3,
+        "gpu_efficiency": 3,
+        "decoding_token_memory": 2,
+        "benchmark_headroom": 3,
+        "small_model_feasible": 6
+      }
+    },
+    {
+      "rank": 5,
+      "title": "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_P0GOk5wslg_speculative_actions_faster_agents.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action",
+      "github": "https://github.com/naimengye/speculative-action",
+      "fit_reason": "directly matches latency/cost-aware agents; experiments expose time saved, p95 latency, token/cost, and correctness-preserving commit/discard validation.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 3,
+        "tool_agent_planning": 5,
+        "dynamic_async_tasks": 1,
+        "cost_latency_budget": 7,
+        "gpu_efficiency": 2,
+        "decoding_token_memory": 2,
+        "speculation_reversibility": 7,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 3
+      }
+    },
+    {
+      "rank": 6,
+      "title": "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "chip": "/tf/notebooks/cvpr2026_oral_paper_memory_141/chips/CVPR2026_084_vs_bench_vlm_strategic_abilities.chip.json",
+      "local_repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/084_vs_bench/VS-Bench",
+      "github": "https://github.com/zelaix/VS-Bench",
+      "fit_reason": "no training required, strategic-reasoning and decision-making benchmark; hardware note includes T4.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 4,
+        "tool_agent_planning": 3,
+        "dynamic_async_tasks": 3,
+        "cost_latency_budget": 2,
+        "gpu_efficiency": 1,
+        "decoding_token_memory": 2,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 3,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 7,
+      "title": "LLMs Get Lost In Multi-Turn Conversation",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_VKGTGGcwl6_llms_lost_multiturn_conversation.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lost_in_conversation",
+      "github": "https://github.com/microsoft/lost_in_conversation",
+      "fit_reason": "cheap multi-turn conversation simulations and degradation metrics; strong support for a gap about state tracking and budgeted memory.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 2,
+        "tool_agent_planning": 2,
+        "dynamic_async_tasks": 1,
+        "cost_latency_budget": 3,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 3,
+        "small_model_feasible": 3
+      }
+    },
+    {
+      "rank": 8,
+      "title": "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71174_omac.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/omac-demo",
+      "github": "https://github.com/xiwenchao/OMAC",
+      "fit_reason": "public multi-agent prompt/controller optimization code; can run OMAC-lite on 7B/8B models and measure coordination overhead.",
+      "code_inspection_status": "code_inspected_public_repo",
+      "features": {
+        "simulator_state_verifier": 2,
+        "tool_agent_planning": 4,
+        "dynamic_async_tasks": 1,
+        "cost_latency_budget": 3,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 5
+      }
+    },
+    {
+      "rank": 9,
+      "title": "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_yWwrgcBoK3_redteamcua.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/RedTeamCUA",
+      "github": "https://github.com/OSU-NLP-Group/RedTeamCUA",
+      "fit_reason": "usable as a safe evaluator/guard benchmark for computer-use agents; include only non-operational, containment-oriented experiments.",
+      "code_inspection_status": "code_inspected_official_redteamcua_repository",
+      "features": {
+        "simulator_state_verifier": 5,
+        "tool_agent_planning": 1,
+        "cost_latency_budget": 1,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 3,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 10,
+      "title": "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_yBFUqdJFZn_scalecua.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ScaleCUA",
+      "github": "https://github.com/OpenGVLab/ScaleCUA",
+      "fit_reason": "released 7B checkpoint and evaluation/playground code; full data scaling is too large, but 4090 fits targeted evaluation and small data ablations.",
+      "code_inspection_status": "code_inspected_official_scalecua_training_playground_and_evaluation_repository",
+      "features": {
+        "simulator_state_verifier": 1,
+        "tool_agent_planning": 4,
+        "dynamic_async_tasks": 1,
+        "cost_latency_budget": 2,
+        "gpu_efficiency": 2,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 3,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 11,
+      "title": "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71181_flashsketch.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/flash-sketch-arxiv",
+      "github": "https://github.com/rajatvd/flash-sketch-arxiv",
+      "fit_reason": "explicitly evaluated on RTX 4090/A6000; useful for GPU-cost diagnostics and fast matrix/statistical probes.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 2,
+        "cost_latency_budget": 1,
+        "gpu_efficiency": 5,
+        "decoding_token_memory": 1,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 12,
+      "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_ItFuNJQGH4_p_less_sampling.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/p-less",
+      "github": "https://github.com/ryttry/p-less",
+      "fit_reason": "tiny inference-time intervention; easy to implement in Transformers/vLLM and evaluate on 7B/8B models with latency/diversity/accuracy metrics.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "tool_agent_planning": 2,
+        "cost_latency_budget": 3,
+        "decoding_token_memory": 2,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 1,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 13,
+      "title": "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71142_wedlm.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/WeDLM",
+      "github": "https://github.com/Tencent/WeDLM",
+      "fit_reason": "released 7B/8B model path, CUDA inference code, direct fast-decoding mechanism; use inference/eval rather than full continued pretraining.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 1,
+        "cost_latency_budget": 4,
+        "gpu_efficiency": 1,
+        "decoding_token_memory": 5,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 3
+      }
+    },
+    {
+      "rank": 14,
+      "title": "Diffusion Language Models Know the Answer Before Decoding",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding.chip.json",
+      "local_repo": "",
+      "github": "",
+      "fit_reason": "T4/CUDA evidence and early-commit decoding idea; good for a budgeted-decision equation about when to stop decoding.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 1,
+        "tool_agent_planning": 1,
+        "cost_latency_budget": 4,
+        "gpu_efficiency": 2,
+        "decoding_token_memory": 4,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 1,
+        "small_model_feasible": 4
+      }
+    },
+    {
+      "rank": 15,
+      "title": "Differentiable Model Predictive Control on the GPU",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_bFYfV6c9zu_diffmpc_gpu.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/diffmpc",
+      "github": "",
+      "fit_reason": "explicitly RTX 4090/CUDA; useful equation/control baseline for latency-aware planning.",
+      "code_inspection_status": "code_inspected_official_toyota_diffmpc_jax_sqp_pcg_benchmarks",
+      "features": {
+        "simulator_state_verifier": 3,
+        "tool_agent_planning": 4,
+        "dynamic_async_tasks": 1,
+        "cost_latency_budget": 3,
+        "gpu_efficiency": 4,
+        "decoding_token_memory": 1,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 3
+      }
+    },
+    {
+      "rank": 16,
+      "title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl.chip.json",
+      "local_repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL",
+      "github": "",
+      "fit_reason": "CUDA kernel generation and RL loop; 4090 can run reduced kernel/search experiments.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 2,
+        "tool_agent_planning": 3,
+        "dynamic_async_tasks": 1,
+        "cost_latency_budget": 3,
+        "gpu_efficiency": 6,
+        "decoding_token_memory": 3,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 5
+      }
+    },
+    {
+      "rank": 17,
+      "title": "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71169_prescriptive_scaling.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/prescriptive-scaling",
+      "github": "https://github.com/hlzhang109/prescriptive-scaling",
+      "fit_reason": "low-cost analysis code for choosing benchmarks with 7B-reachable headroom; useful as the topic-selection guard.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 1,
+        "dynamic_async_tasks": 2,
+        "cost_latency_budget": 3,
+        "decoding_token_memory": 1,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 6,
+        "small_model_feasible": 3
+      }
+    },
+    {
+      "rank": 18,
+      "title": "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71141_toksuite_tokenizer_behavior.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/Tokenizers",
+      "github": "https://github.com/r-three/Tokenizers",
+      "fit_reason": "reusable tokenizer/robustness evaluation suite; relevant to token-cost and tokenizer-choice efficiency.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 2,
+        "cost_latency_budget": 3,
+        "decoding_token_memory": 1,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 3,
+        "small_model_feasible": 5
+      }
+    },
+    {
+      "rank": 19,
+      "title": "Rare Event Analysis of Large Language Models",
+      "chip": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71154_rare_event_analysis_llms.chip.json",
+      "local_repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/rea_of_llms_supplementary_code",
+      "github": "https://github.com/MLiS-Research/rea_of_llms_supplementary_code",
+      "fit_reason": "minimal notebook, tiny-model baseline, extendable to 7B with sampling-budget experiments.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "simulator_state_verifier": 1,
+        "tool_agent_planning": 1,
+        "cost_latency_budget": 3,
+        "decoding_token_memory": 2,
+        "speculation_reversibility": 1,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 2
+      }
+    },
+    {
+      "rank": 20,
+      "title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging",
+      "chip": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging.chip.json",
+      "local_repo": "",
+      "github": "https://github.com/Fanziyang-v/FlashVID",
+      "fit_reason": "training-free token merging for VLLMs; likely 4090-fit with reduced video/model settings.",
+      "code_inspection_status": "code_inspected",
+      "features": {
+        "tool_agent_planning": 1,
+        "dynamic_async_tasks": 2,
+        "cost_latency_budget": 3,
+        "gpu_efficiency": 2,
+        "decoding_token_memory": 4,
+        "speculation_reversibility": 2,
+        "benchmark_headroom": 2,
+        "small_model_feasible": 5
+      }
+    }
+  ],
+  "feature_counts": {
+    "simulator_state_verifier": 46,
+    "tool_agent_planning": 51,
+    "gpu_efficiency": 31,
+    "speculation_reversibility": 25,
+    "benchmark_headroom": 50,
+    "small_model_feasible": 82,
+    "dynamic_async_tasks": 21,
+    "cost_latency_budget": 57,
+    "decoding_token_memory": 30
+  },
+  "feature_support": {
+    "simulator_state_verifier": [
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "Rare Event Analysis of Large Language Models"
+    ],
+    "tool_agent_planning": [
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Rare Event Analysis of Large Language Models",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "gpu_efficiency": [
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "speculation_reversibility": [
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "Rare Event Analysis of Large Language Models",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "benchmark_headroom": [
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "Rare Event Analysis of Large Language Models",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "small_model_feasible": [
+      "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "Rare Event Analysis of Large Language Models",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "dynamic_async_tasks": [
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "cost_latency_budget": [
+      "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+      "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "LLMs Get Lost In Multi-Turn Conversation",
+      "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+      "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "Rare Event Analysis of Large Language Models",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ],
+    "decoding_token_memory": [
+      "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "Speculative Actions: A Lossless Framework for Faster AI Agents",
+      "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+      "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+      "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+      "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+      "Diffusion Language Models Know the Answer Before Decoding",
+      "Differentiable Model Predictive Control on the GPU",
+      "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+      "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+      "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+      "Rare Event Analysis of Large Language Models",
+      "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+    ]
+  },
+  "ranked_questions": [
+    {
+      "id": "Q1_budgeted_state_verifying_agents",
+      "question": "Can a 7B/8B tool agent improve dynamic multi-turn task success by planning under an explicit joint budget for tokens, tool latency, GPU time, and simulator-verified state reliability?",
+      "needs": [
+        "simulator_state_verifier",
+        "tool_agent_planning",
+        "dynamic_async_tasks",
+        "cost_latency_budget",
+        "small_model_feasible"
+      ],
+      "experiment": "Run tau2-Bench, SimuHome, and Gaia2 subsets with a Qwen/Llama-class local agent. Compare baseline ReAct against a budget-aware planner that rejects plans failing simulator/verifier checks.",
+      "supported_dimensions": 5,
+      "required_dimensions": 5,
+      "support_papers": [
+        "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+        "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+        "LLMs Get Lost In Multi-Turn Conversation",
+        "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+        "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+        "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+        "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+        "Speculative Actions: A Lossless Framework for Faster AI Agents",
+        "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+        "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+      ],
+      "scores": {
+        "grounding": 2,
+        "novelty": 2,
+        "feasibility": 2,
+        "expected_insight": 2,
+        "experiment_path": 2,
+        "scope_control": 2,
+        "total": 12
+      },
+      "decision": "pursue_now"
+    },
+    {
+      "id": "Q2_reversible_speculative_tool_actions",
+      "question": "When agent actions are typed by reversibility, can speculative tool-call prefetch reduce p95 latency without increasing wrong or unsafe committed actions?",
+      "needs": [
+        "speculation_reversibility",
+        "tool_agent_planning",
+        "cost_latency_budget",
+        "simulator_state_verifier"
+      ],
+      "experiment": "Use Speculative Actions plus tau2/SimuHome traces. Allow speculation only for reversible reads/prefetches, then measure hit rate, latency, extra token cost, and commit errors.",
+      "supported_dimensions": 4,
+      "required_dimensions": 4,
+      "support_papers": [
+        "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+        "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+        "LLMs Get Lost In Multi-Turn Conversation",
+        "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+        "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+        "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+        "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+        "Speculative Actions: A Lossless Framework for Faster AI Agents",
+        "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+        "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+      ],
+      "scores": {
+        "grounding": 2,
+        "novelty": 2,
+        "feasibility": 2,
+        "expected_insight": 2,
+        "experiment_path": 2,
+        "scope_control": 2,
+        "total": 12
+      },
+      "decision": "pursue_now"
+    },
+    {
+      "id": "Q3_token_memory_policy_for_agents",
+      "question": "Can token, cache, and decoding-efficiency methods be converted into agent-level memory policies that preserve task state while reducing GPU memory and generation cost?",
+      "needs": [
+        "decoding_token_memory",
+        "cost_latency_budget",
+        "tool_agent_planning",
+        "small_model_feasible"
+      ],
+      "experiment": "Combine p-less/WeDLM-style decoding probes with multi-turn agent benchmarks. Track state-recall accuracy, final task success, token count, KV/cache footprint proxy, and latency.",
+      "supported_dimensions": 4,
+      "required_dimensions": 4,
+      "support_papers": [
+        "Differentiable Model Predictive Control on the GPU",
+        "Diffusion Language Models Know the Answer Before Decoding",
+        "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+        "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+        "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+        "LLMs Get Lost In Multi-Turn Conversation",
+        "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+        "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+        "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+        "Speculative Actions: A Lossless Framework for Faster AI Agents",
+        "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+        "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+        "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+        "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+      ],
+      "scores": {
+        "grounding": 2,
+        "novelty": 2,
+        "feasibility": 2,
+        "expected_insight": 2,
+        "experiment_path": 2,
+        "scope_control": 2,
+        "total": 12
+      },
+      "decision": "pursue_now"
+    },
+    {
+      "id": "Q4_gpu_headroom_topic_selector",
+      "question": "Can prescriptive scaling and GPU microbenchmarks identify which agent benchmarks still have 4090-reachable headroom for meaningful 7B method improvements?",
+      "needs": [
+        "benchmark_headroom",
+        "gpu_efficiency",
+        "small_model_feasible",
+        "cost_latency_budget"
+      ],
+      "experiment": "Fit prescriptive boundaries over public agent/eval results, then run FlashSketch or decoding microbenchmarks to estimate evaluation cost before selecting final benchmark subsets.",
+      "supported_dimensions": 4,
+      "required_dimensions": 4,
+      "support_papers": [
+        "FlashSketch: Sketch-Kernel Co-Design for Fast Sparse Sketching on GPUs",
+        "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+        "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+        "LLMs Get Lost In Multi-Turn Conversation",
+        "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+        "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+        "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data",
+        "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+        "Speculative Actions: A Lossless Framework for Faster AI Agents",
+        "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+        "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+        "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+      ],
+      "scores": {
+        "grounding": 2,
+        "novelty": 2,
+        "feasibility": 2,
+        "expected_insight": 2,
+        "experiment_path": 2,
+        "scope_control": 2,
+        "total": 12
+      },
+      "decision": "pursue_now"
+    },
+    {
+      "id": "Q5_coordination_overhead_in_multi_agent_7b_systems",
+      "question": "For 7B multi-agent systems, when does coordination improve accuracy enough to offset extra calls, latency, and context overhead?",
+      "needs": [
+        "tool_agent_planning",
+        "cost_latency_budget",
+        "benchmark_headroom",
+        "small_model_feasible"
+      ],
+      "experiment": "Run OMAC-lite and AgentFlow-style controllers on HumanEval/MATH/tool tasks, logging marginal accuracy per extra call, token, and second.",
+      "supported_dimensions": 4,
+      "required_dimensions": 4,
+      "support_papers": [
+        "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+        "In-The-Flow Agentic System Optimization for Effective Planning and Tool Use",
+        "LLMs Get Lost In Multi-Turn Conversation",
+        "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+        "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+        "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+        "Speculative Actions: A Lossless Framework for Faster AI Agents",
+        "VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments",
+        "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment"
+      ],
+      "scores": {
+        "grounding": 2,
+        "novelty": 2,
+        "feasibility": 2,
+        "expected_insight": 2,
+        "experiment_path": 2,
+        "scope_control": 2,
+        "total": 12
+      },
+      "decision": "pursue_now"
+    }
+  ],
+  "gpu_probe": {
+    "available": true,
+    "gpu_count": 4,
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "24198 MiB",
+        "driver_version": "535.183.01"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "24198 MiB",
+        "driver_version": "535.183.01"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "23200 MiB",
+        "driver_version": "535.183.01"
+      },
+      {
+        "index": "3",
+        "name": "NVIDIA GeForce RTX 4090",
+        "memory_total": "24564 MiB",
+        "memory_free": "24198 MiB",
+        "driver_version": "535.183.01"
+      }
+    ],
+    "command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv,noheader"
+  },
+  "gpu_execution_plan": {
+    "status": "execution_ready",
+    "gpu_probe": {
+      "available": true,
+      "gpu_count": 4,
+      "gpus": [
+        {
+          "index": "0",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "24198 MiB",
+          "driver_version": "535.183.01"
+        },
+        {
+          "index": "1",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "24198 MiB",
+          "driver_version": "535.183.01"
+        },
+        {
+          "index": "2",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "23200 MiB",
+          "driver_version": "535.183.01"
+        },
+        {
+          "index": "3",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "24198 MiB",
+          "driver_version": "535.183.01"
+        }
+      ],
+      "command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv,noheader"
+    },
+    "repo_readiness": [
+      {
+        "name": "tau2-Bench",
+        "role": "conversational dual-control benchmark",
+        "repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/tau2-bench",
+        "exists": true,
+        "readiness_files": [
+          "README.md",
+          "pyproject.toml"
+        ],
+        "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+      },
+      {
+        "name": "SimuHome",
+        "role": "temporal smart-home simulator/verifier",
+        "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SimuHome",
+        "exists": true,
+        "readiness_files": [
+          "README.md",
+          "pyproject.toml"
+        ],
+        "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+      },
+      {
+        "name": "Gaia2",
+        "role": "dynamic/asynchronous agent benchmark",
+        "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments",
+        "exists": true,
+        "readiness_files": [
+          "README.md",
+          "docs/requirements.txt",
+          "gaia2-cli/README.md",
+          "pyproject.toml",
+          "requirements-dev.txt",
+          "requirements-gui.txt",
+          "requirements.txt"
+        ],
+        "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+      },
+      {
+        "name": "Speculative Actions",
+        "role": "latency-reducing reversible action speculation",
+        "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action",
+        "exists": true,
+        "readiness_files": [
+          "README.md",
+          "chess-game/README.md",
+          "chess-game/pyproject.toml",
+          "chess-game/requirements.txt",
+          "e-commerce/README.md",
+          "hotpotqa/README.md",
+          "hotpotqa/requirements.txt",
+          "os-tuning/README.md",
+          "os-tuning/pyproject.toml",
+          "os-tuning/requirements.txt"
+        ],
+        "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+      },
+      {
+        "name": "AgentFlow",
+        "role": "planner/executor/verifier agent stack",
+        "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/AgentFlow",
+        "exists": true,
+        "readiness_files": [
+          "README.md",
+          "agentflow/pyproject.toml",
+          "agentflow/requirements.txt",
+          "pyproject.toml"
+        ],
+        "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+      }
+    ],
+    "first_smoke_order": [
+      "SimuHome: run minimal simulator/verifier episode without model call",
+      "tau2-Bench: run CLI/import smoke and one tiny environment task",
+      "Speculative Actions: run reversible/read-only toy speculation task",
+      "Gaia2: run local scenario/parser/verifier smoke",
+      "AgentFlow: run import/config smoke before any model serving"
+    ],
+    "metrics_to_log": [
+      "task_success",
+      "state_verifier_pass_rate",
+      "tool_calls",
+      "tokens_in",
+      "tokens_out",
+      "wall_clock_latency",
+      "gpu_memory_peak_mb",
+      "gpu_utilization_snapshot",
+      "wrong_commit_count",
+      "speculation_hit_rate"
+    ],
+    "4090_policy": [
+      "prefer 7B/8B local models or model-free simulator smoke tests",
+      "avoid full multi-A100/H100 training",
+      "use subsets before full benchmark runs",
+      "record GPU count, memory, driver, and command line with every run"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T1_domain_topic",
+      "type": "domain_topic",
+      "support": 20,
+      "properties": {
+        "content_skill": "bind the target domain to code-fit 7B/8B LLM agents and efficiency papers",
+        "tools": [
+          "paper_chip_reader",
+          "shortlist_parser"
+        ],
+        "gpu_required": false,
+        "success_criteria": "20 selected papers loaded from the fit-paper shortlist"
+      }
+    },
+    {
+      "id": "P1_recent_pattern",
+      "type": "pattern_extraction",
+      "support": 393,
+      "properties": {
+        "content_skill": "extract repeated field patterns across simulator agents, token budgets, decoding, and GPU systems",
+        "tools": [
+          "chip_feature_counter"
+        ],
+        "gpu_required": false,
+        "outputs": [
+          "feature_counts",
+          "feature_support"
+        ]
+      }
+    },
+    {
+      "id": "U1_unresolved_uncertainty",
+      "type": "uncertainty_detection",
+      "support": 78,
+      "properties": {
+        "content_skill": "detect what remains unknown when dynamic agent reliability and compute cost are considered jointly",
+        "tools": [
+          "feature_overlap_analyzer"
+        ],
+        "gpu_required": false,
+        "anti_reward": "do not call this a gap if it only restates that agents are expensive"
+      }
+    },
+    {
+      "id": "C1_missing_condition",
+      "type": "missing_condition",
+      "support": 103,
+      "properties": {
+        "content_skill": "name the missing experimental condition: task success under explicit token, latency, GPU, and state-verifier budgets",
+        "tools": [
+          "benchmark_condition_mapper"
+        ],
+        "gpu_required": false,
+        "required_dimensions": [
+          "task_success",
+          "tool_latency",
+          "gpu_time",
+          "state_verifier_reliability"
+        ]
+      }
+    },
+    {
+      "id": "M1_mechanism_hypothesis",
+      "type": "mechanism_hypothesis",
+      "support": 55,
+      "properties": {
+        "content_skill": "hypothesize that budget-aware planning changes when agents should read, speculate, commit, or stop decoding",
+        "tools": [
+          "near_miss_comparison",
+          "mechanism_builder"
+        ],
+        "gpu_required": false,
+        "mechanisms": [
+          "reversible speculation",
+          "state verification",
+          "token/cache policy",
+          "early commit"
+        ]
+      }
+    },
+    {
+      "id": "O1_target_object",
+      "type": "target_object",
+      "support": 133,
+      "properties": {
+        "content_skill": "target 7B/8B local tool agents running on RTX 4090-class hardware",
+        "tools": [
+          "model_selector",
+          "repo_selector"
+        ],
+        "gpu_required": true,
+        "hardware_target": "single or multi RTX 4090, 24GB per GPU",
+        "model_scope": [
+          "Qwen/Llama-class 7B or 8B",
+          "model-free simulator smoke tests"
+        ]
+      }
+    },
+    {
+      "id": "Q1_research_question",
+      "type": "question_generation",
+      "support": 5,
+      "properties": {
+        "content_skill": "generate answerable questions that connect gap, mechanism, target object, and GPU-feasible evidence",
+        "tools": [
+          "question_generator",
+          "question_ranker"
+        ],
+        "gpu_required": false,
+        "outputs": [
+          "ranked_research_questions.json"
+        ]
+      }
+    },
+    {
+      "id": "E1_possible_evidence",
+      "type": "experiment_path",
+      "support": 5,
+      "properties": {
+        "content_skill": "bind each question to a falsifiable experiment path",
+        "tools": [
+          "experiment_planner"
+        ],
+        "gpu_required": false,
+        "success_criteria": "each pursue_now question has benchmark, baseline, intervention, and metrics"
+      }
+    },
+    {
+      "id": "X0_gpu_probe",
+      "type": "gpu_availability_check",
+      "support": 4,
+      "properties": {
+        "content_skill": "verify actual local GPU hardware before claiming executable experiments",
+        "tools": [
+          "nvidia-smi"
+        ],
+        "tool_command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv,noheader",
+        "gpu_required": true,
+        "observed_gpus": [
+          {
+            "index": "0",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": "24564 MiB",
+            "memory_free": "24198 MiB",
+            "driver_version": "535.183.01"
+          },
+          {
+            "index": "1",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": "24564 MiB",
+            "memory_free": "24198 MiB",
+            "driver_version": "535.183.01"
+          },
+          {
+            "index": "2",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": "24564 MiB",
+            "memory_free": "23200 MiB",
+            "driver_version": "535.183.01"
+          },
+          {
+            "index": "3",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": "24564 MiB",
+            "memory_free": "24198 MiB",
+            "driver_version": "535.183.01"
+          }
+        ],
+        "success_criteria": "at least one GPU detected with enough free memory for 7B/8B or simulator runs"
+      }
+    },
+    {
+      "id": "X1_repo_readiness",
+      "type": "code_artifact_readiness",
+      "support": 5,
+      "properties": {
+        "content_skill": "check selected repositories have local code and install/readme anchors",
+        "tools": [
+          "filesystem_repo_probe",
+          "README_reader",
+          "dependency_manifest_reader"
+        ],
+        "gpu_required": false,
+        "repo_readiness": [
+          {
+            "name": "tau2-Bench",
+            "role": "conversational dual-control benchmark",
+            "repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/tau2-bench",
+            "exists": true,
+            "readiness_files": [
+              "README.md",
+              "pyproject.toml"
+            ],
+            "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+          },
+          {
+            "name": "SimuHome",
+            "role": "temporal smart-home simulator/verifier",
+            "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SimuHome",
+            "exists": true,
+            "readiness_files": [
+              "README.md",
+              "pyproject.toml"
+            ],
+            "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+          },
+          {
+            "name": "Gaia2",
+            "role": "dynamic/asynchronous agent benchmark",
+            "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments",
+            "exists": true,
+            "readiness_files": [
+              "README.md",
+              "docs/requirements.txt",
+              "gaia2-cli/README.md",
+              "pyproject.toml",
+              "requirements-dev.txt",
+              "requirements-gui.txt",
+              "requirements.txt"
+            ],
+            "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+          },
+          {
+            "name": "Speculative Actions",
+            "role": "latency-reducing reversible action speculation",
+            "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action",
+            "exists": true,
+            "readiness_files": [
+              "README.md",
+              "chess-game/README.md",
+              "chess-game/pyproject.toml",
+              "chess-game/requirements.txt",
+              "e-commerce/README.md",
+              "hotpotqa/README.md",
+              "hotpotqa/requirements.txt",
+              "os-tuning/README.md",
+              "os-tuning/pyproject.toml",
+              "os-tuning/requirements.txt"
+            ],
+            "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+          },
+          {
+            "name": "AgentFlow",
+            "role": "planner/executor/verifier agent stack",
+            "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/AgentFlow",
+            "exists": true,
+            "readiness_files": [
+              "README.md",
+              "agentflow/pyproject.toml",
+              "agentflow/requirements.txt",
+              "pyproject.toml"
+            ],
+            "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+          }
+        ],
+        "success_criteria": "core benchmark repos exist locally with README or dependency files"
+      }
+    },
+    {
+      "id": "X2_smoke_benchmark_plan",
+      "type": "experiment_smoke_plan",
+      "support": 5,
+      "properties": {
+        "content_skill": "define the first executable smoke tests before full experiments",
+        "tools": [
+          "python",
+          "pytest_or_repo_cli",
+          "benchmark_runner"
+        ],
+        "gpu_required": true,
+        "first_smoke_order": [
+          "SimuHome: run minimal simulator/verifier episode without model call",
+          "tau2-Bench: run CLI/import smoke and one tiny environment task",
+          "Speculative Actions: run reversible/read-only toy speculation task",
+          "Gaia2: run local scenario/parser/verifier smoke",
+          "AgentFlow: run import/config smoke before any model serving"
+        ],
+        "success_criteria": "one minimal task imports/runs per selected benchmark without full training"
+      }
+    },
+    {
+      "id": "X3_budget_metric_schema",
+      "type": "gpu_budget_metric_binding",
+      "support": 10,
+      "properties": {
+        "content_skill": "force every experiment to log success, tokens, latency, GPU memory, and tool/action costs",
+        "tools": [
+          "nvidia-smi",
+          "time",
+          "benchmark_logger"
+        ],
+        "gpu_required": true,
+        "metrics_to_log": [
+          "task_success",
+          "state_verifier_pass_rate",
+          "tool_calls",
+          "tokens_in",
+          "tokens_out",
+          "wall_clock_latency",
+          "gpu_memory_peak_mb",
+          "gpu_utilization_snapshot",
+          "wrong_commit_count",
+          "speculation_hit_rate"
+        ],
+        "success_criteria": "results include both task quality and compute/resource budget metrics"
+      }
+    },
+    {
+      "id": "X4_execution_verifier",
+      "type": "experiment_execution_gate",
+      "support": 1,
+      "properties": {
+        "content_skill": "prevent convergence from being declared as experiment-backed unless GPU and repo gates pass",
+        "tools": [
+          "control_verifier",
+          "gpu_probe_reader",
+          "artifact_checker"
+        ],
+        "gpu_required": true,
+        "execution_status": "execution_ready",
+        "success_criteria": "gpu_probe.json and gpu_execution_plan.json exist and report execution_ready"
+      }
+    },
+    {
+      "id": "S1_bounded_scope",
+      "type": "scope_control",
+      "support": 5,
+      "properties": {
+        "content_skill": "scope claims to 4090-feasible 7B/8B agent simulations, not full frontier training",
+        "tools": [
+          "claim_scope_auditor"
+        ],
+        "gpu_required": false,
+        "do_not_claim": [
+          "all selected papers fully run on 4090",
+          "full H100-scale training is reproduced"
+        ]
+      }
+    },
+    {
+      "id": "G4_gap_evidence_audit",
+      "type": "gap_verification",
+      "support": 20,
+      "properties": {
+        "content_skill": "audit whether prior work already covers the joint agent+GPU+budget gap",
+        "tools": [
+          "gap_evidence_audit",
+          "near_miss_table"
+        ],
+        "gpu_required": false,
+        "verdict_options": [
+          "supported_gap",
+          "partial_gap",
+          "already_solved",
+          "wrong_framing",
+          "unverified"
+        ]
+      }
+    },
+    {
+      "id": "V4_gap_verdict",
+      "type": "gap_verdict",
+      "support": 5,
+      "properties": {
+        "content_skill": "emit a bounded gap verdict that distinguishes paper-only support from experiment-backed support",
+        "tools": [
+          "control_verifier"
+        ],
+        "gpu_required": false,
+        "current_verdict": "partial_gap",
+        "upgrade_condition": "after repo smoke tests and at least one GPU-measured benchmark run complete"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "T1_domain_topic",
+      "target": "P1_recent_pattern",
+      "relation": "conditions"
+    },
+    {
+      "source": "P1_recent_pattern",
+      "target": "U1_unresolved_uncertainty",
+      "relation": "reveals"
+    },
+    {
+      "source": "U1_unresolved_uncertainty",
+      "target": "C1_missing_condition",
+      "relation": "narrows_to"
+    },
+    {
+      "source": "C1_missing_condition",
+      "target": "M1_mechanism_hypothesis",
+      "relation": "motivates"
+    },
+    {
+      "source": "M1_mechanism_hypothesis",
+      "target": "O1_target_object",
+      "relation": "binds"
+    },
+    {
+      "source": "O1_target_object",
+      "target": "Q1_research_question",
+      "relation": "forms"
+    },
+    {
+      "source": "Q1_research_question",
+      "target": "E1_possible_evidence",
+      "relation": "requires"
+    },
+    {
+      "source": "E1_possible_evidence",
+      "target": "X0_gpu_probe",
+      "relation": "requires_hardware_check"
+    },
+    {
+      "source": "X0_gpu_probe",
+      "target": "X1_repo_readiness",
+      "relation": "conditions"
+    },
+    {
+      "source": "X1_repo_readiness",
+      "target": "X2_smoke_benchmark_plan",
+      "relation": "enables"
+    },
+    {
+      "source": "X2_smoke_benchmark_plan",
+      "target": "X3_budget_metric_schema",
+      "relation": "measures"
+    },
+    {
+      "source": "X3_budget_metric_schema",
+      "target": "X4_execution_verifier",
+      "relation": "gates"
+    },
+    {
+      "source": "X4_execution_verifier",
+      "target": "S1_bounded_scope",
+      "relation": "bounds"
+    },
+    {
+      "source": "S1_bounded_scope",
+      "target": "G4_gap_evidence_audit",
+      "relation": "audits"
+    },
+    {
+      "source": "G4_gap_evidence_audit",
+      "target": "V4_gap_verdict",
+      "relation": "decides"
+    }
+  ],
+  "convergence": {
+    "loops": 4,
+    "status": "converged",
+    "criterion": "top question stable after feature aggregation, ranking, audit, and reframing",
+    "execution_gate": "execution_ready",
+    "top_question": "Q1_budgeted_state_verifying_agents"
+  }
+}

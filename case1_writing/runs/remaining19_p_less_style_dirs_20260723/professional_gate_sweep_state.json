@@ -1,0 +1,395 @@
+{
+  "artifact_kind": "professional_gate_sweep_state",
+  "attempted_gate_fingerprints": {
+    "CVPR2026_016_nuwa_class_specific_vit_pruning": "eb4387f1a4922fe8",
+    "CVPR2026_030_spark_vlm_articulated_reconstruction": "d699e62ca1107ebf",
+    "CVPR2026_052_seacache_spectral_evolution_cache": "d9061d7e068cb298",
+    "CVPR2026_053_sencache_sensitivity_aware_caching": "a5b2851373dada31",
+    "CVPR2026_065_trellis2_native_compact_structured_latents": "632e36ceb8c2a685",
+    "CVPR2026_067_rdvq_differentiable_vq_rate_distortion": "1fb91680a1f5ffdc",
+    "CVPR2026_103_atoken_unified_visual_tokenizer": "5bba600cd9041bf8",
+    "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope": "e8a465a1f3b546a3",
+    "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text": "a548ba8953b11470",
+    "ICLR2026_EQhUvWH78U_rational_information_seeking_agents": "f49f44994caf5caf",
+    "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging": "bcd4dca09a9bce61",
+    "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer": "0d03067fcb33e16b",
+    "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding": "117dfd145b2d8f05",
+    "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot": "e6fad0e7d2a99a9c",
+    "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation": "b3f96bdaeb78596a",
+    "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl": "e716c75c7937ee99",
+    "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image": "27569372715ae92c",
+    "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning": "8e49899f929767a4"
+  },
+  "attempted_paper_ids": [
+    "CVPR2026_030_spark_vlm_articulated_reconstruction",
+    "CVPR2026_065_trellis2_native_compact_structured_latents",
+    "CVPR2026_103_atoken_unified_visual_tokenizer",
+    "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+    "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+    "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+    "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+    "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+    "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+    "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+    "CVPR2026_016_nuwa_class_specific_vit_pruning",
+    "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+    "CVPR2026_052_seacache_spectral_evolution_cache",
+    "CVPR2026_053_sencache_sensitivity_aware_caching",
+    "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+    "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+    "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+    "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding"
+  ],
+  "attempts": [
+    {
+      "attempted": true,
+      "blocker_fingerprint": "d699e62ca1107ebf",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark/run_spark_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark",
+      "elapsed_seconds": 2.297,
+      "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+      "returncode": 0,
+      "short": "spark",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 7,\n  \"dag_signature\": \"f68e4ca3f8faa6a5\",\n  \"paper_id\": \"CVPR2026_030_spark_vlm_articulated_reconstruction\",\n  \"status\": \"blocked_by_placeholder_repo_unreleased_source_models_data_runtime_hardware_and_result_grid\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark/SPARK_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/spark/spark_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "632e36ceb8c2a685",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2/run_trellis2_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2",
+      "elapsed_seconds": 14.058,
+      "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+      "returncode": 0,
+      "short": "trellis2",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 7,\n  \"dag_signature\": \"708adab776bbd98e\",\n  \"paper_id\": \"CVPR2026_065_trellis2_native_compact_structured_latents\",\n  \"script_manifest_files\": 41,\n  \"status\": \"blocked_by_weights_datasets_runtime_hardware_and_result_grid_requirements\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2/TRELLIS2_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/trellis2/trellis2_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "5bba600cd9041bf8",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/run_atoken_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken",
+      "elapsed_seconds": 11.024,
+      "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+      "returncode": 0,
+      "short": "atoken",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 6,\n  \"dag_signature\": \"ae3bfe8ac298f3f1\",\n  \"paper_id\": \"CVPR2026_103_atoken_unified_visual_tokenizer\",\n  \"script_manifest_files\": 19,\n  \"status\": \"blocked_by_checkpoints_datasets_runtime_hardware_and_benchmark_grid_requirements\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/ATOKEN_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/atoken/atoken_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "e8a465a1f3b546a3",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope/run_mrrope_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/mrrope",
+      "elapsed_seconds": 7.142,
+      "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+      "returncode": 0,
+      "short": "mrrope",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"convergence_decision\": \"not_converged_explicit_professional_blockers_after_operational_preflight\",\n  \"loop1_required_dag_update\": [\n    \"Add supplement script matrix gate.\",\n    \"Add local 128K dataset and model checkpoint gate.\",\n    \"Add FlashAttention/dependency/runtime gate.\",\n    \"Add full result artifact gate for CSV/JSONL/figure outputs.\",\n    \"Keep imports and tiny context probes as support only.\"\n  ],\n  \"professional_package_ready\": false,\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_models_data\"\n  ],\n  \"status\": \"blocked_by_supplement_only_missing_datasets_models_runtime\",\n  \"unresolved_professional_debt\": [\n    {\n      \"detail\": \"queue reports GitHub repository not found; only OpenReview supplement archive is available\",\n      \"id\": \"source_distribution_supplement_only\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"required local dataset paths are missing: testset/pp-tokenized-llama3, testset/pp-tokenized-qwen2.5, testset/infity, testset/longbenchv2, testset/PaulGrahamEssays\",\n      \"id\": \"local_long_context_datasets_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"supplement scripts expect missing local checkpoints: models/llama3.1-8b-ins, models/qwen2.5-3b-ins\",\n      \"id\": \"local_model_checkpoints_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"supplement benchmark scripts use --flash-attention, but flash-attn is not installed\",\n      \"id\": \"flash_attention_2_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"missing supplement dependencies: jieba\",\n      \"id\": \"supplement_python_dependencies_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"all visible GPUs have less than 16GiB free while another full GPU run is active; 128K model eval should wait for a clean device\",\n      \"id\": \"no_idle_large_memory_gpu_for_128k_eval\",\n      \"status\": \"blocked\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "f49f44994caf5caf",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/run_battleship_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship",
+      "elapsed_seconds": 11.329,
+      "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+      "returncode": 0,
+      "short": "battleship",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 8,\n  \"blocker_ids\": [\n    \"battleship_python311_runtime_missing\",\n    \"battleship_unit_probe_failed_until_python311_runtime\",\n    \"battleship_runtime_dependencies_missing\",\n    \"battleship_openrouter_api_key_missing\",\n    \"battleship_required_data_artifacts_missing\",\n    \"battleship_raw_human_trajectory_files_incomplete\",\n    \"battleship_full_agent_benchmark_outputs_missing\",\n    \"battleship_result_shape_verifier_waiting_for_full_grid\"\n  ],\n  \"converged\": false,\n  \"dag_signature\": \"c6430e3580cd9018\",\n  \"paper_id\": \"ICLR2026_EQhUvWH78U_rational_information_seeking_agents\",\n  \"refresh_returncode\": 0,\n  \"status\": \"blocked_by_python311_openrouter_full_agent_benchmark_and_guess_who_artifacts\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/BATTLESHIP_SPECIALIZED_STATUS.md\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "bcd4dca09a9bce61",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/run_flashvid_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid",
+      "elapsed_seconds": 1.082,
+      "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+      "returncode": 0,
+      "short": "flashvid",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"status\": \"blocked_by_exact_professional_runtime_and_data_requirements\",\n  \"convergence_decision\": \"not_converged_explicit_professional_blockers_after_operational_preflight\",\n  \"professional_package_ready\": false,\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_models_data\"\n  ],\n  \"unresolved_professional_debt\": [\n    {\n      \"id\": \"main_grid_hardware_gpu_count\",\n      \"status\": \"blocked\",\n      \"detail\": \"official main scripts request --num_processes 8; visible GPUs=4\"\n    },\n    {\n      \"id\": \"main_grid_hardware_gpu_class\",\n      \"status\": \"blocked\",\n      \"detail\": \"paper/DAG expects NVIDIA A800 80G for main experiments; visible GPUs are not A800 80G\"\n    },\n    {\n      \"id\": \"efficiency_hardware_gpu_class\",\n      \"status\": \"blocked\",\n      \"detail\": \"paper/DAG expects a single NVIDIA A100 for efficiency traces; visible GPUs are not A100\"\n    },\n    {\n      \"id\": \"transformers_version_exactness\",\n      \"status\": \"blocked\",\n      \"detail\": \"README badge requires Transformers 4.57; environment has 4.51.2\"\n    },\n    {\n      \"id\": \"flash_attention_runtime\",\n      \"status\": \"blocked\",\n      \"detail\": \"official scripts request attn_implementation=flash_attention_2; flash-attn package is not installed\"\n    },\n    {\n      \"id\": \"videomme_video_cache\",\n      \"status\": \"blocked\",\n      \"detail\": \"playground/bench_efficiency.py expects ~/.cache/huggingface/videomme/data videos; no populated cache was found\"\n    }\n  ],\n  \"loop1_required_dag_update\": [\n    \"Add exact official-script execution matrix as a DAG node, not a generic VLM benchmark node.\",\n    \"Add hardware class gate: 8 x A800 80G for main LMMs-Eval grid and single A100 for efficiency traces.\",\n    \"Add VideoMME local video-cache gate for efficiency benchmark.\",\n    \"Add exact Transformers 4.57 and flash_attention_2 runtime gate.\",\n    \"Keep FLOPs reproduction as analytic support only, not result-table convergence evidence.\"\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "8e49899f929767a4",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/run_loongrl_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl",
+      "elapsed_seconds": 3.813,
+      "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+      "returncode": 0,
+      "short": "loongrl",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"convergence_decision\": \"not_converged_explicit_professional_blockers_after_operational_preflight\",\n  \"loop1_required_dag_update\": [\n    \"Add official long-context GRPO script matrix gate.\",\n    \"Add 16 A100 / 8 MI300X cluster hardware runtime gate.\",\n    \"Add released training data plus trained LoongRL checkpoint gate.\",\n    \"Add full benchmark raw-output and metric-shape artifact gate.\",\n    \"Keep repo import, compileall, and tiny training probes as support only.\"\n  ],\n  \"professional_package_ready\": false,\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_models_data\"\n  ],\n  \"status\": \"blocked_by_cluster_training_data_checkpoint_and_runtime_requirements\",\n  \"unresolved_professional_debt\": [\n    {\n      \"detail\": \"DAG/paper-shaped 7B training expects 16 A100 GPUs; visible A100 count=0, total visible GPUs=4\",\n      \"id\": \"loongrl_7b_training_gpu_topology\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"DAG/paper-shaped 14B training expects 8 MI300X GPUs; visible MI300X count=0\",\n      \"id\": \"loongrl_14b_training_gpu_topology\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"official long-context GRPO scripts request trainer.n_gpus_per_node=8; visible GPUs=4\",\n      \"id\": \"official_longcontext_script_gpu_count\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"official GRPO scripts reference missing local parquet train files: /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet\",\n      \"id\": \"official_longcontext_training_data_paths_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"no local LoongRL-7B or LoongRL-14B checkpoint directory was found for full benchmark evaluation\",\n      \"id\": \"trained_loongrl_checkpoints_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"missing installed runtime packages needed by paper-shaped veRL/Ray/vLLM/SGLang flow: ray, vllm, sglang, flash_attn, verl\",\n      \"id\": \"cluster_rl_runtime_packages_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"MI300X/ROCm runtime path is not visible from rocm-smi, so the 14B MI300X paper route cannot run here\",\n      \"id\": \"rocm_mi300x_runtime_unavailable\",\n      \"status\": \"blocked\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "e6fad0e7d2a99a9c",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/resolved_repo_batch/run_resolved_repo_professional_gates.py",
+        "--only",
+        "clot"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/resolved_repo_batch",
+      "elapsed_seconds": 4.396,
+      "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+      "returncode": 0,
+      "short": "clot",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"refresh_returncode\": 0,\n  \"requested\": [\n    \"clot\"\n  ],\n  \"results\": [\n    {\n      \"blocker_count\": 4,\n      \"blocker_ids\": [\n        \"a100_professional_gpu_trace_missing\",\n        \"clot_runtime_dependencies_missing\",\n        \"clot_required_artifacts_missing\",\n        \"clot_full_result_grid_missing\"\n      ],\n      \"converged\": false,\n      \"dag_signature\": \"3becb51f235d3b01\",\n      \"paper_id\": \"ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot\",\n      \"status\": \"blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid\",\n      \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/clot/CLOT_SPECIALIZED_STATUS.md\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "b3f96bdaeb78596a",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd/run_dto_kd_external_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd",
+      "elapsed_seconds": 0.895,
+      "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+      "returncode": 0,
+      "short": "dto_kd",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 7,\n  \"blocker_ids\": [\n    \"dto_kd_official_source_repository_missing\",\n    \"dto_kd_four_h100_hardware_missing\",\n    \"dto_kd_required_datasets_missing\",\n    \"dto_kd_teacher_student_checkpoints_missing\",\n    \"dto_kd_full_training_grid_missing\",\n    \"dto_kd_result_shape_verifier_waiting_for_tables_figures\",\n    \"dto_kd_reimplementation_required_but_unvalidated\"\n  ],\n  \"converged\": false,\n  \"dag_signature\": \"da619c1b5cec4ccc\",\n  \"paper_id\": \"ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation\",\n  \"refresh_returncode\": 0,\n  \"status\": \"blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/dto_kd/DTO_KD_SPECIALIZED_STATUS.md\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "e716c75c7937ee99",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/run_sparserl_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl",
+      "elapsed_seconds": 343.543,
+      "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+      "returncode": 0,
+      "short": "sparserl",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "se,\n    \"repo_paths_visible_only_if_encoded_in_dag\": true,\n    \"verifier_feedback_visible_only_as_encoded_dag_nodes\": true\n  },\n  \"convergence_decision\": \"blocked_not_converged\",\n  \"created_at_utc\": \"2026-07-23T18:59:25Z\",\n  \"loop1_required_dag_update\": [\n    \"Add an executor node that explicitly runs full-nnz SpMV compile/correctness/timing on released Matrix Market samples.\",\n    \"Add an exact-model gate for Qwen3/DeepSeek-R1/static-codegen baselines before any pass@k claim.\",\n    \"Add explicit SpMM debt because the official minimal repo executor is SpMV-only.\",\n    \"Add paper-hardware gate distinguishing local RTX 4090 support from V100/A100 paper traces.\",\n    \"Tell loop2 to keep running only after generated-policy, pass@k, baseline, and dataset-scale nodes are satisfied.\",\n    \"Promote deterministic CUDA rows only as executor sanity evidence, never as final result-shape convergence.\"\n  ],\n  \"model_policy_evidence\": {\n    \"attempted\": false,\n    \"has_generated_policy_run\": false,\n    \"returncode\": null,\n    \"timeout\": null\n  },\n  \"professional_package_ready\": false,\n  \"real_cuda_convergence_role\": \"support_only\",\n  \"real_cuda_executor_evidence\": {\n    \"attempted_rows\": 18,\n    \"correct_rows\": 12,\n    \"has_real_cuda_compile_run\": true\n  },\n  \"semantic_dag_nodes_checked\": [\n    {\n      \"content\": \"correct code generation misses execution latency; sparse matrix structure is dynamic input; compiler and runtime feedback is non-differentiable\",\n      \"id\": \"gap.paper_gap_claims\",\n      \"skill_role\": \"state the missing capability\",\n      \"type\": \"gap_hypothesis\"\n    },\n    {\n      \"content\": \"pretrained code LLM policy; sparse sinusoidal embedding; SFT alignment; PPO update; compiler/executor environment; hierarchical reward\",\n      \"id\": \"method.bind_gap_to_mechanism\",\n      \"skill_role\": \"make the solution answer the gap\",\n      \"type\": \"mechanism_binding\"\n    },\n    {\n      \"content\": \"benchmarks=SpMV; SpMM; metrics=pass@1; pass@5; pass@1000; compilation rate; GFLOPS; TFLOPS; speedup; protocols=compile generated CUDA; run functional check; time candidate kernel; compare with cuSPARSE or other baselines\",\n      \"id\": \"experiments.benchmark_metric_grid\",\n      \"skill_role\": \"design paper-shaped comparisons\",\n      \"type\": \"experiment_design\"\n    }\n  ],\n  \"status\": \"blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid\",\n  \"support_only_reasons\": [\n    \"deterministic CUDA rows use canonical hand-authored CSR/ELL/SELL kernels, not generated SparseRL policy samples\",\n    \"the local matrix inventory contains six released sample Matrix Market files, not the paper-scale SuiteSparse and Deep Learning Matrix Collection grids\",\n    \"the failed Qwen3-8B repo-minimal attempt is an OOM/runtime blocker, not pass@k policy evidence\",\n    \"no SpMM executor, cuSPARSE/TVM-S/static-codegen baseline table, or V100/A100 paper-hardware trace has been produced\"\n  ],\n  \"unresolved_professional_debt\": [\n    {\n      \"id\": \"generated_kernel_policy_grid\",\n      \"needed\": \"generated kernels from the pretrained/SFT/RL policy, not only hand-authored canonical kernels\",\n      \"status\": \"unresolved\"\n    },\n    {\n      \"id\": \"pass_at_k_metrics\",\n      \"needed\": \"pass@1/pass@5/pass@1000 or equivalent sampling-grid measurements\",\n      \"status\": \"unresolved\"\n    },\n    {\n      \"id\": \"paper_dataset_scale\",\n      \"needed\": \"SuiteSparse and Deep Learning Matrix Collection coverage, not only six released sample matrices\",\n      \"status\": \"unresolved\"\n    },\n    {\n      \"id\": \"spmm_and_table_grid\",\n      \"needed\": \"SpMM executor and comparison rows in addition to SpMV\",\n      \"status\": \"unresolved\"\n    },\n    {\n      \"id\": \"baseline_comparison\",\n      \"needed\": \"cuSPARSE/TVM-S/static LLM/codegen baselines with GFLOPS/TFLOPS/speedup\",\n      \"status\": \"unresolved\"\n    },\n    {\n      \"id\": \"paper_hardware_match\",\n      \"needed\": \"paper-stated V100/A100 traces; current run records local RTX 4090 only\",\n      \"status\": \"unresolved\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "302f275c359bc91d",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/run_nuwa_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa",
+      "elapsed_seconds": 18.615,
+      "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+      "returncode": 0,
+      "short": "nuwa",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 6,\n  \"dag_signature\": \"115952e11feaf2ad\",\n  \"paper_id\": \"CVPR2026_016_nuwa_class_specific_vit_pruning\",\n  \"status\": \"blocked_by_syntax_datasets_checkpoints_runtime_hardware_and_result_grid_requirements\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/NUWA_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/nuwa_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "43e0ab1bc076af35",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/run_rdvq_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq",
+      "elapsed_seconds": 6.466,
+      "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+      "returncode": 0,
+      "short": "rdvq",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "g19_p_less_style_dirs_20260723/specialized_runners/rdvq/environment.json\",\n  \"loop1_required_dag_update\": [\n    \"Add released checkpoint materialization gate.\",\n    \"Add Kodak/DIV2K/CLIC/FID-reference dataset gate.\",\n    \"Add estimated-rate plus real-bitstream script matrix gate.\",\n    \"Add metric/runtime/tensor-rANS support gate.\",\n    \"Add RTX 4090 / RTX Pro 6000 hardware trace gate.\",\n    \"Add full RD-curve, bitstream, timing/profile, and prefix-transfer artifact gate.\",\n    \"Keep release validation, syntax checks, README assets, and HF metadata as support only.\"\n  ],\n  \"model_data_manifest_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/model_data_manifest.json\",\n  \"professional_package_ready\": false,\n  \"script_manifest_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/official_script_manifest.json\",\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_repo_code\",\n    \"ops.resolve_models_data\",\n    \"ops.rdvq_checkpoint_gate\",\n    \"ops.compression_dataset_fid_gate\",\n    \"ops.estimated_real_bitstream_matrix\",\n    \"ops.full_rd_curve_artifact_gate\"\n  ],\n  \"status\": \"blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements\",\n  \"unresolved_professional_debt\": [\n    {\n      \"detail\": \"Paper/DAG expects a single RTX Pro 6000 for high-resolution DF2K fine-tuning; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.\",\n      \"id\": \"highres_finetune_hardware_class\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"No visible RTX 4090 has at least 12GB free and low utilization. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16189, 'memory_free_mib': 8028, 'utilization_gpu_pct': 100}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 85}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]\",\n      \"id\": \"clean_gpu_slot_for_full_rd_grid\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local released RDVQ checkpoint files: rdvq_testing_checkpoints\",\n      \"id\": \"rdvq_checkpoints_not_materialized\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local evaluation datasets/FID refs: kodak_image_folder, div2k_val_image_folder, clic2020_test_image_folder, fid_reference_tiles\",\n      \"id\": \"rd_curve_datasets_or_fid_refs_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing training/fine-tuning datasets for full author reproduction: imagenet_training_images, openimage_training_images, df2k_highres_images\",\n      \"id\": \"training_and_highres_finetune_datasets_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing required metric/codec runtime imports: cleanfid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja\",\n      \"id\": \"compression_metric_runtime_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"scripts/release_validate.sh did not complete cleanly; inspect environment.json for stdout/stderr.\",\n      \"id\": \"release_validation_support_check_failed\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"No complete forward/Real metrics artifacts for Kodak, DIV2K, CLIC, prefix-transfer sweeps, and RD tables were found.\",\n      \"id\": \"full_estimated_and_real_bitstream_result_grid_missing\",\n      \"status\": \"blocked\"\n    }\n  ],\n  \"updated_dag_signature\": \"d139ffd52efb76dd\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "eb4387f1a4922fe8",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/run_nuwa_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa",
+      "elapsed_seconds": 16.873,
+      "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+      "returncode": 0,
+      "short": "nuwa",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 6,\n  \"dag_signature\": \"115952e11feaf2ad\",\n  \"paper_id\": \"CVPR2026_016_nuwa_class_specific_vit_pruning\",\n  \"status\": \"blocked_by_syntax_datasets_checkpoints_runtime_hardware_and_result_grid_requirements\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/NUWA_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/nuwa_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "d9061d7e068cb298",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache/run_seacache_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache",
+      "elapsed_seconds": 3.524,
+      "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+      "returncode": 0,
+      "short": "seacache",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"convergence_decision\": \"not_converged_explicit_professional_blockers_after_operational_preflight\",\n  \"loop1_required_dag_update\": [\n    \"Add official diffusion model script matrix gate.\",\n    \"Add FLUX/Wan/Hunyuan loadable checkpoint gate.\",\n    \"Add DrawBench/VBench/CycleReward/CompressedVQA prompt and evaluator gate.\",\n    \"Add Blackwell/A100 latency/TFLOPs hardware gate.\",\n    \"Add full prompt-grid and threshold-sweep script parity gate.\",\n    \"Keep one-prompt demos, syntax checks, and unit checks as support only.\"\n  ],\n  \"professional_package_ready\": false,\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_repo_code\",\n    \"ops.resolve_models_data\"\n  ],\n  \"status\": \"blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements\",\n  \"unresolved_professional_debt\": [\n    {\n      \"detail\": \"Paper/DAG expects Blackwell RTX PRO 6000 and/or A100 traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.\",\n      \"id\": \"paper_hardware_class\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Visible GPUs are already memory-heavy or active; GPU 3 is occupied by the Prophet full run. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16417, 'memory_free_mib': 7796, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]\",\n      \"id\": \"clean_gpu_slot_for_diffusion_grid\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local paper-scale model checkpoints: flux_dev, wan21_t2v_13b, wan21_t2v_14b, wan21_i2v_14b_720p, hunyuanvideo\",\n      \"id\": \"required_diffusion_checkpoints_not_materialized\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local prompt/evaluator artifacts: drawbench_200_prompts, vbench_944_prompts_and_tooling, cyclereward_eval, compressedvqa_eval\",\n      \"id\": \"prompt_metric_artifacts_not_materialized\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing required runtime packages/imports: diffusers, calflops, vbench, lpips, wan, hyvideo\",\n      \"id\": \"diffusion_metric_runtime_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"SeaCache scripts need patch/wrapper before full grid: flux_prompt_grid_break, hunyuan_threshold_hardcoded\",\n      \"id\": \"official_script_parity_for_full_grid\",\n      \"status\": \"blocked\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "a5b2851373dada31",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache/run_sencache_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sencache",
+      "elapsed_seconds": 2.099,
+      "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+      "returncode": 0,
+      "short": "sencache",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"convergence_decision\": \"not_converged_explicit_professional_blockers_after_operational_preflight\",\n  \"loop1_required_dag_update\": [\n    \"Add sensitivity calibration or released .npz weight gate.\",\n    \"Add Wan2.1/CogVideoX/LTX script and checkpoint gates.\",\n    \"Add VBench/T2V-CompBench/LPIPS/PSNR/SSIM metric artifact gate.\",\n    \"Add GH200 or paper-approved video hardware runtime gate.\",\n    \"Add full cached/uncached result-grid gate.\",\n    \"Keep one-line prompt files, syntax checks, and metadata as support only.\"\n  ],\n  \"professional_package_ready\": false,\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_repo_code\",\n    \"ops.resolve_models_data\"\n  ],\n  \"status\": \"blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements\",\n  \"unresolved_professional_debt\": [\n    {\n      \"detail\": \"Paper/DAG expects GH200 supplement latency or comparable high-end video-diffusion traces; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.\",\n      \"id\": \"paper_hardware_class\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Visible GPUs are memory-heavy or active; GPU 3 is occupied by Prophet. High-use rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 100}]\",\n      \"id\": \"clean_gpu_slot_for_video_diffusion_grid\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local loadable checkpoints: wan21_t2v_13b, cogvideox_15_5b, ltx_video_091\",\n      \"id\": \"required_video_model_checkpoints_not_materialized\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local sensitivity .npz weights or calibration outputs: sensitivity_wan21, sensitivity_cogvid, sensitivity_ltx\",\n      \"id\": \"sensitivity_weights_or_calibration_outputs_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local calibration/prompt/evaluator artifacts: mixkit_calibration_videos, vbench_full_prompt_set, t2v_compbench_70_prompts\",\n      \"id\": \"calibration_prompt_metric_artifacts_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing required runtime packages/imports: diffusers, lpips, vbench, wan\",\n      \"id\": \"video_diffusion_metric_runtime_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"No raw cached/uncached Wan2.1, CogVideoX, and LTX outputs with VBench/LPIPS/PSNR/SSIM/latency/GFLOPs summaries were found.\",\n      \"id\": \"full_cached_uncached_result_grid_missing\",\n      \"status\": \"blocked\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "1fb91680a1f5ffdc",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/run_rdvq_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq",
+      "elapsed_seconds": 6.342,
+      "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+      "returncode": 0,
+      "short": "rdvq",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "ng19_p_less_style_dirs_20260723/specialized_runners/rdvq/environment.json\",\n  \"loop1_required_dag_update\": [\n    \"Add released checkpoint materialization gate.\",\n    \"Add Kodak/DIV2K/CLIC/FID-reference dataset gate.\",\n    \"Add estimated-rate plus real-bitstream script matrix gate.\",\n    \"Add metric/runtime/tensor-rANS support gate.\",\n    \"Add RTX 4090 / RTX Pro 6000 hardware trace gate.\",\n    \"Add full RD-curve, bitstream, timing/profile, and prefix-transfer artifact gate.\",\n    \"Keep release validation, syntax checks, README assets, and HF metadata as support only.\"\n  ],\n  \"model_data_manifest_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/model_data_manifest.json\",\n  \"professional_package_ready\": false,\n  \"script_manifest_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/rdvq/official_script_manifest.json\",\n  \"semantic_dag_nodes_checked\": [\n    \"gap.paper_gap_claims\",\n    \"method.bind_gap_to_mechanism\",\n    \"experiments.benchmark_metric_grid\",\n    \"experiments.system_surface\",\n    \"ops.resolve_repo_code\",\n    \"ops.resolve_models_data\",\n    \"ops.rdvq_checkpoint_gate\",\n    \"ops.compression_dataset_fid_gate\",\n    \"ops.estimated_real_bitstream_matrix\",\n    \"ops.full_rd_curve_artifact_gate\"\n  ],\n  \"status\": \"blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements\",\n  \"unresolved_professional_debt\": [\n    {\n      \"detail\": \"Paper/DAG expects a single RTX Pro 6000 for high-resolution DF2K fine-tuning; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.\",\n      \"id\": \"highres_finetune_hardware_class\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"No visible RTX 4090 has at least 12GB free and low utilization. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 17}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]\",\n      \"id\": \"clean_gpu_slot_for_full_rd_grid\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local released RDVQ checkpoint files: rdvq_testing_checkpoints\",\n      \"id\": \"rdvq_checkpoints_not_materialized\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing local evaluation datasets/FID refs: kodak_image_folder, div2k_val_image_folder, clic2020_test_image_folder, fid_reference_tiles\",\n      \"id\": \"rd_curve_datasets_or_fid_refs_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing training/fine-tuning datasets for full author reproduction: imagenet_training_images, openimage_training_images, df2k_highres_images\",\n      \"id\": \"training_and_highres_finetune_datasets_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"Missing required metric/codec runtime imports: cleanfid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja\",\n      \"id\": \"compression_metric_runtime_missing\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"scripts/release_validate.sh did not complete cleanly; inspect environment.json for stdout/stderr.\",\n      \"id\": \"release_validation_support_check_failed\",\n      \"status\": \"blocked\"\n    },\n    {\n      \"detail\": \"No complete forward/Real metrics artifacts for Kodak, DIV2K, CLIC, prefix-transfer sweeps, and RD tables were found.\",\n      \"id\": \"full_estimated_and_real_bitstream_result_grid_missing\",\n      \"status\": \"blocked\"\n    }\n  ],\n  \"updated_dag_signature\": \"d139ffd52efb76dd\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "a548ba8953b11470",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/run_prism_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism",
+      "elapsed_seconds": 37.734,
+      "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+      "returncode": 0,
+      "short": "prism",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 9,\n  \"blocker_ids\": [\n    \"two_l40_48gb_hardware_missing\",\n    \"clean_large_fmri_generation_gpu_missing\",\n    \"prism_runtime_dependencies_missing\",\n    \"prism_pipeline_artifacts_missing\",\n    \"nsd_access_gated_fmri_data_missing\",\n    \"bold5000_benchmark_artifacts_missing\",\n    \"generic_object_decoding_artifacts_missing\",\n    \"coco_qa_artifacts_missing\",\n    \"full_fmri_reconstruction_qa_metric_grid_missing\"\n  ],\n  \"converged\": false,\n  \"dag_signature\": \"4660083e62637f99\",\n  \"paper_id\": \"ICLR2026_88ZLp7xYxw_prism_fmri_structured_text\",\n  \"professional_ready\": false,\n  \"refresh_returncode\": 0,\n  \"status\": \"blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/PRISM_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/prism_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "27569372715ae92c",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/resolved_repo_batch/run_resolved_repo_professional_gates.py",
+        "--only",
+        "lpd"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/resolved_repo_batch",
+      "elapsed_seconds": 10.994,
+      "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+      "returncode": 0,
+      "short": "lpd",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"refresh_returncode\": 0,\n  \"requested\": [\n    \"lpd\"\n  ],\n  \"results\": [\n    {\n      \"blocker_count\": 5,\n      \"blocker_ids\": [\n        \"a100_bf16_latency_trace_missing\",\n        \"eight_gpu_training_or_cache_trace_missing\",\n        \"lpd_runtime_dependencies_missing\",\n        \"lpd_required_artifacts_missing\",\n        \"lpd_full_result_grid_missing\"\n      ],\n      \"converged\": false,\n      \"dag_signature\": \"c57987405f3af25c\",\n      \"paper_id\": \"ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image\",\n      \"status\": \"blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid\",\n      \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/lpd/LPD_SPECIALIZED_STATUS.md\"\n    }\n  ]\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "0d03067fcb33e16b",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/run_infotok_professional_gate.py"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok",
+      "elapsed_seconds": 6.854,
+      "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+      "returncode": 0,
+      "short": "infotok",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"blocker_count\": 6,\n  \"dag_signature\": \"15f3793bea1afd04\",\n  \"paper_id\": \"ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer\",\n  \"status\": \"blocked_by_hf_artifacts_runtime_hardware_training_scale_and_result_grid_requirements\",\n  \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/INFOTOK_SPECIALIZED_STATUS.md\",\n  \"verifier_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/infotok_specialized_verifier.json\"\n}\n",
+      "timeout": false
+    },
+    {
+      "attempted": true,
+      "blocker_fingerprint": "117dfd145b2d8f05",
+      "cmd": [
+        "/opt/conda/bin/python",
+        "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/resolved_repo_batch/run_resolved_repo_professional_gates.py",
+        "--only",
+        "hsd"
+      ],
+      "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/resolved_repo_batch",
+      "elapsed_seconds": 9.972,
+      "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+      "returncode": 0,
+      "short": "hsd",
+      "status": "professional_gate_executed",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"refresh_returncode\": 0,\n  \"requested\": [\n    \"hsd\"\n  ],\n  \"results\": [\n    {\n      \"blocker_count\": 5,\n      \"blocker_ids\": [\n        \"h20_96gb_or_h100_h200_hardware_missing\",\n        \"llama70b_multigpu_h20_grid_missing\",\n        \"hsd_runtime_dependencies_missing\",\n        \"hsd_source_compile_or_patch_check_failed\",\n        \"hsd_required_artifacts_missing\"\n      ],\n      \"converged\": false,\n      \"dag_signature\": \"7bd8fcbb20b0f928\",\n      \"paper_id\": \"ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding\",\n      \"status\": \"blocked_by_model_data_hardware_transformers_patch_and_full_hsd_result_grid\",\n      \"status_path\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/hsd/HSD_SPECIALIZED_STATUS.md\"\n    }\n  ]\n}\n",
+      "timeout": false
+    }
+  ],
+  "last_report_status": "executed_professional_gate_sweep",
+  "last_scope": "all",
+  "last_selected_before_cap_count": 0,
+  "updated_at_utc": "2026-07-24T13:35:32Z"
+}

@@ -1,0 +1,445 @@
+{
+  "blind_simulator_only_input": "paper_author_dag.json",
+  "created_at_utc": "2026-07-22T21:42:00Z",
+  "final_required_updates": [
+    {
+      "id": "update.require_full_generation_timing_pipeline",
+      "reason": "GPU sampler-only proxy did not exactly match the paper Table 3 timing shape discussed in the efficiency paragraph.",
+      "success_criteria": [
+        "run Mistral-7B generations on GSM8K/GPQA or paper-equivalent prompts",
+        "measure average sampling time per token for epsilon, eta, min-p, mirostat, top-p, and p-less",
+        "compare p-less seconds/token against paper Table 3 anchors"
+      ],
+      "verifier_detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation"
+    },
+    {
+      "id": "update.require_cpu_ram_profile_figures16_17_table15",
+      "reason": "Verifier cannot compare the simulation to the paper's CPU/RAM figures and appendix Table 15 without CPU-time and memory instrumentation.",
+      "success_criteria": [
+        "instrument top-p, min-p, and p-less CPU processing time during generation",
+        "record RAM usage with the same binning/aggregation used for Figures 16 and 17 where possible",
+        "emit a Table 15-style CPU time and RAM summary",
+        "compare p-less CPU time and RAM against top-p and min-p paper anchors"
+      ],
+      "verifier_detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy."
+    },
+    {
+      "id": "update.require_exact_table_reproduction_artifacts",
+      "reason": "Verifier cannot accept exact numeric paper-table, paragraph, or figure reproduction from proxy measurements alone.",
+      "success_criteria": [
+        "obtain or build the full benchmark harness",
+        "run Llama-2-7B, Mistral-7B, and Llama3-70B settings where feasible",
+        "recompute Table 1 AUC, Table 2 Writing Prompts win-rate, Table 3 sampling-time tables, Figure 2 curves, and Figures 16/17 CPU/RAM profiles",
+        "store raw generations, scoring scripts, seeds, and hardware logs"
+      ],
+      "verifier_detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked."
+    }
+  ],
+  "iterations": [
+    {
+      "blocking_status_signature": "f32585180b97e13c",
+      "dag_updates": [
+        {
+          "id": "update.require_full_generation_timing_pipeline",
+          "reason": "GPU sampler-only proxy did not exactly match the paper Table 3 timing shape discussed in the efficiency paragraph.",
+          "success_criteria": [
+            "run Mistral-7B generations on GSM8K/GPQA or paper-equivalent prompts",
+            "measure average sampling time per token for epsilon, eta, min-p, mirostat, top-p, and p-less",
+            "compare p-less seconds/token against paper Table 3 anchors"
+          ],
+          "verifier_detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation"
+        },
+        {
+          "id": "update.require_cpu_ram_profile_figures16_17_table15",
+          "reason": "Verifier cannot compare the simulation to the paper's CPU/RAM figures and appendix Table 15 without CPU-time and memory instrumentation.",
+          "success_criteria": [
+            "instrument top-p, min-p, and p-less CPU processing time during generation",
+            "record RAM usage with the same binning/aggregation used for Figures 16 and 17 where possible",
+            "emit a Table 15-style CPU time and RAM summary",
+            "compare p-less CPU time and RAM against top-p and min-p paper anchors"
+          ],
+          "verifier_detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy."
+        },
+        {
+          "id": "update.require_exact_table_reproduction_artifacts",
+          "reason": "Verifier cannot accept exact numeric paper-table, paragraph, or figure reproduction from proxy measurements alone.",
+          "success_criteria": [
+            "obtain or build the full benchmark harness",
+            "run Llama-2-7B, Mistral-7B, and Llama3-70B settings where feasible",
+            "recompute Table 1 AUC, Table 2 Writing Prompts win-rate, Table 3 sampling-time tables, Figure 2 curves, and Figures 16/17 CPU/RAM profiles",
+            "store raw generations, scoring scripts, seeds, and hardware logs"
+          ],
+          "verifier_detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked."
+        }
+      ],
+      "gpu_runtime_seconds": 10.45,
+      "iteration": 1,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_01/blind_workspace",
+        "dag_update_request": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_01/dag_update_request.json",
+        "iteration_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_01"
+      },
+      "stable_blocker_count": 1,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_contract",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=supported_by_dag_proxy; paper_gap=Sampling-based LLM decoding often needs task- and temperature-specific hyperparameter tuning. Fixed-threshold or single-token-relative truncation methods can degrade at high temper",
+            "name": "paper_paragraph_gap_claim",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=supported_by_dag_formula; method paragraph describes full-distribution second moment and p-lessnorm relaxation",
+            "name": "paper_paragraph_method_mechanism",
+            "status": "pass"
+          },
+          {
+            "detail": "sim_rank=['p_lessnorm', 'p_less', 'min_p', 'top_p'], paper_anchor=Mistral p-less/p-lessnorm top/near-top on CSQA/GSM8K/QASC with GPQA exception",
+            "name": "paper_table1_reasoning_auc_shape",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=supported_shape_only; figure evidence is accuracy-vs-temperature curve shape, not exact pixels",
+            "name": "paper_figure2_accuracy_temperature_curves",
+            "status": "pass"
+          },
+          {
+            "detail": "sim_rank=['p_lessnorm', 'p_less', 'min_p', 'top_p'], paper_anchor=Llama2 temp2 p-less 65.64 vs top-p/epsilon/eta 0.00",
+            "name": "paper_table2_high_temperature_writing_shape",
+            "status": "pass"
+          },
+          {
+            "detail": "paragraph claim says p-less remains relatively stable and superior at temperatures above 1.0.",
+            "name": "paper_paragraph_high_temperature_claim",
+            "status": "pass"
+          },
+          {
+            "detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation",
+            "name": "paper_table3_gpu_timing_shape",
+            "status": "partial"
+          },
+          {
+            "detail": "paragraph attributes efficiency to no sorting and no modal/default inclusion path; verifier still requires full generation timing for Table 3.",
+            "name": "paper_paragraph_efficiency_mechanism",
+            "status": "pass"
+          },
+          {
+            "detail": "Figure 15 code snippet corresponds to p_less threshold, mask, renormalize, multinomial sampler.",
+            "name": "paper_figure15_code_snippet",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy.",
+            "name": "paper_figures16_17_cpu_ram",
+            "status": "blocked"
+          },
+          {
+            "detail": "paper_anchor=top-p CPU/RAM {'cpu_ms': 0.79, 'ram_gb': 2.535}, min-p {'cpu_ms': 0.83, 'ram_gb': 2.545}, p-less {'cpu_ms': 0.62, 'ram_gb': 2.456}; not measured by current simulator",
+            "name": "paper_appendix_table15_cpu_ram_values",
+            "status": "blocked"
+          },
+          {
+            "detail": "DAG-generated GPU probe reports no p-less/p-lessnorm empty-candidate fallback.",
+            "name": "bounded_candidate_set",
+            "status": "pass"
+          },
+          {
+            "detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked.",
+            "name": "exact_numeric_reproduction",
+            "status": "blocked"
+          }
+        ],
+        "created_at_utc": "2026-07-22T21:41:49Z",
+        "evidence_channels": {
+          "appendix_artifacts": [
+            "Appendix C.11 CPU/RAM profiling",
+            "code snippet"
+          ],
+          "figures": [
+            "Figure 2",
+            "Figure 15",
+            "Figures 16 and 17"
+          ],
+          "paragraphs": [
+            "gap/motivation",
+            "method mechanism",
+            "high-temperature result discussion",
+            "efficiency explanation"
+          ],
+          "tables": [
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Table 15"
+          ]
+        },
+        "paper_numeric_anchors_compared_by_verifier_only": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 0.954545
+      }
+    },
+    {
+      "blocking_status_signature": "f32585180b97e13c",
+      "dag_updates": [
+        {
+          "id": "update.require_full_generation_timing_pipeline",
+          "reason": "GPU sampler-only proxy did not exactly match the paper Table 3 timing shape discussed in the efficiency paragraph.",
+          "success_criteria": [
+            "run Mistral-7B generations on GSM8K/GPQA or paper-equivalent prompts",
+            "measure average sampling time per token for epsilon, eta, min-p, mirostat, top-p, and p-less",
+            "compare p-less seconds/token against paper Table 3 anchors"
+          ],
+          "verifier_detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation"
+        },
+        {
+          "id": "update.require_cpu_ram_profile_figures16_17_table15",
+          "reason": "Verifier cannot compare the simulation to the paper's CPU/RAM figures and appendix Table 15 without CPU-time and memory instrumentation.",
+          "success_criteria": [
+            "instrument top-p, min-p, and p-less CPU processing time during generation",
+            "record RAM usage with the same binning/aggregation used for Figures 16 and 17 where possible",
+            "emit a Table 15-style CPU time and RAM summary",
+            "compare p-less CPU time and RAM against top-p and min-p paper anchors"
+          ],
+          "verifier_detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy."
+        },
+        {
+          "id": "update.require_exact_table_reproduction_artifacts",
+          "reason": "Verifier cannot accept exact numeric paper-table, paragraph, or figure reproduction from proxy measurements alone.",
+          "success_criteria": [
+            "obtain or build the full benchmark harness",
+            "run Llama-2-7B, Mistral-7B, and Llama3-70B settings where feasible",
+            "recompute Table 1 AUC, Table 2 Writing Prompts win-rate, Table 3 sampling-time tables, Figure 2 curves, and Figures 16/17 CPU/RAM profiles",
+            "store raw generations, scoring scripts, seeds, and hardware logs"
+          ],
+          "verifier_detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked."
+        }
+      ],
+      "gpu_runtime_seconds": 10.503,
+      "iteration": 2,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_02/blind_workspace",
+        "dag_update_request": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_02/dag_update_request.json",
+        "iteration_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_02"
+      },
+      "stable_blocker_count": 2,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_contract",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=supported_by_dag_proxy; paper_gap=Sampling-based LLM decoding often needs task- and temperature-specific hyperparameter tuning. Fixed-threshold or single-token-relative truncation methods can degrade at high temper",
+            "name": "paper_paragraph_gap_claim",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=supported_by_dag_formula; method paragraph describes full-distribution second moment and p-lessnorm relaxation",
+            "name": "paper_paragraph_method_mechanism",
+            "status": "pass"
+          },
+          {
+            "detail": "sim_rank=['p_lessnorm', 'p_less', 'min_p', 'top_p'], paper_anchor=Mistral p-less/p-lessnorm top/near-top on CSQA/GSM8K/QASC with GPQA exception",
+            "name": "paper_table1_reasoning_auc_shape",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=supported_shape_only; figure evidence is accuracy-vs-temperature curve shape, not exact pixels",
+            "name": "paper_figure2_accuracy_temperature_curves",
+            "status": "pass"
+          },
+          {
+            "detail": "sim_rank=['p_lessnorm', 'p_less', 'min_p', 'top_p'], paper_anchor=Llama2 temp2 p-less 65.64 vs top-p/epsilon/eta 0.00",
+            "name": "paper_table2_high_temperature_writing_shape",
+            "status": "pass"
+          },
+          {
+            "detail": "paragraph claim says p-less remains relatively stable and superior at temperatures above 1.0.",
+            "name": "paper_paragraph_high_temperature_claim",
+            "status": "pass"
+          },
+          {
+            "detail": "sim_rank=['epsilon', 'p_less', 'min_p', 'mirostat'], paper_anchor=p-less fastest at 0.01942 s/token; proxy is sampler-only not full Mistral generation",
+            "name": "paper_table3_gpu_timing_shape",
+            "status": "partial"
+          },
+          {
+            "detail": "paragraph attributes efficiency to no sorting and no modal/default inclusion path; verifier still requires full generation timing for Table 3.",
+            "name": "paper_paragraph_efficiency_mechanism",
+            "status": "pass"
+          },
+          {
+            "detail": "Figure 15 code snippet corresponds to p_less threshold, mask, renormalize, multinomial sampler.",
+            "name": "paper_figure15_code_snippet",
+            "status": "pass"
+          },
+          {
+            "detail": "sim=not_measured_requires_cpu_ram_instrumentation; paper Figures 16/17 and Table 15 require CPU-time/RAM instrumentation absent from current blind GPU proxy.",
+            "name": "paper_figures16_17_cpu_ram",
+            "status": "blocked"
+          },
+          {
+            "detail": "paper_anchor=top-p CPU/RAM {'cpu_ms': 0.79, 'ram_gb': 2.535}, min-p {'cpu_ms': 0.83, 'ram_gb': 2.545}, p-less {'cpu_ms': 0.62, 'ram_gb': 2.456}; not measured by current simulator",
+            "name": "paper_appendix_table15_cpu_ram_values",
+            "status": "blocked"
+          },
+          {
+            "detail": "DAG-generated GPU probe reports no p-less/p-lessnorm empty-candidate fallback.",
+            "name": "bounded_candidate_set",
+            "status": "pass"
+          },
+          {
+            "detail": "The blind GPU run does not use Llama2/Mistral/Llama3 benchmarks, prompts, raw generations, or the full evaluation pipeline, so exact paper-table numeric reproduction remains blocked.",
+            "name": "exact_numeric_reproduction",
+            "status": "blocked"
+          }
+        ],
+        "created_at_utc": "2026-07-22T21:42:00Z",
+        "evidence_channels": {
+          "appendix_artifacts": [
+            "Appendix C.11 CPU/RAM profiling",
+            "code snippet"
+          ],
+          "figures": [
+            "Figure 2",
+            "Figure 15",
+            "Figures 16 and 17"
+          ],
+          "paragraphs": [
+            "gap/motivation",
+            "method mechanism",
+            "high-temperature result discussion",
+            "efficiency explanation"
+          ],
+          "tables": [
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Table 15"
+          ]
+        },
+        "paper_numeric_anchors_compared_by_verifier_only": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 0.954545
+      }
+    }
+  ],
+  "status": "blocked_waiting_for_exact_artifacts_after_dag_update",
+  "target": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+  "total_gpu_runtime_seconds": 20.952
+}

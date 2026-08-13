@@ -1,0 +1,345 @@
+{
+  "cases": 4,
+  "mean_map_f1": 0.7735294117647058,
+  "mean_expected_f1": 0.7735294117647058,
+  "mean_node_brier": 0.33333333333333337,
+  "mean_posterior_entropy": 0.0,
+  "credible_90_mean_size": 1,
+  "credible_90_mean_best_f1": 0.7735294117647058,
+  "mean_best_available_f1": 0.986842105263158,
+  "per_case": [
+    {
+      "chip_id": "ICML2026_71127_coevol_no_neural_operator",
+      "map_proposal_id": "ICML2026_71127_coevol_no_neural_operator:p00",
+      "map_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "map_f1": 1.0,
+      "expected_f1": 1.0,
+      "node_brier": 0.0,
+      "posterior_entropy": -0.0,
+      "credible_90_size": 1,
+      "credible_90_best_f1": 1.0,
+      "best_available_f1": 1.0,
+      "posterior_weights": [
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p00",
+          "weight": 1.0,
+          "artifact_fit": 1.0
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p01",
+          "weight": 0.0,
+          "artifact_fit": 0.85138651
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p02",
+          "weight": 0.0,
+          "artifact_fit": 0.92070074
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p03",
+          "weight": 0.0,
+          "artifact_fit": 0.668691
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p04",
+          "weight": 0.0,
+          "artifact_fit": 0.84681888
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p05",
+          "weight": 0.0,
+          "artifact_fit": 0.69443289
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p06",
+          "weight": 0.0,
+          "artifact_fit": 0.79196275
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p07",
+          "weight": 0.0,
+          "artifact_fit": 0.698476
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p08",
+          "weight": 0.0,
+          "artifact_fit": 0.60778097
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p09",
+          "weight": 0.0,
+          "artifact_fit": 0.75915563
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p10",
+          "weight": 0.0,
+          "artifact_fit": 0.6072455
+        },
+        {
+          "proposal_id": "ICML2026_71127_coevol_no_neural_operator:p11",
+          "weight": 0.0,
+          "artifact_fit": 0.46150152
+        }
+      ]
+    },
+    {
+      "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+      "map_proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p00",
+      "map_nodes": [
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E3_quantitative_anchor"
+      ],
+      "map_f1": 0.588235294117647,
+      "expected_f1": 0.588235294117647,
+      "node_brier": 0.5833333333333334,
+      "posterior_entropy": -0.0,
+      "credible_90_size": 1,
+      "credible_90_best_f1": 0.588235294117647,
+      "best_available_f1": 0.9473684210526316,
+      "posterior_weights": [
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p00",
+          "weight": 1.0,
+          "artifact_fit": 0.45582074
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p01",
+          "weight": 0.0,
+          "artifact_fit": 0.74657836
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p02",
+          "weight": 0.0,
+          "artifact_fit": 0.88062159
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p03",
+          "weight": 0.0,
+          "artifact_fit": 0.71647069
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p04",
+          "weight": 0.0,
+          "artifact_fit": 0.6825799
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p05",
+          "weight": 0.0,
+          "artifact_fit": 0.85298718
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p06",
+          "weight": 0.0,
+          "artifact_fit": 0.72193814
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p07",
+          "weight": 0.0,
+          "artifact_fit": 0.61149764
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p08",
+          "weight": 0.0,
+          "artifact_fit": 0.4265737
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p09",
+          "weight": 0.0,
+          "artifact_fit": 0.41919974
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p10",
+          "weight": 0.0,
+          "artifact_fit": 0.4799971
+        },
+        {
+          "proposal_id": "CVPR2026_069_mdcs_moame_survival_prediction:p11",
+          "weight": 0.0,
+          "artifact_fit": 0.69767304
+        }
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71098_secnet_event_cloud",
+      "map_proposal_id": "ICML2026_71098_secnet_event_cloud:p00",
+      "map_nodes": [
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "P1_length_and_placement_prior"
+      ],
+      "map_f1": 0.7058823529411764,
+      "expected_f1": 0.7058823529411764,
+      "node_brier": 0.4166666666666667,
+      "posterior_entropy": -0.0,
+      "credible_90_size": 1,
+      "credible_90_best_f1": 0.7058823529411764,
+      "best_available_f1": 1.0,
+      "posterior_weights": [
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p00",
+          "weight": 1.0,
+          "artifact_fit": 0.64736006
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p01",
+          "weight": 0.0,
+          "artifact_fit": 1.0
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p02",
+          "weight": 0.0,
+          "artifact_fit": 0.80777632
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p03",
+          "weight": 0.0,
+          "artifact_fit": 1.0
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p04",
+          "weight": 0.0,
+          "artifact_fit": 0.71793407
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p05",
+          "weight": 0.0,
+          "artifact_fit": 0.74429841
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p06",
+          "weight": 0.0,
+          "artifact_fit": 0.54331217
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p07",
+          "weight": 0.0,
+          "artifact_fit": 0.84678881
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p08",
+          "weight": 0.0,
+          "artifact_fit": 0.78035467
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p09",
+          "weight": 0.0,
+          "artifact_fit": 0.75002942
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p10",
+          "weight": 0.0,
+          "artifact_fit": 0.34090498
+        },
+        {
+          "proposal_id": "ICML2026_71098_secnet_event_cloud:p11",
+          "weight": 0.0,
+          "artifact_fit": 0.49459489
+        }
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71192_context_parameter_updates",
+      "map_proposal_id": "ICML2026_71192_context_parameter_updates:p00",
+      "map_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff"
+      ],
+      "map_f1": 0.8,
+      "expected_f1": 0.8,
+      "node_brier": 0.3333333333333333,
+      "posterior_entropy": -0.0,
+      "credible_90_size": 1,
+      "credible_90_best_f1": 0.8,
+      "best_available_f1": 1.0,
+      "posterior_weights": [
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p00",
+          "weight": 1.0,
+          "artifact_fit": 0.79294902
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p01",
+          "weight": 0.0,
+          "artifact_fit": 0.83201694
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p02",
+          "weight": 0.0,
+          "artifact_fit": 0.56334371
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p03",
+          "weight": 0.0,
+          "artifact_fit": 0.9147413
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p04",
+          "weight": 0.0,
+          "artifact_fit": 1.0
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p05",
+          "weight": 0.0,
+          "artifact_fit": 0.77623831
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p06",
+          "weight": 0.0,
+          "artifact_fit": 0.85396439
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p07",
+          "weight": 0.0,
+          "artifact_fit": 0.62510579
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p08",
+          "weight": 0.0,
+          "artifact_fit": 0.68938885
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p09",
+          "weight": 0.0,
+          "artifact_fit": 0.54570571
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p10",
+          "weight": 0.0,
+          "artifact_fit": 0.54870311
+        },
+        {
+          "proposal_id": "ICML2026_71192_context_parameter_updates:p11",
+          "weight": 0.0,
+          "artifact_fit": 1.0
+        }
+      ]
+    }
+  ]
+}

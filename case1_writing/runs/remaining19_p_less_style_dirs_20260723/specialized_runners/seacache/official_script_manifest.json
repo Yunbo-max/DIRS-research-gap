@@ -1,0 +1,438 @@
+{
+  "artifact_kind": "seacache_official_script_manifest",
+  "created_at_utc": "2026-07-24T13:31:57Z",
+  "files": [
+    {
+      "exists": true,
+      "parsed": {
+        "declared_latency_rows": [],
+        "exists": true,
+        "line_count": 61,
+        "mentions_a100": false,
+        "mentions_blackwell": false,
+        "mentions_calflops": false,
+        "mentions_vbench": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/README.md",
+        "python_commands": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 3217
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "declared_latency_rows": [
+          [
+            "FLUX.1 [dev]",
+            "SeaCache (\u03b4 = 0.3)",
+            "SeaCache (\u03b4 = 0.6)"
+          ],
+          [
+            ":------------------------:",
+            ":----------------------:",
+            ":----------------------:"
+          ],
+          [
+            "18.0 s",
+            "9.4 s",
+            "6.4 s"
+          ]
+        ],
+        "exists": true,
+        "line_count": 50,
+        "mentions_a100": false,
+        "mentions_blackwell": true,
+        "mentions_calflops": false,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/README.md",
+        "python_commands": [
+          "python seacache_generate.py",
+          "python seacache_generate.py \\\n  --prompt \"a high-resolution photo of a panda drinking coffee in a cozy cafe\" \\\n  --output_dir ./outputs \\\n  --seacache_thresh 0.3"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/README.md",
+      "relative_path": "FLUX/README.md",
+      "size_bytes": 1358
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "breaks_after_first_prompt": true,
+        "cli_flags": [
+          "--dtype",
+          "--guidance",
+          "--height",
+          "--model_id",
+          "--model_name",
+          "--num_images_per_prompt",
+          "--num_inference_steps",
+          "--offload",
+          "--output_dir",
+          "--prompt",
+          "--prompt_file",
+          "--seacache_thresh",
+          "--seed",
+          "--width"
+        ],
+        "exists": true,
+        "hardcoded_thresholds": [],
+        "has_prompt_file_loop": true,
+        "hf_model_ids": [
+          "black-forest-labs/FLUX.1-dev",
+          "black-forest-labs/FLUX.1-schnell",
+          "usr/bin"
+        ],
+        "line_count": 468,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/seacache_generate.py",
+        "requires_checkpoint_dir": false,
+        "requires_hyvideo_import": false,
+        "requires_model_base": false,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_inference_steps"
+        ],
+        "threshold_fields": [
+          "seacache_thresh"
+        ],
+        "uses_diffusers_from_pretrained": true
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/seacache_generate.py",
+      "relative_path": "FLUX/seacache_generate.py",
+      "size_bytes": 17385
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "breaks_after_first_prompt": false,
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_thresholds": [],
+        "has_prompt_file_loop": false,
+        "hf_model_ids": [
+          "VP/DDPM-style"
+        ],
+        "line_count": 199,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/util_seacache.py",
+        "requires_checkpoint_dir": false,
+        "requires_hyvideo_import": false,
+        "requires_model_base": false,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_inference_steps"
+        ],
+        "threshold_fields": [],
+        "uses_diffusers_from_pretrained": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/FLUX/util_seacache.py",
+      "relative_path": "FLUX/util_seacache.py",
+      "size_bytes": 5740
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "declared_latency_rows": [
+          [
+            "Original",
+            "SeaCache (\u03b4 = 0.2)",
+            "SeaCache (\u03b4 = 0.35)"
+          ],
+          [
+            ":---------------:",
+            ":-----------------------------------:",
+            ":-----------------------------------:"
+          ],
+          [
+            "2 min 56 sec",
+            "1min 24 sec",
+            "56 sec"
+          ],
+          [
+            "Original",
+            "SeaCache (\u03b4 = 0.2)",
+            "SeaCache (\u03b4 = 0.4)"
+          ],
+          [
+            ":---------------:",
+            ":-----------------------------------:",
+            ":-----------------------------------:"
+          ],
+          [
+            "15 min 11 sec",
+            "7 min 31 sec",
+            "4 min 53 sec"
+          ],
+          [
+            "Original",
+            "SeaCache (\u03b4 = 0.2)",
+            "SeaCache (\u03b4 = 0.4)"
+          ],
+          [
+            ":---------------:",
+            ":-----------------------------------:",
+            ":-----------------------------------:"
+          ],
+          [
+            "51 min 13 sec",
+            "25 min 32 sec",
+            "16 min 30 sec"
+          ],
+          [
+            "<img src=\"https://github.com/user-attachments/assets/711cb5da-414a-4460-9ea0-d81f96faf881\" height=\"256\" />",
+            "<video src=\"https://github.com/user-attachments/assets/71ee1ace-9b9d-4e12-a0ae-0ec9b5f9d68d\" controls muted playsinline height=\"200\"></video>",
+            "*a basket of french fries in a fryer*"
+          ],
+          [
+            "Original",
+            "SeaCache (\u03b4 = 0.2)",
+            "SeaCache (\u03b4 = 0.4)"
+          ],
+          [
+            ":---------------:",
+            ":-----------------------------------:",
+            ":-----------------------------------:"
+          ],
+          [
+            "52 min 5 sec",
+            "25 min 3 sec",
+            "16 min 50 sec"
+          ]
+        ],
+        "exists": true,
+        "line_count": 87,
+        "mentions_a100": false,
+        "mentions_blackwell": true,
+        "mentions_calflops": false,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/README.md",
+        "python_commands": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/README.md",
+      "relative_path": "Wan2.1/README.md",
+      "size_bytes": 4076
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "breaks_after_first_prompt": false,
+        "cli_flags": [
+          "--base_seed",
+          "--ckpt_dir",
+          "--dit_fsdp",
+          "--frame_num",
+          "--image",
+          "--offload_model",
+          "--prompt",
+          "--prompt_extend_method",
+          "--prompt_extend_model",
+          "--prompt_extend_target_lang",
+          "--ring_size",
+          "--sample_guide_scale",
+          "--sample_shift",
+          "--sample_solver",
+          "--sample_steps",
+          "--save_file",
+          "--seacache_thresh",
+          "--size",
+          "--t5_cpu",
+          "--t5_fsdp",
+          "--task",
+          "--ulysses_size",
+          "--use_prompt_extend",
+          "--use_ret_steps"
+        ],
+        "exists": true,
+        "hardcoded_thresholds": [],
+        "has_prompt_file_loop": false,
+        "hf_model_ids": [
+          "examples/i2v_input.JPG"
+        ],
+        "line_count": 1039,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/seacache_generate.py",
+        "requires_checkpoint_dir": true,
+        "requires_hyvideo_import": false,
+        "requires_model_base": false,
+        "requires_wan_import": true,
+        "sample_step_fields": [
+          "sample_steps"
+        ],
+        "threshold_fields": [
+          "seacache_thresh"
+        ],
+        "uses_diffusers_from_pretrained": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/seacache_generate.py",
+      "relative_path": "Wan2.1/seacache_generate.py",
+      "size_bytes": 38896
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "breaks_after_first_prompt": false,
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_thresholds": [],
+        "has_prompt_file_loop": false,
+        "hf_model_ids": [
+          "VP/DDPM-style"
+        ],
+        "line_count": 199,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/util_seacache.py",
+        "requires_checkpoint_dir": false,
+        "requires_hyvideo_import": false,
+        "requires_model_base": false,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_inference_steps"
+        ],
+        "threshold_fields": [],
+        "uses_diffusers_from_pretrained": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/Wan2.1/util_seacache.py",
+      "relative_path": "Wan2.1/util_seacache.py",
+      "size_bytes": 5740
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "declared_latency_rows": [
+          [
+            "Original",
+            "SeaCache (\u03b4 = 0.2)",
+            "SeaCache (\u03b4 = 0.4)"
+          ],
+          [
+            ":---------------:",
+            ":-----------------------------------:",
+            ":-----------------------------------:"
+          ],
+          [
+            "5 min 32 sec",
+            "2 min 30 sec",
+            "1 min 40 sec"
+          ]
+        ],
+        "exists": true,
+        "line_count": 50,
+        "mentions_a100": false,
+        "mentions_blackwell": true,
+        "mentions_calflops": false,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/README.md",
+        "python_commands": [
+          "cd HunyuanVideo\n\npython3 seacache_generate.py \\\n    --video-size 720 1280 \\\n    --video-length 33 \\\n    --infer-steps 50 \\\n    --prompt \"A cat walks on the grass, realistic style.\" \\\n    --flow-reverse \\\n    --use-cpu-offload \\\n    --save-path ./seacache_results \\\n    --rel_l1_thresh 0.20"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/README.md",
+      "relative_path": "HunyuanVideo/README.md",
+      "size_bytes": 1884
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "breaks_after_first_prompt": false,
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_thresholds": [
+          "0.20"
+        ],
+        "has_prompt_file_loop": false,
+        "hf_model_ids": [],
+        "line_count": 267,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/seacache_generate.py",
+        "requires_checkpoint_dir": false,
+        "requires_hyvideo_import": true,
+        "requires_model_base": true,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "infer_steps"
+        ],
+        "threshold_fields": [
+          "rel_l1_thresh"
+        ],
+        "uses_diffusers_from_pretrained": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/seacache_generate.py",
+      "relative_path": "HunyuanVideo/seacache_generate.py",
+      "size_bytes": 10055
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "breaks_after_first_prompt": false,
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_thresholds": [],
+        "has_prompt_file_loop": false,
+        "hf_model_ids": [
+          "VP/DDPM-style"
+        ],
+        "line_count": 199,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/util_seacache.py",
+        "requires_checkpoint_dir": false,
+        "requires_hyvideo_import": false,
+        "requires_model_base": false,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_inference_steps"
+        ],
+        "threshold_fields": [],
+        "uses_diffusers_from_pretrained": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/HunyuanVideo/util_seacache.py",
+      "relative_path": "HunyuanVideo/util_seacache.py",
+      "size_bytes": 5740
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache/assets/overview.jpg",
+      "relative_path": "assets/overview.jpg",
+      "size_bytes": 146969
+    }
+  ],
+  "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "paper_shaped_execution_matrix": {
+    "accepted_loop2_evidence": "raw generated images/videos, reference outputs, metric logs, timing traces, GPU/CPU/RAM traces, prompt lists, seeds, thresholds, and table/figure summaries",
+    "baselines": [
+      "uncached full 50-step reference",
+      "SeaCache threshold sweeps",
+      "near-miss cache baselines from paper: TeaCache, TaylorSeer, ToCa, Delta-DiT, DiCache"
+    ],
+    "datasets": [
+      "200 DrawBench prompts",
+      "944 VBench prompts",
+      "CycleReward prompt/eval set",
+      "CompressedVQA reference/eval artifacts"
+    ],
+    "metrics": [
+      "latency",
+      "TFLOPs via Calflops",
+      "PSNR",
+      "LPIPS",
+      "SSIM",
+      "CycleReward average rank",
+      "VBench dimensions",
+      "CompressedVQA",
+      "refresh ratio"
+    ],
+    "models": [
+      "FLUX.1-dev",
+      "Wan2.1 1.3B",
+      "Wan2.1 14B",
+      "HunyuanVideo"
+    ]
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache",
+  "script_parity_findings": [
+    {
+      "detail": "FLUX/seacache_generate.py breaks after the first prompt, so the 200-prompt FLUX grid cannot run from the script as-is.",
+      "id": "flux_prompt_grid_break",
+      "status": "needs_patch_or_wrapper"
+    },
+    {
+      "detail": "HunyuanVideo/seacache_generate.py hard-codes rel_l1_thresh=0.20 even though README describes a threshold argument/sweep.",
+      "id": "hunyuan_threshold_hardcoded",
+      "status": "needs_patch_or_wrapper"
+    }
+  ]
+}

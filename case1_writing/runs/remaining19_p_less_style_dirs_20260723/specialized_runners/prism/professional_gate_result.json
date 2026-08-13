@@ -1,0 +1,104 @@
+{
+  "artifact_kind": "prism_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "README/DAG expect two NVIDIA L40 48GB GPUs; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "two_l40_48gb_hardware_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No clean >=45GB GPU is available for the paper-shaped PRISM reconstruction run. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16189, 'memory_free_mib': 8028, 'utilization_gpu_pct': 100, 'temperature_c': 79, 'power_w': 177.14}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98, 'temperature_c': 86, 'power_w': 320.22}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 77, 'power_w': 180.08}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 157.15}].",
+      "id": "clean_large_fmri_generation_gpu_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing imports for the released PRISM pipeline: diffusers, xformers, langchain_openai, lpips, retry",
+      "id": "prism_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing PRISM pipeline artifacts: best_keyword_json, train_structured_npz, val_structured_npz, test_structured_npz, trained_checkpoint_cur_best, generated_output_dir, metric_output_dir",
+      "id": "prism_pipeline_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No materialized NSD fMRI data for PRISM was found; README requires NSD terms/form access.",
+      "id": "nsd_access_gated_fmri_data_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No BOLD5000 benchmark artifacts found for PRISM verifier comparison.",
+      "id": "bold5000_benchmark_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No Generic Object Decoding benchmark artifacts found for PRISM verifier comparison.",
+      "id": "generic_object_decoding_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No PRISM-bound COCO image/caption/QA artifacts found for verifier comparison.",
+      "id": "coco_qa_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete PixCorr/SSIM/LPIPS/CLIP/Inception/QA/CKA/CCA/generalization-gap result grid was found.",
+      "id": "full_fmri_reconstruction_qa_metric_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no script syntax, API placeholder, or unrelated local artifact evidence is promoted",
+  "created_at_utc": "2026-07-24T13:33:21Z",
+  "next_full_execution_if_unblocked": [
+    "materialize NSD under accepted terms plus BOLD5000, GOD, COCO image/caption/QA assets",
+    "install exact PRISM environment including diffusers, xformers, langchain-openai, lpips, and retry",
+    "run keyword_generator.py and get_gpt_data.py/gpt_rewrite.py with an API key to produce best_keyword.json and structured response npz files",
+    "train train_model.py on PRISM splits and save fMRI-to-T5 checkpoint artifacts",
+    "run run_gen.py/gen_pipe.py to generate reconstructed images for NSD/BOLD5000/GOD",
+    "score PixCorr, SSIM, LPIPS, CLIP, Inception V3, Qwen2.5 QA, CKA, CCA, and generalization gap",
+    "run latent-space and module ablations, emit raw outputs, metrics, GPU traces, and compare to paper tables/figures/paragraphs"
+  ],
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "paper_shaped_outputs_required": [
+    "NSD, BOLD5000, and Generic Object Decoding fMRI reconstruction benchmarks",
+    "COCO-derived QA pairs and Qwen2.5 QA scoring on reconstructed images",
+    "five-run subject-averaged metrics and standardized fMRI train/test splits",
+    "PixCorr, SSIM, LPIPS, CLIP, Inception V3, QA accuracy, CKA, CCA, and generalization-gap outputs",
+    "latent-space ablation comparing CLIP text latent, LDM latent, and PRISM structured text",
+    "module ablation for attribute/relationship search and object-centric cross-attention generation",
+    "raw reconstructed images, prompts/structured descriptions, checkpoints, metric JSON/CSV, and GPU traces"
+  ],
+  "paper_title": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI",
+  "professional_package_ready": false,
+  "status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+  "support_checks": {
+    "candidate_artifact_families_checked": [
+      "bold5000_artifacts",
+      "checkpoint_artifacts",
+      "coco_artifacts",
+      "generated_images",
+      "god_artifacts",
+      "keyword_artifacts",
+      "metric_outputs",
+      "nsd_artifacts",
+      "structured_text_npz"
+    ],
+    "gpu_rows_checked": 4,
+    "openai_api_key_present": true,
+    "prism_bound_candidate_counts": {
+      "bold5000_artifacts": 0,
+      "checkpoint_artifacts": 0,
+      "coco_artifacts": 0,
+      "generated_images": 0,
+      "god_artifacts": 0,
+      "keyword_artifacts": 0,
+      "metric_outputs": 0,
+      "nsd_artifacts": 0,
+      "structured_text_npz": 0
+    },
+    "prism_metric_grid_candidate_count": 0,
+    "quick_start_syntax_passed": true,
+    "repo_discovered_and_encoded": true,
+    "source_compile_passed": true
+  }
+}

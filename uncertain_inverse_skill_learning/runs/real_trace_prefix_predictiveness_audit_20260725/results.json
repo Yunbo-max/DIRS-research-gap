@@ -1,0 +1,720 @@
+{
+  "schema_version": "dirs.real_trace_prefix_predictiveness_audit.v1",
+  "status": "observational_in_sample_audit",
+  "config": {
+    "permutations": 10000,
+    "seed": 20260725,
+    "holdout_used": false
+  },
+  "data_summary": {
+    "paper_count": 19,
+    "unique_path_count": 6,
+    "path_support_min": 1,
+    "path_support_max": 6,
+    "initial_score_mean": 0.8900000000000002,
+    "initial_score_std": 0.027284509239574845,
+    "final_score_mean": 0.9556315789473684,
+    "final_score_std": 0.01188467980364166,
+    "final_score_min": 0.94,
+    "final_score_max": 0.98,
+    "final_scores_at_least_0_94": 19,
+    "repair_gain_mean": 0.06563157894736837,
+    "repair_gain_std": 0.018139001951950545,
+    "unsupported_claims_after_repair_total": 0
+  },
+  "path_groups": [
+    {
+      "path_id": "path_01",
+      "support": 6,
+      "mean_final_score": 0.9546666666666667,
+      "final_score_std": 0.00993310961716757,
+      "mean_repair_gain": 0.06633333333333329,
+      "chip_ids": [
+        "CVPR2026_136_segmote_token_moe_medical_segmentation",
+        "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+        "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+        "CVPR2026_113_sat_structural_action_transformer",
+        "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+        "ICML2026_71127_coevol_no_neural_operator"
+      ]
+    },
+    {
+      "path_id": "path_02",
+      "support": 4,
+      "mean_final_score": 0.9612499999999999,
+      "final_score_std": 0.008539125638299673,
+      "mean_repair_gain": 0.05874999999999994,
+      "chip_ids": [
+        "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+        "ICML2026_71039_discoformer_density_score_transformers",
+        "ICML2026_71192_context_parameter_updates",
+        "ICML2026_71193_focus_dilution_attention"
+      ]
+    },
+    {
+      "path_id": "path_03",
+      "support": 3,
+      "mean_final_score": 0.9466666666666667,
+      "final_score_std": 0.011547005383792525,
+      "mean_repair_gain": 0.07333333333333329,
+      "chip_ids": [
+        "CVPR2026_069_mdcs_moame_survival_prediction",
+        "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+        "ICML2026_71083_any_order_gpt_mdm"
+      ]
+    },
+    {
+      "path_id": "path_04",
+      "support": 3,
+      "mean_final_score": 0.9613333333333333,
+      "final_score_std": 0.0023094010767585054,
+      "mean_repair_gain": 0.061333333333333274,
+      "chip_ids": [
+        "ICML2026_71133_rational_transductors",
+        "ICML2026_71098_secnet_event_cloud",
+        "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure"
+      ]
+    },
+    {
+      "path_id": "path_05",
+      "support": 2,
+      "mean_final_score": 0.94,
+      "final_score_std": 0.0,
+      "mean_repair_gain": 0.08999999999999997,
+      "chip_ids": [
+        "ICLR2026_ZBj3Qp1bYg_ebt",
+        "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner"
+      ]
+    },
+    {
+      "path_id": "path_06",
+      "support": 1,
+      "mean_final_score": 0.98,
+      "final_score_std": 0.0,
+      "mean_repair_gain": 0.030000000000000027,
+      "chip_ids": [
+        "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete"
+      ]
+    }
+  ],
+  "prediction_robustness": {
+    "final_leave_one_case_out": {
+      "score_key": "final_score",
+      "exclusion": "same_case_only",
+      "global_mean_mae": 0.010561403508771917,
+      "path_mean_mae": 0.008666081871345018,
+      "global_mean_mse": 0.00014909259259259197,
+      "path_mean_mse": 0.0001255221897335932,
+      "path_model_mae_improvement": 0.0018953216374268996,
+      "path_model_mse_improvement": 2.3570402858998757e-05,
+      "global_fallback_count_for_missing_path": 1,
+      "predictions": [
+        {
+          "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+          "batch": 1,
+          "path_id": "path_03",
+          "observed_score": 0.94,
+          "global_prediction": 0.9564999999999999,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+          "batch": 1,
+          "path_id": "path_01",
+          "observed_score": 0.96,
+          "global_prediction": 0.9553888888888888,
+          "path_prediction": 0.9536,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+          "batch": 1,
+          "path_id": "path_01",
+          "observed_score": 0.95,
+          "global_prediction": 0.9559444444444445,
+          "path_prediction": 0.9555999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_ZBj3Qp1bYg_ebt",
+          "batch": 1,
+          "path_id": "path_05",
+          "observed_score": 0.94,
+          "global_prediction": 0.9564999999999999,
+          "path_prediction": 0.94,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+          "batch": 2,
+          "path_id": "path_01",
+          "observed_score": 0.94,
+          "global_prediction": 0.9564999999999999,
+          "path_prediction": 0.9576,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+          "batch": 2,
+          "path_id": "path_05",
+          "observed_score": 0.94,
+          "global_prediction": 0.9564999999999999,
+          "path_prediction": 0.94,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+          "batch": 2,
+          "path_id": "path_03",
+          "observed_score": 0.94,
+          "global_prediction": 0.9564999999999999,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+          "batch": 2,
+          "path_id": "path_02",
+          "observed_score": 0.95,
+          "global_prediction": 0.9559444444444445,
+          "path_prediction": 0.965,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete",
+          "batch": 3,
+          "path_id": "path_06",
+          "observed_score": 0.98,
+          "global_prediction": 0.9542777777777778,
+          "path_prediction": 0.9542777777777778,
+          "path_used_global_fallback": true
+        },
+        {
+          "chip_id": "CVPR2026_113_sat_structural_action_transformer",
+          "batch": 3,
+          "path_id": "path_01",
+          "observed_score": 0.96,
+          "global_prediction": 0.9553888888888888,
+          "path_prediction": 0.9536,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+          "batch": 3,
+          "path_id": "path_01",
+          "observed_score": 0.95,
+          "global_prediction": 0.9559444444444445,
+          "path_prediction": 0.9555999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71083_any_order_gpt_mdm",
+          "batch": 3,
+          "path_id": "path_03",
+          "observed_score": 0.96,
+          "global_prediction": 0.9553888888888888,
+          "path_prediction": 0.94,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71127_coevol_no_neural_operator",
+          "batch": 4,
+          "path_id": "path_01",
+          "observed_score": 0.968,
+          "global_prediction": 0.9549444444444445,
+          "path_prediction": 0.952,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71039_discoformer_density_score_transformers",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.96,
+          "global_prediction": 0.9553888888888888,
+          "path_prediction": 0.9616666666666666,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71192_context_parameter_updates",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.97,
+          "global_prediction": 0.9548333333333334,
+          "path_prediction": 0.9583333333333334,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71193_focus_dilution_attention",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.965,
+          "global_prediction": 0.9551111111111111,
+          "path_prediction": 0.96,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71133_rational_transductors",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.96,
+          "global_prediction": 0.9553888888888888,
+          "path_prediction": 0.962,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71098_secnet_event_cloud",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.96,
+          "global_prediction": 0.9553888888888888,
+          "path_prediction": 0.962,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.964,
+          "global_prediction": 0.9551666666666667,
+          "path_prediction": 0.96,
+          "path_used_global_fallback": false
+        }
+      ],
+      "paired_mae_improvement_bootstrap_95pct_interval": [
+        -0.0013017543859648567,
+        0.005177192982456148
+      ],
+      "paired_mae_improvement_sign_flip_pvalue_one_sided": 0.1377862213778622
+    },
+    "final_leave_one_batch_out": {
+      "score_key": "final_score",
+      "exclusion": "same_batch_and_same_case",
+      "global_mean_mae": 0.01190065789473685,
+      "path_mean_mae": 0.010532236842105252,
+      "global_mean_mse": 0.00018530568987573225,
+      "path_mean_mse": 0.00016059995888157897,
+      "path_model_mae_improvement": 0.0013684210526315986,
+      "path_model_mse_improvement": 2.4705730994153285e-05,
+      "global_fallback_count_for_missing_path": 4,
+      "predictions": [
+        {
+          "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+          "batch": 1,
+          "path_id": "path_03",
+          "observed_score": 0.94,
+          "global_prediction": 0.9578000000000002,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+          "batch": 1,
+          "path_id": "path_01",
+          "observed_score": 0.96,
+          "global_prediction": 0.9578000000000002,
+          "path_prediction": 0.9544999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+          "batch": 1,
+          "path_id": "path_01",
+          "observed_score": 0.95,
+          "global_prediction": 0.9578000000000002,
+          "path_prediction": 0.9544999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_ZBj3Qp1bYg_ebt",
+          "batch": 1,
+          "path_id": "path_05",
+          "observed_score": 0.94,
+          "global_prediction": 0.9578000000000002,
+          "path_prediction": 0.94,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+          "batch": 2,
+          "path_id": "path_01",
+          "observed_score": 0.94,
+          "global_prediction": 0.9591333333333335,
+          "path_prediction": 0.9576,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+          "batch": 2,
+          "path_id": "path_05",
+          "observed_score": 0.94,
+          "global_prediction": 0.9591333333333335,
+          "path_prediction": 0.94,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+          "batch": 2,
+          "path_id": "path_03",
+          "observed_score": 0.94,
+          "global_prediction": 0.9591333333333335,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+          "batch": 2,
+          "path_id": "path_02",
+          "observed_score": 0.95,
+          "global_prediction": 0.9591333333333335,
+          "path_prediction": 0.965,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete",
+          "batch": 3,
+          "path_id": "path_06",
+          "observed_score": 0.98,
+          "global_prediction": 0.9538,
+          "path_prediction": 0.9538,
+          "path_used_global_fallback": true
+        },
+        {
+          "chip_id": "CVPR2026_113_sat_structural_action_transformer",
+          "batch": 3,
+          "path_id": "path_01",
+          "observed_score": 0.96,
+          "global_prediction": 0.9538,
+          "path_prediction": 0.9544999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+          "batch": 3,
+          "path_id": "path_01",
+          "observed_score": 0.95,
+          "global_prediction": 0.9538,
+          "path_prediction": 0.9544999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71083_any_order_gpt_mdm",
+          "batch": 3,
+          "path_id": "path_03",
+          "observed_score": 0.96,
+          "global_prediction": 0.9538,
+          "path_prediction": 0.94,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71127_coevol_no_neural_operator",
+          "batch": 4,
+          "path_id": "path_01",
+          "observed_score": 0.968,
+          "global_prediction": 0.9529333333333335,
+          "path_prediction": 0.952,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71039_discoformer_density_score_transformers",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.96,
+          "global_prediction": 0.9529333333333335,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71192_context_parameter_updates",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.97,
+          "global_prediction": 0.9529333333333335,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71193_focus_dilution_attention",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.965,
+          "global_prediction": 0.9529333333333335,
+          "path_prediction": 0.95,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71133_rational_transductors",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.96,
+          "global_prediction": 0.9545625000000001,
+          "path_prediction": 0.9545625000000001,
+          "path_used_global_fallback": true
+        },
+        {
+          "chip_id": "ICML2026_71098_secnet_event_cloud",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.96,
+          "global_prediction": 0.9545625000000001,
+          "path_prediction": 0.9545625000000001,
+          "path_used_global_fallback": true
+        },
+        {
+          "chip_id": "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.964,
+          "global_prediction": 0.9545625000000001,
+          "path_prediction": 0.9545625000000001,
+          "path_used_global_fallback": true
+        }
+      ],
+      "paired_mae_improvement_bootstrap_95pct_interval": [
+        -0.0018421052631579081,
+        0.004968421052631639
+      ],
+      "paired_mae_improvement_sign_flip_pvalue_one_sided": 0.21737826217378262
+    },
+    "initial_leave_one_case_out": {
+      "score_key": "initial_score",
+      "exclusion": "same_case_only",
+      "global_mean_mae": 0.023333333333333334,
+      "path_mean_mae": 0.02094736842105262,
+      "global_mean_mse": 0.0007858024691358008,
+      "path_mean_mse": 0.0006562456140350861,
+      "path_model_mae_improvement": 0.0023859649122807136,
+      "path_model_mse_improvement": 0.0001295568551007147,
+      "global_fallback_count_for_missing_path": 1,
+      "predictions": [
+        {
+          "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+          "batch": 1,
+          "path_id": "path_03",
+          "observed_score": 0.86,
+          "global_prediction": 0.8916666666666667,
+          "path_prediction": 0.88,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+          "batch": 1,
+          "path_id": "path_01",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.89,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+          "batch": 1,
+          "path_id": "path_01",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.89,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_ZBj3Qp1bYg_ebt",
+          "batch": 1,
+          "path_id": "path_05",
+          "observed_score": 0.86,
+          "global_prediction": 0.8916666666666667,
+          "path_prediction": 0.84,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+          "batch": 2,
+          "path_id": "path_01",
+          "observed_score": 0.86,
+          "global_prediction": 0.8916666666666667,
+          "path_prediction": 0.8939999999999999,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+          "batch": 2,
+          "path_id": "path_05",
+          "observed_score": 0.84,
+          "global_prediction": 0.8927777777777778,
+          "path_prediction": 0.86,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+          "batch": 2,
+          "path_id": "path_03",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.87,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+          "batch": 2,
+          "path_id": "path_02",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.91,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete",
+          "batch": 3,
+          "path_id": "path_06",
+          "observed_score": 0.95,
+          "global_prediction": 0.8866666666666668,
+          "path_prediction": 0.8866666666666668,
+          "path_used_global_fallback": true
+        },
+        {
+          "chip_id": "CVPR2026_113_sat_structural_action_transformer",
+          "batch": 3,
+          "path_id": "path_01",
+          "observed_score": 0.93,
+          "global_prediction": 0.8877777777777779,
+          "path_prediction": 0.8800000000000001,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+          "batch": 3,
+          "path_id": "path_01",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.89,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71083_any_order_gpt_mdm",
+          "batch": 3,
+          "path_id": "path_03",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.87,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71127_coevol_no_neural_operator",
+          "batch": 4,
+          "path_id": "path_01",
+          "observed_score": 0.9,
+          "global_prediction": 0.8894444444444445,
+          "path_prediction": 0.8860000000000001,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71039_discoformer_density_score_transformers",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.91,
+          "global_prediction": 0.8888888888888891,
+          "path_prediction": 0.9,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71192_context_parameter_updates",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.92,
+          "global_prediction": 0.8883333333333335,
+          "path_prediction": 0.8966666666666666,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71193_focus_dilution_attention",
+          "batch": 4,
+          "path_id": "path_02",
+          "observed_score": 0.9,
+          "global_prediction": 0.8894444444444445,
+          "path_prediction": 0.9033333333333333,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71133_rational_transductors",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.88,
+          "global_prediction": 0.8905555555555557,
+          "path_prediction": 0.91,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICML2026_71098_secnet_event_cloud",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.91,
+          "global_prediction": 0.8888888888888891,
+          "path_prediction": 0.895,
+          "path_used_global_fallback": false
+        },
+        {
+          "chip_id": "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+          "batch": 5,
+          "path_id": "path_04",
+          "observed_score": 0.91,
+          "global_prediction": 0.8888888888888891,
+          "path_prediction": 0.895,
+          "path_used_global_fallback": false
+        }
+      ],
+      "paired_mae_improvement_bootstrap_95pct_interval": [
+        -0.0026959064327485177,
+        0.0074444444444444115
+      ],
+      "paired_mae_improvement_sign_flip_pvalue_one_sided": 0.19318068193180682
+    },
+    "status": "post_hoc_observational_robustness_check"
+  },
+  "shared_prefix_analysis": {
+    "paper_pair_count": 171,
+    "pearson_shared_prefix_vs_negative_absolute_score_difference": 0.12660623746780406,
+    "permutation_pvalue_two_sided": 0.08759124087591241,
+    "interpretation": "positive means longer shared prefixes coincide with more similar scores"
+  },
+  "optional_node_associations": [
+    {
+      "node": "C1_domain_context",
+      "present_count": 7,
+      "absent_count": 12,
+      "mean_present_final_score": 0.9578571428571427,
+      "mean_absent_final_score": 0.9543333333333334,
+      "observed_mean_difference": 0.0035238095238093736,
+      "permutation_pvalue_two_sided": 0.5329467053294671,
+      "causal_interpretation_allowed": false
+    },
+    {
+      "node": "M2_efficiency_or_theory_detail",
+      "present_count": 14,
+      "absent_count": 5,
+      "mean_present_final_score": 0.9597857142857142,
+      "mean_absent_final_score": 0.944,
+      "observed_mean_difference": 0.015785714285714292,
+      "permutation_pvalue_two_sided": 0.011398860113988602,
+      "causal_interpretation_allowed": false
+    },
+    {
+      "node": "E3_quantitative_anchor",
+      "present_count": 15,
+      "absent_count": 4,
+      "mean_present_final_score": 0.9528666666666668,
+      "mean_absent_final_score": 0.966,
+      "observed_mean_difference": -0.01313333333333322,
+      "permutation_pvalue_two_sided": 0.05849415058494151,
+      "causal_interpretation_allowed": false
+    }
+  ],
+  "identifiability": {
+    "same_paper_counterfactual_paths_per_case": 0,
+    "repeated_rollouts_per_paper_path": 0,
+    "independent_blind_evaluator_replicates": 0,
+    "training_target_visible_during_repair": true,
+    "within_paper_deception_rate_estimable": false,
+    "causal_node_or_edge_value_estimable": false
+  },
+  "adequacy_decision": {
+    "enable_real_task_mcts_from_this_dataset": false,
+    "reason": "one realized path per paper, no repeated conditional rollouts, in-sample repaired scores, sparse path groups, and no within-paper counterfactual utility"
+  }
+}

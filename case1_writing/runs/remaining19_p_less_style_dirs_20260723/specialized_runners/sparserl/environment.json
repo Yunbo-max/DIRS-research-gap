@@ -1,0 +1,52 @@
+{
+  "created_at_utc": "2026-07-23T18:53:42Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/paper_author_gap_dag.json",
+  "git_config_file_excerpt": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n[remote \"origin\"]\n\turl = https://github.com/QiWu-NCIC/SparseRL\n\tfetch = +refs/heads/*:refs/remotes/origin/*\n[branch \"main\"]\n\tremote = origin\n\tmerge = refs/heads/main\n",
+  "git_head_file": "ref: refs/heads/main",
+  "hostname": "9be0b5586206",
+  "logical_gpu_mapping_note": "CUDA_VISIBLE_DEVICES=3 makes the selected physical GPU appear as logical cuda:0 inside PyTorch; OOM messages may therefore say GPU 0 while referring to the selected visible device.",
+  "nvcc_version": {
+    "cmd": [
+      "nvcc",
+      "--version"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.013,
+    "stderr": "",
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Tue_Feb_27_16:19:38_PST_2024\nCuda compilation tools, release 12.4, V12.4.99\nBuild cuda_12.4.r12.4/compiler.33961263_0\n",
+    "timeout": false
+  },
+  "nvidia_smi": {
+    "cmd": [
+      "nvidia-smi",
+      "--query-gpu=index,name,memory.total,memory.used,utilization.gpu",
+      "--format=csv,noheader,nounits"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.069,
+    "stderr": "",
+    "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19042, 17\n3, NVIDIA GeForce RTX 4090, 24564, 16069, 99\n",
+    "timeout": false
+  },
+  "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.31",
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "python_deps": {
+    "cmd": [
+      "python",
+      "-c",
+      "import torch, transformers, peft, scipy, numpy; print('torch', torch.__version__, 'cuda', torch.version.cuda); print('transformers', transformers.__version__); print('peft', peft.__version__); print('scipy', scipy.__version__); print('numpy', numpy.__version__)"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 4.538,
+    "stderr": "",
+    "stdout": "torch 2.6.0+cu124 cuda 12.4\ntransformers 4.51.2\npeft 0.17.1\nscipy 1.11.4\nnumpy 1.26.4\n",
+    "timeout": false
+  },
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL",
+  "selected_cuda_visible_devices": "3",
+  "which_nvcc": "/opt/conda/envs/tofu/bin/nvcc",
+  "which_python": "/opt/conda/bin/python"
+}

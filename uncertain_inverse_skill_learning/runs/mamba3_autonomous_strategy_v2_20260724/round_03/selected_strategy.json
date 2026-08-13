@@ -1,0 +1,89 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 3,
+  "selected_proposal_id": "S6_operating_point_decision_split",
+  "selected_variant": "A",
+  "status": "candidate",
+  "selection_context": "reserved novelty challenge",
+  "decision_relative_to_S5": {
+    "judgment": "complements_but_does_not_establish_global_superiority",
+    "reason": [
+      "S6 makes the practical SISO/MIMO configuration choice more explicit than S5.",
+      "S5 retains a stronger mapping from each architectural component to diagnostic evidence.",
+      "These functions are non-dominated under the current uncalibrated evidence.",
+      "S6 has not yet received blind controller evaluation, so it cannot inherit S5's local_strategy_hypothesis status."
+    ],
+    "round_03_selection_reason": "S6 is selected for the novelty-challenge artifact because decision-relevant tradeoff recovery is its distinctive target and its realization removes procedural meta-discourse. Selection does not demote S5."
+  },
+  "narrow_counterfactual": {
+    "treatment": "Variant A",
+    "control": "Variant B",
+    "only_difference": {
+      "operation": "directional operating-role map",
+      "treatment_sentence": "Thus SISO is the speed-oriented operating point, whereas MIMO spends some latency for better quality.",
+      "control_sentence": "Thus SISO and MIMO are alternative configurations with different quality and latency under these evaluations."
+    },
+    "controlled_features": {
+      "all_other_words_identical": true,
+      "word_count_identical": true,
+      "facts_identical": true,
+      "numbers_identical": true,
+      "sentence_order_identical": true,
+      "scope_boundaries_identical": true
+    },
+    "writer_side_observation": "Variant A directly answers which configuration corresponds to speed and which to the quality-for-latency choice; Variant B leaves that mapping to inference from the preceding measurements.",
+    "rejection_rule": "Reject the atomic role-map operation if a blind evaluator recovers the roles equally from B, judges A overgeneralized, or prefers B for clarity without loss of decision understanding.",
+    "evidence_limit": "Writer inspection establishes that the intervention was isolated, not that its predicted reader effect occurred."
+  },
+  "functional_comparison": {
+    "method": "qualitative decomposed comparison; no scalar utility, expert similarity, or calibration claim",
+    "A_new_S6": {
+      "factual_support": "pass",
+      "role_coverage": "pass",
+      "mechanism_result_coherence": "shared versus mode-specific evidence is separated; fewer component-local bindings than S5",
+      "importance_weighted_selection": "configuration tradeoff is central",
+      "bounded_claims": "H100 setting, retrieval limitation, and scale boundary retained",
+      "clarity_and_compression": "187 words with no procedural meta-discourse",
+      "distinctive_function": "explicit operating-role recovery"
+    },
+    "B_narrow_control": {
+      "factual_support": "pass",
+      "role_coverage": "pass",
+      "mechanism_result_coherence": "identical to A outside the role-map sentence",
+      "importance_weighted_selection": "same facts but neutral configuration relation",
+      "bounded_claims": "identical to A",
+      "clarity_and_compression": "identical length; directional interpretation removed",
+      "distinctive_function": "atomic control"
+    },
+    "C_cleaned_S5": {
+      "factual_support": "pass",
+      "role_coverage": "pass",
+      "mechanism_result_coherence": "strongest component-local bindings",
+      "importance_weighted_selection": "aggregate result remains early",
+      "bounded_claims": "configuration non-dominance, retrieval, and scale boundaries retained",
+      "clarity_and_compression": "187 words after deleting meta-discourse",
+      "distinctive_function": "locally supported contribution hierarchy"
+    }
+  },
+  "retained_non_dominated_branches": [
+    {
+      "proposal_id": "S5_salience_anchor_then_selective_bindings",
+      "status": "local_strategy_hypothesis",
+      "realization": "Variant C",
+      "reason": "Best-supported local option for component-level mechanism-result coherence."
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "status": "candidate",
+      "realization": "round_02 Variant C",
+      "reason": "Retained for contexts prioritizing early limitation calibration; not rewritten in this round."
+    }
+  ],
+  "promotion_boundary": {
+    "S6_reusable_skill": false,
+    "S5_reusable_skill": false,
+    "maximum_claim_for_S6_this_round": "candidate",
+    "maximum_claim_for_S5": "local_strategy_hypothesis",
+    "transfer_evidence_available": false
+  }
+}

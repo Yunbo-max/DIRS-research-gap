@@ -1,0 +1,677 @@
+{
+  "artifact_kind": "explicit_blocker_staleness_audit",
+  "completion_audit_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_completion_audit_20260723.json",
+  "counts": {
+    "explicit_blocker_evidence_bound": 10,
+    "explicit_blocker_evidence_bound_after_gpu_recheck": 8,
+    "explicit_blocker_valid_recheck_after_gpu_release": 0,
+    "needs_loop1_repair": 0,
+    "running_not_explicit_blocker": 1
+  },
+  "created_at_utc": "2026-07-24T14:02:56Z",
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 8395,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16169,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8435,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 98
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7954,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16610,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8415,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "papers": [
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "5e19655ecb540346",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "checkpoint_or_model",
+        "dataset"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_016_nuwa_class_specific_vit_pruning/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_016_nuwa_class_specific_vit_pruning/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+      "paper_status": "blocked_by_syntax_datasets_checkpoints_runtime_hardware_and_result_grid_requirements",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 205,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_nuwa_operational_gates_from_preflight"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_016_nuwa_class_specific_vit_pruning/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "dc82c60ffbb0c01b",
+      "blocker_tags": [
+        "api_or_access",
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class",
+        "source_release"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_030_spark_vlm_articulated_reconstruction/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_030_spark_vlm_articulated_reconstruction/operational_artifacts.json",
+      "operational_blocker_count": 2,
+      "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+      "paper_status": "blocked_by_placeholder_repo_unreleased_source_models_data_runtime_hardware_and_result_grid",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 57,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/030_spark/SPARK"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_spark_placeholder_repo_to_release_artifact_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_030_spark_vlm_articulated_reconstruction/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 1,
+      "blocker_fingerprint": "4cf68eec13a5dfc6",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "checkpoint_or_model",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_052_seacache_spectral_evolution_cache/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_052_seacache_spectral_evolution_cache/operational_artifacts.json",
+      "operational_blocker_count": 6,
+      "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+      "paper_status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements_after_specialized_runner",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 97,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/052_seacache/SeaCache"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_resolve_seacache_professional_blockers"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_052_seacache_spectral_evolution_cache/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 1,
+      "blocker_fingerprint": "d6be8ed0954ff438",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "checkpoint_or_model",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_053_sencache_sensitivity_aware_caching/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_053_sencache_sensitivity_aware_caching/operational_artifacts.json",
+      "operational_blocker_count": 7,
+      "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+      "paper_status": "blocked_by_sensitivity_weights_model_data_runtime_hardware_and_result_grid_requirements_after_specialized_runner",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 96,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_resolve_sencache_professional_blockers"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_053_sencache_sensitivity_aware_caching/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 5,
+      "blocker_fingerprint": "631ac24e58132079",
+      "blocker_tags": [
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class",
+        "software_runtime"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_065_trellis2_native_compact_structured_latents/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_065_trellis2_native_compact_structured_latents/operational_artifacts.json",
+      "operational_blocker_count": 2,
+      "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+      "paper_status": "not_converged_operational_blocker_recorded",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 527,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_materialize_trellis2_professional_artifacts_before_rerun"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_065_trellis2_native_compact_structured_latents/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "5d23b738d60ef2aa",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_067_rdvq_differentiable_vq_rate_distortion/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_067_rdvq_differentiable_vq_rate_distortion/operational_artifacts.json",
+      "operational_blocker_count": 5,
+      "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+      "paper_status": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 267,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_add_rdvq_checkpoint_dataset_metric_hardware_result_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_067_rdvq_differentiable_vq_rate_distortion/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 5,
+      "blocker_fingerprint": "258fa170238efa7b",
+      "blocker_tags": [
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class",
+        "software_runtime"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_103_atoken_unified_visual_tokenizer/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_103_atoken_unified_visual_tokenizer/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+      "paper_status": "not_converged_operational_blocker_recorded",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 253,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken"
+        },
+        {
+          "exists": true,
+          "file_count_probe": 276,
+          "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_materialize_atoken_professional_artifacts_before_rerun"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_103_atoken_unified_visual_tokenizer/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 1,
+      "blocker_fingerprint": "566320478f37617e",
+      "blocker_tags": [
+        "checkpoint_or_model",
+        "dataset",
+        "software_runtime"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_1j63fjyjkg_mrrope_mixed_radix_rope/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_1j63fjyjkg_mrrope_mixed_radix_rope/operational_artifacts.json",
+      "operational_blocker_count": 6,
+      "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+      "paper_status": "blocked_by_supplement_only_missing_datasets_models_runtime_after_specialized_runner",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 89,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_resolve_mrrope_professional_blockers"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_1j63fjyjkg_mrrope_mixed_radix_rope/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "089aef3119077ce5",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "api_or_access",
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_88zlp7xyxw_prism_fmri_structured_text/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_88zlp7xyxw_prism_fmri_structured_text/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+      "paper_status": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 193,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_prism_repo_to_full_fmri_operational_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_88zlp7xyxw_prism_fmri_structured_text/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 4,
+      "blocker_fingerprint": "41129199c97f8618",
+      "blocker_tags": [
+        "api_or_access",
+        "dataset",
+        "software_runtime"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_eqhuvwh78u_rational_information_seeking_agents/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_eqhuvwh78u_rational_information_seeking_agents/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+      "paper_status": "blocked_by_python311_openrouter_full_agent_benchmark_and_guess_who_artifacts",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 542,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_battleship_repo_runtime_api_result_grid"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_eqhuvwh78u_rational_information_seeking_agents/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 4,
+      "blocker_fingerprint": "50101baaa186dcc5",
+      "blocker_tags": [
+        "dataset"
+      ],
+      "classification": "running",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/operational_artifacts.json",
+      "operational_blocker_count": 6,
+      "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+      "paper_status": "blocked_by_table1_table2_ablation_and_dream_axis_debt_after_full_gsm8k_trajectory",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 117,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet"
+        }
+      ],
+      "required_update_node_count": 4,
+      "required_update_nodes": [
+        "loop1.required_update.trajectory_metric_semantics_repair",
+        "loop1.required_update.gsm8k_protocol_shape_repair",
+        "loop1.required_update.gsm8k_postcompletion_protocol_shape_repair",
+        "loop1.required_update.gsm8k_repaired_shape_still_mismatch"
+      ],
+      "status": "running_not_explicit_blocker",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/verifier_result_iter_07_live.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "133f801808cc0472",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h06l9w1clt_locality_parallel_decoding_ar_image/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h06l9w1clt_locality_parallel_decoding_ar_image/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+      "paper_status": "blocked_by_models_imagenet_geneval_runtime_hardware_and_full_image_generation_grid",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 266,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_lpd_repo_to_operational_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h06l9w1clt_locality_parallel_decoding_ar_image/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 1,
+      "blocker_fingerprint": "0cd61c4fd7db3072",
+      "blocker_tags": [
+        "dataset",
+        "exact_hardware_class",
+        "software_runtime"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h6rdx4w6al_flashvid_vllm_token_merging/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h6rdx4w6al_flashvid_vllm_token_merging/operational_artifacts.json",
+      "operational_blocker_count": 6,
+      "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+      "paper_status": "blocked_by_exact_professional_runtime_and_data_requirements_after_specialized_runner",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 2922,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID"
+        }
+      ],
+      "required_update_node_count": 5,
+      "required_update_nodes": [
+        "loop1.required_update.update_add_exact_official_script_execution_matrix_as_a_dag_node_not_a_generic_vl",
+        "loop1.required_update.update_add_hardware_class_gate_8_x_a800_80g_for_main_lmms_eval_grid_and_single_a",
+        "loop1.required_update.update_add_videomme_local_video_cache_gate_for_efficiency_benchmark",
+        "loop1.required_update.update_add_exact_transformers_4_57_and_flash_attention_2_runtime_gate",
+        "loop1.required_update.update_keep_flops_reproduction_as_analytic_support_only_not_result_table_converg"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h6rdx4w6al_flashvid_vllm_token_merging/verifier_result_iter_03.json",
+      "verifier_required_update_count": 5,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "d2529d854104f4d2",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_jeywpfgzvn_infotok_adaptive_video_tokenizer/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_jeywpfgzvn_infotok_adaptive_video_tokenizer/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+      "paper_status": "blocked_by_hf_artifacts_runtime_hardware_training_scale_and_result_grid_requirements",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 609,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_infotok_released_code_to_operational_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_jeywpfgzvn_infotok_adaptive_video_tokenizer/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "f560fc86ab75eb82",
+      "blocker_tags": [
+        "active_gpu_capacity",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_lavrnabnwm_hsd_lossless_speculative_decoding/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": true,
+      "needs_recheck_after_active_gpu_release": true,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_lavrnabnwm_hsd_lossless_speculative_decoding/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+      "paper_status": "blocked_by_model_data_hardware_transformers_patch_and_full_hsd_result_grid",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 260,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Hierarchical-Speculative-Decoding"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_hsd_repo_to_operational_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound_after_gpu_recheck",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_lavrnabnwm_hsd_lossless_speculative_decoding/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 1,
+      "blocker_fingerprint": "7b31256af8e7e8ac",
+      "blocker_tags": [
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_o29e01q6bv_loongrl_long_context_reasoning/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_o29e01q6bv_loongrl_long_context_reasoning/operational_artifacts.json",
+      "operational_blocker_count": 7,
+      "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+      "paper_status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements_after_specialized_runner",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 703,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_resolve_loongrl_professional_blockers"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_o29e01q6bv_loongrl_long_context_reasoning/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 2,
+      "blocker_fingerprint": "e6fc302569b40eb8",
+      "blocker_tags": [
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_p5b97gzwrb_hyperparameter_trajectory_inference_clot/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_p5b97gzwrb_hyperparameter_trajectory_inference_clot/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+      "paper_status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 259,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_clot_repo_to_operational_gates"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_p5b97gzwrb_hyperparameter_trajectory_inference_clot/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 4,
+      "blocker_fingerprint": "d60d3387f48bd6d2",
+      "blocker_tags": [
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_qmittyqw92_dto_kd_dynamic_tradeoff_distillation/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_qmittyqw92_dto_kd_dynamic_tradeoff_distillation/operational_artifacts.json",
+      "operational_blocker_count": 1,
+      "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+      "paper_status": "blocked_by_no_official_source_repo_h100_data_checkpoints_and_full_kd_training_grid",
+      "repo_status": [],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_dto_kd_external_source_and_full_training_contract"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_qmittyqw92_dto_kd_dynamic_tradeoff_distillation/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    },
+    {
+      "blocked_verifier_check_count": 3,
+      "blocker_fingerprint": "cd1e21bfa6a4d719",
+      "blocker_tags": [
+        "checkpoint_or_model",
+        "dataset",
+        "exact_hardware_class"
+      ],
+      "classification": "explicitly_blocked",
+      "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/paper_author_gap_dag.json",
+      "gpu_rechecked_for_current_blockers": false,
+      "needs_recheck_after_active_gpu_release": false,
+      "operational_artifacts_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/operational_artifacts.json",
+      "operational_blocker_count": 0,
+      "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+      "paper_status": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+      "repo_status": [
+        {
+          "exists": true,
+          "file_count_probe": 118,
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL"
+        }
+      ],
+      "required_update_node_count": 1,
+      "required_update_nodes": [
+        "loop1.required_update.update_sparserl_loop2_requires_generated_policy_passatk_full_grid"
+      ],
+      "status": "explicit_blocker_evidence_bound",
+      "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/verifier_result_iter_03.json",
+      "verifier_required_update_count": 1,
+      "weak_evidence": []
+    }
+  ],
+  "policy": {
+    "can_converge_papers": false,
+    "purpose": "Loop 1 blocker hygiene and recheck scheduling",
+    "reduced_or_proxy_evidence_allowed": false
+  },
+  "relevant_processes": [
+    "root        2355 98.0  0.2 80346904 1482384 ?    Rsl  13:20 100:16 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 0 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2 --run-label table1_threshold_relaxed_6_4_2 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 6.0 --mid-threshold 4.0 --late-threshold 2.0",
+    "root        2465 97.1  0.2 80349024 1487748 ?    Rsl  13:20  99:19 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 1 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1 --run-label table1_threshold_relaxed_5_3_1 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 5.0 --mid-threshold 3.0 --late-threshold 1.0",
+    "root        2714 97.8  0.2 80347344 1485976 ?    Rsl  13:20 100:03 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 2 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5 --run-label table1_threshold_relaxed_4_2_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 4.0 --mid-threshold 2.0 --late-threshold 0.5",
+    "root        2903 97.9  0.2 80347180 1485896 ?    Rsl  13:20 100:05 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5 --run-label table1_threshold_relaxed_3_1p5_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 3.0 --mid-threshold 1.5 --late-threshold 0.5",
+    "root       12618  0.0  0.0  22104 18524 ?        Ss   13:31   0:02 python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_goal_supervisor.py --interval-seconds 60"
+  ]
+}

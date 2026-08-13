@@ -1,0 +1,15 @@
+{
+  "max_new_tokens": 12,
+  "model_id": "sshleifer/tiny-gpt2",
+  "output_files": [
+    "raw_generations.jsonl",
+    "sampling_time_by_token.jsonl",
+    "cpu_ram_profile.jsonl"
+  ],
+  "prompt_count": 1,
+  "samplers": [
+    "p_less",
+    "p_lessnorm"
+  ],
+  "temperature": 1.0
+}

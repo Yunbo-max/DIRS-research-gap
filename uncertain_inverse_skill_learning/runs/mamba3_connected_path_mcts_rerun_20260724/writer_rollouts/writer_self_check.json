@@ -1,0 +1,192 @@
+{
+  "schema_version": "dirs.connected_path_writer_self_check.v1",
+  "writer_role": "fresh_strict_blind_writer",
+  "status": "pass",
+  "read_log": [
+    {
+      "path": "iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+      "authorized": true,
+      "read_to_eof": true,
+      "read_note": "Initial whole-file display was interface-truncated; the same authorized file was re-read in contiguous line segments 1–240, 241–480, 481–720, 721–960, and 961–1200, reaching the closing brace at EOF."
+    },
+    {
+      "path": "yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720/style_profile.json",
+      "authorized": true,
+      "read_to_eof": true
+    },
+    {
+      "path": "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/PROTOCOL.md",
+      "authorized": true,
+      "read_to_eof": true
+    },
+    {
+      "path": "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/learned_connected_dag.json",
+      "authorized": true,
+      "read_to_eof": true
+    }
+  ],
+  "read_summary": {
+    "unique_files_read": 4,
+    "all_authorized_files_read_to_eof": true,
+    "other_repository_files_read": 0,
+    "repository_search_performed": false,
+    "internet_access_performed": false
+  },
+  "forbidden_read_check": {
+    "mamba3_expert_abstract_read": false,
+    "mamba3_paper_or_full_text_read": false,
+    "earlier_mamba3_run_or_generated_text_read": false,
+    "other_repository_file_read": false,
+    "repository_search_used": false,
+    "internet_used": false,
+    "violations": []
+  },
+  "write_log": [
+    {
+      "path": "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/writer_rollouts/rollouts.json",
+      "purpose": "six structured connected-path rollouts, alignments, and claim evidence paths"
+    },
+    {
+      "path": "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/writer_rollouts/ROLL_OUTS.md",
+      "purpose": "six human-readable abstracts"
+    },
+    {
+      "path": "yunbo/DIRS/uncertain_inverse_skill_learning/runs/mamba3_connected_path_mcts_rerun_20260724/writer_rollouts/writer_self_check.json",
+      "purpose": "read/write audit, forbidden-read check, and per-draft hard-failure report"
+    }
+  ],
+  "write_summary": {
+    "files_written": 3,
+    "writes_outside_writer_rollouts": 0
+  },
+  "global_hard_checks": {
+    "observed_path_count": 6,
+    "rollout_count": 6,
+    "exactly_one_rollout_per_observed_path": true,
+    "same_word_budget_applied": true,
+    "word_budget": [
+      166,
+      236
+    ],
+    "path_comparison_or_selection_present": false,
+    "self_ranking_present": false,
+    "all_claims_grounded_to_public_chip_paths": true,
+    "hard_failures": []
+  },
+  "per_draft_hard_failures": [
+    {
+      "path_id": "path_01",
+      "word_count": 214,
+      "within_word_band": true,
+      "exact_path_nodes_preserved": true,
+      "node_order_preserved": true,
+      "required_optional_functions": {
+        "C1_domain_context": false,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": true
+      },
+      "implemented_optional_functions": {
+        "C1_domain_context": false,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": true
+      },
+      "forbidden_optional_function_leakage": false,
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_02",
+      "word_count": 213,
+      "within_word_band": true,
+      "exact_path_nodes_preserved": true,
+      "node_order_preserved": true,
+      "required_optional_functions": {
+        "C1_domain_context": true,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": true
+      },
+      "implemented_optional_functions": {
+        "C1_domain_context": true,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": true
+      },
+      "forbidden_optional_function_leakage": false,
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_03",
+      "word_count": 203,
+      "within_word_band": true,
+      "exact_path_nodes_preserved": true,
+      "node_order_preserved": true,
+      "required_optional_functions": {
+        "C1_domain_context": false,
+        "M2_efficiency_or_theory_detail": false,
+        "E3_quantitative_anchor": true
+      },
+      "implemented_optional_functions": {
+        "C1_domain_context": false,
+        "M2_efficiency_or_theory_detail": false,
+        "E3_quantitative_anchor": true
+      },
+      "forbidden_optional_function_leakage": false,
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_04",
+      "word_count": 203,
+      "within_word_band": true,
+      "exact_path_nodes_preserved": true,
+      "node_order_preserved": true,
+      "required_optional_functions": {
+        "C1_domain_context": false,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": false
+      },
+      "implemented_optional_functions": {
+        "C1_domain_context": false,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": false
+      },
+      "forbidden_optional_function_leakage": false,
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_05",
+      "word_count": 211,
+      "within_word_band": true,
+      "exact_path_nodes_preserved": true,
+      "node_order_preserved": true,
+      "required_optional_functions": {
+        "C1_domain_context": true,
+        "M2_efficiency_or_theory_detail": false,
+        "E3_quantitative_anchor": true
+      },
+      "implemented_optional_functions": {
+        "C1_domain_context": true,
+        "M2_efficiency_or_theory_detail": false,
+        "E3_quantitative_anchor": true
+      },
+      "forbidden_optional_function_leakage": false,
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_06",
+      "word_count": 215,
+      "within_word_band": true,
+      "exact_path_nodes_preserved": true,
+      "node_order_preserved": true,
+      "required_optional_functions": {
+        "C1_domain_context": true,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": false
+      },
+      "implemented_optional_functions": {
+        "C1_domain_context": true,
+        "M2_efficiency_or_theory_detail": true,
+        "E3_quantitative_anchor": false
+      },
+      "forbidden_optional_function_leakage": false,
+      "hard_failures": []
+    }
+  ]
+}

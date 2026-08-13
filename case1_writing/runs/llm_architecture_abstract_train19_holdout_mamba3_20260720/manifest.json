@@ -1,0 +1,1087 @@
+{
+  "run_name": "llm_architecture_abstract_train19_holdout_mamba3_20260720",
+  "created_for": "DIRS Case 1 abstract-only domain training",
+  "domain_file": "/tf/notebooks/yunbo/DIRS/domain_topics/semantic_balanced_23_domains/llm_architecture_attention_state_space_models.md",
+  "domain": "LLM Architecture / Attention / State Space Models",
+  "total_chips": 20,
+  "train_count": 19,
+  "train_with_abstract_count": 19,
+  "holdout_count": 1,
+  "holdout_chip_id": "ICLR2026_HwCvaJOiCj_mamba3",
+  "blind_rule": "Do not read heldout post_generation_only source before generation.",
+  "papers": [
+    {
+      "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+      "title": "MDCS-MoAME: Multi-directional Composite Scanning with Mixture of Attention and Mamba Experts for Cancer Survival Prediction",
+      "venue": "CVPR 2026 ORAL",
+      "chip_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/chips/CVPR2026_069_mdcs_moame_survival_prediction.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/text/CVPR2026_069_mdcs_moame_cvf.txt",
+      "abstract_word_count": 443,
+      "abstract_sentence_count": 17,
+      "source_paths_tried": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/text/CVPR2026_069_mdcs_moame_cvf.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "CVPR2026_069_mdcs_moame_survival_prediction",
+        "title": "MDCS-MoAME: Multi-directional Composite Scanning with Mixture of Attention and Mamba Experts for Cancer Survival Prediction",
+        "venue": "CVPR 2026 Oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "256×256 scan Region Multi-modal learning approaches that integrate patholog- 4096×4096 (b) Mamba raw scanning (c) Our scanning ical images with genomic profiles have significantly en- WSI serialize hanced the accuracy of survival prediction tasks. However, 10000×10000 previous methods often struggle to effectively process long- range gigapixel whole slide images (WSIs) and sparse ge- (a) Hierarchical architecture (d) Original sequence (e) Our sequence nomic profiles due to the limitations of conventional scan- ning strategies to serialize data and the complex and het- Figure 1. (a) Hierarchical structure of WSIs; (b) Mamba’s original scanning strategy; (c) Our proposed five scanning strategies on erogeneous nature of the modalities. Inspired by recent ad- WSIs; (d) Original genomic serialization sequence and (e) Our vancements in Mamba and mixture of experts (MoE), we proposed genomic interval scanning sequence. propose a novel multi-directional composite scanning strat- egy with mixture of attention and Mamba experts (MDCS- MoAME) for cancer survival prediction. Specifically, we 1. Introduction introduce a multi-directional composite scanning (MDCS) strategy to both WSIs and genomic profiles, and use the Survival prediction via whole slide images (WSIs) and ge- Mamba encoder to process intra-modal representations at nomic profiles plays a critical role in cancer prognostic as- the region, patch, and gene level, ensuring sufficient uti- sessment, informing therapeutic decisions, and improving lization of the intrinsic information within each modality. patient outcomes [35]. WSIs offer rich morphological de- To further capture heterogeneous inter-modal representa- tails of tumors [12], while genomic profiles provide insights tions, we introduce mixture of attention and Mamba ex- into the molecular mechanisms underlying cancer progres- perts (MoAME), which dynamically selects tailored experts sion [34]. The challenge in survival prediction lies in ef- to model complex inter-modal correlations, flexibly focus- fectively leveraging the unique strengths of both modali- ing on the interactions between modalities. Finally, we in- ties. As a result, the recent focus of survival analysis studies troduce alignment constraints to recalibrate inter-modal in- has shifted from single-modal predictions [19, 30] to utiliz- teractions and reduce intra- and inter-modal representation ing multi-modal information [23, 45] to improve prognostic redundancy, enhancing its discriminative power for com- performance. prehensive survival analysis. Experimental results on five Previous multi-modal studies have achieved remarkable publicly available datasets demonstrate that our method success in survival prediction [24, 29]. DeepSets [41] outperforms existing approaches, achieving state-of-the-art pioneered set-based deep learning with sum pooling, ex- performance. celling in multi-modal survival prediction. Following the rise of attention mechanisms [36], MCAT [4] introduced a genome-guided co-attention mechanism (GCA), enhanc- * Corresponding author ing performance but with increased computational burden. 14461 Subsequently, MOTCAT [39] and SurvPath [18] refined thermore, to model complex inter-modal correlations effec-",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+      "title": "SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation",
+      "venue": "CVPR 2026 ORAL",
+      "chip_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/chips/CVPR2026_136_segmote_token_moe_medical_segmentation.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/text/CVPR2026_136_segmote_cvf.txt",
+      "abstract_word_count": 208,
+      "abstract_sentence_count": 7,
+      "source_paths_tried": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/text/CVPR2026_136_segmote_cvf.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "CVPR2026_136_segmote_token_moe_medical_segmentation",
+        "title": "SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation",
+        "venue": "CVPR 2026 Oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Medical image segmentation is vital for clinical diagnosis and quantitative analysis, yet remains challenging due to the heterogeneity of imaging modalities and the high cost of pixel-level annotations. Although general interactive segmentation models like SAM have achieved remarkable progress, their transfer to medical imaging still faces two key bottlenecks: (i) the lack of adaptive mechanisms for modality- and anatomy-specific tasks, which limits generalization in out-of-distribution medical scenarios; and (ii) current medical adaptation methods fine-tune on large, heterogeneous datasets without selection, leading to noisy supervision, higher cost, and negative transfer. To address these issues, we propose SegMoTE, an efficient and adaptive framework for medical image segmentation. SegMoTE preserves SAM’s original prompt interface, efficient inference, and zero-shot generalization while introducing only a small number of learnable parameters to dynamically adapt across modalities and tasks. In addition, we design a progressive prompt tokenization mechanism that enables fully automatic segmentation, significantly reducing annotation dependence. Trained on MedSeg-HQ, a curated dataset less than 1% of existing large-scale datasets, SegMoTE achieves SOTA performance across diverse imaging modalities and anatomical tasks. It represents the first efficient, robust, and scalable adaptation of general segmentation models to the medical domain under extremely low annotation cost, advancing the practical deployment of foundation vision models in clinical applications.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+      "title": "Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series",
+      "venue": "ICLR 2026 ORAL",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_oZJFY2BQt2_tech_cotar_medts.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_oZJFY2BQt2_openreview.txt",
+      "abstract_word_count": 236,
+      "abstract_sentence_count": 8,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_oZJFY2BQt2_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_oZJFY2BQt2_tech_cotar_medts",
+        "title": "Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series",
+        "venue": "ICLR 2026 Oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Accurate analysis of Medical time series (MedTS) data, such as Electroen- cephalography (EEG) and Electrocardiography (ECG), plays a pivotal role in healthcare applications, including the diagnosis of brain and heart diseases. MedTS data typically exhibits two critical patterns: temporal dependencies within individual channels and channel dependencies across multiple channels. While recent advances in deep learning have leveraged Transformer-based models to effectively capture temporal dependencies, they often struggle with modeling channel dependencies. This limitation stems from a structural mismatch: MedTS signals are inherently centralized, whereas the Transformer’s attention is decen- tralized, making it less effective at capturing global synchronization and unified waveform patterns. To address this mismatch, we propose CoTAR (Core Token Aggregation-Redistribution), a centralized MLP-based module tailored to replace the decentralized attention. Instead of allowing all tokens to interact directly, as in attention, CoTAR introduces a global core token that acts as a proxy to facil- itate the inter-token interaction, thereby enforcing a centralized aggregation and redistribution strategy. This design not only better aligns with the centralized na- ture of MedTS signals but also reduces computational complexity from quadratic to linear. Experiments on five benchmarks validate the superiority of our method in both effectiveness and efficiency, achieving up to a 11.6% average-metric im- provement on the APAVA dataset, with merely 33% memory usage and 20% infer- ence time compared to the previous state-of-the-art. Code and all training scripts are available in https://github.com/Levi-Ackman/TeCh",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_ZBj3Qp1bYg_ebt",
+      "title": "Energy-Based Transformers are Scalable Learners and Thinkers",
+      "venue": "ICLR",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_ZBj3Qp1bYg_ebt.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_ZBj3Qp1bYg_openreview.txt",
+      "abstract_word_count": 274,
+      "abstract_sentence_count": 9,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_ZBj3Qp1bYg_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_ZBj3Qp1bYg_ebt",
+        "title": "Energy-Based Transformers are Scalable Learners and Thinkers",
+        "venue": "ICLR",
+        "year": 2026,
+        "domain_tags": [
+          "LLM",
+          "VLM",
+          "energy-based model",
+          "transformer architecture",
+          "inference-time compute",
+          "System 2 thinking",
+          "OOD generalization",
+          "7B-conditional"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Inference-time computation, analogous to human System 2 Thinking, has recently become popular for improving model performance. However, most existing approaches suffer from several limitations: they are modality-specific (e.g., working only in text), problem-specific (e.g., verifiable domains like math and coding), or require additional supervision/training on top of unsupervised pretraining (e.g., verifiers or verifiable rewards). In this paper, we ask the question “Is it possible to generalize these System 2 Thinking approaches, and develop models that learn to think solely from unsupervised learning?” We find the answer is yes, by learning to explicitly verify the compatibility between inputs and candidatepredictions, and then re-framing prediction problems as optimization with respect to this verifier. Specifically, we train Energy-Based Transformers (EBTs)—a new class of Energy-Based Models (EBMs)—to assign an energy value to every input and candidate-prediction, enabling predictions through energy minimization until convergence. To support this approach, we introduce several key techniques for stable and parallelizable training, which enable the emergence of strong System 2 Thinking capabilities and scalable EBMs. Across discrete and continuous modalities, we find EBTs outperform the Transformer++ approach, scaling up to 35% faster during pretraining, and improving inference-time performance by up to 29%. EBTs also surpass Diffusion Transformers on image denoising while requiring 99% fewer forward passes. Moreover, System 2 Thinking with EBTs yields larger performance gains on data that is farther out-of-distribution, and EBTs achieve better results than existing models on most downstream tasks despite achieving the same or worse pretraining performance, enabling EBTs to generalize better than existing approaches. Consequently, EBTs are a flexible and promising new approach for scaling both the learning and thinking capabilities of models. 1",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+      "title": "From Markov to Laplace: How Mamba In-Context Learns Markov Chains",
+      "venue": "",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_kmK3WSCOCT_openreview.txt",
+      "abstract_word_count": 185,
+      "abstract_sentence_count": 8,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_kmK3WSCOCT_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_kmK3WSCOCT_markov_laplace_mamba_icl",
+        "title": "From Markov to Laplace: How Mamba In-Context Learns Markov Chains",
+        "venue": null,
+        "year": null,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "While transformer-based language models have driven the AI revolution thus far, their computational complexity has spurred growing interest in viable alternatives, such as structured state space sequence models (SSMs) and Selective SSMs. Among these, Mamba (S6) and its variant Mamba-2 have shown remarkable inference speed-ups over transformers while achieving comparable or superior performance on complex language modeling tasks. However, despite these architectural innovations and empirical successes, the fundamental learning capabilities of Mamba remain poorly understood. In this paper, we address this gap by studying in-context learning (ICL) on Markov chains and uncovering an interesting phenomenon: even a single-layer Mamba efficiently learns the in-context Laplacian smoothing estimator, which is both Bayes and minimax optimal. To explain this, we theoretically characterize the representation capacity of Mamba and reveal the fundamental role of convolution in enabling it to represent the optimal Laplacian smoothing. These theoretical insights align strongly with empirical results and, to the best of our knowledge, represent the first formal connection between Mamba and optimal statistical estimators. Finally, we outline promising research directions inspired by these findings. Code is available at https://github.com/Bond1995/Markov-Mamba. 1",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+      "title": "HATSolver: Learning Groebner Bases with Hierarchical Attention Transformers",
+      "venue": "",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_5C3LljOEGC_openreview.txt",
+      "abstract_word_count": 114,
+      "abstract_sentence_count": 7,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_5C3LljOEGC_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_5C3LljOEGC_hatsolver_hierarchical_attention_groebner",
+        "title": "HATSolver: Learning Groebner Bases with Hierarchical Attention Transformers",
+        "venue": null,
+        "year": null,
+        "domain_tags": [
+          "symbolic_reasoning",
+          "hierarchical_attention",
+          "computer_algebra",
+          "groebner_bases",
+          "neural_algorithmic_reasoning"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "At NeurIPS, Kera et al. (2024) introduced the use of transformers for computing Gröbner bases, a central object in computer algebra with numerous practical applications. In this paper, we improve this approach by applying Hierarchical Attention Transformers (HATs) to solve systems of multivariate polynomial equations via Gröbner bases computation. The HAT architecture incorporates a treestructured inductive bias that enables the modeling of hierarchical relationships present in the data and thus achieves significant computational savings compared to conventional flat attention models. We generalize to arbitrary depths and include a detailed computational cost analysis. Combined with curriculum learning, our method solves instances that are much larger than those in Kera et al. (2024). 1",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+      "title": "Learning to Segment for Vehicle Routing Problems",
+      "venue": "ICLR 2026 ORAL",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_pN261iTKvr_learning_to_segment_vrp.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_pN261iTKvr_openreview.txt",
+      "abstract_word_count": 181,
+      "abstract_sentence_count": 10,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_pN261iTKvr_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_pN261iTKvr_learning_to_segment_vrp",
+        "title": "Learning to Segment for Vehicle Routing Problems",
+        "venue": "ICLR 2026 Oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Iterative heuristics are widely recognized as state-of-the-art for Vehicle Routing Problems (VRPs). In this work, we exploit a critical observation: a large portion of the solution remains stable, i.e., unchanged across search iterations, causing redundant computations, especially for large-scale VRPs with long subtours. To address this, we pioneer the formal study of the First-Segment-Then-Aggregate (FSTA) decomposition technique to accelerate iterative solvers. FSTA preserves stable solution segments during the search, aggregates nodes within each segment into fixed hypernodes, and focuses the search only on unstable portions. Yet, a key challenge lies in identifying which segments should be aggregated. To this end, we introduce Learning-to-Segment (L2Seg), a novel neural framework to intelligently differentiate potentially stable and unstable portions for FSTA decomposition. We present three L2Seg variants: non-autoregressive (globally comprehensive but locally indiscriminate), autoregressive (locally refined but globally deficient), and their synergy. Empirical results on CVRP and VRPTW show that L2Seg accelerates state-of-the-art solvers by 2x to 7x. We further provide in-depth analysis showing why synergy achieves the best performance. Notably, L2Seg is compatible with traditional, learning-based, and hybrid solvers, while supporting various VRPs.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_HwCvaJOiCj_mamba3",
+      "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
+      "venue": "ICLR",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_HwCvaJOiCj_mamba3.chip.json",
+      "split": "holdout",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "hidden_until_after_generation",
+      "abstract_word_count": null,
+      "abstract_sentence_count": null,
+      "source_paths_tried": [
+        "hidden_until_after_generation"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_HwCvaJOiCj_mamba3",
+        "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
+        "venue": "ICLR",
+        "year": 2026,
+        "domain_tags": [
+          "llm",
+          "state space models",
+          "linear sequence modeling",
+          "inference efficiency",
+          "long-context modeling",
+          "kernel engineering"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": true
+      },
+      "post_generation_only": {
+        "stored_in": "holdout_private_after_generation.json"
+      }
+    },
+    {
+      "chip_id": "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+      "title": "Quantitative Bounds for Length Generalization in Transformers",
+      "venue": "ICLR",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_TLSUIyBIfs_length_generalization_bounds.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_TLSUIyBIfs_openreview.txt",
+      "abstract_word_count": 215,
+      "abstract_sentence_count": 10,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_TLSUIyBIfs_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_TLSUIyBIfs_length_generalization_bounds",
+        "title": "Quantitative Bounds for Length Generalization in Transformers",
+        "venue": "ICLR",
+        "year": 2026,
+        "domain_tags": [
+          "LLM",
+          "transformers",
+          "length generalization",
+          "long context",
+          "learning theory",
+          "synthetic tasks",
+          "7B-indirect"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "We study the problem of length generalization (LG) in transformers: the ability of a model trained on shorter sequences to maintain performance when evaluated on much longer, previously unseen inputs. Prior work by Huang et al. (2025) established that transformers eventually achieve length generalization once the training sequence length exceeds some finite threshold, but left open the question of how large it must be. In this work, we provide the first quantitative bounds on the required training length for length generalization to occur. Motivated by previous empirical and theoretical work, we analyze LG in several distinct problem settings: ℓ∞ error control vs. average error control over an input distribution, infinite-precision softmax attention vs. finite-precision attention (which reduces to an argmax) in the transformer, as well as for one- or two-layer transformers. In all scenarios, we prove that LG occurs when the internal behavior of the transformer on longer sequences can be “simulated” by its behavior on shorter sequences seen during training. Our bounds give qualitative estimates for the required length of training data required for a transformer to generalize, and we verify these insights empirically. These results sharpen our theoretical understanding of the mechanisms underlying extrapolation in transformers, and formalize the intuition that richer training data is required for generalization on more complex tasks. 1",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete",
+      "title": "Softmax Transformers are Turing-Complete",
+      "venue": "",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_FdkPOHlChS_openreview.txt",
+      "abstract_word_count": 128,
+      "abstract_sentence_count": 7,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_FdkPOHlChS_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_FdkPOHlChS_softmax_transformers_turing_complete",
+        "title": "Softmax Transformers are Turing-Complete",
+        "venue": null,
+        "year": null,
+        "domain_tags": [
+          "llm",
+          "chain_of_thought",
+          "softmax_attention",
+          "length_generalization",
+          "formal_languages",
+          "relative_positional_encoding",
+          "theory"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Hard attention Chain-of-Thought (CoT) transformers are known to be Turing- complete. However, it is an open problem whether softmax attention Chain- of-Thought (CoT) transformers are Turing-complete. In this paper, we prove a stronger result that length-generalizable softmax CoT transformers are Turing- complete. More precisely, our Turing-completeness proof goes via the CoT exten- sion of the Counting RASP (C-RASP), which correspond to softmax CoT trans- formers that admit length generalization. We prove Turing-completeness for CoT C-RASP with causal masking over a unary alphabet (more generally, for letter- bounded languages). While we show this is not Turing-complete for arbitrary languages, we prove that its extension with relative positional encoding is Turing- complete for arbitrary languages. We empirically validate our theory by training transformers for languages requiring complex (non-linear) arithmetic reasoning.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "CVPR2026_113_sat_structural_action_transformer",
+      "title": "Structural Action Transformer for 3D Dexterous Manipulation",
+      "venue": "CVPR 2026 ORAL",
+      "chip_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/chips/CVPR2026_113_sat_structural_action_transformer.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/text/CVPR2026_113_sat_cvf.txt",
+      "abstract_word_count": 432,
+      "abstract_sentence_count": 19,
+      "source_paths_tried": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/text/CVPR2026_113_sat_cvf.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "CVPR2026_113_sat_structural_action_transformer",
+        "title": "Structural Action Transformer for 3D Dexterous Manipulation",
+        "venue": "CVPR 2026 Oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Time Action Dim Embodiment 1 Joint 1 Achieving human-level dexterity in robots via imitation Embodiment learning from heterogeneous datasets is hindered by the 1 Joint 2 challenge of cross-embodiment skill transfer, particularly Embodiment 2 Joint 1 for high-DoF robotic hands. Existing methods, often rely- Time Embedding ing on 2D observations and temporal-centric action repre- (b) Structural-centric Perspective (Ours) sentation, struggle to capture 3D spatial relations and fail Variable Action Dim to handle embodiment heterogeneity. This paper proposes t the Structural Action Transformer (SAT), a new 3D dexter- Time t+1 ous manipulation policy that challenges this paradigm by t+2 introducing a structural-centric perspective. We reframe each action chunk not as a temporal sequence, but as a Embodiment Specific Joint Embedding variable-length, unordered sequence of joint-wise trajec- Key Features: Unordered, Variable Length Heterogeneity tories. This structural formulation allows a Transformer Figure 1. Conceptual illustration of action chunk tokenization. to natively handle heterogeneous embodiments, treating the (a) The conventional temporal-centric perspective, which struc- joint count as a variable sequence length. To encode struc- tures actions as a sequence of T timesteps (chunk length), with tural priors and resolve ambiguity, we introduce an Embod- each token having dimension Da (action dim). (b) Our proposed ied Joint Codebook that embeds each joint’s functional role structural-centric perspective, which reframes the action chunk as and kinematic properties. Our model learns to generate a sequence of Da joints, where each token’s feature is its temporal these trajectories from 3D point clouds via a continuous- trajectory over T . This (Da , T ) view naturally handles hetero- geneous embodiments as a variable-length, unordered sequence, time flow matching objective. We validate our approach which is a key feature of our approach. by pre-training on large-scale heterogeneous datasets and array of complex, contact-rich manipulation tasks currently fine-tuning on simulation and real-world dexterous manipu- beyond the reach of simpler parallel-jaw grippers. Imitation lation tasks. Our method consistently outperforms all base- learning, particularly in its offline formulation, has emerged lines, demonstrating superior sample efficiency and effec- as a promising paradigm for teaching such skills by lever- tive cross-embodiment skill transfer. This structural-centric aging large-scale datasets of human demonstrations [8, 13, representation offers a new path toward scaling policies for 15, 27, 28, 41, 45, 63, 66]. A critical bottleneck, however, high-DoF, heterogeneous manipulators. lies in the cross-embodiment transfer of these skills: how can a robot effectively learn from heterogeneous demon- strations, given the significant differences in morphology, 1. Introduction kinematics, and sensory feedback [9, 68, 75, 85]? While recent Vision-Language-Action (VLA) models have made The quest for robotic systems capable of human-level dex-",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+      "title": "To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models",
+      "venue": "",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_sSfep4udCb_openreview.txt",
+      "abstract_word_count": 159,
+      "abstract_sentence_count": 7,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_sSfep4udCb_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_sSfep4udCb_tool_use_length_generalization_ssm",
+        "title": "To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models",
+        "venue": null,
+        "year": null,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "State Space Models (SSMs) have become the leading alternative to Transformers for sequence modeling tasks. Their primary advantage is efficiency in longcontext and long-form generation, enabled by fixed-size memory and linear scaling of computational complexity. We begin this work by showing a simple theoretical result stating that SSMs cannot accurately solve any “truly long-form” generation problem (in a sense we formally define), undermining their main competitive advantage. However, we show that this limitation can be mitigated by allowing SSMs interactive access to external tools. In fact, we show that given the right choice of tool access and problem-dependent training data, SSMs can learn to solve any tractable problem and generalize to arbitrary problem length/complexity (i.e., achieve length generalization). Following our theoretical finding, we demonstrate that tool-augmented SSMs achieve remarkable length generalization on a variety of arithmetic, reasoning, and coding tasks. These findings highlight SSMs as a potential efficient alternative to Transformers in interactive tool-based and agentic settings. 1",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71083_any_order_gpt_mdm",
+      "title": "Any-Order GPT as Masked Diffusion Model: Decoupling Formulation and Architecture",
+      "venue": "ICML 2026 ORAL",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71083_any_order_gpt_mdm.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71083_any_order_gpt_mdm.txt",
+      "abstract_word_count": 217,
+      "abstract_sentence_count": 11,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71083_any_order_gpt_mdm.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71083_any_order_gpt_mdm",
+        "title": "Any-Order GPT as Masked Diffusion Model: Decoupling Formulation and Architecture",
+        "venue": "ICML 2026 oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Large language models (LLMs) predominantly use autoregressive (AR) approaches, but masked diffusion models (MDMs) are emerging as viable alternatives. A key challenge in comparing AR and MDM paradigms is their typical architectural difference: AR models are often decoder-only, while MDMs have largely been encoder-only. This practice of changing both the modeling paradigm and archi- tecture simultaneously makes direct comparisons unfair, as it’s hard to distinguish whether observed differences stem from the paradigm itself or the architectural shift. This research evaluates MDMs within a decoder-only framework to: (1) equi- tably compare MDM (as Any-Order AR, or AO-AR) and standard AR paradigms. Our investigation suggests that the standard AO-AR objective, which averages over all token permutations, may benefit from refinement, as many permutations appear less informative compared to the language’s inherent left-to-right structure. (2) Investigate architectural influences (decoder-only vs. encoder-only) within MDMs. We demonstrate that while encoder-only MDMs model a simpler conditional probability space, decoder-only MDMs can achieve dramatic generation speedups (∼ 25×) and comparable perplexity with temperature annealing despite modeling a vastly larger space, highlighting key trade-offs. This work thus decouples core paradigm differences from architectural influences, offering insights for future model design. Code is available at https://github.com/scxue/AO-GPT-MDM. Unfair! Formulation Architecture Autoregressive Masked Diffusion Model Masked Diffusion Model + + + Causal Attention Causal Attention Full Attention",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71127_coevol_no_neural_operator",
+      "title": "CoEvol-NO: State and Coordinate Co-Evolution with an Error-Driven Predictor-Corrector Paradigm for Neural Operator Transformer",
+      "venue": "ICML",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71127_coevol_no_neural_operator.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71127_coevol_no.txt",
+      "abstract_word_count": 170,
+      "abstract_sentence_count": 6,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71127_coevol_no.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71127_coevol_no_neural_operator",
+        "title": "CoEvol-NO: State and Coordinate Co-Evolution with an Error-Driven Predictor-Corrector Paradigm for Neural Operator Transformer",
+        "venue": "ICML",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "The applicability of neural operators remains lim- ited by the challenges of handling complex phys- ical conditions in real-world settings. We ar- L L Sn Sm gue that this limitation stems from the inherent Xn X n 1 Xm X m 1 Xn Xm trade-off between geometric sensitivity to com- Co-Evolutionary plex boundaries and the dynamic memory re- quired for long-term physical evolution. Instead Downsample Upsample of directly addressing these ad-hoc constraints, we Evolution propose that modeling the co-evolution of latent Sn Sn 1 S n 2 states and mesh sequences offers a more funda- Xn X n 1 X n 2 X n 3 mental solution: latent states accumulate physical features across layers, while mesh sequences pro- Figure 1. Comparison of different latent-space interaction vide real-time geometric feedback. To this end, paradigms: (a) Coords-Evol (Wu et al., 2024), (b) State- Evol (Wang & Wang, 2024), and (c) Co-Evolutionary. we propose CoEvol-NO, a co-evolutionary frame- work where the latent state and mesh sequence are updated jointly . To enhance the capacity of",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71039_discoformer_density_score_transformers",
+      "title": "DiScoFormer: Plug-In Density and Score Estimation with Transformers",
+      "venue": "ICML",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71039_discoformer_density_score_transformers.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71039_discoformer_density_score_transformers.txt",
+      "abstract_word_count": 373,
+      "abstract_sentence_count": 23,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71039_discoformer_density_score_transformers.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71039_discoformer_density_score_transformers",
+        "title": "DiScoFormer: Plug-In Density and Score Estimation with Transformers",
+        "venue": "ICML",
+        "year": 2026,
+        "domain_tags": [
+          "transformer",
+          "density_estimation",
+          "score_estimation",
+          "operator_learning"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "by a rigid bias-variance trade-off and a prohibitive “curse of Estimating probability density and its score from dimensionality” as dimension d increases. Conversely, mod- samples remains a core problem in generative ern neural score-matching models achieve high accuracy modeling, Bayesian inference, and kinetic theory. in high-dimensional settings but are typically transductive: arXiv:2511.05924v4 [cs.LG] 2 Jun 2026 Existing methods are bifurcated: classical kernel they must be retrained for every new target distribution, density estimators (KDE) generalize across distri- precluding their use as general-purpose, “off-the-shelf” esti- butions but suffer from the curse of dimensional- mators. ity, while neural score-matching models achieve high precision but require retraining for every tar- We propose bridging this gap by framing density and score get distribution. We introduce DiScoFormer (Den- estimation as a sequence-to-operator (Sutskever et al., 2014) sity and Score Transformer), an equivariant Trans- learning task. Given an i.i.d. sample X = {xi }ni=1 ⊂ Rd , former that maps i.i.d. samples to both density we seek to learn a single model that maps the entire sample values and score vectors. Unlike score matching, X to its underlying density and score functions. Specifically, which learns a fixed function Rd → Rd for a single we define an operator T for the log-density and S for the distribution, DiScoFormer learns a sequence-to- score: sequence operator that generalizes across distri- ∇ log f (x1 )         butions and sample sizes without retraining. Ana- x1 log f (x1 ) x1 lytically, we prove that self-attention can recover  ..  − T → ..  ,  ..  − S → .. . . . . . normalized KDE, establishing it as a functional xn log f (xn ) xn ∇ log f (xn ) generalization of kernel methods; empirically, in- A critical requirement for such an operator is that it must dividual attention heads learn multi-scale, kernel- respect the inherent symmetries of the data. Specifically, the like behaviors. The model outperforms KDE for estimates should be permutation-equivariant with respect to density and score estimation, and provides a plug- the sample index and affine-equivariant with respect to the in score oracle for score-debiased KDE, Fisher in- coordinate space. For a permutation matrix P , invertible formation computation, and Fokker–Planck-type matrix A, and shift µ, these symmetries are defined as: PDEs. T (P XA + 1µ⊤ ) = P T (X) − log | det A| 1, S(P XA + 1µ⊤ ) = P S(X) A−⊤ ,",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71192_context_parameter_updates",
+      "title": "Equivalence of Context and Parameter Updates in Modern Transformer Blocks",
+      "venue": "ICML",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71192_context_parameter_updates.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71192_context_parameter_updates.txt",
+      "abstract_word_count": 181,
+      "abstract_sentence_count": 8,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71192_context_parameter_updates.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71192_context_parameter_updates",
+        "title": "Equivalence of Context and Parameter Updates in Modern Transformer Blocks",
+        "venue": "ICML",
+        "year": 2026,
+        "domain_tags": [
+          "llm",
+          "vlm",
+          "in-context-learning",
+          "transformer-theory",
+          "implicit-finetuning",
+          "low-rank-updates",
+          "gemma",
+          "7b-relevant"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": true
+      },
+      "abstract_text": "Recent research has established that the impact of context in a vanilla transformer can be represented implicitly by forming a token-dependent, rank-1 patch to its MLP weights. This work extends that foundational theory to the diverse architectures of modern Large Language Models. We first demonstrate a precise, analytical solution for a Gemma-style transformer block, proving that the entire effect of a context can be perfectly mapped to rank-1 patches on its MLP weight matrices and a patch to the RMSNorm scale. We then generalize this result, providing a constructive proof and algorithm for multi-layer models. To unify these findings, we introduce a general framework centered on two core properties: input controllability and output controllability. We prove that a perfect implicit weight patch is possible for any MLP block where the inner function is input-controllable and the outer function is output-controllable. This provides a simpler and more powerful lens for understanding how transformer models transmute prompts into effective weights. This setup generalizes to a wide range of modern LLM architectures including gating, pre-/post-norm, mixture of experts and sequential/parallel transformer blocks.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71193_focus_dilution_attention",
+      "title": "Focus and Dilution: The Multi-stage Learning Process of Attention",
+      "venue": "ICML",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71193_focus_dilution_attention.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71193_focus_dilution.txt",
+      "abstract_word_count": 446,
+      "abstract_sentence_count": 19,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71193_focus_dilution.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71193_focus_dilution_attention",
+        "title": "Focus and Dilution: The Multi-stage Learning Process of Attention",
+        "venue": "ICML",
+        "year": 2026,
+        "domain_tags": [
+          "transformer-training-dynamics",
+          "attention",
+          "gradient-flow",
+          "markov-data",
+          "mechanistic-theory",
+          "llm-interpretability",
+          "small-model-probes"
+        ],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": true
+      },
+      "abstract_text": "training. Most existing analyses gain tractability by intro- Transformer-based models have achieved remark- ducing additional technical condition, such as reparameteri- able success across a wide range of domains, yet zations (Zhang et al., 2024a) or proxy dynamics (Tarzanagh our understanding of their training dynamics re- arXiv:2605.01199v1 [cs.LG] 2 May 2026 et al., 2023), which may obscure the native coupling among mains limited. In this work, we identify a re- embeddings, projection, and attention. Moreover, recent current focus–dilution cycle in attention learn- work suggests that Transformer training often undergoes ing and provide a rigorous explanation in a one- multiple stages (Chang et al., 2024; Varre et al., 2025), and layer Transformer setting for Markovian data that attention can shift from highly concentrated to more via gradient-flow analysis. Using stage-wise lin- diffuse patterns (Tian et al., 2024). These observations point earization around critical points, we show that a to a need for a dynamical picture that remains faithful to the single focus–dilution cycle can be decomposed coupled dynamics and can explain both attention amplifica- into a sequence of distinct stages. First, embed- tion and its subsequent dissipation. ding and projection rapidly condense to a rank- one structure, while attention parameters remain In this work, we combine theory and experiments to show effectively frozen. Then, the attention param- that attention can be understood as a cyclical learning pro- eters begin to increase, inducing a frequency- cess. Within each cycle, attention first amplifies a frequency- driven focus toward high-frequency tokens. As driven preference over tokens (focus), and then gradually attention continues to evolve, it generates next- weakens this preference as the embedding structure adapts order perturbations in embeddings, leading to a (dilution). We identify the dynamical origin of each stage mass-redistribution mechanism that progressively and explain how the interaction between embeddings and dilutes this focus. Finally, small asymmetries attention progressively decomposes the learning problem. among low-frequency tokens lift a degenerate crit- To keep the analysis tractable while preserving essential ical point, opening new embedding directions and sequential structure, we study population gradient flow for a initiating the next cycle. Experiments on synthetic one-layer Transformer trained by cross-entropy on Markov Markovian data as well as WikiText and TinySto- data (Chang et al., 2024; Makkuva et al., 2024; 2025). Our ries corroborate the predicted stages and cyclical explanation is stage-wise and built on linearizations around dynamics. critical points. Under small initialization, the trajectory is first governed by the linearization near the origin, which forces a rank-one condensation of the embedding and pro- 1. Introduction jection components, consistent with the condensation phe- Transformer models (Vaswani et al., 2017) have become the nomenon in Chen & Luo (2025). We further observed that",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "C1_domain_context",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "E3_quantitative_anchor",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->C1_domain_context",
+        "C1_domain_context->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->E3_quantitative_anchor",
+        "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71133_rational_transductors",
+      "title": "Rational Transductors",
+      "venue": "ICML",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71133_rational_transductors.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71133_rational_transductors.txt",
+      "abstract_word_count": 201,
+      "abstract_sentence_count": 6,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71133_rational_transductors.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71133_rational_transductors",
+        "title": "Rational Transductors",
+        "venue": "ICML",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Standard Transformers excel at semantic modeling but struggle with rigid sequential logic and state tracking. Theoretical work establishes that self-attention is limited to AC0 (under hard attention) or TC0 (under soft attention), complexity classes that often fail to support robust length generalization on sequential problems without intermediate chain-of-thought. In this work, we introduce Rational Transductors, a dual-stream architecture that augments the Transformer with a matrix-valued recurrence derived from Weighted Finite Automata (WFA). By injecting rational state information into the attention mechanism via a Deep Rational Injection scheme, our framework strictly generalizes the expressive power of Transformers to capture all Regular Languages, NC1 -complete problems (such as Boolean Formula Evaluation), and fundamental separations like Parity and Modular Counting, while preserving O(L + log T) parallel time complexity. We ground the architecture in a rigorous learning theory: we prove that Random Rational Features act as a universal basis for sequential dependencies, justifying our initialization strategy, while establishing that the Differentiable Rational Feature regime is necessary to close the representational compactness gap. Theoretical analysis and empirical results demonstrate that Rational Transductors solve the \"Regular Gap,\" enabling robust length generalization on algorithmic tasks where standard Transformers fail, without the sequential computational bottlenecks of traditional RNNs.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICML2026_71098_secnet_event_cloud",
+      "title": "Scalable Event Cloud Network for Event-based Classification",
+      "venue": "ICML",
+      "chip_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/chips/ICML2026_71098_secnet_event_cloud.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71098_secnet_event_cloud.txt",
+      "abstract_word_count": 168,
+      "abstract_sentence_count": 9,
+      "source_paths_tried": [
+        "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/text/ICML2026_71098_secnet_event_cloud.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICML2026_71098_secnet_event_cloud",
+        "title": "Scalable Event Cloud Network for Event-based Classification",
+        "venue": "ICML",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "Event cameras are biologically inspired sensors garnering significant attention from both industry and academia. Mainstream methods favor frame and voxel representations, which reach a satisfactory performance while introducing timeconsuming transformations, bulky models, and sacrificing fine-grained temporal information. Alternatively, Point Cloud representation demonstrates promise in addressing the mentioned weaknesses, but it has limited scalability in abstracting features of higher spatial resolution and longer temporal sequence events. In this paper, we propose a Scalable Network named SECNet to leverage Event Cloud representation. SECNet integrates polarity at the structural level by innovating the Event-based Group and Sampling module rather than only at the input level. To accommodate the surge in the number of events, SECNet embraces feature extraction in the frequency domain via the Fourier transform. This approach not only substantially extinguishes the explosion of Multiply Accumulate Operations but also effectively abstracts spatio-temporal features. We conducted extensive experiments on ten event-based datasets, and substantiate the scalability, effectiveness, and efficiency of SECNet. Our code will be available at: https: //github.com/rhwxmx/SECNet_ICML.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    },
+    {
+      "chip_id": "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+      "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention",
+      "venue": "ICLR 2026 ORAL",
+      "chip_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure.chip.json",
+      "split": "train",
+      "abstract_extraction_ok": true,
+      "abstract_source_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_0jHyEKHDyx_openreview.txt",
+      "abstract_word_count": 165,
+      "abstract_sentence_count": 8,
+      "source_paths_tried": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_0jHyEKHDyx_openreview.txt"
+      ],
+      "paper_signature": {
+        "chip_id": "ICLR2026_0jHyEKHDyx_low_precision_flash_attention_failure",
+        "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention",
+        "venue": "ICLR 2026 Oral",
+        "year": 2026,
+        "domain_tags": [],
+        "has_problem_gap": true,
+        "has_method_mechanism": true,
+        "has_evaluation": true,
+        "has_results": true,
+        "has_limitations": false
+      },
+      "abstract_text": "The pursuit of computational efficiency has driven the adoption of low-precision formats for training transformer models. However, this progress is often hindered by notorious training instabilities. This paper provides the first mechanistic expla- nation for a long-standing and unresolved failure case where training with flash attention in low-precision settings leads to catastrophic loss explosion. Our in- depth analysis reveals that the failure is not a random artifact but caused by two intertwined phenomena: the emergence of similar low-rank representations within the attention mechanism and the compounding effect of biased rounding errors inherent in low-precision arithmetic. We demonstrate how these factors create a vicious cycle of error accumulation that corrupts weight updates, ultimately de- railing the training dynamics. To validate our findings, we introduce a minimal modification to the flash attention that mitigates the bias in rounding errors. This simple change stabilizes the training process, confirming our analysis and offer- ing a practical solution to this persistent problem. Code is available at https: //github.com/ucker/why-low-precision-training-fails.",
+      "selected_nodes": [
+        "R1_abstract_as_argument",
+        "G1_problem_gap",
+        "O1_named_method_or_object",
+        "M1_architecture_or_mechanism",
+        "M2_efficiency_or_theory_detail",
+        "E1_evaluation_setup",
+        "E2_result_outcome",
+        "I1_interpretation_or_tradeoff",
+        "S1_bounded_takeaway",
+        "P1_length_and_placement_prior"
+      ],
+      "selected_edges": [
+        "R1_abstract_as_argument->G1_problem_gap",
+        "G1_problem_gap->O1_named_method_or_object",
+        "O1_named_method_or_object->M1_architecture_or_mechanism",
+        "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+        "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+        "E1_evaluation_setup->E2_result_outcome",
+        "E2_result_outcome->I1_interpretation_or_tradeoff",
+        "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+        "S1_bounded_takeaway->P1_length_and_placement_prior"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T08:20:25Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ]
+  ],
+  "graph_id": "CVPR2026_103_atoken_unified_visual_tokenizer_gap_dag_iter_01",
+  "nodes": [
+    {
+      "content": "AToken: A Unified Tokenizer for Vision | families=visual_tokenizer, diffusion_cache, speculative_or_early_decoding, video_token_merging, long_context_or_rope, sparse_cuda_rl, 3d_generation",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "visual tokenizer fragmentation; reconstruction versus semantics split; image-only unified tokenizer limit; transformer tokenizer GAN instability; small capacity multimodal interference",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "256-H100 training cost; 192M Base degradation; long-video benchmark gap; image-to-3D generation fidelity gap; research-only model license; no local rerun",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "SD-VAE; VQGAN; GigaTok; OmniTokenizer; MAGVIT-v2; Cosmos; TAE; Hunyuan; Wan; Trellis-SLAT",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "sparse 4D latent space; space-time patch embedding; 4D/joint RoPE; attention pooling; KL reconstruction latent; FSQ quantizer; Gram loss; CLIP perceptual loss; Gaussian splatting decoder; KV-cache video decoding",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=visual tokenizer reconstruction; zero-shot classification; image-text/video-text retrieval; MLLM image understanding; MLLM video understanding; text-to-image generation; text-to-video generation; image-to-3D synthesis; scaling ablation; metrics=PSNR; SSIM; LPIPS; rFID; rFVD; accuracy; R@1; gFID; Inception Score; precision; protocols=standardized tokenizer re-evaluation; frozen encoder SlowFast-LLaVA replacement; 1B/3B/7B MLLM comparisons; T2I/T2V generation with same backbone; official repo compile-only check",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=64 H100 GPUs Stage 1; 256 H100 GPUs Stages 2-3; local compileall environment; runtimes=PyTorch; diffusers; safetensors; flash-attn; Gaussian splatting dependencies; Jupyter examples",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken; /tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION; code_artifacts=README.md; LICENSE; MODEL-LICENSE; ATokenWrapper; AutoencoderKL; FSQ; LFQ; sparse preprocessors; transformer blocks; Gaussian decoder",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ml-atoken",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/103_atoken/ATOKEN-A-UNIFIED-TOKENIZER-FOR-VISION"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=DFN; Open Images; WebVid; TextVR; Panda70M; Objaverse; Cap3D; ImageNet; COCO; DAVIS; data_artifacts=Apple CDN checkpoint links; overview image; public benchmark tables; Apple research page; not-downloaded checkpoints; implementation_statuses=code_inspected; official_repo_found; compileall_passed; checkpoint_links_found; not_rerun; manual_seed_false; research_only_model_license",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [],
+  "signature": "453ae1562c0eb4fe",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+  "target_title": "AToken: A Unified Tokenizer for Vision"
+}

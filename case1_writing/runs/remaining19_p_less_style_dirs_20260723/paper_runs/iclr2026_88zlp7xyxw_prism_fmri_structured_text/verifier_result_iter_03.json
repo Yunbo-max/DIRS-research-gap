@@ -1,0 +1,111 @@
+{
+  "artifact_kind": "prism_specialized_verifier",
+  "artifact_paths": {
+    "dag_iter_03": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_88zlp7xyxw_prism_fmri_structured_text/paper_author_gap_dag_iter_03.json",
+    "environment": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/environment.json",
+    "model_data_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/model_data_manifest.json",
+    "professional_gate": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/professional_gate_result.json",
+    "repo_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prism/repo_manifest.json"
+  },
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true,
+        "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM"
+      ],
+      "name": "repo_path_encoded",
+      "status": "pass"
+    },
+    {
+      "detail": "script syntax, source compile, API placeholder, and unrelated local artifacts cannot converge",
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        {
+          "detail": "README/DAG expect two NVIDIA L40 48GB GPUs; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+          "id": "two_l40_48gb_hardware_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No clean >=45GB GPU is available for the paper-shaped PRISM reconstruction run. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16189, 'memory_free_mib': 8028, 'utilization_gpu_pct': 100, 'temperature_c': 79, 'power_w': 177.14}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 98, 'temperature_c': 86, 'power_w': 320.22}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16397, 'memory_free_mib': 7816, 'utilization_gpu_pct': 99, 'temperature_c': 77, 'power_w': 180.08}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99, 'temperature_c': 80, 'power_w': 157.15}].",
+          "id": "clean_large_fmri_generation_gpu_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing imports for the released PRISM pipeline: diffusers, xformers, langchain_openai, lpips, retry",
+          "id": "prism_runtime_dependencies_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing PRISM pipeline artifacts: best_keyword_json, train_structured_npz, val_structured_npz, test_structured_npz, trained_checkpoint_cur_best, generated_output_dir, metric_output_dir",
+          "id": "prism_pipeline_artifacts_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No materialized NSD fMRI data for PRISM was found; README requires NSD terms/form access.",
+          "id": "nsd_access_gated_fmri_data_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No BOLD5000 benchmark artifacts found for PRISM verifier comparison.",
+          "id": "bold5000_benchmark_artifacts_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No Generic Object Decoding benchmark artifacts found for PRISM verifier comparison.",
+          "id": "generic_object_decoding_artifacts_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No PRISM-bound COCO image/caption/QA artifacts found for verifier comparison.",
+          "id": "coco_qa_artifacts_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "No complete PixCorr/SSIM/LPIPS/CLIP/Inception/QA/CKA/CCA/generalization-gap result grid was found.",
+          "id": "full_fmri_reconstruction_qa_metric_grid_missing",
+          "status": "blocked"
+        }
+      ],
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": "requires PRISM fMRI reconstruction/QA metric grid before comparison to paper evidence channels",
+      "name": "result_shape_comparison_ready",
+      "status": "blocked"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-24T13:33:21Z",
+  "iteration": 3,
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "paper_title": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.prism_repo_to_full_fmri_operational_gates",
+      "reason": "blocked_by_fmri_data_api_runtime_hardware_pipeline_artifacts_and_metric_grid",
+      "success_criteria": [
+        "repo path encoded",
+        "fMRI dataset/materialization gate present",
+        "OpenAI structured-text artifact gate present",
+        "runtime/hardware gate present",
+        "full reconstruction/QA/ablation metric grid gate present"
+      ]
+    }
+  ]
+}

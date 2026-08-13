@@ -1,0 +1,59 @@
+{
+  "artifact_kind": "loongrl_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "DAG/paper-shaped 7B training expects 16 A100 GPUs; visible A100 count=0, total visible GPUs=4",
+      "id": "loongrl_7b_training_gpu_topology",
+      "status": "blocked"
+    },
+    {
+      "detail": "DAG/paper-shaped 14B training expects 8 MI300X GPUs; visible MI300X count=0",
+      "id": "loongrl_14b_training_gpu_topology",
+      "status": "blocked"
+    },
+    {
+      "detail": "official long-context GRPO scripts request trainer.n_gpus_per_node=8; visible GPUs=4",
+      "id": "official_longcontext_script_gpu_count",
+      "status": "blocked"
+    },
+    {
+      "detail": "official GRPO scripts reference missing local parquet train files: /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet",
+      "id": "official_longcontext_training_data_paths_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "no local LoongRL-7B or LoongRL-14B checkpoint directory was found for full benchmark evaluation",
+      "id": "trained_loongrl_checkpoints_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "missing installed runtime packages needed by paper-shaped veRL/Ray/vLLM/SGLang flow: ray, vllm, sglang, flash_attn, verl",
+      "id": "cluster_rl_runtime_packages_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "MI300X/ROCm runtime path is not visible from rocm-smi, so the 14B MI300X paper route cannot run here",
+      "id": "rocm_mi300x_runtime_unavailable",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-23T18:53:37Z",
+  "next_full_execution_if_unblocked": [
+    "materialize official training parquet files and trained LoongRL checkpoints",
+    "run 7B training on 16 A100 or equivalent paper-approved topology",
+    "run 14B training/evaluation on 8 MI300X route or paper-approved equivalent",
+    "evaluate LongBench v1/v2, HELMET, RULER/NIAH, MMLU, MATH-500, and IFEval with the paper protocols",
+    "emit raw generations, scores, length buckets, timing/compute traces, and table-shaped summaries"
+  ],
+  "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+  "paper_title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+  "professional_package_ready": false,
+  "status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+  "support_checks": {
+    "compileall_passed": true,
+    "hf_dataset_manifest_checked": 1,
+    "hf_model_manifest_checked": 10,
+    "official_scripts_parsed": 11
+  }
+}

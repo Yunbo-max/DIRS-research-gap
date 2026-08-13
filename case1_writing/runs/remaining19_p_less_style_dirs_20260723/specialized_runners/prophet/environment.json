@@ -1,0 +1,40 @@
+{
+  "created_at_utc": "2026-07-23T08:55:42Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/paper_author_gap_dag.json",
+  "git_config_file_excerpt": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n[remote \"origin\"]\n\turl = https://github.com/pixeli99/Prophet\n\tfetch = +refs/heads/*:refs/remotes/origin/*\n[branch \"main\"]\n\tremote = origin\n\tmerge = refs/heads/main\n",
+  "git_head_file": "ref: refs/heads/main",
+  "hostname": "9be0b5586206",
+  "logical_gpu_mapping_note": "CUDA_VISIBLE_DEVICES=3 makes the selected physical GPU appear as logical cuda:0 inside PyTorch.",
+  "nvidia_smi": {
+    "cmd": [
+      "nvidia-smi",
+      "--query-gpu=index,name,memory.total,memory.used,utilization.gpu",
+      "--format=csv,noheader,nounits"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.068,
+    "stderr": "",
+    "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19195, 6\n3, NVIDIA GeForce RTX 4090, 24564, 21, 0\n",
+    "timeout": false
+  },
+  "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.31",
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "python_deps": {
+    "cmd": [
+      "python",
+      "-c",
+      "import importlib.util; mods=['torch','transformers','accelerate','datasets','lm_eval','huggingface_hub']; print({m: bool(importlib.util.find_spec(m)) for m in mods}); import torch, transformers, accelerate, datasets, lm_eval, huggingface_hub; print('torch', torch.__version__, 'cuda', torch.version.cuda); print('transformers', transformers.__version__); print('accelerate', accelerate.__version__); print('datasets', datasets.__version__); print('lm_eval', getattr(lm_eval, '__version__', 'unknown')); print('huggingface_hub', huggingface_hub.__version__)"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 2.964,
+    "stderr": "",
+    "stdout": "{'torch': True, 'transformers': True, 'accelerate': True, 'datasets': True, 'lm_eval': True, 'huggingface_hub': True}\ntorch 2.6.0+cu124 cuda 12.4\ntransformers 4.51.2\naccelerate 1.11.0\ndatasets 4.3.0\nlm_eval 0.4.12\nhuggingface_hub 0.36.0\n",
+    "timeout": false
+  },
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet",
+  "selected_cuda_visible_devices": "3",
+  "which_accelerate": "/opt/conda/bin/accelerate",
+  "which_python": "/opt/conda/bin/python"
+}

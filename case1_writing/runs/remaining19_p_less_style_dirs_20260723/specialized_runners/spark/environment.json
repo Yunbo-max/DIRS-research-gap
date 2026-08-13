@@ -1,0 +1,133 @@
+{
+  "artifact_kind": "spark_environment_manifest",
+  "created_at_utc": "2026-07-23T18:52:46Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 2873,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 21343,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 64.78,
+      "temperature_c": 43,
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 20.79,
+      "temperature_c": 39,
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5168,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19045,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 20.13,
+      "temperature_c": 39,
+      "utilization_gpu_pct": 17
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8168,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16049,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 247.68,
+      "temperature_c": 75,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "package_probes": {
+    "isaacsim": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; importlib.import_module('isaacsim'); print('ok')"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'isaacsim'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "kaolin": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; importlib.import_module('kaolin'); print('ok')"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'kaolin'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "open3d": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; importlib.import_module('open3d'); print('ok')"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'open3d'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "pytorch3d": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; importlib.import_module('pytorch3d'); print('ok')"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pytorch3d'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; importlib.import_module('torch'); print('ok')"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.889,
+      "stderr": "",
+      "stdout": "ok\n",
+      "timeout": false
+    },
+    "trimesh": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; importlib.import_module('trimesh'); print('ok')"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'trimesh'\n",
+      "stdout": "",
+      "timeout": false
+    }
+  },
+  "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+  "professional_hardware_expected_by_dag": [
+    "4 NVIDIA H100 GPUs for training/evaluation surface",
+    "Isaac Sim runtime for simulator deployment",
+    "VLM/API access for structural reasoning and part-reference image generation"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]"
+}

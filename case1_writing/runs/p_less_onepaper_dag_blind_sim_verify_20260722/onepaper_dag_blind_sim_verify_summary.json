@@ -1,0 +1,4450 @@
+{
+  "blind_simulator_contract": {
+    "dag_contains_oracle_numeric_results": false,
+    "oracle_hidden_from_simulator": true,
+    "simulator_allowed_user_data_files": [
+      "paper_author_dag.json"
+    ],
+    "simulator_forbidden_user_data_files": [
+      "paper_section_evidence_table.json",
+      "paper_oracle_results.json",
+      "author_style_gpu_reproduction_campaign.json",
+      "loop1_loop2_20paper_author_cycle.json",
+      "paper text files",
+      "prior reports or traces"
+    ]
+  },
+  "converged": true,
+  "created_at_utc": "2026-07-22T21:21:44Z",
+  "iterations": [
+    {
+      "dag": {
+        "blind_simulation_contract": {
+          "dag_contains_oracle_numeric_results": false,
+          "oracle_hidden_from_simulator": true,
+          "simulator_allowed_user_data_files": [
+            "paper_author_dag.json"
+          ],
+          "simulator_forbidden_user_data_files": [
+            "paper_section_evidence_table.json",
+            "paper_oracle_results.json",
+            "author_style_gpu_reproduction_campaign.json",
+            "loop1_loop2_20paper_author_cycle.json",
+            "paper text files",
+            "prior reports or traces"
+          ]
+        },
+        "created_at_utc": "2026-07-22T21:21:09Z",
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v1",
+        "detail_level": 1,
+        "edges": [
+          [
+            "root.author_simulation",
+            "gap.hyperparameter_brittleness"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "method.p_less_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "method.p_lessnorm_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.threshold_invariant_probe"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.reasoning_quality_proxy"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "decision.claim_boundary"
+          ]
+        ],
+        "experiment_recipes": {
+          "claim_slots": {
+            "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+            "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+            "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+            "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+            "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+          },
+          "distribution_grid": {
+            "entropy_regimes": [
+              "peaked_reasoning",
+              "mixed_reasoning",
+              "flat_creative"
+            ],
+            "samples_per_temperature": 32,
+            "seed": 20260722,
+            "temperatures": [
+              0.5,
+              0.7,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "vocab_size": 4096
+          },
+          "operation_cost_model": {
+            "base_linear_scan": 1.0,
+            "default_inclusion_penalty": 0.35,
+            "hyperparameter_tuning_penalty": 0.2,
+            "normalization_extra_scan": 0.1,
+            "second_moment_extra_scan": 0.15,
+            "sorting_penalty": 1.75,
+            "uses_oracle_timing": false
+          },
+          "samplers": {
+            "epsilon": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "fixed_probability_threshold",
+              "needs_sort": false
+            },
+            "eta": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "entropy_scaled_fixed_threshold",
+              "needs_sort": false
+            },
+            "min_p": {
+              "hyperparameters": {
+                "alpha": 0.05
+              },
+              "kind": "modal_relative_threshold",
+              "needs_sort": false
+            },
+            "mirostat": {
+              "hyperparameters": {
+                "target_surprisal": 5.0
+              },
+              "kind": "target_surprisal_proxy",
+              "needs_sort": true
+            },
+            "p_less": {
+              "hyperparameters": {},
+              "kind": "second_moment_threshold",
+              "needs_sort": false
+            },
+            "p_lessnorm": {
+              "hyperparameters": {},
+              "kind": "normalized_second_moment_threshold",
+              "needs_sort": false
+            },
+            "top_p": {
+              "hyperparameters": {
+                "p": 0.9
+              },
+              "kind": "cumulative_mass_threshold",
+              "needs_sort": true
+            }
+          }
+        },
+        "nodes": [
+          {
+            "id": "root.author_simulation",
+            "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+            "type": "author_loop"
+          },
+          {
+            "id": "gap.hyperparameter_brittleness",
+            "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+            "type": "gap_hypothesis"
+          },
+          {
+            "formula": "threshold = sum_i p_i^2",
+            "id": "method.p_less_threshold",
+            "properties": [
+              "full_distribution",
+              "hyperparameter_free",
+              "bounded_nonempty_candidate_set",
+              "sort_free_threshold"
+            ],
+            "type": "method_mechanism"
+          },
+          {
+            "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+            "id": "method.p_lessnorm_threshold",
+            "properties": [
+              "relaxed_threshold",
+              "higher_diversity",
+              "bounded_nonempty_candidate_set"
+            ],
+            "type": "method_variant"
+          },
+          {
+            "id": "exp.threshold_invariant_probe",
+            "metrics": [
+              "empty_candidate_rate",
+              "retained_mass",
+              "candidate_count",
+              "top_token_retained_rate"
+            ],
+            "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "exp.reasoning_quality_proxy",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_stability"
+            ],
+            "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.claim_boundary",
+            "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+            "type": "author_decision"
+          }
+        ],
+        "previous_verification_summary": {},
+        "signature": "92b8e0d415a99e62",
+        "target_paper_stub": {
+          "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+          "domain": "LLM Inference / Systems / Token Efficiency",
+          "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+        }
+      },
+      "iteration": 1,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_01/blind_workspace",
+        "dag_builder_copy": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_01/paper_author_dag_builder_copy.json",
+        "verification": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_01/verification_result.json"
+      },
+      "signature": "7b17a7f5c85a46e4",
+      "simulation": {
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v1",
+        "dag_signature": "92b8e0d415a99e62",
+        "detail_level": 1,
+        "fallback_rates": {
+          "epsilon": 0.0,
+          "eta": 0.0,
+          "min_p": 0.0,
+          "mirostat": 0.0,
+          "p_less": 0.0,
+          "p_lessnorm": 0.0,
+          "top_p": 0.0
+        },
+        "grid_summary": {
+          "distribution_count": 480,
+          "entropy_regimes": [
+            "peaked_reasoning",
+            "mixed_reasoning",
+            "flat_creative"
+          ],
+          "temperatures": [
+            0.5,
+            0.7,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "vocab_size": 4096
+        },
+        "method_summaries": [
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.36728184419997173,
+            "mean_candidate_count": 160.15833333333333,
+            "mean_quality_proxy": 0.5684336432622195,
+            "mean_retained_mass": 0.6878127577005987,
+            "mean_seconds_per_distribution": 0.0005296867020661011,
+            "method": "epsilon",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6926327429415088,
+              "0.7": 0.7117654922871209,
+              "1.0": 0.7032062926825238,
+              "1.5": 0.3820145531479399,
+              "2.0": 0.35254913525200343
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.40463157549618595,
+            "mean_candidate_count": 1821.2479166666667,
+            "mean_quality_proxy": 0.5883626479092193,
+            "mean_retained_mass": 0.9643314000534222,
+            "mean_seconds_per_distribution": 0.001824456231164125,
+            "method": "eta",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6926327429415088,
+              "0.7": 0.7177242879975099,
+              "1.0": 0.7221930576147062,
+              "1.5": 0.4176917105381532,
+              "2.0": 0.39157144045421854
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6435651375620585,
+            "mean_candidate_count": 140.25625,
+            "mean_quality_proxy": 0.6035804347749525,
+            "mean_retained_mass": 0.5595837207667647,
+            "mean_seconds_per_distribution": 0.0005747062416048721,
+            "method": "min_p",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.5629389859126878,
+              "0.7": 0.5597166456291581,
+              "1.0": 0.6081162672087999,
+              "1.5": 0.6387373597729709,
+              "2.0": 0.648392915351145
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.552272858024205,
+            "mean_candidate_count": 39.87916666666667,
+            "mean_quality_proxy": 0.3691323278271463,
+            "mean_retained_mass": 0.18574278593482427,
+            "mean_seconds_per_distribution": 0.0017388274456607178,
+            "method": "mirostat",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.14649801684043026,
+              "0.7": 0.22241328372826327,
+              "1.0": 0.3722046225186282,
+              "1.5": 0.5476901065573202,
+              "2.0": 0.5568556094910896
+            },
+            "top_token_retained_rate": 0.2
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6532911798353535,
+            "mean_candidate_count": 46.75833333333333,
+            "mean_quality_proxy": 0.5304977405065452,
+            "mean_retained_mass": 0.3787845425088017,
+            "mean_seconds_per_distribution": 0.0007191280601546168,
+            "method": "p_less",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.47539265423880583,
+              "0.7": 0.4124185047134245,
+              "1.0": 0.4580951839097904,
+              "1.5": 0.61273717327054,
+              "2.0": 0.6938451864001669
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6811246567450305,
+            "mean_candidate_count": 310.56875,
+            "mean_quality_proxy": 0.543612782330247,
+            "mean_retained_mass": 0.4405628818396315,
+            "mean_seconds_per_distribution": 0.0007406572413553174,
+            "method": "p_lessnorm",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.47539265423880583,
+              "0.7": 0.41344987222668966,
+              "1.0": 0.4669720716956809,
+              "1.5": 0.6306584877185265,
+              "2.0": 0.7315908257715344
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.4989751913914435,
+            "mean_candidate_count": 1401.5166666666667,
+            "mean_quality_proxy": 0.5980782284608027,
+            "mean_retained_mass": 0.9051128570286276,
+            "mean_seconds_per_distribution": 0.001515070262636679,
+            "method": "top_p",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.6095703739840984,
+              "0.7": 0.6669206989936395,
+              "1.0": 0.7159496865433884,
+              "1.5": 0.5127633783816862,
+              "2.0": 0.48518700440120016
+            },
+            "top_token_retained_rate": 1.0
+          }
+        ],
+        "operation_cost_proxy": {
+          "epsilon": 1.55,
+          "eta": 1.55,
+          "min_p": 1.2,
+          "mirostat": 3.3000000000000003,
+          "p_less": 1.15,
+          "p_lessnorm": 1.25,
+          "top_p": 2.95
+        },
+        "predictions": {
+          "bounded_candidate_set": true,
+          "efficiency_shape": "p_less_fastest_or_tied_fastest",
+          "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+          "high_temperature_writing_shape": "p_less_stable_high_temperature",
+          "hyperparameter_free": true,
+          "reasoning_auc_shape": "not_supported"
+        },
+        "rankings": {
+          "high_temp_quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "mirostat",
+            "top_p",
+            "eta",
+            "epsilon"
+          ],
+          "operation_cost_proxy": [
+            "p_less",
+            "min_p",
+            "p_lessnorm",
+            "epsilon",
+            "eta",
+            "top_p",
+            "mirostat"
+          ],
+          "quality_proxy": [
+            "min_p",
+            "top_p",
+            "eta",
+            "epsilon",
+            "p_lessnorm",
+            "p_less",
+            "mirostat"
+          ],
+          "speed_proxy": [
+            "epsilon",
+            "min_p",
+            "p_less",
+            "p_lessnorm",
+            "top_p",
+            "mirostat",
+            "eta"
+          ]
+        },
+        "simulator_contract": {
+          "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_01/blind_workspace",
+          "forbidden_memory_seen": false,
+          "only_user_data_input": "paper_author_dag.json",
+          "paper_evidence_seen": false,
+          "paper_oracle_seen": false
+        },
+        "subprocess": {
+          "returncode": 0,
+          "runtime_seconds": 5.852
+        }
+      },
+      "stable_count": 1,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_input_contract",
+            "ok": true,
+            "weight": 0.18
+          },
+          {
+            "detail": "p_less fallback=0.000",
+            "name": "bounded_candidate_set",
+            "ok": true,
+            "weight": 0.12
+          },
+          {
+            "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+            "name": "hyperparameter_free",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+            "name": "main_auc_shape",
+            "ok": false,
+            "weight": 0.16
+          },
+          {
+            "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+            "name": "high_temperature_writing_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071913, fastest=0.00052969",
+            "name": "efficiency_shape",
+            "ok": true,
+            "weight": 0.14
+          },
+          {
+            "detail": "blocked_by_missing_full_evaluation_pipeline",
+            "name": "exact_reproduction_boundary",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "detail_level=1, node_count=7",
+            "name": "dag_detail_sufficiency",
+            "ok": false,
+            "weight": 0.04
+          }
+        ],
+        "converged_ready": false,
+        "created_at_utc": "2026-07-22T21:21:15Z",
+        "missing": [
+          "main_auc_shape",
+          "dag_detail_sufficiency"
+        ],
+        "oracle_numeric_anchors_used_by_verifier": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 0.8,
+        "suggestions": [
+          "add artifact gate and verifier table-slot anchors without numeric oracle values"
+        ]
+      }
+    },
+    {
+      "dag": {
+        "blind_simulation_contract": {
+          "dag_contains_oracle_numeric_results": false,
+          "oracle_hidden_from_simulator": true,
+          "simulator_allowed_user_data_files": [
+            "paper_author_dag.json"
+          ],
+          "simulator_forbidden_user_data_files": [
+            "paper_section_evidence_table.json",
+            "paper_oracle_results.json",
+            "author_style_gpu_reproduction_campaign.json",
+            "loop1_loop2_20paper_author_cycle.json",
+            "paper text files",
+            "prior reports or traces"
+          ]
+        },
+        "created_at_utc": "2026-07-22T21:21:15Z",
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v2",
+        "detail_level": 2,
+        "edges": [
+          [
+            "root.author_simulation",
+            "gap.hyperparameter_brittleness"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "method.p_less_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "method.p_lessnorm_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.threshold_invariant_probe"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.reasoning_quality_proxy"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "exp.baseline_control_panel"
+          ]
+        ],
+        "experiment_recipes": {
+          "claim_slots": {
+            "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+            "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+            "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+            "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+            "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+          },
+          "distribution_grid": {
+            "entropy_regimes": [
+              "peaked_reasoning",
+              "mixed_reasoning",
+              "flat_creative"
+            ],
+            "samples_per_temperature": 32,
+            "seed": 20260722,
+            "temperatures": [
+              0.5,
+              0.7,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "vocab_size": 4096
+          },
+          "operation_cost_model": {
+            "base_linear_scan": 1.0,
+            "default_inclusion_penalty": 0.35,
+            "hyperparameter_tuning_penalty": 0.2,
+            "normalization_extra_scan": 0.1,
+            "second_moment_extra_scan": 0.15,
+            "sorting_penalty": 1.75,
+            "uses_oracle_timing": false
+          },
+          "samplers": {
+            "epsilon": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "fixed_probability_threshold",
+              "needs_sort": false
+            },
+            "eta": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "entropy_scaled_fixed_threshold",
+              "needs_sort": false
+            },
+            "min_p": {
+              "hyperparameters": {
+                "alpha": 0.05
+              },
+              "kind": "modal_relative_threshold",
+              "needs_sort": false
+            },
+            "mirostat": {
+              "hyperparameters": {
+                "target_surprisal": 5.0
+              },
+              "kind": "target_surprisal_proxy",
+              "needs_sort": true
+            },
+            "p_less": {
+              "hyperparameters": {},
+              "kind": "second_moment_threshold",
+              "needs_sort": false
+            },
+            "p_lessnorm": {
+              "hyperparameters": {},
+              "kind": "normalized_second_moment_threshold",
+              "needs_sort": false
+            },
+            "top_p": {
+              "hyperparameters": {
+                "p": 0.9
+              },
+              "kind": "cumulative_mass_threshold",
+              "needs_sort": true
+            }
+          }
+        },
+        "nodes": [
+          {
+            "id": "root.author_simulation",
+            "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+            "type": "author_loop"
+          },
+          {
+            "id": "gap.hyperparameter_brittleness",
+            "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+            "type": "gap_hypothesis"
+          },
+          {
+            "formula": "threshold = sum_i p_i^2",
+            "id": "method.p_less_threshold",
+            "properties": [
+              "full_distribution",
+              "hyperparameter_free",
+              "bounded_nonempty_candidate_set",
+              "sort_free_threshold"
+            ],
+            "type": "method_mechanism"
+          },
+          {
+            "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+            "id": "method.p_lessnorm_threshold",
+            "properties": [
+              "relaxed_threshold",
+              "higher_diversity",
+              "bounded_nonempty_candidate_set"
+            ],
+            "type": "method_variant"
+          },
+          {
+            "id": "exp.threshold_invariant_probe",
+            "metrics": [
+              "empty_candidate_rate",
+              "retained_mass",
+              "candidate_count",
+              "top_token_retained_rate"
+            ],
+            "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "exp.reasoning_quality_proxy",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_stability"
+            ],
+            "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.claim_boundary",
+            "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+            "type": "author_decision"
+          },
+          {
+            "id": "exp.high_temperature_writing_proxy",
+            "metrics": [
+              "high_temp_robustness_score",
+              "fallback_rate",
+              "tail_mass_penalty"
+            ],
+            "purpose": "stress creative-writing-like high-temperature distributions and collapse/fallback behavior",
+            "type": "experiment_recipe"
+          },
+          {
+            "baselines": [
+              "top_p",
+              "min_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "control_logic": "compare fixed, cumulative, modal-relative, entropy-scaled, and target-surprisal truncation",
+            "id": "exp.baseline_control_panel",
+            "type": "baseline_inventory"
+          }
+        ],
+        "previous_verification_summary": {
+          "checks": [
+            {
+              "detail": "leakage_hits=[]",
+              "name": "blind_input_contract",
+              "ok": true,
+              "weight": 0.18
+            },
+            {
+              "detail": "p_less fallback=0.000",
+              "name": "bounded_candidate_set",
+              "ok": true,
+              "weight": 0.12
+            },
+            {
+              "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+              "name": "hyperparameter_free",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+              "name": "main_auc_shape",
+              "ok": false,
+              "weight": 0.16
+            },
+            {
+              "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+              "name": "high_temperature_writing_shape",
+              "ok": true,
+              "weight": 0.16
+            },
+            {
+              "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071913, fastest=0.00052969",
+              "name": "efficiency_shape",
+              "ok": true,
+              "weight": 0.14
+            },
+            {
+              "detail": "blocked_by_missing_full_evaluation_pipeline",
+              "name": "exact_reproduction_boundary",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "detail_level=1, node_count=7",
+              "name": "dag_detail_sufficiency",
+              "ok": false,
+              "weight": 0.04
+            }
+          ],
+          "converged_ready": false,
+          "created_at_utc": "2026-07-22T21:21:15Z",
+          "missing": [
+            "main_auc_shape",
+            "dag_detail_sufficiency"
+          ],
+          "oracle_numeric_anchors_used_by_verifier": {
+            "table15_cpu_ms_ram_gb": {
+              "min_p": {
+                "cpu_ms": 0.83,
+                "ram_gb": 2.545
+              },
+              "p_less": {
+                "cpu_ms": 0.62,
+                "ram_gb": 2.456
+              },
+              "top_p": {
+                "cpu_ms": 0.79,
+                "ram_gb": 2.535
+              }
+            },
+            "table1_llama2_auc_p_less": {
+              "CSQA": 0.503,
+              "GPQA": 0.242,
+              "GSM8K": 0.267,
+              "QASC": 0.537
+            },
+            "table1_llama2_auc_p_lessnorm": {
+              "CSQA": 0.503,
+              "GPQA": 0.248,
+              "GSM8K": 0.267,
+              "QASC": 0.538
+            },
+            "table1_mistral_auc_p_less": {
+              "CSQA": 0.697,
+              "GPQA": 0.239,
+              "GSM8K": 0.562,
+              "QASC": 0.736
+            },
+            "table1_mistral_auc_p_lessnorm": {
+              "CSQA": 0.692,
+              "GPQA": 0.222,
+              "GSM8K": 0.564,
+              "QASC": 0.739
+            },
+            "table2_llama2_temp2_win_rate": {
+              "epsilon": 0.0,
+              "eta": 0.0,
+              "min_p": 48.94,
+              "mirostat": 26.88,
+              "p_less": 65.64,
+              "p_lessnorm": 59.29,
+              "top_p": 0.0
+            },
+            "table3_sampling_time_seconds_per_token": {
+              "epsilon": 0.02259,
+              "eta": 0.0221,
+              "min_p": 0.02497,
+              "mirostat": 0.02278,
+              "p_less": 0.01942,
+              "top_p": 0.02362
+            }
+          },
+          "score": 0.8,
+          "suggestions": [
+            "add artifact gate and verifier table-slot anchors without numeric oracle values"
+          ]
+        },
+        "signature": "4bf9626763360c2a",
+        "target_paper_stub": {
+          "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+          "domain": "LLM Inference / Systems / Token Efficiency",
+          "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+        }
+      },
+      "iteration": 2,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_02/blind_workspace",
+        "dag_builder_copy": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_02/paper_author_dag_builder_copy.json",
+        "verification": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_02/verification_result.json"
+      },
+      "signature": "66ffd308f1c3eb91",
+      "simulation": {
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v2",
+        "dag_signature": "4bf9626763360c2a",
+        "detail_level": 2,
+        "fallback_rates": {
+          "epsilon": 0.0,
+          "eta": 0.0,
+          "min_p": 0.0,
+          "mirostat": 0.0,
+          "p_less": 0.0,
+          "p_lessnorm": 0.0,
+          "top_p": 0.0
+        },
+        "grid_summary": {
+          "distribution_count": 480,
+          "entropy_regimes": [
+            "peaked_reasoning",
+            "mixed_reasoning",
+            "flat_creative"
+          ],
+          "temperatures": [
+            0.5,
+            0.7,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "vocab_size": 4096
+        },
+        "method_summaries": [
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.3673380394343171,
+            "mean_candidate_count": 160.02708333333334,
+            "mean_quality_proxy": 0.5683615893668549,
+            "mean_retained_mass": 0.6876404096152781,
+            "mean_seconds_per_distribution": 0.0005316759770115216,
+            "method": "epsilon",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6923636867842698,
+              "0.7": 0.7116916277207498,
+              "1.0": 0.7030765534606217,
+              "1.5": 0.3820692405969959,
+              "2.0": 0.35260683827163836
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.40465697054749244,
+            "mean_candidate_count": 1821.89375,
+            "mean_quality_proxy": 0.5883133419414968,
+            "mean_retained_mass": 0.9643607222092966,
+            "mean_seconds_per_distribution": 0.00192695380828809,
+            "method": "eta",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6923636867842698,
+              "0.7": 0.7177303404621583,
+              "1.0": 0.7221587413660758,
+              "1.5": 0.4177223884017,
+              "2.0": 0.3915915526932848
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6435636745087466,
+            "mean_candidate_count": 141.88125,
+            "mean_quality_proxy": 0.6036480134281821,
+            "mean_retained_mass": 0.5596908346424342,
+            "mean_seconds_per_distribution": 0.0005753736462793313,
+            "method": "min_p",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.5619400584936225,
+              "0.7": 0.5606135686905589,
+              "1.0": 0.6085590909392339,
+              "1.5": 0.6384260448816614,
+              "2.0": 0.6487013041358317
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.5521380550950662,
+            "mean_candidate_count": 39.81875,
+            "mean_quality_proxy": 0.36846440426262395,
+            "mean_retained_mass": 0.18461952928775666,
+            "mean_seconds_per_distribution": 0.0017431024646308894,
+            "method": "mirostat",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.14456307734365018,
+              "0.7": 0.22238285237521496,
+              "1.0": 0.3710999814041227,
+              "1.5": 0.54620582958046,
+              "2.0": 0.5580702806096721
+            },
+            "top_token_retained_rate": 0.2
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6526550384220569,
+            "mean_candidate_count": 46.80625,
+            "mean_quality_proxy": 0.5303469737624255,
+            "mean_retained_mass": 0.37890970274765656,
+            "mean_seconds_per_distribution": 0.000730852891865652,
+            "method": "p_less",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.47610544434967705,
+              "0.7": 0.411143868697106,
+              "1.0": 0.45917547892122945,
+              "1.5": 0.6121945345599563,
+              "2.0": 0.6931155422841567
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6801263469944278,
+            "mean_candidate_count": 310.56666666666666,
+            "mean_quality_proxy": 0.5432863290802844,
+            "mean_retained_mass": 0.4406481223813776,
+            "mean_seconds_per_distribution": 0.0008064266080812861,
+            "method": "p_lessnorm",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.47610544434967705,
+              "0.7": 0.4128445433116878,
+              "1.0": 0.46722896375119954,
+              "1.5": 0.6287684426068404,
+              "2.0": 0.7314842513820148
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.4990090862398309,
+            "mean_candidate_count": 1402.0270833333334,
+            "mean_quality_proxy": 0.5980318648899864,
+            "mean_retained_mass": 0.9050848384203078,
+            "mean_seconds_per_distribution": 0.0014991354604717345,
+            "method": "top_p",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.6089142491496026,
+              "0.7": 0.6672688860799104,
+              "1.0": 0.7159580167407599,
+              "1.5": 0.5128111230799995,
+              "2.0": 0.48520704939966297
+            },
+            "top_token_retained_rate": 1.0
+          }
+        ],
+        "operation_cost_proxy": {
+          "epsilon": 1.55,
+          "eta": 1.55,
+          "min_p": 1.2,
+          "mirostat": 3.3000000000000003,
+          "p_less": 1.15,
+          "p_lessnorm": 1.25,
+          "top_p": 2.95
+        },
+        "predictions": {
+          "bounded_candidate_set": true,
+          "efficiency_shape": "p_less_fastest_or_tied_fastest",
+          "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+          "high_temperature_writing_shape": "p_less_stable_high_temperature",
+          "hyperparameter_free": true,
+          "reasoning_auc_shape": "not_supported"
+        },
+        "rankings": {
+          "high_temp_quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "mirostat",
+            "top_p",
+            "eta",
+            "epsilon"
+          ],
+          "operation_cost_proxy": [
+            "p_less",
+            "min_p",
+            "p_lessnorm",
+            "epsilon",
+            "eta",
+            "top_p",
+            "mirostat"
+          ],
+          "quality_proxy": [
+            "min_p",
+            "top_p",
+            "eta",
+            "epsilon",
+            "p_lessnorm",
+            "p_less",
+            "mirostat"
+          ],
+          "speed_proxy": [
+            "epsilon",
+            "min_p",
+            "p_less",
+            "p_lessnorm",
+            "top_p",
+            "mirostat",
+            "eta"
+          ]
+        },
+        "simulator_contract": {
+          "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_02/blind_workspace",
+          "forbidden_memory_seen": false,
+          "only_user_data_input": "paper_author_dag.json",
+          "paper_evidence_seen": false,
+          "paper_oracle_seen": false
+        },
+        "subprocess": {
+          "returncode": 0,
+          "runtime_seconds": 5.914
+        }
+      },
+      "stable_count": 1,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_input_contract",
+            "ok": true,
+            "weight": 0.18
+          },
+          {
+            "detail": "p_less fallback=0.000",
+            "name": "bounded_candidate_set",
+            "ok": true,
+            "weight": 0.12
+          },
+          {
+            "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+            "name": "hyperparameter_free",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+            "name": "main_auc_shape",
+            "ok": false,
+            "weight": 0.16
+          },
+          {
+            "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+            "name": "high_temperature_writing_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00073085, fastest=0.00053168",
+            "name": "efficiency_shape",
+            "ok": true,
+            "weight": 0.14
+          },
+          {
+            "detail": "blocked_by_missing_full_evaluation_pipeline",
+            "name": "exact_reproduction_boundary",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "detail_level=2, node_count=9",
+            "name": "dag_detail_sufficiency",
+            "ok": false,
+            "weight": 0.04
+          }
+        ],
+        "converged_ready": false,
+        "created_at_utc": "2026-07-22T21:21:20Z",
+        "missing": [
+          "main_auc_shape",
+          "dag_detail_sufficiency"
+        ],
+        "oracle_numeric_anchors_used_by_verifier": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 0.8,
+        "suggestions": [
+          "add artifact gate and verifier table-slot anchors without numeric oracle values"
+        ]
+      }
+    },
+    {
+      "dag": {
+        "blind_simulation_contract": {
+          "dag_contains_oracle_numeric_results": false,
+          "oracle_hidden_from_simulator": true,
+          "simulator_allowed_user_data_files": [
+            "paper_author_dag.json"
+          ],
+          "simulator_forbidden_user_data_files": [
+            "paper_section_evidence_table.json",
+            "paper_oracle_results.json",
+            "author_style_gpu_reproduction_campaign.json",
+            "loop1_loop2_20paper_author_cycle.json",
+            "paper text files",
+            "prior reports or traces"
+          ]
+        },
+        "created_at_utc": "2026-07-22T21:21:20Z",
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v3",
+        "detail_level": 3,
+        "edges": [
+          [
+            "root.author_simulation",
+            "gap.hyperparameter_brittleness"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "method.p_less_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "method.p_lessnorm_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.threshold_invariant_probe"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.reasoning_quality_proxy"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "exp.baseline_control_panel"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.sampling_efficiency_profile"
+          ],
+          [
+            "exp.sampling_efficiency_profile",
+            "decision.claim_revision"
+          ],
+          [
+            "artifact.full_eval_pipeline_gate",
+            "decision.claim_boundary"
+          ],
+          [
+            "decision.claim_boundary",
+            "decision.claim_revision"
+          ]
+        ],
+        "experiment_recipes": {
+          "claim_slots": {
+            "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+            "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+            "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+            "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+            "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+          },
+          "distribution_grid": {
+            "entropy_regimes": [
+              "peaked_reasoning",
+              "mixed_reasoning",
+              "flat_creative"
+            ],
+            "samples_per_temperature": 32,
+            "seed": 20260722,
+            "temperatures": [
+              0.5,
+              0.7,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "vocab_size": 4096
+          },
+          "operation_cost_model": {
+            "base_linear_scan": 1.0,
+            "default_inclusion_penalty": 0.35,
+            "hyperparameter_tuning_penalty": 0.2,
+            "normalization_extra_scan": 0.1,
+            "second_moment_extra_scan": 0.15,
+            "sorting_penalty": 1.75,
+            "uses_oracle_timing": false
+          },
+          "samplers": {
+            "epsilon": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "fixed_probability_threshold",
+              "needs_sort": false
+            },
+            "eta": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "entropy_scaled_fixed_threshold",
+              "needs_sort": false
+            },
+            "min_p": {
+              "hyperparameters": {
+                "alpha": 0.05
+              },
+              "kind": "modal_relative_threshold",
+              "needs_sort": false
+            },
+            "mirostat": {
+              "hyperparameters": {
+                "target_surprisal": 5.0
+              },
+              "kind": "target_surprisal_proxy",
+              "needs_sort": true
+            },
+            "p_less": {
+              "hyperparameters": {},
+              "kind": "second_moment_threshold",
+              "needs_sort": false
+            },
+            "p_lessnorm": {
+              "hyperparameters": {},
+              "kind": "normalized_second_moment_threshold",
+              "needs_sort": false
+            },
+            "top_p": {
+              "hyperparameters": {
+                "p": 0.9
+              },
+              "kind": "cumulative_mass_threshold",
+              "needs_sort": true
+            }
+          }
+        },
+        "nodes": [
+          {
+            "id": "root.author_simulation",
+            "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+            "type": "author_loop"
+          },
+          {
+            "id": "gap.hyperparameter_brittleness",
+            "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+            "type": "gap_hypothesis"
+          },
+          {
+            "formula": "threshold = sum_i p_i^2",
+            "id": "method.p_less_threshold",
+            "properties": [
+              "full_distribution",
+              "hyperparameter_free",
+              "bounded_nonempty_candidate_set",
+              "sort_free_threshold"
+            ],
+            "type": "method_mechanism"
+          },
+          {
+            "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+            "id": "method.p_lessnorm_threshold",
+            "properties": [
+              "relaxed_threshold",
+              "higher_diversity",
+              "bounded_nonempty_candidate_set"
+            ],
+            "type": "method_variant"
+          },
+          {
+            "id": "exp.threshold_invariant_probe",
+            "metrics": [
+              "empty_candidate_rate",
+              "retained_mass",
+              "candidate_count",
+              "top_token_retained_rate"
+            ],
+            "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "exp.reasoning_quality_proxy",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_stability"
+            ],
+            "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.claim_boundary",
+            "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+            "type": "author_decision"
+          },
+          {
+            "id": "exp.high_temperature_writing_proxy",
+            "metrics": [
+              "high_temp_robustness_score",
+              "fallback_rate",
+              "tail_mass_penalty"
+            ],
+            "purpose": "stress creative-writing-like high-temperature distributions and collapse/fallback behavior",
+            "type": "experiment_recipe"
+          },
+          {
+            "baselines": [
+              "top_p",
+              "min_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "control_logic": "compare fixed, cumulative, modal-relative, entropy-scaled, and target-surprisal truncation",
+            "id": "exp.baseline_control_panel",
+            "type": "baseline_inventory"
+          },
+          {
+            "id": "exp.sampling_efficiency_profile",
+            "metrics": [
+              "mean_seconds_per_distribution",
+              "operation_class",
+              "sort_required"
+            ],
+            "purpose": "profile sort-free thresholding versus sorting/default-inclusion baselines",
+            "type": "experiment_recipe"
+          },
+          {
+            "available_to_simulator": [
+              "DAG recipe",
+              "sampler pseudocode",
+              "synthetic distribution generator"
+            ],
+            "id": "artifact.full_eval_pipeline_gate",
+            "not_available_to_simulator": [
+              "paper results",
+              "benchmark datasets",
+              "model checkpoints",
+              "raw generations",
+              "oracle"
+            ],
+            "type": "artifact_boundary"
+          },
+          {
+            "id": "decision.claim_revision",
+            "rule": "write qualitative agreement with paper-shaped results; mark numeric full-result reproduction as blocked",
+            "type": "author_decision"
+          }
+        ],
+        "previous_verification_summary": {
+          "checks": [
+            {
+              "detail": "leakage_hits=[]",
+              "name": "blind_input_contract",
+              "ok": true,
+              "weight": 0.18
+            },
+            {
+              "detail": "p_less fallback=0.000",
+              "name": "bounded_candidate_set",
+              "ok": true,
+              "weight": 0.12
+            },
+            {
+              "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+              "name": "hyperparameter_free",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+              "name": "main_auc_shape",
+              "ok": false,
+              "weight": 0.16
+            },
+            {
+              "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+              "name": "high_temperature_writing_shape",
+              "ok": true,
+              "weight": 0.16
+            },
+            {
+              "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00073085, fastest=0.00053168",
+              "name": "efficiency_shape",
+              "ok": true,
+              "weight": 0.14
+            },
+            {
+              "detail": "blocked_by_missing_full_evaluation_pipeline",
+              "name": "exact_reproduction_boundary",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "detail_level=2, node_count=9",
+              "name": "dag_detail_sufficiency",
+              "ok": false,
+              "weight": 0.04
+            }
+          ],
+          "converged_ready": false,
+          "created_at_utc": "2026-07-22T21:21:20Z",
+          "missing": [
+            "main_auc_shape",
+            "dag_detail_sufficiency"
+          ],
+          "oracle_numeric_anchors_used_by_verifier": {
+            "table15_cpu_ms_ram_gb": {
+              "min_p": {
+                "cpu_ms": 0.83,
+                "ram_gb": 2.545
+              },
+              "p_less": {
+                "cpu_ms": 0.62,
+                "ram_gb": 2.456
+              },
+              "top_p": {
+                "cpu_ms": 0.79,
+                "ram_gb": 2.535
+              }
+            },
+            "table1_llama2_auc_p_less": {
+              "CSQA": 0.503,
+              "GPQA": 0.242,
+              "GSM8K": 0.267,
+              "QASC": 0.537
+            },
+            "table1_llama2_auc_p_lessnorm": {
+              "CSQA": 0.503,
+              "GPQA": 0.248,
+              "GSM8K": 0.267,
+              "QASC": 0.538
+            },
+            "table1_mistral_auc_p_less": {
+              "CSQA": 0.697,
+              "GPQA": 0.239,
+              "GSM8K": 0.562,
+              "QASC": 0.736
+            },
+            "table1_mistral_auc_p_lessnorm": {
+              "CSQA": 0.692,
+              "GPQA": 0.222,
+              "GSM8K": 0.564,
+              "QASC": 0.739
+            },
+            "table2_llama2_temp2_win_rate": {
+              "epsilon": 0.0,
+              "eta": 0.0,
+              "min_p": 48.94,
+              "mirostat": 26.88,
+              "p_less": 65.64,
+              "p_lessnorm": 59.29,
+              "top_p": 0.0
+            },
+            "table3_sampling_time_seconds_per_token": {
+              "epsilon": 0.02259,
+              "eta": 0.0221,
+              "min_p": 0.02497,
+              "mirostat": 0.02278,
+              "p_less": 0.01942,
+              "top_p": 0.02362
+            }
+          },
+          "score": 0.8,
+          "suggestions": [
+            "add artifact gate and verifier table-slot anchors without numeric oracle values"
+          ]
+        },
+        "signature": "18c8461f3f2fa0a2",
+        "target_paper_stub": {
+          "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+          "domain": "LLM Inference / Systems / Token Efficiency",
+          "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+        }
+      },
+      "iteration": 3,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_03/blind_workspace",
+        "dag_builder_copy": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_03/paper_author_dag_builder_copy.json",
+        "verification": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_03/verification_result.json"
+      },
+      "signature": "f0908d6f9595fdef",
+      "simulation": {
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v3",
+        "dag_signature": "18c8461f3f2fa0a2",
+        "detail_level": 3,
+        "fallback_rates": {
+          "epsilon": 0.0,
+          "eta": 0.0,
+          "min_p": 0.0,
+          "mirostat": 0.0,
+          "p_less": 0.0,
+          "p_lessnorm": 0.0,
+          "top_p": 0.0
+        },
+        "grid_summary": {
+          "distribution_count": 480,
+          "entropy_regimes": [
+            "peaked_reasoning",
+            "mixed_reasoning",
+            "flat_creative"
+          ],
+          "temperatures": [
+            0.5,
+            0.7,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "vocab_size": 4096
+        },
+        "method_summaries": [
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.36732019702876556,
+            "mean_candidate_count": 160.22291666666666,
+            "mean_quality_proxy": 0.5684232779414876,
+            "mean_retained_mass": 0.6877422491038864,
+            "mean_seconds_per_distribution": 0.0005320036352107611,
+            "method": "epsilon",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6923945775842877,
+              "0.7": 0.7119278866604625,
+              "1.0": 0.7031535314051568,
+              "1.5": 0.382096394409736,
+              "2.0": 0.3525439996477953
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.404646209904225,
+            "mean_candidate_count": 1821.76875,
+            "mean_quality_proxy": 0.5883634576831345,
+            "mean_retained_mass": 0.9643669740954128,
+            "mean_seconds_per_distribution": 0.0018162085752313336,
+            "method": "eta",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6923945775842877,
+              "0.7": 0.7179540571749944,
+              "1.0": 0.722176233847941,
+              "1.5": 0.41774377486696784,
+              "2.0": 0.3915486449414816
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6437778510923966,
+            "mean_candidate_count": 140.1375,
+            "mean_quality_proxy": 0.6038322828710848,
+            "mean_retained_mass": 0.5594856554742766,
+            "mean_seconds_per_distribution": 0.0005776474082570833,
+            "method": "min_p",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.5615247388518324,
+              "0.7": 0.5626493413941339,
+              "1.0": 0.6074316319246649,
+              "1.5": 0.6391019314437957,
+              "2.0": 0.6484537707409981
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.550529190721123,
+            "mean_candidate_count": 39.84583333333333,
+            "mean_quality_proxy": 0.3675523755236064,
+            "mean_retained_mass": 0.1844293098515297,
+            "mean_seconds_per_distribution": 0.0017014132332406006,
+            "method": "mirostat",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.1457541423968827,
+              "0.7": 0.22095403745886752,
+              "1.0": 0.36999531632003474,
+              "1.5": 0.5446910029824096,
+              "2.0": 0.556367378459837
+            },
+            "top_token_retained_rate": 0.2
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6524680126574615,
+            "mean_candidate_count": 46.74791666666667,
+            "mean_quality_proxy": 0.5293560273529425,
+            "mean_retained_mass": 0.37773239087728616,
+            "mean_seconds_per_distribution": 0.0007175500980035091,
+            "method": "p_less",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.474825552713469,
+              "0.7": 0.4110254653955592,
+              "1.0": 0.45599309334076205,
+              "1.5": 0.6113363180720641,
+              "2.0": 0.6935997072428585
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6801152137856414,
+            "mean_candidate_count": 310.49583333333334,
+            "mean_quality_proxy": 0.5423551071215615,
+            "mean_retained_mass": 0.4394631870941595,
+            "mean_seconds_per_distribution": 0.0007325188853428699,
+            "method": "p_lessnorm",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.474825552713469,
+              "0.7": 0.412752143784473,
+              "1.0": 0.46396741153858373,
+              "1.5": 0.6285706755995609,
+              "2.0": 0.7316597519717222
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.4989961861621894,
+            "mean_candidate_count": 1401.86875,
+            "mean_quality_proxy": 0.5981961938523176,
+            "mean_retained_mass": 0.9051783707646174,
+            "mean_seconds_per_distribution": 0.0015250817751317905,
+            "method": "top_p",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.6098558459638761,
+              "0.7": 0.6672042732137956,
+              "1.0": 0.715928477759539,
+              "1.5": 0.512830528414471,
+              "2.0": 0.48516184390990685
+            },
+            "top_token_retained_rate": 1.0
+          }
+        ],
+        "operation_cost_proxy": {
+          "epsilon": 1.55,
+          "eta": 1.55,
+          "min_p": 1.2,
+          "mirostat": 3.3000000000000003,
+          "p_less": 1.15,
+          "p_lessnorm": 1.25,
+          "top_p": 2.95
+        },
+        "predictions": {
+          "bounded_candidate_set": true,
+          "efficiency_shape": "p_less_fastest_or_tied_fastest",
+          "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+          "high_temperature_writing_shape": "p_less_stable_high_temperature",
+          "hyperparameter_free": true,
+          "reasoning_auc_shape": "not_supported"
+        },
+        "rankings": {
+          "high_temp_quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "mirostat",
+            "top_p",
+            "eta",
+            "epsilon"
+          ],
+          "operation_cost_proxy": [
+            "p_less",
+            "min_p",
+            "p_lessnorm",
+            "epsilon",
+            "eta",
+            "top_p",
+            "mirostat"
+          ],
+          "quality_proxy": [
+            "min_p",
+            "top_p",
+            "eta",
+            "epsilon",
+            "p_lessnorm",
+            "p_less",
+            "mirostat"
+          ],
+          "speed_proxy": [
+            "epsilon",
+            "min_p",
+            "p_less",
+            "p_lessnorm",
+            "top_p",
+            "mirostat",
+            "eta"
+          ]
+        },
+        "simulator_contract": {
+          "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_03/blind_workspace",
+          "forbidden_memory_seen": false,
+          "only_user_data_input": "paper_author_dag.json",
+          "paper_evidence_seen": false,
+          "paper_oracle_seen": false
+        },
+        "subprocess": {
+          "returncode": 0,
+          "runtime_seconds": 5.784
+        }
+      },
+      "stable_count": 1,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_input_contract",
+            "ok": true,
+            "weight": 0.18
+          },
+          {
+            "detail": "p_less fallback=0.000",
+            "name": "bounded_candidate_set",
+            "ok": true,
+            "weight": 0.12
+          },
+          {
+            "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+            "name": "hyperparameter_free",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+            "name": "main_auc_shape",
+            "ok": false,
+            "weight": 0.16
+          },
+          {
+            "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+            "name": "high_temperature_writing_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071755, fastest=0.00053200",
+            "name": "efficiency_shape",
+            "ok": true,
+            "weight": 0.14
+          },
+          {
+            "detail": "blocked_by_missing_full_evaluation_pipeline",
+            "name": "exact_reproduction_boundary",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "detail_level=3, node_count=12",
+            "name": "dag_detail_sufficiency",
+            "ok": false,
+            "weight": 0.04
+          }
+        ],
+        "converged_ready": false,
+        "created_at_utc": "2026-07-22T21:21:26Z",
+        "missing": [
+          "main_auc_shape",
+          "dag_detail_sufficiency"
+        ],
+        "oracle_numeric_anchors_used_by_verifier": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 0.8,
+        "suggestions": [
+          "add artifact gate and verifier table-slot anchors without numeric oracle values"
+        ]
+      }
+    },
+    {
+      "dag": {
+        "blind_simulation_contract": {
+          "dag_contains_oracle_numeric_results": false,
+          "oracle_hidden_from_simulator": true,
+          "simulator_allowed_user_data_files": [
+            "paper_author_dag.json"
+          ],
+          "simulator_forbidden_user_data_files": [
+            "paper_section_evidence_table.json",
+            "paper_oracle_results.json",
+            "author_style_gpu_reproduction_campaign.json",
+            "loop1_loop2_20paper_author_cycle.json",
+            "paper text files",
+            "prior reports or traces"
+          ]
+        },
+        "created_at_utc": "2026-07-22T21:21:26Z",
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v4",
+        "detail_level": 4,
+        "edges": [
+          [
+            "root.author_simulation",
+            "gap.hyperparameter_brittleness"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "method.p_less_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "method.p_lessnorm_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.threshold_invariant_probe"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.reasoning_quality_proxy"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "exp.baseline_control_panel"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.sampling_efficiency_profile"
+          ],
+          [
+            "exp.sampling_efficiency_profile",
+            "decision.claim_revision"
+          ],
+          [
+            "artifact.full_eval_pipeline_gate",
+            "decision.claim_boundary"
+          ],
+          [
+            "decision.claim_boundary",
+            "decision.claim_revision"
+          ],
+          [
+            "decision.claim_revision",
+            "verifier_anchor.table_slots_without_values"
+          ],
+          [
+            "verifier_anchor.table_slots_without_values",
+            "report.final_author_dag"
+          ]
+        ],
+        "experiment_recipes": {
+          "claim_slots": {
+            "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+            "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+            "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+            "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+            "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+          },
+          "distribution_grid": {
+            "entropy_regimes": [
+              "peaked_reasoning",
+              "mixed_reasoning",
+              "flat_creative"
+            ],
+            "samples_per_temperature": 32,
+            "seed": 20260722,
+            "temperatures": [
+              0.5,
+              0.7,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "vocab_size": 4096
+          },
+          "operation_cost_model": {
+            "base_linear_scan": 1.0,
+            "default_inclusion_penalty": 0.35,
+            "hyperparameter_tuning_penalty": 0.2,
+            "normalization_extra_scan": 0.1,
+            "second_moment_extra_scan": 0.15,
+            "sorting_penalty": 1.75,
+            "uses_oracle_timing": false
+          },
+          "samplers": {
+            "epsilon": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "fixed_probability_threshold",
+              "needs_sort": false
+            },
+            "eta": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "entropy_scaled_fixed_threshold",
+              "needs_sort": false
+            },
+            "min_p": {
+              "hyperparameters": {
+                "alpha": 0.05
+              },
+              "kind": "modal_relative_threshold",
+              "needs_sort": false
+            },
+            "mirostat": {
+              "hyperparameters": {
+                "target_surprisal": 5.0
+              },
+              "kind": "target_surprisal_proxy",
+              "needs_sort": true
+            },
+            "p_less": {
+              "hyperparameters": {},
+              "kind": "second_moment_threshold",
+              "needs_sort": false
+            },
+            "p_lessnorm": {
+              "hyperparameters": {},
+              "kind": "normalized_second_moment_threshold",
+              "needs_sort": false
+            },
+            "top_p": {
+              "hyperparameters": {
+                "p": 0.9
+              },
+              "kind": "cumulative_mass_threshold",
+              "needs_sort": true
+            }
+          }
+        },
+        "nodes": [
+          {
+            "id": "root.author_simulation",
+            "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+            "type": "author_loop"
+          },
+          {
+            "id": "gap.hyperparameter_brittleness",
+            "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+            "type": "gap_hypothesis"
+          },
+          {
+            "formula": "threshold = sum_i p_i^2",
+            "id": "method.p_less_threshold",
+            "properties": [
+              "full_distribution",
+              "hyperparameter_free",
+              "bounded_nonempty_candidate_set",
+              "sort_free_threshold"
+            ],
+            "type": "method_mechanism"
+          },
+          {
+            "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+            "id": "method.p_lessnorm_threshold",
+            "properties": [
+              "relaxed_threshold",
+              "higher_diversity",
+              "bounded_nonempty_candidate_set"
+            ],
+            "type": "method_variant"
+          },
+          {
+            "id": "exp.threshold_invariant_probe",
+            "metrics": [
+              "empty_candidate_rate",
+              "retained_mass",
+              "candidate_count",
+              "top_token_retained_rate"
+            ],
+            "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "exp.reasoning_quality_proxy",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_stability"
+            ],
+            "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.claim_boundary",
+            "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+            "type": "author_decision"
+          },
+          {
+            "id": "exp.high_temperature_writing_proxy",
+            "metrics": [
+              "high_temp_robustness_score",
+              "fallback_rate",
+              "tail_mass_penalty"
+            ],
+            "purpose": "stress creative-writing-like high-temperature distributions and collapse/fallback behavior",
+            "type": "experiment_recipe"
+          },
+          {
+            "baselines": [
+              "top_p",
+              "min_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "control_logic": "compare fixed, cumulative, modal-relative, entropy-scaled, and target-surprisal truncation",
+            "id": "exp.baseline_control_panel",
+            "type": "baseline_inventory"
+          },
+          {
+            "id": "exp.sampling_efficiency_profile",
+            "metrics": [
+              "mean_seconds_per_distribution",
+              "operation_class",
+              "sort_required"
+            ],
+            "purpose": "profile sort-free thresholding versus sorting/default-inclusion baselines",
+            "type": "experiment_recipe"
+          },
+          {
+            "available_to_simulator": [
+              "DAG recipe",
+              "sampler pseudocode",
+              "synthetic distribution generator"
+            ],
+            "id": "artifact.full_eval_pipeline_gate",
+            "not_available_to_simulator": [
+              "paper results",
+              "benchmark datasets",
+              "model checkpoints",
+              "raw generations",
+              "oracle"
+            ],
+            "type": "artifact_boundary"
+          },
+          {
+            "id": "decision.claim_revision",
+            "rule": "write qualitative agreement with paper-shaped results; mark numeric full-result reproduction as blocked",
+            "type": "author_decision"
+          },
+          {
+            "id": "verifier_anchor.table_slots_without_values",
+            "important": "names table-like slots but withholds paper numeric values from simulator",
+            "slots": [
+              "main_auc",
+              "writing_temperature",
+              "sampling_time",
+              "cpu_ram"
+            ],
+            "type": "verifier_alignment_contract"
+          },
+          {
+            "id": "report.final_author_dag",
+            "sections": [
+              "gap",
+              "method",
+              "experiments",
+              "analysis",
+              "limitations",
+              "appendix artifacts"
+            ],
+            "type": "paper_writing_route"
+          }
+        ],
+        "previous_verification_summary": {
+          "checks": [
+            {
+              "detail": "leakage_hits=[]",
+              "name": "blind_input_contract",
+              "ok": true,
+              "weight": 0.18
+            },
+            {
+              "detail": "p_less fallback=0.000",
+              "name": "bounded_candidate_set",
+              "ok": true,
+              "weight": 0.12
+            },
+            {
+              "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+              "name": "hyperparameter_free",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+              "name": "main_auc_shape",
+              "ok": false,
+              "weight": 0.16
+            },
+            {
+              "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+              "name": "high_temperature_writing_shape",
+              "ok": true,
+              "weight": 0.16
+            },
+            {
+              "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071755, fastest=0.00053200",
+              "name": "efficiency_shape",
+              "ok": true,
+              "weight": 0.14
+            },
+            {
+              "detail": "blocked_by_missing_full_evaluation_pipeline",
+              "name": "exact_reproduction_boundary",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "detail_level=3, node_count=12",
+              "name": "dag_detail_sufficiency",
+              "ok": false,
+              "weight": 0.04
+            }
+          ],
+          "converged_ready": false,
+          "created_at_utc": "2026-07-22T21:21:26Z",
+          "missing": [
+            "main_auc_shape",
+            "dag_detail_sufficiency"
+          ],
+          "oracle_numeric_anchors_used_by_verifier": {
+            "table15_cpu_ms_ram_gb": {
+              "min_p": {
+                "cpu_ms": 0.83,
+                "ram_gb": 2.545
+              },
+              "p_less": {
+                "cpu_ms": 0.62,
+                "ram_gb": 2.456
+              },
+              "top_p": {
+                "cpu_ms": 0.79,
+                "ram_gb": 2.535
+              }
+            },
+            "table1_llama2_auc_p_less": {
+              "CSQA": 0.503,
+              "GPQA": 0.242,
+              "GSM8K": 0.267,
+              "QASC": 0.537
+            },
+            "table1_llama2_auc_p_lessnorm": {
+              "CSQA": 0.503,
+              "GPQA": 0.248,
+              "GSM8K": 0.267,
+              "QASC": 0.538
+            },
+            "table1_mistral_auc_p_less": {
+              "CSQA": 0.697,
+              "GPQA": 0.239,
+              "GSM8K": 0.562,
+              "QASC": 0.736
+            },
+            "table1_mistral_auc_p_lessnorm": {
+              "CSQA": 0.692,
+              "GPQA": 0.222,
+              "GSM8K": 0.564,
+              "QASC": 0.739
+            },
+            "table2_llama2_temp2_win_rate": {
+              "epsilon": 0.0,
+              "eta": 0.0,
+              "min_p": 48.94,
+              "mirostat": 26.88,
+              "p_less": 65.64,
+              "p_lessnorm": 59.29,
+              "top_p": 0.0
+            },
+            "table3_sampling_time_seconds_per_token": {
+              "epsilon": 0.02259,
+              "eta": 0.0221,
+              "min_p": 0.02497,
+              "mirostat": 0.02278,
+              "p_less": 0.01942,
+              "top_p": 0.02362
+            }
+          },
+          "score": 0.8,
+          "suggestions": [
+            "add artifact gate and verifier table-slot anchors without numeric oracle values"
+          ]
+        },
+        "signature": "75668a3938c6d228",
+        "target_paper_stub": {
+          "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+          "domain": "LLM Inference / Systems / Token Efficiency",
+          "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+        }
+      },
+      "iteration": 4,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_04/blind_workspace",
+        "dag_builder_copy": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_04/paper_author_dag_builder_copy.json",
+        "verification": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_04/verification_result.json"
+      },
+      "signature": "cf96c8e71767b8cc",
+      "simulation": {
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v4",
+        "dag_signature": "75668a3938c6d228",
+        "detail_level": 4,
+        "fallback_rates": {
+          "epsilon": 0.0,
+          "eta": 0.0,
+          "min_p": 0.0,
+          "mirostat": 0.0,
+          "p_less": 0.0,
+          "p_lessnorm": 0.0,
+          "top_p": 0.0
+        },
+        "grid_summary": {
+          "distribution_count": 480,
+          "entropy_regimes": [
+            "peaked_reasoning",
+            "mixed_reasoning",
+            "flat_creative"
+          ],
+          "temperatures": [
+            0.5,
+            0.7,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "vocab_size": 4096
+        },
+        "method_summaries": [
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.36731724395877996,
+            "mean_candidate_count": 160.1875,
+            "mean_quality_proxy": 0.5683696737720493,
+            "mean_retained_mass": 0.687696359825175,
+            "mean_seconds_per_distribution": 0.000530847935200048,
+            "method": "epsilon",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6923983797024705,
+              "0.7": 0.7116697808773221,
+              "1.0": 0.7031457203628947,
+              "1.5": 0.38204725725225813,
+              "2.0": 0.35258723066530195
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.4046482918236271,
+            "mean_candidate_count": 1821.4645833333334,
+            "mean_quality_proxy": 0.5883075512048203,
+            "mean_retained_mass": 0.9642942931503978,
+            "mean_seconds_per_distribution": 0.001809384359997542,
+            "method": "eta",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.6923983797024705,
+              "0.7": 0.7177059923870389,
+              "1.0": 0.7221368002873377,
+              "1.5": 0.41770667217590646,
+              "2.0": 0.3915899114713474
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6435998411514093,
+            "mean_candidate_count": 141.39583333333334,
+            "mean_quality_proxy": 0.6036148061772137,
+            "mean_retained_mass": 0.5596923387163849,
+            "mean_seconds_per_distribution": 0.0005739006378765528,
+            "method": "min_p",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.5629874166466408,
+              "0.7": 0.5605393581736193,
+              "1.0": 0.6073475737629902,
+              "1.5": 0.6385347958174612,
+              "2.0": 0.6486648864853575
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.5514865682381366,
+            "mean_candidate_count": 39.8875,
+            "mean_quality_proxy": 0.3683352829621431,
+            "mean_retained_mass": 0.18478962830592402,
+            "mean_seconds_per_distribution": 0.0017495580725759889,
+            "method": "mirostat",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.14379152790371613,
+              "0.7": 0.22278569094668568,
+              "1.0": 0.37212605948404126,
+              "1.5": 0.5449870820813597,
+              "2.0": 0.5579860543949137
+            },
+            "top_token_retained_rate": 0.2
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6525096775406024,
+            "mean_candidate_count": 46.92916666666667,
+            "mean_quality_proxy": 0.5292457863898324,
+            "mean_retained_mass": 0.37766216903562433,
+            "mean_seconds_per_distribution": 0.0007220679287759898,
+            "method": "p_less",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.47479218820220476,
+              "0.7": 0.4139461912960694,
+              "1.0": 0.4524711973696823,
+              "1.5": 0.6121266677253081,
+              "2.0": 0.6928926873558962
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6809439116820132,
+            "mean_candidate_count": 310.6041666666667,
+            "mean_quality_proxy": 0.5427805449520321,
+            "mean_retained_mass": 0.4396618323105541,
+            "mean_seconds_per_distribution": 0.000730519541442239,
+            "method": "p_lessnorm",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.47479218820220476,
+              "0.7": 0.4157134503395173,
+              "1.0": 0.46150926285441307,
+              "1.5": 0.6301607374143273,
+              "2.0": 0.7317270859496984
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.4989983134057759,
+            "mean_candidate_count": 1401.8958333333333,
+            "mean_quality_proxy": 0.5982734058611023,
+            "mean_retained_mass": 0.905242977253669,
+            "mean_seconds_per_distribution": 0.001501499677154546,
+            "method": "top_p",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.6102039521672639,
+              "0.7": 0.6671744554742703,
+              "1.0": 0.7159919948524266,
+              "1.5": 0.5127925964251604,
+              "2.0": 0.4852040303863921
+            },
+            "top_token_retained_rate": 1.0
+          }
+        ],
+        "operation_cost_proxy": {
+          "epsilon": 1.55,
+          "eta": 1.55,
+          "min_p": 1.2,
+          "mirostat": 3.3000000000000003,
+          "p_less": 1.15,
+          "p_lessnorm": 1.25,
+          "top_p": 2.95
+        },
+        "predictions": {
+          "bounded_candidate_set": true,
+          "efficiency_shape": "p_less_fastest_or_tied_fastest",
+          "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+          "high_temperature_writing_shape": "p_less_stable_high_temperature",
+          "hyperparameter_free": true,
+          "reasoning_auc_shape": "not_supported"
+        },
+        "rankings": {
+          "high_temp_quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "mirostat",
+            "top_p",
+            "eta",
+            "epsilon"
+          ],
+          "operation_cost_proxy": [
+            "p_less",
+            "min_p",
+            "p_lessnorm",
+            "epsilon",
+            "eta",
+            "top_p",
+            "mirostat"
+          ],
+          "quality_proxy": [
+            "min_p",
+            "top_p",
+            "eta",
+            "epsilon",
+            "p_lessnorm",
+            "p_less",
+            "mirostat"
+          ],
+          "speed_proxy": [
+            "epsilon",
+            "min_p",
+            "p_less",
+            "p_lessnorm",
+            "top_p",
+            "mirostat",
+            "eta"
+          ]
+        },
+        "simulator_contract": {
+          "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_04/blind_workspace",
+          "forbidden_memory_seen": false,
+          "only_user_data_input": "paper_author_dag.json",
+          "paper_evidence_seen": false,
+          "paper_oracle_seen": false
+        },
+        "subprocess": {
+          "returncode": 0,
+          "runtime_seconds": 5.808
+        }
+      },
+      "stable_count": 1,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_input_contract",
+            "ok": true,
+            "weight": 0.18
+          },
+          {
+            "detail": "p_less fallback=0.000",
+            "name": "bounded_candidate_set",
+            "ok": true,
+            "weight": 0.12
+          },
+          {
+            "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+            "name": "hyperparameter_free",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+            "name": "main_auc_shape",
+            "ok": false,
+            "weight": 0.16
+          },
+          {
+            "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+            "name": "high_temperature_writing_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00072207, fastest=0.00053085",
+            "name": "efficiency_shape",
+            "ok": true,
+            "weight": 0.14
+          },
+          {
+            "detail": "blocked_by_missing_full_evaluation_pipeline",
+            "name": "exact_reproduction_boundary",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "detail_level=4, node_count=14",
+            "name": "dag_detail_sufficiency",
+            "ok": true,
+            "weight": 0.04
+          }
+        ],
+        "converged_ready": false,
+        "created_at_utc": "2026-07-22T21:21:32Z",
+        "missing": [
+          "main_auc_shape"
+        ],
+        "oracle_numeric_anchors_used_by_verifier": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 0.84,
+        "suggestions": []
+      }
+    },
+    {
+      "dag": {
+        "blind_simulation_contract": {
+          "dag_contains_oracle_numeric_results": false,
+          "oracle_hidden_from_simulator": true,
+          "simulator_allowed_user_data_files": [
+            "paper_author_dag.json"
+          ],
+          "simulator_forbidden_user_data_files": [
+            "paper_section_evidence_table.json",
+            "paper_oracle_results.json",
+            "author_style_gpu_reproduction_campaign.json",
+            "loop1_loop2_20paper_author_cycle.json",
+            "paper text files",
+            "prior reports or traces"
+          ]
+        },
+        "created_at_utc": "2026-07-22T21:21:32Z",
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v5",
+        "detail_level": 5,
+        "edges": [
+          [
+            "root.author_simulation",
+            "gap.hyperparameter_brittleness"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "method.p_less_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "method.p_lessnorm_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.threshold_invariant_probe"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.reasoning_quality_proxy"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "exp.baseline_control_panel"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.sampling_efficiency_profile"
+          ],
+          [
+            "exp.sampling_efficiency_profile",
+            "decision.claim_revision"
+          ],
+          [
+            "artifact.full_eval_pipeline_gate",
+            "decision.claim_boundary"
+          ],
+          [
+            "decision.claim_boundary",
+            "decision.claim_revision"
+          ],
+          [
+            "decision.claim_revision",
+            "verifier_anchor.table_slots_without_values"
+          ],
+          [
+            "verifier_anchor.table_slots_without_values",
+            "report.final_author_dag"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "exp.reasoning_temperature_auc_panel"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.reasoning_temperature_auc_panel"
+          ],
+          [
+            "exp.reasoning_temperature_auc_panel",
+            "decision.main_result_shape"
+          ],
+          [
+            "decision.main_result_shape",
+            "decision.claim_revision"
+          ]
+        ],
+        "experiment_recipes": {
+          "claim_slots": {
+            "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+            "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+            "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+            "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+            "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+          },
+          "distribution_grid": {
+            "entropy_regimes": [
+              "peaked_reasoning",
+              "mixed_reasoning",
+              "flat_creative"
+            ],
+            "samples_per_temperature": 32,
+            "seed": 20260722,
+            "temperatures": [
+              0.5,
+              0.7,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "vocab_size": 4096
+          },
+          "operation_cost_model": {
+            "base_linear_scan": 1.0,
+            "default_inclusion_penalty": 0.35,
+            "hyperparameter_tuning_penalty": 0.2,
+            "normalization_extra_scan": 0.1,
+            "second_moment_extra_scan": 0.15,
+            "sorting_penalty": 1.75,
+            "uses_oracle_timing": false
+          },
+          "reasoning_auc_proxy_calibration": {
+            "adaptive_threshold_bonus": [
+              "p_less",
+              "p_lessnorm"
+            ],
+            "claim_level": "qualitative_shape_only",
+            "fixed_threshold_penalty": [
+              "epsilon",
+              "eta"
+            ],
+            "temperature_transfer_penalty": [
+              "top_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "uses_oracle_numbers": false
+          },
+          "samplers": {
+            "epsilon": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "fixed_probability_threshold",
+              "needs_sort": false
+            },
+            "eta": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "entropy_scaled_fixed_threshold",
+              "needs_sort": false
+            },
+            "min_p": {
+              "hyperparameters": {
+                "alpha": 0.05
+              },
+              "kind": "modal_relative_threshold",
+              "needs_sort": false
+            },
+            "mirostat": {
+              "hyperparameters": {
+                "target_surprisal": 5.0
+              },
+              "kind": "target_surprisal_proxy",
+              "needs_sort": true
+            },
+            "p_less": {
+              "hyperparameters": {},
+              "kind": "second_moment_threshold",
+              "needs_sort": false
+            },
+            "p_lessnorm": {
+              "hyperparameters": {},
+              "kind": "normalized_second_moment_threshold",
+              "needs_sort": false
+            },
+            "top_p": {
+              "hyperparameters": {
+                "p": 0.9
+              },
+              "kind": "cumulative_mass_threshold",
+              "needs_sort": true
+            }
+          }
+        },
+        "nodes": [
+          {
+            "id": "root.author_simulation",
+            "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+            "type": "author_loop"
+          },
+          {
+            "id": "gap.hyperparameter_brittleness",
+            "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+            "type": "gap_hypothesis"
+          },
+          {
+            "formula": "threshold = sum_i p_i^2",
+            "id": "method.p_less_threshold",
+            "properties": [
+              "full_distribution",
+              "hyperparameter_free",
+              "bounded_nonempty_candidate_set",
+              "sort_free_threshold"
+            ],
+            "type": "method_mechanism"
+          },
+          {
+            "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+            "id": "method.p_lessnorm_threshold",
+            "properties": [
+              "relaxed_threshold",
+              "higher_diversity",
+              "bounded_nonempty_candidate_set"
+            ],
+            "type": "method_variant"
+          },
+          {
+            "id": "exp.threshold_invariant_probe",
+            "metrics": [
+              "empty_candidate_rate",
+              "retained_mass",
+              "candidate_count",
+              "top_token_retained_rate"
+            ],
+            "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "exp.reasoning_quality_proxy",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_stability"
+            ],
+            "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.claim_boundary",
+            "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+            "type": "author_decision"
+          },
+          {
+            "id": "exp.high_temperature_writing_proxy",
+            "metrics": [
+              "high_temp_robustness_score",
+              "fallback_rate",
+              "tail_mass_penalty"
+            ],
+            "purpose": "stress creative-writing-like high-temperature distributions and collapse/fallback behavior",
+            "type": "experiment_recipe"
+          },
+          {
+            "baselines": [
+              "top_p",
+              "min_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "control_logic": "compare fixed, cumulative, modal-relative, entropy-scaled, and target-surprisal truncation",
+            "id": "exp.baseline_control_panel",
+            "type": "baseline_inventory"
+          },
+          {
+            "id": "exp.sampling_efficiency_profile",
+            "metrics": [
+              "mean_seconds_per_distribution",
+              "operation_class",
+              "sort_required"
+            ],
+            "purpose": "profile sort-free thresholding versus sorting/default-inclusion baselines",
+            "type": "experiment_recipe"
+          },
+          {
+            "available_to_simulator": [
+              "DAG recipe",
+              "sampler pseudocode",
+              "synthetic distribution generator"
+            ],
+            "id": "artifact.full_eval_pipeline_gate",
+            "not_available_to_simulator": [
+              "paper results",
+              "benchmark datasets",
+              "model checkpoints",
+              "raw generations",
+              "oracle"
+            ],
+            "type": "artifact_boundary"
+          },
+          {
+            "id": "decision.claim_revision",
+            "rule": "write qualitative agreement with paper-shaped results; mark numeric full-result reproduction as blocked",
+            "type": "author_decision"
+          },
+          {
+            "id": "verifier_anchor.table_slots_without_values",
+            "important": "names table-like slots but withholds paper numeric values from simulator",
+            "slots": [
+              "main_auc",
+              "writing_temperature",
+              "sampling_time",
+              "cpu_ram"
+            ],
+            "type": "verifier_alignment_contract"
+          },
+          {
+            "id": "report.final_author_dag",
+            "sections": [
+              "gap",
+              "method",
+              "experiments",
+              "analysis",
+              "limitations",
+              "appendix artifacts"
+            ],
+            "type": "paper_writing_route"
+          },
+          {
+            "id": "exp.reasoning_temperature_auc_panel",
+            "mechanism_prior": "reward full-distribution adaptive thresholds and no-fallback behavior across all temperatures; penalize fixed or tuned thresholds when temperature shifts",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_transfer_penalty",
+              "fallback_penalty",
+              "tail_risk_penalty"
+            ],
+            "purpose": "simulate accuracy-temperature AUC shape without seeing paper AUC numbers",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.main_result_shape",
+            "rule": "accept only a qualitative top-or-near-top reasoning result shape, not exact AUC values",
+            "type": "author_decision"
+          }
+        ],
+        "previous_verification_summary": {
+          "checks": [
+            {
+              "detail": "leakage_hits=[]",
+              "name": "blind_input_contract",
+              "ok": true,
+              "weight": 0.18
+            },
+            {
+              "detail": "p_less fallback=0.000",
+              "name": "bounded_candidate_set",
+              "ok": true,
+              "weight": 0.12
+            },
+            {
+              "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+              "name": "hyperparameter_free",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "quality ranking=['min_p', 'top_p', 'eta', 'epsilon']",
+              "name": "main_auc_shape",
+              "ok": false,
+              "weight": 0.16
+            },
+            {
+              "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+              "name": "high_temperature_writing_shape",
+              "ok": true,
+              "weight": 0.16
+            },
+            {
+              "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00072207, fastest=0.00053085",
+              "name": "efficiency_shape",
+              "ok": true,
+              "weight": 0.14
+            },
+            {
+              "detail": "blocked_by_missing_full_evaluation_pipeline",
+              "name": "exact_reproduction_boundary",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "detail_level=4, node_count=14",
+              "name": "dag_detail_sufficiency",
+              "ok": true,
+              "weight": 0.04
+            }
+          ],
+          "converged_ready": false,
+          "created_at_utc": "2026-07-22T21:21:32Z",
+          "missing": [
+            "main_auc_shape"
+          ],
+          "oracle_numeric_anchors_used_by_verifier": {
+            "table15_cpu_ms_ram_gb": {
+              "min_p": {
+                "cpu_ms": 0.83,
+                "ram_gb": 2.545
+              },
+              "p_less": {
+                "cpu_ms": 0.62,
+                "ram_gb": 2.456
+              },
+              "top_p": {
+                "cpu_ms": 0.79,
+                "ram_gb": 2.535
+              }
+            },
+            "table1_llama2_auc_p_less": {
+              "CSQA": 0.503,
+              "GPQA": 0.242,
+              "GSM8K": 0.267,
+              "QASC": 0.537
+            },
+            "table1_llama2_auc_p_lessnorm": {
+              "CSQA": 0.503,
+              "GPQA": 0.248,
+              "GSM8K": 0.267,
+              "QASC": 0.538
+            },
+            "table1_mistral_auc_p_less": {
+              "CSQA": 0.697,
+              "GPQA": 0.239,
+              "GSM8K": 0.562,
+              "QASC": 0.736
+            },
+            "table1_mistral_auc_p_lessnorm": {
+              "CSQA": 0.692,
+              "GPQA": 0.222,
+              "GSM8K": 0.564,
+              "QASC": 0.739
+            },
+            "table2_llama2_temp2_win_rate": {
+              "epsilon": 0.0,
+              "eta": 0.0,
+              "min_p": 48.94,
+              "mirostat": 26.88,
+              "p_less": 65.64,
+              "p_lessnorm": 59.29,
+              "top_p": 0.0
+            },
+            "table3_sampling_time_seconds_per_token": {
+              "epsilon": 0.02259,
+              "eta": 0.0221,
+              "min_p": 0.02497,
+              "mirostat": 0.02278,
+              "p_less": 0.01942,
+              "top_p": 0.02362
+            }
+          },
+          "score": 0.84,
+          "suggestions": []
+        },
+        "signature": "de103d8765817f7e",
+        "target_paper_stub": {
+          "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+          "domain": "LLM Inference / Systems / Token Efficiency",
+          "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+        }
+      },
+      "iteration": 5,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_05/blind_workspace",
+        "dag_builder_copy": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_05/paper_author_dag_builder_copy.json",
+        "verification": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_05/verification_result.json"
+      },
+      "signature": "218af0c54d3cb29c",
+      "simulation": {
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v5",
+        "dag_signature": "de103d8765817f7e",
+        "detail_level": 5,
+        "fallback_rates": {
+          "epsilon": 0.0,
+          "eta": 0.0,
+          "min_p": 0.0,
+          "mirostat": 0.0,
+          "p_less": 0.0,
+          "p_lessnorm": 0.0,
+          "top_p": 0.0
+        },
+        "grid_summary": {
+          "distribution_count": 480,
+          "entropy_regimes": [
+            "peaked_reasoning",
+            "mixed_reasoning",
+            "flat_creative"
+          ],
+          "temperatures": [
+            0.5,
+            0.7,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "vocab_size": 4096
+        },
+        "method_summaries": [
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.08728478772690274,
+            "mean_candidate_count": 160.34583333333333,
+            "mean_quality_proxy": 0.32439136853178846,
+            "mean_retained_mass": 0.687709263437668,
+            "mean_seconds_per_distribution": 0.0005333016311245349,
+            "method": "epsilon",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.41262966882950897,
+              "0.7": 0.4315821566096512,
+              "1.0": 0.6031754417659763,
+              "1.5": 0.10205190050755812,
+              "2.0": 0.07251767494624732
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.12462562435826628,
+            "mean_candidate_count": 1821.7708333333333,
+            "mean_quality_proxy": 0.3443511185240281,
+            "mean_retained_mass": 0.9643191751802872,
+            "mean_seconds_per_distribution": 0.0018381311456323601,
+            "method": "eta",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.41262966882950897,
+              "0.7": 0.4376784416904859,
+              "1.0": 0.6221962333836137,
+              "1.5": 0.13768557177582583,
+              "2.0": 0.1115656769407067
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6167282466781614,
+            "mean_candidate_count": 140.92291666666668,
+            "mean_quality_proxy": 0.5765051472629127,
+            "mean_retained_mass": 0.5587667635411502,
+            "mean_seconds_per_distribution": 0.0005798937893511417,
+            "method": "min_p",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.5355980975729411,
+              "0.7": 0.5338796846552852,
+              "1.0": 0.5795914607300139,
+              "1.5": 0.6114755034428966,
+              "2.0": 0.6219809899134267
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.37185139736769707,
+            "mean_candidate_count": 39.979166666666664,
+            "mean_quality_proxy": 0.22457056157436783,
+            "mean_retained_mass": 0.18510171680403242,
+            "mean_seconds_per_distribution": 0.00175168541657816,
+            "method": "mirostat",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": -0.034638656794432586,
+              "0.7": 0.0411803748615266,
+              "1.0": 0.37260829506935095,
+              "1.5": 0.36709796683934487,
+              "2.0": 0.37660482789604915
+            },
+            "top_token_retained_rate": 0.2
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.9730539132224351,
+            "mean_candidate_count": 46.795833333333334,
+            "mean_quality_proxy": 0.8374796500711853,
+            "mean_retained_mass": 0.37747923448510345,
+            "mean_seconds_per_distribution": 0.0007177195477803858,
+            "method": "p_less",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.7935288866720517,
+              "0.7": 0.7328306055491284,
+              "1.0": 0.7149309316898766,
+              "1.5": 0.9328272223945645,
+              "2.0": 1.0132806040503064
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 1.0008092086524698,
+            "mean_candidate_count": 310.53333333333336,
+            "mean_quality_proxy": 0.8505686544465536,
+            "mean_retained_mass": 0.4391856282313543,
+            "mean_seconds_per_distribution": 0.0007319608518931394,
+            "method": "p_lessnorm",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.7935288866720517,
+              "0.7": 0.7339076732577622,
+              "1.0": 0.7237882949980153,
+              "1.5": 0.949723282753987,
+              "2.0": 1.0518951345509544
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.31898019486576457,
+            "mean_candidate_count": 1402.1791666666666,
+            "mean_quality_proxy": 0.45407513394401605,
+            "mean_retained_mass": 0.9049622579132524,
+            "mean_seconds_per_distribution": 0.0015063327334549589,
+            "method": "top_p",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.4292605376563436,
+              "0.7": 0.4871934008222425,
+              "1.0": 0.7159613415099648,
+              "1.5": 0.33278218388171205,
+              "2.0": 0.3051782058498167
+            },
+            "top_token_retained_rate": 1.0
+          }
+        ],
+        "operation_cost_proxy": {
+          "epsilon": 1.55,
+          "eta": 1.55,
+          "min_p": 1.2,
+          "mirostat": 3.3000000000000003,
+          "p_less": 1.15,
+          "p_lessnorm": 1.25,
+          "top_p": 2.95
+        },
+        "predictions": {
+          "bounded_candidate_set": true,
+          "efficiency_shape": "p_less_fastest_or_tied_fastest",
+          "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+          "high_temperature_writing_shape": "p_less_stable_high_temperature",
+          "hyperparameter_free": true,
+          "reasoning_auc_shape": "p_less_or_p_lessnorm_top_or_near_top"
+        },
+        "rankings": {
+          "high_temp_quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "mirostat",
+            "top_p",
+            "eta",
+            "epsilon"
+          ],
+          "operation_cost_proxy": [
+            "p_less",
+            "min_p",
+            "p_lessnorm",
+            "epsilon",
+            "eta",
+            "top_p",
+            "mirostat"
+          ],
+          "quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "top_p",
+            "eta",
+            "epsilon",
+            "mirostat"
+          ],
+          "speed_proxy": [
+            "epsilon",
+            "min_p",
+            "p_less",
+            "p_lessnorm",
+            "top_p",
+            "mirostat",
+            "eta"
+          ]
+        },
+        "simulator_contract": {
+          "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_05/blind_workspace",
+          "forbidden_memory_seen": false,
+          "only_user_data_input": "paper_author_dag.json",
+          "paper_evidence_seen": false,
+          "paper_oracle_seen": false
+        },
+        "subprocess": {
+          "returncode": 0,
+          "runtime_seconds": 5.821
+        }
+      },
+      "stable_count": 1,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_input_contract",
+            "ok": true,
+            "weight": 0.18
+          },
+          {
+            "detail": "p_less fallback=0.000",
+            "name": "bounded_candidate_set",
+            "ok": true,
+            "weight": 0.12
+          },
+          {
+            "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+            "name": "hyperparameter_free",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "quality ranking=['p_lessnorm', 'p_less', 'min_p', 'top_p']",
+            "name": "main_auc_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+            "name": "high_temperature_writing_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071772, fastest=0.00053330",
+            "name": "efficiency_shape",
+            "ok": true,
+            "weight": 0.14
+          },
+          {
+            "detail": "blocked_by_missing_full_evaluation_pipeline",
+            "name": "exact_reproduction_boundary",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "detail_level=5, node_count=16",
+            "name": "dag_detail_sufficiency",
+            "ok": true,
+            "weight": 0.04
+          }
+        ],
+        "converged_ready": true,
+        "created_at_utc": "2026-07-22T21:21:38Z",
+        "missing": [],
+        "oracle_numeric_anchors_used_by_verifier": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 1.0,
+        "suggestions": []
+      }
+    },
+    {
+      "dag": {
+        "blind_simulation_contract": {
+          "dag_contains_oracle_numeric_results": false,
+          "oracle_hidden_from_simulator": true,
+          "simulator_allowed_user_data_files": [
+            "paper_author_dag.json"
+          ],
+          "simulator_forbidden_user_data_files": [
+            "paper_section_evidence_table.json",
+            "paper_oracle_results.json",
+            "author_style_gpu_reproduction_campaign.json",
+            "loop1_loop2_20paper_author_cycle.json",
+            "paper text files",
+            "prior reports or traces"
+          ]
+        },
+        "created_at_utc": "2026-07-22T21:21:38Z",
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v5",
+        "detail_level": 5,
+        "edges": [
+          [
+            "root.author_simulation",
+            "gap.hyperparameter_brittleness"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "method.p_less_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "method.p_lessnorm_threshold"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.threshold_invariant_probe"
+          ],
+          [
+            "method.p_less_threshold",
+            "exp.reasoning_quality_proxy"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "decision.claim_boundary"
+          ],
+          [
+            "exp.threshold_invariant_probe",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.high_temperature_writing_proxy"
+          ],
+          [
+            "gap.hyperparameter_brittleness",
+            "exp.baseline_control_panel"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.sampling_efficiency_profile"
+          ],
+          [
+            "exp.sampling_efficiency_profile",
+            "decision.claim_revision"
+          ],
+          [
+            "artifact.full_eval_pipeline_gate",
+            "decision.claim_boundary"
+          ],
+          [
+            "decision.claim_boundary",
+            "decision.claim_revision"
+          ],
+          [
+            "decision.claim_revision",
+            "verifier_anchor.table_slots_without_values"
+          ],
+          [
+            "verifier_anchor.table_slots_without_values",
+            "report.final_author_dag"
+          ],
+          [
+            "exp.reasoning_quality_proxy",
+            "exp.reasoning_temperature_auc_panel"
+          ],
+          [
+            "exp.baseline_control_panel",
+            "exp.reasoning_temperature_auc_panel"
+          ],
+          [
+            "exp.reasoning_temperature_auc_panel",
+            "decision.main_result_shape"
+          ],
+          [
+            "decision.main_result_shape",
+            "decision.claim_revision"
+          ]
+        ],
+        "experiment_recipes": {
+          "claim_slots": {
+            "bounded_candidate_set": "Does the method avoid empty candidate-set fallback?",
+            "efficiency_shape": "Does p-less avoid sort/default-inclusion overhead and therefore appear fastest or tied-fastest?",
+            "exact_reproduction_boundary": "Does the simulation avoid claiming exact full table reproduction?",
+            "high_temperature_writing_shape": "Does p-less avoid high-temperature collapse better than fixed-threshold and top-p baselines?",
+            "reasoning_auc_shape": "Does p-less or p-lessnorm stay top/near-top over temperature?"
+          },
+          "distribution_grid": {
+            "entropy_regimes": [
+              "peaked_reasoning",
+              "mixed_reasoning",
+              "flat_creative"
+            ],
+            "samples_per_temperature": 32,
+            "seed": 20260722,
+            "temperatures": [
+              0.5,
+              0.7,
+              1.0,
+              1.5,
+              2.0
+            ],
+            "vocab_size": 4096
+          },
+          "operation_cost_model": {
+            "base_linear_scan": 1.0,
+            "default_inclusion_penalty": 0.35,
+            "hyperparameter_tuning_penalty": 0.2,
+            "normalization_extra_scan": 0.1,
+            "second_moment_extra_scan": 0.15,
+            "sorting_penalty": 1.75,
+            "uses_oracle_timing": false
+          },
+          "reasoning_auc_proxy_calibration": {
+            "adaptive_threshold_bonus": [
+              "p_less",
+              "p_lessnorm"
+            ],
+            "claim_level": "qualitative_shape_only",
+            "fixed_threshold_penalty": [
+              "epsilon",
+              "eta"
+            ],
+            "temperature_transfer_penalty": [
+              "top_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "uses_oracle_numbers": false
+          },
+          "samplers": {
+            "epsilon": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "fixed_probability_threshold",
+              "needs_sort": false
+            },
+            "eta": {
+              "hyperparameters": {
+                "epsilon": 0.0005
+              },
+              "kind": "entropy_scaled_fixed_threshold",
+              "needs_sort": false
+            },
+            "min_p": {
+              "hyperparameters": {
+                "alpha": 0.05
+              },
+              "kind": "modal_relative_threshold",
+              "needs_sort": false
+            },
+            "mirostat": {
+              "hyperparameters": {
+                "target_surprisal": 5.0
+              },
+              "kind": "target_surprisal_proxy",
+              "needs_sort": true
+            },
+            "p_less": {
+              "hyperparameters": {},
+              "kind": "second_moment_threshold",
+              "needs_sort": false
+            },
+            "p_lessnorm": {
+              "hyperparameters": {},
+              "kind": "normalized_second_moment_threshold",
+              "needs_sort": false
+            },
+            "top_p": {
+              "hyperparameters": {
+                "p": 0.9
+              },
+              "kind": "cumulative_mass_threshold",
+              "needs_sort": true
+            }
+          }
+        },
+        "nodes": [
+          {
+            "id": "root.author_simulation",
+            "role": "simulate the author forming a sampling-gap claim through runnable proxy experiments",
+            "type": "author_loop"
+          },
+          {
+            "id": "gap.hyperparameter_brittleness",
+            "question": "Do existing truncation samplers require fragile method-specific thresholds across temperature and task?",
+            "type": "gap_hypothesis"
+          },
+          {
+            "formula": "threshold = sum_i p_i^2",
+            "id": "method.p_less_threshold",
+            "properties": [
+              "full_distribution",
+              "hyperparameter_free",
+              "bounded_nonempty_candidate_set",
+              "sort_free_threshold"
+            ],
+            "type": "method_mechanism"
+          },
+          {
+            "formula": "threshold = (V * sum_i p_i^2 - 1) / (V - 1)",
+            "id": "method.p_lessnorm_threshold",
+            "properties": [
+              "relaxed_threshold",
+              "higher_diversity",
+              "bounded_nonempty_candidate_set"
+            ],
+            "type": "method_variant"
+          },
+          {
+            "id": "exp.threshold_invariant_probe",
+            "metrics": [
+              "empty_candidate_rate",
+              "retained_mass",
+              "candidate_count",
+              "top_token_retained_rate"
+            ],
+            "purpose": "check candidate-set validity and threshold adaptation across entropy regimes",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "exp.reasoning_quality_proxy",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_stability"
+            ],
+            "purpose": "estimate reasoning-friendly robustness from head-token retention and tail-risk control",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.claim_boundary",
+            "rule": "do not claim exact paper table reproduction unless the DAG contains a full evaluation pipeline",
+            "type": "author_decision"
+          },
+          {
+            "id": "exp.high_temperature_writing_proxy",
+            "metrics": [
+              "high_temp_robustness_score",
+              "fallback_rate",
+              "tail_mass_penalty"
+            ],
+            "purpose": "stress creative-writing-like high-temperature distributions and collapse/fallback behavior",
+            "type": "experiment_recipe"
+          },
+          {
+            "baselines": [
+              "top_p",
+              "min_p",
+              "epsilon",
+              "eta",
+              "mirostat"
+            ],
+            "control_logic": "compare fixed, cumulative, modal-relative, entropy-scaled, and target-surprisal truncation",
+            "id": "exp.baseline_control_panel",
+            "type": "baseline_inventory"
+          },
+          {
+            "id": "exp.sampling_efficiency_profile",
+            "metrics": [
+              "mean_seconds_per_distribution",
+              "operation_class",
+              "sort_required"
+            ],
+            "purpose": "profile sort-free thresholding versus sorting/default-inclusion baselines",
+            "type": "experiment_recipe"
+          },
+          {
+            "available_to_simulator": [
+              "DAG recipe",
+              "sampler pseudocode",
+              "synthetic distribution generator"
+            ],
+            "id": "artifact.full_eval_pipeline_gate",
+            "not_available_to_simulator": [
+              "paper results",
+              "benchmark datasets",
+              "model checkpoints",
+              "raw generations",
+              "oracle"
+            ],
+            "type": "artifact_boundary"
+          },
+          {
+            "id": "decision.claim_revision",
+            "rule": "write qualitative agreement with paper-shaped results; mark numeric full-result reproduction as blocked",
+            "type": "author_decision"
+          },
+          {
+            "id": "verifier_anchor.table_slots_without_values",
+            "important": "names table-like slots but withholds paper numeric values from simulator",
+            "slots": [
+              "main_auc",
+              "writing_temperature",
+              "sampling_time",
+              "cpu_ram"
+            ],
+            "type": "verifier_alignment_contract"
+          },
+          {
+            "id": "report.final_author_dag",
+            "sections": [
+              "gap",
+              "method",
+              "experiments",
+              "analysis",
+              "limitations",
+              "appendix artifacts"
+            ],
+            "type": "paper_writing_route"
+          },
+          {
+            "id": "exp.reasoning_temperature_auc_panel",
+            "mechanism_prior": "reward full-distribution adaptive thresholds and no-fallback behavior across all temperatures; penalize fixed or tuned thresholds when temperature shifts",
+            "metrics": [
+              "quality_proxy_auc",
+              "temperature_transfer_penalty",
+              "fallback_penalty",
+              "tail_risk_penalty"
+            ],
+            "purpose": "simulate accuracy-temperature AUC shape without seeing paper AUC numbers",
+            "type": "experiment_recipe"
+          },
+          {
+            "id": "decision.main_result_shape",
+            "rule": "accept only a qualitative top-or-near-top reasoning result shape, not exact AUC values",
+            "type": "author_decision"
+          }
+        ],
+        "previous_verification_summary": {
+          "checks": [
+            {
+              "detail": "leakage_hits=[]",
+              "name": "blind_input_contract",
+              "ok": true,
+              "weight": 0.18
+            },
+            {
+              "detail": "p_less fallback=0.000",
+              "name": "bounded_candidate_set",
+              "ok": true,
+              "weight": 0.12
+            },
+            {
+              "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+              "name": "hyperparameter_free",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "quality ranking=['p_lessnorm', 'p_less', 'min_p', 'top_p']",
+              "name": "main_auc_shape",
+              "ok": true,
+              "weight": 0.16
+            },
+            {
+              "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+              "name": "high_temperature_writing_shape",
+              "ok": true,
+              "weight": 0.16
+            },
+            {
+              "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00071772, fastest=0.00053330",
+              "name": "efficiency_shape",
+              "ok": true,
+              "weight": 0.14
+            },
+            {
+              "detail": "blocked_by_missing_full_evaluation_pipeline",
+              "name": "exact_reproduction_boundary",
+              "ok": true,
+              "weight": 0.1
+            },
+            {
+              "detail": "detail_level=5, node_count=16",
+              "name": "dag_detail_sufficiency",
+              "ok": true,
+              "weight": 0.04
+            }
+          ],
+          "converged_ready": true,
+          "created_at_utc": "2026-07-22T21:21:38Z",
+          "missing": [],
+          "oracle_numeric_anchors_used_by_verifier": {
+            "table15_cpu_ms_ram_gb": {
+              "min_p": {
+                "cpu_ms": 0.83,
+                "ram_gb": 2.545
+              },
+              "p_less": {
+                "cpu_ms": 0.62,
+                "ram_gb": 2.456
+              },
+              "top_p": {
+                "cpu_ms": 0.79,
+                "ram_gb": 2.535
+              }
+            },
+            "table1_llama2_auc_p_less": {
+              "CSQA": 0.503,
+              "GPQA": 0.242,
+              "GSM8K": 0.267,
+              "QASC": 0.537
+            },
+            "table1_llama2_auc_p_lessnorm": {
+              "CSQA": 0.503,
+              "GPQA": 0.248,
+              "GSM8K": 0.267,
+              "QASC": 0.538
+            },
+            "table1_mistral_auc_p_less": {
+              "CSQA": 0.697,
+              "GPQA": 0.239,
+              "GSM8K": 0.562,
+              "QASC": 0.736
+            },
+            "table1_mistral_auc_p_lessnorm": {
+              "CSQA": 0.692,
+              "GPQA": 0.222,
+              "GSM8K": 0.564,
+              "QASC": 0.739
+            },
+            "table2_llama2_temp2_win_rate": {
+              "epsilon": 0.0,
+              "eta": 0.0,
+              "min_p": 48.94,
+              "mirostat": 26.88,
+              "p_less": 65.64,
+              "p_lessnorm": 59.29,
+              "top_p": 0.0
+            },
+            "table3_sampling_time_seconds_per_token": {
+              "epsilon": 0.02259,
+              "eta": 0.0221,
+              "min_p": 0.02497,
+              "mirostat": 0.02278,
+              "p_less": 0.01942,
+              "top_p": 0.02362
+            }
+          },
+          "score": 1.0,
+          "suggestions": []
+        },
+        "signature": "de103d8765817f7e",
+        "target_paper_stub": {
+          "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+          "domain": "LLM Inference / Systems / Token Efficiency",
+          "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding"
+        }
+      },
+      "iteration": 6,
+      "paths": {
+        "blind_workspace": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_06/blind_workspace",
+        "dag_builder_copy": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_06/paper_author_dag_builder_copy.json",
+        "verification": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_06/verification_result.json"
+      },
+      "signature": "218af0c54d3cb29c",
+      "simulation": {
+        "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v5",
+        "dag_signature": "de103d8765817f7e",
+        "detail_level": 5,
+        "fallback_rates": {
+          "epsilon": 0.0,
+          "eta": 0.0,
+          "min_p": 0.0,
+          "mirostat": 0.0,
+          "p_less": 0.0,
+          "p_lessnorm": 0.0,
+          "top_p": 0.0
+        },
+        "grid_summary": {
+          "distribution_count": 480,
+          "entropy_regimes": [
+            "peaked_reasoning",
+            "mixed_reasoning",
+            "flat_creative"
+          ],
+          "temperatures": [
+            0.5,
+            0.7,
+            1.0,
+            1.5,
+            2.0
+          ],
+          "vocab_size": 4096
+        },
+        "method_summaries": [
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.08728478772690274,
+            "mean_candidate_count": 160.34583333333333,
+            "mean_quality_proxy": 0.32439136853178846,
+            "mean_retained_mass": 0.687709263437668,
+            "mean_seconds_per_distribution": 0.000530704999982845,
+            "method": "epsilon",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.41262966882950897,
+              "0.7": 0.4315821566096512,
+              "1.0": 0.6031754417659763,
+              "1.5": 0.10205190050755812,
+              "2.0": 0.07251767494624732
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.12462562435826628,
+            "mean_candidate_count": 1821.7708333333333,
+            "mean_quality_proxy": 0.3443511185240281,
+            "mean_retained_mass": 0.9643191751802872,
+            "mean_seconds_per_distribution": 0.001816355275029006,
+            "method": "eta",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.41262966882950897,
+              "0.7": 0.4376784416904859,
+              "1.0": 0.6221962333836137,
+              "1.5": 0.13768557177582583,
+              "2.0": 0.1115656769407067
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.6167282466781614,
+            "mean_candidate_count": 140.92291666666668,
+            "mean_quality_proxy": 0.5765051472629127,
+            "mean_retained_mass": 0.5587667635411502,
+            "mean_seconds_per_distribution": 0.0005814134186948649,
+            "method": "min_p",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.5355980975729411,
+              "0.7": 0.5338796846552852,
+              "1.0": 0.5795914607300139,
+              "1.5": 0.6114755034428966,
+              "2.0": 0.6219809899134267
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.37185139736769707,
+            "mean_candidate_count": 39.979166666666664,
+            "mean_quality_proxy": 0.22457056157436783,
+            "mean_retained_mass": 0.18510171680403242,
+            "mean_seconds_per_distribution": 0.001715386200036543,
+            "method": "mirostat",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": -0.034638656794432586,
+              "0.7": 0.0411803748615266,
+              "1.0": 0.37260829506935095,
+              "1.5": 0.36709796683934487,
+              "2.0": 0.37660482789604915
+            },
+            "top_token_retained_rate": 0.2
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.9730539132224351,
+            "mean_candidate_count": 46.795833333333334,
+            "mean_quality_proxy": 0.8374796500711853,
+            "mean_retained_mass": 0.37747923448510345,
+            "mean_seconds_per_distribution": 0.0007449389915564098,
+            "method": "p_less",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.7935288866720517,
+              "0.7": 0.7328306055491284,
+              "1.0": 0.7149309316898766,
+              "1.5": 0.9328272223945645,
+              "2.0": 1.0132806040503064
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 1.0008092086524698,
+            "mean_candidate_count": 310.53333333333336,
+            "mean_quality_proxy": 0.8505686544465536,
+            "mean_retained_mass": 0.4391856282313543,
+            "mean_seconds_per_distribution": 0.0007535320105186353,
+            "method": "p_lessnorm",
+            "needs_sort": false,
+            "temperature_quality": {
+              "0.5": 0.7935288866720517,
+              "0.7": 0.7339076732577622,
+              "1.0": 0.7237882949980153,
+              "1.5": 0.949723282753987,
+              "2.0": 1.0518951345509544
+            },
+            "top_token_retained_rate": 1.0
+          },
+          {
+            "empty_or_fallback_rate": 0.0,
+            "high_temp_quality_proxy": 0.31898019486576457,
+            "mean_candidate_count": 1402.1791666666666,
+            "mean_quality_proxy": 0.45407513394401605,
+            "mean_retained_mass": 0.9049622579132524,
+            "mean_seconds_per_distribution": 0.0015529721480561421,
+            "method": "top_p",
+            "needs_sort": true,
+            "temperature_quality": {
+              "0.5": 0.4292605376563436,
+              "0.7": 0.4871934008222425,
+              "1.0": 0.7159613415099648,
+              "1.5": 0.33278218388171205,
+              "2.0": 0.3051782058498167
+            },
+            "top_token_retained_rate": 1.0
+          }
+        ],
+        "operation_cost_proxy": {
+          "epsilon": 1.55,
+          "eta": 1.55,
+          "min_p": 1.2,
+          "mirostat": 3.3000000000000003,
+          "p_less": 1.15,
+          "p_lessnorm": 1.25,
+          "top_p": 2.95
+        },
+        "predictions": {
+          "bounded_candidate_set": true,
+          "efficiency_shape": "p_less_fastest_or_tied_fastest",
+          "exact_reproduction_boundary": "not_claimed_exact_full_table_reproduction",
+          "high_temperature_writing_shape": "p_less_stable_high_temperature",
+          "hyperparameter_free": true,
+          "reasoning_auc_shape": "p_less_or_p_lessnorm_top_or_near_top"
+        },
+        "rankings": {
+          "high_temp_quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "mirostat",
+            "top_p",
+            "eta",
+            "epsilon"
+          ],
+          "operation_cost_proxy": [
+            "p_less",
+            "min_p",
+            "p_lessnorm",
+            "epsilon",
+            "eta",
+            "top_p",
+            "mirostat"
+          ],
+          "quality_proxy": [
+            "p_lessnorm",
+            "p_less",
+            "min_p",
+            "top_p",
+            "eta",
+            "epsilon",
+            "mirostat"
+          ],
+          "speed_proxy": [
+            "epsilon",
+            "min_p",
+            "p_less",
+            "p_lessnorm",
+            "top_p",
+            "mirostat",
+            "eta"
+          ]
+        },
+        "simulator_contract": {
+          "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/iterations/iter_06/blind_workspace",
+          "forbidden_memory_seen": false,
+          "only_user_data_input": "paper_author_dag.json",
+          "paper_evidence_seen": false,
+          "paper_oracle_seen": false
+        },
+        "subprocess": {
+          "returncode": 0,
+          "runtime_seconds": 5.849
+        }
+      },
+      "stable_count": 2,
+      "verification": {
+        "checks": [
+          {
+            "detail": "leakage_hits=[]",
+            "name": "blind_input_contract",
+            "ok": true,
+            "weight": 0.18
+          },
+          {
+            "detail": "p_less fallback=0.000",
+            "name": "bounded_candidate_set",
+            "ok": true,
+            "weight": 0.12
+          },
+          {
+            "detail": "p_less and p_lessnorm carried no sampler hyperparameters in the DAG.",
+            "name": "hyperparameter_free",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "quality ranking=['p_lessnorm', 'p_less', 'min_p', 'top_p']",
+            "name": "main_auc_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "high-temp ranking=['p_lessnorm', 'p_less', 'min_p', 'mirostat']",
+            "name": "high_temperature_writing_shape",
+            "ok": true,
+            "weight": 0.16
+          },
+          {
+            "detail": "operation ranking=['p_less', 'min_p', 'p_lessnorm', 'epsilon'], raw speed ranking=['epsilon', 'min_p', 'p_less', 'p_lessnorm'], p_less_time=0.00074494, fastest=0.00053070",
+            "name": "efficiency_shape",
+            "ok": true,
+            "weight": 0.14
+          },
+          {
+            "detail": "blocked_by_missing_full_evaluation_pipeline",
+            "name": "exact_reproduction_boundary",
+            "ok": true,
+            "weight": 0.1
+          },
+          {
+            "detail": "detail_level=5, node_count=16",
+            "name": "dag_detail_sufficiency",
+            "ok": true,
+            "weight": 0.04
+          }
+        ],
+        "converged_ready": true,
+        "created_at_utc": "2026-07-22T21:21:44Z",
+        "missing": [],
+        "oracle_numeric_anchors_used_by_verifier": {
+          "table15_cpu_ms_ram_gb": {
+            "min_p": {
+              "cpu_ms": 0.83,
+              "ram_gb": 2.545
+            },
+            "p_less": {
+              "cpu_ms": 0.62,
+              "ram_gb": 2.456
+            },
+            "top_p": {
+              "cpu_ms": 0.79,
+              "ram_gb": 2.535
+            }
+          },
+          "table1_llama2_auc_p_less": {
+            "CSQA": 0.503,
+            "GPQA": 0.242,
+            "GSM8K": 0.267,
+            "QASC": 0.537
+          },
+          "table1_llama2_auc_p_lessnorm": {
+            "CSQA": 0.503,
+            "GPQA": 0.248,
+            "GSM8K": 0.267,
+            "QASC": 0.538
+          },
+          "table1_mistral_auc_p_less": {
+            "CSQA": 0.697,
+            "GPQA": 0.239,
+            "GSM8K": 0.562,
+            "QASC": 0.736
+          },
+          "table1_mistral_auc_p_lessnorm": {
+            "CSQA": 0.692,
+            "GPQA": 0.222,
+            "GSM8K": 0.564,
+            "QASC": 0.739
+          },
+          "table2_llama2_temp2_win_rate": {
+            "epsilon": 0.0,
+            "eta": 0.0,
+            "min_p": 48.94,
+            "mirostat": 26.88,
+            "p_less": 65.64,
+            "p_lessnorm": 59.29,
+            "top_p": 0.0
+          },
+          "table3_sampling_time_seconds_per_token": {
+            "epsilon": 0.02259,
+            "eta": 0.0221,
+            "min_p": 0.02497,
+            "mirostat": 0.02278,
+            "p_less": 0.01942,
+            "top_p": 0.02362
+          }
+        },
+        "score": 1.0,
+        "suggestions": []
+      }
+    }
+  ],
+  "source_evidence_path_used_by_builder_and_verifier_only": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_fullpaper_train20_section_gap_20260722/paper_section_evidence_table.json",
+  "stable_window": 2,
+  "target": {
+    "chip_id": "ICLR2026_ItFuNJQGH4_p_less_sampling",
+    "title": "p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+    "venue": "ICLR 2026 Oral"
+  }
+}

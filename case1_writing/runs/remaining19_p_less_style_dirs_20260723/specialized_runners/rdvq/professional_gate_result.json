@@ -1,0 +1,67 @@
+{
+  "artifact_kind": "rdvq_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Paper/DAG expects a single RTX Pro 6000 for high-resolution DF2K fine-tuning; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "highres_finetune_hardware_class",
+      "status": "blocked"
+    },
+    {
+      "detail": "No visible RTX 4090 has at least 12GB free and low utilization. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 17}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16377, 'memory_free_mib': 7836, 'utilization_gpu_pct': 99}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16129, 'memory_free_mib': 8088, 'utilization_gpu_pct': 99}]",
+      "id": "clean_gpu_slot_for_full_rd_grid",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local released RDVQ checkpoint files: rdvq_testing_checkpoints",
+      "id": "rdvq_checkpoints_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local evaluation datasets/FID refs: kodak_image_folder, div2k_val_image_folder, clic2020_test_image_folder, fid_reference_tiles",
+      "id": "rd_curve_datasets_or_fid_refs_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing training/fine-tuning datasets for full author reproduction: imagenet_training_images, openimage_training_images, df2k_highres_images",
+      "id": "training_and_highres_finetune_datasets_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing required metric/codec runtime imports: cleanfid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja",
+      "id": "compression_metric_runtime_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "scripts/release_validate.sh did not complete cleanly; inspect environment.json for stdout/stderr.",
+      "id": "release_validation_support_check_failed",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete forward/Real metrics artifacts for Kodak, DIV2K, CLIC, prefix-transfer sweeps, and RD tables were found.",
+      "id": "full_estimated_and_real_bitstream_result_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-24T13:32:06Z",
+  "next_full_execution_if_unblocked": [
+    "materialize CVLUESTC/RDVQ released checkpoints",
+    "materialize Kodak, DIV2K-val, CLIC2020-test, and FID reference tile artifacts",
+    "install metric and codec runtime dependencies including clean-fid, pyiqa, pytorch_msssim, torchmetrics, compressai, and ninja",
+    "run test.sh and test_Real.sh over each dataset for every paper checkpoint/rate point",
+    "sweep TEST_TRANSFER_SLICES for prefix rate control",
+    "emit reconstructed images, .bin bitstreams, metrics JSON, timing/profile traces, and RD table summaries",
+    "compare simulated gap/results to paper RD curves, tables, paragraphs, and figures"
+  ],
+  "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+  "paper_title": "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression",
+  "professional_package_ready": false,
+  "status": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements",
+  "support_checks": {
+    "checkpoint_manifests_checked": 1,
+    "compileall_passed": true,
+    "dataset_metric_artifacts_checked": 7,
+    "release_validate_passed": false,
+    "repo_files_checked": 19
+  }
+}

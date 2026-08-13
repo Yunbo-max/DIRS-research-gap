@@ -1,0 +1,112 @@
+{
+  "artifact_kind": "prophet_gsm8k_live_shape_risk_audit",
+  "comparison_snapshot_without_oracle_targets": {
+    "comparison_report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparison.json",
+    "comparison_status": "blocked_paper_result_comparison",
+    "failing_metrics": [
+      "accuracy_delta",
+      "prophet_avg_steps",
+      "step_speedup"
+    ],
+    "metric_statuses": {
+      "accuracy_delta": "fail",
+      "baseline_accuracy": "pass",
+      "prophet_accuracy": "pass",
+      "prophet_avg_steps": "fail",
+      "step_speedup": "fail"
+    },
+    "observed_metrics": {
+      "accuracy_delta_pct_points": -2.729340409401061,
+      "baseline_accuracy_pct": 79.68157695223654,
+      "baseline_avg_steps": 256.0,
+      "paired_completed_samples": 1319,
+      "prophet_accuracy_pct": 76.95223654283548,
+      "prophet_avg_steps": 207.53297952994694,
+      "step_speedup": 1.233538884180378,
+      "total_samples": 1319,
+      "wallclock_speedup": 1.2277952681409887
+    },
+    "primary_gsm8k_status": "blocked_gsm8k_result_shape_mismatch"
+  },
+  "created_at_utc": "2026-07-24T14:02:56Z",
+  "current_dag_repair_related_nodes": [
+    "ops.official_harness_failure_diagnosis",
+    "metrics.answer_extraction_guard",
+    "ops.source_parity_blocker_audit",
+    "ops.dream7b_source_parity_gate",
+    "ops.top_k_margin_source_parity_gate",
+    "ops.simple_evals_prompt_scorer_parity_gate",
+    "loop1.required_update.gsm8k_protocol_shape_repair",
+    "protocol.prompt_template_parity_gate",
+    "runner.suffix_answer_region_parity_gate",
+    "protocol.simple_evals_vs_lmeval_harness_gate",
+    "scoring.generated_answer_extractor_parity_gate",
+    "loop1.required_update.gsm8k_postcompletion_protocol_shape_repair",
+    "ops.gsm8k_protocol_repair_sharded_full_split_runner",
+    "ops.gsm8k_protocol_repair_merge_gate",
+    "reviewer.compare_protocol_repair_merged_shape",
+    "protocol.early_commit_threshold_schedule_parity_gate",
+    "ops.protocol_repair_duplicate_rerun_stop_gate",
+    "protocol.trajectory_vs_table1_prompt_family_split",
+    "verifier.table1_protocol_candidate_selection_gate",
+    "protocol.table1_threshold_dynamics_repair_gate"
+  ],
+  "live_progress": {
+    "full_split_complete": true,
+    "paired_completed_samples": 1319,
+    "progress_fraction": 1.0,
+    "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/status.json",
+    "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+    "total_samples": 1319
+  },
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "possible_dag_repair_axes": [
+    {
+      "dag_node_candidate": "protocol.extract_exact_prompt_template_without_oracle_values",
+      "id": "prompt_template_parity",
+      "reason": "The answer-emergence and exit point can shift if the simulation prompt is not the paper's exact evaluation prompt."
+    },
+    {
+      "dag_node_candidate": "runner.bind_suffix_constraints_and_answer_region",
+      "id": "suffix_constraint_semantics",
+      "reason": "Prophet monitors a final-answer region; a different suffix or constrained-token layout can delay or advance exits."
+    },
+    {
+      "dag_node_candidate": "runner.audit_answer_region_start_length_from_release_code",
+      "id": "answer_region_start_and_length",
+      "reason": "Step savings depend on the exact answer-region token span used by the early-commit rule."
+    },
+    {
+      "dag_node_candidate": "protocol.align_evaluation_harness_before_claiming_table1_shape",
+      "id": "simple_evals_vs_lm_eval_protocol",
+      "reason": "The paper describes simple-evals-style scoring, while the release exposes an lm-eval integration and custom runner glue."
+    },
+    {
+      "dag_node_candidate": "verifier.bind_generated_answer_extractor_semantics",
+      "id": "generated_answer_extractor_parity",
+      "reason": "A scoring/extraction mismatch can change the direction of the accuracy delta without changing the underlying samples."
+    },
+    {
+      "dag_node_candidate": "runner.compare_custom_runner_to_released_eval_llada_path",
+      "id": "released_eval_harness_vs_custom_runner_semantics",
+      "reason": "The custom full-split runner must be checked against the released eval path before a result-shape mismatch is attributed to the idea."
+    }
+  ],
+  "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_live_shape_risk_audit.json",
+  "risk_interpretation": {
+    "can_converge_from_this_audit_alone": false,
+    "do_not_stop_before_full_split": false,
+    "monitoring_threshold_reached": true,
+    "partial_rows_are_convergence_evidence": false,
+    "recommended_action": "create_loop1_dag_repair_nodes_then_rerun_or_rescore"
+  },
+  "status": "postcompletion_shape_mismatch_requires_loop1_dag_repair",
+  "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/GSM8K_LIVE_SHAPE_RISK_AUDIT.md",
+  "visibility_contract": {
+    "loop2_author_can_read": false,
+    "oracle_values_exposed_to_loop2": false,
+    "paper_oracle_target_values_included": false,
+    "verifier_can_read": true
+  }
+}

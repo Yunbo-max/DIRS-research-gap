@@ -1,0 +1,183 @@
+{
+  "artifact_kind": "battleship_model_data_output_manifest",
+  "created_at_utc": "2026-07-23T18:53:31Z",
+  "data_artifacts": {
+    "battleship_qa_csv": {
+      "exists": true,
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/data/battleship-qa.csv",
+      "size_human": "12818086"
+    },
+    "collaborative_board_contexts": {
+      "exists": true,
+      "file_count": 20,
+      "is_dir": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/collaborative/contexts",
+      "size_human": "112K"
+    },
+    "collaborative_raw_human_data": {
+      "exists": true,
+      "file_count": 1,
+      "is_dir": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/collaborative/data/battleship-final-data",
+      "size_human": "16K"
+    },
+    "final_project_legacy_llm_results": {
+      "exists": true,
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/final_project/llm_results.csv",
+      "size_human": "58851"
+    },
+    "final_project_legacy_sampling_results": {
+      "exists": true,
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/final_project/sampling_results.csv",
+      "size_human": "14991947"
+    },
+    "guess_who_result_figure_only": {
+      "exists": true,
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/docs/static/images/guess-who-results.png",
+      "size_human": "33275"
+    },
+    "readme_named_human_dataset_csv": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/data/human-dataset.csv",
+      "size_human": null
+    }
+  },
+  "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+  "paper_shaped_outputs_required": [
+    "SpotterQA model grid with DirectSpotter, CodeSpotter, CoT/history variants, and OpenRouter LLMs",
+    "CaptainQA / Collaborative Battleship game grid with Random, MAP, EIG, Bayes-Q/M/D, and LLMDecisionCaptain",
+    "human-human trajectory comparison on board-matched contexts",
+    "Guess Who 60-game transfer outputs, not a figure-only asset",
+    "accuracy, targeting F1, precision, recall, moves, questions, win rate, EIG, redundant-question, and token-cost summaries",
+    "raw per-question/per-game outputs plus table/figure-comparable metric JSON/CSV"
+  ],
+  "paper_title": "Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People",
+  "required_operational_outputs": {
+    "captain_benchmark_results": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/collaborative/captain_benchmarks",
+      "size_human": null
+    },
+    "guess_who_transfer_outputs": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/guess_who",
+      "size_human": null
+    },
+    "openrouter_model_eval_outputs": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/openrouter",
+      "size_human": null
+    },
+    "paper_metric_summary": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/results/paper_metric_summary.json",
+      "size_human": null
+    },
+    "spotter_benchmark_results": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/collaborative/spotter_benchmarks",
+      "size_human": null
+    }
+  },
+  "support_only_warning": "Static figures, old CSVs, notebooks, and source data are not the full Loop 2 result grid.",
+  "verifier_comparable_output_candidates": [
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/client/jsconfig.json",
+      "size_human": "110"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/client/package.json",
+      "size_human": "784"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/client/package-lock.json",
+      "size_human": "286290"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/server/jsconfig.json",
+      "size_human": "90"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/server/package.json",
+      "size_human": "782"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/server/package-lock.json",
+      "size_human": "86805"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/collaborative/battleship-full-v1-boards.json",
+      "size_human": "31698"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/collaborative/contexts/battleship-full-v1-boards.json",
+      "size_human": "30773"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/final_project/llm100_results.csv",
+      "size_human": "581067"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/final_project/hfppl_results.csv",
+      "size_human": "1011958"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/final_project/sampling_results.csv",
+      "size_human": "14991947"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/final_project/llm_results.csv",
+      "size_human": "58851"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/docs/static/images/guess-who-results.png",
+      "size_human": "33275"
+    }
+  ]
+}

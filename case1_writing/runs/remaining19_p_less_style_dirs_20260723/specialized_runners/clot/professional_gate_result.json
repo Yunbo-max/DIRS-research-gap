@@ -1,0 +1,53 @@
+{
+  "artifact_kind": "clot_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Paper records A100 VM runs; visible GPUs are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "a100_professional_gpu_trace_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing runtime imports: flax, hydra, omegaconf, stable_baselines3, gymnasium, mujoco",
+      "id": "clot_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing required paper artifacts: semicircle_surrogate_models, reward_eval_outputs, hinge_eval_outputs, reacher_eval_outputs, quantile_eval_outputs, dropout_eval_outputs",
+      "id": "clot_required_artifacts_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete verifier-comparable output grid found for: CTI semicircle NLL and circle-distance grid; Cancer linear and hinge reward-weighting average reward; Reacher reward-weighting average reward; ETTm2 quantile interpolation MSE; dropout diffusion interpolation Wasserstein/density metrics; held-out time/hyperparameter and metric-parametrization ablations over seeds 0..19",
+      "id": "clot_full_result_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate after repo resolution; no reduced/proxy/support-only evidence is promoted",
+  "created_at_utc": "2026-07-23T18:53:40Z",
+  "next_full_execution_if_unblocked": [
+    "materialize all model/data artifacts listed in the paper DAG",
+    "install exact runtime stack and paper hardware path",
+    "run the full paper benchmark grid, not a smoke or reduced setting",
+    "emit raw outputs, metric JSON/CSV, timing/memory/GPU traces, and table/figure summaries",
+    "verifier compares result shape to paper tables, figures, appendix, and paragraphs"
+  ],
+  "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+  "paper_shaped_outputs_required": [
+    "CTI semicircle NLL and circle-distance grid",
+    "Cancer linear and hinge reward-weighting average reward",
+    "Reacher reward-weighting average reward",
+    "ETTm2 quantile interpolation MSE",
+    "dropout diffusion interpolation Wasserstein/density metrics",
+    "held-out time/hyperparameter and metric-parametrization ablations over seeds 0..19"
+  ],
+  "paper_title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport",
+  "professional_package_ready": false,
+  "status": "blocked_by_runtime_a100_multiseed_eval_outputs_and_full_hti_result_grid",
+  "support_checks": {
+    "gpu_rows_checked": 4,
+    "repo_discovered_and_encoded": true,
+    "script_files_checked": 14,
+    "source_compile_passed": true,
+    "verifier_output_candidate_count": 0
+  }
+}

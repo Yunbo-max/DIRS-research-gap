@@ -1,0 +1,173 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "experiment_prediction": "benchmarks=Proofpile perplexity; NIAH; RULER; Infinite-Bench; LongBenchV2; metrics=perplexity; ROUGE-1 recall; RULER retrieval score; Infinite-Bench task accuracy; LongBenchV2 task score; protocols=ten Proofpile sequences over 128K tokens; NIAH varied context length and insertion depth; RULER 13 subtasks; Infinite-Bench 100 examples per subset from 100K to 128K; LongBenchV2 samples shorter than 128K",
+  "gap_prediction": "RoPE context extension methods are diverse heuristics without a unified theory for choosing dimension-wise scaling.; Training-free long-context extension can distort local or middle-frequency positional information even when the final context window is longer.; 7B-scale long-context work needs cheap extension methods that avoid fine-tuning and preserve retrieval/dialogue behavior.; stressors: incomplete-cycle dimensions become out of distribution beyond pretraining length; uniform NTK scaling distorts high-frequency details; YaRN regressive middle-dimension scaling degrades shorter-context perplexity and ultra-long retrieval; benchmark gains may depend on RoPE model family and alpha/beta boundary choices",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.072,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19260, 4954, 15\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "mixed-radix RoPE framework; MrRoPE-Uni uniform middle-dimension conversion; MrRoPE-Pro progressive middle-dimension conversion; dimension boundary selection by beta_fast and beta_slow; attention magnitude scaling",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "paper_text_seen": false,
+  "paper_title": "MrRoPE: Mixed-radix Rotary Position Embedding",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "__MACOSX/supplement/eval/._eval_utils.py",
+        "supplement/eval/eval_utils.py",
+        "__MACOSX/supplement/._evali.sh",
+        "__MACOSX/supplement/._evalb.sh",
+        "__MACOSX/supplement/._evaln.sh",
+        "__MACOSX/supplement/._eval.sh",
+        "__MACOSX/supplement/._evalr.sh",
+        "supplement/evalr.sh",
+        "supplement/evali.sh",
+        "supplement/eval.sh",
+        "supplement/evaln.sh",
+        "supplement/evalb.sh"
+      ],
+      "exists": true,
+      "git_head": null,
+      "python_file_count": 40,
+      "readme_files": [
+        "supplement/README.md"
+      ],
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+      "shell_file_count": 10,
+      "status": "code_inventory_has_syntax_errors",
+      "syntax_checked_python_files": 40,
+      "syntax_error_count": 20,
+      "syntax_errors": [
+        {
+          "file": "__MACOSX/supplement/analysis/._attn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._infity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._score_infity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._eval_utils.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._model_loader.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._prompt_infity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._neddle.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._longbench.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._perplexity.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._viz_neddle.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/eval/._ruler.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._patch.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._LlamaMrRoPE.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._configuration_mistral.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._LLamaNTKScaledRotaryEmbedding.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._modeling_llama_yarn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._modeling_mistral_yarn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._modeling_llama_together_yarn.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._LlamaYaRNScaledRotaryEmbedding.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        },
+        {
+          "file": "__MACOSX/supplement/scaled_rope/._configuration_llama.py",
+          "line": null,
+          "msg": "source code string cannot contain null bytes"
+        }
+      ]
+    }
+  ]
+}

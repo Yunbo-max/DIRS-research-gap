@@ -1,0 +1,191 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 3,
+  "round_type": "preregistered_reserved_novelty_challenge",
+  "novelty_budget_use": {
+    "reserved_mass_spent": true,
+    "new_proposal_id": "S6_operating_point_decision_split",
+    "non_cosmetic_difference_from_S5": "S5 organizes evidence by contribution hierarchy and adjacent component diagnostics. S6 instead makes the SISO/MIMO configuration choice the central decision object, binds quality and latency to those operating roles, and treats recurrence diagnostics as evidence about the shared backbone.",
+    "expert_similarity_used": false
+  },
+  "candidates": [
+    {
+      "proposal_id": "S6_operating_point_decision_split",
+      "relationship_to_prior_strategies": "new_open_vocabulary_strategy",
+      "proposal_origin": {
+        "type": "recombination",
+        "observations": [
+          "The chip reports two Mamba-3 modes that occupy different quality-latency positions rather than one uniformly dominant configuration.",
+          "Round-02 S5 states non-dominance, but its governing structure remains component-centered.",
+          "A reader choosing an inference configuration needs to recover which mode is speed-oriented and which accepts latency for quality."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "One architecture exposes at least two supported configurations with a measured tradeoff.",
+          "The evidence supports assigning distinct decision roles without claiming universal dominance.",
+          "Shared-backbone evidence can be separated from configuration-specific evidence."
+        ],
+        "inputs": [
+          "shared architecture components",
+          "configuration-specific quality result",
+          "configuration-specific latency result",
+          "shared recurrence diagnostics",
+          "retrieval and scale boundaries"
+        ],
+        "transformation": "Introduce the shared design, then colocate quality and latency measurements for the alternative configurations. Add one explicit role-mapping sentence that names the speed-oriented and quality-oriented operating points. Report ablation and state-tracking evidence afterward as checks on the shared recurrent design, then close with unsupported-regime boundaries.",
+        "outputs": [
+          "a decision-centered abstract",
+          "an explicit SISO/MIMO operating-role map",
+          "separation of mode-specific and shared-backbone evidence",
+          "a bounded quality-efficiency conclusion"
+        ],
+        "rejection_rule": "Reject if the role map is not supported by both quality and latency evidence, if it implies that MIMO is always preferable for quality or SISO always preferable for speed outside the reported setting, or if shared diagnostics are misattributed to one mode."
+      },
+      "predicted_effects": [
+        "Faster recovery of the practical SISO/MIMO choice.",
+        "Clearer separation between configuration-level tradeoffs and shared architectural evidence.",
+        "Less need for procedural transitions because evidence is organized around a decision object.",
+        "Potentially weaker one-to-one coverage of all three architectural innovations than S5."
+      ],
+      "failure_modes": [
+        "Decision framing may overemphasize deployment relative to architectural novelty.",
+        "Readers may treat setting-specific operating roles as universal.",
+        "Moving shared diagnostics later may weaken mechanistic motivation."
+      ],
+      "falsification_tests": [
+        "Replace only the explicit directional role map with a neutral statement that the configurations differ, holding every other word and fact fixed; reject the claimed role-mapping benefit if readers recover the configuration roles equally well.",
+        "Compare with cleaned S5; reject a global-dominance claim if S6 improves decision relevance but loses component-level coherence.",
+        "Reject immediately if the role language is judged to exceed the reported quality or H100 latency evidence."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The operating-point decision split is invented from a configuration-choice interpretation of the chip; it is not attributed to the paper's authors or a hidden abstract.",
+        "required_content_evidence": "Mode-specific quality and latency roles must be grounded separately. Shared recurrence, formal-state, retrieval, and scale claims must retain their chip paths.",
+        "feedback_role": "Controller feedback only required a genuinely novel proposal and a narrow challenge; it did not prescribe this operating-point strategy.",
+        "prohibited": [
+          "universal deployment recommendations",
+          "claims that MIMO is the fastest configuration",
+          "claims that formal-state results prove general reasoning",
+          "claims beyond the 1.5B evidence"
+        ]
+      },
+      "status": "candidate"
+    },
+    {
+      "proposal_id": "S5_salience_anchor_then_selective_bindings",
+      "relationship_to_prior_strategies": "controller_accepted_local_incumbent_with_execution_cleanup",
+      "proposal_origin": {
+        "type": "self_critique",
+        "observations": [
+          "The controller accepted S5 as a low-to-moderate-confidence local hypothesis on this case.",
+          "Its early system anchor and local bindings were preferred to the bundled disrupted control.",
+          "Its realization contained a sentence describing evidence organization instead of communicating evidence."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "A system-level comparison and component-level diagnostics are both available.",
+          "Local bindings can be compressed without losing direction."
+        ],
+        "inputs": [
+          "early aggregate comparison",
+          "selective recurrence, state, and MIMO diagnostics",
+          "scope boundaries"
+        ],
+        "transformation": "Place the aggregate result early and attach compressed diagnostics to mechanism roles. Realize transitions directly; do not announce or explain the evidence-organization strategy in the abstract.",
+        "outputs": [
+          "early system salience",
+          "local mechanism-result coherence",
+          "no procedural meta-discourse"
+        ],
+        "rejection_rule": "Reject if cleanup removes a content dependency, if numeric density returns, or if direct transitions become abrupt."
+      },
+      "predicted_effects": [
+        "Preserves the locally supported S5 bundle.",
+        "Recovers surface budget previously spent on meta-discourse.",
+        "Maintains stronger component-level attribution than S6."
+      ],
+      "failure_modes": [
+        "Direct transition from aggregate result to ablation may feel abrupt.",
+        "The strategy may remain less decision-centered than S6."
+      ],
+      "falsification_tests": [
+        "Compare cleaned and original S5 realizations; reject the cleanup if coherence or readability falls when the meta-discourse sentence is removed."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "S5's local status comes only from this writer/controller case. Removing meta-discourse is an execution repair, not evidence of transfer.",
+        "required_content_evidence": "All retained facts remain grounded in the chip.",
+        "prohibited": [
+          "calling S5 reusable",
+          "treating controller preference as calibrated human evidence"
+        ]
+      },
+      "status": "local_strategy_hypothesis"
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "relationship_to_prior_strategies": "retained_non_dominated_branch",
+      "proposal_origin": {
+        "type": "failure_induced",
+        "observations": [
+          "The fixed-state retrieval limitation remains a central scope boundary.",
+          "A limitation-first path serves calibration differently from both S5 and S6."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "A supported limitation and a costly mitigation coexist with positive results."
+        ],
+        "inputs": [
+          "retrieval boundary",
+          "hybrid mitigation and cost",
+          "architecture",
+          "quality and latency results"
+        ],
+        "transformation": "Lead with the promise-boundary contrast, introduce the mitigation cost, then present the architecture and positive evidence under that scope gate.",
+        "outputs": [
+          "early calibration",
+          "bounded positive claims",
+          "a limitation-led alternative"
+        ],
+        "rejection_rule": "Reject if the limitation hides the contribution or the mitigation appears cost-free."
+      },
+      "predicted_effects": [
+        "Strongest early boundedness among retained branches.",
+        "Lower immediate configuration-choice clarity than S6.",
+        "Lower aggregate-result salience than S5."
+      ],
+      "failure_modes": [
+        "The narrative may sound defensive.",
+        "The retrieval boundary may consume disproportionate space."
+      ],
+      "falsification_tests": [
+        "Reject local preference for S4 if early boundedness does not improve while contribution identification declines."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The contrast organization is a retained writer hypothesis, not an expert-derived route.",
+        "required_content_evidence": "Limitation, mitigation, cost, architecture, and results must each map to the chip.",
+        "prohibited": [
+          "claims that hybrid attention fully solves retrieval",
+          "claims of free mitigation",
+          "7B generalization"
+        ]
+      },
+      "status": "candidate"
+    }
+  ],
+  "narrow_counterfactual": {
+    "control_id": "A2_remove_directional_mode_role_map",
+    "target_proposal": "S6_operating_point_decision_split",
+    "single_atomic_operation_under_test": "explicitly map SISO to the speed-oriented role and MIMO to the quality-for-latency role",
+    "treatment_sentence": "Thus SISO is the speed-oriented operating point, whereas MIMO spends some latency for better quality.",
+    "control_sentence": "Thus SISO and MIMO are alternative configurations with different quality and latency under these evaluations.",
+    "sentence_word_counts": {
+      "treatment": 15,
+      "control": 15
+    },
+    "everything_else_identical": true,
+    "falsifiable_prediction": "The treatment will improve correct recovery of which configuration occupies which operating role without changing factual-support, coverage, or compression judgments.",
+    "rejection_condition": "Reject the role-map operation if the control yields equal role recovery, if the treatment is judged overgeneralized, or if explicit interpretation reduces clarity."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "dirs.tree_search_scaling_validation.v1",
+  "expected_cell_count": 27,
+  "actual_cell_count": 27,
+  "audited_uniform_samples": 4032,
+  "audited_uct_simulations": 8064,
+  "audited_uct_decisions": 59904,
+  "violation_count": 0,
+  "passed": true,
+  "violations": []
+}

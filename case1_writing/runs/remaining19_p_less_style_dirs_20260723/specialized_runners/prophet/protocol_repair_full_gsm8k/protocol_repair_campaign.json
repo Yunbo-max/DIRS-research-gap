@@ -1,0 +1,275 @@
+{
+  "artifact_kind": "prophet_gsm8k_protocol_repair_campaign",
+  "blocked_configs": [],
+  "campaign_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k",
+  "config_statuses": {
+    "gsm8k_trajectory_prompt_constraint_L256_T256": {
+      "execution_mode": "monolithic_full_split_prefix_and_fallback",
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256",
+      "pid": 333224,
+      "pid_alive": false,
+      "row_count": 2252,
+      "shard_start_index": 0,
+      "shard_stop_index_exclusive": 1319,
+      "status": "stopped_partial_needs_resume",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T10:16:09Z"
+    },
+    "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": {
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+      "pid": 248638,
+      "pid_alive": false,
+      "row_count": 550,
+      "shard_start_index": 220,
+      "shard_stop_index_exclusive": 495,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T03:14:50Z"
+    },
+    "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": {
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+      "pid": 255746,
+      "pid_alive": false,
+      "row_count": 550,
+      "shard_start_index": 495,
+      "shard_stop_index_exclusive": 770,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T03:10:51Z"
+    },
+    "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": {
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044",
+      "pid": 259269,
+      "pid_alive": false,
+      "row_count": 550,
+      "shard_start_index": 770,
+      "shard_stop_index_exclusive": 1045,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T02:44:17Z"
+    },
+    "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": {
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318",
+      "pid": 265119,
+      "pid_alive": false,
+      "row_count": 548,
+      "shard_start_index": 1045,
+      "shard_stop_index_exclusive": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T04:21:21Z"
+    }
+  },
+  "convergence_role": "full-split rerun for verifier-required GSM8K protocol shape repair",
+  "created_at_utc": "2026-07-24T14:02:54Z",
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 8395,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16169,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 100
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8435,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7956,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16608,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8415,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "launch_result": null,
+  "merged_artifact": {
+    "input_rows_by_config": {
+      "gsm8k_trajectory_prompt_constraint_L256_T256": 2252,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": 550,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": 550,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": 550,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": 548
+    },
+    "malformed_rows_by_config": {
+      "gsm8k_trajectory_prompt_constraint_L256_T256": 0,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": 0,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": 0,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": 0,
+      "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": 0
+    },
+    "missing_sample_count": 0,
+    "oracle_values_exposed_to_loop2": false,
+    "paired_completed_samples": 1319,
+    "row_count": 2638,
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_per_sample_results.jsonl",
+    "status": "completed",
+    "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_status.json",
+    "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_summary.json",
+    "total_samples": 1319
+  },
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "runnable_configs": [
+    {
+      "answer_start_offset": 220,
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "dag_repair_axes": [
+        "prompt_template_parity",
+        "suffix_constraint_semantics",
+        "answer_region_start_and_length",
+        "released_eval_harness_vs_custom_runner_semantics"
+      ],
+      "execution_mode": "monolithic_full_split_prefix_and_fallback",
+      "gen_length": 256,
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256",
+      "max_samples": null,
+      "merge_group": "gsm8k_trajectory_prompt_constraint_L256_T256_full_split",
+      "oracle_values_exposed_to_loop2": false,
+      "paper_role": "GSM8K postcompletion protocol-shape repair rerun",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "shard_start_index": 0,
+      "shard_stop_index_exclusive": 1319,
+      "start_index": 0,
+      "steps": 256,
+      "variants": "baseline,prophet"
+    },
+    {
+      "answer_start_offset": 220,
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "dag_repair_axes": [
+        "prompt_template_parity",
+        "suffix_constraint_semantics",
+        "answer_region_start_and_length",
+        "released_eval_harness_vs_custom_runner_semantics"
+      ],
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "gen_length": 256,
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+      "max_samples": 275,
+      "merge_group": "gsm8k_trajectory_prompt_constraint_L256_T256_full_split",
+      "oracle_values_exposed_to_loop2": false,
+      "paper_role": "Supplemental full-split shard for GSM8K protocol repair merge",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "shard_start_index": 220,
+      "shard_stop_index_exclusive": 495,
+      "start_index": 220,
+      "steps": 256,
+      "variants": "baseline,prophet"
+    },
+    {
+      "answer_start_offset": 220,
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "dag_repair_axes": [
+        "prompt_template_parity",
+        "suffix_constraint_semantics",
+        "answer_region_start_and_length",
+        "released_eval_harness_vs_custom_runner_semantics"
+      ],
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "gen_length": 256,
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+      "max_samples": 275,
+      "merge_group": "gsm8k_trajectory_prompt_constraint_L256_T256_full_split",
+      "oracle_values_exposed_to_loop2": false,
+      "paper_role": "Supplemental full-split shard for GSM8K protocol repair merge",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "shard_start_index": 495,
+      "shard_stop_index_exclusive": 770,
+      "start_index": 495,
+      "steps": 256,
+      "variants": "baseline,prophet"
+    },
+    {
+      "answer_start_offset": 220,
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "dag_repair_axes": [
+        "prompt_template_parity",
+        "suffix_constraint_semantics",
+        "answer_region_start_and_length",
+        "released_eval_harness_vs_custom_runner_semantics"
+      ],
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "gen_length": 256,
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044",
+      "max_samples": 275,
+      "merge_group": "gsm8k_trajectory_prompt_constraint_L256_T256_full_split",
+      "oracle_values_exposed_to_loop2": false,
+      "paper_role": "Supplemental full-split shard for GSM8K protocol repair merge",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "shard_start_index": 770,
+      "shard_stop_index_exclusive": 1045,
+      "start_index": 770,
+      "steps": 256,
+      "variants": "baseline,prophet"
+    },
+    {
+      "answer_start_offset": 220,
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "dag_repair_axes": [
+        "prompt_template_parity",
+        "suffix_constraint_semantics",
+        "answer_region_start_and_length",
+        "released_eval_harness_vs_custom_runner_semantics"
+      ],
+      "execution_mode": "full_split_shard_for_merged_verifier_artifact",
+      "gen_length": 256,
+      "id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318",
+      "max_samples": 274,
+      "merge_group": "gsm8k_trajectory_prompt_constraint_L256_T256_full_split",
+      "oracle_values_exposed_to_loop2": false,
+      "paper_role": "Supplemental full-split shard for GSM8K protocol repair merge",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "shard_start_index": 1045,
+      "shard_stop_index_exclusive": 1319,
+      "start_index": 1045,
+      "steps": 256,
+      "variants": "baseline,prophet"
+    }
+  ],
+  "runner": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py",
+  "strict_policy": {
+    "full_split_required": true,
+    "oracle_values_exposed_to_loop2": false,
+    "reduced_or_small_runs_allowed_to_converge": false,
+    "source": "DAG repair axes plus released README/trajectory artifacts"
+  }
+}

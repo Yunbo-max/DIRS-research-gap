@@ -1,0 +1,335 @@
+[
+  {
+    "id": "root.fullpaper_gap_argument",
+    "mandatory": true,
+    "role": "Full paper gap argument unit.",
+    "section": "root",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "intro.deployment_pressure",
+    "mandatory": true,
+    "role": "Why the systems constraint matters now.",
+    "section": "introduction",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "intro.prior_family_map",
+    "mandatory": true,
+    "role": "Closest prior family and what it already solves.",
+    "section": "introduction",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "intro.failure_mode",
+    "mandatory": true,
+    "role": "Exact failure under the target constraint.",
+    "section": "introduction",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "intro.gap_claim",
+    "mandatory": true,
+    "role": "Bounded research gap claim.",
+    "section": "introduction",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "intro.method_need",
+    "mandatory": true,
+    "role": "Why a new mechanism is needed.",
+    "section": "introduction",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "related.closest_baselines",
+    "mandatory": false,
+    "role": "Closest strong baselines.",
+    "section": "related_work",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "related.axis_of_difference",
+    "mandatory": false,
+    "role": "Narrow difference versus prior work.",
+    "section": "related_work",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "related.near_miss_handling",
+    "mandatory": false,
+    "role": "Partial prior solutions and novelty boundary.",
+    "section": "related_work",
+    "selected": false,
+    "support_count": 8,
+    "support_rate": 0.4
+  },
+  {
+    "id": "method.object_definition",
+    "mandatory": true,
+    "role": "The introduced method object.",
+    "section": "method",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "method.mechanism_delta",
+    "mandatory": true,
+    "role": "Mechanism change from baseline.",
+    "section": "method",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "method.constraint_binding",
+    "mandatory": true,
+    "role": "Design choices tied to gap constraint.",
+    "section": "method",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "method.operational_steps",
+    "mandatory": true,
+    "role": "Executable pipeline or algorithm.",
+    "section": "method",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "method.theory_or_invariant",
+    "mandatory": false,
+    "role": "Theorem, invariant, or objective when present.",
+    "section": "method",
+    "selected": false,
+    "support_count": 12,
+    "support_rate": 0.6
+  },
+  {
+    "id": "experiments.axis_match",
+    "mandatory": true,
+    "role": "Experiment axes match the gap.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.baseline_strength",
+    "mandatory": true,
+    "role": "Strong baseline family included.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.metric_pairing",
+    "mandatory": true,
+    "role": "Efficiency paired with correctness or quality.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.execution_surface",
+    "mandatory": true,
+    "role": "Declare local GPU, external API, repo run, or paper-only backend provenance.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.gpu_hardware_profile",
+    "mandatory": true,
+    "role": "Record GPU model, CUDA/driver, memory, precision, and backend assumptions.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.api_or_local_backend",
+    "mandatory": true,
+    "role": "Record whether results use external API calls, local serving, or no live backend.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.real_benchmark_command",
+    "mandatory": true,
+    "role": "Persist exact runnable command or script, config, seed, batch/context, and artifact path.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.exact_rerun_feasibility_audit",
+    "mandatory": true,
+    "role": "Audit every paper for exact-rerun readiness, code availability, missing checkpoints, data, and APIs.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.author_style_reproduction_campaign",
+    "mandatory": true,
+    "role": "Run GPU stress tests with baselines, controls, repeated seeds, and domain-relevant motifs.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.scale_or_stress",
+    "mandatory": false,
+    "role": "Stress setting or scale dimension.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "experiments.ablation_or_control",
+    "mandatory": false,
+    "role": "Ablation or control tests the mechanism.",
+    "section": "experiments",
+    "selected": true,
+    "support_count": 18,
+    "support_rate": 0.9
+  },
+  {
+    "id": "results.runtime_measurement",
+    "mandatory": true,
+    "role": "Report latency, throughput, memory, GPU occupancy, or API cost from the actual run.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.measured_gap_derivation",
+    "mandatory": true,
+    "role": "Derive research gaps from measured tradeoff failures, not only from paper prose.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.primary_table_read",
+    "mandatory": true,
+    "role": "Main result table answers the gap.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.tradeoff_interpretation",
+    "mandatory": true,
+    "role": "Tradeoff interpretation.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.reproduction_status",
+    "mandatory": true,
+    "role": "Classify evidence as rerun, microbench-only, code-inspected-only, API-only, or paper-only.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.proxy_vs_exact_boundary",
+    "mandatory": true,
+    "role": "Separate exact reproduction, proxy experiment, code audit, and blocked-paper evidence.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.exception_scan",
+    "mandatory": true,
+    "role": "Exceptions, saturation, or weak settings checked.",
+    "section": "results",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "results.mechanism_attribution",
+    "mandatory": false,
+    "role": "Ablation/theory attributes the gain.",
+    "section": "results",
+    "selected": true,
+    "support_count": 19,
+    "support_rate": 0.95
+  },
+  {
+    "id": "results.scope_boundary",
+    "mandatory": true,
+    "role": "Limitations bound the claim.",
+    "section": "limitations",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "appendix.raw_measurement_table",
+    "mandatory": true,
+    "role": "Attach machine-readable raw rows and grouped statistics for every GPU experiment family.",
+    "section": "appendix",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "appendix.artifact_log",
+    "mandatory": false,
+    "role": "Store probe JSON, benchmark JSON, logs, commit IDs, and commands used by the run.",
+    "section": "appendix",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  },
+  {
+    "id": "appendix.reproducibility_or_extra_evidence",
+    "mandatory": false,
+    "role": "Appendix/code artifacts support trust.",
+    "section": "appendix",
+    "selected": true,
+    "support_count": 20,
+    "support_rate": 1.0
+  }
+]

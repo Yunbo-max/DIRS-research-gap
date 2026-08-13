@@ -1,0 +1,192 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "assumption",
+        "attribute",
+        "binding",
+        "bottleneck",
+        "caption",
+        "choice",
+        "errors",
+        "fixed",
+        "fmri",
+        "hallucination",
+        "latent",
+        "latent-space",
+        "misbinding",
+        "object",
+        "omission",
+        "reconstruction",
+        "relation",
+        "two-object",
+        "vision-latent"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "latent-space choice for fMRI reconstruction",
+        "vision-latent assumption",
+        "object/attribute/relation binding errors"
+      ],
+      "score": 1.583,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "attribute",
+        "cross-attention",
+        "description",
+        "fmri",
+        "fmri-to-t5",
+        "generation",
+        "object-centric",
+        "preprocessing",
+        "relationship",
+        "search",
+        "structured"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "fMRI preprocessing",
+        "attribute/relationship search",
+        "structured description generation",
+        "fMRI-to-T5 model",
+        "object-centric cross-attention generation"
+      ],
+      "score": 0.917,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "ablation",
+        "accuracy",
+        "bold5000",
+        "cca",
+        "cka",
+        "clip",
+        "coco",
+        "five-run",
+        "fmri",
+        "gap",
+        "generalization",
+        "god",
+        "images",
+        "inception",
+        "latent-space",
+        "lpips",
+        "metrics",
+        "module",
+        "nsd",
+        "pairs",
+        "pixcorr",
+        "qwen2",
+        "reconstructed",
+        "splits",
+        "ssim",
+        "standardized",
+        "subject-averaged",
+        "test",
+        "train"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "NSD",
+        "BOLD5000",
+        "GOD",
+        "COCO QA pairs",
+        "standardized fMRI train/test splits",
+        "five-run subject-averaged metrics",
+        "Qwen2.5 QA on reconstructed images",
+        "latent-space ablation",
+        "module ablation"
+      ],
+      "score": 2.417,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "NSD; BOLD5000; GOD; COCO QA pairs; standardized fMRI train/test splits; five-run subject-averaged metrics; Qwen2.5 QA on reconstructed images; latent-space ablation; module ablation"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "PixCorr; SSIM; LPIPS; CLIP; Inception V3; QA accuracy; CKA; CCA; generalization gap"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "NSD; BOLD5000; Generic Object Decoding; COCO; NSD access-gated fMRI data; COCO images/captions; generated structured response npz files; best_keyword.json"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "two NVIDIA L40 GPUs with 48GB memory; CUDA 12.2 reported in README; PyTorch; transformers; diffusers; xformers; OpenAI API; langchain-openai; lpips"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "fMRI preprocessing; attribute/relationship search; structured description generation; fMRI-to-T5 model; object-centric cross-attention generation; src/my_model.py; src/gen_pipe.py; src/search_prompt/keyword_search.py; src/get_gpt_data.py; src/gpt_rewrite.py; src/train_model.py; src/run_gen.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "iteration": 2,
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "paper_title": "Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

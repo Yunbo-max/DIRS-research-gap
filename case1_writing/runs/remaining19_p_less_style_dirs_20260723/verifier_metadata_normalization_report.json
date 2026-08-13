@@ -1,0 +1,115 @@
+{
+  "artifact_kind": "verifier_metadata_normalization_report",
+  "created_at_utc": "2026-07-23T12:30:06Z",
+  "error_count": 0,
+  "errors": [],
+  "normalized": [
+    {
+      "artifact_kind": "seacache_specialized_verifier",
+      "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_052_seacache_spectral_evolution_cache/verifier_result_iter_03.json"
+    },
+    {
+      "artifact_kind": "sencache_specialized_verifier",
+      "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_053_sencache_sensitivity_aware_caching/verifier_result_iter_03.json"
+    },
+    {
+      "artifact_kind": "mrrope_specialized_verifier",
+      "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_1j63fjyjkg_mrrope_mixed_radix_rope/verifier_result_iter_03.json"
+    },
+    {
+      "artifact_kind": "flashvid_specialized_verifier",
+      "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h6rdx4w6al_flashvid_vllm_token_merging/verifier_result_iter_03.json"
+    },
+    {
+      "artifact_kind": "loongrl_specialized_verifier",
+      "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_o29e01q6bv_loongrl_long_context_reasoning/verifier_result_iter_03.json"
+    }
+  ],
+  "normalized_count": 5,
+  "unchanged": [
+    {
+      "artifact_kind": "nuwa_specialized_verifier",
+      "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_016_nuwa_class_specific_vit_pruning/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "spark_specialized_verifier",
+      "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_030_spark_vlm_articulated_reconstruction/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "trellis2_specialized_verifier",
+      "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_065_trellis2_native_compact_structured_latents/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "rdvq_specialized_verifier",
+      "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_067_rdvq_differentiable_vq_rate_distortion/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "atoken_specialized_verifier",
+      "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/cvpr2026_103_atoken_unified_visual_tokenizer/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "prism_specialized_verifier",
+      "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_88zlp7xyxw_prism_fmri_structured_text/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "battleship_specialized_verifier",
+      "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_eqhuvwh78u_rational_information_seeking_agents/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "lpd_specialized_verifier",
+      "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h06l9w1clt_locality_parallel_decoding_ar_image/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "infotok_specialized_verifier",
+      "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_jeywpfgzvn_infotok_adaptive_video_tokenizer/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "hsd_specialized_verifier",
+      "paper_id": "ICLR2026_LaVrNaBNwM_hsd_lossless_speculative_decoding",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_lavrnabnwm_hsd_lossless_speculative_decoding/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "clot_specialized_verifier",
+      "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_p5b97gzwrb_hyperparameter_trajectory_inference_clot/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "dto_kd_specialized_verifier",
+      "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_qmittyqw92_dto_kd_dynamic_tradeoff_distillation/verifier_result_iter_03.json",
+      "reason": "already_present"
+    },
+    {
+      "artifact_kind": "sparserl_specialized_verifier",
+      "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/verifier_result_iter_03.json",
+      "reason": "already_present"
+    }
+  ],
+  "unchanged_count": 13
+}

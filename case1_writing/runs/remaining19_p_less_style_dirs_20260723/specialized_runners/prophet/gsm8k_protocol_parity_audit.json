@@ -1,0 +1,191 @@
+{
+  "artifact_kind": "prophet_gsm8k_protocol_parity_audit",
+  "created_at_utc": "2026-07-24T14:02:56Z",
+  "dag_coverage": {
+    "covered_repair_nodes": [
+      "protocol.prompt_template_parity_gate",
+      "runner.suffix_answer_region_parity_gate",
+      "protocol.simple_evals_vs_lmeval_harness_gate",
+      "scoring.generated_answer_extractor_parity_gate"
+    ],
+    "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/paper_author_gap_dag.json",
+    "required_repair_axis_ids": [
+      "prompt_template_parity",
+      "suffix_answer_region_parity",
+      "harness_parity",
+      "generated_answer_extractor_parity"
+    ]
+  },
+  "findings": [
+    {
+      "evidence": [
+        "Custom runner builds a raw Q/A zero-shot prompt constant.",
+        "Released examples show chat-template prompting; README evaluation uses lm-eval GSM8K CoT task.",
+        "Paper says simple-evals prompt with step-by-step reasoning."
+      ],
+      "id": "prompt_template_parity",
+      "repair_implication": "Do not treat a final speed/accuracy mismatch as a method failure until exact prompt/template parity is encoded or explicitly blocked.",
+      "status": "unknown"
+    },
+    {
+      "evidence": [
+        "Custom runner and eval_llada both set answer_start to max constraint position plus two.",
+        "Released early-exit code monitors a fixed five-token answer region.",
+        "Paper appendix describes a suffix prompt followed by a reserved final-result region."
+      ],
+      "id": "suffix_answer_region_parity",
+      "repair_implication": "If step savings remain low, verify whether fixed answer_start/answer_length and suffix placement match the paper evaluator for GSM8K.",
+      "status": "matches_released_eval_formula_but_not_full_paper_protocol"
+    },
+    {
+      "evidence": [
+        "Release exposes eval_llada through lm-evaluation-harness.",
+        "Current custom runner bypasses that harness to preserve a full non-reduced run after official harness failure."
+      ],
+      "id": "harness_parity",
+      "repair_implication": "Custom full-split rows are real operational evidence, but exact paper-table parity still needs lm-eval/simple-evals equivalence or a narrower blocker.",
+      "status": "custom_fallback_support_only_until_equivalence_audit"
+    },
+    {
+      "evidence": [
+        "Custom runner computes strict and flexible numeric extraction.",
+        "Paper appendix says generated final answers are extracted, not multiple-choice log-prob compared.",
+        "Exact simple-evals extractor is not recovered in the local released path."
+      ],
+      "id": "generated_answer_extractor_parity",
+      "repair_implication": "Final accuracy-delta mismatch should trigger extractor parity audit or rescoring before any conclusion.",
+      "status": "custom_extractor_not_exact_simple_evals_extractor"
+    }
+  ],
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "report_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/gsm8k_protocol_parity_audit.json",
+  "source_facts": {
+    "custom_runner": {
+      "answer_start_formula_matches_release_eval": true,
+      "default_constraints_text": "200:The|201:answer|202:is",
+      "line_anchors": {
+        "OFFICIAL_ZERO_SHOT_PROMPT": [],
+        "answer_start = max": [
+          286
+        ],
+        "constraints-text": [
+          348
+        ],
+        "extract_flexible_answer": [
+          109,
+          477
+        ],
+        "prompt_text = OFFICIAL_ZERO_SHOT_PROMPT": []
+      },
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py",
+      "uses_flexible_numeric_extractor": true,
+      "uses_raw_zero_shot_prompt_constant": false,
+      "uses_tokenizer_apply_chat_template": false
+    },
+    "paper_protocol_anchors": {
+      "line_anchors": {
+        "answer_region_determination": [
+          1505,
+          1506,
+          1507,
+          1508,
+          1509,
+          1510,
+          1511,
+          1512,
+          1513,
+          1514,
+          1515,
+          1516
+        ],
+        "simple_evals_prompt_and_generated_answer_extraction": [
+          779,
+          780,
+          781,
+          782,
+          783,
+          1505
+        ],
+        "suffix_prompt_structure": [
+          1489,
+          1490,
+          1491,
+          1492,
+          1493,
+          1494,
+          1495,
+          1496
+        ]
+      },
+      "note": "Line anchors identify protocol evidence only; this audit intentionally omits table target metric values.",
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+    },
+    "released_eval": {
+      "eval_llada_answer_start_formula_matches_custom": true,
+      "eval_llada_decodes_generated_answer": true,
+      "eval_llada_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval_llada.py",
+      "generate_earlyexit_fixed_answer_length": true,
+      "line_anchors": {
+        "README.md": {
+          "answer_start_pos": [
+            65
+          ],
+          "apply_chat_template": [
+            54
+          ],
+          "constraints_text": [
+            89,
+            99
+          ],
+          "gsm8k_cot_zeroshot": [
+            87
+          ]
+        },
+        "eval_llada.py": {
+          "answer_start = max": [
+            279
+          ],
+          "constraints = _parse_constraints": [
+            274
+          ],
+          "generated_answer = self.tokenizer.decode": [
+            319,
+            326
+          ]
+        },
+        "generate_earlyexit.py": {
+          "answer_length = 5": [
+            119
+          ],
+          "answer_positions": [
+            120,
+            127
+          ],
+          "should_early_exit": [
+            8,
+            140
+          ]
+        }
+      },
+      "readme_eval_command_uses_lm_eval_gsm8k_cot_zeroshot": true,
+      "readme_eval_command_uses_same_constraints": true,
+      "readme_example_uses_chat_template": true,
+      "readme_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/README.md"
+    }
+  },
+  "status": "protocol_parity_partial_with_repair_nodes_encoded",
+  "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/GSM8K_PROTOCOL_PARITY_AUDIT.md",
+  "verifier_implication": {
+    "can_converge_from_this_audit_alone": false,
+    "partial_rows_are_convergence_evidence": false,
+    "recommended_action_if_final_shape_fails": "activate encoded prompt/suffix/harness/scorer repair gates and rerun or rescore from real full artifacts",
+    "recommended_action_if_final_shape_passes": "keep audit as protocol caveat and continue remaining professional debt gates"
+  },
+  "visibility_contract": {
+    "loop2_author_can_read": false,
+    "oracle_values_exposed_to_loop2": false,
+    "paper_oracle_target_values_included": false,
+    "verifier_can_read": true
+  }
+}

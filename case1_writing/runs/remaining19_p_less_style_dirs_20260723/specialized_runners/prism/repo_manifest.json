@@ -1,0 +1,568 @@
+{
+  "all_repo_files_excluding_git": [
+    "README.md",
+    "src/__pycache__/create_data.cpython-310.pyc",
+    "src/__pycache__/gen_pipe.cpython-310.pyc",
+    "src/__pycache__/get_gpt_data.cpython-310.pyc",
+    "src/__pycache__/gpt_rewrite.cpython-310.pyc",
+    "src/__pycache__/my_model.cpython-310.pyc",
+    "src/__pycache__/new_nsd_data.cpython-310.pyc",
+    "src/__pycache__/run_gen.cpython-310.pyc",
+    "src/__pycache__/text_prompt_utils.cpython-310.pyc",
+    "src/__pycache__/train_model.cpython-310.pyc",
+    "src/create_data.py",
+    "src/env.yml",
+    "src/gen_pipe.py",
+    "src/get_gpt_data.py",
+    "src/gpt_rewrite.py",
+    "src/logs/output.log",
+    "src/my_model.py",
+    "src/new_nsd_data.py",
+    "src/quick_start.sh",
+    "src/run_gen.py",
+    "src/search_prompt/__pycache__/keyword_generator.cpython-310.pyc",
+    "src/search_prompt/__pycache__/keyword_search.cpython-310.pyc",
+    "src/search_prompt/keyword_generator.py",
+    "src/search_prompt/keyword_search.py",
+    "src/text_prompt_utils.py",
+    "src/train_model.py"
+  ],
+  "artifact_kind": "prism_repo_manifest",
+  "created_at_utc": "2026-07-24T13:32:46Z",
+  "git": {
+    "head": {
+      "cmd": [
+        "git",
+        "-C",
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": null,
+      "returncode": 128,
+      "seconds": 0.001,
+      "stderr": "fatal: detected dubious ownership in repository at '/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "remote": {
+      "cmd": [
+        "git",
+        "-C",
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM",
+        "remote",
+        "-v"
+      ],
+      "cwd": null,
+      "returncode": 128,
+      "seconds": 0.002,
+      "stderr": "fatal: detected dubious ownership in repository at '/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM\n",
+      "stdout": "",
+      "timeout": false
+    }
+  },
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM",
+  "repo_exists": true,
+  "script_files": [
+    {
+      "exists": true,
+      "line_count": 61,
+      "mentions_l40_cuda_12_2": true,
+      "mentions_nsd_access_form": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/README.md",
+      "pipeline_steps": [
+        "python keyword_generator.py --openai_api_key {api key}",
+        "python get_gpt_data.py  --openai_api_key {api key} --data_split train",
+        "python get_gpt_data.py  --openai_api_key {api key} --data_split val",
+        "python get_gpt_data.py  --openai_api_key {api key} --data_split test",
+        "python train_model.py",
+        "python run_gen.py"
+      ],
+      "relative_path": "README.md",
+      "size_bytes": 2479,
+      "urls": [
+        "https://cvnlab.slite.page/p/IB6BSeW_7o/Terms-and-Conditions",
+        "https://forms.gle/xue2bCdM9LaFNMeb7",
+        "https://github.com/GraphmindDartmouth/PRISM.git"
+      ]
+    },
+    {
+      "declared_packages": [
+        "conda-forge",
+        "pytorch",
+        "defaults",
+        "python=3.10",
+        "pip",
+        "numpy",
+        "scikit-learn",
+        "pytorch",
+        "torchvision",
+        "torchaudio",
+        "cudatoolkit=11.8",
+        "transformers",
+        "diffusers",
+        "langchain",
+        "langchain-openai",
+        "openai",
+        "retry",
+        "lpips",
+        "xformers",
+        "tqdm",
+        "pillow"
+      ],
+      "exists": true,
+      "head": "name: clip_diffusion_env\nchannels:\n  - conda-forge\n  - pytorch\n  - defaults\ndependencies:\n  - python=3.10\n  - pip\n  - numpy\n  - scikit-learn\n  - pytorch\n  - torchvision\n  - torchaudio\n  - cudatoolkit=11.8\n  - pip:\n      - transformers\n      - diffusers\n      - langchain\n      - langchain-openai\n      - openai\n      - retry\n      - lpips\n      - xformers\n      - tqdm\n      - pillow",
+      "line_count": 25,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/env.yml",
+      "relative_path": "src/env.yml",
+      "size_bytes": 384
+    },
+    {
+      "commands": [
+        "python keyword_generator.py --openai_api_key {api key}",
+        "python get_gpt_data.py  --openai_api_key {api key} --data_split train",
+        "python get_gpt_data.py  --openai_api_key {api key} --data_split val",
+        "python get_gpt_data.py  --openai_api_key {api key} --data_split test",
+        "python gpt_rewrite.py --openai_api_key {api key}",
+        "python train_model.py",
+        "python run_gen.py"
+      ],
+      "contains_api_placeholder": true,
+      "exists": true,
+      "line_count": 15,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/quick_start.sh",
+      "relative_path": "src/quick_start.sh",
+      "shell_syntax": {
+        "cmd": [
+          "bash",
+          "-n",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/quick_start.sh"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.002,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "size_bytes": 394
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "PIL.Image",
+        "argparse",
+        "new_nsd_data",
+        "numpy",
+        "torch",
+        "torch.utils.data",
+        "transformers"
+      ],
+      "line_count": 78,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/create_data.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/create_data.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.063,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/create_data.py",
+      "size_bytes": 3093
+    },
+    {
+      "cli_flags": [
+        "--coco_annotation_dir",
+        "--coco_dir",
+        "--data_split",
+        "--fmri_dir",
+        "--save_dir",
+        "--subject_id"
+      ],
+      "exists": true,
+      "imports": [
+        "PIL.Image",
+        "argparse",
+        "collections",
+        "h5py",
+        "json",
+        "matplotlib.pyplot",
+        "numpy",
+        "os"
+      ],
+      "line_count": 192,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/new_nsd_data.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/new_nsd_data.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.035,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/new_nsd_data.py",
+      "size_bytes": 7116
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "openai",
+        "random",
+        "retry"
+      ],
+      "line_count": 67,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/search_prompt/keyword_generator.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/search_prompt/keyword_generator.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.064,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/search_prompt/keyword_generator.py",
+      "size_bytes": 2506
+    },
+    {
+      "cli_flags": [
+        "--best_keyword_file",
+        "--epoch",
+        "--exp_num",
+        "--init_relation_json_path",
+        "--openai_api_key",
+        "--ref_num",
+        "--save_dir",
+        "--temp"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "base64",
+        "concurrent.futures",
+        "diffusers",
+        "io",
+        "json",
+        "keyword_generator",
+        "langchain_core.messages",
+        "langchain_openai",
+        "lpips",
+        "numpy",
+        "os",
+        "sklearn.metrics.pairwise",
+        "src.new_nsd_data",
+        "sys",
+        "time",
+        "torch",
+        "torchvision",
+        "transformers"
+      ],
+      "line_count": 323,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/search_prompt/keyword_search.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/search_prompt/keyword_search.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.035,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/search_prompt/keyword_search.py",
+      "size_bytes": 10743
+    },
+    {
+      "cli_flags": [
+        "--best_keyword_file",
+        "--data_split",
+        "--openai_api_key",
+        "--save_dir"
+      ],
+      "exists": true,
+      "imports": [
+        "PIL.Image",
+        "argparse",
+        "base64",
+        "concurrent.futures",
+        "io",
+        "json",
+        "langchain_core.messages",
+        "langchain_openai",
+        "numpy",
+        "src_final.new_nsd_data",
+        "time"
+      ],
+      "line_count": 194,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/get_gpt_data.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/get_gpt_data.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.034,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/get_gpt_data.py",
+      "size_bytes": 6443
+    },
+    {
+      "cli_flags": [
+        "--data_split",
+        "--openai_api_key",
+        "--save_dir"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "concurrent.futures",
+        "langchain_core.messages",
+        "langchain_openai",
+        "numpy",
+        "time"
+      ],
+      "line_count": 149,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/gpt_rewrite.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/gpt_rewrite.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/gpt_rewrite.py",
+      "size_bytes": 5947
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "numpy",
+        "os",
+        "torch",
+        "torch.nn",
+        "transformers"
+      ],
+      "line_count": 172,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/my_model.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/my_model.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/my_model.py",
+      "size_bytes": 6475
+    },
+    {
+      "cli_flags": [
+        "--batch_size",
+        "--factor",
+        "--fmri_dim",
+        "--learning_rate",
+        "--model_save_dir",
+        "--num_epochs",
+        "--num_tokens",
+        "--patience",
+        "--stage_1_epochs"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "copy",
+        "create_data",
+        "my_model",
+        "torch",
+        "torch.optim",
+        "torch.utils.data",
+        "tqdm",
+        "transformers"
+      ],
+      "line_count": 204,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/train_model.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/train_model.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.04,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/train_model.py",
+      "size_bytes": 7738
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "PIL",
+        "diffusers",
+        "numpy",
+        "torch",
+        "tqdm.notebook",
+        "transformers",
+        "xformers"
+      ],
+      "line_count": 186,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/gen_pipe.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/gen_pipe.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.034,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/gen_pipe.py",
+      "size_bytes": 8547
+    },
+    {
+      "cli_flags": [
+        "--base_ratio",
+        "--end_steps",
+        "--img_height",
+        "--img_width",
+        "--num_inference_steps",
+        "--save_dir",
+        "--text_batch_size",
+        "--text_device",
+        "--text_fmri_dim",
+        "--text_max_length",
+        "--text_max_samples",
+        "--text_model_ckpt",
+        "--text_num_tokens",
+        "--text_output_json",
+        "--text_t5_model"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "create_data",
+        "gen_pipe",
+        "json",
+        "my_model",
+        "new_nsd_data",
+        "numpy",
+        "open_clip",
+        "os",
+        "sys",
+        "text_prompt_utils",
+        "torch",
+        "torch.nn.functional",
+        "torch.utils.data",
+        "torchvision",
+        "torchvision.models",
+        "torchvision.models.feature_extraction",
+        "tqdm",
+        "transformers"
+      ],
+      "line_count": 346,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/run_gen.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/run_gen.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.035,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/run_gen.py",
+      "size_bytes": 12860
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "re",
+        "typing"
+      ],
+      "line_count": 132,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/text_prompt_utils.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/text_prompt_utils.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "src/text_prompt_utils.py",
+      "size_bytes": 4455
+    }
+  ],
+  "support_only_findings": [
+    "README, source compile, and quick_start.sh syntax prove executable intent only",
+    "OpenAI API stages and access-gated fMRI data prevent a faithful end-to-end run until artifacts are materialized",
+    "unrelated local COCO/checkpoints do not count unless tied to the PRISM result grid"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "artifact_kind": "prophet_gsm8k_table1_protocol_selection_audit",
+  "created_at_utc": "2026-07-24T10:26:51Z",
+  "findings": [
+    {
+      "evidence": [
+        {
+          "fact": "Released Table-style GSM8K command uses lm-eval task gsm8k_cot_zeroshot with constraints_text 200:The|201:answer|202:is, gen_length=256, steps=256, block_length=32, answer_length=5.",
+          "line_anchors": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/eval.sh"
+        },
+        {
+          "fact": "Installed lm-eval task defines Q/A step-by-step prompt, stop sequences, strict regex, and flexible numeric extraction.",
+          "line_anchors": [
+            3,
+            10,
+            23,
+            31,
+            35,
+            39,
+            41
+          ],
+          "path": "/opt/conda/lib/python3.10/site-packages/lm_eval/tasks/gsm8k/gsm8k-cot-zeroshot.yaml"
+        },
+        {
+          "fact": "Paper protocol states simple-evals-style step-by-step prompting, GSM8K/GPQA generation length 256, greedy deterministic decoding, and baseline steps equal generation length.",
+          "line_anchors": [
+            770,
+            779,
+            780,
+            781,
+            782,
+            783
+          ],
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        }
+      ],
+      "id": "table1_eval_command_protocol",
+      "status": "recovered_from_release"
+    },
+    {
+      "evidence": [
+        {
+          "fact": "Trajectory analysis uses a different prompt family and constraint 220:Answer for suffix/emergence analysis.",
+          "line_anchors": [
+            47,
+            48,
+            52,
+            57,
+            173,
+            183,
+            192
+          ],
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/analysis/collect_decoding_traj_gsm8k.py"
+        },
+        {
+          "fact": "Paper appendix explains suffix prompt / answer-region mechanism separately from table metric values.",
+          "line_anchors": [
+            261,
+            262,
+            1488,
+            1489,
+            1490,
+            1499,
+            1500,
+            1501,
+            1503,
+            1506,
+            1507
+          ],
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        }
+      ],
+      "id": "trajectory_prompt_protocol",
+      "status": "separate_from_table1_primary"
+    },
+    {
+      "evidence": [
+        {
+          "fact": "Original custom runner has the gsm8k_cot_zeroshot prompt string, parses constraints with leading-space tokenization, uses answer_start=max constraint + 2, applies thresholds 7.5/5.0/2.5, and scores strict plus flexible answers.",
+          "line_anchors": [
+            48,
+            49,
+            123,
+            135,
+            281,
+            295,
+            343,
+            347,
+            348,
+            349,
+            448,
+            466,
+            467
+          ],
+          "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py"
+        },
+        {
+          "fact": "Released early-exit implementation uses phase thresholds, five-token answer region, gap condition, and fills remaining masks on exit.",
+          "line_anchors": [
+            8,
+            15,
+            20,
+            22,
+            25,
+            117,
+            119,
+            120,
+            140,
+            145,
+            147
+          ],
+          "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet/generate_earlyexit.py"
+        }
+      ],
+      "id": "custom_runner_primary_protocol",
+      "status": "table1_prompt_and_constraint_compatible_custom_fallback"
+    },
+    {
+      "evidence": [
+        {
+          "fact": "Comparator now excludes the completed trajectory-style merged protocol repair from Table 1 primary comparison because it uses trajectory_gsm8k_cot / 220:Answer rather than gsm8k_cot_zeroshot / 200:The|201:answer|202:is.",
+          "line_anchors": "pending_after_patch",
+          "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparator.py"
+        },
+        {
+          "fact": "Refreshed comparison now reports custom_full_gsm8k_llada8b as primary operational source and keeps the trajectory repair as non-primary support/debt evidence.",
+          "line_anchors": [],
+          "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_paper_result_comparison.json"
+        }
+      ],
+      "id": "protocol_repair_candidate_selection",
+      "status": "fixed_do_not_use_trajectory_repair_as_table1_primary"
+    }
+  ],
+  "non_oracle_result_interpretation": {
+    "failed_metric_ids": [
+      "accuracy_delta",
+      "prophet_avg_steps",
+      "step_speedup"
+    ],
+    "interpretation": "After selecting the Table1-compatible full artifact, the result is still complete but not close enough; next Loop 1/Loop 2 work should target threshold/suffix confidence dynamics or record a narrower exact-harness blocker, not reuse the trajectory repair as Table1 evidence.",
+    "primary_status_after_selection_repair": "blocked_gsm8k_result_shape_mismatch"
+  },
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "recommended_dag_update": {
+    "add_node_id": "verifier.table1_protocol_candidate_selection_gate",
+    "connect_from": "protocol.simple_evals_vs_lmeval_harness_gate",
+    "connect_to": "reviewer.compare_post_repair_shape_and_route",
+    "loop2_visibility": "DAG may encode the gate and artifact paths but not paper target values."
+  },
+  "status": "completed_table1_candidate_selection_repaired_primary_still_mismatch",
+  "visibility_contract": {
+    "loop2_author_can_read": false,
+    "oracle_values_exposed_to_loop2": false,
+    "paper_oracle_target_values_included": false,
+    "verifier_can_read": true
+  }
+}

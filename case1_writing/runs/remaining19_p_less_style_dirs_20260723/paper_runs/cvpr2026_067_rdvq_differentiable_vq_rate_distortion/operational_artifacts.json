@@ -1,0 +1,55 @@
+{
+  "blockers": [
+    "not_downloaded",
+    "weights_not_downloaded",
+    "datasets_not_downloaded",
+    "not_rerun",
+    "result_not_rerun"
+  ],
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.048,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19274, 4939, 6\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 2,
+      "entrypoint_candidates": [
+        "Real_Endecode_inference_single_stageAR.py",
+        "my_inference.py",
+        "utils/inference_common.py",
+        "evaluations/utils/evaluator.py",
+        "autoregressive/models/generate_single_stage_real.py",
+        "tokenizer/tokenizer_image/training/train_utils.py",
+        "tokenizer/tokenizer_image/training/train_vq.py",
+        "tokenizer/tokenizer_image/entropy/symbols/symbol_mapping.py",
+        "test_Real.sh",
+        "test.sh",
+        "scripts/tokenizer/train_vq.sh"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 77,
+      "readme_files": [
+        "README.md"
+      ],
+      "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ",
+      "shell_file_count": 5,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 77,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "artifact_kind": "mrrope_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "queue reports GitHub repository not found; only OpenReview supplement archive is available",
+      "id": "source_distribution_supplement_only",
+      "status": "blocked"
+    },
+    {
+      "detail": "required local dataset paths are missing: testset/pp-tokenized-llama3, testset/pp-tokenized-qwen2.5, testset/infity, testset/longbenchv2, testset/PaulGrahamEssays",
+      "id": "local_long_context_datasets_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "supplement scripts expect missing local checkpoints: models/llama3.1-8b-ins, models/qwen2.5-3b-ins",
+      "id": "local_model_checkpoints_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "supplement benchmark scripts use --flash-attention, but flash-attn is not installed",
+      "id": "flash_attention_2_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "missing supplement dependencies: jieba",
+      "id": "supplement_python_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "all visible GPUs have less than 16GiB free while another full GPU run is active; 128K model eval should wait for a clean device",
+      "id": "no_idle_large_memory_gpu_for_128k_eval",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no reduced run is promoted",
+  "created_at_utc": "2026-07-23T18:53:20Z",
+  "next_full_execution_if_unblocked": [
+    "materialize Proofpile tokenized datasets, InfiniteBench, RULER/NIAH, LongBenchV2, and haystack data",
+    "materialize Llama3.1-8B and Qwen2.5 model checkpoints in supplement-expected locations",
+    "install FlashAttention 2 and supplement dependencies",
+    "run full MrRoPE/YaRN/NTK benchmark scripts and emit CSV/JSONL/raw generation outputs",
+    "compare table-shaped perplexity, NIAH, RULER, Infinite-Bench, and LongBenchV2 results to the paper evidence"
+  ],
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "paper_title": "MrRoPE: Mixed-radix Rotary Position Embedding",
+  "professional_package_ready": false,
+  "status": "blocked_by_supplement_only_missing_datasets_models_runtime",
+  "support_checks": {
+    "compileall_and_imports_are_support_only": true,
+    "supplement_scripts_parsed": 16
+  }
+}

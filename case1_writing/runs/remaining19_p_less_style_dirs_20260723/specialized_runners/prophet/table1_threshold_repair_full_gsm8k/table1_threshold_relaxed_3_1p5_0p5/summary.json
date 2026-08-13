@@ -1,0 +1,24 @@
+{
+  "aggregates": {
+    "prophet": {
+      "completed_samples": 332,
+      "early_exit_count": 332,
+      "early_exit_rate": 1.0,
+      "flexible_correct_count": 166,
+      "flexible_exact_match": 0.5,
+      "mean_actual_steps": 151.07831325301206,
+      "mean_seconds": 17.90503012048194,
+      "strict_correct_count": 96,
+      "strict_exact_match": 0.2891566265060241
+    }
+  },
+  "artifact_kind": "prophet_custom_full_gsm8k_summary",
+  "created_at_utc": "2026-07-24T14:03:20Z",
+  "dataset": "openai/gsm8k main test",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5/per_sample_results.jsonl",
+  "status": "running_or_partial",
+  "total_samples": 1319,
+  "variants_requested": [
+    "prophet"
+  ]
+}

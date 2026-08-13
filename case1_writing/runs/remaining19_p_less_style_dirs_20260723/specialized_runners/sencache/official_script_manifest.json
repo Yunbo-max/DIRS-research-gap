@@ -1,0 +1,476 @@
+{
+  "artifact_kind": "sencache_official_script_manifest",
+  "created_at_utc": "2026-07-24T13:31:59Z",
+  "files": [
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [],
+        "exists": true,
+        "line_count": 62,
+        "mentions_gh200": false,
+        "mentions_hf_sencache_dataset": true,
+        "mentions_mixkit": false,
+        "mentions_precomputed_weights": true,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/README.md"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 3186
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [
+          "python sencache.py \\\n  --ckpt_dir ./Wan2.1-T2V-1.3B \\\n  --task t2v-1.3B \\\n  --size 832*480 \\\n  --output_dir ./output \\\n  --offload_model True \\\n  --prompt_file ./test_prompt.json \\\n  --frame_num 81 \\\n  --sample_steps 50 \\\n  --sencache_K 3 \\\n  --sencache_thresh_main 2 \\\n  --sencache_thresh_start 0.045"
+        ],
+        "exists": true,
+        "line_count": 39,
+        "mentions_gh200": false,
+        "mentions_hf_sencache_dataset": false,
+        "mentions_mixkit": false,
+        "mentions_precomputed_weights": true,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/README.md"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/README.md",
+      "relative_path": "Wan2.1/README.md",
+      "size_bytes": 1447
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--base_seed",
+          "--ckpt_dir",
+          "--dit_fsdp",
+          "--first_frame",
+          "--frame_num",
+          "--image",
+          "--last_frame",
+          "--measure_flops",
+          "--measure_latency",
+          "--no_sencache",
+          "--offload_model",
+          "--output_dir",
+          "--prompt",
+          "--prompt_extend_method",
+          "--prompt_extend_model",
+          "--prompt_extend_target_lang",
+          "--prompt_file",
+          "--ring_size",
+          "--sample_guide_scale",
+          "--sample_shift",
+          "--sample_solver",
+          "--sample_steps",
+          "--save_file",
+          "--sencache_K",
+          "--sencache_thresh_main",
+          "--sencache_thresh_start",
+          "--size",
+          "--src_mask",
+          "--src_ref_images",
+          "--src_video",
+          "--t5_cpu",
+          "--t5_fsdp",
+          "--task",
+          "--ulysses_size",
+          "--use_prompt_extend"
+        ],
+        "exists": true,
+        "has_flops_measurement": true,
+        "has_latency_measurement": true,
+        "has_prompt_file_loop": true,
+        "has_uncached_flag": true,
+        "hf_model_ids": [
+          "./sensitivity_wan21.npz",
+          "I/O",
+          "N/A",
+          "Ulysses/Ring",
+          "cond/uncond",
+          "videos/images.",
+          "z/t"
+        ],
+        "json_dependencies": [],
+        "line_count": 778,
+        "npz_dependencies": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sencache.py",
+        "requires_calibration_video_json": false,
+        "requires_checkpoint_dir": true,
+        "requires_checkpoint_path": false,
+        "requires_decord_import": false,
+        "requires_diffusers_import": false,
+        "requires_wan_import": true,
+        "sample_step_fields": [
+          "sample_steps"
+        ],
+        "threshold_fields": [
+          "sencache_K",
+          "sencache_thresh_main",
+          "sencache_thresh_start"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sencache.py",
+      "relative_path": "Wan2.1/sencache.py",
+      "size_bytes": 32250
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--base_seed",
+          "--batch_size",
+          "--ckpt_dir",
+          "--dit_fsdp",
+          "--embedding_cache_path",
+          "--frame_num",
+          "--json_path",
+          "--max_samples",
+          "--num_power_iter",
+          "--num_t_steps",
+          "--num_train_timesteps",
+          "--num_workers",
+          "--offload_model",
+          "--output_dir",
+          "--ring_size",
+          "--sample_shift",
+          "--sample_solver",
+          "--size",
+          "--t5_cpu",
+          "--t5_fsdp",
+          "--task",
+          "--ulysses_size",
+          "--video_base_path"
+        ],
+        "exists": true,
+        "has_flops_measurement": false,
+        "has_latency_measurement": false,
+        "has_prompt_file_loop": false,
+        "has_uncached_flag": false,
+        "hf_model_ids": [
+          "./results_sensitivity_wan"
+        ],
+        "json_dependencies": [],
+        "line_count": 542,
+        "npz_dependencies": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sensitivity_calculation.py",
+        "requires_calibration_video_json": true,
+        "requires_checkpoint_dir": true,
+        "requires_checkpoint_path": false,
+        "requires_decord_import": true,
+        "requires_diffusers_import": false,
+        "requires_wan_import": true,
+        "sample_step_fields": [
+          "num_t_steps"
+        ],
+        "threshold_fields": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/sensitivity_calculation.py",
+      "relative_path": "Wan2.1/sensitivity_calculation.py",
+      "size_bytes": 22164
+    },
+    {
+      "exists": true,
+      "is_single_prompt_support_only": true,
+      "line_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/Wan2.1/test_prompt.json",
+      "relative_path": "Wan2.1/test_prompt.json",
+      "size_bytes": 496
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [],
+        "exists": true,
+        "line_count": 6,
+        "mentions_gh200": false,
+        "mentions_hf_sencache_dataset": false,
+        "mentions_mixkit": false,
+        "mentions_precomputed_weights": false,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/README.md"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/README.md",
+      "relative_path": "CogVideoX/README.md",
+      "size_bytes": 196
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--ckpts_path",
+          "--fps",
+          "--generate_type",
+          "--guidance_scale",
+          "--height",
+          "--image_path",
+          "--negative_prompt",
+          "--no_sencache",
+          "--num_frames",
+          "--num_inference_steps",
+          "--output_dir",
+          "--prompt",
+          "--prompt_file",
+          "--seed",
+          "--sencache_K",
+          "--sencache_thresh_main",
+          "--sencache_thresh_start",
+          "--width"
+        ],
+        "exists": true,
+        "has_flops_measurement": false,
+        "has_latency_measurement": false,
+        "has_prompt_file_loop": true,
+        "has_uncached_flag": true,
+        "hf_model_ids": [
+          "./sensitivity_cogvid.npz",
+          "I/O",
+          "THUDM/CogVideoX1.5-5B"
+        ],
+        "json_dependencies": [],
+        "line_count": 487,
+        "npz_dependencies": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sencache.py",
+        "requires_calibration_video_json": false,
+        "requires_checkpoint_dir": false,
+        "requires_checkpoint_path": true,
+        "requires_decord_import": false,
+        "requires_diffusers_import": true,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_inference_steps"
+        ],
+        "threshold_fields": [
+          "sencache_K",
+          "sencache_thresh_main",
+          "sencache_thresh_start"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sencache.py",
+      "relative_path": "CogVideoX/sencache.py",
+      "size_bytes": 19480
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--base_seed",
+          "--batch_size",
+          "--ckpts_path",
+          "--frame_num",
+          "--height",
+          "--json_path",
+          "--max_samples",
+          "--num_t_steps",
+          "--num_workers",
+          "--output_dir",
+          "--video_base_path",
+          "--width"
+        ],
+        "exists": true,
+        "has_flops_measurement": false,
+        "has_latency_measurement": false,
+        "has_prompt_file_loop": false,
+        "has_uncached_flag": false,
+        "hf_model_ids": [
+          "./results_sensitivity_cogvideox",
+          "THUDM/CogVideoX1.5-5B",
+          "Wan/SiT"
+        ],
+        "json_dependencies": [],
+        "line_count": 645,
+        "npz_dependencies": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sensitivity_calculation_cogvid.py",
+        "requires_calibration_video_json": true,
+        "requires_checkpoint_dir": false,
+        "requires_checkpoint_path": true,
+        "requires_decord_import": true,
+        "requires_diffusers_import": true,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_t_steps"
+        ],
+        "threshold_fields": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/sensitivity_calculation_cogvid.py",
+      "relative_path": "CogVideoX/sensitivity_calculation_cogvid.py",
+      "size_bytes": 24392
+    },
+    {
+      "exists": true,
+      "is_single_prompt_support_only": true,
+      "line_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/CogVideoX/test_prompt.json",
+      "relative_path": "CogVideoX/test_prompt.json",
+      "size_bytes": 496
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [],
+        "exists": true,
+        "line_count": 6,
+        "mentions_gh200": false,
+        "mentions_hf_sencache_dataset": false,
+        "mentions_mixkit": false,
+        "mentions_precomputed_weights": false,
+        "mentions_vbench": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/README.md"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/README.md",
+      "relative_path": "LTX-Video/README.md",
+      "size_bytes": 196
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--ckpts_path",
+          "--decode_noise_scale",
+          "--decode_timestep",
+          "--fps",
+          "--height",
+          "--negative_prompt",
+          "--no_sencache",
+          "--num_frames",
+          "--num_inference_steps",
+          "--output_dir",
+          "--prompt",
+          "--prompt_file",
+          "--seed",
+          "--sencache_K",
+          "--sencache_thresh_main",
+          "--sencache_thresh_start",
+          "--width"
+        ],
+        "exists": true,
+        "has_flops_measurement": false,
+        "has_latency_measurement": false,
+        "has_prompt_file_loop": true,
+        "has_uncached_flag": true,
+        "hf_model_ids": [
+          "./sensitivity_ltx.npz",
+          "I/O",
+          "a-r-r-o-w/LTX-Video-0.9.1-diffusers"
+        ],
+        "json_dependencies": [],
+        "line_count": 436,
+        "npz_dependencies": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sencache.py",
+        "requires_calibration_video_json": false,
+        "requires_checkpoint_dir": false,
+        "requires_checkpoint_path": true,
+        "requires_decord_import": false,
+        "requires_diffusers_import": true,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_inference_steps"
+        ],
+        "threshold_fields": [
+          "sencache_K",
+          "sencache_thresh_main",
+          "sencache_thresh_start"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sencache.py",
+      "relative_path": "LTX-Video/sencache.py",
+      "size_bytes": 16762
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--base_seed",
+          "--batch_size",
+          "--ckpts_path",
+          "--frame_num",
+          "--height",
+          "--json_path",
+          "--max_samples",
+          "--mu",
+          "--num_t_steps",
+          "--num_workers",
+          "--output_dir",
+          "--video_base_path",
+          "--width"
+        ],
+        "exists": true,
+        "has_flops_measurement": false,
+        "has_latency_measurement": false,
+        "has_prompt_file_loop": false,
+        "has_uncached_flag": false,
+        "hf_model_ids": [
+          "./results_sensitivity_ltx",
+          "H/W",
+          "SiT/Latte",
+          "a-r-r-o-w/LTX-Video-0.9.1-diffusers",
+          "speed/memory"
+        ],
+        "json_dependencies": [],
+        "line_count": 537,
+        "npz_dependencies": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sensitivity_calculation_LTX.py",
+        "requires_calibration_video_json": true,
+        "requires_checkpoint_dir": false,
+        "requires_checkpoint_path": true,
+        "requires_decord_import": true,
+        "requires_diffusers_import": true,
+        "requires_wan_import": false,
+        "sample_step_fields": [
+          "num_t_steps"
+        ],
+        "threshold_fields": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/sensitivity_calculation_LTX.py",
+      "relative_path": "LTX-Video/sensitivity_calculation_LTX.py",
+      "size_bytes": 22120
+    },
+    {
+      "exists": true,
+      "is_single_prompt_support_only": true,
+      "line_count": 1,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache/LTX-Video/test_prompt.json",
+      "relative_path": "LTX-Video/test_prompt.json",
+      "size_bytes": 496
+    }
+  ],
+  "paper_id": "CVPR2026_053_sencache_sensitivity_aware_caching",
+  "paper_shaped_execution_matrix": {
+    "accepted_loop2_evidence": "loadable model checkpoints, calibration weights or calibration reruns, raw generated videos, uncached references, logs with skip counts, timing/GFLOPs traces, quality metrics, and table summaries",
+    "baselines": [
+      "TeaCache",
+      "MagCache",
+      "standard uncached inference"
+    ],
+    "calibration": [
+      "MixKit calibration videos",
+      "finite-difference latent and timestep sensitivity calculation",
+      "sensitivity_wan21.npz, sensitivity_cogvid.npz, sensitivity_ltx.npz"
+    ],
+    "generation": [
+      "Wan2.1 T=50 cached and uncached variants",
+      "CogVideoX T=50 cached and uncached variants",
+      "LTX-Video T=50 cached and uncached variants",
+      "threshold sweeps and max consecutive skip K controls"
+    ],
+    "metrics": [
+      "NFE",
+      "cache ratio",
+      "LPIPS",
+      "PSNR",
+      "SSIM",
+      "latency",
+      "GFLOPs",
+      "MAE"
+    ]
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/053_sencache/SenCache",
+  "support_only_findings": [
+    {
+      "detail": "Each bundled test_prompt.json is a one-line prompt, not the full VBench or T2V-CompBench paper prompt set.",
+      "id": "bundled_test_prompt_single_example",
+      "status": "support_only"
+    }
+  ]
+}

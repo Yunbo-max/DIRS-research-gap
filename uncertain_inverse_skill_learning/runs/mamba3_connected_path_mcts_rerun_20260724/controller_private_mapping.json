@@ -1,0 +1,13 @@
+{
+  "schema_version": "dirs.private_rollout_mapping.v1",
+  "seed": 20260724,
+  "mapping": {
+    "draft_A": "path_06",
+    "draft_B": "path_02",
+    "draft_C": "path_03",
+    "draft_D": "path_01",
+    "draft_E": "path_05",
+    "draft_F": "path_04"
+  },
+  "must_not_be_read_by_evaluator": true
+}

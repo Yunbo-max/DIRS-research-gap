@@ -1,0 +1,186 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "cache",
+        "compatibility",
+        "conflict",
+        "dependency",
+        "flat-token",
+        "generated",
+        "generation",
+        "image",
+        "inconsistency",
+        "independently",
+        "instruction",
+        "latency",
+        "low",
+        "naive",
+        "overhead",
+        "par",
+        "parallel",
+        "query",
+        "raster",
+        "relevance",
+        "same-step",
+        "speech",
+        "speed",
+        "text-only",
+        "token",
+        "tokens",
+        "versus",
+        "work"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "raster AR image latency",
+        "naive parallel generation inconsistency",
+        "flat-token compatibility versus speed"
+      ],
+      "score": 2.333,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "cache",
+        "locality-aware",
+        "mask",
+        "mutual",
+        "order",
+        "position",
+        "query",
+        "same-step",
+        "tokenizer",
+        "tokens",
+        "visibility",
+        "vqgan"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "position query tokens",
+        "same-step mutual visibility mask",
+        "locality-aware order",
+        "KV cache",
+        "VQGAN tokenizer"
+      ],
+      "score": 1.0,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "256x256",
+        "50k",
+        "a100",
+        "ablation",
+        "bf16",
+        "class-conditional",
+        "fid",
+        "generation",
+        "geneval",
+        "image",
+        "latency",
+        "precision",
+        "profiling",
+        "recall",
+        "sample",
+        "score",
+        "setting",
+        "text-to-image",
+        "throughput",
+        "under"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "class-conditional image generation",
+        "text-to-image generation",
+        "latency profiling",
+        "50k sample FID",
+        "A100 bf16 profiling",
+        "ablation under XL 256x256 setting"
+      ],
+      "score": 1.667,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "class-conditional image generation; text-to-image generation; latency profiling; 50k sample FID; A100 bf16 profiling; ablation under XL 256x256 setting"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "FID; IS; precision; recall; latency; throughput; GenEval score"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "ImageNet 256x256; ImageNet 512x512; GenEval"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "position query tokens; same-step mutual visibility mask; locality-aware order; KV cache; VQGAN tokenizer; models/lpd.py; models/mask.py; orders/lpd_order.py; engine.py; scripts/eval"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "iteration": 2,
+  "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+  "paper_title": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

@@ -1,0 +1,141 @@
+{
+  "blockers": [
+    {
+      "detail": "DAG/paper-shaped 7B training expects 16 A100 GPUs; visible A100 count=0, total visible GPUs=4",
+      "id": "loongrl_7b_training_gpu_topology",
+      "status": "blocked"
+    },
+    {
+      "detail": "DAG/paper-shaped 14B training expects 8 MI300X GPUs; visible MI300X count=0",
+      "id": "loongrl_14b_training_gpu_topology",
+      "status": "blocked"
+    },
+    {
+      "detail": "official long-context GRPO scripts request trainer.n_gpus_per_node=8; visible GPUs=4",
+      "id": "official_longcontext_script_gpu_count",
+      "status": "blocked"
+    },
+    {
+      "detail": "official GRPO scripts reference missing local parquet train files: /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/merged_data_deepscaler_openr1_130k_5000/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/musique5000_seq8192/train.parquet; /mnt/longcontext/models/siyuan/rl_datasets/rl_three/no_system/hotpotqa5000_seq8192/train.parquet",
+      "id": "official_longcontext_training_data_paths_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "no local LoongRL-7B or LoongRL-14B checkpoint directory was found for full benchmark evaluation",
+      "id": "trained_loongrl_checkpoints_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "missing installed runtime packages needed by paper-shaped veRL/Ray/vLLM/SGLang flow: ray, vllm, sglang, flash_attn, verl",
+      "id": "cluster_rl_runtime_packages_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "MI300X/ROCm runtime path is not visible from rocm-smi, so the 14B MI300X paper route cannot run here",
+      "id": "rocm_mi300x_runtime_unavailable",
+      "status": "blocked"
+    }
+  ],
+  "gpu_probe": {
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 2873,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 21343,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 5150,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19064,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 23
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "status": "pass"
+  },
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "verl/recipe/prime/prime_ray_trainer.py",
+        "verl/scripts/data_synth/test_parquet.py",
+        "verl/verl/utils/reward_score/prime_code/testing_util.py",
+        "verl/verl/trainer/main_eval.py",
+        "verl/verl/trainer/fsdp_sft_trainer.py",
+        "verl/verl/trainer/ppo/ray_trainer.py",
+        "verl/tests/checkpoint/test_fsdp_ckpt.py",
+        "verl/tests/checkpoint/test_megatron_ckpt.py",
+        "verl/tests/gpu_utility/test_ops.py",
+        "verl/tests/gpu_utility/test_torch_functional.py",
+        "verl/tests/gpu_utility/test_memory_buffers.py",
+        "verl/tests/sanity/test_import.py",
+        "verl/tests/sandbox/test_sandbox.py",
+        "verl/tests/distributed/test_tensor_dict.py",
+        "verl/tests/ray/test_check_worker_alive.py",
+        "verl/tests/ray/test_data_transfer.py",
+        "verl/tests/ray/test_driverfunc_to_worker.py",
+        "verl/tests/ray/test_colocated_workers.py",
+        "verl/tests/ray/test_worker_group_basics.py",
+        "verl/tests/ray/test_worker_group_torch.py",
+        "verl/tests/ray/test_ray_local_envs.py",
+        "verl/tests/ray/test_rvdz.py",
+        "verl/tests/ray/test_high_level_scheduling_api.py",
+        "verl/tests/rollout/test_sglang_spmd.py",
+        "verl/tests/rollout/test_vllm_hf_loader.py",
+        "verl/tests/rollout/test_vllm_spmd.py",
+        "verl/tests/utility/test_tensor_dict_utilities.py",
+        "verl/tests/model/test_transformer.py",
+        "verl/tests/model/test_transformers_ulysses.py",
+        "verl/tests/verl/utils/dataset/test_rm_dataset.py"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 302,
+      "readme_files": [
+        "README.md",
+        "verl/README.md",
+        "verl/docs/README.md",
+        "verl/verl/utils/dataset/README.md",
+        "verl/verl/models/README.md",
+        "verl/examples/split_placement/README.md",
+        "verl/tests/ray/detached_worker/README.md",
+        "verl/tests/e2e/arithmetic_sequence/rl/README.md"
+      ],
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL",
+      "shell_file_count": 119,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 250,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ],
+  "specialized_runner": {
+    "artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl",
+    "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/environment.json",
+    "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/model_data_manifest.json",
+    "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/official_script_manifest.json",
+    "professional_gate_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/professional_gate_result.json",
+    "status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+    "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/loongrl/loongrl_specialized_verifier.json"
+  }
+}

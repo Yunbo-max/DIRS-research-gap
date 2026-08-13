@@ -1,0 +1,280 @@
+{
+  "artifact_kind": "infotok_model_data_manifest",
+  "created_at_utc": "2026-07-24T13:33:41Z",
+  "hf_artifacts": [
+    {
+      "hf_info": {
+        "parsed": {
+          "file_count": 4,
+          "files_first50": [
+            ".DS_Store",
+            ".gitattributes",
+            "README.md",
+            "infotok_mse.pt"
+          ],
+          "repo_id": "qyoo/infotok-flex",
+          "total_size_bytes": 1725361180
+        },
+        "probe": {
+          "cmd": [
+            "/opt/conda/bin/python",
+            "-c",
+            "from huggingface_hub import HfApi; import json; info=HfApi().repo_info('qyoo/infotok-flex', repo_type='model', files_metadata=True); files=getattr(info,'siblings',[]) or []; print(json.dumps({'repo_id':info.id, 'files_first50':[getattr(f,'rfilename','') for f in files[:50]], 'total_size_bytes':sum((getattr(f,'size',0) or 0) for f in files), 'file_count':len(files)}))"
+          ],
+          "cwd": null,
+          "returncode": 0,
+          "seconds": 0.419,
+          "stderr": "",
+          "stdout": "{\"repo_id\": \"qyoo/infotok-flex\", \"files_first50\": [\".DS_Store\", \".gitattributes\", \"README.md\", \"infotok_mse.pt\"], \"total_size_bytes\": 1725361180, \"file_count\": 4}\n",
+          "timeout": false
+        }
+      },
+      "id": "infotok_flex_checkpoint",
+      "local_file_count": 0,
+      "local_hint": "infotok-flex/infotok_mse.pt",
+      "local_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/infotok-flex/infotok_mse.pt",
+      "local_size_human": null,
+      "materialized_locally": false,
+      "repo_id": "qyoo/infotok-flex",
+      "repo_type": "model"
+    },
+    {
+      "hf_info": {
+        "parsed": {
+          "file_count": 501,
+          "files_first50": [
+            ".gitattributes",
+            "bdd_0114bdd0-f317da84.mp4",
+            "bdd_0129ed1d-d8572c11.mp4",
+            "bdd_02086f50-c1e5d802.mp4",
+            "bdd_04ab9fd3-635a600c.mp4",
+            "bdd_0679098c-8505f50b.mp4",
+            "bdd_074f7c18-5077b13e.mp4",
+            "bdd_0acc0c71-c476dd2a.mp4",
+            "bdd_0b1beb15-18d74ac1.mp4",
+            "bdd_0b4034a2-769ded45.mp4",
+            "bdd_10fc5fdb-dfbee909.mp4",
+            "bdd_1812c350-bbf674fb.mp4",
+            "bdd_1cef9ae4-f924b2f5.mp4",
+            "bdd_1d2090ea-c3bba67f.mp4",
+            "bdd_2106a66a-71b2070c.mp4",
+            "bdd_2173474d-fe4bcc41.mp4",
+            "bdd_224d0424-e93a76ba.mp4",
+            "bdd_23a9d660-db3f344a.mp4",
+            "bdd_26e31dd6-96569c52.mp4",
+            "bdd_28e65305-1b99e432.mp4",
+            "bdd_291dee4f-96af2f0e.mp4",
+            "bdd_29c9ca26-7d1c3cf1.mp4",
+            "bdd_2b0cf575-9d9cff53.mp4",
+            "bdd_2d522831-d089f33b.mp4",
+            "bdd_2dc12212-ce30cce3.mp4",
+            "bdd_31a9e4c6-3f8cbfc4.mp4",
+            "bdd_3584e2a1-a2975190.mp4",
+            "bdd_360c24e7-0d6b223b.mp4",
+            "bdd_36429156-0d51c714.mp4",
+            "bdd_3b3fda3d-e07e7ca2.mp4",
+            "bdd_45ba36bc-feacc8e3.mp4",
+            "bdd_4d937412-27135796.mp4",
+            "bdd_4e62224d-abacf2f4.mp4",
+            "bdd_516bbf6a-74fb1d01.mp4",
+            "bdd_51dfaba5-56364809.mp4",
+            "bdd_54be9082-49bcb9e4.mp4",
+            "bdd_5804addd-974eca9b.mp4",
+            "bdd_5980ee70-150f0e17.mp4",
+            "bdd_5cf0b01a-96b278aa.mp4",
+            "bdd_609d9e62-2a51f401.mp4",
+            "bdd_63d043cc-a63afce5.mp4",
+            "bdd_64505e49-d58ca737.mp4",
+            "bdd_645f2d38-854fe929.mp4",
+            "bdd_64d21f66-0fe98085.mp4",
+            "bdd_653bc721-69d16aba.mp4",
+            "bdd_68839897-f1b0ddc2.mp4",
+            "bdd_6a01e6d3-88a8146f.mp4",
+            "bdd_6b099ca0-fcc176c5.mp4",
+            "bdd_6b1f5022-643ba354.mp4",
+            "bdd_6f3376e6-804cae82.mp4"
+          ],
+          "repo_id": "qyoo/tokenbench_240p",
+          "total_size_bytes": 239377107
+        },
+        "probe": {
+          "cmd": [
+            "/opt/conda/bin/python",
+            "-c",
+            "from huggingface_hub import HfApi; import json; info=HfApi().repo_info('qyoo/tokenbench_240p', repo_type='dataset', files_metadata=True); files=getattr(info,'siblings',[]) or []; print(json.dumps({'repo_id':info.id, 'files_first50':[getattr(f,'rfilename','') for f in files[:50]], 'total_size_bytes':sum((getattr(f,'size',0) or 0) for f in files), 'file_count':len(files)}))"
+          ],
+          "cwd": null,
+          "returncode": 0,
+          "seconds": 0.462,
+          "stderr": "",
+          "stdout": "{\"repo_id\": \"qyoo/tokenbench_240p\", \"files_first50\": [\".gitattributes\", \"bdd_0114bdd0-f317da84.mp4\", \"bdd_0129ed1d-d8572c11.mp4\", \"bdd_02086f50-c1e5d802.mp4\", \"bdd_04ab9fd3-635a600c.mp4\", \"bdd_0679098c-8505f50b.mp4\", \"bdd_074f7c18-5077b13e.mp4\", \"bdd_0acc0c71-c476dd2a.mp4\", \"bdd_0b1beb15-18d74ac1.mp4\", \"bdd_0b4034a2-769ded45.mp4\", \"bdd_10fc5fdb-dfbee909.mp4\", \"bdd_1812c350-bbf674fb.mp4\", \"bdd_1cef9ae4-f924b2f5.mp4\", \"bdd_1d2090ea-c3bba67f.mp4\", \"bdd_2106a66a-71b2070c.mp4\", \"bdd_2173474d-fe4bcc41.mp4\", \"bdd_224d0424-e93a76ba.mp4\", \"bdd_23a9d660-db3f344a.mp4\", \"bdd_26e31dd6-96569c52.mp4\", \"bdd_28e65305-1b99e432.mp4\", \"bdd_291dee4f-96af2f0e.mp4\", \"bdd_29c9ca26-7d1c3cf1.mp4\", \"bdd_2b0cf575-9d9cff53.mp4\", \"bdd_2d522831-d089f33b.mp4\", \"bdd_2dc12212-ce30cce3.mp4\", \"bdd_31a9e4c6-3f8cbfc4.mp4\", \"bdd_3584e2a1-a2975190.mp4\", \"bdd_360c24e7-0d6b223b.mp4\", \"bdd_36429156-0d51c714.mp4\", \"bdd_3b3fda3d-e07e7ca2.mp4\", \"bdd_45ba36bc-feacc8e3.mp4\", \"bdd_4d937412-27135796.mp4\", \"bdd_4e62224d-abacf2f4.mp4\", \"bdd_516bbf6a-74fb1d01.mp4\", \"bdd_51dfaba5-56364809.mp4\", \"bdd_54be9082-49bcb9e4.mp4\", \"bdd_5804addd-974eca9b.mp4\", \"bdd_5980ee70-150f0e17.mp4\", \"bdd_5cf0b01a-96b278aa.mp4\", \"bdd_609d9e62-2a51f401.mp4\", \"bdd_63d043cc-a63afce5.mp4\", \"bdd_64505e49-d58ca737.mp4\", \"bdd_645f2d38-854fe929.mp4\", \"bdd_64d21f66-0fe98085.mp4\", \"bdd_653bc721-69d16aba.mp4\", \"bdd_68839897-f1b0ddc2.mp4\", \"bdd_6a01e6d3-88a8146f.mp4\", \"bdd_6b099ca0-fcc176c5.mp4\", \"bdd_6b1f5022-643ba354.mp4\", \"bdd_6f3376e6-804cae82.mp4\"], \"total_size_bytes\": 239377107, \"file_count\": 501}\n",
+          "timeout": false
+        }
+      },
+      "id": "tokenbench_240p",
+      "local_file_count": 0,
+      "local_hint": "tokenbench_240p",
+      "local_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/tokenbench_240p",
+      "local_size_human": null,
+      "materialized_locally": false,
+      "repo_id": "qyoo/tokenbench_240p",
+      "repo_type": "dataset"
+    },
+    {
+      "hf_info": {
+        "parsed": {
+          "file_count": 31,
+          "files_first50": [
+            ".gitattributes",
+            "basketball-game_h264.mp4",
+            "bmx-rider_h264.mp4",
+            "butterfly_h264.mp4",
+            "car-competition_h264.mp4",
+            "cat_h264.mp4",
+            "chairlift_h264.mp4",
+            "circus_h264.mp4",
+            "dog-competition_h264.mp4",
+            "dolphins-show_h264.mp4",
+            "drone-flying_h264.mp4",
+            "ducks_h264.mp4",
+            "giraffes_h264.mp4",
+            "gym-ball_h264.mp4",
+            "helicopter-landing_h264.mp4",
+            "horse-race_h264.mp4",
+            "hurdles-race_h264.mp4",
+            "ice-hockey_h264.mp4",
+            "jet-ski_h264.mp4",
+            "juggling-selfie_h264.mp4",
+            "kids-robot_h264.mp4",
+            "mantaray_h264.mp4",
+            "mascot_h264.mp4",
+            "motorbike-race_h264.mp4",
+            "obstacles_h264.mp4",
+            "plane-exhibition_h264.mp4",
+            "robot-battle_h264.mp4",
+            "snowboard-race_h264.mp4",
+            "swimmer_h264.mp4",
+            "tram_h264.mp4",
+            "trucks-race_h264.mp4"
+          ],
+          "repo_id": "qyoo/davis_240p",
+          "total_size_bytes": 5643620
+        },
+        "probe": {
+          "cmd": [
+            "/opt/conda/bin/python",
+            "-c",
+            "from huggingface_hub import HfApi; import json; info=HfApi().repo_info('qyoo/davis_240p', repo_type='dataset', files_metadata=True); files=getattr(info,'siblings',[]) or []; print(json.dumps({'repo_id':info.id, 'files_first50':[getattr(f,'rfilename','') for f in files[:50]], 'total_size_bytes':sum((getattr(f,'size',0) or 0) for f in files), 'file_count':len(files)}))"
+          ],
+          "cwd": null,
+          "returncode": 0,
+          "seconds": 0.431,
+          "stderr": "",
+          "stdout": "{\"repo_id\": \"qyoo/davis_240p\", \"files_first50\": [\".gitattributes\", \"basketball-game_h264.mp4\", \"bmx-rider_h264.mp4\", \"butterfly_h264.mp4\", \"car-competition_h264.mp4\", \"cat_h264.mp4\", \"chairlift_h264.mp4\", \"circus_h264.mp4\", \"dog-competition_h264.mp4\", \"dolphins-show_h264.mp4\", \"drone-flying_h264.mp4\", \"ducks_h264.mp4\", \"giraffes_h264.mp4\", \"gym-ball_h264.mp4\", \"helicopter-landing_h264.mp4\", \"horse-race_h264.mp4\", \"hurdles-race_h264.mp4\", \"ice-hockey_h264.mp4\", \"jet-ski_h264.mp4\", \"juggling-selfie_h264.mp4\", \"kids-robot_h264.mp4\", \"mantaray_h264.mp4\", \"mascot_h264.mp4\", \"motorbike-race_h264.mp4\", \"obstacles_h264.mp4\", \"plane-exhibition_h264.mp4\", \"robot-battle_h264.mp4\", \"snowboard-race_h264.mp4\", \"swimmer_h264.mp4\", \"tram_h264.mp4\", \"trucks-race_h264.mp4\"], \"total_size_bytes\": 5643620, \"file_count\": 31}\n",
+          "timeout": false
+        }
+      },
+      "id": "davis_240p",
+      "local_file_count": 0,
+      "local_hint": "davis_240p",
+      "local_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/davis_240p",
+      "local_size_human": null,
+      "materialized_locally": false,
+      "repo_id": "qyoo/davis_240p",
+      "repo_type": "dataset"
+    }
+  ],
+  "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+  "paper_shaped_outputs_required": [
+    "TokenBench and DAVIS reconstruction at matched BPP16/token-rate",
+    "PSNR, SSIM, LPIPS, FVD, BPP16, latency seconds per video, decoder-pass counts",
+    "global_elbo versus elbo routing comparison",
+    "fixed Cosmos-DV and ElasticTok/OmniTokenizer/Open-MAGVIT2 baseline comparison",
+    "router optimality ablation",
+    "compressor ablation",
+    "post-training/full-training trace for 32-H100 scale claim",
+    "raw reconstructed videos, masks/token bars, metric JSON, timing/GPU traces, and table summaries"
+  ],
+  "support_only_media_candidates": [
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/panda70m_test_0000004_00000.mp4",
+      "size_human": "87835"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/1747309095480157.mp4",
+      "size_human": "1566727"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/panda70m_test_0000007_00000.mp4",
+      "size_human": "2369447"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/egoexo4D_fair_bike_01_3_aria01_214-1.mp4",
+      "size_human": "1569542"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/bridgev2_datacol2_toykitchen7_pnp_push_sweep_01.mp4",
+      "size_human": "478971"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/bdd_e5cd93c4-41251973.mp4",
+      "size_human": "1286028"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/assets/panda70m_test_0000004_00000_compare.gif",
+      "size_human": "167977"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/assets/1747309095480157_compare.gif",
+      "size_human": "1880255"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/assets/panda70m_test_0000007_00000_360p_compare.gif",
+      "size_human": "1498799"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/assets/compare_length.png",
+      "size_human": "6645228"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/assets/infotok-header.png",
+      "size_human": "899439"
+    },
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/assets/infotok-table.png",
+      "size_human": "293581"
+    }
+  ],
+  "verifier_comparable_metric_outputs": [
+    {
+      "file_count": 1,
+      "is_dir": false,
+      "path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/infotok/professional_gate_result.json",
+      "size_human": "4225"
+    }
+  ]
+}

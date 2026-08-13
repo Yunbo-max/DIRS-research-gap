@@ -1,0 +1,168 @@
+{
+  "checks": [
+    {
+      "detail": "blind simulation used only research_gap_skill_graph.json",
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "hyperparameter/tuning",
+        "temperature",
+        "fixed/threshold",
+        "single-token/relative",
+        "tail",
+        "fallback/empty",
+        "degrade/brittle/fail"
+      ],
+      "name": "gap_semantic_match",
+      "paper_anchor": "Sampling methods need task/temperature hyperparameter tuning; fixed or single-token thresholds degrade or require fallbacks.",
+      "score": 1.0,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "full-distribution/full distribution",
+        "second-moment/second moment",
+        "threshold",
+        "hyperparameter",
+        "normalized/p-lessnorm",
+        "diversity"
+      ],
+      "name": "method_gap_binding_match",
+      "paper_anchor": "p-less uses the full distribution second moment sum_i p_i^2 as a dynamic threshold; p-lessnorm relaxes it.",
+      "score": 1.0,
+      "status": "pass"
+    },
+    {
+      "name": "close_result_shape_match",
+      "score": 1.0,
+      "status": "pass",
+      "subchecks": [
+        {
+          "name": "main_auc_close_shape",
+          "paper_anchor": "p-less and p-lessnorm are top or near-top across most reasoning datasets and models.",
+          "status": "pass"
+        },
+        {
+          "name": "high_temperature_close_shape",
+          "paper_anchor": "p-less remains stable at high temperature while top-p, epsilon, and eta collapse in the reported Writing Prompts setting.",
+          "status": "pass"
+        },
+        {
+          "name": "efficiency_close_shape",
+          "paper_anchor": "p-less has the lowest reported average sampling time per token in Table 3.",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "detail": {
+        "artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved",
+        "completed_generations": 3510,
+        "coverage": 0.2507142857142857,
+        "datasets": [
+          "gsm8k",
+          "csqa",
+          "qasc",
+          "writingprompts"
+        ],
+        "max_new_tokens": 64,
+        "model": "mistralai/Mistral-7B-Instruct-v0.2",
+        "physical_gpu": 3,
+        "planned_generations": 14000,
+        "professional_scale_evidence_ready": true,
+        "professional_scale_for_gap_convergence": true,
+        "professional_verifier_accepted": true,
+        "professional_verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_gap_result_verification.json",
+        "professional_verifier_status": "accepted",
+        "samplers": [
+          "top_p",
+          "min_p",
+          "epsilon",
+          "eta",
+          "mirostat",
+          "p_less",
+          "p_lessnorm"
+        ],
+        "scale": "professional_paper_shaped_long_run",
+        "source": "professional_scale_author_simulation",
+        "status": "pass",
+        "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/professional_scale_author_simulation/longrun_20260722_gpu3_interleaved/professional_scale_status.json",
+        "temperatures": [
+          0.5,
+          0.7,
+          1.0,
+          1.5,
+          2.0
+        ]
+      },
+      "name": "operational_gpu_evidence_present",
+      "status": "pass"
+    },
+    {
+      "detail": "exact_oracle_artifacts_required_for_all_convergence",
+      "name": "close_convergence_policy_encoded",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "artifact_scale": "professional_paper_shaped_long_run",
+        "policy": "reduced/small/smoke runs never count as convergence evidence",
+        "professional_scale_evidence_ready": true,
+        "professional_scale_for_gap_convergence": true,
+        "reduced_rejection_gate_encoded": false
+      },
+      "name": "professional_scale_gate",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        "Table 1 reasoning AUC",
+        "Figure 2 temperature curves",
+        "Table 2 Writing Prompts",
+        "Table 3 sampling time",
+        "Figures 16/17 CPU/RAM",
+        "Table 15 CPU/RAM"
+      ],
+      "name": "exact_artifact_debt_nonblocking_but_recorded",
+      "status": "fail"
+    }
+  ],
+  "created_at_utc": "2026-07-23T00:27:31Z",
+  "exact_reproduction_converged": false,
+  "exact_reproduction_status": "blocked_exact_artifact_debt",
+  "gap_converged_close_match": false,
+  "gap_convergence_status": "not_converged",
+  "required_updates": [
+    {
+      "id": "update.add_close_result_shape_verifier",
+      "reason": "Gap skill convergence should compare semantic gap and close table/figure/paragraph result shape, not require exact numeric reproduction.",
+      "success_criteria": [
+        "add reviewer.compare_close_result_shapes",
+        "compare main AUC, high-temperature writing, and efficiency as qualitative shapes",
+        "accept close match for gap skill convergence"
+      ]
+    },
+    {
+      "id": "update.separate_exact_artifact_debt_from_gap_skill",
+      "reason": "Missing Table/Figure exact artifacts must remain visible but should not block research-gap skill convergence.",
+      "success_criteria": [
+        "record exact-reproduction debt for Table 1, Figure 2, Table 2, Table 3, Figures 16/17, and Table 15",
+        "keep exact_reproduction_converged=false until those artifacts pass",
+        "allow gap_converged_close_match when the real gap and result shape match"
+      ]
+    },
+    {
+      "id": "update.add_professional_scale_gate",
+      "reason": "Reduced, toy, smoke, or one-prompt runs must not be treated as convergence evidence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "label reduced artifacts as smoke_only/preflight_only/debug_only",
+        "require professional paper-shaped experiments before declaring gap skill convergence"
+      ]
+    }
+  ],
+  "score": 0.625,
+  "semantic_close_match": false
+}

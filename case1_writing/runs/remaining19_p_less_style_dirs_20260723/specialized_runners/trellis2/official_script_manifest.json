@@ -1,0 +1,2102 @@
+{
+  "artifact_kind": "trellis2_official_script_manifest",
+  "created_at_utc": "2026-07-23T18:52:48Z",
+  "files": [
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [
+          "    . ./setup.sh --new-env --basic --flash-attn --nvdiffrast --nvdiffrec --cumesh --o-voxel --flexgemm\n",
+          "    Usage: setup.sh [OPTIONS]\n    Options:\n        -h, --help              Display this help message\n        --new-env               Create a new conda environment\n        --basic                 Install basic dependencies\n        --flash-attn            Install flash-attention\n        --cumesh                Install cumesh\n        --o-voxel               Install o-voxel\n        --flexgemm              Install flexgemm\n        --nvdiffrast            Install nvdiffrast\n        --nvdiffrec             Install nvdiffrec\n",
+          "import os\nos.environ['OPENCV_IO_ENABLE_OPENEXR'] = '1'\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"expandable_segments:True\"  # Can save GPU memory\nimport cv2\nimport imageio\nfrom PIL import Image\nimport torch\nfrom trellis2.pipelines import Trellis2ImageTo3DPipeline\nfrom trellis2.utils import render_utils\nfrom trellis2.renderers import EnvMap\nimport o_voxel\n\n# 1. Setup Environment Map\nenvmap = EnvMap(torch.tensor(\n    cv2.cvtColor(cv2.imread('assets/hdri/forest.exr', cv2.IMREAD_UNCHANGED), cv2.COLOR_BGR2RGB),\n    dtype=torch.float32, device='cuda'\n))\n\n# 2. Load Pipeline\npipeline = Trellis2ImageTo3DPipeline.from_pretrained(\"microsoft/TRELLIS.2-4B\")\npipeline.cuda()\n\n# 3. Load Image & Run\nimage = Image.open(\"assets/example_image/T.png\")\nmesh = pipeline.run(image)[0]\nmesh.simplify(16777216) # nvdiffrast limit\n\n# 4. Render Video\nvideo = render_utils.make_pbr_vis_frames(render_utils.render_video(mesh, envmap=envmap))\nimageio.mimsave(\"sample.mp4\", video, fps=15)\n\n# 5. Export to GLB\nglb = o_voxel.postprocess.to_glb(\n    vertices            =   mesh.vertices,\n    faces               =   mesh.faces,\n    attr_volume         =   mesh.attrs,\n    coords              =   mesh.coords,\n    attr_layout ",
+          "python app.py",
+          "python train.py \\\n  --config configs/scvae/shape_vae_next_dc_f16c32_fp16.json \\\n  --output_dir results/shape_vae_next_dc_f16c32_fp16 \\\n  --data_dir \"{\\\"ObjaverseXL_sketchfab\\\": {\\\"base\\\": \\\"datasets/ObjaverseXL_sketchfab\\\", \\\"mesh_dump\\\": \\\"datasets/ObjaverseXL_sketchfab/mesh_dumps\\\", \\\"dual_grid\\\": \\\"datasets/ObjaverseXL_sketchfab/dual_grid_256\\\", \\\"asset_stats\\\": \\\"datasets/ObjaverseXL_sketchfab/asset_stats\\\"}}\"",
+          "python train.py \\\n  --config configs/scvae/tex_vae_next_dc_f16c32_fp16.json \\\n  --output_dir results/tex_vae_next_dc_f16c32_fp16 \\\n  --data_dir \"{\\\"ObjaverseXL_sketchfab\\\": {\\\"base\\\": \\\"datasets/ObjaverseXL_sketchfab\\\", \\\"pbr_dump\\\": \\\"datasets/ObjaverseXL_sketchfab/pbr_dumps\\\", \\\"pbr_voxel\\\": \\\"datasets/ObjaverseXL_sketchfab/pbr_voxels_256\\\", \\\"asset_stats\\\": \\\"datasets/ObjaverseXL_sketchfab/asset_stats\\\"}}\"",
+          "python train.py \\\n  --config configs/gen/ss_flow_img_dit_1_3B_64_bf16.json \\\n  --output_dir results/ss_flow_img_dit_1_3B_64_bf16 \\\n  --data_dir \"{\\\"ObjaverseXL_sketchfab\\\": {\\\"base\\\": \\\"datasets/ObjaverseXL_sketchfab\\\", \\\"ss_latent\\\": \\\"datasets/ObjaverseXL_sketchfab/ss_latents/ss_enc_conv3d_16l8_fp16_64\\\", \\\"render_cond\\\": \\\"datasets/ObjaverseXL_sketchfab/renders_cond\\\"}}\"",
+          "# Shape flow model\npython train.py \\\n  --config configs/gen/slat_flow_img2shape_dit_1_3B_512_bf16.json \\\n  --output_dir results/slat_flow_img2shape_dit_1_3B_512_bf16 \\\n  --data_dir \"{\\\"ObjaverseXL_sketchfab\\\": {\\\"base\\\": \\\"datasets/ObjaverseXL_sketchfab\\\", \\\"shape_latent\\\": \\\"datasets/ObjaverseXL_sketchfab/shape_latents/shape_enc_next_dc_f16c32_fp16_512\\\", \\\"render_cond\\\": \\\"datasets/ObjaverseXL_sketchfab/renders_cond\\\"}}\"\n\n# Texture flow model\npython train.py \\\n  --config configs/gen/slat_flow_imgshape2tex_dit_1_3B_512_bf16.json \\\n  --output_dir results/slat_flow_imgshape2tex_dit_1_3B_512_bf16 \\\n  --data_dir \"{\\\"ObjaverseXL_sketchfab\\\": {\\\"base\\\": \\\"datasets/ObjaverseXL_sketchfab\\\", \\\"shape_latent\\\": \\\"datasets/ObjaverseXL_sketchfab/shape_latents/shape_enc_next_dc_f16c32_fp16_512\\\", \\\"pbr_latent\\\": \\\"datasets/ObjaverseXL_sketchfab/pbr_latents/tex_enc_next_dc_f16c32_fp16_512\\\", \\\"render_cond\\\": \\\"datasets/ObjaverseXL_sketchfab/renders_cond\\\"}}\""
+        ],
+        "exists": true,
+        "hf_model_ids": [
+          "microsoft/TRELLIS.2-4B"
+        ],
+        "line_count": 334,
+        "mentions_24gb": true,
+        "mentions_a100": true,
+        "mentions_h100": true,
+        "mentions_setup_extensions": true,
+        "mentions_training_datasets": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/README.md",
+        "urls": [
+          "https://arxiv.org/abs/2512.14692",
+          "https://developer.nvidia.com/cuda-toolkit-archive",
+          "https://docs.anaconda.com/miniconda/install/#quick-command-line-install",
+          "https://github.com/JeffreyXiang/CuMesh",
+          "https://github.com/JeffreyXiang/FlexGEMM",
+          "https://github.com/NVlabs/nvdiffrast",
+          "https://github.com/NVlabs/nvdiffrast/blob/main/LICENSE.txt",
+          "https://github.com/NVlabs/nvdiffrec",
+          "https://github.com/NVlabs/nvdiffrec/blob/main/LICENSE.txt",
+          "https://github.com/microsoft/TRELLIS.2.git",
+          "https://github.com/user-attachments/assets/63b43a7e-acc7-4c81-a900-6da450527d8f",
+          "https://huggingface.co/microsoft/TRELLIS.2-4B",
+          "https://huggingface.co/spaces/microsoft/TRELLIS.2",
+          "https://img.shields.io/badge/Hugging%20Face-Demo-blueviolet",
+          "https://img.shields.io/badge/Hugging%20Face-Model-yellow",
+          "https://img.shields.io/badge/License-MIT-green",
+          "https://img.shields.io/badge/Paper-Arxiv-b31b1b.svg",
+          "https://img.shields.io/badge/Project-Website-blue",
+          "https://microsoft.github.io/TRELLIS.2",
+          "https://pytorch.org/get-started/previous-versions/"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 16212
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "apt_installs": [
+          "sudo apt install -y libjpeg-dev"
+        ],
+        "exists": true,
+        "git_clones": [
+          "git clone --recursive https://github.com/ROCm/flash-attention.git /tmp/extensions/flash-attention",
+          "git clone -b renderutils https://github.com/JeffreyXiang/nvdiffrec.git /tmp/extensions/nvdiffrec",
+          "git clone -b v0.4.0 https://github.com/NVlabs/nvdiffrast.git /tmp/extensions/nvdiffrast",
+          "git clone https://github.com/JeffreyXiang/CuMesh.git /tmp/extensions/CuMesh --recursive",
+          "git clone https://github.com/JeffreyXiang/FlexGEMM.git /tmp/extensions/FlexGEMM --recursive"
+        ],
+        "line_count": 139,
+        "mutates_environment": true,
+        "options": [
+          "--basic",
+          "--cumesh",
+          "--flash-attn",
+          "--flexgemm",
+          "--help",
+          "--index-url",
+          "--long",
+          "--new-env",
+          "--no-build-isolation",
+          "--nvdiffrast",
+          "--nvdiffrec",
+          "--o-voxel",
+          "--recursive"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/setup.sh",
+        "pip_installs": [
+          "/tmp/extensions/CuMesh --no-build-isolation",
+          "/tmp/extensions/FlexGEMM --no-build-isolation",
+          "/tmp/extensions/nvdiffrast --no-build-isolation",
+          "/tmp/extensions/nvdiffrec --no-build-isolation",
+          "/tmp/extensions/o-voxel --no-build-isolation",
+          "flash-attn==2.7.3",
+          "git+https://github.com/EasternJournalist/utils3d.git@9a4eb15e4021b67b12c460c7057d642626897ec8",
+          "imageio imageio-ffmpeg tqdm easydict opencv-python-headless ninja trimesh transformers gradio==6.0.1 tensorboard pandas lpips zstandard",
+          "kornia timm",
+          "pillow-simd",
+          "torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124",
+          "torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/rocm6.2.4"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/setup.sh",
+      "relative_path": "setup.sh",
+      "size_bytes": 4506
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": true,
+        "from_pretrained": [
+          "microsoft/TRELLIS.2-4B"
+        ],
+        "imports": [
+          "PIL",
+          "cv2",
+          "imageio",
+          "o_voxel",
+          "os",
+          "torch",
+          "trellis2.pipelines",
+          "trellis2.renderers",
+          "trellis2.utils"
+        ],
+        "line_count": 48,
+        "mentions_metrics": [],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/example.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/example.py",
+      "relative_path": "example.py",
+      "size_bytes": 1584
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": true,
+        "from_pretrained": [
+          "microsoft/TRELLIS.2-4B"
+        ],
+        "imports": [
+          "PIL",
+          "os",
+          "trellis2.pipelines",
+          "trimesh"
+        ],
+        "line_count": 17,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/example_texturing.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/example_texturing.py",
+      "relative_path": "example_texturing.py",
+      "size_bytes": 611
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": true,
+        "from_pretrained": [
+          "microsoft/TRELLIS.2-4B"
+        ],
+        "imports": [
+          "PIL",
+          "base64",
+          "cv2",
+          "datetime",
+          "gradio",
+          "io",
+          "numpy",
+          "o_voxel",
+          "os",
+          "shutil",
+          "torch",
+          "trellis2.modules.sparse",
+          "trellis2.pipelines",
+          "trellis2.renderers",
+          "trellis2.utils",
+          "typing"
+        ],
+        "line_count": 645,
+        "mentions_metrics": [
+          "pref"
+        ],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/app.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/app.py",
+      "relative_path": "app.py",
+      "size_bytes": 20749
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": true,
+        "from_pretrained": [
+          "microsoft/TRELLIS.2-4B"
+        ],
+        "imports": [
+          "PIL",
+          "datetime",
+          "gradio",
+          "numpy",
+          "os",
+          "shutil",
+          "torch",
+          "trellis2.pipelines",
+          "trimesh",
+          "typing"
+        ],
+        "line_count": 151,
+        "mentions_metrics": [
+          "pref"
+        ],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/app_texturing.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/app_texturing.py",
+      "relative_path": "app_texturing.py",
+      "size_bytes": 5183
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--auto_retry",
+          "--ckpt",
+          "--config",
+          "--data_dir",
+          "--load_dir",
+          "--master_addr",
+          "--master_port",
+          "--node_rank",
+          "--num_gpus",
+          "--num_nodes",
+          "--output_dir",
+          "--profile",
+          "--tryrun"
+        ],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "easydict",
+          "glob",
+          "json",
+          "numpy",
+          "os",
+          "random",
+          "sys",
+          "torch",
+          "torch.multiprocessing",
+          "trellis2",
+          "trellis2.utils.dist_utils"
+        ],
+        "line_count": 158,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/train.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/train.py",
+      "relative_path": "train.py",
+      "size_bytes": 5836
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [
+          ". ./data_toolkit/setup.sh",
+          "python data_toolkit/build_metadata.py <SUBSET> --root <ROOT> [--source <SOURCE>]",
+          "python data_toolkit/build_metadata.py ObjaverseXL --source sketchfab --root datasets/ObjaverseXL_sketchfab",
+          "python data_toolkit/download.py <SUBSET> --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>]",
+          "python data_toolkit/download.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab --world_size 160000",
+          "python data_toolkit/build_metadata.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab",
+          "# Dump Meshes\npython data_toolkit/dump_mesh.py <SUBSET> --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>]\n\n# Dump PBR Textures\npython data_toolkit/dump_pbr.py <SUBSET> --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>]\n\n# Get statisitics of the asset\npython asset_stats.py --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>]",
+          "python data_toolkit/dump_mesh.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab\npython data_toolkit/dump_pbr.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab\npython asset_stats.py --root datasets/ObjaverseXL_sketchfab",
+          "python data_toolkit/build_metadata.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab",
+          "python data_toolkit/dual_grid.py <SUBSET> --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>] [--resolution <RESOLUTION>]\n\npython data_toolkit/voxelize_pbr.py <SUBSET> --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>] [--resolution <RESOLUTION>]",
+          "python data_toolkit/dual_grid.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab --resolution 256,512,1024\npython data_toolkit/voxelize_pbr.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab --resolution 256,512,1024",
+          "# 1. Encode Shape Latents\npython data_toolkit/encode_shape_latent.py --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>] [--resolution <RESOLUTION>]\n\n# 2. Encode PBR Latents\npython data_toolkit/encode_pbr_latent.py --root <ROOT> [--rank <RANK> --world_size <WORLD_SIZE>] [--resolution <RESOLUTION>]\n\n# 3. Update Metadata (Required before next step)\npython data_toolkit/build_metadata.py <SUBSET> --root <ROOT>\n\n# 4. Encode Sparse Structure (SS) Latents\npython data_toolkit/encode_ss_latent.py --root <ROOT> --shape_latent_name <SHAPE_LATENT_NAME> [--rank <RANK> --world_size <WORLD_SIZE>] [--resolution <SS_RESOLUTION>]",
+          "python data_toolkit/encode_shape_latent.py --root datasets/ObjaverseXL_sketchfab --resolution 512\npython data_toolkit/encode_pbr_latent.py --root datasets/ObjaverseXL_sketchfab --resolution 512\npython data_toolkit/encode_shape_latent.py --root datasets/ObjaverseXL_sketchfab --resolution 1024\npython data_toolkit/encode_pbr_latent.py --root datasets/ObjaverseXL_sketchfab --resolution 1024\n\n# Update metadata\npython data_toolkit/build_metadata.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab\n\n# Encode SS Latents\npython data_toolkit/encode_ss_latent.py --root datasets/ObjaverseXL_sketchfab --shape_latent_name shape_enc_next_dc_f16c32_fp16_1024 --resolution 64\n\n# Final Metadata Update\npython data_toolkit/build_metadata.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab",
+          "python data_toolkit/render_cond.py <SUBSET> --root <ROOT> [--num_views <NUM_VIEWS>] [--rank <RANK> --world_size <WORLD_SIZE>]",
+          "python data_toolkit/render_cond.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab",
+          "python data_toolkit/build_metadata.py ObjaverseXL --root datasets/ObjaverseXL_sketchfab"
+        ],
+        "exists": true,
+        "hf_model_ids": [],
+        "line_count": 172,
+        "mentions_24gb": false,
+        "mentions_a100": false,
+        "mentions_h100": false,
+        "mentions_setup_extensions": false,
+        "mentions_training_datasets": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/README.md",
+        "urls": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/README.md",
+      "relative_path": "data_toolkit/README.md",
+      "size_bytes": 6102
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "apt_installs": [],
+        "exists": true,
+        "git_clones": [],
+        "line_count": 1,
+        "mutates_environment": true,
+        "options": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/setup.sh",
+        "pip_installs": [
+          "pillow imageio imageio-ffmpeg tqdm easydict opencv-python-headless pandas open3d objaverse huggingface_hub[cli] open_clip_torch"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/setup.sh",
+      "relative_path": "data_toolkit/setup.sh",
+      "size_bytes": 140
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--download_root",
+          "--dual_grid_root",
+          "--field",
+          "--from_file",
+          "--from_merged_records",
+          "--mesh_dump_root",
+          "--pbr_dump_root",
+          "--pbr_latent_root",
+          "--pbr_voxel_root",
+          "--rebuild",
+          "--record_start",
+          "--render_cond_root",
+          "--root",
+          "--shape_latent_root",
+          "--ss_latent_root",
+          "--thumbnail_root"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "easydict",
+          "importlib",
+          "os",
+          "pandas",
+          "shutil",
+          "sys",
+          "time"
+        ],
+        "line_count": 219,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/build_metadata.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/build_metadata.py",
+      "relative_path": "data_toolkit/build_metadata.py",
+      "size_bytes": 11308
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--check_only",
+          "--download_root",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--rank",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "copy",
+          "easydict",
+          "importlib",
+          "os",
+          "pandas",
+          "sys"
+        ],
+        "line_count": 64,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/download.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/download.py",
+      "relative_path": "data_toolkit/download.py",
+      "size_bytes": 3070
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--download_root",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--max_workers",
+          "--mesh_dump_root",
+          "--object",
+          "--output_path",
+          "--rank",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "copy",
+          "easydict",
+          "functools",
+          "importlib",
+          "numpy",
+          "os",
+          "pandas",
+          "shutil",
+          "subprocess",
+          "sys",
+          "tempfile"
+        ],
+        "line_count": 127,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/dump_mesh.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/dump_mesh.py",
+      "relative_path": "data_toolkit/dump_mesh.py",
+      "size_bytes": 6105
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--download_root",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--max_workers",
+          "--object",
+          "--output_path",
+          "--pbr_dump_root",
+          "--rank",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "copy",
+          "easydict",
+          "functools",
+          "importlib",
+          "numpy",
+          "os",
+          "pandas",
+          "shutil",
+          "subprocess",
+          "sys",
+          "tempfile"
+        ],
+        "line_count": 128,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/dump_pbr.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/dump_pbr.py",
+      "relative_path": "data_toolkit/dump_pbr.py",
+      "size_bytes": 6193
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--dual_grid_root",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--max_workers",
+          "--mesh_dump_root",
+          "--rank",
+          "--resolution",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "easydict",
+          "functools",
+          "importlib",
+          "numpy",
+          "o_voxel",
+          "os",
+          "pandas",
+          "pickle",
+          "sys",
+          "torch"
+        ],
+        "line_count": 170,
+        "mentions_metrics": [],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/dual_grid.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/dual_grid.py",
+      "relative_path": "data_toolkit/dual_grid.py",
+      "size_bytes": 8590
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--max_workers",
+          "--pbr_dump_root",
+          "--pbr_voxel_root",
+          "--rank",
+          "--resolution",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "copy",
+          "easydict",
+          "functools",
+          "importlib",
+          "numpy",
+          "o_voxel",
+          "os",
+          "pandas",
+          "pickle",
+          "sys",
+          "torch"
+        ],
+        "line_count": 167,
+        "mentions_metrics": [],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/voxelize_pbr.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/voxelize_pbr.py",
+      "relative_path": "data_toolkit/voxelize_pbr.py",
+      "size_bytes": 8722
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--ckpt",
+          "--dual_grid_root",
+          "--enc_model",
+          "--enc_pretrained",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--model_root",
+          "--rank",
+          "--resolution",
+          "--root",
+          "--shape_latent_root",
+          "--world_size"
+        ],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "concurrent.futures",
+          "easydict",
+          "json",
+          "numpy",
+          "o_voxel",
+          "os",
+          "pandas",
+          "queue",
+          "sys",
+          "torch",
+          "tqdm",
+          "trellis2.models",
+          "trellis2.modules.sparse"
+        ],
+        "line_count": 184,
+        "mentions_metrics": [
+          "f1"
+        ],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/encode_shape_latent.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/encode_shape_latent.py",
+      "relative_path": "data_toolkit/encode_shape_latent.py",
+      "size_bytes": 9028
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--ckpt",
+          "--enc_model",
+          "--enc_pretrained",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--model_root",
+          "--pbr_latent_root",
+          "--pbr_voxel_root",
+          "--rank",
+          "--resolution",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "concurrent.futures",
+          "easydict",
+          "json",
+          "numpy",
+          "o_voxel",
+          "os",
+          "pandas",
+          "queue",
+          "sys",
+          "torch",
+          "tqdm",
+          "trellis2.models",
+          "trellis2.modules.sparse"
+        ],
+        "line_count": 181,
+        "mentions_metrics": [
+          "f1"
+        ],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/encode_pbr_latent.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/encode_pbr_latent.py",
+      "relative_path": "data_toolkit/encode_pbr_latent.py",
+      "size_bytes": 8757
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--ckpt",
+          "--enc_model",
+          "--enc_pretrained",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--model_root",
+          "--rank",
+          "--resolution",
+          "--root",
+          "--shape_latent_name",
+          "--shape_latent_root",
+          "--ss_latent_root",
+          "--world_size"
+        ],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "concurrent.futures",
+          "easydict",
+          "json",
+          "numpy",
+          "os",
+          "pandas",
+          "queue",
+          "sys",
+          "torch",
+          "tqdm",
+          "trellis2.models"
+        ],
+        "line_count": 163,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/encode_ss_latent.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/encode_ss_latent.py",
+      "relative_path": "data_toolkit/encode_ss_latent.py",
+      "size_bytes": 7931
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--cond_output_folder",
+          "--cond_resolution",
+          "--cond_views",
+          "--download_root",
+          "--engine",
+          "--filter_low_aesthetic_score",
+          "--instances",
+          "--max_workers",
+          "--num_cond_views",
+          "--object",
+          "--rank",
+          "--render_cond_root",
+          "--root",
+          "--world_size"
+        ],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "argparse",
+          "concurrent.futures",
+          "copy",
+          "easydict",
+          "functools",
+          "importlib",
+          "json",
+          "numpy",
+          "os",
+          "pandas",
+          "subprocess",
+          "sys",
+          "tqdm",
+          "utils"
+        ],
+        "line_count": 146,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/render_cond.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/data_toolkit/render_cond.py",
+      "relative_path": "data_toolkit/render_cond.py",
+      "size_bytes": 6947
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          ".",
+          "..modules",
+          "..modules.sparse",
+          "..representations",
+          ".base",
+          "PIL",
+          "numpy",
+          "torch",
+          "torch.nn",
+          "typing"
+        ],
+        "line_count": 595,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/pipelines/trellis2_image_to_3d.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/pipelines/trellis2_image_to_3d.py",
+      "relative_path": "trellis2/pipelines/trellis2_image_to_3d.py",
+      "size_bytes": 24143
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          ".",
+          "..modules",
+          "..modules.sparse",
+          ".base",
+          "PIL",
+          "cumesh",
+          "cv2",
+          "flex_gemm",
+          "numpy",
+          "nvdiffrast.torch",
+          "o_voxel",
+          "torch",
+          "torch.nn",
+          "trimesh",
+          "typing"
+        ],
+        "line_count": 408,
+        "mentions_metrics": [
+          "clip"
+        ],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/pipelines/trellis2_texturing.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/pipelines/trellis2_texturing.py",
+      "relative_path": "trellis2/pipelines/trellis2_texturing.py",
+      "size_bytes": 16203
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..",
+          "torch",
+          "torch.nn",
+          "typing"
+        ],
+        "line_count": 72,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/pipelines/base.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/pipelines/base.py",
+      "relative_path": "trellis2/pipelines/base.py",
+      "size_bytes": 2068
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..modules.attention",
+          "..modules.transformer",
+          "..modules.utils",
+          "functools",
+          "numpy",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 247,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sparse_structure_flow.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sparse_structure_flow.py",
+      "relative_path": "trellis2/models/sparse_structure_flow.py",
+      "size_bytes": 9973
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..modules.norm",
+          "..modules.spatial",
+          "..modules.utils",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 306,
+        "mentions_metrics": [
+          "f1"
+        ],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sparse_structure_vae.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sparse_structure_vae.py",
+      "relative_path": "trellis2/models/sparse_structure_vae.py",
+      "size_bytes": 9886
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..modules",
+          "..modules.sparse.transformer",
+          "..modules.transformer",
+          "..modules.utils",
+          ".sparse_elastic_mixin",
+          ".sparse_structure_flow",
+          "functools",
+          "numpy",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 207,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/structured_latent_flow.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/structured_latent_flow.py",
+      "relative_path": "trellis2/models/structured_latent_flow.py",
+      "size_bytes": 7966
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "...modules",
+          "...representations",
+          ".sparse_unet_vae",
+          "o_voxel.convert",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "typing"
+        ],
+        "line_count": 110,
+        "mentions_metrics": [],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sc_vaes/fdg_vae.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sc_vaes/fdg_vae.py",
+      "relative_path": "trellis2/models/sc_vaes/fdg_vae.py",
+      "size_bytes": 3820
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "...modules",
+          "...modules.norm",
+          "...modules.utils",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "torch.utils.checkpoint",
+          "typing"
+        ],
+        "line_count": 522,
+        "mentions_metrics": [
+          "f1"
+        ],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sc_vaes/sparse_unet_vae.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/models/sc_vaes/sparse_unet_vae.py",
+      "relative_path": "trellis2/models/sc_vaes/sparse_unet_vae.py",
+      "size_bytes": 19879
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..representations.mesh",
+          "easydict",
+          "numpy",
+          "torch",
+          "torch.nn.functional",
+          "typing",
+          "utils3d"
+        ],
+        "line_count": 490,
+        "mentions_metrics": [
+          "clip"
+        ],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/renderers/pbr_mesh_renderer.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/renderers/pbr_mesh_renderer.py",
+      "relative_path": "trellis2/renderers/pbr_mesh_renderer.py",
+      "size_bytes": 22451
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..representations",
+          "easydict",
+          "torch"
+        ],
+        "line_count": 68,
+        "mentions_metrics": [],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/renderers/voxel_renderer.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/trellis2/renderers/voxel_renderer.py",
+      "relative_path": "trellis2/renderers/voxel_renderer.py",
+      "size_bytes": 2096
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [
+          "git clone -b main https://github.com/microsoft/TRELLIS.2.git --recursive\npip install TRELLIS.2/o_voxel --no-build-isolation"
+        ],
+        "exists": true,
+        "hf_model_ids": [],
+        "line_count": 174,
+        "mentions_24gb": false,
+        "mentions_a100": false,
+        "mentions_h100": false,
+        "mentions_setup_extensions": false,
+        "mentions_training_datasets": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/README.md",
+        "urls": [
+          "https://github.com/microsoft/TRELLIS.2.git"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/README.md",
+      "relative_path": "o-voxel/README.md",
+      "size_bytes": 7212
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/pyproject.toml",
+      "relative_path": "o-voxel/pyproject.toml",
+      "size_bytes": 639
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "os",
+          "setuptools",
+          "torch.utils.cpp_extension"
+        ],
+        "line_count": 67,
+        "mentions_metrics": [
+          "md"
+        ],
+        "mentions_ovoxel": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/setup.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/setup.py",
+      "relative_path": "o-voxel/setup.py",
+      "size_bytes": 1855
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..",
+          "numpy",
+          "torch",
+          "typing"
+        ],
+        "line_count": 283,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/convert/flexible_dual_grid.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/convert/flexible_dual_grid.py",
+      "relative_path": "o-voxel/o_voxel/convert/flexible_dual_grid.py",
+      "size_bytes": 14939
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..",
+          "PIL",
+          "io",
+          "numpy",
+          "torch",
+          "tqdm",
+          "trimesh",
+          "trimesh.visual",
+          "typing"
+        ],
+        "line_count": 583,
+        "mentions_metrics": [
+          "clip"
+        ],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/convert/volumetic_attr.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/convert/volumetic_attr.py",
+      "relative_path": "o-voxel/o_voxel/convert/volumetic_attr.py",
+      "size_bytes": 30010
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": false,
+        "exists": true,
+        "exports_glb": false,
+        "from_pretrained": [],
+        "imports": [
+          "..",
+          "..serialize",
+          "concurrent.futures",
+          "json",
+          "lzma",
+          "numpy",
+          "os",
+          "struct",
+          "torch",
+          "typing",
+          "zlib",
+          "zstandard"
+        ],
+        "line_count": 365,
+        "mentions_metrics": [],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/io/vxz.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/io/vxz.py",
+      "relative_path": "o-voxel/o_voxel/io/vxz.py",
+      "size_bytes": 13151
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "cuda_required": true,
+        "exists": true,
+        "exports_glb": true,
+        "from_pretrained": [],
+        "imports": [
+          "PIL",
+          "cumesh",
+          "cv2",
+          "flex_gemm.ops.grid_sample",
+          "numpy",
+          "nvdiffrast.torch",
+          "torch",
+          "tqdm",
+          "trimesh",
+          "trimesh.visual",
+          "typing"
+        ],
+        "line_count": 331,
+        "mentions_metrics": [
+          "clip"
+        ],
+        "mentions_ovoxel": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/postprocess.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/o-voxel/o_voxel/postprocess.py",
+      "relative_path": "o-voxel/o_voxel/postprocess.py",
+      "size_bytes": 13770
+    },
+    {
+      "config_head": {
+        "dataset": {
+          "args": {
+            "image_size": 512,
+            "min_aesthetic_score": 4.5,
+            "pretrained_ss_dec": "microsoft/TRELLIS-image-large/ckpts/ss_dec_conv3d_16l8_fp16"
+          },
+          "name": "ImageConditionedSparseStructureLatent"
+        },
+        "models": {
+          "denoiser": {
+            "args": {
+              "cond_channels": 1024,
+              "in_channels": 8,
+              "initialization": "scaled",
+              "mlp_ratio": 5.3334,
+              "model_channels": 1536,
+              "num_blocks": 30,
+              "num_heads": 12,
+              "out_channels": 8,
+              "pe_mode": "rope",
+              "qk_rms_norm": true,
+              "qk_rms_norm_cross": true,
+              "resolution": 16,
+              "share_mod": true
+            },
+            "name": "SparseStructureFlowModel"
+          }
+        },
+        "trainer": {
+          "args": {
+            "batch_size_per_gpu": 8,
+            "batch_split": 4,
+            "ema_rate": [
+              0.9999
+            ],
+            "grad_clip": {
+              "args": {
+                "clip_percentile": 95,
+                "max_norm": 1.0
+              },
+              "name": "AdaptiveGradClipper"
+            },
+            "i_log": 500,
+            "i_sample": 10000,
+            "i_save": 10000,
+            "image_cond_model": {
+              "args": {
+                "image_size": 512,
+                "model_name": "facebook/dinov3-vitl16-pretrain-lvd1689m"
+              },
+              "name": "DinoV3FeatureExtractor"
+            },
+            "max_steps": 1000000,
+            "mix_precision_dtype": "bfloat16",
+            "mix_precision_mode": "amp",
+            "optimizer": {
+              "args": {
+                "betas": [
+                  0.9,
+                  0.95
+                ],
+                "eps": 1e-08,
+                "lr": 0.0001,
+                "weight_decay": 0.01
+              },
+              "name": "AdamW"
+            },
+            "p_uncond": 0.1,
+            "sigma_min": 1e-05,
+            "t_schedule": {
+              "args": {
+                "mean": 1.0,
+                "std": 1.0
+              },
+              "name": "logitNormal"
+            }
+          },
+          "name": "ImageConditionedFlowMatchingCFGTrainer"
+        }
+      },
+      "config_keys": [
+        "models",
+        "dataset",
+        "trainer"
+      ],
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/configs/gen/ss_flow_img_dit_1_3B_64_bf16.json",
+      "relative_path": "configs/gen/ss_flow_img_dit_1_3B_64_bf16.json",
+      "size_bytes": 2330
+    },
+    {
+      "config_head": {
+        "dataset": {
+          "args": {
+            "image_size": 512,
+            "max_tokens": 8192,
+            "min_aesthetic_score": 4.5,
+            "normalization": {
+              "mean": [
+                0.781296,
+                0.018091,
+                -0.495192,
+                -0.558457,
+                1.06053,
+                0.093252,
+                1.518149,
+                -0.933218,
+                -0.732996,
+                2.604095,
+                -0.118341,
+                -2.143904,
+                0.495076,
+                -2.179512,
+                -2.130751,
+                -0.996944,
+                0.261421,
+                -2.217463,
+                1.260067,
+                -0.150213,
+                3.790713,
+                1.481266,
+                -1.046058,
+                -1.523667,
+                -0.059621,
+                2.22078,
+                1.621212,
+                0.87723,
+                0.567247,
+                -3.175944,
+                -3.186688,
+                1.578665
+              ],
+              "std": [
+                5.972266,
+                4.706852,
+                5.44501,
+                5.209927,
+                5.32022,
+                4.547237,
+                5.020802,
+                5.444004,
+                5.226681,
+                5.683095,
+                4.831436,
+                5.286469,
+                5.652043,
+                5.367606,
+                5.525084,
+                4.730578,
+                4.805265,
+                5.124013,
+                5.530808,
+                5.619001,
+                5.10393,
+                5.41767,
+                5.269677,
+                5.547194,
+                5.634698,
+                5.235274,
+                6.110351,
+                5.511298,
+                6.237273,
+                4.879207,
+                5.347008,
+                5.405691
+              ]
+            },
+            "pretrained_slat_dec": "microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16",
+            "resolution": 512
+          },
+          "name": "ImageConditionedSLatShape"
+        },
+        "models": {
+          "denoiser": {
+            "args": {
+              "cond_channels": 1024,
+              "in_channels": 32,
+              "initialization": "scaled",
+              "mlp_ratio": 5.3334,
+              "model_channels": 1536,
+              "num_blocks": 30,
+              "num_heads": 12,
+              "out_channels": 32,
+              "pe_mode": "rope",
+              "qk_rms_norm": true,
+              "qk_rms_norm_cross": true,
+              "resolution": 32,
+              "share_mod": true
+            },
+            "name": "ElasticSLatFlowModel"
+          }
+        },
+        "trainer": {
+          "args": {
+            "batch_size_per_gpu": 8,
+            "batch_split": 2,
+            "elastic": {
+              "args": {
+                "max_mem_ratio_start": 0.5,
+                "target_ratio": 0.75
+              },
+              "name": "LinearMemoryController"
+            },
+            "ema_rate": [
+              0.9999
+            ],
+            "grad_clip": {
+              "args": {
+                "clip_percentile": 95,
+                "max_norm": 1.0
+              },
+              "name": "AdaptiveGradClipper"
+            },
+            "i_log": 500,
+            "i_sample": 10000,
+            "i_save": 10000,
+            "image_cond_model": {
+              "args": {
+                "image_size": 512,
+                "model_name": "facebook/dinov3-vitl16-pretrain-lvd1689m"
+              },
+              "name": "DinoV3FeatureExtractor"
+            },
+            "max_steps": 1000000,
+            "mix_precision_dtype": "bfloat16",
+            "mix_precision_mode": "amp",
+            "optimizer": {
+              "args": {
+                "betas": [
+                  0.9,
+                  0.95
+                ],
+                "eps": 1e-08,
+                "lr": 0.0001,
+                "weight_decay": 0.01
+              },
+              "name": "AdamW"
+            },
+            "p_uncond": 0.1,
+            "sigma_min": 1e-05,
+            "t_schedule": {
+              "args": {},
+              "name": "uniform"
+            }
+          },
+          "name": "ImageConditionedSparseFlowMatchingCFGTrainer"
+        }
+      },
+      "config_keys": [
+        "models",
+        "dataset",
+        "trainer"
+      ],
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/configs/gen/slat_flow_img2shape_dit_1_3B_512_bf16.json",
+      "relative_path": "configs/gen/slat_flow_img2shape_dit_1_3B_512_bf16.json",
+      "size_bytes": 3473
+    },
+    {
+      "config_head": {
+        "dataset": {
+          "args": {
+            "attrs": [
+              "base_color",
+              "metallic",
+              "roughness",
+              "alpha"
+            ],
+            "image_size": 512,
+            "max_tokens": 8192,
+            "min_aesthetic_score": 4.5,
+            "pbr_slat_normalization": {
+              "mean": [
+                3.501659,
+                2.212398,
+                2.226094,
+                0.251093,
+                -0.026248,
+                -0.687364,
+                0.439898,
+                -0.928075,
+                0.029398,
+                -0.339596,
+                -0.869527,
+                1.038479,
+                -0.972385,
+                0.126042,
+                -1.129303,
+                0.455149,
+                -1.209521,
+                2.069067,
+                0.544735,
+                2.569128,
+                -0.323407,
+                2.293,
+                -1.925608,
+                -1.217717,
+                1.213905,
+                0.971588,
+                -0.023631,
+                0.10675,
+                2.021786,
+                0.250524,
+                -0.662387,
+                -0.768862
+              ],
+              "std": [
+                2.665652,
+                2.743913,
+                2.765121,
+                2.595319,
+                3.037293,
+                2.291316,
+                2.144656,
+                2.911822,
+                2.969419,
+                2.501689,
+                2.154811,
+                3.163343,
+                2.621215,
+                2.381943,
+                3.186697,
+                3.021588,
+                2.295916,
+                3.234985,
+                3.233086,
+                2.26014,
+                2.874801,
+                2.810596,
+                3.29272,
+                2.674999,
+                2.680878,
+                2.372054,
+                2.451546,
+                2.353556,
+                2.995195,
+                2.379849,
+                2.786195,
+                2.77519
+              ]
+            },
+            "pretrained_pbr_slat_dec": "microsoft/TRELLIS.2-4B/ckpts/tex_dec_next_dc_f16c32_fp16",
+            "pretrained_shape_slat_dec": "microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16",
+            "resolution": 512,
+            "shape_slat_normalization": {
+              "mean": [
+                0.781296,
+                0.018091,
+                -0.495192,
+                -0.558457,
+                1.06053,
+                0.093252,
+                1.518149,
+                -0.933218,
+                -0.732996,
+                2.604095,
+                -0.118341,
+                -2.143904,
+                0.495076,
+                -2.179512,
+                -2.130751,
+                -0.996944,
+                0.261421,
+                -2.217463,
+                1.260067,
+                -0.150213,
+                3.790713,
+                1.481266,
+                -1.046058,
+                -1.523667,
+                -0.059621,
+                2.22078,
+                1.621212,
+                0.87723,
+                0.567247,
+                -3.175944,
+                -3.186688,
+                1.578665
+              ],
+              "std": [
+                5.972266,
+                4.706852,
+                5.44501,
+                5.209927,
+                5.32022,
+                4.547237,
+                5.020802,
+                5.444004,
+                5.226681,
+                5.683095,
+                4.831436,
+                5.286469,
+                5.652043,
+                5.367606,
+                5.525084,
+                4.730578,
+                4.805265,
+                5.124013,
+                5.530808,
+                5.619001,
+                5.10393,
+                5.41767,
+                5.269677,
+                5.547194,
+                5.634698,
+                5.235274,
+                6.110351,
+                5.511298,
+                6.237273,
+                4.879207,
+                5.347008,
+                5.405691
+              ]
+            }
+          },
+          "name": "ImageConditionedSLatPbr"
+        },
+        "models": {
+          "denoiser": {
+            "args": {
+              "cond_channels": 1024,
+              "in_channels": 64,
+              "initialization": "scaled",
+              "mlp_ratio": 5.3334,
+              "model_channels": 1536,
+              "num_blocks": 30,
+              "num_heads": 12,
+              "out_channels": 32,
+              "pe_mode": "rope",
+              "qk_rms_norm": true,
+              "qk_rms_norm_cross": true,
+              "resolution": 32,
+              "share_mod": true
+            },
+            "name": "ElasticSLatFlowModel"
+          }
+        },
+        "trainer": {
+          "args": {
+            "batch_size_per_gpu": 8,
+            "batch_split": 2,
+            "elastic": {
+              "args": {
+                "max_mem_ratio_start": 0.5,
+                "target_ratio": 0.75
+              },
+              "name": "LinearMemoryController"
+            },
+            "ema_rate": [
+              0.9999
+            ],
+            "grad_clip": {
+              "args": {
+                "clip_percentile": 95,
+                "max_norm": 1.0
+              },
+              "name": "AdaptiveGradClipper"
+            },
+            "i_log": 500,
+            "i_sample": 10000,
+            "i_save": 10000,
+            "image_cond_model": {
+              "args": {
+                "image_size": 512,
+                "model_name": "facebook/dinov3-vitl16-pretrain-lvd1689m"
+              },
+              "name": "DinoV3FeatureExtractor"
+            },
+            "max_steps": 1000000,
+            "mix_precision_dtype": "bfloat16",
+            "mix_precision_mode": "amp",
+            "optimizer": {
+              "args": {
+                "betas": [
+                  0.9,
+                  0.95
+                ],
+                "eps": 1e-08,
+                "lr": 0.0001,
+                "weight_decay": 0.01
+              },
+              "name": "AdamW"
+            },
+            "p_uncond": 0.1,
+            "sigma_min": 1e-05,
+            "t_schedule": {
+              "args": {},
+              "name": "uniform"
+            }
+          },
+          "name": "ImageConditionedSparseFlowMatchingCFGTrainer"
+        }
+      },
+      "config_keys": [
+        "models",
+        "dataset",
+        "trainer"
+      ],
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/configs/gen/slat_flow_imgshape2tex_dit_1_3B_512_bf16.json",
+      "relative_path": "configs/gen/slat_flow_imgshape2tex_dit_1_3B_512_bf16.json",
+      "size_bytes": 4691
+    },
+    {
+      "config_head": {
+        "dataset": {
+          "args": {
+            "max_active_voxels": 1000000,
+            "max_num_faces": 1000000,
+            "min_aesthetic_score": 4.5,
+            "resolution": 256
+          },
+          "name": "FlexiDualGridDataset"
+        },
+        "models": {
+          "decoder": {
+            "args": {
+              "block_args": [
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": true
+                },
+                {
+                  "use_checkpoint": true
+                }
+              ],
+              "block_type": [
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d"
+              ],
+              "latent_channels": 32,
+              "model_channels": [
+                1024,
+                512,
+                256,
+                128,
+                64
+              ],
+              "num_blocks": [
+                4,
+                16,
+                8,
+                4,
+                0
+              ],
+              "resolution": 256,
+              "up_block_type": [
+                "SparseResBlockC2S3d",
+                "SparseResBlockC2S3d",
+                "SparseResBlockC2S3d",
+                "SparseResBlockC2S3d"
+              ],
+              "use_fp16": true
+            },
+            "name": "FlexiDualGridVaeDecoder"
+          },
+          "encoder": {
+            "args": {
+              "block_args": [
+                {
+                  "use_checkpoint": true
+                },
+                {
+                  "use_checkpoint": true
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                }
+              ],
+              "block_type": [
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d"
+              ],
+              "down_block_type": [
+                "SparseResBlockS2C3d",
+                "SparseResBlockS2C3d",
+                "SparseResBlockS2C3d",
+                "SparseResBlockS2C3d"
+              ],
+              "latent_channels": 32,
+              "model_channels": [
+                64,
+                128,
+                256,
+                512,
+                1024
+              ],
+              "num_blocks": [
+                0,
+                4,
+                8,
+                16,
+                4
+              ],
+              "use_fp16": true
+            },
+            "name": "FlexiDualGridVaeEncoder"
+          }
+        },
+        "trainer": {
+          "args": {
+            "batch_size_per_gpu": 8,
+            "batch_split": 2,
+            "camera_randomization_config": {
+              "radius_range": [
+                2,
+                100
+              ]
+            },
+            "ema_rate": [
+              0.9999
+            ],
+            "fp16_mode": "inflat_all",
+            "fp16_scale_growth": 0.001,
+            "grad_clip": {
+              "args": {
+                "clip_percentile": 95,
+                "max_norm": 1.0
+              },
+              "name": "AdaptiveGradClipper"
+            },
+            "i_log": 500,
+            "i_sample": 10000,
+            "i_save": 10000,
+            "lambda_depth": 10,
+            "lambda_intersected": 0.1,
+            "lambda_kl": 1e-06,
+            "lambda_lpips": 0.2,
+            "lambda_mask": 1,
+            "lambda_normal": 1,
+            "lambda_ssim": 0.2,
+            "lambda_subdiv": 0.1,
+            "lambda_vertice": 0.01,
+            "max_steps": 1000000,
+            "optimizer": {
+              "args": {
+                "lr": 0.0001,
+                "weight_decay": 0.0
+              },
+              "name": "AdamW"
+            }
+          },
+          "name": "ShapeVaeTrainer"
+        }
+      },
+      "config_keys": [
+        "models",
+        "dataset",
+        "trainer"
+      ],
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/configs/scvae/shape_vae_next_dc_f16c32_fp16.json",
+      "relative_path": "configs/scvae/shape_vae_next_dc_f16c32_fp16.json",
+      "size_bytes": 4200
+    },
+    {
+      "config_head": {
+        "dataset": {
+          "args": {
+            "attrs": [
+              "base_color",
+              "metallic",
+              "roughness",
+              "alpha"
+            ],
+            "max_active_voxels": 1000000,
+            "max_num_faces": 1000000,
+            "min_aesthetic_score": 4.5,
+            "resolution": 256,
+            "with_mesh": false
+          },
+          "name": "SparseVoxelPbrDataset"
+        },
+        "models": {
+          "decoder": {
+            "args": {
+              "block_args": [
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": true
+                },
+                {
+                  "use_checkpoint": true
+                }
+              ],
+              "block_type": [
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d"
+              ],
+              "latent_channels": 32,
+              "model_channels": [
+                1024,
+                512,
+                256,
+                128,
+                64
+              ],
+              "num_blocks": [
+                4,
+                16,
+                8,
+                4,
+                0
+              ],
+              "out_channels": 6,
+              "pred_subdiv": false,
+              "up_block_type": [
+                "SparseResBlockC2S3d",
+                "SparseResBlockC2S3d",
+                "SparseResBlockC2S3d",
+                "SparseResBlockC2S3d"
+              ],
+              "use_fp16": true
+            },
+            "name": "SparseUnetVaeDecoder"
+          },
+          "encoder": {
+            "args": {
+              "block_args": [
+                {
+                  "use_checkpoint": true
+                },
+                {
+                  "use_checkpoint": true
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                },
+                {
+                  "use_checkpoint": false
+                }
+              ],
+              "block_type": [
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d",
+                "SparseConvNeXtBlock3d"
+              ],
+              "down_block_type": [
+                "SparseResBlockS2C3d",
+                "SparseResBlockS2C3d",
+                "SparseResBlockS2C3d",
+                "SparseResBlockS2C3d"
+              ],
+              "in_channels": 6,
+              "latent_channels": 32,
+              "model_channels": [
+                64,
+                128,
+                256,
+                512,
+                1024
+              ],
+              "num_blocks": [
+                0,
+                4,
+                8,
+                16,
+                4
+              ],
+              "use_fp16": true
+            },
+            "name": "SparseUnetVaeEncoder"
+          }
+        },
+        "trainer": {
+          "args": {
+            "batch_size_per_gpu": 8,
+            "batch_split": 1,
+            "ema_rate": [
+              0.9999
+            ],
+            "fp16_mode": "inflat_all",
+            "fp16_scale_growth": 0.001,
+            "grad_clip": {
+              "args": {
+                "clip_percentile": 95,
+                "max_norm": 1.0
+              },
+              "name": "AdaptiveGradClipper"
+            },
+            "i_log": 500,
+            "i_sample": 10000,
+            "i_save": 10000,
+            "lambda_kl": 1e-06,
+            "lambda_render": 0.0,
+            "loss_type": "l1",
+            "max_steps": 1000000,
+            "optimizer": {
+              "args": {
+                "lr": 0.0001,
+                "weight_decay": 0.0
+              },
+              "name": "AdamW"
+            }
+          },
+          "name": "PbrVaeTrainer"
+        }
+      },
+      "config_keys": [
+        "models",
+        "dataset",
+        "trainer"
+      ],
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2/configs/scvae/tex_vae_next_dc_f16c32_fp16.json",
+      "relative_path": "configs/scvae/tex_vae_next_dc_f16c32_fp16.json",
+      "size_bytes": 4142
+    }
+  ],
+  "license_manifest": {
+    "appears_mit": true,
+    "license_file_exists": true,
+    "license_file_head": "    MIT License\n\n    Copyright (c) Microsoft Corporation.\n"
+  },
+  "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+  "paper_shaped_execution_matrix": {
+    "inference": [
+      "load Trellis2ImageTo3DPipeline.from_pretrained('microsoft/TRELLIS.2-4B')",
+      "run image-to-3D generation on paper prompt/image set",
+      "export rendered videos and GLB/O-Voxel outputs"
+    ],
+    "texturing": [
+      "load Trellis2TexturingPipeline with texturing_pipeline.json",
+      "run shape-conditioned PBR texture generation",
+      "score PSNR, LPIPS, CLIP, CLIP-N and render/shading outputs"
+    ],
+    "training": [
+      "preprocess Objaverse-XL/ABO/HSSD/TexVerse through metadata, mesh/PBR dumps, dual grid, voxels, latents, and condition renders",
+      "run SC-VAE and sparse/shape/texture flow configs at paper scale"
+    ],
+    "verification": [
+      "3D asset reconstruction table with MD, CD, and F1",
+      "image-to-3D generation comparison over 100 prompts",
+      "shape-conditioned PBR texture generation with PSNR, LPIPS, CLIP, CLIP-N",
+      "SC-VAE ablation and architecture ablations",
+      "test-time resolution scaling at 512^3, 1024^3, and 1536^3",
+      "H100/A100 runtime table and memory/latency traces",
+      "Toys4K and Sketchfab reconstruction results",
+      "about 40 participant user-study Pref% artifacts",
+      "raw GLB/mesh/O-Voxel outputs, rendered videos/images, metrics JSON, and table summaries"
+    ]
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2",
+  "support_only_findings": [
+    "assets/example_image and example_texturing are demos, not paper benchmark convergence",
+    "README H100 timings are paper-side evidence unless locally reproduced with telemetry",
+    "HF model metadata is not local model materialization",
+    "repo path discovery fixes DAG operational visibility but is not a result"
+  ]
+}

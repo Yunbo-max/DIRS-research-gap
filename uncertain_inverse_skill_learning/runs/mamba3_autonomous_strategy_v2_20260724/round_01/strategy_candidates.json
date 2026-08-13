@@ -1,0 +1,218 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 1,
+  "discovery_mode": "fresh_blind_writer_self_inference",
+  "selection_boundary": "Candidates are procedural hypotheses, not reconstructions of an expert trace. All factual realizations must be grounded in the permitted paper chip.",
+  "candidates": [
+    {
+      "proposal_id": "S1_result_first_pareto_ledger",
+      "proposal_origin": {
+        "type": "uncertainty",
+        "observations": [
+          "The evidence supports several objectives that do not share one winner: language quality, state tracking, decode latency, and retrieval.",
+          "A conventional chronology could hide the SISO-versus-MIMO quality/latency tradeoff."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "The evidence contains matched comparative results on at least two objectives.",
+          "At least one limitation prevents an unqualified winner claim."
+        ],
+        "inputs": [
+          "baseline-aligned quality measurements",
+          "latency measurements",
+          "mechanism descriptions",
+          "documented limitation"
+        ],
+        "transformation": "Open with the joint quality-efficiency outcome, maintain a compact ledger with one representative comparison per objective, then explain the mechanisms and close with the non-dominated limitation.",
+        "outputs": [
+          "a result-led abstract",
+          "an explicit quality-latency tradeoff",
+          "a bounded concluding claim"
+        ],
+        "rejection_rule": "Reject if measurements are not comparable under a shared setting, if the opening overstates dominance, or if the ledger crowds out the method."
+      },
+      "predicted_effects": [
+        "Higher comparative salience in the first half.",
+        "Clearer representation of SISO and MIMO as different Pareto points.",
+        "Lower risk of presenting the architecture as universally superior."
+      ],
+      "failure_modes": [
+        "Numeric front-loading can make the abstract read like a benchmark table.",
+        "The causal link from component to outcome may remain compressed."
+      ],
+      "falsification_tests": [
+        "Blindly compare with a method-led variant; falsify if readers identify the main contribution or tradeoff less reliably.",
+        "Delete the explicit SISO/MIMO contrast; falsify the strategy's claimed value if preference and tradeoff comprehension do not decrease."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The result-first ledger and its ordering are self-inferred and do not claim paper provenance.",
+        "required_content_evidence": "Every model comparison, number, setting, mechanism, and limitation must map to result_outcome, method_mechanism, evaluation_validation, experimental_setting, or limitations in the permitted chip.",
+        "prohibited": [
+          "unreported causal superiority",
+          "7B performance claims",
+          "claims of universal attention replacement"
+        ]
+      },
+      "status": "candidate"
+    },
+    {
+      "proposal_id": "S2_mechanism_ablation_staircase",
+      "proposal_origin": {
+        "type": "recombination",
+        "observations": [
+          "The chip contains three distinct architectural changes and separate evidence that probes each change.",
+          "Mechanism-result coherence can be made explicit without assuming a universal gap-method-result template."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "Multiple components have component-level or mechanism-relevant validation.",
+          "The evidence supports a stable ordering from local ablation to broader system outcome."
+        ],
+        "inputs": [
+          "recurrence and bias description plus ablation",
+          "complex-update description plus formal-state results",
+          "MIMO description plus language and latency results",
+          "retrieval boundary"
+        ],
+        "transformation": "Construct three ascending steps. Each step states one architectural operation and immediately binds it to its most diagnostic result; only after the steps, synthesize the system-level tradeoff and limitation.",
+        "outputs": [
+          "a mechanism-led abstract",
+          "three local mechanism-to-evidence bindings",
+          "a final scope boundary"
+        ],
+        "rejection_rule": "Reject if any step implies causality stronger than its ablation, repeats evidence, or cannot be stated within the word budget."
+      },
+      "predicted_effects": [
+        "Stronger local coherence between what changed and how it was tested.",
+        "Less risk that the three architectural contributions collapse into an unexplained list.",
+        "Better retention of ablation and state-tracking evidence."
+      ],
+      "failure_modes": [
+        "The staircase may resemble a catalog and delay the headline language-model result.",
+        "Three numeric bindings can reduce readability if transitions are weak."
+      ],
+      "falsification_tests": [
+        "Randomly permute the result attached to each mechanism; the strategy is falsified if blind mechanism-result matching and preference do not worsen.",
+        "Compare against a result-first realization at the same word budget; falsify if the staircase does not improve mechanism-result coherence without reducing factual precision."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The three-step ordering is a novel recombination proposed from the chip's available evidence structure.",
+        "required_content_evidence": "Each step must cite chip paths for both the component and the paired result; synthesis may be cautious but may not convert association into an unreported causal estimate.",
+        "prohibited": [
+          "claiming that all downstream gains are uniquely caused by one component",
+          "generalizing beyond the tested scales",
+          "suppressing the retrieval limitation"
+        ]
+      },
+      "status": "candidate"
+    },
+    {
+      "proposal_id": "S3_evaluation_mosaic_with_scope_gate",
+      "proposal_origin": {
+        "type": "self_critique",
+        "observations": [
+          "A single aggregate score would not show whether the model addresses capability, state tracking, and hardware behavior.",
+          "Breadth is useful only if each evaluation is assigned a distinct functional role."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "The chip includes heterogeneous evaluations with nonredundant diagnostic roles.",
+          "The abstract can allocate one sentence to each major axis without becoming an inventory."
+        ],
+        "inputs": [
+          "shared pretraining setting",
+          "language-model results",
+          "formal-state results",
+          "kernel and end-to-end latency",
+          "retrieval results and hybrid mitigation"
+        ],
+        "transformation": "State the multi-axis problem, summarize the architecture once, then present an evaluation mosaic in which language modeling tests quality, formal languages test state dynamics, latency tests hardware behavior, and retrieval sets the scope gate.",
+        "outputs": [
+          "an evaluation-led abstract",
+          "nonredundant evidence roles",
+          "a limitation-controlled conclusion"
+        ],
+        "rejection_rule": "Reject if an evaluation lacks a declared role, if the abstract becomes a dataset list, or if the scope gate is missing."
+      },
+      "predicted_effects": [
+        "Broader functional coverage with less redundant reporting.",
+        "Clearer separation between aggregate quality, diagnostic capability, and efficiency.",
+        "More visible evidence boundary around retrieval and scaling."
+      ],
+      "failure_modes": [
+        "The mosaic can fragment the narrative.",
+        "Architecture novelty may receive too little explanation."
+      ],
+      "falsification_tests": [
+        "Remove the role labels while preserving the same facts; falsify if readers' understanding of why each evaluation matters is unchanged.",
+        "Compare with a mechanism-led variant; falsify if breadth does not improve without a coherence penalty."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "Assigning a unique argumentative role to each evaluation is self-inferred.",
+        "required_content_evidence": "All evaluation roles must be realized using only documented tasks, settings, results, and limitations in the chip.",
+        "prohibited": [
+          "calling diagnostic tasks proof of general reasoning",
+          "inferring deployment performance beyond reported H100 settings",
+          "claiming retrieval is solved"
+        ]
+      },
+      "status": "candidate"
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "proposal_origin": {
+        "type": "failure_induced",
+        "observations": [
+          "Architecture abstracts can overclaim when efficiency and aggregate quality are reported without the fixed-state retrieval boundary.",
+          "A caveat added only as an afterthought may not constrain the reader's interpretation of earlier claims."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "The central promise has a documented failure mode.",
+          "A mitigation exists but introduces a documented cost."
+        ],
+        "inputs": [
+          "quality-efficiency gap",
+          "fixed-state retrieval failure",
+          "core architecture",
+          "hybrid-attention mitigation and cost",
+          "representative positive results"
+        ],
+        "transformation": "Open with the promise-versus-boundary contrast, describe the core design, report representative gains, revisit the same boundary through the hybrid mitigation, and conclude with a conditional rather than universal claim.",
+        "outputs": [
+          "a contrast-structured abstract",
+          "an early interpretive scope gate",
+          "a conditional closing claim"
+        ],
+        "rejection_rule": "Reject if caveat-first framing obscures the contribution, if the mitigation is presented as free, or if negative and positive evidence use incomparable settings without qualification."
+      },
+      "predicted_effects": [
+        "Lower overclaiming risk.",
+        "Better reader calibration about pure versus hybrid recurrence.",
+        "A conclusion that distinguishes advance from complete solution."
+      ],
+      "failure_modes": [
+        "The opening may sound defensive and reduce contribution salience.",
+        "Repeating the boundary can spend too much of a short abstract."
+      ],
+      "falsification_tests": [
+        "Move the limitation to the final clause only; falsify if calibration and bounded-claim ratings do not decline.",
+        "Blindly compare contribution identification with a result-first variant; reject if boundary-first framing materially hides the method or headline result."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The contrast loop is proposed from an overclaiming failure model, not from an expert artifact.",
+        "required_content_evidence": "The promise, fixed-state weakness, hybrid benefit, hybrid cost, and all positive comparisons must be independently supported by the chip.",
+        "prohibited": [
+          "claiming the hybrid eliminates retrieval failures",
+          "claiming a free efficiency gain",
+          "asserting deployment readiness outside the reported setup"
+        ]
+      },
+      "status": "candidate"
+    }
+  ]
+}

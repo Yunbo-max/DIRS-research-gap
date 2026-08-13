@@ -1,0 +1,193 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "adaptive",
+        "can",
+        "cues",
+        "decoder",
+        "density",
+        "deployments",
+        "downstream",
+        "drop",
+        "elbo",
+        "evaluations",
+        "extra",
+        "fixed",
+        "fixed-rate",
+        "heuristic",
+        "hurt",
+        "ignore",
+        "inefficient",
+        "information",
+        "latency-sensitive",
+        "many",
+        "may",
+        "pass",
+        "proxy",
+        "reconstruction",
+        "require",
+        "routing",
+        "search",
+        "task-critical",
+        "tokenizer",
+        "tokenizers"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "fixed-rate video tokenizers ignore variable information density",
+        "uniform adaptive routing can be inefficient",
+        "heuristic adaptive search can require many decoder evaluations"
+      ],
+      "score": 2.75,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "adaptive",
+        "backbone",
+        "binary",
+        "compressor",
+        "cosmos",
+        "decompressor",
+        "discrete",
+        "elbo",
+        "mask",
+        "router",
+        "tokenizer",
+        "video",
+        "vit"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "ELBO router",
+        "adaptive binary mask",
+        "ViT compressor",
+        "ViT decompressor",
+        "Cosmos discrete video tokenizer backbone"
+      ],
+      "score": 1.083,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "ablation",
+        "bpp16",
+        "comparison",
+        "compressor",
+        "davis",
+        "decoder",
+        "fvd",
+        "latency",
+        "lpips",
+        "matched",
+        "number",
+        "optimality",
+        "passes",
+        "per",
+        "psnr",
+        "reconstruction",
+        "router",
+        "seconds",
+        "ssim",
+        "tokenbench",
+        "video"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "video reconstruction at matched BPP16",
+        "TokenBench/DAVIS reconstruction",
+        "router optimality ablation",
+        "compressor ablation",
+        "latency comparison"
+      ],
+      "score": 1.75,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "video reconstruction at matched BPP16; TokenBench/DAVIS reconstruction; router optimality ablation; compressor ablation; latency comparison"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "BPP16; PSNR; SSIM; LPIPS; FVD; latency seconds per video; number of decoder passes"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "TokenBench; DAVIS; qyoo/tokenbench_240p; qyoo/davis_240p"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "H100-80GB or A100-80GB recommended; 32 H100 GPUs reported for paper-scale training"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "ELBO router; adaptive binary mask; ViT compressor; ViT decompressor; Cosmos discrete video tokenizer backbone; infotok_mse.pt checkpoint; exp_scripts/infotok_inference.sh; exp_scripts/infotok_posttrain.sh"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "iteration": 2,
+  "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+  "paper_title": "InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

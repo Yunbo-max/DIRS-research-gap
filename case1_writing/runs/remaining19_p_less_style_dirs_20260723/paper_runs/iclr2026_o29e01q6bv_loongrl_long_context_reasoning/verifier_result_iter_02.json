@@ -1,0 +1,220 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "128k",
+        "across",
+        "add",
+        "are",
+        "but",
+        "cost",
+        "directly",
+        "distractor-heavy",
+        "does",
+        "entangles",
+        "evidence",
+        "expensive",
+        "explicit",
+        "fail",
+        "full-length",
+        "gains",
+        "high-difficulty",
+        "induces",
+        "key",
+        "keychain",
+        "llm-as-a-judge",
+        "long-context",
+        "may",
+        "not",
+        "often",
+        "out-of-domain",
+        "over-specialize",
+        "patterns",
+        "plan",
+        "plus"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "long-context models often retrieve shallowly but fail to plan and reason across distractor-heavy evidence",
+        "short-context RL induces reasoning patterns but does not directly teach long-context retrieval plus reasoning",
+        "high-difficulty verifiable long-context RL data are scarce",
+        "full-length 128K RL rollouts are prohibitively expensive"
+      ],
+      "score": 4.417,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "5-32b",
+        "chains",
+        "construction",
+        "curriculum",
+        "difficulty",
+        "distractor",
+        "document",
+        "exact-match",
+        "filling",
+        "filtering",
+        "hard-mined",
+        "high-entropy",
+        "key-value",
+        "keychain",
+        "qwen2",
+        "reward",
+        "stage",
+        "substring",
+        "three-stage",
+        "two-way",
+        "uuid"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "KeyChain data construction",
+        "UUID or high-entropy key-value chains",
+        "distractor document filling",
+        "Qwen2.5-32B difficulty filtering",
+        "two-way substring exact-match reward",
+        "three-stage RL curriculum",
+        "hard-mined Stage II"
+      ],
+      "score": 1.75,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "10k",
+        "128k",
+        "accuracy",
+        "average",
+        "base",
+        "binary",
+        "bucket",
+        "context",
+        "eight",
+        "haystack",
+        "helmet",
+        "ifeval",
+        "input",
+        "length-controlled",
+        "longbench",
+        "math",
+        "math-500",
+        "mmlu",
+        "needle",
+        "non-reasoning",
+        "output",
+        "pass",
+        "per",
+        "problem",
+        "rate",
+        "reasoning",
+        "retrieval",
+        "reward",
+        "ruler",
+        "samples"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "LongBench v1",
+        "LongBench v2",
+        "HELMET",
+        "RULER",
+        "Needle in a Haystack",
+        "MMLU",
+        "MATH-500",
+        "IFEval",
+        "temperature 0.6 for reasoning models",
+        "eight samples per problem",
+        "up to 128K input tokens and 10K output tokens",
+        "temperature 0 for non-reasoning base models"
+      ],
+      "score": 2.667,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "LongBench v1; LongBench v2; HELMET; RULER; Needle in a Haystack; MMLU; MATH-500; IFEval; temperature 0.6 for reasoning models; eight samples per problem; up to 128K input tokens and 10K output tokens; temperature 0 for non-reasoning base models"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "average pass@1; accuracy; length-controlled context bucket accuracy; retrieval pass rate; binary reward"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "HotpotQA; MuSiQue; 2WikiMultiHopQA; PG19; DAPO math; MATH; OldKingMeister/LoongRL-Train-Data; OldKingMeister/LoongRL-Train-Data"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "16 A100 GPUs for 7B; 8 MI300X GPUs for 14B; customized veRL; Ray; vLLM; SGLang; FSDP; ROCm MI300X patches; NVIDIA A100 install scripts"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "KeyChain data construction; UUID or high-entropy key-value chains; distractor document filling; Qwen2.5-32B difficulty filtering; two-way substring exact-match reward; three-stage RL curriculum; hard-mined Stage II"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "iteration": 2,
+  "paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+  "paper_title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

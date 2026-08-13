@@ -1,0 +1,475 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.official_longcontext_grpo_script_matrix"
+    ],
+    [
+      "ops.official_longcontext_grpo_script_matrix",
+      "ops.cluster_hardware_runtime_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.training_data_checkpoint_gate"
+    ],
+    [
+      "ops.cluster_hardware_runtime_gate",
+      "ops.training_data_checkpoint_gate"
+    ],
+    [
+      "ops.training_data_checkpoint_gate",
+      "ops.full_benchmark_artifact_gate"
+    ],
+    [
+      "ops.full_benchmark_artifact_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "decision.explicit_blocker_after_loongrl_preflight"
+    ],
+    [
+      "decision.explicit_blocker_after_loongrl_preflight",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_resolve_loongrl_professional_blockers"
+    ],
+    [
+      "loop1.required_update.update_resolve_loongrl_professional_blockers",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning_gap_dag_iter_03",
+  "nodes": [
+    {
+      "content": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts | families=long_context_or_rope, reasoning_agents, video_token_merging, sparse_cuda_rl",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "long-context models often retrieve shallowly but fail to plan and reason across distractor-heavy evidence; short-context RL induces reasoning patterns but does not directly teach long-context retrieval plus reasoning; high-difficulty verifiable long-context RL data are scarce; full-length 128K RL rollouts are prohibitively expensive",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "model entangles retrieval and reasoning without an explicit plan; regular long-context QA data yields smaller gains than KeyChain data; LLM-as-a-judge rewards add cost and reward-hacking risk; KeyChain tasks may over-specialize to synthetic key tracing if not tested on out-of-domain long-context tasks",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Qwen2.5-7B-Instruct; R1-Distill-Qwen-7B; Qwen2.5-14B-Instruct; R1-Distill-Qwen-14B; R1-Distill-Qwen-32B; QwenLong-L1-32B; LoongRL-7B without KeyChain; o3-mini; DeepSeek-R1; GPT-4o",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "KeyChain data construction; UUID or high-entropy key-value chains; distractor document filling; Qwen2.5-32B difficulty filtering; two-way substring exact-match reward; three-stage RL curriculum; hard-mined Stage II",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=LongBench v1; LongBench v2; HELMET; RULER; Needle in a Haystack; MMLU; MATH-500; IFEval; metrics=average pass@1; accuracy; length-controlled context bucket accuracy; retrieval pass rate; binary reward; protocols=temperature 0.6 for reasoning models; eight samples per problem; up to 128K input tokens and 10K output tokens; temperature 0 for non-reasoning base models",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=16 A100 GPUs for 7B; 8 MI300X GPUs for 14B; runtimes=customized veRL; Ray; vLLM; SGLang; FSDP; ROCm MI300X patches; NVIDIA A100 install scripts",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL; code_artifacts=not specified in the available footprint",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=HotpotQA; MuSiQue; 2WikiMultiHopQA; PG19; DAPO math; MATH; OldKingMeister/LoongRL-Train-Data; data_artifacts=OldKingMeister/LoongRL-Train-Data; implementation_statuses=LoongRL code inspected at commit be1f096da289684a9cd50562f56f99b5be6ad3be; KeyChain code inspected at commit a958c9136011e3ebef1b9399c09b439578dde409; HF dataset public and ungated",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Use DAG-encoded LoongRL repo scripts: install_mi300.sh, install_a100x8.sh, install_mi300x8.sh, run_qwen2-7b_seq_balance_longcontext.sh, run_llama31-8b_seq_balance_longcontext.sh, and data_preprocess scripts. Extract train/val parquet paths, rollout n=8, max prompt/response lengths, trainer.n_gpus_per_node, nnodes, vLLM/SGLang rollout, and reward functions.",
+      "id": "ops.official_longcontext_grpo_script_matrix",
+      "skill_role": "bind Loop 2 to official veRL GRPO entrypoints",
+      "type": "operational_execution_matrix"
+    },
+    {
+      "content": "Before training or claiming result-shape convergence, verify 16 A100 GPUs for 7B or 8 MI300X GPUs for 14B, plus Ray, customized veRL, vLLM/SGLang, FSDP, ROCm/NVIDIA install path, and GPU/CPU/RAM traces.",
+      "id": "ops.cluster_hardware_runtime_gate",
+      "skill_role": "prevent fake single-GPU convergence",
+      "type": "professional_hardware_gate"
+    },
+    {
+      "content": "Resolve OldKingMeister/LoongRL-Train-Data, HotpotQA/MuSiQue/2Wiki/PG19/DAPO/MATH parquet artifacts, Qwen/Qwen2.5 model dependencies, and trained LoongRL-7B/14B checkpoints. Missing data paths or absent trained checkpoints block Loop 2.",
+      "id": "ops.training_data_checkpoint_gate",
+      "skill_role": "require paper-scale data and trained models",
+      "type": "model_data_gate"
+    },
+    {
+      "content": "Require full LongBench v1/v2, HELMET, RULER/NIAH, MMLU, MATH-500, and IFEval raw outputs with pass@1/accuracy/length-bucket/retrieval metrics and timing traces. Repo compile/import checks and tiny local probes remain support only.",
+      "id": "ops.full_benchmark_artifact_gate",
+      "skill_role": "make verifier comparison table-shaped",
+      "type": "evaluation_artifact_gate"
+    },
+    {
+      "content": "If any cluster, runtime, training-data, checkpoint, or benchmark artifact is absent, mark not converged and update the DAG with exact blockers instead of launching reduced training.",
+      "id": "decision.explicit_blocker_after_loongrl_preflight",
+      "skill_role": "feed operational failure back into Loop 1",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_cluster_training_data_checkpoint_and_runtime_requirements_after_specialized_runner; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package']; required_updates=['update.resolve_loongrl_professional_blockers']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": {
+              "reason": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements"
+            },
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.resolve_loongrl_professional_blockers",
+            "reason": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+            "success_criteria": [
+              "run paper-appropriate cluster GRPO/eval or provide equivalent exact operational artifacts",
+              "emit verifier-comparable benchmark table shapes",
+              "do not count reduced/proxy/syntax-only evidence"
+            ]
+          }
+        ],
+        "status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements_after_specialized_runner"
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LoongRL"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements",
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_resolve_loongrl_professional_blockers",
+      "oracle_values_exposed_to_loop2": false,
+      "required_update_id": "update.resolve_loongrl_professional_blockers",
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "run paper-appropriate cluster GRPO/eval or provide equivalent exact operational artifacts",
+        "emit verifier-comparable benchmark table shapes",
+        "do not count reduced/proxy/syntax-only evidence"
+      ],
+      "type": "verifier_required_dag_repair"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "loongrl_7b_training_gpu_topology",
+        "loongrl_14b_training_gpu_topology",
+        "official_longcontext_script_gpu_count",
+        "official_longcontext_training_data_paths_missing",
+        "trained_loongrl_checkpoints_missing",
+        "cluster_rl_runtime_packages_missing",
+        "rocm_mi300x_runtime_unavailable"
+      ],
+      "id": "update.add_loongrl_cluster_data_checkpoint_benchmark_gates",
+      "reason": "specialized LoongRL preflight found missing full paper-shaped cluster/data/checkpoint/runtime artifacts",
+      "success_criteria": [
+        "official GRPO script matrix encoded",
+        "16 A100 / 8 MI300X hardware gate encoded",
+        "training parquet and trained checkpoint gate encoded",
+        "full benchmark artifact gate encoded",
+        "reduced training or repo-only checks remain non-convergent"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:49:03Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.resolve_loongrl_professional_blockers"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_cluster_training_data_checkpoint_and_runtime_requirements_after_specialized_runner",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-23T18:40:25Z"
+    },
+    {
+      "blocker_ids": [
+        "loongrl_7b_training_gpu_topology",
+        "loongrl_14b_training_gpu_topology",
+        "official_longcontext_script_gpu_count",
+        "official_longcontext_training_data_paths_missing",
+        "trained_loongrl_checkpoints_missing",
+        "cluster_rl_runtime_packages_missing",
+        "rocm_mi300x_runtime_unavailable"
+      ],
+      "id": "update.add_loongrl_cluster_data_checkpoint_benchmark_gates",
+      "reason": "specialized LoongRL preflight found missing full paper-shaped cluster/data/checkpoint/runtime artifacts",
+      "success_criteria": [
+        "official GRPO script matrix encoded",
+        "16 A100 / 8 MI300X hardware gate encoded",
+        "training parquet and trained checkpoint gate encoded",
+        "full benchmark artifact gate encoded",
+        "reduced training or repo-only checks remain non-convergent"
+      ]
+    }
+  ],
+  "signature": "cd6905dea856e029",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_o29E01Q6bv_loongrl_long_context_reasoning",
+  "target_title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+  "updated_at_utc": "2026-07-23T18:53:37Z"
+}

@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": "Existing iter_02 semantic gap remains accepted; iter_03 tightens execution gates for the author simulation.",
+      "name": "gap_semantic_match",
+      "status": "pass"
+    },
+    {
+      "detail": "SEA filtering and spectrally aligned cache gating remain bound to the paper gap.",
+      "name": "method_gap_binding_match",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "blocker_count": 6,
+        "ready": false,
+        "reason": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+        "specialized_runner_artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/seacache"
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_latency_quality_tables",
+          "required": "FLUX.1-dev, Wan2.1 1.3B/14B, and HunyuanVideo uncached 50-step references plus SeaCache threshold sweeps with shared seeds and full prompt sets"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "latency, TFLOPs via Calflops, refresh ratio, PSNR, LPIPS, SSIM, CycleReward average rank, VBench dimensions, and CompressedVQA"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "loadable FLUX.1-dev, Wan2.1, and HunyuanVideo checkpoints; 200 DrawBench prompts; 944 VBench prompts; CycleReward and CompressedVQA evaluators/artifacts"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "paper-compatible Blackwell RTX PRO 6000 and/or A100 CUDA/PyTorch inference traces, plus GPU/CPU/RAM telemetry"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "SEA filter, density/mean normalization, SEA-filtered relative L1, accumulated threshold gate, residual reuse, scheduler coefficient mapping, and full-grid script wrappers"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-24T13:31:58Z",
+  "dag_signature": "bc787c39d4c4ed03",
+  "iteration": 3,
+  "paper_id": "CVPR2026_052_seacache_spectral_evolution_cache",
+  "paper_title": "SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.resolve_seacache_professional_blockers",
+      "reason": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements",
+      "success_criteria": [
+        "run paper-appropriate diffusion model grid or provide equivalent exact operational artifacts",
+        "emit verifier-comparable latency/quality/refresh/TFLOPs table shapes",
+        "do not count one-prompt demos, syntax checks, or util-unit tests as convergence"
+      ]
+    }
+  ],
+  "score": 0.842105,
+  "semantic_ready": true,
+  "status": "blocked_by_diffusion_model_data_hardware_runtime_and_script_parity_requirements_after_specialized_runner"
+}

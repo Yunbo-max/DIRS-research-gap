@@ -1,0 +1,9 @@
+{
+  "schema_version": "dirs.real_trace_prefix_audit_validation.v1",
+  "record_count": 19,
+  "unique_chip_count": 19,
+  "valid_graph_path_count": 6,
+  "violation_count": 0,
+  "passed": true,
+  "violations": []
+}

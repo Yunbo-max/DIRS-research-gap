@@ -1,0 +1,109 @@
+{
+  "schema_version": "dirs.path_rewards.v1",
+  "source_evaluation_mode": "fresh_strict_blind",
+  "reward_field": "overall_preference_score",
+  "path_rewards": [
+    {
+      "path_id": "path_01",
+      "anonymous_draft_id": "draft_D",
+      "rank": 1,
+      "overall_preference_score": 0.965,
+      "confidence": 0.99,
+      "scores": {
+        "evidence_fidelity": 0.99,
+        "problem_gap": 0.95,
+        "method_clarity": 0.98,
+        "evaluation_setup_function": 0.97,
+        "result_salience": 0.99,
+        "interpretation_coherence": 0.99,
+        "boundedness_and_compression": 0.97
+      },
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_02",
+      "anonymous_draft_id": "draft_B",
+      "rank": 3,
+      "overall_preference_score": 0.942,
+      "confidence": 0.98,
+      "scores": {
+        "evidence_fidelity": 0.98,
+        "problem_gap": 0.95,
+        "method_clarity": 0.95,
+        "evaluation_setup_function": 0.98,
+        "result_salience": 0.96,
+        "interpretation_coherence": 0.96,
+        "boundedness_and_compression": 0.96
+      },
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_03",
+      "anonymous_draft_id": "draft_C",
+      "rank": 2,
+      "overall_preference_score": 0.952,
+      "confidence": 0.98,
+      "scores": {
+        "evidence_fidelity": 0.98,
+        "problem_gap": 0.96,
+        "method_clarity": 0.94,
+        "evaluation_setup_function": 0.97,
+        "result_salience": 0.97,
+        "interpretation_coherence": 0.98,
+        "boundedness_and_compression": 0.98
+      },
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_04",
+      "anonymous_draft_id": "draft_F",
+      "rank": 5,
+      "overall_preference_score": 0.889,
+      "confidence": 0.96,
+      "scores": {
+        "evidence_fidelity": 0.94,
+        "problem_gap": 0.93,
+        "method_clarity": 0.94,
+        "evaluation_setup_function": 0.95,
+        "result_salience": 0.85,
+        "interpretation_coherence": 0.97,
+        "boundedness_and_compression": 0.98
+      },
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_05",
+      "anonymous_draft_id": "draft_E",
+      "rank": 4,
+      "overall_preference_score": 0.935,
+      "confidence": 0.98,
+      "scores": {
+        "evidence_fidelity": 0.98,
+        "problem_gap": 0.97,
+        "method_clarity": 0.93,
+        "evaluation_setup_function": 0.98,
+        "result_salience": 0.97,
+        "interpretation_coherence": 0.95,
+        "boundedness_and_compression": 0.97
+      },
+      "hard_failures": []
+    },
+    {
+      "path_id": "path_06",
+      "anonymous_draft_id": "draft_A",
+      "rank": 6,
+      "overall_preference_score": 0.879,
+      "confidence": 0.96,
+      "scores": {
+        "evidence_fidelity": 0.93,
+        "problem_gap": 0.96,
+        "method_clarity": 0.96,
+        "evaluation_setup_function": 0.96,
+        "result_salience": 0.82,
+        "interpretation_coherence": 0.94,
+        "boundedness_and_compression": 0.95
+      },
+      "hard_failures": []
+    }
+  ]
+}

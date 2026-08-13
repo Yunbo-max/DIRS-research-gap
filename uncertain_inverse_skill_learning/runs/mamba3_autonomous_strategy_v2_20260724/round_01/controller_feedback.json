@@ -1,0 +1,71 @@
+{
+  "schema_version": "dirs.autonomous_strategy.controller_feedback.v1",
+  "round": 1,
+  "evaluation_boundary": {
+    "hidden_expert_abstract_used": false,
+    "expert_dag_used": false,
+    "lexical_similarity_used": false,
+    "sources_used": [
+      "public Mamba-3 chip",
+      "public style profile",
+      "round_01 writer outputs",
+      "preregistered functional rubric"
+    ]
+  },
+  "hard_checks": {
+    "unsupported_factual_claims_found": [],
+    "forbidden_input_or_leakage_failure": [],
+    "all_three_variants_within_style_word_band": true,
+    "strategy_candidates_operationally_distinct": true,
+    "reusable_skill_overclaim": false
+  },
+  "functional_assessment": {
+    "factual_support": {
+      "judgment": "strong",
+      "feedback": "The selected realization keeps quantitative and limitation claims traceable to the public chip."
+    },
+    "functional_role_coverage": {
+      "judgment": "strong",
+      "feedback": "Problem, architecture, diagnostic evidence, language quality, latency, limitation, and bounded synthesis are all present."
+    },
+    "mechanism_result_coherence": {
+      "judgment": "strongest_in_variant_B",
+      "feedback": "The staircase makes local method-to-test bindings easier to recover than the other two variants."
+    },
+    "importance_weighted_selection": {
+      "judgment": "mixed",
+      "feedback": "The main language-model comparison arrives late, after two dense local result blocks."
+    },
+    "clarity_and_compression": {
+      "judgment": "needs_counterfactual",
+      "feedback": "The selected abstract contains many absolute measurements. The bindings are clear, but readers may retain the numeric table more readily than the contribution hierarchy."
+    },
+    "bounded_claims": {
+      "judgment": "strong",
+      "feedback": "Retrieval and scaling boundaries are explicit without invalidating the contribution."
+    }
+  },
+  "pareto_judgment": {
+    "dominant_candidate": null,
+    "variant_B_advantage": "mechanism-result coherence",
+    "variant_A_advantage": "early comparative salience",
+    "variant_C_advantage": "distinct evaluation roles",
+    "reason_no_dominant_candidate": "Each variant trades one functional strength for another; no calibrated preference evidence yet establishes a single winner."
+  },
+  "strategy_attribution": {
+    "S2_status": "candidate_pending_counterfactual",
+    "claimed_effect_not_yet_identified": "The selected strategy has not been compared against a matched binding-detached or binding-permuted ablation.",
+    "self_evaluation_issue": "Near-ceiling self-ratings do not discriminate candidates and cannot serve as acceptance evidence."
+  },
+  "outcome_level_feedback_for_round_02": [
+    "Preserve factual fidelity and the clear local method-to-test relations.",
+    "Test whether the same relations can remain recoverable with less numeric load and earlier system-level salience.",
+    "Produce a matched counterfactual that removes or disrupts the candidate strategy while holding evidence, length, and general prose quality as constant as possible.",
+    "Diagnose and propose the strategy change yourself; the controller does not prescribe a hidden target route."
+  ],
+  "promotion_decision": {
+    "local_strategy_hypothesis_accepted": false,
+    "reason": "A plausible autonomous candidate exists, but its claimed causal contribution has not passed a matched counterfactual.",
+    "reusable_skill_accepted": false
+  }
+}

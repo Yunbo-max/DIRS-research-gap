@@ -1,0 +1,26 @@
+{
+  "artifact_kind": "professional_gate_sweep_report",
+  "created_at_utc": "2026-07-24T13:35:32Z",
+  "policy": {
+    "can_converge_papers": false,
+    "purpose": "periodic blocker refresh from existing paper-specific professional gates",
+    "reduced_or_proxy_evidence_allowed": false
+  },
+  "refresh_result": {
+    "cmd": [
+      "/opt/conda/bin/python",
+      "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/refresh_longgoal_status.py"
+    ],
+    "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723",
+    "elapsed_seconds": 1.527,
+    "returncode": 0,
+    "stderr_tail": "",
+    "stdout_tail": "{\n  \"paper_count\": 19,\n  \"queue_count\": 19,\n  \"queue_markdown\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/SPECIALIZED_RUNNER_QUEUE.md\",\n  \"status\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/LONGGOAL_STATUS.md\",\n  \"summary\": \"/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/remaining19_strict_dirs_summary.json\"\n}\n",
+    "timeout": false
+  },
+  "results": [],
+  "scope": "all",
+  "selected_before_cap_count": 0,
+  "selected_papers": [],
+  "status": "executed_professional_gate_sweep"
+}

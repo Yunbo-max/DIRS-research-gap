@@ -1,0 +1,105 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 1319,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "2",
+  "current_sample_index": 1318,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 0,
+  "effective_stop_index_exclusive": 1319,
+  "finished_at_utc": "2026-07-23T21:52:15Z",
+  "full_split_requested": true,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 16089, 24564, 99\n1, NVIDIA GeForce RTX 4090, 16129, 24564, 98\n2, NVIDIA GeForce RTX 4090, 16164, 24564, 6\n3, NVIDIA GeForce RTX 4090, 16149, 24564, 99",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-23T21:52:15Z",
+      "exit_info": {
+        "actual_steps": 16,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 16
+      },
+      "flexible_exact_match": true,
+      "flexible_predicted_answer": "14",
+      "gen_length": 128,
+      "generated_text": "\n1. **Determine the total number of of slices:**\n   pizzas pizzas \u00d7 8 slices =    86  \n  76  \n    6  \n   16  \n   16  \n   16  \n  = 16  \n   16  \n   **16** \n\n\n **1 the slices \u00f7 4 people =  14 slices per person**\n\n\n\nEach of them can have 14 slices.",
+      "gold_answer": "14",
+      "question": "Henry and 3 of his friends order 7 pizzas for lunch. Each pizza is cut into 8 slices. If Henry and his friends want to share the pizzas equally, how many slices can each of them have?",
+      "remasking": "low_confidence",
+      "sample_index": 1318,
+      "seconds": 0.757,
+      "steps": 16,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "baseline"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 2 is logical cuda:0 when CUDA_VISIBLE_DEVICES=2",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 155943,
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/per_sample_results.jsonl",
+  "run_label": "table3a_static_L128_T16",
+  "running_summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 1319,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 359,
+        "flexible_exact_match": 0.2721758908263836,
+        "mean_actual_steps": 16.0,
+        "mean_seconds": 0.8207076573161481,
+        "strict_correct_count": 44,
+        "strict_exact_match": 0.03335860500379075
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-23T21:52:15Z",
+    "dataset": "openai/gsm8k main test",
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/per_sample_results.jsonl",
+    "status": "completed",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline"
+    ]
+  },
+  "started_at_utc": "2026-07-23T21:27:46Z",
+  "status": "completed",
+  "summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 1319,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 359,
+        "flexible_exact_match": 0.2721758908263836,
+        "mean_actual_steps": 16.0,
+        "mean_seconds": 0.8207076573161481,
+        "strict_correct_count": 44,
+        "strict_exact_match": 0.03335860500379075
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-23T21:52:15Z",
+    "dataset": "openai/gsm8k main test",
+    "finished_at_utc": "2026-07-23T21:52:15Z",
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/per_sample_results.jsonl",
+    "status": "completed",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline"
+    ]
+  },
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-23T21:52:15Z",
+  "variants": [
+    "baseline"
+  ]
+}

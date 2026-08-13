@@ -1,0 +1,81 @@
+{
+  "schema_version": "dirs.connected_path_mcts.final_report.v1",
+  "date": "2026-07-24",
+  "status": "completed_strict_connected_path_cached_rollout_mcts",
+  "graph": {
+    "sha256": "023c8c923b98b6cb4cac7c4d2f5dccfe49fb6fe82dc89f32a903e36a85e38ef2",
+    "training_proxy_traces": 19,
+    "observed_complete_paths": 6,
+    "unobserved_union_paths_excluded": 2,
+    "arbitrary_node_selection": false
+  },
+  "selected": {
+    "path_id": "path_01",
+    "training_support_count": 6,
+    "blind_evaluator_reward": 0.965,
+    "blind_evaluator_rank": 1,
+    "word_count": 214,
+    "nodes": [
+      "R1_abstract_as_argument",
+      "G1_problem_gap",
+      "O1_named_method_or_object",
+      "M1_architecture_or_mechanism",
+      "M2_efficiency_or_theory_detail",
+      "E1_evaluation_setup",
+      "E2_result_outcome",
+      "E3_quantitative_anchor",
+      "I1_interpretation_or_tradeoff",
+      "S1_bounded_takeaway",
+      "P1_length_and_placement_prior"
+    ]
+  },
+  "path_rewards": {
+    "path_01": 0.965,
+    "path_02": 0.942,
+    "path_03": 0.952,
+    "path_04": 0.889,
+    "path_05": 0.935,
+    "path_06": 0.879
+  },
+  "mcts": {
+    "mode": "prefix_constrained_cached_rollout",
+    "simulations": 192,
+    "c_puct": 2.0,
+    "seed": 20260724,
+    "terminal_visits": {
+      "path_01": 70,
+      "path_02": 39,
+      "path_03": 32,
+      "path_04": 24,
+      "path_05": 19,
+      "path_06": 8
+    },
+    "recommendation_matches_exhaustive_best": true,
+    "all_actions_in_logged_frontier": true,
+    "all_terminals_observed_complete_paths": true
+  },
+  "baselines": {
+    "exhaustive_best_path": "path_01",
+    "exhaustive_best_reward": 0.965,
+    "frequency_greedy_path": "path_01",
+    "frequency_greedy_reward": 0.965,
+    "uniform_random_valid_expected_reward": 0.927,
+    "uniform_random_one_draw_best_probability": 0.166667
+  },
+  "result_interpretation": {
+    "connected_path_search_validated": true,
+    "mcts_advantage_over_frequency_greedy": false,
+    "general_convergence_claimed": false
+  },
+  "limitations": [
+    "fixed node vocabulary",
+    "proxy training traces",
+    "six observed paths",
+    "one rollout per path",
+    "one blind LLM evaluator",
+    "cached rather than online rollouts",
+    "one holdout paper",
+    "no cross-paper transfer",
+    "no trained GFlowNet"
+  ]
+}

@@ -1,0 +1,746 @@
+{
+  "accepted_loop2_evidence": "full datasets, model checkpoints, patched RoPE model loading, raw outputs, scores, and timing/memory traces for the full benchmark grid",
+  "artifact_kind": "mrrope_official_script_manifest",
+  "created_at_utc": "2026-07-23T18:53:19Z",
+  "paper_id": "ICLR2026_1J63FJYJKg_mrrope_mixed_radix_rope",
+  "paper_shaped_execution_matrix": {
+    "infinite_bench": "evali.sh / eval/infity.py: InfiniteBench subsets with 100-example slices",
+    "longbenchv2": "evalb.sh / eval/longbench.py: LongBenchV2 long split under 131072 max tokens",
+    "niah": "evaln.sh: 8192 to 131072 length sweep",
+    "perplexity": "eval.sh: 10 Proofpile sequences, 131072-token tokenized datasets, MrRoPE vs YaRN",
+    "ruler": "evalr.sh / eval/ruler.py: RULER context lengths and subtasks"
+  },
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp",
+  "scripts": [
+    {
+      "exists": true,
+      "line_count": 37,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--aggressive-memory",
+          "--custom-model-together",
+          "--dataset-min-tokens",
+          "--flash-attention",
+          "--max-tokens",
+          "--min-tokens",
+          "--original-max-position-embeddings",
+          "--output-file",
+          "--radix",
+          "--samples",
+          "--split",
+          "--tokenized",
+          "--tokens-step",
+          "--truncate",
+          "--yarn"
+        ],
+        "models": [
+          "models/llama3.1-8b-ins"
+        ],
+        "output_files": [
+          "output/mrrope-llama3.csv",
+          "output/yarn-llama3.csv"
+        ],
+        "python_entrypoints": [
+          "eval/perplexity.py",
+          "eval/perplexity.py"
+        ],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [
+            "16"
+          ],
+          "yarn": [
+            "16"
+          ]
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [
+            "131072",
+            "131072",
+            "131072"
+          ],
+          "e_len": [],
+          "max_tokens": [
+            "131072",
+            "131072"
+          ],
+          "min_tokens": [
+            "8192",
+            "8192"
+          ],
+          "s_len": [],
+          "step": [],
+          "tokens_step": [
+            "8192",
+            "8192"
+          ]
+        },
+        "tokenized_paths": [
+          "testset/pp-tokenized-llama2",
+          "testset/pp-tokenized-llama3",
+          "testset/pp-tokenized-qwen2.5"
+        ]
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval.sh",
+      "relative_path": "eval.sh"
+    },
+    {
+      "exists": true,
+      "line_count": 65,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--aggressive-memory",
+          "--filter-length",
+          "--max-tokens",
+          "--min-tokens",
+          "--original-max-position-embeddings",
+          "--output-file",
+          "--radix",
+          "--split",
+          "--yarn"
+        ],
+        "models": [
+          "meta-llama/Llama-2-7b-chat-hf",
+          "models/llama3.1-8b-ins",
+          "models/qwen2.5-3b-ins"
+        ],
+        "output_files": [
+          "./output/2longbench-llama8b-radix.csv",
+          "./output/2longbench-llama8b-yarn.csv",
+          "./output/longbench-llama-test2.csv",
+          "./output/longbench-llama-yarn.csv",
+          "./output/longbench-qwen3b-radix.csv",
+          "./output/longbench-qwen3b-yarn.csv"
+        ],
+        "python_entrypoints": [
+          "eval/longbench.py",
+          "eval/longbench.py",
+          "eval/longbench.py",
+          "eval/longbench.py",
+          "eval/longbench.py",
+          "eval/longbench.py"
+        ],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [
+            "16",
+            "4"
+          ],
+          "yarn": [
+            "10",
+            "16",
+            "16",
+            "4"
+          ]
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [
+            "40960",
+            "65536",
+            "131072",
+            "131072",
+            "131072",
+            "131072"
+          ],
+          "min_tokens": [
+            "40960"
+          ],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evalb.sh",
+      "relative_path": "evalb.sh"
+    },
+    {
+      "exists": true,
+      "line_count": 167,
+      "parsed": {
+        "data_dirs": [
+          "./testset/infity"
+        ],
+        "flags": [
+          "--data_dir",
+          "--flash-attention",
+          "--model_name",
+          "--model_path",
+          "--ntk",
+          "--original-max-position-embeddings",
+          "--radix",
+          "--start_idx",
+          "--stop_idx",
+          "--task",
+          "--yarn"
+        ],
+        "models": [
+          "llama3.1-8b-ins",
+          "models/llama3.1-8b-ins"
+        ],
+        "output_files": [],
+        "python_entrypoints": [
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py",
+          "eval/infity.py"
+        ],
+        "rope_variants": {
+          "ntk": [
+            "16",
+            "16",
+            "16"
+          ],
+          "radix": [
+            "16",
+            "16",
+            "16",
+            "16",
+            "16",
+            "16",
+            "16"
+          ],
+          "yarn": [
+            "16",
+            "16",
+            "16",
+            "16",
+            "16",
+            "16",
+            "16"
+          ]
+        },
+        "tasks": [
+          "code_debug",
+          "code_run",
+          "kv_retrieval",
+          "longdialogue_qa_eng",
+          "math_calc",
+          "math_find",
+          "number_string",
+          "passkey"
+        ],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evali.sh",
+      "relative_path": "evali.sh"
+    },
+    {
+      "exists": true,
+      "line_count": 21,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--e_len",
+          "--model_name",
+          "--model_provider",
+          "--model_version",
+          "--original-max-position-embeddings",
+          "--s_len",
+          "--step",
+          "--yarn"
+        ],
+        "models": [
+          "models/"
+        ],
+        "output_files": [],
+        "python_entrypoints": [
+          "eval/neddle.py"
+        ],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": [
+            "16"
+          ]
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [
+            "END"
+          ],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [
+            "START"
+          ],
+          "step": [
+            "STEP"
+          ],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evaln.sh",
+      "relative_path": "evaln.sh"
+    },
+    {
+      "exists": true,
+      "line_count": 11,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--flash-attention",
+          "--model",
+          "--original-max-position-embeddings",
+          "--radix",
+          "--yarn"
+        ],
+        "models": [
+          "models/llama3.1-8b-ins",
+          "models/qwen2.5-3b-ins"
+        ],
+        "output_files": [],
+        "python_entrypoints": [
+          "eval/ruler.py",
+          "eval/ruler.py"
+        ],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [
+            "4"
+          ],
+          "yarn": [
+            "16"
+          ]
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/evalr.sh",
+      "relative_path": "evalr.sh"
+    },
+    {
+      "exists": true,
+      "line_count": 230,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--aggressive-memory",
+          "--dataset",
+          "--dataset-min-tokens",
+          "--feature",
+          "--hide-progress",
+          "--max-tokens",
+          "--min-tokens",
+          "--model",
+          "--output-file",
+          "--samples",
+          "--save-tokenized",
+          "--sliding-window",
+          "--split",
+          "--subset",
+          "--tokenized",
+          "--tokens-step",
+          "--truncate"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/perplexity.py",
+      "relative_path": "eval/perplexity.py"
+    },
+    {
+      "exists": true,
+      "line_count": 486,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--api_key",
+          "--e_len",
+          "--model_name",
+          "--model_name_suffix",
+          "--model_provider",
+          "--model_version",
+          "--s_len",
+          "--step"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/neddle.py",
+      "relative_path": "eval/neddle.py"
+    },
+    {
+      "exists": true,
+      "line_count": 133,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--context",
+          "--model",
+          "--samples",
+          "--tasks"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/ruler.py",
+      "relative_path": "eval/ruler.py"
+    },
+    {
+      "exists": true,
+      "line_count": 312,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--data_dir",
+          "--device",
+          "--model_name",
+          "--model_path",
+          "--output_dir",
+          "--start_idx",
+          "--stop_idx",
+          "--task",
+          "--verbose"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/infity.py",
+      "relative_path": "eval/infity.py"
+    },
+    {
+      "exists": true,
+      "line_count": 153,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--aggressive-memory",
+          "--filter-length",
+          "--limit",
+          "--max-tokens",
+          "--min-tokens",
+          "--model",
+          "--output-file",
+          "--print-choices",
+          "--split"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/longbench.py",
+      "relative_path": "eval/longbench.py"
+    },
+    {
+      "exists": true,
+      "line_count": 450,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/score_infity.py",
+      "relative_path": "eval/score_infity.py"
+    },
+    {
+      "exists": true,
+      "line_count": 141,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--adapter",
+          "--custom-model",
+          "--custom-model-mistral",
+          "--custom-model-together",
+          "--factor",
+          "--finetuned",
+          "--flash-attention",
+          "--gpt-neox-max-length",
+          "--load-in-4bit",
+          "--load-in-8bit",
+          "--max-position-embeddings",
+          "--no-use-cache",
+          "--ntk",
+          "--original-max-position-embeddings",
+          "--radix",
+          "--sliding-window-attention",
+          "--yarn"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/eval/model_loader.py",
+      "relative_path": "eval/model_loader.py"
+    },
+    {
+      "exists": true,
+      "line_count": 141,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/scaled_rope/LlamaMrRoPE.py",
+      "relative_path": "scaled_rope/LlamaMrRoPE.py"
+    },
+    {
+      "exists": true,
+      "line_count": 25,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/scaled_rope/patch.py",
+      "relative_path": "scaled_rope/patch.py"
+    },
+    {
+      "exists": true,
+      "line_count": 196,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [
+          "--max-tokens",
+          "--min-tokens",
+          "--model"
+        ],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/analysis/attn.py",
+      "relative_path": "analysis/attn.py"
+    },
+    {
+      "exists": true,
+      "line_count": 13,
+      "parsed": {
+        "data_dirs": [],
+        "flags": [],
+        "models": [],
+        "output_files": [],
+        "python_entrypoints": [],
+        "rope_variants": {
+          "ntk": [],
+          "radix": [],
+          "yarn": []
+        },
+        "tasks": [],
+        "token_lengths": {
+          "dataset_min_tokens": [],
+          "e_len": [],
+          "max_tokens": [],
+          "min_tokens": [],
+          "s_len": [],
+          "step": [],
+          "tokens_step": []
+        },
+        "tokenized_paths": []
+      },
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MrRoPE_OpenReviewSupp/supplement/requirements.txt",
+      "relative_path": "requirements.txt"
+    }
+  ],
+  "source_distribution": "OpenReview supplementary archive"
+}

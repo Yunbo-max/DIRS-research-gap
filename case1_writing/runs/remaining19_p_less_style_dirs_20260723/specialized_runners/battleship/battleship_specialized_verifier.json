@@ -1,0 +1,117 @@
+{
+  "artifact_kind": "battleship_specialized_verifier",
+  "artifact_paths": {
+    "api_runtime_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/api_runtime_manifest.json",
+    "dag_iter_03": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_eqhuvwh78u_rational_information_seeking_agents/paper_author_gap_dag_iter_03.json",
+    "environment": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/environment.json",
+    "model_data_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/model_data_manifest.json",
+    "professional_gate": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/professional_gate_result.json",
+    "repo_manifest": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/battleship/repo_manifest.json"
+  },
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true,
+        "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship"
+      ],
+      "name": "repo_path_encoded",
+      "status": "pass"
+    },
+    {
+      "detail": "DAG says no local GPU requirement for core API/symbolic experiments; do not force a fake GPU proxy.",
+      "name": "gpu_requirement_interpretation",
+      "status": "pass"
+    },
+    {
+      "detail": "Current interpreter is not Python 3.11+.",
+      "name": "python311_runtime_gate",
+      "status": "blocked"
+    },
+    {
+      "detail": "OPENROUTER_API_KEY absent.",
+      "name": "openrouter_api_gate",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "detail": "Current Python is 3.10; pyproject requires ^3.11 and tests fail on enum.StrEnum under Python 3.10.",
+          "id": "battleship_python311_runtime_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Selected tests did not collect/pass; see environment.json.",
+          "id": "battleship_unit_probe_failed_until_python311_runtime",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing runtime imports: lark",
+          "id": "battleship_runtime_dependencies_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "battleship/agents.py constructs an OpenAI client with OpenRouter base_url and requires OPENROUTER_API_KEY.",
+          "id": "battleship_openrouter_api_key_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing data artifacts: readme_named_human_dataset_csv",
+          "id": "battleship_required_data_artifacts_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Raw collaborative human-data directory exists but does not contain the paper-shaped game/round/stage trajectory files expected by README.",
+          "id": "battleship_raw_human_trajectory_files_incomplete",
+          "status": "blocked"
+        },
+        {
+          "detail": "Missing operational result directories/files: spotter_benchmark_results, captain_benchmark_results, guess_who_transfer_outputs, openrouter_model_eval_outputs, paper_metric_summary",
+          "id": "battleship_full_agent_benchmark_outputs_missing",
+          "status": "blocked"
+        },
+        {
+          "detail": "Verifier cannot compare against paper tables/figures/paragraphs until SpotterQA, CaptainQA, human comparison, OpenRouter model grid, and Guess Who outputs are produced.",
+          "id": "battleship_result_shape_verifier_waiting_for_full_grid",
+          "status": "blocked"
+        }
+      ],
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": "requires full paper-shaped SpotterQA/CaptainQA/Guess Who/raw metric outputs.",
+      "name": "result_shape_comparison_ready",
+      "status": "blocked"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T18:53:31Z",
+  "iteration": 3,
+  "paper_id": "ICLR2026_EQhUvWH78U_rational_information_seeking_agents",
+  "paper_title": "Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.battleship_repo_runtime_api_result_grid",
+      "reason": "blocked_by_python311_openrouter_full_agent_benchmark_and_guess_who_artifacts",
+      "success_criteria": [
+        "official repo path encoded",
+        "Python 3.11+ runtime present",
+        "OpenRouter API/model grid configured",
+        "full BattleshipQA/CaptainQA/human/Guess Who outputs produced",
+        "verifier compares operational result shapes to paper evidence channels"
+      ]
+    }
+  ]
+}

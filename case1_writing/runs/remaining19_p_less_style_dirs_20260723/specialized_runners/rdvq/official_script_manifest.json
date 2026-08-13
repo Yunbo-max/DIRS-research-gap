@@ -1,0 +1,512 @@
+{
+  "artifact_kind": "rdvq_official_script_manifest",
+  "created_at_utc": "2026-07-24T13:32:00Z",
+  "files": [
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [
+          "conda create -n RDVQ python=3.10 -y\nconda activate RDVQ\n\ngit clone https://github.com/CVL-UESTC/RDVQ.git\ncd RDVQ\n\npip install \"torch>=2.1.0\" torchvision --index-url https://download.pytorch.org/whl/cu121\npip install -r requirements.txt",
+          "\nYou can override the metric list with `TEST_METRICS`.\n\n### Quick Start: Estimated-Rate Evaluation\n",
+          "\nIf the reference directory is missing or empty, it will be generated automatically from the original images and reused in later runs.\n\n### Test-Time Rate Control\n\n`test_Real.sh` supports test-time rate control through prefix transmission and autoregressive completion by changing `TEST_TRANSFER_SLICES`:\n",
+          "\n### Main Environment Variables\n\n| Variable               | Required       | Description                                                          |\n| ---------------------- | -------------- | -------------------------------------------------------------------- |\n| `TEST_CKPT_PATH`       | Yes            | Path to the checkpoint.                                              |\n| `TEST_IMAGE_DIR`       | Yes            | Image folder for evaluation.                                         |\n| `TEST_DATASET`         | Yes            | Dataset label: `kodak`, `div2k`, or `clic`.                          |\n| `FID_REF_ROOT`         | For DIV2K/CLIC | Root directory for FID/KID reference tiles.                          |\n| `FID_REF_DIR`          | Optional       | Manually specified reference tile directory.                         |\n| `TEST_METRICS`         | Optional       | Evaluation metric list.                                              |\n| `TEST_TRANSFER_SLICES` | Optional       | Number of transmitted latent slices for real-bitstream rate control. |\n| `TEST_TOPK`            | Optional       | Top-k/escape entropy width for `test_Real.sh`. Default: `1024`.      |\n| `TEST_MAX_IMAGES`      | Optional       | Maximum number of images for debugging.                              |\n| `DISABLE_FID`          | Optional       | Disable FID/KID computation.                                         |\n| `SAVE_IMAGES`          | Optional       | Whether to save reconstructed images.                                |\n\n### Output Structure\n",
+          "\n---\n\n## \ud83c\udfcb\ufe0f Training\n\nTraining follows a multi-stage pipeline. Please refer to [TRAINING_STAGES.md](TRAINING_STAGES.md) for the full recipe.\n\n### Stage 1: Tokenizer Training\n"
+        ],
+        "exists": true,
+        "line_count": 274,
+        "mentions_estimated_rate": true,
+        "mentions_fid_refs": true,
+        "mentions_hf_checkpoints": true,
+        "mentions_prefix_rate_control": true,
+        "mentions_real_bitstream": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/README.md",
+        "readme_license_badge_cc_by": true
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 8920
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "commands": [
+          "conda activate RDVQ\ncd /path/to/RDVQ_OpenSource\n\nIMAGENET=/path/to/imagenet/train/\nRESULTS=/path/to/results/\n\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} \\\n  --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 32 \\\n  --results-dir ${RESULTS}/s1_tokenizer \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 0.0 \\\n  --entropy-loss-ratio-init 0.0 \\\n  --lr 1e-4 \\\n  --disc-lr 1e-4 \\\n  --wo-attn",
+          "S1_CKPT=${RESULTS}/s1_tokenizer/*/checkpoints/best.pt\n\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} \\\n  --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 80 \\\n  --results-dir ${RESULTS}/s2_entropy \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 1.0 \\\n  --entropy-loss-ratio-init 1.0 \\\n  --vq-ckpt ${S1_CKPT} \\\n  --lr 1e-4 \\\n  --use-predictor \\\n  --pretrain-entropy \\\n  --freeze-codebook \\\n  --wo-attn \\\n  --not-load-strict",
+          "S2_CKPT=${RESULTS}/s2_entropy/*/checkpoints/best.pt\n\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} \\\n  --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 16 \\\n  --results-dir ${RESULTS}/s3_rd_lambda4.8 \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 4.8 \\\n  --entropy-loss-ratio-init 4.8 \\\n  --vq-ckpt ${S2_CKPT} \\\n  --lr 1e-4 \\\n  --use-predictor \\\n  --wo-attn \\\n  --freeze-codebook \\\n  --warmup \\\n  --tau 0.1 \\\n  --mixed-precision none \\\n  --not-load-strict",
+          "bash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} \\\n  --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 8 \\\n  --results-dir ${RESULTS}/s3_rd_lambda1.2 \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 1.2 \\\n  --entropy-loss-ratio-init 1.2 \\\n  --vq-ckpt ${S2_CKPT} \\\n  --lr 1e-5 \\\n  --use-predictor \\\n  --wo-attn \\\n  --freeze-codebook \\\n  --mixed-precision none \\\n  --tau 0.01 \\\n  --not-load-strict",
+          "bash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} \\\n  --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 16 \\\n  --results-dir ${RESULTS}/s3_rd_lambda0.8 \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 0.8 \\\n  --entropy-loss-ratio-init 0.8 \\\n  --vq-ckpt ${S2_CKPT} \\\n  --lr 1e-4 \\\n  --use-predictor \\\n  --wo-attn \\\n  --freeze-codebook \\\n  --warmup \\\n  --tau 0.01 \\\n  --not-load-strict",
+          "S3_CKPT=${RESULTS}/s3_rd_lambda4.8/*/checkpoints/best.pt\nOPENIMAGE=/path/to/openimages/train/\n\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${OPENIMAGE} \\\n  --image-size 512 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 4 \\\n  --results-dir ${RESULTS}/hr_openimage_512 \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 4.8 \\\n  --entropy-loss-ratio-init 4.8 \\\n  --vq-ckpt ${S3_CKPT} \\\n  --lr 1e-5 \\\n  --disc-lr 1e-5 \\\n  --use-predictor \\\n  --wo-attn \\\n  --freeze-codebook \\\n  --mixed-precision none \\\n  --tau 0.1 \\\n  --not-load-strict",
+          "HR1_CKPT=${RESULTS}/hr_openimage_512/*/checkpoints/best.pt\nDF2K=/path/to/DF2K/train/\n\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${DF2K} \\\n  --image-size 2048 \\\n  --vq-model VQ-16-32-64_quant_once \\\n  --dataset openimage \\\n  --global-batch-size 1 \\\n  --results-dir ${RESULTS}/hr_df2k_mrs_2048 \\\n  --codebook-size 4096 \\\n  --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 0.8 \\\n  --entropy-loss-ratio-init 0.8 \\\n  --vq-ckpt ${HR1_CKPT} \\\n  --lr 5e-6 \\\n  --disc-lr 5e-6 \\\n  --use-predictor \\\n  --wo-attn \\\n  --freeze-codebook \\\n  --MRS_tuning \\\n  --mixed-precision none \\\n  --not-load-strict",
+          "#!/bin/bash\nset -euo pipefail\n\nconda activate RDVQ\ncd /path/to/RDVQ_OpenSource\n\n# ========== Paths ==========\nIMAGENET=/path/to/imagenet/train/\nOPENIMAGE=/path/to/openimages/train/\nDF2K=/path/to/DF2K/train/\nRESULTS=/path/to/results/\n\n# ========== Stage 1: Tokenizer Pretrain ==========\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once --dataset openimage \\\n  --global-batch-size 32 --results-dir ${RESULTS}/s1_tokenizer \\\n  --codebook-size 4096 --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 0.0 --entropy-loss-ratio-init 0.0 \\\n  --lr 1e-4 --disc-lr 1e-4 --wo-attn\n\nS1_CKPT=$(ls -d ${RESULTS}/s1_tokenizer/*/checkpoints/best.pt | tail -1)\n\n# ========== Stage 2: Entropy Pretrain ==========\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once --dataset openimage \\\n  --global-batch-size 80 --results-dir ${RESULTS}/s2_entropy \\\n  --codebook-size 4096 --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 1.0 --entropy-loss-ratio-init 1.0 \\\n  --vq-ckpt ${S1_CKPT} --lr 1e-4 \\\n  --use-predictor --pretrain-entropy --freeze-codebook \\\n  --wo-attn --not-load-strict\n\nS2_CKPT=$(ls -d ${RESULTS}/s2_entropy/*/checkpoints/best.pt | tail -1)\n\n# ========== Stage 3: Joint RD Tuning (\u03bb=4.8, low bitrate) ==========\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${IMAGENET} --image-size 256 \\\n  --vq-model VQ-16-32-64_quant_once --dataset openimage \\\n  --global-batch-size 16 --results-dir ${RESULTS}/s3_lambda4.8 \\\n  --codebook-size 4096 --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 4.8 --entropy-loss-ratio-init 4.8 \\\n  --vq-ckpt ${S2_CKPT} --lr 1e-4 \\\n  --use-predictor --wo-attn --freeze-codebook --warmup \\\n  --tau 0.1 --mixed-precision none --not-load-strict\n\nS3_CKPT=$(ls -d ${RESULTS}/s3_lambda4.8/*/checkpoints/best.pt | tail -1)\n\n# ========== High-Res: OpenImage 512 ==========\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${OPENIMAGE} --image-size 512 \\\n  --vq-model VQ-16-32-64_quant_once --dataset openimage \\\n  --global-batch-size 4 --results-dir ${RESULTS}/hr_openimage \\\n  --codebook-size 4096 --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 4.8 --entropy-loss-ratio-init 4.8 \\\n  --vq-ckpt ${S3_CKPT} --lr 1e-5 --disc-lr 1e-5 \\\n  --use-predictor --wo-attn --freeze-codebook \\\n  --tau 0.1 --mixed-precision none --not-load-strict\n\nHR1_CKPT=$(ls -d ${RESULTS}/hr_openimage/*/checkpoints/best.pt | tail -1)\n\n# ========== High-Res: DF2K Multi-Resolution ==========\nbash scripts/tokenizer/train_vq.sh \\\n  --data-path ${DF2K} --image-size 2048 \\\n  --vq-model VQ-16-32-64_quant_once --dataset openimage \\\n  --global-batch-size 1 --results-dir ${RESULTS}/hr_df2k \\\n  --codebook-size 4096 --codebook-embed-dim 32 \\\n  --entropy-loss-ratio 0.8 --entropy-loss-ratio-init 0.8 \\\n  --vq-ckpt ${HR1_CKPT} --lr 5e-6 --disc-lr 5e-6 \\\n  --use-predictor --wo-attn --freeze-codebook \\\n  --MRS_tuning --mixed-precision none --not-load-strict\n\nFINAL=$(ls -d ${RESULTS}/hr_df2k/*/checkpoints/best.pt | tail -1)\necho \"Training complete. Final checkpoint: ${FINAL}\""
+        ],
+        "exists": true,
+        "line_count": 473,
+        "mentions_estimated_rate": false,
+        "mentions_fid_refs": false,
+        "mentions_hf_checkpoints": false,
+        "mentions_prefix_rate_control": false,
+        "mentions_real_bitstream": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/TRAINING_STAGES.md",
+        "readme_license_badge_cc_by": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/TRAINING_STAGES.md",
+      "relative_path": "TRAINING_STAGES.md",
+      "size_bytes": 14671
+    },
+    {
+      "exists": true,
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/requirements.txt",
+      "relative_path": "requirements.txt",
+      "requirements": [
+        "torch>=2.1.0",
+        "torchvision",
+        "numpy",
+        "Pillow",
+        "tqdm",
+        "einops",
+        "ninja                # JIT compile of C++ rANS extension",
+        "setuptools>=60,<73   # pkg_resources for clip (CGIC uses 72.1.0)",
+        "clean-fid",
+        "pyiqa",
+        "pytorch_msssim",
+        "torchmetrics",
+        "compressai",
+        "bitsandbytes",
+        "fvcore      # FLOP counting in AR generate (only with return_flops=True)"
+      ],
+      "size_bytes": 442
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "calls_my_inference": true,
+        "calls_real_inference": false,
+        "env_vars": [],
+        "exists": true,
+        "line_count": 138,
+        "mentions_cuda_visible_devices": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/test.sh",
+        "requires_test_ckpt_path": true,
+        "requires_test_image_dir": true,
+        "supports_disable_fid": true,
+        "supports_profile_real": false,
+        "supports_test_transfer_slices": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/test.sh",
+      "relative_path": "test.sh",
+      "size_bytes": 4803
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "calls_my_inference": false,
+        "calls_real_inference": true,
+        "env_vars": [],
+        "exists": true,
+        "line_count": 115,
+        "mentions_cuda_visible_devices": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/test_Real.sh",
+        "requires_test_ckpt_path": true,
+        "requires_test_image_dir": true,
+        "supports_disable_fid": true,
+        "supports_profile_real": true,
+        "supports_test_transfer_slices": true
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/test_Real.sh",
+      "relative_path": "test_Real.sh",
+      "size_bytes": 3775
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": true,
+        "cli_flags": [
+          "--ckpt-path",
+          "--codebook-embed-dim",
+          "--codebook-size",
+          "--cuda",
+          "--dataset_name",
+          "--fid-ref-dir",
+          "--fid_test",
+          "--generate-gt-teles",
+          "--images_dir",
+          "--load-official",
+          "--load-strict",
+          "--max-images",
+          "--metrics",
+          "--output_dir",
+          "--pad-multiple",
+          "--patch-size",
+          "--patch-stride",
+          "--save_img",
+          "--split-threshold-pixels",
+          "--use-predictor",
+          "--verbose",
+          "--vq-model"
+        ],
+        "exists": true,
+        "has_fid_ref_logic": true,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 360,
+        "metric_mentions": [
+          "bpp",
+          "fid",
+          "kid"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/my_inference.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/my_inference.py",
+      "relative_path": "my_inference.py",
+      "size_bytes": 14900
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": true,
+        "cli_flags": [
+          "--ckpt-path",
+          "--codebook-embed-dim",
+          "--codebook-size",
+          "--cuda",
+          "--dataset_name",
+          "--entropy-topk",
+          "--fid-ref-dir",
+          "--fid_test",
+          "--generate-gt-teles",
+          "--header-bits-mode",
+          "--images_dir",
+          "--load-official",
+          "--load-strict",
+          "--max-images",
+          "--metrics",
+          "--output_dir",
+          "--pad-multiple",
+          "--patch-pad-multiple",
+          "--patch-size",
+          "--patch-stride",
+          "--precision",
+          "--profile-real",
+          "--save_bin",
+          "--save_img",
+          "--split-mode",
+          "--split-threshold-pixels",
+          "--temperature",
+          "--top-k",
+          "--top-p",
+          "--transfer-slices",
+          "--use-MS-ck-ar",
+          "--verbose",
+          "--vq-model",
+          "--zero-padding"
+        ],
+        "exists": true,
+        "has_fid_ref_logic": true,
+        "has_prefix_transfer": true,
+        "has_profile_real": true,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 634,
+        "metric_mentions": [
+          "bpp",
+          "fid",
+          "kid"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/Real_Endecode_inference_single_stageAR.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/Real_Endecode_inference_single_stageAR.py",
+      "relative_path": "Real_Endecode_inference_single_stageAR.py",
+      "size_bytes": 30904
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "calls_my_inference": true,
+        "calls_real_inference": true,
+        "env_vars": [],
+        "exists": true,
+        "line_count": 148,
+        "mentions_cuda_visible_devices": false,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/release_validate.sh",
+        "requires_test_ckpt_path": false,
+        "requires_test_image_dir": false,
+        "supports_disable_fid": true,
+        "supports_profile_real": false,
+        "supports_test_transfer_slices": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/release_validate.sh",
+      "relative_path": "scripts/release_validate.sh",
+      "size_bytes": 5686
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [
+          "--benchmark",
+          "--compare-compressai",
+          "--precision",
+          "--rows",
+          "--seed",
+          "--symbols"
+        ],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 130,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/validate_tensor_rans.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/validate_tensor_rans.py",
+      "relative_path": "scripts/validate_tensor_rans.py",
+      "size_bytes": 5062
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [
+          "--top"
+        ],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 153,
+        "metric_mentions": [
+          "bpp"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/report_profile.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/report_profile.py",
+      "relative_path": "scripts/report_profile.py",
+      "size_bytes": 4954
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "calls_my_inference": false,
+        "calls_real_inference": false,
+        "env_vars": [],
+        "exists": true,
+        "line_count": 18,
+        "mentions_cuda_visible_devices": true,
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/tokenizer/train_vq.sh",
+        "requires_test_ckpt_path": false,
+        "requires_test_image_dir": false,
+        "supports_disable_fid": false,
+        "supports_profile_real": false,
+        "supports_test_transfer_slices": false
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/scripts/tokenizer/train_vq.sh",
+      "relative_path": "scripts/tokenizer/train_vq.sh",
+      "size_bytes": 490
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": true,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 118,
+        "metric_mentions": [
+          "bpp",
+          "clipiqa",
+          "dists",
+          "lpips",
+          "msssim",
+          "musiq",
+          "niqe",
+          "psnr"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/inference_common.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/inference_common.py",
+      "relative_path": "utils/inference_common.py",
+      "size_bytes": 4056
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": true,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 295,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/bitstream_container.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/bitstream_container.py",
+      "relative_path": "utils/bitstream_container.py",
+      "size_bytes": 11424
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": true,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 129,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/profile_accounting.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/profile_accounting.py",
+      "relative_path": "utils/profile_accounting.py",
+      "size_bytes": 5344
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 21,
+        "metric_mentions": [
+          "bpp"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/real_codec_stats.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/utils/real_codec_stats.py",
+      "relative_path": "utils/real_codec_stats.py",
+      "size_bytes": 1077
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 451,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/models/quantizer.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/models/quantizer.py",
+      "relative_path": "tokenizer/tokenizer_image/models/quantizer.py",
+      "size_bytes": 20698
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 280,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/models/vq_model.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/models/vq_model.py",
+      "relative_path": "tokenizer/tokenizer_image/models/vq_model.py",
+      "size_bytes": 11650
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": false,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 563,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/models/ar_transformer.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/models/ar_transformer.py",
+      "relative_path": "tokenizer/tokenizer_image/models/ar_transformer.py",
+      "size_bytes": 25514
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "checkpoint_required": true,
+        "cli_flags": [],
+        "exists": true,
+        "has_fid_ref_logic": false,
+        "has_prefix_transfer": false,
+        "has_profile_real": false,
+        "has_real_bitstream_path": true,
+        "imports": [],
+        "line_count": 495,
+        "metric_mentions": [
+          "bpp"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/training/train_vq.py"
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ/tokenizer/tokenizer_image/training/train_vq.py",
+      "relative_path": "tokenizer/tokenizer_image/training/train_vq.py",
+      "size_bytes": 24548
+    }
+  ],
+  "license_manifest": {
+    "actual_license_file_looks_mit": true,
+    "license_file_exists": true,
+    "license_file_head": "MIT License\n\nCopyright (c) 2024 CVL-UESTC",
+    "readme_badge_claims_cc_by_4_0": true
+  },
+  "paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+  "paper_shaped_execution_matrix": {
+    "estimated_rate": [
+      "TEST_CKPT_PATH + TEST_IMAGE_DIR + TEST_DATASET={kodak,div2k,clic}",
+      "bash test.sh",
+      "metrics JSON with cd_bpp and perceptual/reference/no-reference scores"
+    ],
+    "rate_control": [
+      "sweep TEST_TRANSFER_SLICES for prefix transmission",
+      "compare prefix completion bitrate-quality tradeoff to paper figures/tables"
+    ],
+    "real_bitstream": [
+      "bash test_Real.sh",
+      "tensor-rANS C++17/JIT support",
+      "actual .bin payloads and cd_bpp_real fields",
+      "PROFILE_REAL timing counters when latency is claimed"
+    ],
+    "training_or_finetune": [
+      "ImageNet/OpenImage/DF2K training stages only count with full datasets, checkpoints, and GPU traces",
+      "RTX Pro 6000 high-resolution fine-tune gate remains separate from RTX 4090 evaluation gate"
+    ]
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ",
+  "support_only_findings": [
+    "release validation and bitstream-container roundtrip are implementation support only",
+    "README assets/RD_curves.jpg are paper-presented evidence, not local reproduction",
+    "HF metadata availability is not the same as local checkpoint materialization"
+  ]
+}

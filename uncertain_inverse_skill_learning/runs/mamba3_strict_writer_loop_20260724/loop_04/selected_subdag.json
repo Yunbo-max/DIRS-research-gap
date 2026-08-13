@@ -1,0 +1,288 @@
+{
+  "schema_version": "dirs.strict_writer.selected_subdag.v1",
+  "loop": 4,
+  "selected_hypothesis_id": "H1_comparative_quality_capability_efficiency",
+  "frozen": true,
+  "freeze_point": "inherited unchanged from loop 3 before wording-only execution",
+  "mutation_after_freeze": false,
+  "context": {
+    "artifact": "research-paper abstract",
+    "target_words": 201,
+    "allowed_word_band": [
+      166,
+      236
+    ],
+    "evidence_source": "public Mamba-3 chip only",
+    "feedback_source": "loop_03/evaluator_feedback.json, EXE2 wording-only"
+  },
+  "nodes": [
+    {
+      "id": "n1_transformer_cost_pressure",
+      "type": "problem_pressure",
+      "chip_ref": "$.problem_gap.nodes[1]",
+      "input_contract": "transformer inference failure modes",
+      "output_contract": "bounded attention-prefill and KV-cache scaling pressure",
+      "artifact_function": "motivation"
+    },
+    {
+      "id": "n2_linear_capability_pressure",
+      "type": "problem_pressure",
+      "chip_ref": "$.problem_gap.nodes[2]",
+      "input_contract": "linear-model failure modes",
+      "output_contract": "bounded capability and GPU-decode pressure",
+      "artifact_function": "motivation"
+    },
+    {
+      "id": "n3_mamba3_architecture",
+      "type": "method_hub",
+      "chip_ref": "$.method_mechanism.nodes[0]",
+      "input_contract": "joint quality-efficiency pressures",
+      "output_contract": "Mamba-3 architecture identity and joint objective",
+      "artifact_function": "method introduction"
+    },
+    {
+      "id": "n4_exp_trap",
+      "type": "mechanism",
+      "chip_ref": "$.method_mechanism.nodes[4]",
+      "input_contract": "Mamba-3 architecture",
+      "output_contract": "exponential-trapezoidal recurrence and learned trap interpolation",
+      "artifact_function": "mechanism specification"
+    },
+    {
+      "id": "n5_complex_update",
+      "type": "mechanism",
+      "chip_ref": "$.method_mechanism.nodes[5]",
+      "input_contract": "Mamba-3 architecture",
+      "output_contract": "complex-valued update as data-dependent rotations",
+      "artifact_function": "mechanism specification"
+    },
+    {
+      "id": "n6_mimo",
+      "type": "mechanism",
+      "chip_ref": "$.method_mechanism.nodes[6]",
+      "input_contract": "Mamba-3 architecture",
+      "output_contract": "rank-4 MIMO formulation and arithmetic-intensity purpose",
+      "artifact_function": "mechanism specification and comparative branch key"
+    },
+    {
+      "id": "n7_training_context",
+      "type": "evaluation_context",
+      "chip_ref": "$.evaluation_validation.events[0]",
+      "additional_chip_refs": [
+        "$.experimental_setting.nodes[0]"
+      ],
+      "input_contract": "shared pretraining protocol",
+      "graph_output_contract": "model scales, data volume, tokenizer, and context length",
+      "realization_contract": "surface only pretraining up to 1.5B on 100B FineWeb-Edu tokens",
+      "artifact_function": "compressed experimental scoping"
+    },
+    {
+      "id": "n8_lm_quality",
+      "type": "quality_evidence",
+      "chip_ref": "$.result_outcome.nodes[0]",
+      "input_contract": "1.5B language-model and downstream results",
+      "output_contract": "absolute SISO/MIMO values and strongest listed non-Mamba-3 average",
+      "artifact_function": "inputs to comparative quality claim"
+    },
+    {
+      "id": "n10_decode_latency",
+      "type": "efficiency_result",
+      "chip_ref": "$.result_outcome.nodes[4]",
+      "input_contract": "BF16 H100 d_state=128 kernel measurements",
+      "output_contract": "MIMO versus Mamba-2 milliseconds-per-token comparison",
+      "artifact_function": "single quality-efficiency anchor"
+    },
+    {
+      "id": "n13_mimo_incremental_quality",
+      "type": "comparative_gain",
+      "status": "preserved_from_loop_02",
+      "chip_ref": "$.result_outcome.nodes[1]",
+      "additional_chip_refs": [
+        "$.result_outcome.nodes[0]"
+      ],
+      "input_contract": "MIMO mechanism identity, shared 1.5B context, SISO/MIMO values, and baseline maximum",
+      "output_contract": "MIMO improves perplexity by 0.11 and average accuracy by 1.2 points over SISO and exceeds the strongest listed non-Mamba-3 average",
+      "artifact_function": "headline incremental quality contribution"
+    },
+    {
+      "id": "n14_complex_capability_validation",
+      "type": "qualitative_capability_validation",
+      "chip_ref": "$.result_outcome.nodes[2]",
+      "additional_chip_refs": [
+        "$.result_outcome.events[1]",
+        "$.evaluation_validation.events[2]"
+      ],
+      "input_contract": "complex-update mechanism identity plus formal state-tracking comparisons against Mamba-2 and ablated variants",
+      "output_contract": "qualitative statement of substantial formal state-tracking gains, with no raw-score enumeration",
+      "artifact_function": "compact capability validation for the complex-update branch"
+    },
+    {
+      "id": "n12_bounded_synthesis",
+      "type": "artifact_synthesis",
+      "chip_ref": "$.result_outcome.summary",
+      "additional_chip_refs": [
+        "$.result_outcome.events[0]",
+        "$.result_outcome.events[1]",
+        "$.result_outcome.events[2]"
+      ],
+      "input_contract": "method components, comparative quality gain, qualitative capability validation, and one latency anchor",
+      "output_contract": "bounded claim that richer state-space dynamics and MIMO improve quality while preserving efficient recurrent decoding",
+      "artifact_function": "single contribution argument"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n1_transformer_cost_pressure",
+      "target": "n3_mamba3_architecture",
+      "type": "motivates"
+    },
+    {
+      "source": "n2_linear_capability_pressure",
+      "target": "n3_mamba3_architecture",
+      "type": "motivates"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n4_exp_trap",
+      "type": "decomposes_into"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n5_complex_update",
+      "type": "decomposes_into"
+    },
+    {
+      "source": "n3_mamba3_architecture",
+      "target": "n6_mimo",
+      "type": "decomposes_into"
+    },
+    {
+      "source": "n7_training_context",
+      "target": "n8_lm_quality",
+      "type": "scopes"
+    },
+    {
+      "source": "n6_mimo",
+      "target": "n10_decode_latency",
+      "type": "profiled_by"
+    },
+    {
+      "source": "n6_mimo",
+      "target": "n13_mimo_incremental_quality",
+      "type": "variant_key"
+    },
+    {
+      "source": "n7_training_context",
+      "target": "n13_mimo_incremental_quality",
+      "type": "scopes"
+    },
+    {
+      "source": "n8_lm_quality",
+      "target": "n13_mimo_incremental_quality",
+      "type": "supplies_comparison"
+    },
+    {
+      "source": "n5_complex_update",
+      "target": "n14_complex_capability_validation",
+      "type": "validated_by"
+    },
+    {
+      "source": "n4_exp_trap",
+      "target": "n12_bounded_synthesis",
+      "type": "supplies_method_component"
+    },
+    {
+      "source": "n13_mimo_incremental_quality",
+      "target": "n12_bounded_synthesis",
+      "type": "supports"
+    },
+    {
+      "source": "n14_complex_capability_validation",
+      "target": "n12_bounded_synthesis",
+      "type": "supports"
+    },
+    {
+      "source": "n10_decode_latency",
+      "target": "n12_bounded_synthesis",
+      "type": "supports"
+    }
+  ],
+  "execution_order": [
+    [
+      "n1_transformer_cost_pressure",
+      "n2_linear_capability_pressure",
+      "n7_training_context"
+    ],
+    [
+      "n3_mamba3_architecture",
+      "n8_lm_quality"
+    ],
+    [
+      "n4_exp_trap",
+      "n5_complex_update",
+      "n6_mimo"
+    ],
+    [
+      "n10_decode_latency",
+      "n13_mimo_incremental_quality",
+      "n14_complex_capability_validation"
+    ],
+    [
+      "n12_bounded_synthesis"
+    ]
+  ],
+  "typed_node_signature": [
+    "n1_transformer_cost_pressure:problem_pressure",
+    "n2_linear_capability_pressure:problem_pressure",
+    "n3_mamba3_architecture:method_hub",
+    "n4_exp_trap:mechanism",
+    "n5_complex_update:mechanism",
+    "n6_mimo:mechanism",
+    "n7_training_context:evaluation_context",
+    "n8_lm_quality:quality_evidence",
+    "n10_decode_latency:efficiency_result",
+    "n13_mimo_incremental_quality:comparative_gain",
+    "n14_complex_capability_validation:qualitative_capability_validation",
+    "n12_bounded_synthesis:artifact_synthesis"
+  ],
+  "typed_edge_signature": [
+    "n1_transformer_cost_pressure-[motivates]->n3_mamba3_architecture",
+    "n2_linear_capability_pressure-[motivates]->n3_mamba3_architecture",
+    "n3_mamba3_architecture-[decomposes_into]->n4_exp_trap",
+    "n3_mamba3_architecture-[decomposes_into]->n5_complex_update",
+    "n3_mamba3_architecture-[decomposes_into]->n6_mimo",
+    "n7_training_context-[scopes]->n8_lm_quality",
+    "n6_mimo-[profiled_by]->n10_decode_latency",
+    "n6_mimo-[variant_key]->n13_mimo_incremental_quality",
+    "n7_training_context-[scopes]->n13_mimo_incremental_quality",
+    "n8_lm_quality-[supplies_comparison]->n13_mimo_incremental_quality",
+    "n5_complex_update-[validated_by]->n14_complex_capability_validation",
+    "n4_exp_trap-[supplies_method_component]->n12_bounded_synthesis",
+    "n13_mimo_incremental_quality-[supports]->n12_bounded_synthesis",
+    "n14_complex_capability_validation-[supports]->n12_bounded_synthesis",
+    "n10_decode_latency-[supports]->n12_bounded_synthesis"
+  ],
+  "graph_diff_from_loop_03": {
+    "node_additions": [],
+    "node_deletions": [],
+    "node_updates": [],
+    "edge_additions": [],
+    "edge_deletions": [],
+    "edge_updates": [],
+    "structural_edit_count": 0,
+    "typed_node_signature_identical": true,
+    "typed_edge_signature_identical": true
+  },
+  "validation": {
+    "acyclic": true,
+    "all_factual_nodes_have_chip_refs": true,
+    "all_nodes_reach_synthesis": true,
+    "dangling_nodes": [],
+    "required_outputs_reachable": true,
+    "comparative_gain_node_preserved": true,
+    "capability_node_preserved": true,
+    "state_size_outcome_invented": false,
+    "selected_signature_frozen": true,
+    "universal_template_assumed": false
+  }
+}

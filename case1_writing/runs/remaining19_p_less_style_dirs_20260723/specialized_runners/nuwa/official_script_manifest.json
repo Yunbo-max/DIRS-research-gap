@@ -1,0 +1,671 @@
+{
+  "artifact_kind": "nuwa_official_script_manifest",
+  "created_at_utc": "2026-07-24T13:31:38Z",
+  "files": [
+    {
+      "exists": true,
+      "parsed": {
+        "content": "# NuWa\nClass-Specific Model Derivation\n",
+        "line_count": 2,
+        "minimal": true
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 39
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [
+          "--accum_steps",
+          "--anchor",
+          "--baseline_dir",
+          "--beta_lr",
+          "--calibration_batch_size",
+          "--calibration_sample_num",
+          "--dataset_name",
+          "--energy_rate",
+          "--eval_batch_size",
+          "--eval_every",
+          "--learning_rate",
+          "--mask_lr",
+          "--mode",
+          "--model_name",
+          "--name",
+          "--norm_type",
+          "--num_epochs",
+          "--num_steps",
+          "--output_dir",
+          "--pruning_rate",
+          "--sample_num",
+          "--seed",
+          "--strategy",
+          "--target_arch",
+          "--task_name",
+          "--task_type",
+          "--train_batch_size",
+          "--uniform",
+          "--weight_decay"
+        ],
+        "exists": true,
+        "hardcoded_paths": [
+          "/root/autodl-pvt/nuwa/baseline/file",
+          "/root/autodl-pvt/nuwa/data"
+        ],
+        "imports": [
+          "argparse",
+          "dataset.utils",
+          "engine.eval",
+          "engine.train",
+          "logging",
+          "method.get_anchor_model",
+          "method.nuwa",
+          "method.pruning",
+          "model.utils",
+          "model.vit",
+          "os",
+          "time",
+          "torch",
+          "utils.utils",
+          "warnings"
+        ],
+        "line_count": 131,
+        "metric_mentions": [
+          "accuracy",
+          "gflops"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/main.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/main.py",
+      "relative_path": "main.py",
+      "size_bytes": 6559
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          ".get_anchor_model",
+          ".pruning",
+          "dataset.utils",
+          "engine.train",
+          "os",
+          "utils.utils"
+        ],
+        "line_count": 46,
+        "metric_mentions": [
+          "gflops"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/nuwa.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/nuwa.py",
+      "relative_path": "method/nuwa.py",
+      "size_bytes": 1824
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          ".pruning",
+          ".utils",
+          "copy",
+          "engine.eval",
+          "itertools",
+          "logging",
+          "math",
+          "mmcv.cnn.bricks.transformer",
+          "mmdet.models.backbones.swin",
+          "timm.layers.mlp",
+          "torch",
+          "torch.nn",
+          "tqdm",
+          "transformers.cache_utils",
+          "transformers.models.bert.modeling_bert"
+        ],
+        "line_count": 528,
+        "metric_mentions": [
+          "accuracy",
+          "bbox_mAP",
+          "gflops",
+          "mAP",
+          "mparam",
+          "segm_mAP"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_anchor_model.py",
+        "syntax_ok": false,
+        "syntax_stderr": "  File \"/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_anchor_model.py\", line 406\n    file_name = f\"{args.dataset_name}/{args.model_name}/mask({args.task_name}{\"-uniform\" if uniform else \"\"}).pt\"\n                                                                               ^\nSyntaxError: f-string: expecting '}'\n",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_anchor_model.py",
+      "relative_path": "method/get_anchor_model.py",
+      "size_bytes": 22894
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          ".utils",
+          "dataset.utils",
+          "math",
+          "os",
+          "pickle",
+          "torch",
+          "tqdm"
+        ],
+        "line_count": 198,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_clibration_data.py",
+        "syntax_ok": false,
+        "syntax_stderr": "  File \"/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_clibration_data.py\", line 13\n    file_name1 = f\"{args.dataset_name}/{args.model_name}/activation({args.task_name}{\"\" if args.anchor else \"original\"}).pt\"\n                                                                                                             ^^^^^^^^\nSyntaxError: f-string: expecting '}'\n",
+        "torch_loads": [
+          "path1",
+          "path2,pickle_module=pickle"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_clibration_data.py",
+      "relative_path": "method/get_clibration_data.py",
+      "size_bytes": 10030
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          ".get_clibration_data",
+          "copy",
+          "math",
+          "mmcv.cnn.bricks.transformer",
+          "mmdet.models.backbones.swin",
+          "os",
+          "timm.layers.attention",
+          "timm.layers.mlp",
+          "torch",
+          "torch.nn",
+          "torch.nn.functional",
+          "tqdm",
+          "typing",
+          "utils.utils"
+        ],
+        "line_count": 504,
+        "metric_mentions": [
+          "gflops",
+          "mparam"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/pruning.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": [
+          "path_qk",
+          "path_qk_dim",
+          "path_vo",
+          "path_vo_dim"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/pruning.py",
+      "relative_path": "method/pruning.py",
+      "size_bytes": 26096
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          "math",
+          "os",
+          "torch",
+          "torch.nn",
+          "wandb"
+        ],
+        "line_count": 94,
+        "metric_mentions": [
+          "accuracy"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/utils.py",
+        "syntax_ok": false,
+        "syntax_stderr": "  File \"/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/utils.py\", line 34\n    file_name = f\"{args.dataset_name}/{args.model_name}/mask({args.task_name}{\"-uniform\" if args.uniform else \"\"}).pt\"\n                                                                               ^\nSyntaxError: f-string: expecting '}'\n",
+        "torch_loads": [
+          "path,weights_only=False"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/utils.py",
+      "relative_path": "method/utils.py",
+      "size_bytes": 2804
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/root/autodl-pub/datasets/coco",
+          "/root/autodl-pub/datasets/imagenet",
+          "/root/autodl-pvt/nuwa/data/dataset/CIFAR10",
+          "/root/autodl-pvt/nuwa/data/dataset/CIFAR100",
+          "/root/autodl-pvt/nuwa/data/dataset/imagenet"
+        ],
+        "imports": [
+          ".cifar10",
+          ".cifar100",
+          ".coco",
+          ".imagenet",
+          "collections",
+          "copy",
+          "functools",
+          "mmdet.registry",
+          "mmengine.dataset",
+          "mmengine.dist",
+          "mmengine.registry",
+          "numpy",
+          "torch",
+          "torch.utils.data"
+        ],
+        "line_count": 145,
+        "metric_mentions": [
+          "memory"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/utils.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/utils.py",
+      "relative_path": "dataset/utils.py",
+      "size_bytes": 4731
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/share/hdd/imagenet"
+        ],
+        "imports": [
+          "os",
+          "timm.data",
+          "timm.data.constants",
+          "torch.utils.data",
+          "torchvision.datasets",
+          "torchvision.transforms"
+        ],
+        "line_count": 50,
+        "metric_mentions": [
+          "mAP"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/imagenet.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/imagenet.py",
+      "relative_path": "dataset/imagenet.py",
+      "size_bytes": 2026
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/share/hdd/CIFAR10"
+        ],
+        "imports": [
+          "os",
+          "torch.utils.data",
+          "torchvision.datasets",
+          "torchvision.transforms"
+        ],
+        "line_count": 29,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar10.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar10.py",
+      "relative_path": "dataset/cifar10.py",
+      "size_bytes": 1227
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/share/hdd/CIFAR100"
+        ],
+        "imports": [
+          "os",
+          "torch.utils.data",
+          "torchvision.datasets",
+          "torchvision.transforms"
+        ],
+        "line_count": 29,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar100.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/cifar100.py",
+      "relative_path": "dataset/cifar100.py",
+      "size_bytes": 1231
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/share/hdd/coco"
+        ],
+        "imports": [
+          "mmcv.transforms",
+          "mmdet.registry",
+          "mmengine.registry",
+          "mmengine.runner",
+          "numpy"
+        ],
+        "line_count": 174,
+        "metric_mentions": [
+          "mAP"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/coco.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/dataset/coco.py",
+      "relative_path": "dataset/coco.py",
+      "size_bytes": 5282
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/root/autodl-pvt/nuwa/data/param"
+        ],
+        "imports": [
+          ".swin",
+          ".vit",
+          "os",
+          "torch"
+        ],
+        "line_count": 89,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/model/utils.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": [
+          "path"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/model/utils.py",
+      "relative_path": "model/utils.py",
+      "size_bytes": 3887
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          "timm",
+          "torch"
+        ],
+        "line_count": 26,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/model/vit.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/model/vit.py",
+      "relative_path": "model/vit.py",
+      "size_bytes": 934
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [
+          "/root/autodl-pvt/nuwa/mmdetection/configs/swin/mask-rcnn_swin-t-p4-w7_fpn_1x_coco.py",
+          "/root/autodl-pvt/nuwa/model/weights/mask_rcnn_swin-t-p4-w7_fpn_1x_coco_20210902_120937-9d6b7cfa.pth"
+        ],
+        "imports": [
+          "mmdet.apis"
+        ],
+        "line_count": 7,
+        "metric_mentions": [],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/model/swin.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/model/swin.py",
+      "relative_path": "model/swin.py",
+      "size_bytes": 343
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          "dataset.coco",
+          "logging",
+          "mmdet.evaluation",
+          "mmengine.evaluator",
+          "numpy",
+          "torch",
+          "torch.nn",
+          "tqdm"
+        ],
+        "line_count": 153,
+        "metric_mentions": [
+          "accuracy",
+          "bbox_mAP",
+          "mAP",
+          "segm_mAP"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/engine/eval.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/engine/eval.py",
+      "relative_path": "engine/eval.py",
+      "size_bytes": 6091
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          ".eval",
+          ".utils",
+          "logging",
+          "torch",
+          "torch.nn",
+          "tqdm"
+        ],
+        "line_count": 128,
+        "metric_mentions": [
+          "accuracy"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/engine/train.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": []
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/engine/train.py",
+      "relative_path": "engine/train.py",
+      "size_bytes": 4581
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          "os",
+          "torch",
+          "wandb"
+        ],
+        "line_count": 111,
+        "metric_mentions": [
+          "accuracy"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/engine/utils.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": [
+          "load_path"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/engine/utils.py",
+      "relative_path": "engine/utils.py",
+      "size_bytes": 3977
+    },
+    {
+      "exists": true,
+      "parsed": {
+        "cli_flags": [],
+        "exists": true,
+        "hardcoded_paths": [],
+        "imports": [
+          "copy",
+          "dataset.utils",
+          "engine.eval",
+          "math",
+          "numpy",
+          "os",
+          "random",
+          "time",
+          "torch",
+          "torch.nn",
+          "tqdm"
+        ],
+        "line_count": 300,
+        "metric_mentions": [
+          "gflops",
+          "memory",
+          "mparam",
+          "throughput"
+        ],
+        "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/utils/utils.py",
+        "syntax_ok": true,
+        "syntax_stderr": "",
+        "torch_loads": [
+          "path"
+        ]
+      },
+      "path": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/utils/utils.py",
+      "relative_path": "utils/utils.py",
+      "size_bytes": 11227
+    }
+  ],
+  "git": {
+    "exists": true,
+    "head": {
+      "cmd": [
+        "git",
+        "-C",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa",
+        "-c",
+        "safe.directory=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": null,
+      "returncode": 128,
+      "seconds": 0.001,
+      "stderr": "fatal: detected dubious ownership in repository at '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "remote": {
+      "cmd": [
+        "git",
+        "-C",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa",
+        "-c",
+        "safe.directory=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa",
+        "remote",
+        "-v"
+      ],
+      "cwd": null,
+      "returncode": 128,
+      "seconds": 0.001,
+      "stderr": "fatal: detected dubious ownership in repository at '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa"
+  },
+  "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+  "paper_shaped_execution_matrix": {
+    "entrypoint": "python main.py with model_name/dataset_name/task_name/task_type/pruning_rate/output_dir/baseline_dir",
+    "required_datasets": [
+      "imagenet_1k_train_val",
+      "cifar10",
+      "cifar100",
+      "coco2017_detection_segmentation",
+      "class_specific_subtasks",
+      "calibration_features"
+    ],
+    "required_model_families": [
+      "DeiT Base/Small/Tiny",
+      "ViT Large",
+      "Mask-RCNN Swin-T"
+    ],
+    "required_outputs": [
+      "class-specific ImageNet accuracy/pruning-rate/GFLOPs tables",
+      "training-free versus training-dependent pruning comparisons",
+      "Magnitude/Wanda/Numerical/X-Pruner/DC-ViT/RECAP/MDP baseline comparison",
+      "derivation-cost table with GPU hours/AWS cost simulation",
+      "edge-device latency/throughput/memory table on RTX 4090 and Jetson Orin NX",
+      "component ablation for self-knowledge purification, MHA SVD, MLP closed-form pruning, head focus, target architecture",
+      "class-specific accuracy-pruning sweeps",
+      "large deployment cost simulation",
+      "COCO detection/segmentation transfer table with mAP",
+      "raw stdout, JSON metrics, checkpoints/masks, timing traces, memory traces, and device traces"
+    ],
+    "verifier_comparison": [
+      "compare top-1 accuracy/mAP deltas, pruning rate, GFLOPs, params, latency, throughput, memory, GPU hours, and AWS cost against paper tables/figures/paragraphs",
+      "accept only close paper-shaped result surfaces; syntax or dry-run support cannot converge"
+    ]
+  },
+  "repo": "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa",
+  "support_only_findings": [
+    "README is a minimal title-only file and does not document the full benchmark grid",
+    "repo inventory and compile/import checks are support only",
+    "CIFAR auto-download would still be reduced if used alone; ImageNet/COCO/class-specific task grid is required"
+  ]
+}

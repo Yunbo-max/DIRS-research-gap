@@ -1,0 +1,157 @@
+{
+  "artifact_kind": "prophet_table1_threshold_repair_campaign",
+  "baseline_status": {
+    "baseline_completed_samples": 1319,
+    "baseline_mean_steps": 256.0,
+    "full_split_ready": true,
+    "row_count": 2638,
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+    "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+    "summary_status": "completed"
+  },
+  "blocked_configs": [],
+  "campaign_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k",
+  "config_statuses": {
+    "table1_threshold_relaxed_3_1p5_0p5": {
+      "id": "table1_threshold_relaxed_3_1p5_0p5",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5",
+      "pid": 2903,
+      "pid_alive": true,
+      "prophet_completed_samples": 330,
+      "prophet_flexible_exact_match": 0.503030303030303,
+      "prophet_mean_steps": 150.96969696969697,
+      "row_count": 330,
+      "status": "running",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T14:02:33Z"
+    },
+    "table1_threshold_relaxed_4_2_0p5": {
+      "id": "table1_threshold_relaxed_4_2_0p5",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5",
+      "pid": 2714,
+      "pid_alive": true,
+      "prophet_completed_samples": 377,
+      "prophet_flexible_exact_match": 0.5358090185676393,
+      "prophet_mean_steps": 164.053050397878,
+      "row_count": 377,
+      "status": "running",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T14:02:50Z"
+    },
+    "table1_threshold_relaxed_5_3_1": {
+      "id": "table1_threshold_relaxed_5_3_1",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1",
+      "pid": 2465,
+      "pid_alive": true,
+      "prophet_completed_samples": 665,
+      "prophet_flexible_exact_match": 0.7007518796992481,
+      "prophet_mean_steps": 186.9187969924812,
+      "row_count": 665,
+      "status": "running",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T14:02:48Z"
+    },
+    "table1_threshold_relaxed_6_4_2": {
+      "id": "table1_threshold_relaxed_6_4_2",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2",
+      "pid": 2355,
+      "pid_alive": true,
+      "prophet_completed_samples": 266,
+      "prophet_flexible_exact_match": 0.7819548872180451,
+      "prophet_mean_steps": 203.46616541353384,
+      "row_count": 266,
+      "status": "running",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T14:02:43Z"
+    }
+  },
+  "convergence_role": "full-split Table 1 GSM8K threshold-dynamics candidates after primary Table 1-compatible run was complete but result-shape rejected",
+  "created_at_utc": "2026-07-24T14:02:54Z",
+  "fixed_protocol": {
+    "answer_start_offset": 200,
+    "baseline_source": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+    "block_length": 32,
+    "constraints_text": "200:The|201:answer|202:is",
+    "dataset": "openai/gsm8k main test",
+    "gen_length": 256,
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "prompt_profile": "official_zero_shot",
+    "remasking": "low_confidence",
+    "steps": 256,
+    "variants": "prophet"
+  },
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 8395,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16169,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8435,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 98
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7956,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16608,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8415,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 100
+    }
+  ],
+  "launch_result": null,
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "runnable_configs": [
+    {
+      "early_threshold": 6.0,
+      "id": "table1_threshold_relaxed_6_4_2",
+      "late_threshold": 2.0,
+      "mid_threshold": 4.0,
+      "paper_role": "Table 1 GSM8K confidence-threshold dynamics repair"
+    },
+    {
+      "early_threshold": 5.0,
+      "id": "table1_threshold_relaxed_5_3_1",
+      "late_threshold": 1.0,
+      "mid_threshold": 3.0,
+      "paper_role": "Table 1 GSM8K confidence-threshold dynamics repair"
+    },
+    {
+      "early_threshold": 4.0,
+      "id": "table1_threshold_relaxed_4_2_0p5",
+      "late_threshold": 0.5,
+      "mid_threshold": 2.0,
+      "paper_role": "Table 1 GSM8K confidence-threshold dynamics repair"
+    },
+    {
+      "early_threshold": 3.0,
+      "id": "table1_threshold_relaxed_3_1p5_0p5",
+      "late_threshold": 0.5,
+      "mid_threshold": 1.5,
+      "paper_role": "Table 1 GSM8K confidence-threshold dynamics repair"
+    }
+  ],
+  "runner": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py",
+  "strict_policy": {
+    "baseline_reuse_allowed_only_from_completed_table1_compatible_full_split": true,
+    "full_split_required": true,
+    "paper_target_values_visible_to_loop2": false,
+    "reduced_or_small_runs_allowed_to_converge": false
+  }
+}

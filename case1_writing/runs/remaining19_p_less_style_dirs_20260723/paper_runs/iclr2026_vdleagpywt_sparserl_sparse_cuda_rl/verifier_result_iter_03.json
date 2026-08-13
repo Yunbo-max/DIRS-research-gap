@@ -1,0 +1,114 @@
+{
+  "artifact_kind": "sparserl_specialized_verifier",
+  "artifact_paths": {
+    "dag_iter_03": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_vdleagpywt_sparserl_sparse_cuda_rl/paper_author_gap_dag_iter_03.json",
+    "deterministic_cuda_kernel_eval": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/deterministic_cuda_kernel_eval.json",
+    "environment": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/environment.json",
+    "matrix_inventory": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/matrix_inventory.json",
+    "model_policy_attempt": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/model_policy_attempt.json",
+    "specialized_verifier": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/sparserl/sparserl_specialized_verifier.json"
+  },
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SparseRL"
+      ],
+      "name": "repo_path_encoded",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "attempted_rows": 18,
+        "convergence_role": "support_only",
+        "correct_rows": 12,
+        "has_real_cuda_compile_run": true,
+        "reasons": [
+          "deterministic CUDA rows use canonical hand-authored CSR/ELL/SELL kernels, not generated SparseRL policy samples",
+          "the local matrix inventory contains six released sample Matrix Market files, not the paper-scale SuiteSparse and Deep Learning Matrix Collection grids",
+          "the failed Qwen3-8B repo-minimal attempt is an OOM/runtime blocker, not pass@k policy evidence",
+          "no SpMM executor, cuSPARSE/TVM-S/static-codegen baseline table, or V100/A100 paper-hardware trace has been produced"
+        ]
+      },
+      "name": "real_cuda_executor_sanity",
+      "status": "support_only"
+    },
+    {
+      "detail": [
+        {
+          "id": "generated_kernel_policy_grid",
+          "needed": "generated kernels from the pretrained/SFT/RL policy, not only hand-authored canonical kernels",
+          "status": "unresolved"
+        },
+        {
+          "id": "pass_at_k_metrics",
+          "needed": "pass@1/pass@5/pass@1000 or equivalent sampling-grid measurements",
+          "status": "unresolved"
+        }
+      ],
+      "name": "generated_policy_passatk_grid",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "paper_dataset_scale",
+          "needed": "SuiteSparse and Deep Learning Matrix Collection coverage, not only six released sample matrices",
+          "status": "unresolved"
+        },
+        {
+          "id": "spmm_and_table_grid",
+          "needed": "SpMM executor and comparison rows in addition to SpMV",
+          "status": "unresolved"
+        },
+        {
+          "id": "baseline_comparison",
+          "needed": "cuSPARSE/TVM-S/static LLM/codegen baselines with GFLOPS/TFLOPS/speedup",
+          "status": "unresolved"
+        },
+        {
+          "id": "paper_hardware_match",
+          "needed": "paper-stated V100/A100 traces; current run records local RTX 4090 only",
+          "status": "unresolved"
+        }
+      ],
+      "name": "paper_scale_result_grid",
+      "status": "blocked"
+    },
+    {
+      "detail": "requires generated SparseRL policy samples, pass@k, SpMV+SpMM, baselines, full matrix collections, and V100/A100 traces before comparison to paper evidence channels",
+      "name": "result_shape_comparison_ready",
+      "status": "blocked"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T12:23:01Z",
+  "iteration": 3,
+  "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+  "paper_title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.sparserl_loop2_requires_generated_policy_passatk_full_grid",
+      "reason": "blocked_by_generated_policy_passatk_spmm_baselines_dataset_scale_and_v100_a100_grid",
+      "success_criteria": [
+        "deterministic CUDA executor sanity remains support_only",
+        "generated SparseRL/Qwen3/DeepSeek/static policy candidates are produced",
+        "pass@1/pass@5/pass@1000 metrics are computed from raw candidate logs",
+        "SpMV and SpMM tables cover paper-scale SuiteSparse and Deep Learning matrix collections",
+        "cuSPARSE/TVM-S/static-codegen baseline comparisons and V100/A100 hardware traces exist",
+        "verifier compares close result shape against paper tables, figures, and paragraphs"
+      ]
+    }
+  ]
+}

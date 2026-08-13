@@ -1,0 +1,144 @@
+{
+  "blind_contract": {
+    "only_input_file": "research_gap_skill_graph.json",
+    "oracle_numeric_results_visible": false,
+    "paper_text_visible": false,
+    "previous_memory_visible": false
+  },
+  "convergence_policy": {
+    "close_results_are_enough_for_gap_skill": false,
+    "exact_artifacts_are_nonblocking_debt_for_gap_skill": false,
+    "exact_table_reproduction_converges_on": "all exact raw table/figure/appendix artifacts pass",
+    "gap_skill_converges_on": "semantic gap match plus close qualitative result-shape match from professional paper-shaped experiments",
+    "minimum_scale_for_gap_skill": "professional paper-shaped experiment with right model/data/baseline/scoring/timing channels",
+    "reduced_or_small_runs_allowed_only_as": [
+      "smoke",
+      "preflight",
+      "debug"
+    ],
+    "reduced_or_small_runs_are_convergence_evidence": false
+  },
+  "created_at_utc": "2026-07-23T00:27:31Z",
+  "edges": [
+    [
+      "paper_context.domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.hypothesize_hyperparameter_brittleness"
+    ],
+    [
+      "gap.hypothesize_hyperparameter_brittleness",
+      "gap.name_failure_modes"
+    ],
+    [
+      "gap.name_failure_modes",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "author.design_reasoning_temperature_grid"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "author.design_high_temperature_writing_stress"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "author.design_efficiency_measurement"
+    ],
+    [
+      "author.design_reasoning_temperature_grid",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "author.design_high_temperature_writing_stress",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "author.design_efficiency_measurement",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ]
+  ],
+  "graph_id": "p_less_research_gap_skill_graph_iter_01",
+  "nodes": [
+    {
+      "content": "LLM inference, decoding, token efficiency, robustness across temperature and task.",
+      "id": "paper_context.domain",
+      "skill_role": "name the paper family before looking for gaps",
+      "type": "domain_context"
+    },
+    {
+      "content": "Map gap, method, result tables, paragraphs, figures, appendix, code, models, datasets, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn paper claims into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "Existing truncation samplers depend on task-specific or temperature-specific hyperparameters.",
+      "id": "gap.hypothesize_hyperparameter_brittleness",
+      "skill_role": "state the missing capability in existing work",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "Fixed thresholds or single-token-relative thresholds can degrade at high temperature, admit tail tokens, or need empty-set fallbacks.",
+      "id": "gap.name_failure_modes",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Use the full temperature-adjusted distribution and its second moment as a dynamic threshold; add a normalized variant for diversity.",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "Run reasoning datasets across models, temperatures, and samplers; compare AUC-style stability rather than one temperature.",
+      "id": "author.design_reasoning_temperature_grid",
+      "skill_role": "test whether the gap matters across tasks",
+      "type": "experiment_design"
+    },
+    {
+      "content": "Run Writing Prompts at high temperature and check whether brittle baselines collapse while p-less remains usable.",
+      "id": "author.design_high_temperature_writing_stress",
+      "skill_role": "stress the claimed failure mode",
+      "type": "experiment_design"
+    },
+    {
+      "content": "Measure full generation token timing and CPU/RAM, separating sampler-only proxies from paper-faithful timings.",
+      "id": "author.design_efficiency_measurement",
+      "skill_role": "avoid claiming speed from algorithm intuition only",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "Clone official code, validate sampler functions, resolve models/datasets, write harness, and run feasible GPU/model artifacts.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author, not just a reader",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Check hyperparameter tuning, temperature robustness, fixed-threshold degradation, tail-token risk, and fallback motivation.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to the paper's real gap",
+      "type": "verification"
+    },
+    {
+      "content": "Converge the gap skill when semantic gap and close result shape match the paper, with exact reproduction marked separately.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the gap is real enough to write",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [],
+  "signature": "cdcf4472832b7588",
+  "target_skill": "find_research_gap_from_author_reviewer_simulation"
+}

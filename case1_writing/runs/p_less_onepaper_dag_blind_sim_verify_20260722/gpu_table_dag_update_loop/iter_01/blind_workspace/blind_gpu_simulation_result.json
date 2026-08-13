@@ -1,0 +1,208 @@
+{
+  "config": {
+    "batch": 256,
+    "iters": 30,
+    "repeats": 20,
+    "vocab": 8192,
+    "warmup": 6
+  },
+  "contract": {
+    "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/p_less_onepaper_dag_blind_sim_verify_20260722/gpu_table_dag_update_loop/iter_01/blind_workspace",
+    "forbidden_memory_seen": false,
+    "only_user_data_input": "paper_author_dag.json",
+    "paper_evidence_seen": false,
+    "paper_oracle_seen": false
+  },
+  "dag_id": "ICLR2026_ItFuNJQGH4_p_less_sampling_blind_author_sim_dag_v5",
+  "dag_method_properties": {
+    "has_exact_reproduction_package_node": false,
+    "has_full_generation_timing_node": false,
+    "has_reasoning_temperature_auc_panel": true,
+    "p_less_second_moment_threshold": true,
+    "p_lessnorm_relaxed_threshold": true
+  },
+  "dag_signature": "de103d8765817f7e",
+  "device_info": {
+    "compute_capability": "8.9",
+    "cuda_available": true,
+    "device": "cuda:3",
+    "memory_total_mib": 24217.31,
+    "name": "NVIDIA GeForce RTX 4090"
+  },
+  "evidence_channel_predictions": {
+    "appendix_table15_cpu_ram": "not_measured_requires_cpu_ram_instrumentation",
+    "figure15_code_snippet": "supported_sampler_formula_only",
+    "figure2_accuracy_temperature_curves": "supported_shape_only",
+    "figures16_17_cpu_ram": "not_measured_requires_cpu_ram_instrumentation",
+    "paragraph_gap_hyperparameter_brittleness": "supported_by_dag_proxy",
+    "paragraph_method_second_moment_mechanism": "supported_by_dag_formula"
+  },
+  "predictions": {
+    "bounded_candidate_set": true,
+    "exact_reproduction_boundary": "not_claimed_exact_full_paper_table_reproduction",
+    "gpu_timing_shape": "proxy_timing_mismatch_or_partial",
+    "high_temperature_writing_shape": "p_less_stable_high_temperature",
+    "reasoning_auc_shape": "p_less_or_p_lessnorm_top_or_near_top"
+  },
+  "rankings": {
+    "gpu_sampler_timing": [
+      "epsilon",
+      "p_less",
+      "min_p",
+      "mirostat",
+      "p_lessnorm",
+      "eta",
+      "top_p"
+    ],
+    "high_temperature_writing_proxy": [
+      "p_lessnorm",
+      "p_less",
+      "min_p",
+      "top_p",
+      "eta",
+      "epsilon",
+      "mirostat"
+    ],
+    "reasoning_auc_proxy": [
+      "p_lessnorm",
+      "p_less",
+      "min_p",
+      "top_p",
+      "eta",
+      "epsilon",
+      "mirostat"
+    ]
+  },
+  "row_count": 2100,
+  "subprocess": {
+    "returncode": 0,
+    "runtime_seconds": 10.45
+  },
+  "tables": {
+    "gpu_sampler_timing_table": [
+      {
+        "mean_ms_per_batch": 0.03412996892196438,
+        "mean_us_per_distribution": 0.13332019110142335,
+        "method": "epsilon"
+      },
+      {
+        "mean_ms_per_batch": 0.039600007856885625,
+        "mean_us_per_distribution": 0.15468753069095945,
+        "method": "p_less"
+      },
+      {
+        "mean_ms_per_batch": 0.044304675551959195,
+        "mean_us_per_distribution": 0.17306513887484062,
+        "method": "min_p"
+      },
+      {
+        "mean_ms_per_batch": 0.0737097571190033,
+        "mean_us_per_distribution": 0.2879287387461067,
+        "method": "mirostat"
+      },
+      {
+        "mean_ms_per_batch": 0.07419438926606543,
+        "mean_us_per_distribution": 0.2898218330705682,
+        "method": "p_lessnorm"
+      },
+      {
+        "mean_ms_per_batch": 0.1084118648173495,
+        "mean_us_per_distribution": 0.4234838469427715,
+        "method": "eta"
+      },
+      {
+        "mean_ms_per_batch": 0.2809630523487512,
+        "mean_us_per_distribution": 1.0975119232373094,
+        "method": "top_p"
+      }
+    ],
+    "high_temperature_writing_proxy_table": [
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.8436560475329574,
+        "high_temp_retained_mass": 0.34985326540966827,
+        "method": "p_lessnorm"
+      },
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.8318685274322842,
+        "high_temp_retained_mass": 0.20608159514764945,
+        "method": "p_less"
+      },
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.6029694854219759,
+        "high_temp_retained_mass": 0.27112299924095473,
+        "method": "min_p"
+      },
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.4930615183711054,
+        "high_temp_retained_mass": 0.9000268682837487,
+        "method": "top_p"
+      },
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.397263209720452,
+        "high_temp_retained_mass": 0.9773299723863602,
+        "method": "eta"
+      },
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.3612562832236284,
+        "high_temp_retained_mass": 0.3059117032835881,
+        "method": "epsilon"
+      },
+      {
+        "high_temp_fallback_rate": 0.0,
+        "high_temp_quality_proxy": 0.29046810090541864,
+        "high_temp_retained_mass": 0.14362001221161336,
+        "method": "mirostat"
+      }
+    ],
+    "reasoning_auc_proxy_table": [
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 576.0335026041666,
+        "mean_quality_proxy": 0.7195937902728693,
+        "method": "p_lessnorm"
+      },
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 79.97524739583334,
+        "mean_quality_proxy": 0.7142798491318998,
+        "method": "p_less"
+      },
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 140.69346354166666,
+        "mean_quality_proxy": 0.568738975922266,
+        "method": "min_p"
+      },
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 2686.3441536458336,
+        "mean_quality_proxy": 0.5194101758400568,
+        "method": "top_p"
+      },
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 3466.6822005208332,
+        "mean_quality_proxy": 0.44657441453138963,
+        "method": "eta"
+      },
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 122.64041666666667,
+        "mean_quality_proxy": 0.4266101230780281,
+        "method": "epsilon"
+      },
+      {
+        "fallback_rate": 0.0,
+        "mean_candidate_count": 33.81260416666667,
+        "mean_quality_proxy": 0.18809854116042476,
+        "method": "mirostat"
+      }
+    ]
+  }
+}

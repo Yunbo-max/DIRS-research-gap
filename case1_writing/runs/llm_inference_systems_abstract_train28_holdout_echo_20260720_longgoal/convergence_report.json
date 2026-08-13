@@ -1,0 +1,51 @@
+{
+  "run_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_inference_systems_abstract_train28_holdout_echo_20260720_longgoal",
+  "domain": "LLM Inference / Systems / Token Efficiency",
+  "training_examples": 28,
+  "heldout": "ICML2026_71057_echo_elastic_speculative_decoding",
+  "max_loops": 1000,
+  "min_loops": 24,
+  "completed_loops": 24,
+  "mcts_rollouts_per_example": 5000,
+  "stable_window": 10,
+  "converged": true,
+  "converged_at_loop": 24,
+  "final_mean_replay_score": 0.981805,
+  "final_min_replay_score": 0.965033,
+  "final_unique_selected_nodes": [
+    "C1_domain_context",
+    "E1_evaluation_setup",
+    "E2_result_outcome",
+    "E3_quantitative_anchor",
+    "G1_problem_gap",
+    "I1_interpretation_or_tradeoff",
+    "M1_architecture_or_mechanism",
+    "M2_efficiency_or_theory_detail",
+    "O1_named_method_or_object",
+    "P1_length_and_placement_prior",
+    "R1_abstract_as_argument",
+    "S1_bounded_takeaway"
+  ],
+  "final_unique_selected_edges": [
+    "C1_domain_context->O1_named_method_or_object",
+    "E1_evaluation_setup->E2_result_outcome",
+    "E2_result_outcome->E3_quantitative_anchor",
+    "E2_result_outcome->I1_interpretation_or_tradeoff",
+    "E3_quantitative_anchor->I1_interpretation_or_tradeoff",
+    "G1_problem_gap->C1_domain_context",
+    "G1_problem_gap->O1_named_method_or_object",
+    "I1_interpretation_or_tradeoff->S1_bounded_takeaway",
+    "M1_architecture_or_mechanism->E1_evaluation_setup",
+    "M1_architecture_or_mechanism->M2_efficiency_or_theory_detail",
+    "M2_efficiency_or_theory_detail->E1_evaluation_setup",
+    "O1_named_method_or_object->M1_architecture_or_mechanism",
+    "R1_abstract_as_argument->G1_problem_gap",
+    "S1_bounded_takeaway->P1_length_and_placement_prior"
+  ],
+  "target_words_from_training": 212,
+  "target_band_from_training": [
+    177,
+    247
+  ],
+  "blind_rule": "held-out original remains in holdout_private_after_generation.json and is not read by this harness"
+}

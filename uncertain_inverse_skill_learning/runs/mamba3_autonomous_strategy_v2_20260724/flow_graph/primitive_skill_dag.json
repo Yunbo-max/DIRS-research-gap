@@ -1,0 +1,211 @@
+{
+  "schema_version": "dirs.primitive_skill_dag.v1",
+  "graph_id": "mamba3_abstract_primitive_flow_candidate_v1",
+  "status": "illustrative_contract_schema_not_learned_from_training_traces",
+  "valid_as_learned_dirs_graph": false,
+  "graph_level": "primitive_operations",
+  "sources": [
+    {
+      "id": "src_evidence",
+      "type": "PaperEvidencePacket",
+      "binding": "public Mamba-3 chip"
+    },
+    {
+      "id": "src_context",
+      "type": "WritingTaskContext",
+      "binding": "abstract style profile and task requirements"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "v_problem_frame",
+      "operation": "FRAME_PROBLEM_GAP",
+      "inputs": ["PaperEvidencePacket", "WritingTaskContext"],
+      "outputs": ["ProblemFrame"],
+      "required": true
+    },
+    {
+      "id": "v_architecture_core",
+      "operation": "BUILD_ARCHITECTURE_CORE",
+      "inputs": ["PaperEvidencePacket", "ProblemFrame"],
+      "outputs": ["ArchitectureCore"],
+      "required": true
+    },
+    {
+      "id": "v_aggregate_quality",
+      "operation": "DERIVE_AGGREGATE_QUALITY_COMPARISON",
+      "inputs": ["PaperEvidencePacket", "ArchitectureCore"],
+      "outputs": ["QualityComparison"],
+      "required": false
+    },
+    {
+      "id": "v_latency_comparison",
+      "operation": "DERIVE_MATCHED_LATENCY_COMPARISON",
+      "inputs": ["PaperEvidencePacket", "ArchitectureCore"],
+      "outputs": ["LatencyComparison"],
+      "required": false
+    },
+    {
+      "id": "v_recurrence_binding",
+      "operation": "BIND_RECURRENCE_TO_ABLATION",
+      "inputs": ["PaperEvidencePacket", "ArchitectureCore"],
+      "outputs": ["ComponentValidation"],
+      "required": false
+    },
+    {
+      "id": "v_state_binding",
+      "operation": "BIND_STATE_DYNAMICS_TO_DIAGNOSTIC",
+      "inputs": ["PaperEvidencePacket", "ArchitectureCore"],
+      "outputs": ["ComponentValidation"],
+      "required": false
+    },
+    {
+      "id": "v_operating_point_map",
+      "operation": "MAP_QUALITY_LATENCY_OPERATING_POINTS",
+      "inputs": ["QualityComparison", "LatencyComparison", "WritingTaskContext"],
+      "outputs": ["OperatingPointMap"],
+      "required": false
+    },
+    {
+      "id": "v_retrieval_scope",
+      "operation": "DERIVE_RETRIEVAL_SCOPE_BOUNDARY",
+      "inputs": ["PaperEvidencePacket", "ArchitectureCore"],
+      "outputs": ["ScopeBoundary"],
+      "required": false
+    },
+    {
+      "id": "v_information_budget",
+      "operation": "ALLOCATE_IMPORTANCE_WEIGHTED_CONTENT",
+      "inputs": [
+        "WritingTaskContext",
+        "ProblemFrame",
+        "ArchitectureCore",
+        "AtLeastOneOutcome"
+      ],
+      "optional_inputs": [
+        "ComponentValidation",
+        "OperatingPointMap",
+        "ScopeBoundary"
+      ],
+      "outputs": ["AbstractContentPlan"],
+      "required": true
+    },
+    {
+      "id": "v_draft_realization",
+      "operation": "REALIZE_ABSTRACT_FROM_SELECTED_FLOW",
+      "inputs": ["AbstractContentPlan", "SelectedBoundEvidence"],
+      "outputs": ["DraftAbstract"],
+      "required": true
+    },
+    {
+      "id": "v_evidence_verifier",
+      "operation": "VERIFY_FACTS_AND_FLOW",
+      "inputs": ["DraftAbstract", "PaperEvidencePacket", "SelectedSubDAG"],
+      "outputs": ["VerificationReport"],
+      "required": true
+    },
+    {
+      "id": "v_repair_or_accept",
+      "operation": "REPAIR_OR_ACCEPT",
+      "inputs": ["DraftAbstract", "VerificationReport"],
+      "outputs": ["BoundedAbstract"],
+      "required": true
+    }
+  ],
+  "edges": [
+    {"source": "src_evidence", "target": "v_problem_frame", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "src_context", "target": "v_problem_frame", "relation": "SCOPES", "output_port": "WritingTaskContext", "input_port": "WritingTaskContext"},
+    {"source": "src_evidence", "target": "v_architecture_core", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_problem_frame", "target": "v_architecture_core", "relation": "MOTIVATES", "output_port": "ProblemFrame", "input_port": "ProblemFrame"},
+    {"source": "src_evidence", "target": "v_aggregate_quality", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_architecture_core", "target": "v_aggregate_quality", "relation": "SCOPES", "output_port": "ArchitectureCore", "input_port": "ArchitectureCore"},
+    {"source": "src_evidence", "target": "v_latency_comparison", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_architecture_core", "target": "v_latency_comparison", "relation": "SCOPES", "output_port": "ArchitectureCore", "input_port": "ArchitectureCore"},
+    {"source": "src_evidence", "target": "v_recurrence_binding", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_architecture_core", "target": "v_recurrence_binding", "relation": "VALIDATES", "output_port": "ArchitectureCore", "input_port": "ArchitectureCore"},
+    {"source": "src_evidence", "target": "v_state_binding", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_architecture_core", "target": "v_state_binding", "relation": "VALIDATES", "output_port": "ArchitectureCore", "input_port": "ArchitectureCore"},
+    {"source": "v_aggregate_quality", "target": "v_operating_point_map", "relation": "COMPARES", "output_port": "QualityComparison", "input_port": "QualityComparison"},
+    {"source": "v_latency_comparison", "target": "v_operating_point_map", "relation": "COMPARES", "output_port": "LatencyComparison", "input_port": "LatencyComparison"},
+    {"source": "src_context", "target": "v_operating_point_map", "relation": "SCOPES", "output_port": "WritingTaskContext", "input_port": "WritingTaskContext"},
+    {"source": "src_evidence", "target": "v_retrieval_scope", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_architecture_core", "target": "v_retrieval_scope", "relation": "SCOPES", "output_port": "ArchitectureCore", "input_port": "ArchitectureCore"},
+    {"source": "src_context", "target": "v_information_budget", "relation": "SCOPES", "output_port": "WritingTaskContext", "input_port": "WritingTaskContext"},
+    {"source": "v_problem_frame", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "ProblemFrame", "input_port": "ProblemFrame"},
+    {"source": "v_architecture_core", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "ArchitectureCore", "input_port": "ArchitectureCore"},
+    {"source": "v_aggregate_quality", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "QualityComparison", "input_port": "AtLeastOneOutcome"},
+    {"source": "v_latency_comparison", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "LatencyComparison", "input_port": "AtLeastOneOutcome"},
+    {"source": "v_recurrence_binding", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "ComponentValidation", "input_port": "ComponentValidation"},
+    {"source": "v_state_binding", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "ComponentValidation", "input_port": "ComponentValidation"},
+    {"source": "v_operating_point_map", "target": "v_information_budget", "relation": "SUPPLIES", "output_port": "OperatingPointMap", "input_port": "OperatingPointMap"},
+    {"source": "v_retrieval_scope", "target": "v_information_budget", "relation": "GATES", "output_port": "ScopeBoundary", "input_port": "ScopeBoundary"},
+    {"source": "v_information_budget", "target": "v_draft_realization", "relation": "SUPPLIES", "output_port": "AbstractContentPlan", "input_port": "AbstractContentPlan"},
+    {"source": "src_evidence", "target": "v_draft_realization", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "SelectedBoundEvidence"},
+    {"source": "v_draft_realization", "target": "v_evidence_verifier", "relation": "VALIDATES", "output_port": "DraftAbstract", "input_port": "DraftAbstract"},
+    {"source": "src_evidence", "target": "v_evidence_verifier", "relation": "SUPPLIES", "output_port": "PaperEvidencePacket", "input_port": "PaperEvidencePacket"},
+    {"source": "v_information_budget", "target": "v_evidence_verifier", "relation": "SUPPLIES", "output_port": "AbstractContentPlan", "input_port": "SelectedSubDAG"},
+    {"source": "v_draft_realization", "target": "v_repair_or_accept", "relation": "REPAIRS", "output_port": "DraftAbstract", "input_port": "DraftAbstract"},
+    {"source": "v_evidence_verifier", "target": "v_repair_or_accept", "relation": "REPAIRS", "output_port": "VerificationReport", "input_port": "VerificationReport"}
+  ],
+  "dependency_groups": [
+    {
+      "target": "v_information_budget",
+      "group_type": "OR",
+      "minimum_selected": 1,
+      "members": [
+        "v_aggregate_quality",
+        "v_latency_comparison",
+        "v_recurrence_binding",
+        "v_state_binding",
+        "v_operating_point_map"
+      ]
+    },
+    {
+      "target": "v_operating_point_map",
+      "group_type": "AND",
+      "members": ["v_aggregate_quality", "v_latency_comparison"]
+    },
+    {
+      "target": "v_repair_or_accept",
+      "group_type": "AND",
+      "members": ["v_draft_realization", "v_evidence_verifier"]
+    }
+  ],
+  "context_gates": [
+    {
+      "condition": "deployment_choice_required == true",
+      "requires": ["v_operating_point_map"]
+    },
+    {
+      "condition": "retrieval_risk_material == true",
+      "requires": ["v_retrieval_scope"]
+    },
+    {
+      "condition": "component_attribution_required == true",
+      "requires_minimum": {
+        "count": 2,
+        "from": ["v_recurrence_binding", "v_state_binding", "v_operating_point_map"]
+      }
+    }
+  ],
+  "terminal_contract": {
+    "required_output_type": "BoundedAbstract",
+    "required_nodes": [
+      "v_problem_frame",
+      "v_architecture_core",
+      "v_information_budget",
+      "v_draft_realization",
+      "v_evidence_verifier",
+      "v_repair_or_accept"
+    ],
+    "all_selected_nodes_must_reach": "v_repair_or_accept",
+    "hard_failures_must_equal": 0
+  },
+  "mcts_run_status": {
+    "run": false,
+    "visits_saved": false,
+    "q_values_saved": false,
+    "rollouts_saved": false,
+    "backpropagation_saved": false
+  }
+}

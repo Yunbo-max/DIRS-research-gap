@@ -1,0 +1,411 @@
+{
+  "artifact_kind": "infotok_official_script_manifest",
+  "created_at_utc": "2026-07-24T13:33:34Z",
+  "default_videos": [
+    "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/1747309095480157.mp4",
+    "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/bdd_e5cd93c4-41251973.mp4",
+    "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/bridgev2_datacol2_toykitchen7_pnp_push_sweep_01.mp4",
+    "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/egoexo4D_fair_bike_01_3_aria01_214-1.mp4",
+    "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/panda70m_test_0000004_00000.mp4",
+    "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/default_videos/panda70m_test_0000007_00000.mp4"
+  ],
+  "files": [
+    {
+      "exists": true,
+      "expected_result_table": [
+        {
+          "dataset": "TokenBench - 240p",
+          "psnr": "29.7088",
+          "ssim": "0.8786",
+          "temporal_window": "81",
+          "token_rate": "0.75"
+        },
+        {
+          "dataset": "TokenBench - 240p",
+          "psnr": "28.9674",
+          "ssim": "0.8522",
+          "temporal_window": "81",
+          "token_rate": "0.5"
+        },
+        {
+          "dataset": "DAVIS - 240p",
+          "psnr": "26.1951",
+          "ssim": "0.7994",
+          "temporal_window": "81",
+          "token_rate": "0.75"
+        },
+        {
+          "dataset": "DAVIS - 240p",
+          "psnr": "25.1283",
+          "ssim": "0.7529",
+          "temporal_window": "81",
+          "token_rate": "0.5"
+        }
+      ],
+      "line_count": 262,
+      "mentions_checkpoint": true,
+      "mentions_davis": true,
+      "mentions_tokenbench": true,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/README.md",
+      "relative_path": "README.md",
+      "size_bytes": 8296,
+      "urls": [
+        "https://arxiv.org/abs/2512.16975",
+        "https://arxiv.org/abs/2512.16975},",
+        "https://github.com/NVIDIA/apex",
+        "https://github.com/NVlabs/TokenBench",
+        "https://github.com/NVlabs/TokenBench.git",
+        "https://github.com/nvidia-cosmos/cosmos-predict1",
+        "https://huggingface.co/qyoo/infotok-flex",
+        "https://img.shields.io/badge/%F0%9F%A4%97%20Weights-infotok--flex-yellow",
+        "https://img.shields.io/badge/License-Apache%202.0-green.svg",
+        "https://img.shields.io/badge/arXiv%20paper-2512.16975-b31b1b.svg",
+        "https://research.nvidia.com/labs/dir/infotok/"
+      ]
+    },
+    {
+      "exists": true,
+      "head": "attrs==25.1.0\nbetter-profanity==0.7.0\nboto3==1.35.99\ndecord==0.6.0\ndiffusers==0.32.2\neinops==0.8.1\nhuggingface-hub==0.29.2\nhydra-core==1.3.2\nimageio[pyav,ffmpeg]==2.37.0\niopath==0.1.10\nipdb==0.13.13\nloguru==0.7.2\nmediapy==1.2.2\nmegatron-core==0.7.0\nnltk==3.9.1\nnumpy==1.26.4\nnvidia-ml-py==12.535.133\nomegaconf==2.3.0\nopencv-python==4.10.0.84\npandas==2.2.3\npeft==0.14.0\npillow==11.1.0\nprotobuf==4.25.3\npynvml==12.0.0\npyyaml==6.0.2\nretinaface-py==0.0.2\nsafetensors==0.5.3\nscikit-image==0.25.2\nsentencepiece==0.2.0\nsetuptools==76.0.0\ntermcolor==2.5.0\ntorch==2.6.0\ntorchvision==0.21.0\ntqdm==4.66.5\ntransformers==4.49.0",
+      "line_count": 35,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/requirements.txt",
+      "relative_path": "requirements.txt",
+      "size_bytes": 615
+    },
+    {
+      "exists": true,
+      "head": "# SPDX-FileCopyrightText: Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\n# SPDX-License-Identifier: Apache-2.0\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n# http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n\n# Build and upload instructions:\n#   pip3 install --upgrade build twine\n#   python3 -m build\n#   python3 -m twine upload dist/*\n\n\n[build-system]\nrequires = [\"setuptools\", \"setuptools-scm\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"nvidia-cosmos\"\nversion = \"1.0.3\"\nauthors = [\n    {name = \"NVIDIA Corporation\"},\n]\ndescription = \"Cosmos World Foundation Model\"\nreadme = \"README.md\"\nrequires-python = \">=3.10\"\nlicense = {text = \"Apache-2.0\"}\ndynamic = [\"dependencies\"]\n\n[project.urls]\nhomepage = \"https://github.com/nvidia-cosmos/cosmos-predict1/\"\nissues = \"https://github.com/nvidia-cosmos/cosmos-predict1/issues\"\n\n[tool.setuptools.dynamic]\ndependencies = {file = [\"requirements.txt\"]}\n\n[tool.setuptools]\npackages = [\"cosmos1\"]\n\n[tool.isort]\nprofile = \"black\"\nknown_third_party = [\"third_party\"]\nskip = [\"third_party\"]\nline_length = 120\n\n[tool.black]\nline-length = 120\ntarget_version = ['py310']\nexclude = 'third_party'\n\n[tool.coverage.report]\ninclude_namespace_packages = true\nskip_empty = true\nomit = [\n    \"tests/*\",\n    \"legacy/*\",\n    \".venv/*\",\n    \"**/test_*.py\",\n    \"config.py\",\n    \"config-3.10.py\"\n]",
+      "line_count": 69,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/pyproject.toml",
+      "relative_path": "pyproject.toml",
+      "size_bytes": 1806
+    },
+    {
+      "exists": true,
+      "head": "# conda env create --file cosmos-predict1.yaml\nname: infotok\nchannels:\n  - conda-forge\ndependencies:\n  - python=3.10\n  - pip=25.0\n  - cmake\n  - ninja\n  - gcc=12.4.0\n  - gxx=12.4.0\n  - cuda=12.4\n  - cuda-nvcc=12.4\n  - cuda-toolkit=12.4",
+      "line_count": 14,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/infotok.yaml",
+      "relative_path": "infotok.yaml",
+      "size_bytes": 235
+    },
+    {
+      "commands": [
+        "python3 -m cosmos_predict1.tokenizer.inference.video_cli_compare \\",
+        "python3 -m cosmos_predict1.tokenizer.inference.video_cli \\"
+      ],
+      "exists": true,
+      "line_count": 41,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/exp_scripts/infotok_inference.sh",
+      "relative_path": "exp_scripts/infotok_inference.sh",
+      "shell_syntax": {
+        "cmd": [
+          "bash",
+          "-n",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/exp_scripts/infotok_inference.sh"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.002,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "size_bytes": 1279
+    },
+    {
+      "commands": [
+        "WANDB_MODE=offline CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.run --nproc_per_node=1 --rdzv_endpoint=localhost:${PORT} \\",
+        "# python -m torch.distributed.run --nproc_per_node=${NUM_GPUS_PER_NODE} --rdzv_endpoint=localhost:${PORT} \\"
+      ],
+      "exists": true,
+      "line_count": 67,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/exp_scripts/infotok_posttrain.sh",
+      "relative_path": "exp_scripts/infotok_posttrain.sh",
+      "shell_syntax": {
+        "cmd": [
+          "bash",
+          "-n",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/exp_scripts/infotok_posttrain.sh"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.002,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "size_bytes": 2920
+    },
+    {
+      "cli_flags": [
+        "--avg_rate",
+        "--checkpoint",
+        "--checkpoint_dec",
+        "--checkpoint_enc",
+        "--device",
+        "--dtype",
+        "--mode",
+        "--only_square_clips",
+        "--output_dir",
+        "--output_fps",
+        "--overlap_window",
+        "--save_clip",
+        "--save_input",
+        "--short_size",
+        "--strategy",
+        "--temporal_window",
+        "--tokenizer_type",
+        "--video_pattern"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "cosmos_predict1.tokenizer.inference.utils",
+        "cosmos_predict1.tokenizer.inference.video_lib",
+        "cosmos_predict1.tokenizer.networks",
+        "loguru",
+        "numpy",
+        "os",
+        "sys",
+        "tqdm",
+        "typing"
+      ],
+      "line_count": 280,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/inference/video_cli.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/inference/video_cli.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/inference/video_cli.py",
+      "size_bytes": 9946
+    },
+    {
+      "cli_flags": [
+        "--avg_rate",
+        "--checkpoint",
+        "--checkpoint_dec",
+        "--checkpoint_enc",
+        "--device",
+        "--dtype",
+        "--mode",
+        "--output_dir",
+        "--output_fps",
+        "--overlap_window",
+        "--short_size",
+        "--strategy",
+        "--temporal_window",
+        "--tokenizer_type",
+        "--video_pattern"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "cosmos_predict1.tokenizer.inference.utils",
+        "cosmos_predict1.tokenizer.inference.video_lib",
+        "cosmos_predict1.tokenizer.networks",
+        "cv2",
+        "loguru",
+        "math",
+        "numpy",
+        "os",
+        "sys",
+        "torch",
+        "tqdm",
+        "typing"
+      ],
+      "line_count": 380,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/inference/video_cli_compare.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/inference/video_cli_compare.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.035,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/inference/video_cli_compare.py",
+      "size_bytes": 15944
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "cosmos_predict1.tokenizer.inference.utils",
+        "einops",
+        "math",
+        "numpy",
+        "torch",
+        "tqdm",
+        "typing"
+      ],
+      "line_count": 376,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/inference/video_lib.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/inference/video_lib.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.034,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/inference/video_lib.py",
+      "size_bytes": 18024
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "collections",
+        "cosmos_predict1.tokenizer.modules",
+        "cosmos_predict1.tokenizer.modules.layers3d",
+        "cosmos_predict1.tokenizer.modules.layers3d_vit",
+        "cosmos_predict1.tokenizer.modules.quantizers",
+        "einops",
+        "loguru",
+        "torch"
+      ],
+      "line_count": 490,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/networks/ours_discrete_video.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/networks/ours_discrete_video.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.037,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/networks/ours_discrete_video.py",
+      "size_bytes": 25609
+    },
+    {
+      "cli_flags": [
+        "--config",
+        "--dryrun"
+      ],
+      "exists": true,
+      "imports": [
+        "argparse",
+        "cosmos_predict1.utils.config",
+        "cosmos_predict1.utils.config_helper",
+        "cosmos_predict1.utils.lazy_config",
+        "cosmos_predict1.utils.lazy_config.lazy",
+        "importlib",
+        "loguru",
+        "os"
+      ],
+      "line_count": 82,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/training/train.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/training/train.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/training/train.py",
+      "size_bytes": 3065
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "cosmos_predict1.tokenizer.modules.utils",
+        "cosmos_predict1.utils.lazy_config",
+        "numpy",
+        "skimage.metrics",
+        "torch",
+        "torch.nn"
+      ],
+      "line_count": 139,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/training/metrics.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/training/metrics.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/training/metrics.py",
+      "size_bytes": 5730
+    },
+    {
+      "cli_flags": [],
+      "exists": true,
+      "imports": [
+        "attrs",
+        "cosmos_predict1.tokenizer.training.configs.base.model",
+        "cosmos_predict1.tokenizer.training.configs.registry",
+        "cosmos_predict1.tokenizer.training.trainer",
+        "cosmos_predict1.utils",
+        "cosmos_predict1.utils.config_helper",
+        "typing"
+      ],
+      "line_count": 80,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/training/configs/config.py",
+      "py_compile": {
+        "cmd": [
+          "/opt/conda/bin/python",
+          "-m",
+          "py_compile",
+          "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok/cosmos_predict1/tokenizer/training/configs/config.py"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.033,
+        "stderr": "",
+        "stdout": "",
+        "timeout": false
+      },
+      "relative_path": "cosmos_predict1/tokenizer/training/configs/config.py",
+      "size_bytes": 2727
+    }
+  ],
+  "paper_id": "ICLR2026_JEYWpFGzvn_infotok_adaptive_video_tokenizer",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/InfoTok",
+  "support_only_findings": [
+    "default_videos and README expected-result rows are smoke/support only",
+    "infotok_posttrain.sh contains single-GPU debug mode; debug mode cannot converge the paper",
+    "full paper result requires TokenBench/DAVIS full evaluation plus baselines/ablations/latency/decoder-pass traces"
+  ]
+}

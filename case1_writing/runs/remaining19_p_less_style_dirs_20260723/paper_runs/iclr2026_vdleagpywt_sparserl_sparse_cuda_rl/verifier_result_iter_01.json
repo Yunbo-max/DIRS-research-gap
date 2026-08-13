@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "but",
+        "can",
+        "closed",
+        "code",
+        "compile",
+        "compiler",
+        "correct",
+        "cost",
+        "creates",
+        "cusparse",
+        "dynamic",
+        "execution",
+        "favor",
+        "feedback",
+        "generate",
+        "generation",
+        "high",
+        "highly",
+        "input",
+        "irregular",
+        "kernels",
+        "large",
+        "latency",
+        "llms",
+        "matrices",
+        "matrix",
+        "misses",
+        "non-differentiable",
+        "run",
+        "runtime"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "correct code generation misses execution latency",
+        "sparse matrix structure is dynamic input",
+        "compiler and runtime feedback is non-differentiable"
+      ],
+      "score": 2.917,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "alignment",
+        "code",
+        "compiler",
+        "embedding",
+        "environment",
+        "executor",
+        "hierarchical",
+        "llm",
+        "policy",
+        "ppo",
+        "pretrained",
+        "reward",
+        "sft",
+        "sinusoidal",
+        "sparse",
+        "update"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "pretrained code LLM policy",
+        "sparse sinusoidal embedding",
+        "SFT alignment",
+        "PPO update",
+        "compiler/executor environment",
+        "hierarchical reward"
+      ],
+      "score": 1.333,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "1000",
+        "baselines",
+        "candidate",
+        "check",
+        "compare",
+        "compilation",
+        "compile",
+        "cuda",
+        "cusparse",
+        "functional",
+        "generated",
+        "gflops",
+        "kernel",
+        "other",
+        "pass",
+        "rate",
+        "run",
+        "speedup",
+        "spmm",
+        "spmv",
+        "tflops",
+        "time"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "SpMV",
+        "SpMM",
+        "compile generated CUDA",
+        "run functional check",
+        "time candidate kernel",
+        "compare with cuSPARSE or other baselines"
+      ],
+      "score": 1.833,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "SpMV; SpMM; compile generated CUDA; run functional check; time candidate kernel; compare with cuSPARSE or other baselines"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "pass@1; pass@5; pass@1000; compilation rate; GFLOPS; TFLOPS; speedup"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "SuiteSparse Matrix Collection; Deep Learning Matrix Collection; sample Matrix Market files in official repo; dataset/*.mtx sample matrices; sft_data/sft_samples.jsonl"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "Tesla V100; Tesla A100; PyTorch; Transformers; PEFT; CUDA nvcc; SciPy Matrix Market loader"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "pretrained code LLM policy; sparse sinusoidal embedding; SFT alignment; PPO update; compiler/executor environment; hierarchical reward; sparserl/embedding.py; sparserl/reward.py; sparserl/train_minimal.py; sparserl/train_sft.py; sparserl/codegen.py; sparserl/data.py; sparserl/model.py; sparserl/config.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "iteration": 1,
+  "paper_id": "ICLR2026_VdLEaGPYWT_sparserl_sparse_cuda_rl",
+  "paper_title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

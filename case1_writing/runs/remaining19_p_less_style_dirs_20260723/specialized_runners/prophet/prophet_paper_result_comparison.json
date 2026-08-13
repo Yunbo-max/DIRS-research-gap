@@ -1,0 +1,1092 @@
+{
+  "artifact_kind": "prophet_paper_result_comparison",
+  "blockers": [
+    "blocked_gsm8k_result_shape_mismatch",
+    "table1_threshold_dynamics_repair:running",
+    "table1_multibenchmark_grid:pending_or_blocked",
+    "table2_acceleration_combinations:explicit_external_artifact_blockers_recorded",
+    "table3_table4_ablation_grid:pending_or_blocked",
+    "dream7b_axis:explicit_external_artifact_blockers_recorded"
+  ],
+  "created_at_utc": "2026-07-24T14:02:56Z",
+  "explicit_debt_comparison": {
+    "dream7b_axis": {
+      "artifact_kind": "prophet_dream7b_table1_axis_campaign",
+      "blocked_config_ids": [
+        "dream_model_identifier_and_loader",
+        "dream_generation_function_parity",
+        "dream_simple_evals_prompt_scorer_parity",
+        "dream_table1_full_grid"
+      ],
+      "completed_config_count": 0,
+      "expected_kind": "Dream-7B Table 1 axis campaign",
+      "launch_result": {
+        "launched": false,
+        "reason": "no_runnable_configs_without_exact_dream7b_loader_and_generation_parity"
+      },
+      "linked_existing_artifact_count": 0,
+      "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/dream7b_table1_axis/dream7b_axis_campaign.json",
+      "needed": "Dream-7B Table 1 axis or explicit external blocker.",
+      "pending_config_count": 0,
+      "runnable_config_count": 0,
+      "running_config_count": 0,
+      "status": "explicit_external_artifact_blockers_recorded",
+      "updated_at_utc": "2026-07-23T14:07:40Z"
+    },
+    "gsm8k_protocol_repair": {
+      "artifact_kind": "prophet_gsm8k_protocol_repair_campaign",
+      "blocked_config_ids": [],
+      "completed_config_count": 4,
+      "expected_kind": "full GSM8K prompt/constraint/scoring protocol repair rerun",
+      "launch_result": null,
+      "linked_existing_artifact_count": 0,
+      "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/protocol_repair_campaign.json",
+      "merged_artifact": {
+        "input_rows_by_config": {
+          "gsm8k_trajectory_prompt_constraint_L256_T256": 2252,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": 550,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": 550,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": 550,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": 548
+        },
+        "malformed_rows_by_config": {
+          "gsm8k_trajectory_prompt_constraint_L256_T256": 0,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": 0,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": 0,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": 0,
+          "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": 0
+        },
+        "missing_sample_count": 0,
+        "oracle_values_exposed_to_loop2": false,
+        "paired_completed_samples": 1319,
+        "row_count": 2638,
+        "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_per_sample_results.jsonl",
+        "status": "completed",
+        "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_status.json",
+        "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_summary.json",
+        "total_samples": 1319
+      },
+      "needed": "Verifier-required full GSM8K rerun or rescore after protocol-shape mismatch.",
+      "pending_config_count": 1,
+      "runnable_config_count": 5,
+      "running_config_count": 0,
+      "status": "ready_for_result_value_comparison",
+      "updated_at_utc": "2026-07-24T14:02:54Z"
+    },
+    "table1_multibenchmark_grid": {
+      "artifact_kind": "prophet_table1_multibenchmark_campaign",
+      "blocked_config_ids": [
+        "exact_simple_evals_prompt_and_answer_extractor",
+        "main_text_vs_appendix_general_budget_conflict",
+        "countdown_and_sudoku_simple_evals_planning_axis",
+        "dream7b_table1_axis"
+      ],
+      "completed_config_count": 0,
+      "expected_kind": "full Table 1 LLaDA multi-benchmark campaign plus exact parity blockers",
+      "launch_result": null,
+      "linked_existing_artifact_count": 1,
+      "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/multibenchmark_table1_full/multibenchmark_grid_campaign.json",
+      "pending_config_count": 30,
+      "runnable_config_count": 30,
+      "running_config_count": 0,
+      "status": "pending_or_blocked",
+      "updated_at_utc": "2026-07-24T14:02:54Z"
+    },
+    "table1_threshold_dynamics_repair": {
+      "artifact_kind": "prophet_table1_threshold_repair_campaign",
+      "blocked_config_ids": [],
+      "completed_config_count": 0,
+      "expected_kind": "full-split Table 1 GSM8K Prophet threshold-dynamics repair campaign",
+      "launch_result": null,
+      "linked_existing_artifact_count": 0,
+      "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_repair_campaign.json",
+      "needed": "Full-split Prophet-only threshold candidates paired with the completed full-step baseline after Table 1 result-shape mismatch.",
+      "pending_config_count": 0,
+      "runnable_config_count": 4,
+      "running_config_count": 4,
+      "status": "running",
+      "updated_at_utc": "2026-07-24T14:02:54Z"
+    },
+    "table2_acceleration_combinations": {
+      "artifact_kind": "prophet_table2_acceleration_combination_campaign",
+      "blocked_config_ids": [
+        "sdtt_distilled_student_row",
+        "sdtt_plus_prophet_row",
+        "fast_dllm_kv_cache_parallel_row",
+        "fast_dllm_plus_prophet_row"
+      ],
+      "completed_config_count": 0,
+      "expected_kind": "Table 2 SDTT/Fast-dLLM acceleration-combination campaign",
+      "launch_result": {
+        "launched": false,
+        "reason": "no_runnable_configs_without_sdtt_fastdllm_external_artifacts"
+      },
+      "linked_existing_artifact_count": 2,
+      "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations/table2_acceleration_campaign.json",
+      "needed": "SDTT, SDTT+Prophet, Fast-dLLM, and Fast-dLLM+Prophet GSM8K comparison.",
+      "pending_config_count": 0,
+      "runnable_config_count": 0,
+      "running_config_count": 0,
+      "status": "explicit_external_artifact_blockers_recorded",
+      "updated_at_utc": "2026-07-23T14:07:40Z"
+    },
+    "table3_table4_ablation_grid": {
+      "artifact_kind": "prophet_full_ablation_grid_campaign",
+      "blocked_config_ids": [
+        "table3b_remasking_top_k_margin",
+        "dream7b_axis"
+      ],
+      "completed_config_count": 13,
+      "expected_kind": "full Table 3/Table 4 ablation campaign",
+      "launch_result": null,
+      "linked_existing_artifact_count": 0,
+      "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/ablation_grid_campaign.json",
+      "pending_config_count": 0,
+      "runnable_config_count": 17,
+      "running_config_count": 0,
+      "status": "pending_or_blocked",
+      "updated_at_utc": "2026-07-24T14:02:54Z"
+    }
+  },
+  "primary_gsm8k_comparison": {
+    "checks": {
+      "accuracy_delta": {
+        "error": -3.529340409401061,
+        "observed": -2.729340409401061,
+        "status": "fail",
+        "target": 0.8,
+        "tolerance": 3.0
+      },
+      "baseline_accuracy": {
+        "error": 2.5815769522365457,
+        "observed": 79.68157695223654,
+        "status": "pass",
+        "target": 77.1,
+        "tolerance": 5.0
+      },
+      "prophet_accuracy": {
+        "error": -0.9477634571645268,
+        "observed": 76.95223654283548,
+        "status": "pass",
+        "target": 77.9,
+        "tolerance": 5.0
+      },
+      "prophet_avg_steps": {
+        "error": 47.53297952994694,
+        "observed": 207.53297952994694,
+        "status": "fail",
+        "target": 160.0,
+        "tolerance": 25.0
+      },
+      "step_speedup": {
+        "error": -0.39646111581962185,
+        "observed": 1.233538884180378,
+        "status": "fail",
+        "target": 1.63,
+        "tolerance": 0.25
+      }
+    },
+    "complete": true,
+    "monitoring_note": "Partial live rows are never convergence evidence.",
+    "observed": {
+      "accuracy_delta_pct_points": -2.729340409401061,
+      "baseline_accuracy_pct": 79.68157695223654,
+      "baseline_avg_steps": 256.0,
+      "paired_completed_samples": 1319,
+      "prophet_accuracy_pct": 76.95223654283548,
+      "prophet_avg_steps": 207.53297952994694,
+      "step_speedup": 1.233538884180378,
+      "total_samples": 1319,
+      "wallclock_speedup": 1.2277952681409887
+    },
+    "operational_source": {
+      "protocol_repair_exclusion_reason": "Merged protocol repair uses the trajectory-analysis prompt/constraint family (trajectory_gsm8k_cot with 220:Answer), while Table 1 GSM8K uses the released lm-eval gsm8k_cot_zeroshot path with 200:The|201:answer|202:is.",
+      "protocol_repair_selected_for_table1_primary": false,
+      "repair_candidate_status": "completed_protocol_repair_merged_candidate",
+      "source": "custom_full_gsm8k_llada8b",
+      "threshold_candidate_status": "running_table1_threshold_candidates"
+    },
+    "status": "blocked_gsm8k_result_shape_mismatch",
+    "target": {
+      "accuracy_delta_pct_points": 0.8,
+      "benchmark": "GSM8K",
+      "block_length": 32,
+      "full_accuracy_pct": 77.1,
+      "generation_length": 256,
+      "model": "LLaDA-8B-Instruct",
+      "prophet_accuracy_pct": 77.9,
+      "prophet_avg_steps": 160.0,
+      "source": {
+        "line_anchors": [
+          632,
+          733,
+          736,
+          739,
+          940,
+          943,
+          1006,
+          1011
+        ],
+        "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "table": "Table 1 and Table 3a"
+      },
+      "step_speedup": 1.63,
+      "steps_full": 256,
+      "tolerances": {
+        "accuracy_delta_pct_points": 3.0,
+        "accuracy_pct_points": 5.0,
+        "avg_steps_abs": 25.0,
+        "step_speedup_abs": 0.25
+      }
+    }
+  },
+  "protocol_repair_candidate": {
+    "artifact_kind": "prophet_gsm8k_protocol_repair_campaign",
+    "completed_config_count": 4,
+    "configs": [
+      {
+        "config_id": "gsm8k_trajectory_prompt_constraint_L256_T256",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256",
+        "status": "stopped_partial_needs_resume",
+        "summary_status": "running_or_partial"
+      },
+      {
+        "config_id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+        "status": "completed",
+        "summary_status": "completed"
+      },
+      {
+        "config_id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769",
+        "status": "completed",
+        "summary_status": "completed"
+      },
+      {
+        "config_id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044",
+        "status": "completed",
+        "summary_status": "completed"
+      },
+      {
+        "config_id": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318",
+        "status": "completed",
+        "summary_status": "completed"
+      }
+    ],
+    "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/protocol_repair_campaign.json",
+    "merged_artifact": {
+      "input_rows_by_config": {
+        "gsm8k_trajectory_prompt_constraint_L256_T256": 2252,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": 550,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": 550,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": 550,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": 548
+      },
+      "malformed_rows_by_config": {
+        "gsm8k_trajectory_prompt_constraint_L256_T256": 0,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494": 0,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0495_0769": 0,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0770_1044": 0,
+        "gsm8k_trajectory_prompt_constraint_L256_T256_shard_1045_1318": 0
+      },
+      "missing_sample_count": 0,
+      "oracle_values_exposed_to_loop2": false,
+      "paired_completed_samples": 1319,
+      "row_count": 2638,
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_per_sample_results.jsonl",
+      "status": "completed",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_status.json",
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/merged_summary.json",
+      "total_samples": 1319
+    },
+    "oracle_values_exposed_to_loop2": false,
+    "pending_config_count": 0,
+    "running_config_count": 0,
+    "selected_for_table1_primary": null,
+    "status": "completed_protocol_repair_merged_candidate"
+  },
+  "status": "blocked_paper_result_comparison",
+  "table1_threshold_candidate": {
+    "artifact_kind": "prophet_table1_threshold_repair_campaign",
+    "baseline_ready": true,
+    "completed_config_count": 0,
+    "configs": [
+      {
+        "config_id": "table1_threshold_relaxed_3_1p5_0p5",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5",
+        "pass_count": null,
+        "primary_status": null,
+        "status": "running",
+        "summary_status": "running_or_partial"
+      },
+      {
+        "config_id": "table1_threshold_relaxed_4_2_0p5",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5",
+        "pass_count": null,
+        "primary_status": null,
+        "status": "running",
+        "summary_status": "running_or_partial"
+      },
+      {
+        "config_id": "table1_threshold_relaxed_5_3_1",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1",
+        "pass_count": null,
+        "primary_status": null,
+        "status": "running",
+        "summary_status": "running_or_partial"
+      },
+      {
+        "config_id": "table1_threshold_relaxed_6_4_2",
+        "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2",
+        "pass_count": null,
+        "primary_status": null,
+        "status": "running",
+        "summary_status": "running_or_partial"
+      }
+    ],
+    "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_repair_campaign.json",
+    "oracle_values_exposed_to_loop2": false,
+    "pending_config_count": 0,
+    "running_config_count": 4,
+    "status": "running_table1_threshold_candidates"
+  },
+  "targets": {
+    "artifact_kind": "prophet_paper_result_targets",
+    "explicit_debt_targets": [
+      {
+        "id": "table1_multibenchmark_grid",
+        "needed": "MMLU, ARC-C, HellaSwag, TruthfulQA, WinoGrande, PIQA, GSM8K, GPQA, HumanEval, MBPP, Countdown, and Sudoku across LLaDA-8B and Dream-7B where applicable.",
+        "source": {
+          "line_anchors": [
+            632,
+            700,
+            729,
+            742,
+            752,
+            774,
+            790
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        }
+      },
+      {
+        "id": "table2_acceleration_combinations",
+        "needed": "SDTT, SDTT+Prophet, Fast-dLLM, and Fast-dLLM+Prophet GSM8K comparison.",
+        "source": {
+          "line_anchors": [
+            822,
+            829,
+            835,
+            838,
+            856,
+            889
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        }
+      },
+      {
+        "id": "table3_table4_ablation_grid",
+        "needed": "Static step budget, remasking strategy, and block-length ablation grids.",
+        "source": {
+          "line_anchors": [
+            902,
+            940,
+            962,
+            1006,
+            1027
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        }
+      },
+      {
+        "id": "dream7b_axis",
+        "needed": "Dream-7B Table 1 axis or explicit external blocker.",
+        "source": {
+          "line_anchors": [
+            626,
+            632,
+            643,
+            659,
+            698,
+            793,
+            795
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        }
+      }
+    ],
+    "loop2_visibility": "verifier_only_not_visible_to_dag_only_author_simulation",
+    "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+    "primary_gsm8k_llada": {
+      "accuracy_delta_pct_points": 0.8,
+      "benchmark": "GSM8K",
+      "block_length": 32,
+      "full_accuracy_pct": 77.1,
+      "generation_length": 256,
+      "model": "LLaDA-8B-Instruct",
+      "prophet_accuracy_pct": 77.9,
+      "prophet_avg_steps": 160.0,
+      "source": {
+        "line_anchors": [
+          632,
+          733,
+          736,
+          739,
+          940,
+          943,
+          1006,
+          1011
+        ],
+        "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt",
+        "table": "Table 1 and Table 3a"
+      },
+      "step_speedup": 1.63,
+      "steps_full": 256,
+      "tolerances": {
+        "accuracy_delta_pct_points": 3.0,
+        "accuracy_pct_points": 5.0,
+        "avg_steps_abs": 25.0,
+        "step_speedup_abs": 0.25
+      }
+    },
+    "trajectory_targets": [
+      {
+        "pct_correct_emerged_by_25pct_steps": 7.9,
+        "pct_correct_emerged_by_50pct_steps": 24.2,
+        "setting_id": "gsm8k_low_conf_none_block32",
+        "source": {
+          "figure": "Figure 1a",
+          "line_anchors": [
+            256,
+            257,
+            258
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "tolerance_pct_points": 5.0
+      },
+      {
+        "pct_correct_emerged_by_25pct_steps": 88.5,
+        "pct_correct_emerged_by_50pct_steps": 97.2,
+        "setting_id": "gsm8k_random_none_block256",
+        "source": {
+          "figure": "Figure 1c",
+          "line_anchors": [
+            259,
+            260
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "tolerance_pct_points": 5.0
+      },
+      {
+        "pct_correct_emerged_by_25pct_steps": 59.7,
+        "pct_correct_emerged_by_50pct_steps": 75.8,
+        "setting_id": "gsm8k_low_conf_constraint_block32",
+        "source": {
+          "figure": "Figure 1b",
+          "line_anchors": [
+            261,
+            263,
+            264
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "tolerance_pct_points": 5.0
+      },
+      {
+        "ocr_note": "OpenReview text extraction is noisy around Figure 4; target follows the paper chip and visible figure text.",
+        "pct_correct_emerged_by_25pct_steps": 99.7,
+        "pct_correct_emerged_by_50pct_steps": 99.9,
+        "setting_id": "mmlu_low_confidence_constraint_block128",
+        "source": {
+          "figure": "Figure 4b",
+          "line_anchors": [
+            1279,
+            1303,
+            1322,
+            1331,
+            1378
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "tolerance_pct_points": 3.0
+      }
+    ]
+  },
+  "trajectory_comparison": {
+    "checks": [
+      {
+        "checks": {
+          "by_25pct_steps": {
+            "error": 0.02910447761194046,
+            "observed": 7.929104477611941,
+            "status": "pass",
+            "target": 7.9,
+            "tolerance": 5.0
+          },
+          "by_50pct_steps": {
+            "error": -0.03955223880597103,
+            "observed": 24.16044776119403,
+            "status": "pass",
+            "target": 24.2,
+            "tolerance": 5.0
+          }
+        },
+        "observed": {
+          "correct_count": 1072,
+          "correct_rate_in_released_trajectory": 0.8127369219105383,
+          "correct_source": "author_notebook_gsm8k_recomputed_final_answer",
+          "domain": "gsm8k",
+          "emergence_count": 1072,
+          "expected_count": 1319,
+          "folder": "question_histories_low_conf_none_index_genlen_step256_blocklen32",
+          "hist_20bin_counts_0_100": [
+            10,
+            23,
+            21,
+            18,
+            13,
+            23,
+            39,
+            27,
+            36,
+            46,
+            58,
+            80,
+            72,
+            70,
+            76,
+            89,
+            93,
+            126,
+            119,
+            33
+          ],
+          "hist_20bin_edges_0_100": [
+            0.0,
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0,
+            80.0,
+            85.0,
+            90.0,
+            95.0,
+            100.0
+          ],
+          "mean_durability_steps": 87.93376865671642,
+          "mean_first_emergence_pct": 65.26024661847015,
+          "median_first_emergence_pct": 70.1171875,
+          "observed_count": 1319,
+          "p90_first_emergence_pct": 91.796875,
+          "pct_correct_emerged_by_25pct_steps": 7.929104477611941,
+          "pct_correct_emerged_by_50pct_steps": 24.16044776119403,
+          "setting_id": "gsm8k_low_conf_none_block32",
+          "stored_correct_disagreement_count": 111,
+          "stored_correct_disagreement_examples": [
+            {
+              "extracted_answer": "60",
+              "normalized_gt_answer": "60",
+              "question_index": 14,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "57500",
+              "normalized_gt_answer": "57500",
+              "question_index": 17,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "26",
+              "normalized_gt_answer": "26",
+              "question_index": 24,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "75",
+              "normalized_gt_answer": "75",
+              "question_index": 36,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "200",
+              "normalized_gt_answer": "200",
+              "question_index": 41,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "20",
+              "normalized_gt_answer": "20",
+              "question_index": 44,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "57",
+              "normalized_gt_answer": "57",
+              "question_index": 58,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "140",
+              "normalized_gt_answer": "140",
+              "question_index": 103,
+              "recomputed_correct": true,
+              "stored_correct": false
+            }
+          ]
+        },
+        "setting_id": "gsm8k_low_conf_none_block32",
+        "source": {
+          "figure": "Figure 1a",
+          "line_anchors": [
+            256,
+            257,
+            258
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "status": "pass"
+      },
+      {
+        "checks": {
+          "by_25pct_steps": {
+            "error": -0.046840958605670835,
+            "observed": 88.45315904139433,
+            "status": "pass",
+            "target": 88.5,
+            "tolerance": 5.0
+          },
+          "by_50pct_steps": {
+            "error": -0.032244008714599204,
+            "observed": 97.1677559912854,
+            "status": "pass",
+            "target": 97.2,
+            "tolerance": 5.0
+          }
+        },
+        "observed": {
+          "correct_count": 459,
+          "correct_rate_in_released_trajectory": 0.3479909021986353,
+          "correct_source": "author_notebook_gsm8k_recomputed_final_answer",
+          "domain": "gsm8k",
+          "emergence_count": 459,
+          "expected_count": 1319,
+          "folder": "question_histories_random_none_index_genlen_step256_blocklen256",
+          "hist_20bin_counts_0_100": [
+            78,
+            138,
+            104,
+            62,
+            24,
+            16,
+            12,
+            7,
+            3,
+            2,
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          "hist_20bin_edges_0_100": [
+            0.0,
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0,
+            80.0,
+            85.0,
+            90.0,
+            95.0,
+            100.0
+          ],
+          "mean_durability_steps": 218.42265795206973,
+          "mean_first_emergence_pct": 14.288024237472767,
+          "median_first_emergence_pct": 10.546875,
+          "observed_count": 1319,
+          "p90_first_emergence_pct": 26.249999999999996,
+          "pct_correct_emerged_by_25pct_steps": 88.45315904139433,
+          "pct_correct_emerged_by_50pct_steps": 97.1677559912854,
+          "setting_id": "gsm8k_random_none_block256",
+          "stored_correct_disagreement_count": 55,
+          "stored_correct_disagreement_examples": [
+            {
+              "extracted_answer": "26",
+              "normalized_gt_answer": "26",
+              "question_index": 24,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "57",
+              "normalized_gt_answer": "57",
+              "question_index": 58,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "8000",
+              "normalized_gt_answer": "8000",
+              "question_index": 88,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "16",
+              "normalized_gt_answer": "16",
+              "question_index": 111,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "10",
+              "normalized_gt_answer": "10",
+              "question_index": 125,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "29",
+              "normalized_gt_answer": "29",
+              "question_index": 137,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "20",
+              "normalized_gt_answer": "20",
+              "question_index": 140,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "12",
+              "normalized_gt_answer": "12",
+              "question_index": 195,
+              "recomputed_correct": true,
+              "stored_correct": false
+            }
+          ]
+        },
+        "setting_id": "gsm8k_random_none_block256",
+        "source": {
+          "figure": "Figure 1c",
+          "line_anchors": [
+            259,
+            260
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "status": "pass"
+      },
+      {
+        "checks": {
+          "by_25pct_steps": {
+            "error": 0.0478176527643015,
+            "observed": 59.747817652764304,
+            "status": "pass",
+            "target": 59.7,
+            "tolerance": 5.0
+          },
+          "by_50pct_steps": {
+            "error": -0.04830261881667752,
+            "observed": 75.75169738118332,
+            "status": "pass",
+            "target": 75.8,
+            "tolerance": 5.0
+          }
+        },
+        "observed": {
+          "correct_count": 1031,
+          "correct_rate_in_released_trajectory": 0.7816527672479151,
+          "correct_source": "author_notebook_gsm8k_recomputed_final_answer",
+          "domain": "gsm8k",
+          "emergence_count": 1031,
+          "expected_count": 1319,
+          "folder": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32",
+          "hist_20bin_counts_0_100": [
+            485,
+            43,
+            29,
+            29,
+            29,
+            27,
+            26,
+            37,
+            37,
+            38,
+            26,
+            25,
+            15,
+            19,
+            15,
+            9,
+            28,
+            37,
+            3,
+            74
+          ],
+          "hist_20bin_edges_0_100": [
+            0.0,
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0,
+            80.0,
+            85.0,
+            90.0,
+            95.0,
+            100.0
+          ],
+          "mean_durability_steps": 184.6129970902037,
+          "mean_first_emergence_pct": 27.494923011639184,
+          "median_first_emergence_pct": 8.203125,
+          "observed_count": 1319,
+          "p90_first_emergence_pct": 85.546875,
+          "pct_correct_emerged_by_25pct_steps": 59.747817652764304,
+          "pct_correct_emerged_by_50pct_steps": 75.75169738118332,
+          "setting_id": "gsm8k_low_conf_constraint_block32",
+          "stored_correct_disagreement_count": 196,
+          "stored_correct_disagreement_examples": [
+            {
+              "extracted_answer": "3",
+              "normalized_gt_answer": "3",
+              "question_index": 1,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "366",
+              "normalized_gt_answer": "366",
+              "question_index": 10,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "57500",
+              "normalized_gt_answer": "57500",
+              "question_index": 17,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "26",
+              "normalized_gt_answer": "26",
+              "question_index": 24,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "2",
+              "normalized_gt_answer": "2",
+              "question_index": 25,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "16",
+              "normalized_gt_answer": "16",
+              "question_index": 27,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "23",
+              "normalized_gt_answer": "23",
+              "question_index": 34,
+              "recomputed_correct": true,
+              "stored_correct": false
+            },
+            {
+              "extracted_answer": "10",
+              "normalized_gt_answer": "10",
+              "question_index": 38,
+              "recomputed_correct": true,
+              "stored_correct": false
+            }
+          ]
+        },
+        "setting_id": "gsm8k_low_conf_constraint_block32",
+        "source": {
+          "figure": "Figure 1b",
+          "line_anchors": [
+            261,
+            263,
+            264
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "status": "pass"
+      },
+      {
+        "checks": {
+          "by_25pct_steps": {
+            "error": -0.016288877174488903,
+            "observed": 99.68371112282551,
+            "status": "pass",
+            "target": 99.7,
+            "tolerance": 3.0
+          },
+          "by_50pct_steps": {
+            "error": 0.047285187137589446,
+            "observed": 99.9472851871376,
+            "status": "pass",
+            "target": 99.9,
+            "tolerance": 3.0
+          }
+        },
+        "observed": {
+          "correct_count": 1897,
+          "correct_rate_in_released_trajectory": 0.6016492229622582,
+          "correct_source": "stored_correct_flag",
+          "domain": "mmlu",
+          "emergence_count": 1897,
+          "expected_count": 3153,
+          "folder": "question_histories_mmlu_low_confidence_constraint_index_genlen_step128_blocklen128",
+          "hist_20bin_counts_0_100": [
+            1822,
+            44,
+            16,
+            6,
+            3,
+            2,
+            2,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "hist_20bin_edges_0_100": [
+            0.0,
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0,
+            45.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            70.0,
+            75.0,
+            80.0,
+            85.0,
+            90.0,
+            95.0,
+            100.0
+          ],
+          "mean_durability_steps": 126.20295202952029,
+          "mean_first_emergence_pct": 0.6226937269372693,
+          "median_first_emergence_pct": 0.0,
+          "observed_count": 3153,
+          "p90_first_emergence_pct": 0.78125,
+          "pct_correct_emerged_by_25pct_steps": 99.68371112282551,
+          "pct_correct_emerged_by_50pct_steps": 99.9472851871376,
+          "setting_id": "mmlu_low_confidence_constraint_block128",
+          "stored_correct_disagreement_count": 0,
+          "stored_correct_disagreement_examples": []
+        },
+        "setting_id": "mmlu_low_confidence_constraint_block128",
+        "source": {
+          "figure": "Figure 4b",
+          "line_anchors": [
+            1279,
+            1303,
+            1322,
+            1331,
+            1378
+          ],
+          "paper_text_path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/text/ICLR2026_g88nt4ieTG_openreview.txt"
+        },
+        "status": "pass"
+      }
+    ],
+    "professional_gate": {
+      "all_expected_counts_present": true,
+      "full_dataset_expected_files": 17888,
+      "full_dataset_observed_files": 17888,
+      "not_reduced": true,
+      "paper_figure_logic": "first correct answer emergence percentage over correct trajectories at 25% and 50% decoding thresholds; GSM8K correctness is recomputed from generated pred_text vs gt_text following analysis/visualize.ipynb"
+    },
+    "semantics_audit": {
+      "audit_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_metric_semantics_audit.json",
+      "diagnoses": [
+        "resolved_by_author_notebook_gsm8k_correctness_semantics"
+      ],
+      "failed_simulation_setting_ids": [
+        "gsm8k_low_conf_constraint_block32"
+      ],
+      "oracle_values_exposed_to_loop2": false,
+      "status": "completed_metric_semantics_audit"
+    },
+    "status": "pass_close_to_paper_trajectory_shape",
+    "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_analysis_summary.json"
+  },
+  "visibility_contract": {
+    "loop2_author_can_read": false,
+    "paper_text_or_oracle_values_exposed_to_loop2": false,
+    "verifier_can_read": true
+  }
+}

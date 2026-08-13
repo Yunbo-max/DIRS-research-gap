@@ -1,0 +1,109 @@
+{
+  "artifact_kind": "flashvid_specialized_verifier",
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/official_script_manifest.json",
+        "scripts_parsed": 12
+      },
+      "name": "official_script_matrix",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "assets_videomme_records": 2700,
+        "manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/model_data_manifest.json",
+        "models_checked": [
+          "lmms-lab/llava-onevision-qwen2-7b-ov",
+          "lmms-lab/LLaVA-Video-7B-Qwen2",
+          "Qwen/Qwen2.5-VL-7B-Instruct",
+          "Qwen/Qwen3-VL-8B-Instruct"
+        ]
+      },
+      "name": "model_data_manifest",
+      "status": "pass"
+    },
+    {
+      "detail": "LLaVA-OneVision theoretical computational cost: 48.82 TFLOPs\nFlashVID theoretical computational cost: 4.27 TFLOPs\n",
+      "name": "flops_reproduction_support",
+      "status": "pass_support_only"
+    },
+    {
+      "detail": [
+        {
+          "detail": "official main scripts request --num_processes 8; visible GPUs=4",
+          "id": "main_grid_hardware_gpu_count",
+          "status": "blocked"
+        },
+        {
+          "detail": "paper/DAG expects NVIDIA A800 80G for main experiments; visible GPUs are not A800 80G",
+          "id": "main_grid_hardware_gpu_class",
+          "status": "blocked"
+        },
+        {
+          "detail": "paper/DAG expects a single NVIDIA A100 for efficiency traces; visible GPUs are not A100",
+          "id": "efficiency_hardware_gpu_class",
+          "status": "blocked"
+        },
+        {
+          "detail": "README badge requires Transformers 4.57; environment has 4.51.2",
+          "id": "transformers_version_exactness",
+          "status": "blocked"
+        },
+        {
+          "detail": "official scripts request attn_implementation=flash_attention_2; flash-attn package is not installed",
+          "id": "flash_attention_runtime",
+          "status": "blocked"
+        },
+        {
+          "detail": "playground/bench_efficiency.py expects ~/.cache/huggingface/videomme/data videos; no populated cache was found",
+          "id": "videomme_video_cache",
+          "status": "blocked"
+        }
+      ],
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": "No reduced VideoMME/demo run was counted as convergence.",
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T09:49:13Z",
+  "iteration": 3,
+  "metadata_normalization": {
+    "changed_fields": [
+      "artifact_kind"
+    ],
+    "convergence_decision_unchanged": true,
+    "normalized_at_utc": "2026-07-23T12:30:06Z",
+    "normalizer": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/normalize_verifier_metadata.py"
+  },
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "paper_title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging",
+  "professional_ready": false,
+  "required_updates": [
+    "Add exact official-script execution matrix as a DAG node, not a generic VLM benchmark node.",
+    "Add hardware class gate: 8 x A800 80G for main LMMs-Eval grid and single A100 for efficiency traces.",
+    "Add VideoMME local video-cache gate for efficiency benchmark.",
+    "Add exact Transformers 4.57 and flash_attention_2 runtime gate.",
+    "Keep FLOPs reproduction as analytic support only, not result-table convergence evidence."
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "specialized_verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flashvid_specialized_verifier.json",
+  "status": "blocked_by_exact_professional_runtime_and_data_requirements_after_specialized_runner"
+}

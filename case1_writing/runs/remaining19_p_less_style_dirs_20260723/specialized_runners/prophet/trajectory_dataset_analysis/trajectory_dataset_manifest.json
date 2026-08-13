@@ -1,0 +1,438 @@
+{
+  "artifact_kind": "prophet_dlm_decoding_analysis_hf_manifest",
+  "by_folder": {
+    ".": {
+      "file_count": 2,
+      "size_bytes": 10899
+    },
+    "question_histories_low_conf_constraint_index_genlen_step256_blocklen32": {
+      "file_count": 1319,
+      "size_bytes": 1148365833
+    },
+    "question_histories_low_conf_none_index_genlen_step256_blocklen32": {
+      "file_count": 1319,
+      "size_bytes": 1148343049
+    },
+    "question_histories_mmlu_low_confidence_constraint_index_genlen_step128_blocklen128": {
+      "file_count": 3153,
+      "size_bytes": 1032221757
+    },
+    "question_histories_mmlu_low_confidence_none_index_genlen_step128_blocklen128": {
+      "file_count": 3153,
+      "size_bytes": 1031628285
+    },
+    "question_histories_mmlu_random_constraint_index_genlen_step128_blocklen128": {
+      "file_count": 3153,
+      "size_bytes": 1032160381
+    },
+    "question_histories_mmlu_random_none_index_genlen_step128_blocklen128": {
+      "file_count": 3153,
+      "size_bytes": 1031970813
+    },
+    "question_histories_random_constraint_index_genlen_step256_blocklen256": {
+      "file_count": 1319,
+      "size_bytes": 1146575131
+    },
+    "question_histories_random_none_index_genlen_step256_blocklen256": {
+      "file_count": 1319,
+      "size_bytes": 1146459355
+    }
+  },
+  "cached_hf_token_available": true,
+  "created_at_utc": "2026-07-23T19:35:15Z",
+  "expected_settings": [
+    {
+      "domain": "gsm8k",
+      "expected_count": 1319,
+      "folder": "question_histories_low_conf_none_index_genlen_step256_blocklen32",
+      "needs_tokenizer_decode": false,
+      "setting_id": "gsm8k_low_conf_none_block32",
+      "steps": 256
+    },
+    {
+      "domain": "gsm8k",
+      "expected_count": 1319,
+      "folder": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32",
+      "needs_tokenizer_decode": false,
+      "setting_id": "gsm8k_low_conf_constraint_block32",
+      "steps": 256
+    },
+    {
+      "domain": "gsm8k",
+      "expected_count": 1319,
+      "folder": "question_histories_random_none_index_genlen_step256_blocklen256",
+      "needs_tokenizer_decode": false,
+      "setting_id": "gsm8k_random_none_block256",
+      "steps": 256
+    },
+    {
+      "domain": "gsm8k",
+      "expected_count": 1319,
+      "folder": "question_histories_random_constraint_index_genlen_step256_blocklen256",
+      "needs_tokenizer_decode": false,
+      "setting_id": "gsm8k_random_constraint_block256",
+      "steps": 256
+    },
+    {
+      "domain": "mmlu",
+      "expected_count": 3153,
+      "folder": "question_histories_mmlu_low_confidence_none_index_genlen_step128_blocklen128",
+      "needs_tokenizer_decode": true,
+      "setting_id": "mmlu_low_confidence_none_block128",
+      "steps": 128
+    },
+    {
+      "domain": "mmlu",
+      "expected_count": 3153,
+      "folder": "question_histories_mmlu_low_confidence_constraint_index_genlen_step128_blocklen128",
+      "needs_tokenizer_decode": true,
+      "setting_id": "mmlu_low_confidence_constraint_block128",
+      "steps": 128
+    },
+    {
+      "domain": "mmlu",
+      "expected_count": 3153,
+      "folder": "question_histories_mmlu_random_none_index_genlen_step128_blocklen128",
+      "needs_tokenizer_decode": true,
+      "setting_id": "mmlu_random_none_block128",
+      "steps": 128
+    },
+    {
+      "domain": "mmlu",
+      "expected_count": 3153,
+      "folder": "question_histories_mmlu_random_constraint_index_genlen_step128_blocklen128",
+      "needs_tokenizer_decode": true,
+      "setting_id": "mmlu_random_constraint_block128",
+      "steps": 128
+    }
+  ],
+  "file_count": 17890,
+  "files_head": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 2504
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 8395
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0000_steps_256.pt",
+      "size_bytes": 874831
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0001_steps_256.pt",
+      "size_bytes": 799119
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0002_steps_256.pt",
+      "size_bytes": 862543
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0003_steps_256.pt",
+      "size_bytes": 817487
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0004_steps_256.pt",
+      "size_bytes": 971151
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0005_steps_256.pt",
+      "size_bytes": 860431
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0006_steps_256.pt",
+      "size_bytes": 833871
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0007_steps_256.pt",
+      "size_bytes": 889167
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0008_steps_256.pt",
+      "size_bytes": 958799
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0009_steps_256.pt",
+      "size_bytes": 866575
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0010_steps_256.pt",
+      "size_bytes": 868687
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0011_steps_256.pt",
+      "size_bytes": 872719
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0012_steps_256.pt",
+      "size_bytes": 883023
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0013_steps_256.pt",
+      "size_bytes": 864527
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0014_steps_256.pt",
+      "size_bytes": 852239
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0015_steps_256.pt",
+      "size_bytes": 938255
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0016_steps_256.pt",
+      "size_bytes": 854415
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0017_steps_256.pt",
+      "size_bytes": 862543
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0018_steps_256.pt",
+      "size_bytes": 801103
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0019_steps_256.pt",
+      "size_bytes": 878927
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0020_steps_256.pt",
+      "size_bytes": 874703
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0021_steps_256.pt",
+      "size_bytes": 840015
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0022_steps_256.pt",
+      "size_bytes": 858319
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0023_steps_256.pt",
+      "size_bytes": 823759
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0024_steps_256.pt",
+      "size_bytes": 825551
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0025_steps_256.pt",
+      "size_bytes": 883151
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0026_steps_256.pt",
+      "size_bytes": 886991
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0027_steps_256.pt",
+      "size_bytes": 866639
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0028_steps_256.pt",
+      "size_bytes": 848335
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0029_steps_256.pt",
+      "size_bytes": 887119
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0030_steps_256.pt",
+      "size_bytes": 825551
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0031_steps_256.pt",
+      "size_bytes": 874767
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0032_steps_256.pt",
+      "size_bytes": 829775
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0033_steps_256.pt",
+      "size_bytes": 809167
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0034_steps_256.pt",
+      "size_bytes": 829647
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0035_steps_256.pt",
+      "size_bytes": 854287
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0036_steps_256.pt",
+      "size_bytes": 833807
+    },
+    {
+      "path": "question_histories_low_conf_constraint_index_genlen_step256_blocklen32/question_0037_steps_256.pt",
+      "size_bytes": 874767
+    }
+  ],
+  "files_tail": [
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1279_steps_256.pt",
+      "size_bytes": 906093
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1280_steps_256.pt",
+      "size_bytes": 838573
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1281_steps_256.pt",
+      "size_bytes": 828269
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1282_steps_256.pt",
+      "size_bytes": 875437
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1283_steps_256.pt",
+      "size_bytes": 836461
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1284_steps_256.pt",
+      "size_bytes": 940973
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1285_steps_256.pt",
+      "size_bytes": 893869
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1286_steps_256.pt",
+      "size_bytes": 826221
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1287_steps_256.pt",
+      "size_bytes": 863085
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1288_steps_256.pt",
+      "size_bytes": 859181
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1289_steps_256.pt",
+      "size_bytes": 928621
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1290_steps_256.pt",
+      "size_bytes": 811885
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1291_steps_256.pt",
+      "size_bytes": 820141
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1292_steps_256.pt",
+      "size_bytes": 838573
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1293_steps_256.pt",
+      "size_bytes": 846765
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1294_steps_256.pt",
+      "size_bytes": 922605
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1295_steps_256.pt",
+      "size_bytes": 885613
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1296_steps_256.pt",
+      "size_bytes": 885613
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1297_steps_256.pt",
+      "size_bytes": 947181
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1298_steps_256.pt",
+      "size_bytes": 842605
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1299_steps_256.pt",
+      "size_bytes": 865133
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1300_steps_256.pt",
+      "size_bytes": 840557
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1301_steps_256.pt",
+      "size_bytes": 897965
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1302_steps_256.pt",
+      "size_bytes": 877421
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1303_steps_256.pt",
+      "size_bytes": 877421
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1304_steps_256.pt",
+      "size_bytes": 871149
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1305_steps_256.pt",
+      "size_bytes": 854893
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1306_steps_256.pt",
+      "size_bytes": 1026925
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1307_steps_256.pt",
+      "size_bytes": 828269
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1308_steps_256.pt",
+      "size_bytes": 812013
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1309_steps_256.pt",
+      "size_bytes": 869229
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1310_steps_256.pt",
+      "size_bytes": 887661
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1311_steps_256.pt",
+      "size_bytes": 871405
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1312_steps_256.pt",
+      "size_bytes": 842605
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1313_steps_256.pt",
+      "size_bytes": 816045
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1314_steps_256.pt",
+      "size_bytes": 867373
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1315_steps_256.pt",
+      "size_bytes": 861165
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1316_steps_256.pt",
+      "size_bytes": 897901
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1317_steps_256.pt",
+      "size_bytes": 824301
+    },
+    {
+      "path": "question_histories_random_none_index_genlen_step256_blocklen256/question_1318_steps_256.pt",
+      "size_bytes": 834477
+    }
+  ],
+  "repo_id": "YefanZhou98/DLM-Decoding-Analysis",
+  "repo_type": "dataset",
+  "token_explicitly_passed": true,
+  "total_size_bytes": 8717735503
+}

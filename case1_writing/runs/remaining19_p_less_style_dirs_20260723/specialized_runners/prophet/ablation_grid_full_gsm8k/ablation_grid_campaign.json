@@ -1,0 +1,407 @@
+{
+  "artifact_kind": "prophet_full_ablation_grid_campaign",
+  "blocked_configs": [
+    {
+      "id": "table3b_remasking_top_k_margin",
+      "paper_role": "Table 3b remasking strategy compatibility",
+      "reason": "The current released Prophet generate.py and generate_earlyexit.py support low_confidence and random remasking only. Hand-rolling top-k margin would not be exact professional reproduction evidence.",
+      "status": "blocked_by_missing_official_top_k_margin_remasking_implementation"
+    },
+    {
+      "id": "dream7b_axis",
+      "paper_role": "Dream-7B Table 1 axis",
+      "reason": "The active code path and current custom runner are LLaDA-specific; adding Dream-7B needs exact model loading, prompt/config parity, and a free GPU memory window.",
+      "status": "blocked_until_dream7b_exact_runner_and_memory_budget_are_resolved"
+    }
+  ],
+  "campaign_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k",
+  "config_statuses": {
+    "table3a_prophet_L128_T128": {
+      "id": "table3a_prophet_L128_T128",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L128_T128",
+      "pid": 267051,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T05:34:57Z"
+    },
+    "table3a_prophet_L256_T256": {
+      "id": "table3a_prophet_L256_T256",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_prophet_L256_T256",
+      "pid": 88302,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T23:28:02Z"
+    },
+    "table3a_static_L128_T128": {
+      "id": "table3a_static_L128_T128",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T128",
+      "pid": 234935,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T01:03:49Z"
+    },
+    "table3a_static_L128_T16": {
+      "id": "table3a_static_L128_T16",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T16",
+      "pid": 155943,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T21:52:15Z"
+    },
+    "table3a_static_L128_T32": {
+      "id": "table3a_static_L128_T32",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T32",
+      "pid": 173113,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T22:36:02Z"
+    },
+    "table3a_static_L128_T64": {
+      "id": "table3a_static_L128_T64",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L128_T64",
+      "pid": 182534,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T23:47:13Z"
+    },
+    "table3a_static_L256_T128": {
+      "id": "table3a_static_L256_T128",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T128",
+      "pid": 85898,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T00:14:17Z"
+    },
+    "table3a_static_L256_T16": {
+      "id": "table3a_static_L256_T16",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T16",
+      "pid": 59760,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T19:47:10Z"
+    },
+    "table3a_static_L256_T32": {
+      "id": "table3a_static_L256_T32",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T32",
+      "pid": 59766,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T19:50:24Z"
+    },
+    "table3a_static_L256_T64": {
+      "id": "table3a_static_L256_T64",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3a_static_L256_T64",
+      "pid": 59774,
+      "pid_alive": false,
+      "row_count": 1319,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-23T21:27:18Z"
+    },
+    "table3b_remasking_low_confidence": {
+      "id": "table3b_remasking_low_confidence",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_low_confidence",
+      "pid": 272915,
+      "pid_alive": false,
+      "row_count": 2638,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T07:27:21Z"
+    },
+    "table3b_remasking_random": {
+      "id": "table3b_remasking_random",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table3b_remasking_random",
+      "pid": 267608,
+      "pid_alive": false,
+      "row_count": 2638,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T09:19:04Z"
+    },
+    "table4_block_length_128": {
+      "id": "table4_block_length_128",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_128",
+      "pid": 347595,
+      "pid_alive": false,
+      "row_count": 646,
+      "status": "stopped_partial_needs_resume",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T11:23:05Z"
+    },
+    "table4_block_length_16": {
+      "id": "table4_block_length_16",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_16",
+      "pid": 288071,
+      "pid_alive": false,
+      "row_count": 2638,
+      "status": "completed",
+      "summary_status": "completed",
+      "updated_at_utc": "2026-07-24T10:35:58Z"
+    },
+    "table4_block_length_32": {
+      "id": "table4_block_length_32",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_32",
+      "pid": 296937,
+      "pid_alive": false,
+      "row_count": 722,
+      "status": "stopped_partial_needs_resume",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T11:23:03Z"
+    },
+    "table4_block_length_64": {
+      "id": "table4_block_length_64",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_64",
+      "pid": 333923,
+      "pid_alive": false,
+      "row_count": 505,
+      "status": "stopped_partial_needs_resume",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T11:23:01Z"
+    },
+    "table4_block_length_8": {
+      "id": "table4_block_length_8",
+      "out_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8",
+      "pid": 278940,
+      "pid_alive": false,
+      "row_count": 2620,
+      "status": "stopped_partial_needs_resume",
+      "summary_status": "running_or_partial",
+      "updated_at_utc": "2026-07-24T11:22:59Z"
+    }
+  },
+  "convergence_role": "professional artifact plan for Table 3a/3b/Table 4 debts; pending configs are not convergence evidence",
+  "created_at_utc": "2026-07-24T14:02:54Z",
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 8395,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16169,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8435,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 98
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7956,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16608,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8415,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16149,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 100
+    }
+  ],
+  "launch_result": null,
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "runnable_configs": [
+    {
+      "block_length": 32,
+      "gen_length": 256,
+      "id": "table3a_static_L256_T16",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 16,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 256,
+      "id": "table3a_static_L256_T32",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 32,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 256,
+      "id": "table3a_static_L256_T64",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 64,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 256,
+      "id": "table3a_static_L256_T128",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 256,
+      "id": "table3a_prophet_L256_T256",
+      "paper_role": "Table 3a Prophet adaptive-step row",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 256,
+      "variants": "prophet"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3a_static_L128_T16",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 16,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3a_static_L128_T32",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 32,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3a_static_L128_T64",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 64,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3a_static_L128_T128",
+      "paper_role": "Table 3a static step-budget ablation",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3a_prophet_L128_T128",
+      "paper_role": "Table 3a Prophet adaptive-step row",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "prophet"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3b_remasking_random",
+      "paper_role": "Table 3b remasking strategy compatibility",
+      "remasking": "random",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table3b_remasking_low_confidence",
+      "paper_role": "Table 3b remasking strategy compatibility",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    },
+    {
+      "block_length": 8,
+      "gen_length": 128,
+      "id": "table4_block_length_8",
+      "paper_role": "Table 4 block-length sensitivity",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    },
+    {
+      "block_length": 16,
+      "gen_length": 128,
+      "id": "table4_block_length_16",
+      "paper_role": "Table 4 block-length sensitivity",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    },
+    {
+      "block_length": 32,
+      "gen_length": 128,
+      "id": "table4_block_length_32",
+      "paper_role": "Table 4 block-length sensitivity",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    },
+    {
+      "block_length": 64,
+      "gen_length": 128,
+      "id": "table4_block_length_64",
+      "paper_role": "Table 4 block-length sensitivity",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    },
+    {
+      "block_length": 128,
+      "gen_length": 128,
+      "id": "table4_block_length_128",
+      "paper_role": "Table 4 block-length sensitivity",
+      "remasking": "low_confidence",
+      "requires_full_split": true,
+      "steps": 128,
+      "variants": "baseline,prophet"
+    }
+  ],
+  "runner": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py",
+  "strict_policy": {
+    "each_config_uses_distinct_output_dir": true,
+    "full_split_required": true,
+    "reduced_or_small_runs_allowed_to_converge": false
+  }
+}

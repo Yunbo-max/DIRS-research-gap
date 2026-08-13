@@ -1,0 +1,210 @@
+{
+  "blind_contract": {
+    "only_input_file": "research_gap_skill_graph.json",
+    "oracle_numeric_results_visible": false,
+    "paper_text_visible": false,
+    "previous_memory_visible": false
+  },
+  "convergence_policy": {
+    "close_results_are_enough_for_gap_skill": true,
+    "exact_artifacts_are_nonblocking_debt_for_gap_skill": true,
+    "exact_table_reproduction_converges_on": "all exact raw table/figure/appendix artifacts pass",
+    "gap_skill_converges_on": "semantic gap match plus close qualitative result-shape match from professional paper-shaped experiments",
+    "minimum_scale_for_gap_skill": "professional paper-shaped experiment with right model/data/baseline/scoring/timing channels",
+    "reduced_or_small_runs_allowed_only_as": [
+      "smoke",
+      "preflight",
+      "debug"
+    ],
+    "reduced_or_small_runs_are_convergence_evidence": false
+  },
+  "created_at_utc": "2026-07-23T00:27:31Z",
+  "edges": [
+    [
+      "paper_context.domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.hypothesize_hyperparameter_brittleness"
+    ],
+    [
+      "gap.hypothesize_hyperparameter_brittleness",
+      "gap.name_failure_modes"
+    ],
+    [
+      "gap.name_failure_modes",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "author.design_reasoning_temperature_grid"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "author.design_high_temperature_writing_stress"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "author.design_efficiency_measurement"
+    ],
+    [
+      "author.design_reasoning_temperature_grid",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "author.design_high_temperature_writing_stress",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "author.design_efficiency_measurement",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_close_result_shapes"
+    ],
+    [
+      "reviewer.compare_close_result_shapes",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_close_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ]
+  ],
+  "graph_id": "p_less_research_gap_skill_graph_iter_02",
+  "nodes": [
+    {
+      "content": "LLM inference, decoding, token efficiency, robustness across temperature and task.",
+      "id": "paper_context.domain",
+      "skill_role": "name the paper family before looking for gaps",
+      "type": "domain_context"
+    },
+    {
+      "content": "Map gap, method, result tables, paragraphs, figures, appendix, code, models, datasets, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn paper claims into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "Existing truncation samplers depend on task-specific or temperature-specific hyperparameters.",
+      "id": "gap.hypothesize_hyperparameter_brittleness",
+      "skill_role": "state the missing capability in existing work",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "Fixed thresholds or single-token-relative thresholds can degrade at high temperature, admit tail tokens, or need empty-set fallbacks.",
+      "id": "gap.name_failure_modes",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Use the full temperature-adjusted distribution and its second moment as a dynamic threshold; add a normalized variant for diversity.",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "Run reasoning datasets across models, temperatures, and samplers; compare AUC-style stability rather than one temperature.",
+      "id": "author.design_reasoning_temperature_grid",
+      "skill_role": "test whether the gap matters across tasks",
+      "type": "experiment_design"
+    },
+    {
+      "content": "Run Writing Prompts at high temperature and check whether brittle baselines collapse while p-less remains usable.",
+      "id": "author.design_high_temperature_writing_stress",
+      "skill_role": "stress the claimed failure mode",
+      "type": "experiment_design"
+    },
+    {
+      "content": "Measure full generation token timing and CPU/RAM, separating sampler-only proxies from paper-faithful timings.",
+      "id": "author.design_efficiency_measurement",
+      "skill_role": "avoid claiming speed from algorithm intuition only",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "Clone official code, validate sampler functions, resolve models/datasets, write harness, and run feasible GPU/model artifacts.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author, not just a reader",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Check hyperparameter tuning, temperature robustness, fixed-threshold degradation, tail-token risk, and fallback motivation.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to the paper's real gap",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close shape only from professional paper-shaped experiments: p-less or p-lessnorm top/near-top, high-temperature stability, and plausible efficiency; do not require exact numbers for gap convergence.",
+      "id": "reviewer.compare_close_result_shapes",
+      "skill_role": "compare close results to tables/paragraphs/figures",
+      "type": "verification"
+    },
+    {
+      "content": "Reduced, toy, tiny, smoke, one-prompt, or sampler-proxy runs are debugging evidence only and cannot converge the research-gap skill.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "keep reduced runs from becoming false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Track Table 1, Figure 2, Table 2, Table 3, Figures 16/17, and Table 15 as exact reproduction debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Converge the gap skill when semantic gap and close result shape match the paper, with exact reproduction marked separately.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the gap is real enough to write",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_close_result_shape_verifier",
+      "reason": "Gap skill convergence should compare semantic gap and close table/figure/paragraph result shape, not require exact numeric reproduction.",
+      "success_criteria": [
+        "add reviewer.compare_close_result_shapes",
+        "compare main AUC, high-temperature writing, and efficiency as qualitative shapes",
+        "accept close match for gap skill convergence"
+      ]
+    },
+    {
+      "id": "update.separate_exact_artifact_debt_from_gap_skill",
+      "reason": "Missing Table/Figure exact artifacts must remain visible but should not block research-gap skill convergence.",
+      "success_criteria": [
+        "record exact-reproduction debt for Table 1, Figure 2, Table 2, Table 3, Figures 16/17, and Table 15",
+        "keep exact_reproduction_converged=false until those artifacts pass",
+        "allow gap_converged_close_match when the real gap and result shape match"
+      ]
+    },
+    {
+      "id": "update.add_professional_scale_gate",
+      "reason": "Reduced, toy, smoke, or one-prompt runs must not be treated as convergence evidence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "label reduced artifacts as smoke_only/preflight_only/debug_only",
+        "require professional paper-shaped experiments before declaring gap skill convergence"
+      ]
+    }
+  ],
+  "signature": "8b87a185f2a8dfd5",
+  "target_skill": "find_research_gap_from_author_reviewer_simulation"
+}

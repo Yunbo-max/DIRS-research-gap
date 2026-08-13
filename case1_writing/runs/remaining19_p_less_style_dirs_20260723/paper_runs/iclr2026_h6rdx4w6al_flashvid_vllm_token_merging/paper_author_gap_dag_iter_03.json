@@ -1,0 +1,322 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T08:20:27Z",
+  "edges": [
+    [
+      "decision.explicit_blocker_after_professional_preflight",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "ops.flops_support_only",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "ops.official_script_matrix",
+      "ops.flops_support_only"
+    ],
+    [
+      "ops.official_script_matrix",
+      "ops.professional_hardware_runtime_gate"
+    ],
+    [
+      "ops.professional_hardware_runtime_gate",
+      "decision.explicit_blocker_after_professional_preflight"
+    ],
+    [
+      "ops.professional_hardware_runtime_gate",
+      "ops.video_data_cache_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.official_script_matrix"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.video_data_cache_gate",
+      "decision.explicit_blocker_after_professional_preflight"
+    ],
+    [
+      "ops.video_data_cache_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ]
+  ],
+  "graph_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging_gap_dag_iter_03",
+  "nodes": [
+    {
+      "content": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging | families=video_token_merging, compression_vq",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "video-llm-visual-token-bottleneck; spatiotemporal-token-compression-gap; fixed-budget-long-video-understanding",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "fixed-location-temporal-merge-noise; semantic-confusion-in-token-merge; attention-only-selection-misses-diversity",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "FastV; VisionZip; PruneVID; FastVID; vanilla VLLM full tokens; FastV ECCV 2024; VisionZip CVPR 2025; PruneVID ACL 2025; FastVID NeurIPS 2025",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "ADTS; TSTM; video partition; inner-LLM pruning; DPC-kNN budget alignment",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=LLaVA-OneVision video understanding; LLaVA-Video video understanding; Qwen2.5-VL video understanding; fixed-token-budget Qwen2.5-VL; metrics=average score; relative accuracy; TFLOPs; prefilling time; TTFT; compression time; LLM forward time; protocols=matched retention ratio; matched average token budget; 8-GPU lmms-eval batch_size 1; single-GPU latency benchmark",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=NVIDIA A800 80G for main experiments; single NVIDIA A100 for efficiency; 8-GPU lmms-eval scripts; runtimes=PyTorch; Transformers 4.57; LMMs-Eval; flash_attention_2; uv package management",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID; code_artifacts=flashvid/__init__.py; flashvid/utils.py; flashvid/token_selection.py; flashvid/modeling_qwen2_5_vl.py; flashvid/llava_arch.py; scripts/llava_ov.sh; scripts/fixed_token_budget/flashvid.sh; playground/bench_efficiency.py; tools/flops/llava_ov.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=VideoMME; EgoSchema; LongVideoBench; MVBench; MLVU; data_artifacts=assets/videomme.jsonl; LMMs-Eval task datasets; HuggingFace VideoMME cache expected by efficiency script; implementation_statuses=code_inspected; released_code; result_recomputable_with_model_and_dataset_access",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "official scripts parsed from FlashVID: baseline and FlashVID LLaVA-OneVision, LLaVA-Video, Qwen2.5-VL, Qwen3-VL, fixed-token-budget Qwen2.5-VL, and efficiency scripts; main scripts use accelerate --num_processes 8 batch_size 1; retention ratios include 0.10/0.15/0.20/0.25 and fixed-budget 0.100/0.200/0.250/0.333; tasks include VideoMME, EgoSchema, MVBench, LongVideoBench val video, and MLVU test.",
+      "evidence_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/official_script_manifest.json",
+      "id": "ops.official_script_matrix",
+      "skill_role": "bind full paper grid to released scripts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "require 8 x NVIDIA A800 80G for main LMMs-Eval grid, single NVIDIA A100 for efficiency traces, Transformers 4.57, flash_attention_2 runtime, uv-managed environment, and paper-compatible CUDA/PyTorch stack; visible RTX 4090-only four-GPU environment is explicit blocker, not convergence evidence.",
+      "evidence_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/environment.json",
+      "id": "ops.professional_hardware_runtime_gate",
+      "skill_role": "block non-paper hardware/runtime convergence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "assets/videomme.jsonl has 2700 records and LMMs-Eval task configs exist, but playground efficiency path expects a populated ~/.cache/huggingface/videomme/data video cache; absent local videos block efficiency and benchmark execution.",
+      "evidence_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/model_data_manifest.json",
+      "id": "ops.video_data_cache_gate",
+      "skill_role": "require exact video benchmark assets",
+      "type": "data_gate"
+    },
+    {
+      "content": "tools/flops/llava_ov.py reproduces analytic TFLOPs numbers (LLaVA-OneVision 48.82 TFLOPs; FlashVID 4.27 TFLOPs), but this supports compute-axis understanding only and cannot replace benchmark tables or timing traces.",
+      "evidence_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flops_reproduction.json",
+      "id": "ops.flops_support_only",
+      "skill_role": "separate analytic support from result convergence",
+      "type": "supporting_artifact"
+    },
+    {
+      "content": "Do not launch reduced one-video demos or 4-GPU substitutes. Record explicit blockers: 8-GPU/A800 mismatch, no A100 efficiency device, Transformers 4.57 mismatch, missing flash-attn, missing VideoMME local video cache. Keep full-grid commands as future operational debt.",
+      "evidence_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flashvid_specialized_verifier.json",
+      "id": "decision.explicit_blocker_after_professional_preflight",
+      "skill_role": "close this iteration honestly",
+      "type": "author_reviewer_decision"
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "id": "update.add_flashvid_exact_professional_preflight_gates",
+      "reason": "specialized runner found exact full-grid blockers after parsing released scripts, model/data manifests, runtime stack, and FLOPs path",
+      "success_criteria": [
+        "official_script_matrix recorded",
+        "hardware/runtime gate records 8 x A800 and A100 requirement",
+        "VideoMME cache gate records missing local videos",
+        "FLOPs reproduction marked support-only",
+        "explicit professional blockers prevent reduced convergence"
+      ]
+    }
+  ],
+  "signature": "c5eb0ab8514ec0d8",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "target_title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging"
+}

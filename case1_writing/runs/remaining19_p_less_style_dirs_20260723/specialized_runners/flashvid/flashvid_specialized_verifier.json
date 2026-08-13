@@ -1,0 +1,1189 @@
+{
+  "artifact_kind": "flashvid_specialized_verifier",
+  "blind_contract_checked": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "created_at_utc": "2026-07-23T18:53:33Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_h6rdx4w6al_flashvid_vllm_token_merging/paper_author_gap_dag.json",
+  "environment": {
+    "artifact_kind": "flashvid_environment_manifest",
+    "compileall": {
+      "cmd": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "flashvid",
+        "playground",
+        "tools"
+      ],
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+      "returncode": 0,
+      "seconds": 0.058,
+      "stderr": "",
+      "stdout": "",
+      "timeout": false
+    },
+    "created_at_utc": "2026-07-23T18:53:32Z",
+    "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid",
+    "gpu_rows": [
+      {
+        "index": "0",
+        "memory_free_mib": 2873,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 21343,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 5586,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 18631,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 0
+      },
+      {
+        "index": "2",
+        "memory_free_mib": 5193,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 19020,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 17
+      },
+      {
+        "index": "3",
+        "memory_free_mib": 8088,
+        "memory_total_mib": 24564,
+        "memory_used_mib": 16129,
+        "name": "NVIDIA GeForce RTX 4090",
+        "utilization_gpu_pct": 99
+      }
+    ],
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.073,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 2873, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19020, 5193, 17\n3, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 99\n",
+      "timeout": false
+    },
+    "packages": {
+      "accelerate": "1.11.0",
+      "decord": "0.6.0",
+      "flash_attn": null,
+      "lmms_eval": "0.5.0",
+      "qwen_vl_utils": "0.0.14",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.51.2",
+      "uv": {
+        "cmd": [
+          "bash",
+          "-lc",
+          "command -v uv && uv --version"
+        ],
+        "cwd": null,
+        "returncode": 0,
+        "seconds": 0.019,
+        "stderr": "",
+        "stdout": "/root/.local/bin/uv\nuv 0.9.7\n",
+        "timeout": false
+      }
+    },
+    "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+    "professional_hardware_expectation": {
+      "efficiency": "single NVIDIA A100 according to paper/DAG",
+      "main_experiments": "8 x NVIDIA A800 80G according to paper/DAG"
+    },
+    "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID"
+  },
+  "flops_reproduction": {
+    "artifact_kind": "flashvid_flops_reproduction",
+    "command_result": {
+      "cmd": [
+        "python",
+        "tools/flops/llava_ov.py"
+      ],
+      "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+      "returncode": 0,
+      "seconds": 0.025,
+      "stderr": "",
+      "stdout": "LLaVA-OneVision theoretical computational cost: 48.82 TFLOPs\nFlashVID theoretical computational cost: 4.27 TFLOPs\n",
+      "timeout": false
+    },
+    "convergence_role": "analytic support for TFLOPs axis only; not a benchmark-table convergence artifact",
+    "created_at_utc": "2026-07-23T18:53:33Z",
+    "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+    "status": "pass"
+  },
+  "model_data_manifest": {
+    "artifact_kind": "flashvid_model_data_manifest",
+    "created_at_utc": "2026-07-23T18:53:32Z",
+    "datasets": {
+      "assets_videomme_jsonl": {
+        "exists": true,
+        "first_record": {
+          "answer": "C",
+          "category": "Knowledge",
+          "duration": "short",
+          "input": "Select the best answer to the following multiple-choice question based on the video and the subtitles. Respond with only the letter (A, B, C, or D) of the correct option.\nWhen demonstrating the Germany modern Christmas tree is initially decorated with apples, candles and berries, which kind of the decoration has the largest number?\nA. Apples.\nB. Candles.\nC. Berries.\nD. The three kinds are of the same number.\n\nAnswer with the option's letter from the given choices directly.",
+          "question_id": "001-1",
+          "sub_category": "Humanity & History",
+          "task_category": "Counting Problem",
+          "videoID": "fFjv93ACGo8"
+        },
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/assets/videomme.jsonl",
+        "record_count": 2700
+      },
+      "lmms_eval_task_dirs": {
+        "egoschema": [
+          "egoschema",
+          "egoschema/egoschema.yaml",
+          "egoschema/egoschema_mcppl.yaml",
+          "egoschema/egoschema_subset.yaml",
+          "egoschema/egoschema_subset_mcppl.yaml"
+        ],
+        "longvideobench_val_v": [
+          "longvideobench/longvideobench_val_v.yaml"
+        ],
+        "mlvu_test": [
+          "mlvu/mlvu_test.yaml"
+        ],
+        "mvbench": [
+          "mvbench",
+          "mvbench/mvbench.yaml",
+          "mvbench/mvbench_action_antonym.yaml",
+          "mvbench/mvbench_action_count.yaml",
+          "mvbench/mvbench_action_localization.yaml",
+          "mvbench/mvbench_action_prediction.yaml",
+          "mvbench/mvbench_action_sequence.yaml",
+          "mvbench/mvbench_character_order.yaml",
+          "mvbench/mvbench_counterfactual_inference.yaml",
+          "mvbench/mvbench_egocentric_navigation.yaml",
+          "mvbench/mvbench_episodic_reasoning.yaml",
+          "mvbench/mvbench_fine_grained_action.yaml",
+          "mvbench/mvbench_fine_grained_pose.yaml",
+          "mvbench/mvbench_moving_attribute.yaml",
+          "mvbench/mvbench_moving_count.yaml",
+          "mvbench/mvbench_moving_direction.yaml",
+          "mvbench/mvbench_object_existence.yaml",
+          "mvbench/mvbench_object_interaction.yaml",
+          "mvbench/mvbench_object_shuffle.yaml",
+          "mvbench/mvbench_scene_transition.yaml",
+          "mvbench/mvbench_state_change.yaml",
+          "mvbench/mvbench_unexpected_action.yaml"
+        ],
+        "videomme": [
+          "videomme",
+          "videomme/convert_mcq_oe/videomme_convert_mcq_oe.yaml",
+          "videomme/gt_none_option/videomme_gt_none_option.yaml",
+          "videomme/no_visual/videomme_no_visual.yaml",
+          "videomme/number_option/videomme_number_option.yaml",
+          "videomme/random_choice/videomme_random_choice.yaml",
+          "videomme/revert_oe_mcq/videomme_revert_oe_mcq.yaml",
+          "videomme/video_only_abcd/videomme_video_only_abcd.yaml",
+          "videomme/videomme.yaml",
+          "videomme/videomme_long.yaml",
+          "videomme/videomme_long_w_subtitle.yaml",
+          "videomme/videomme_w_subtitle.yaml"
+        ]
+      },
+      "videomme_hf_cache_candidates": [
+        {
+          "exists": false,
+          "file_count": 0,
+          "path": "/root/.cache/huggingface/videomme/data",
+          "size_human": null
+        },
+        {
+          "exists": false,
+          "file_count": 0,
+          "path": "/tf/notebooks/.cache/huggingface/videomme/data",
+          "size_human": null
+        }
+      ]
+    },
+    "hf_token_available": true,
+    "models": [
+      {
+        "file_count": 18,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 9719
+          },
+          {
+            "path": "added_tokens.json",
+            "size_bytes": 101
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 3023
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 248
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4877668032
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4932751008
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4994571904
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1255812224
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 80832
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 393
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 367
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7028227
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 1539
+          },
+          {
+            "path": "trainer_state.json",
+            "size_bytes": 2253346
+          },
+          {
+            "path": "training_args.bin",
+            "size_bytes": 7928
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 9719
+          },
+          {
+            "path": "added_tokens.json",
+            "size_bytes": 101
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 3023
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 248
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4877668032
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4932751008
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4994571904
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1255812224
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 80832
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 393
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 367
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7028227
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 1539
+          },
+          {
+            "path": "trainer_state.json",
+            "size_bytes": 2253346
+          },
+          {
+            "path": "training_args.bin",
+            "size_bytes": 7928
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "repo_id": "lmms-lab/llava-onevision-qwen2-7b-ov",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 16074639096
+      },
+      {
+        "file_count": 18,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 7557
+          },
+          {
+            "path": "added_tokens.json",
+            "size_bytes": 100
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 3104
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 248
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4877668032
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4932751008
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4994571904
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1255812224
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 80832
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 392
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 367
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7028015
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 1538
+          },
+          {
+            "path": "trainer_state.json",
+            "size_bytes": 2297844
+          },
+          {
+            "path": "training_args.bin",
+            "size_bytes": 7864
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 7557
+          },
+          {
+            "path": "added_tokens.json",
+            "size_bytes": 100
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 3104
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 248
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4877668032
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4932751008
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4994571904
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 1255812224
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 80832
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 392
+          },
+          {
+            "path": "special_tokens_map.json",
+            "size_bytes": 367
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7028015
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 1538
+          },
+          {
+            "path": "trainer_state.json",
+            "size_bytes": 2297844
+          },
+          {
+            "path": "training_args.bin",
+            "size_bytes": 7864
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "repo_id": "lmms-lab/LLaVA-Video-7B-Qwen2",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 16074681234
+      },
+      {
+        "file_count": 16,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 18574
+          },
+          {
+            "path": "chat_template.json",
+            "size_bytes": 1050
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 1374
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 216
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00005.safetensors",
+            "size_bytes": 3900233256
+          },
+          {
+            "path": "model-00002-of-00005.safetensors",
+            "size_bytes": 3864726320
+          },
+          {
+            "path": "model-00003-of-00005.safetensors",
+            "size_bytes": 3864726424
+          },
+          {
+            "path": "model-00004-of-00005.safetensors",
+            "size_bytes": 3864733680
+          },
+          {
+            "path": "model-00005-of-00005.safetensors",
+            "size_bytes": 1089994880
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 57619
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 350
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 5702
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 18574
+          },
+          {
+            "path": "chat_template.json",
+            "size_bytes": 1050
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 1374
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 216
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00005.safetensors",
+            "size_bytes": 3900233256
+          },
+          {
+            "path": "model-00002-of-00005.safetensors",
+            "size_bytes": 3864726320
+          },
+          {
+            "path": "model-00003-of-00005.safetensors",
+            "size_bytes": 3864726424
+          },
+          {
+            "path": "model-00004-of-00005.safetensors",
+            "size_bytes": 3864733680
+          },
+          {
+            "path": "model-00005-of-00005.safetensors",
+            "size_bytes": 1089994880
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 57619
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 350
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 5702
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 16595981281
+      },
+      {
+        "file_count": 16,
+        "files_head": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 7133
+          },
+          {
+            "path": "chat_template.json",
+            "size_bytes": 5499
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 1474
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 269
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4902275944
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4915962496
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4999831048
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 2716270024
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 67759
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 390
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7032403
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 10868
+          },
+          {
+            "path": "video_preprocessor_config.json",
+            "size_bytes": 385
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_tail": [
+          {
+            "path": ".gitattributes",
+            "size_bytes": 1519
+          },
+          {
+            "path": "README.md",
+            "size_bytes": 7133
+          },
+          {
+            "path": "chat_template.json",
+            "size_bytes": 5499
+          },
+          {
+            "path": "config.json",
+            "size_bytes": 1474
+          },
+          {
+            "path": "generation_config.json",
+            "size_bytes": 269
+          },
+          {
+            "path": "merges.txt",
+            "size_bytes": 1671839
+          },
+          {
+            "path": "model-00001-of-00004.safetensors",
+            "size_bytes": 4902275944
+          },
+          {
+            "path": "model-00002-of-00004.safetensors",
+            "size_bytes": 4915962496
+          },
+          {
+            "path": "model-00003-of-00004.safetensors",
+            "size_bytes": 4999831048
+          },
+          {
+            "path": "model-00004-of-00004.safetensors",
+            "size_bytes": 2716270024
+          },
+          {
+            "path": "model.safetensors.index.json",
+            "size_bytes": 67759
+          },
+          {
+            "path": "preprocessor_config.json",
+            "size_bytes": 390
+          },
+          {
+            "path": "tokenizer.json",
+            "size_bytes": 7032403
+          },
+          {
+            "path": "tokenizer_config.json",
+            "size_bytes": 10868
+          },
+          {
+            "path": "video_preprocessor_config.json",
+            "size_bytes": 385
+          },
+          {
+            "path": "vocab.json",
+            "size_bytes": 2776833
+          }
+        ],
+        "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+        "repo_type": "model",
+        "status": "available",
+        "total_size_bytes": 17545915883
+      }
+    ],
+    "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging"
+  },
+  "official_script_manifest": {
+    "artifact_kind": "flashvid_official_script_manifest",
+    "created_at_utc": "2026-07-23T18:53:32Z",
+    "full_grid_commands_required": [
+      "bash scripts/baseline/llava_ov.sh",
+      "bash scripts/baseline/llava_vid.sh",
+      "bash scripts/baseline/qwen2_5_vl.sh",
+      "bash scripts/llava_ov.sh",
+      "bash scripts/llava_vid.sh",
+      "bash scripts/qwen2_5_vl.sh",
+      "bash scripts/fixed_token_budget/baseline.sh",
+      "bash scripts/fixed_token_budget/flashvid.sh",
+      "bash scripts/efficiency/llava_ov.sh"
+    ],
+    "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+    "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+    "scripts": [
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "32"
+        ],
+        "models": [
+          "llava_onevision"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/llava_ov.sh",
+        "pretrained": "lmms-lab/llava-onevision-qwen2-7b-ov",
+        "retention_ratios": [
+          "0.10",
+          "0.15",
+          "0.20",
+          "0.25"
+        ],
+        "tasks": [
+          "videomme",
+          "mvbench",
+          "longvideobench_val_v",
+          "egoschema"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "64"
+        ],
+        "models": [
+          "llava_vid"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/llava_vid.sh",
+        "pretrained": "lmms-lab/LLaVA-Video-7B-Qwen2",
+        "retention_ratios": [
+          "0.10",
+          "0.15",
+          "0.20",
+          "0.25"
+        ],
+        "tasks": [
+          "videomme",
+          "mvbench",
+          "longvideobench_val_v",
+          "egoschema"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "32"
+        ],
+        "models": [
+          "qwen2_5_vl"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/qwen2_5_vl.sh",
+        "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "retention_ratios": [
+          "0.10",
+          "0.15",
+          "0.20",
+          "0.25"
+        ],
+        "tasks": [
+          "videomme",
+          "egoschema",
+          "mvbench",
+          "longvideobench_val_v",
+          "mlvu_test"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "32"
+        ],
+        "models": [
+          "qwen3_vl"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/qwen3_vl.sh",
+        "pretrained": "Qwen/Qwen3-VL-8B-Instruct",
+        "retention_ratios": [
+          "0.10",
+          "0.15",
+          "0.20",
+          "0.25"
+        ],
+        "tasks": [
+          "videomme",
+          "egoschema",
+          "mvbench",
+          "longvideobench_val_v",
+          "mlvu_test"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "32"
+        ],
+        "models": [
+          "llava_onevision"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/llava_ov.sh",
+        "pretrained": "lmms-lab/llava-onevision-qwen2-7b-ov",
+        "retention_ratios": [],
+        "tasks": [
+          "videomme",
+          "mvbench",
+          "longvideobench_val_v",
+          "egoschema"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "64"
+        ],
+        "models": [
+          "llava_vid"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/llava_vid.sh",
+        "pretrained": "lmms-lab/LLaVA-Video-7B-Qwen2",
+        "retention_ratios": [],
+        "tasks": [
+          "videomme",
+          "mvbench",
+          "longvideobench_val_v",
+          "egoschema"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "32"
+        ],
+        "models": [
+          "qwen2_5_vl"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/qwen2_5_vl.sh",
+        "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "retention_ratios": [],
+        "tasks": [
+          "videomme",
+          "egoschema",
+          "mvbench",
+          "longvideobench_val_v",
+          "mlvu_test"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "32"
+        ],
+        "models": [
+          "qwen3_vl"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/baseline/qwen3_vl.sh",
+        "pretrained": "Qwen/Qwen3-VL-8B-Instruct",
+        "retention_ratios": [],
+        "tasks": [
+          "videomme",
+          "egoschema",
+          "mvbench",
+          "longvideobench_val_v",
+          "mlvu_test"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "16"
+        ],
+        "models": [
+          "qwen2_5_vl"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/fixed_token_budget/baseline.sh",
+        "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "retention_ratios": [],
+        "tasks": [
+          "videomme",
+          "mlvu_test",
+          "longvideobench_val_v",
+          "egoschema"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+        "exists": true,
+        "max_frames": [
+          "160",
+          "80",
+          "64",
+          "48"
+        ],
+        "models": [
+          "qwen2_5_vl"
+        ],
+        "num_processes": [
+          "8"
+        ],
+        "output_paths": [
+          "./log"
+        ],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/fixed_token_budget/flashvid.sh",
+        "pretrained": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "retention_ratios": [
+          "0.100",
+          "0.200",
+          "0.250",
+          "0.333"
+        ],
+        "tasks": [
+          "videomme",
+          "mlvu_test",
+          "longvideobench_val_v",
+          "egoschema"
+        ]
+      },
+      {
+        "cuda_visible_devices": "0",
+        "exists": true,
+        "max_frames": [],
+        "models": [],
+        "num_processes": [],
+        "output_paths": [],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/efficiency/llava_ov.sh",
+        "pretrained": null,
+        "retention_ratios": [],
+        "tasks": []
+      },
+      {
+        "cuda_visible_devices": "0",
+        "exists": true,
+        "max_frames": [],
+        "models": [],
+        "num_processes": [],
+        "output_paths": [],
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/scripts/efficiency/llava_vid.sh",
+        "pretrained": null,
+        "retention_ratios": [],
+        "tasks": []
+      }
+    ]
+  },
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "paper_title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+  "updated_at_utc": "2026-07-23T18:53:33Z",
+  "verifier": {
+    "convergence_decision": "not_converged_explicit_professional_blockers_after_operational_preflight",
+    "loop1_required_dag_update": [
+      "Add exact official-script execution matrix as a DAG node, not a generic VLM benchmark node.",
+      "Add hardware class gate: 8 x A800 80G for main LMMs-Eval grid and single A100 for efficiency traces.",
+      "Add VideoMME local video-cache gate for efficiency benchmark.",
+      "Add exact Transformers 4.57 and flash_attention_2 runtime gate.",
+      "Keep FLOPs reproduction as analytic support only, not result-table convergence evidence."
+    ],
+    "professional_package_ready": false,
+    "semantic_dag_nodes_checked": [
+      "gap.paper_gap_claims",
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface",
+      "ops.resolve_models_data"
+    ],
+    "status": "blocked_by_exact_professional_runtime_and_data_requirements",
+    "unresolved_professional_debt": [
+      {
+        "detail": "official main scripts request --num_processes 8; visible GPUs=4",
+        "id": "main_grid_hardware_gpu_count",
+        "status": "blocked"
+      },
+      {
+        "detail": "paper/DAG expects NVIDIA A800 80G for main experiments; visible GPUs are not A800 80G",
+        "id": "main_grid_hardware_gpu_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "paper/DAG expects a single NVIDIA A100 for efficiency traces; visible GPUs are not A100",
+        "id": "efficiency_hardware_gpu_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "README badge requires Transformers 4.57; environment has 4.51.2",
+        "id": "transformers_version_exactness",
+        "status": "blocked"
+      },
+      {
+        "detail": "official scripts request attn_implementation=flash_attention_2; flash-attn package is not installed",
+        "id": "flash_attention_runtime",
+        "status": "blocked"
+      },
+      {
+        "detail": "playground/bench_efficiency.py expects ~/.cache/huggingface/videomme/data videos; no populated cache was found",
+        "id": "videomme_video_cache",
+        "status": "blocked"
+      }
+    ]
+  }
+}

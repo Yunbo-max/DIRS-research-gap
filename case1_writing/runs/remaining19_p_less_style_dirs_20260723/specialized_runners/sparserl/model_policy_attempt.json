@@ -1,0 +1,7 @@
+{
+  "attempted": false,
+  "cached_exact_snapshot": null,
+  "convergence_role": "blocker_until_exact_or_paper_declared_model_artifacts_run",
+  "exact_model_id": "Qwen/Qwen3-8B",
+  "reason": "exact_model_attempt_disabled_for_this_runner_invocation"
+}

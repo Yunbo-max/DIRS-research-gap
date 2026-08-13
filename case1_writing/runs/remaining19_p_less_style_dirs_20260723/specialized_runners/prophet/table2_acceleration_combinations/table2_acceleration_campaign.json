@@ -1,0 +1,108 @@
+{
+  "artifact_kind": "prophet_table2_acceleration_combination_campaign",
+  "blocked_configs": [
+    {
+      "id": "sdtt_distilled_student_row",
+      "paper_role": "Table 2a SDTT distilled row",
+      "reason": "The Prophet release does not include the preliminary SDTT implementation, distilled 128-step LLaDA checkpoint, training data recipe, or verification script.",
+      "status": "blocked_by_missing_sdtt_training_code_or_distilled_checkpoint"
+    },
+    {
+      "id": "sdtt_plus_prophet_row",
+      "paper_role": "Table 2a SDTT + Prophet row",
+      "reason": "Applying Prophet to the SDTT student requires the exact distilled model artifact and compatibility path for generate_earlyexit.py.",
+      "status": "blocked_by_missing_sdtt_checkpoint_and_prophet_integration_path"
+    },
+    {
+      "id": "fast_dllm_kv_cache_parallel_row",
+      "paper_role": "Table 2b Fast-dLLM row",
+      "reason": "The local Prophet repo does not contain Fast-dLLM KV-cache/parallel-decoding code, model patch, timing harness, or exact GSM8K evaluation script.",
+      "status": "blocked_by_missing_fast_dllm_code_patch_and_speed_harness"
+    },
+    {
+      "id": "fast_dllm_plus_prophet_row",
+      "paper_role": "Table 2b Fast-dLLM + Prophet row",
+      "reason": "The paper's combined row needs a Fast-dLLM runner that exposes Prophet's answer-region confidence monitor and terminates without continuing cache updates.",
+      "status": "blocked_by_missing_fast_dllm_prophet_combined_runner"
+    }
+  ],
+  "campaign_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table2_acceleration_combinations",
+  "config_statuses": {},
+  "convergence_role": "professional artifact plan for Table 2 acceleration-combination debt; linked baseline/Prophet GSM8K rows are necessary but insufficient without SDTT and Fast-dLLM rows",
+  "created_at_utc": "2026-07-23T14:07:40Z",
+  "gpu_inventory": [
+    {
+      "index": "0",
+      "memory_free_mib": 3586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 20978,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 10
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5933,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 1
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5372,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19192,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 5
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8515,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16049,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "launch_result": {
+    "launched": false,
+    "reason": "no_runnable_configs_without_sdtt_fastdllm_external_artifacts"
+  },
+  "linked_existing_artifacts": [
+    {
+      "completed_samples": 566,
+      "full_split_complete": false,
+      "id": "table2_llada_teacher_full_step",
+      "note": "Live/full custom GSM8K baseline row; partial rows remain monitoring only.",
+      "paper_role": "Table 2a LLaDA teacher and Table 2b baseline row",
+      "row_count": 1132,
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/status.json",
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+      "variant": "baseline"
+    },
+    {
+      "completed_samples": 566,
+      "full_split_complete": false,
+      "id": "table2_prophet_ours",
+      "note": "Live/full custom GSM8K Prophet row; partial rows remain monitoring only.",
+      "paper_role": "Table 2a/2b Prophet row",
+      "row_count": 1132,
+      "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/per_sample_results.jsonl",
+      "status_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/status.json",
+      "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/custom_full_gsm8k_llada8b/summary.json",
+      "variant": "prophet"
+    }
+  ],
+  "linked_existing_complete_count": 0,
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet",
+  "runnable_configs": [],
+  "strict_policy": {
+    "external_method_artifacts_required": true,
+    "full_gsm8k_required_for_linked_rows": true,
+    "paper_target_scores_visible_to_loop2": false,
+    "reduced_or_small_runs_allowed_to_converge": false
+  }
+}

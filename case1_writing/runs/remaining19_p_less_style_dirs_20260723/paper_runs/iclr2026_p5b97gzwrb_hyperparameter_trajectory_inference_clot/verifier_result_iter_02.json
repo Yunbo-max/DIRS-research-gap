@@ -1,0 +1,206 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "anchors",
+        "behavior",
+        "breaks",
+        "chaotic",
+        "conditional",
+        "dynamics",
+        "expensive",
+        "feasibility",
+        "hyperparameter",
+        "hyperparameters",
+        "infeasible",
+        "limitation",
+        "locality",
+        "mappings",
+        "multi-dimensional",
+        "naive",
+        "path",
+        "paths",
+        "post-deployment",
+        "preference",
+        "retraining",
+        "shift",
+        "single-hyperparameter",
+        "sparse",
+        "surrogate",
+        "under"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "post-deployment preference shift",
+        "expensive retraining for behavior hyperparameters",
+        "sparse hyperparameter anchors",
+        "conditional path feasibility"
+      ],
+      "score": 2.167,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "clot",
+        "conditional",
+        "conditioning",
+        "density",
+        "film",
+        "generator",
+        "geodesic",
+        "kantorovich",
+        "maps",
+        "metric",
+        "neural",
+        "potential",
+        "potentials",
+        "spline"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "conditional density potential",
+        "neural metric",
+        "Kantorovich potentials",
+        "CLOT maps",
+        "spline geodesic generator",
+        "FiLM conditioning"
+      ],
+      "score": 1.167,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "ablation",
+        "average",
+        "cancer",
+        "circle",
+        "cti",
+        "diffusion",
+        "distance",
+        "dropout",
+        "error",
+        "ettm2",
+        "gpu-hours",
+        "held-out",
+        "interpolation",
+        "log-likelihood",
+        "mean",
+        "metric",
+        "negative",
+        "parametrization",
+        "probabilities",
+        "quantile",
+        "quantiles",
+        "reacher",
+        "reward",
+        "reward-weighting",
+        "semicircle",
+        "squared",
+        "time",
+        "wasserstein",
+        "weights",
+        "withheld"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "CTI semicircle",
+        "Cancer reward-weighting",
+        "Reacher reward-weighting",
+        "ETTm2 quantile interpolation",
+        "dropout diffusion interpolation",
+        "withheld time evaluation",
+        "held-out reward weights",
+        "held-out quantiles",
+        "held-out dropout probabilities",
+        "metric parametrization ablation"
+      ],
+      "score": 2.5,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "CTI semicircle; Cancer reward-weighting; Reacher reward-weighting; ETTm2 quantile interpolation; dropout diffusion interpolation; withheld time evaluation; held-out reward weights; held-out quantiles; held-out dropout probabilities; metric parametrization ablation"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "negative log-likelihood; circle distance; average reward; mean squared error; Wasserstein distance; GPU-hours"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "conditional semicircles; DTR-Bench Cancer; Reacher-v2; ETTm2; two moons; NLOT/data/conditional_semicircles.pt; NLOT/data/reward_weighting_data_0_10.pt; NLOT/data/reward_weighting_hinge_data.pt; NLOT/data/reacher_data.pt; NLOT/data/quantile_data_new.pt; NLOT/data/diffusion_2moons_dropout.pt"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "Azure VM A100 GPU; Python 3.10; JAX; Flax; Hydra; PyTorch; stable-baselines3; Gymnasium/MuJoCo"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "conditional density potential; neural metric; Kantorovich potentials; CLOT maps; spline geodesic generator; FiLM conditioning; NLOT/train.py; NLOT/lagrangian_ot/metrics.py; NLOT/lagrangian_ot/lagrangian_potentials.py; NLOT/lagrangian_ot/neuraldual.py; hti_scripts/*.sh; DTR-Bench/*.py; quantile_regression/*.py; generative_dropout/*.py"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:28Z",
+  "iteration": 2,
+  "paper_id": "ICLR2026_P5B97gZwRb_hyperparameter_trajectory_inference_clot",
+  "paper_title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

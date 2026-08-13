@@ -1,0 +1,169 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 275,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "3",
+  "current_sample_index": 494,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 220,
+  "effective_stop_index_exclusive": 495,
+  "finished_at_utc": "2026-07-24T03:14:50Z",
+  "full_split_requested": false,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 15989, 24564, 99\n1, NVIDIA GeForce RTX 4090, 16089, 24564, 99\n2, NVIDIA GeForce RTX 4090, 16328, 24564, 99\n3, NVIDIA GeForce RTX 4090, 15829, 24564, 31",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "created_at_utc": "2026-07-24T03:14:31Z",
+      "exit_info": {
+        "actual_steps": 256,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 256
+      },
+      "flexible_exact_match": false,
+      "flexible_predicted_answer": "53",
+      "gen_length": 256,
+      "generated_text": "\n1. Calculate the total height of the 9 cheerleaders who are 64 inches tall:\n   \\[\n   9 \\times 64 = 576 \\text{ inches}\n   \\]\n\n2. Add the height of the 10th cheerleader who is 60 inches tall:\n   \\[\n   576 + 60 = 636 \\text{ inches}\n   \\]\n\n3. Determine the total height of the human pyramid by summing the heights of the 10 cheerleaders:\n   \\[\n   636 \\text{ inches}\n   \\]\n\n4. Convert the total height from inches to feet:\n   \\[\n   \\frac{636 \\text{ inches}}{12 \\text{ inches/foot}} = 53 \\text{ feet}\n   \\]\n\n5. The height of the human pyramid in feet is:\n   \\[\n   53 \\text{ feet}\n\n   Answer: 53",
+      "gold_answer": "21",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "question": "9 out of 10 cheerleaders are 64\" tall.  The 10th cheerleader is 60\" tall.  If they build a human pyramid, where 4 girls are on the bottom,  3 stand on top of the 4, 2 stand on top of the 3 and the shortest girl is at the top, how tall is the human pyramid in feet?",
+      "remasking": "low_confidence",
+      "sample_index": 494,
+      "seconds": 24.3465,
+      "steps": 256,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "53",
+      "variant": "baseline"
+    },
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "220:Answer",
+      "created_at_utc": "2026-07-24T03:14:50Z",
+      "exit_info": {
+        "actual_steps": 195,
+        "early_exit_triggered": true,
+        "exit_decision_step": 195,
+        "total_steps": 256
+      },
+      "flexible_exact_match": false,
+      "flexible_predicted_answer": "53",
+      "gen_length": 256,
+      "generated_text": "\n1. Calculate the total height of the 9 cheerleaders who are 64 inches tall:\n   \\[\n   9 \\times 64 = 576 \\text{ inches}\n   \\]\n\n2. Add the height of the 10th cheerleader who is 60 inches tall:\n   \\[\n   576 + 60 = 636 \\text{ inches}\n   \\]\n\n3. Determine the total height of the human pyramid by summing the heights of the 10 cheerleaders:\n   \\[\n   636 \\text{ inches}\n   \\]\n\n4. Convert the total height from inches to feet:\n   \\[\n   \\frac{636 \\text{ inches}}{12 \\text{ inches/foot}} = 53 \\text{ feet}\n   \\]\n\n5, the height height of the human pyramid is:\n  \n\n  5533 feet}\n   \\]\n\n Answer: 53 feet",
+      "gold_answer": "21",
+      "prompt_profile": "trajectory_gsm8k_cot",
+      "question": "9 out of 10 cheerleaders are 64\" tall.  The 10th cheerleader is 60\" tall.  If they build a human pyramid, where 4 girls are on the bottom,  3 stand on top of the 4, 2 stand on top of the 3 and the shortest girl is at the top, how tall is the human pyramid in feet?",
+      "remasking": "low_confidence",
+      "sample_index": 494,
+      "seconds": 18.7728,
+      "steps": 256,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "53",
+      "variant": "prophet"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 3 is logical cuda:0 when CUDA_VISIBLE_DEVICES=3",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 248638,
+  "prompt_profile": "trajectory_gsm8k_cot",
+  "prompt_template_source": "named_prompt_profile",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494/per_sample_results.jsonl",
+  "run_label": "gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494",
+  "running_summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 275,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 210,
+        "flexible_exact_match": 0.7636363636363637,
+        "mean_actual_steps": 256.0,
+        "mean_seconds": 25.119400363636366,
+        "strict_correct_count": 203,
+        "strict_exact_match": 0.7381818181818182
+      },
+      "prophet": {
+        "completed_samples": 275,
+        "early_exit_count": 275,
+        "early_exit_rate": 1.0,
+        "flexible_correct_count": 199,
+        "flexible_exact_match": 0.7236363636363636,
+        "mean_actual_steps": 199.01454545454544,
+        "mean_seconds": 19.558866909090913,
+        "strict_correct_count": 194,
+        "strict_exact_match": 0.7054545454545454
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T03:14:50Z",
+    "dataset": "openai/gsm8k main test",
+    "paired_shape": {
+      "flexible_accuracy_delta": -0.040000000000000036,
+      "mean_step_reduction": 56.98545454545456,
+      "speedup_mean_seconds": 1.2842973205140493
+    },
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494/per_sample_results.jsonl",
+    "status": "running_or_partial",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline",
+      "prophet"
+    ]
+  },
+  "started_at_utc": "2026-07-23T23:48:38Z",
+  "status": "completed",
+  "summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 275,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 210,
+        "flexible_exact_match": 0.7636363636363637,
+        "mean_actual_steps": 256.0,
+        "mean_seconds": 25.119400363636366,
+        "strict_correct_count": 203,
+        "strict_exact_match": 0.7381818181818182
+      },
+      "prophet": {
+        "completed_samples": 275,
+        "early_exit_count": 275,
+        "early_exit_rate": 1.0,
+        "flexible_correct_count": 199,
+        "flexible_exact_match": 0.7236363636363636,
+        "mean_actual_steps": 199.01454545454544,
+        "mean_seconds": 19.558866909090913,
+        "strict_correct_count": 194,
+        "strict_exact_match": 0.7054545454545454
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T03:14:50Z",
+    "dataset": "openai/gsm8k main test",
+    "finished_at_utc": "2026-07-24T03:14:50Z",
+    "paired_shape": {
+      "flexible_accuracy_delta": -0.040000000000000036,
+      "mean_step_reduction": 56.98545454545456,
+      "speedup_mean_seconds": 1.2842973205140493
+    },
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494/per_sample_results.jsonl",
+    "status": "completed",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline",
+      "prophet"
+    ]
+  },
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/protocol_repair_full_gsm8k/gsm8k_trajectory_prompt_constraint_L256_T256_shard_0220_0494/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-24T03:14:50Z",
+  "variants": [
+    "baseline",
+    "prophet"
+  ]
+}

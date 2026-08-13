@@ -1,0 +1,177 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "block_size_brittleness",
+        "confidence_miscalibration",
+        "dlm_inference_latency",
+        "fixed_budget_over_refinement",
+        "open_ended_answer_boundary_missing",
+        "premature_commit_wrong_answer",
+        "structured_answer_region_decoding"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "dlm_inference_latency",
+        "fixed_budget_over_refinement",
+        "structured_answer_region_decoding"
+      ],
+      "score": 0.583,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "all_in_mask_fill",
+        "answer_region_monitor",
+        "confidence_gap",
+        "phase_threshold_schedule",
+        "suffix_answer_constraint"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "answer_region_monitor",
+        "confidence_gap",
+        "phase_threshold_schedule",
+        "all_in_mask_fill",
+        "suffix_answer_constraint"
+      ],
+      "score": 0.455,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "8_shot_planning_eval",
+        "accuracy",
+        "accuracy_delta",
+        "average_steps",
+        "block_length_ablation",
+        "first_correct_answer_emergence",
+        "full_step_vs_prophet",
+        "gsm8k",
+        "gsm8k_trajectory_analysis",
+        "lm_evaluation_harness",
+        "mmlu",
+        "mmlu_trajectory_analysis",
+        "simple_evals",
+        "speedup",
+        "static_step_budget_ablation",
+        "zero_shot_eval"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "lm_evaluation_harness",
+        "simple_evals",
+        "GSM8K_trajectory_analysis",
+        "MMLU_trajectory_analysis",
+        "zero_shot_eval",
+        "8_shot_planning_eval",
+        "full_step_vs_prophet",
+        "static_step_budget_ablation",
+        "block_length_ablation"
+      ],
+      "score": 1.333,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+        "repo_audit_count": 1
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "lm_evaluation_harness; simple_evals; GSM8K_trajectory_analysis; MMLU_trajectory_analysis; zero_shot_eval; 8_shot_planning_eval; full_step_vs_prophet; static_step_budget_ablation; block_length_ablation"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "accuracy; accuracy_delta; speedup; average_steps; first_correct_answer_emergence"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "MMLU; ARC_C; HellaSwag; TruthfulQA; WinoGrande; PIQA; GSM8K; GPQA; HumanEval; MBPP; YefanZhou98_DLM_Decoding_Analysis"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "cuda_gpus_required_for_repo_eval; PyTorch; Transformers; Accelerate; lm_evaluation_harness; datasets"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "answer_region_monitor; confidence_gap; phase_threshold_schedule; all_in_mask_fill; suffix_answer_constraint; generate_earlyexit_py; generate_py; eval_llada_py; eval_sh; analysis_collect_decoding_traj_gsm8k_py; analysis_visualize_ipynb"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "iteration": 1,
+  "paper_id": "ICLR2026_g88nt4ieTG_prophet_dlm_early_commit_decoding",
+  "paper_title": "Diffusion Language Models Know the Answer Before Decoding",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "no_paper_shaped_runner_has_completed_for_this_paper",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

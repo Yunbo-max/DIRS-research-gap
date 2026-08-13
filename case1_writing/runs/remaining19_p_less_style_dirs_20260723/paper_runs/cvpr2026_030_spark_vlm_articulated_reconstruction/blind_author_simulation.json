@@ -1,0 +1,42 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "experiment_prediction": "benchmarks=100-image GAPartNet articulated-object test set; metrics=Chamfer Distance; F-Score@0.1; F-Score@0.5; AxisErr; PivotErr; TypeErr; protocols=shape reconstruction against GAPartNet held-out articulated objects; URDF joint parameter evaluation against Articulate-Anything and Articulate AnyMesh; ablation of part guidance, data augmentation, joint optimization, and VLM re-prediction; qualitative simulator deployment in Isaac Sim",
+  "gap_prediction": "single-image articulated objects are hard to convert into simulation-ready assets; image-to-3D and text-to-3D methods usually produce fused shapes rather than kinematic part meshes; appearance-driven part generation is not enough for motion-aware segmentation and URDF construction; template-free reconstruction needs part geometry and joint parameters from one RGB image; stressors: VLM can miscount object parts and produce over-segmented or under-segmented assets; VLM-generated part images can be texture-misaligned with the input; secondary joints such as handles and buttons are often missed; multi-DOF joints, compound mechanisms, and closed chains are outside the demonstrated scope; official GitHub repository is currently a placeholder without released source, checkpoints, training code, inference scripts, or preprocessed data",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.031,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 10\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19260, 4954, 7\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "VLM structural reasoning; VLM part reference image generation; DINOv2 image encoder; part-articulated diffusion transformer; hierarchical graph attention; rectified flow mesh latent objective; VLM discrete joint re-prediction; differentiable forward kinematics; differentiable rendering silhouette optimization; Meshy texture synthesis",
+  "oracle_results_seen": false,
+  "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+  "paper_text_seen": false,
+  "paper_title": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_missing+no_local_repository_encoded_in_dag",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": []
+}

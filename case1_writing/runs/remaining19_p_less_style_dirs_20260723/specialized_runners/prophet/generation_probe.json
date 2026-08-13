@@ -1,0 +1,73 @@
+{
+  "artifact_kind": "exact_model_full_parameter_generation_probe",
+  "command_result": {
+    "cmd": [
+      "python",
+      "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_generation_worker.py"
+    ],
+    "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Prophet",
+    "returncode": 0,
+    "seconds": 48.308,
+    "stderr": "/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n\nLoading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]\nLoading checkpoint shards:  50%|\u2588\u2588\u2588\u2588\u2588     | 3/6 [00:00<00:00, 22.43it/s]\nLoading checkpoint shards: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 6/6 [00:00<00:00, 25.58it/s]\nLoading checkpoint shards: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 6/6 [00:00<00:00, 25.03it/s]\n",
+    "stdout": "Early exit at step 172/256 with gap=2.775\n{\n  \"artifact_kind\": \"exact_llada_full_parameter_single_question_probe\",\n  \"convergence_role\": \"support_only_not_full_benchmark_grid\",\n  \"cuda_visible_devices\": \"3\",\n  \"device\": \"cuda\",\n  \"expected_answer\": \"72\",\n  \"gpu_mem_get_info_after\": [\n    8418099200,\n    25393692672\n  ],\n  \"gpu_mem_get_info_before\": [\n    8919318528,\n    25393692672\n  ],\n  \"logical_gpu_mapping_note\": \"When CUDA_VISIBLE_DEVICES=3, PyTorch logical cuda:0 is physical GPU 3.\",\n  \"model_id\": \"GSAI-ML/LLaDA-8B-Instruct\",\n  \"prompt_token_count\": 120,\n  \"question\": \"Lily can run 12 kilometers per hour for 4 hours. After that, she runs 6 kilometers per hour. How many kilometers can she run in 8 hours?\",\n  \"results\": [\n    {\n      \"block_length\": 32,\n      \"constraints_text\": \"200:The|201:answer|202:is\",\n      \"exit_info\": {\n        \"actual_steps\": 256,\n        \"early_exit_triggered\": false,\n        \"exit_decision_step\": null,\n        \"total_steps\": 256\n      },\n      \"gen_length\": 256,\n      \"generated_text\": \"1. Calculate the distance Lily runs in the first 4 hours:\\n   - Speed: 12 kilometers per hour\\n   - Time: 4 hours\\n   - Distance = Speed \\u00d7 Time = 12 km/h \\u00d7 4 h = 48 kilometers\\n\\n2. Calculate the distance Lily runs in the next 4 hours:\\n   - Speed: 6 kilometers per hour\\n   - Time: 4 hours\\n   - Distance = Speed \\u00d7 Time = 6 km/h \\u00d7 4 h = 24 kilometers\\n\\n3. Add the distances from both periods to find the total distance:\\n   - Total distance = 48 km + 24 km = 72 kilometers\\n\\n4. Since the problem asks for the distance Lily can run in 8 hours, and we have already calculated the distance she runs in 8 hours, we can conclude that she runs 72 kilometers in 8 hours.\\n\\nAnswer: The answer is 72 kilometers.\",\n      \"generated_token_count\": 256,\n      \"mode\": \"baseline\",\n      \"predicted_answer\": \"The answer is 72 kilometers.\",\n      \"remasking\": \"low_confidence\",\n      \"seconds\": 14.207,\n      \"steps\": 256\n    },\n    {\n      \"block_length\": 32,\n      \"constraints_text\": \"200:The|201:answer|202:is\",\n      \"exit_info\": {\n        \"actual_steps\": 172,\n        \"early_exit_triggered\": true,\n        \"exit_decision_step\": 172,\n        \"total_steps\": 256\n      },\n      \"gen_length\": 256,\n      \"generated_text\": \"1. Calculate the distance Lily runs in the first 4 hours:\\n   - Speed: 12 kilometers per hour\\n   - Time: 4 hours\\n   - Distance = Speed \\u00d7 Time = 12 km/h \\u00d7 4 h = 48 kilometers\\n\\n2. Calculate the distance Lily runs in the next 4 hours:\\n   - Speed: 6 kilometers per hour\\n   - Time: 4 hours\\n   - Distance = Speed \\u00d7 Time = 6 km/h \\u00d7 4 h = 24 kilometers\\n\\n3. Add the distances from both periods to find the total distance:\\n   - Total distance = 48 km + 24 km = 72 kilometers\\n\\n4. Since the problem asks for the distance Lily can run in 8 hours, and we have already calculated the distance for the first  hours hours, we hours hours the the the the the the the in 8 hours.\\n\\n5. The answer is:72 kilometers can in\",\n      \"generated_token_count\": 256,\n      \"mode\": \"prophet\",\n      \"predicted_answer\": \"\",\n      \"remasking\": \"low_confidence\",\n      \"seconds\": 9.39,\n      \"steps\": 256\n    }\n  ]\n}\n",
+    "timeout": false
+  },
+  "convergence_role": "support_only_not_full_benchmark_grid",
+  "parsed": {
+    "artifact_kind": "exact_llada_full_parameter_single_question_probe",
+    "convergence_role": "support_only_not_full_benchmark_grid",
+    "cuda_visible_devices": "3",
+    "device": "cuda",
+    "expected_answer": "72",
+    "gpu_mem_get_info_after": [
+      8418099200,
+      25393692672
+    ],
+    "gpu_mem_get_info_before": [
+      8919318528,
+      25393692672
+    ],
+    "logical_gpu_mapping_note": "When CUDA_VISIBLE_DEVICES=3, PyTorch logical cuda:0 is physical GPU 3.",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "prompt_token_count": 120,
+    "question": "Lily can run 12 kilometers per hour for 4 hours. After that, she runs 6 kilometers per hour. How many kilometers can she run in 8 hours?",
+    "results": [
+      {
+        "block_length": 32,
+        "constraints_text": "200:The|201:answer|202:is",
+        "exit_info": {
+          "actual_steps": 256,
+          "early_exit_triggered": false,
+          "exit_decision_step": null,
+          "total_steps": 256
+        },
+        "gen_length": 256,
+        "generated_text": "1. Calculate the distance Lily runs in the first 4 hours:\n   - Speed: 12 kilometers per hour\n   - Time: 4 hours\n   - Distance = Speed \u00d7 Time = 12 km/h \u00d7 4 h = 48 kilometers\n\n2. Calculate the distance Lily runs in the next 4 hours:\n   - Speed: 6 kilometers per hour\n   - Time: 4 hours\n   - Distance = Speed \u00d7 Time = 6 km/h \u00d7 4 h = 24 kilometers\n\n3. Add the distances from both periods to find the total distance:\n   - Total distance = 48 km + 24 km = 72 kilometers\n\n4. Since the problem asks for the distance Lily can run in 8 hours, and we have already calculated the distance she runs in 8 hours, we can conclude that she runs 72 kilometers in 8 hours.\n\nAnswer: The answer is 72 kilometers.",
+        "generated_token_count": 256,
+        "mode": "baseline",
+        "predicted_answer": "The answer is 72 kilometers.",
+        "remasking": "low_confidence",
+        "seconds": 14.207,
+        "steps": 256
+      },
+      {
+        "block_length": 32,
+        "constraints_text": "200:The|201:answer|202:is",
+        "exit_info": {
+          "actual_steps": 172,
+          "early_exit_triggered": true,
+          "exit_decision_step": 172,
+          "total_steps": 256
+        },
+        "gen_length": 256,
+        "generated_text": "1. Calculate the distance Lily runs in the first 4 hours:\n   - Speed: 12 kilometers per hour\n   - Time: 4 hours\n   - Distance = Speed \u00d7 Time = 12 km/h \u00d7 4 h = 48 kilometers\n\n2. Calculate the distance Lily runs in the next 4 hours:\n   - Speed: 6 kilometers per hour\n   - Time: 4 hours\n   - Distance = Speed \u00d7 Time = 6 km/h \u00d7 4 h = 24 kilometers\n\n3. Add the distances from both periods to find the total distance:\n   - Total distance = 48 km + 24 km = 72 kilometers\n\n4. Since the problem asks for the distance Lily can run in 8 hours, and we have already calculated the distance for the first  hours hours, we hours hours the the the the the the the in 8 hours.\n\n5. The answer is:72 kilometers can in",
+        "generated_token_count": 256,
+        "mode": "prophet",
+        "predicted_answer": "",
+        "remasking": "low_confidence",
+        "seconds": 9.39,
+        "steps": 256
+      }
+    ]
+  }
+}

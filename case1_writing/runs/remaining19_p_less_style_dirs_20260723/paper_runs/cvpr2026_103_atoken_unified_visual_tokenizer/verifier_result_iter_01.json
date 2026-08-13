@@ -1,0 +1,242 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "192m",
+        "256-h100",
+        "base",
+        "capacity",
+        "cost",
+        "degradation",
+        "fidelity",
+        "fragmentation",
+        "gan",
+        "gap",
+        "generation",
+        "image-only",
+        "image-to-3d",
+        "instability",
+        "interference",
+        "license",
+        "limit",
+        "local",
+        "long-video",
+        "multimodal",
+        "reconstruction",
+        "rerun",
+        "research-only",
+        "semantics",
+        "small",
+        "split",
+        "tokenizer",
+        "transformer",
+        "unified",
+        "versus"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "visual tokenizer fragmentation",
+        "reconstruction versus semantics split",
+        "image-only unified tokenizer limit",
+        "transformer tokenizer GAN instability",
+        "small capacity multimodal interference"
+      ],
+      "score": 2.583,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "attention",
+        "clip",
+        "decoder",
+        "decoding",
+        "embedding",
+        "fsq",
+        "gaussian",
+        "gram",
+        "joint",
+        "kv-cache",
+        "latent",
+        "loss",
+        "patch",
+        "perceptual",
+        "pooling",
+        "quantizer",
+        "reconstruction",
+        "rope",
+        "space",
+        "space-time",
+        "sparse",
+        "splatting",
+        "video"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "sparse 4D latent space",
+        "space-time patch embedding",
+        "4D/joint RoPE",
+        "attention pooling",
+        "KL reconstruction latent",
+        "FSQ quantizer",
+        "Gram loss",
+        "CLIP perceptual loss",
+        "Gaussian splatting decoder",
+        "KV-cache video decoding"
+      ],
+      "score": 1.917,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "ablation",
+        "accuracy",
+        "backbone",
+        "check",
+        "classification",
+        "comparisons",
+        "compile-only",
+        "encoder",
+        "frozen",
+        "generation",
+        "gfid",
+        "image",
+        "image-text",
+        "image-to-3d",
+        "inception",
+        "lpips",
+        "mllm",
+        "official",
+        "precision",
+        "psnr",
+        "re-evaluation",
+        "reconstruction",
+        "replacement",
+        "repo",
+        "retrieval",
+        "rfid",
+        "rfvd",
+        "same",
+        "scaling",
+        "score"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "visual tokenizer reconstruction",
+        "zero-shot classification",
+        "image-text/video-text retrieval",
+        "MLLM image understanding",
+        "MLLM video understanding",
+        "text-to-image generation",
+        "text-to-video generation",
+        "image-to-3D synthesis",
+        "scaling ablation",
+        "standardized tokenizer re-evaluation",
+        "frozen encoder SlowFast-LLaVA replacement",
+        "1B/3B/7B MLLM comparisons"
+      ],
+      "score": 3.667,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "fail"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_not_rerun",
+        "repo_audit_count": 2
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "visual tokenizer reconstruction; zero-shot classification; image-text/video-text retrieval; MLLM image understanding; MLLM video understanding; text-to-image generation; text-to-video generation; image-to-3D synthesis; scaling ablation; standardized tokenizer re-evaluation; frozen encoder SlowFast-LLaVA replacement; 1B/3B/7B MLLM comparisons; T2I/T2V generation with same backbone; official repo compile-only check"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "PSNR; SSIM; LPIPS; rFID; rFVD; accuracy; R@1; gFID; Inception Score; precision"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "DFN; Open Images; WebVid; TextVR; Panda70M; Objaverse; Cap3D; ImageNet; COCO; DAVIS; Apple CDN checkpoint links; overview image; public benchmark tables; Apple research page; not-downloaded checkpoints"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "64 H100 GPUs Stage 1; 256 H100 GPUs Stages 2-3; local compileall environment; PyTorch; diffusers; safetensors; flash-attn; Gaussian splatting dependencies; Jupyter examples"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "sparse 4D latent space; space-time patch embedding; 4D/joint RoPE; attention pooling; KL reconstruction latent; FSQ quantizer; Gram loss; CLIP perceptual loss; Gaussian splatting decoder; KV-cache video decoding; README.md; LICENSE; MODEL-LICENSE; ATokenWrapper; AutoencoderKL; FSQ"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:25Z",
+  "iteration": 1,
+  "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+  "paper_title": "AToken: A Unified Tokenizer for Vision",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_not_rerun",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.714286,
+  "semantic_ready": false,
+  "status": "not_converged_needs_dag_update"
+}

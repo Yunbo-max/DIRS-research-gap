@@ -1,0 +1,151 @@
+{
+  "blockers": [
+    {
+      "detail": "official main scripts request --num_processes 8; visible GPUs=4",
+      "id": "main_grid_hardware_gpu_count",
+      "status": "blocked"
+    },
+    {
+      "detail": "paper/DAG expects NVIDIA A800 80G for main experiments; visible GPUs are not A800 80G",
+      "id": "main_grid_hardware_gpu_class",
+      "status": "blocked"
+    },
+    {
+      "detail": "paper/DAG expects a single NVIDIA A100 for efficiency traces; visible GPUs are not A100",
+      "id": "efficiency_hardware_gpu_class",
+      "status": "blocked"
+    },
+    {
+      "detail": "README badge requires Transformers 4.57; environment has 4.51.2",
+      "id": "transformers_version_exactness",
+      "status": "blocked"
+    },
+    {
+      "detail": "official scripts request attn_implementation=flash_attention_2; flash-attn package is not installed",
+      "id": "flash_attention_runtime",
+      "status": "blocked"
+    },
+    {
+      "detail": "playground/bench_efficiency.py expects ~/.cache/huggingface/videomme/data videos; no populated cache was found",
+      "id": "videomme_video_cache",
+      "status": "blocked"
+    }
+  ],
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.071,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19262, 4952, 23\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "repo_audits": [
+    {
+      "cuda_cpp_file_count": 0,
+      "entrypoint_candidates": [
+        "playground/llava_ov_infer.py",
+        "playground/llava_vid_infer.py",
+        "llava/model/apply_delta.py",
+        "llava/model/multimodal_encoder/dev_eva_clip/eva_clip/pretrained.py",
+        "lmms-eval/miscs/test_llava.py",
+        "lmms-eval/miscs/test_scienceqa.py",
+        "lmms-eval/lmms_eval/evaluator.py",
+        "lmms-eval/lmms_eval/evaluator_utils.py",
+        "lmms-eval/lmms_eval/models/chat/vllm_generate.py",
+        "lmms-eval/lmms_eval/models/model_utils/qwen/qwen_generate_utils.py",
+        "lmms-eval/lmms_eval/loggers/evaluation_tracker.py",
+        "lmms-eval/lmms_eval/tasks/synthdog/donut_evaluator.py",
+        "lmms-eval/lmms_eval/tasks/plm_videobench/eval_utils.py",
+        "lmms-eval/lmms_eval/tasks/mmrefine/mmrefine_evals.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/zeroshot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/cot_zeroshot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/n_shot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/generative/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/gpqa/cot_n_shot/_generate_configs.py",
+        "lmms-eval/lmms_eval/tasks/seephys/seephys_evals.py",
+        "lmms-eval/lmms_eval/tasks/hrbench/hrbench_evals.py",
+        "lmms-eval/lmms_eval/tasks/olympiadbench/testmini_utils.py",
+        "lmms-eval/lmms_eval/tasks/olympiadbench/olympiadbench_evals.py",
+        "lmms-eval/lmms_eval/tasks/charades_sta/eval_tvg.py",
+        "lmms-eval/lmms_eval/tasks/_task_utils/vqa_eval_metric.py",
+        "lmms-eval/lmms_eval/tasks/_task_utils/gpt_eval_utils.py",
+        "lmms-eval/lmms_eval/tasks/mmupd/mmupd_evals.py",
+        "lmms-eval/lmms_eval/tasks/vizwiz_vqa/_generate_config.py",
+        "lmms-eval/lmms_eval/tasks/ok_vqa/_generate_config.py",
+        "lmms-eval/lmms_eval/tasks/hallusion_bench/evaluate_hb.py"
+      ],
+      "exists": true,
+      "git_head": "",
+      "python_file_count": 711,
+      "readme_files": [
+        "README.md",
+        "lmms-eval/README.md",
+        "lmms-eval/cicd/README.md",
+        "lmms-eval/docs/README.md",
+        "lmms-eval/lmms_eval/tui/README.md",
+        "lmms-eval/lmms_eval/tasks/plm_videobench/README.md",
+        "lmms-eval/lmms_eval/tasks/multilingual-llava-bench-in-the-wild/README.md",
+        "lmms-eval/lmms_eval/tasks/FALCONBench/README.md",
+        "lmms-eval/lmms_eval/tasks/gpqa/README.md",
+        "lmms-eval/lmms_eval/tasks/geometry3k/README.md"
+      ],
+      "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+      "shell_file_count": 57,
+      "status": "code_inventory_ready",
+      "syntax_checked_python_files": 250,
+      "syntax_error_count": 0,
+      "syntax_errors": []
+    }
+  ],
+  "specialized_runner": {
+    "artifact_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid",
+    "convergence_decision": "not_converged_explicit_professional_blockers_after_operational_preflight",
+    "environment_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/environment.json",
+    "flops_reproduction_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flops_reproduction.json",
+    "model_data_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/model_data_manifest.json",
+    "official_script_manifest_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/official_script_manifest.json",
+    "professional_package_ready": false,
+    "status": "blocked_by_exact_professional_runtime_and_data_requirements",
+    "unresolved_professional_debt": [
+      {
+        "detail": "official main scripts request --num_processes 8; visible GPUs=4",
+        "id": "main_grid_hardware_gpu_count",
+        "status": "blocked"
+      },
+      {
+        "detail": "paper/DAG expects NVIDIA A800 80G for main experiments; visible GPUs are not A800 80G",
+        "id": "main_grid_hardware_gpu_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "paper/DAG expects a single NVIDIA A100 for efficiency traces; visible GPUs are not A100",
+        "id": "efficiency_hardware_gpu_class",
+        "status": "blocked"
+      },
+      {
+        "detail": "README badge requires Transformers 4.57; environment has 4.51.2",
+        "id": "transformers_version_exactness",
+        "status": "blocked"
+      },
+      {
+        "detail": "official scripts request attn_implementation=flash_attention_2; flash-attn package is not installed",
+        "id": "flash_attention_runtime",
+        "status": "blocked"
+      },
+      {
+        "detail": "playground/bench_efficiency.py expects ~/.cache/huggingface/videomme/data videos; no populated cache was found",
+        "id": "videomme_video_cache",
+        "status": "blocked"
+      }
+    ],
+    "verifier_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid/flashvid_specialized_verifier.json"
+  }
+}

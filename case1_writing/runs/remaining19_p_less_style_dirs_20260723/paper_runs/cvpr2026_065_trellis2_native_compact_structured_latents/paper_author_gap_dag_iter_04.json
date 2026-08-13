@@ -1,0 +1,578 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.trellis2_repo_path_resolution_gate"
+    ],
+    [
+      "ops.trellis2_repo_path_resolution_gate",
+      "ops.trellis2_hf_weight_materialization_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.trellis2_hf_weight_materialization_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.ovoxel_dataset_preprocessing_gate"
+    ],
+    [
+      "ops.trellis2_hf_weight_materialization_gate",
+      "ops.trellis2_inference_training_matrix"
+    ],
+    [
+      "ops.ovoxel_dataset_preprocessing_gate",
+      "ops.trellis2_inference_training_matrix"
+    ],
+    [
+      "ops.trellis2_repo_path_resolution_gate",
+      "ops.trellis2_runtime_extension_gate"
+    ],
+    [
+      "ops.trellis2_runtime_extension_gate",
+      "ops.trellis2_inference_training_matrix"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.trellis2_h100_a100_hardware_trace_gate"
+    ],
+    [
+      "ops.trellis2_inference_training_matrix",
+      "ops.trellis2_h100_a100_hardware_trace_gate"
+    ],
+    [
+      "ops.trellis2_h100_a100_hardware_trace_gate",
+      "ops.full_3d_result_userstudy_artifact_gate"
+    ],
+    [
+      "ops.full_3d_result_userstudy_artifact_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "decision.explicit_blocker_after_trellis2_preflight"
+    ],
+    [
+      "decision.explicit_blocker_after_trellis2_preflight",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_materialize_trellis2_professional_artifacts_before_rerun"
+    ],
+    [
+      "loop1.required_update.update_materialize_trellis2_professional_artifacts_before_rerun",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "CVPR2026_065_trellis2_native_compact_structured_latents_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Native and Compact Structured Latents for 3D Generation | families=3d_generation, visual_tokenizer, speculative_or_early_decoding, sparse_cuda_rl",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "native compact 3D latents; field topology limits; geometry-material alignment; high-resolution efficient 3D generation",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "voxel resolution cost; large weight dependency; GPU memory requirement; public dataset bias; IP/takedown risk; non-rerun reproduction gap",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "Dora; TRELLIS; Direct3D-S2; SparseFlex; Hi3DGen; Step1X-3D; Hunyuan3D 2.1; Hunyuan3D-Paint; TEXGen; Hunyuan3D 2.1",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "O-Voxel; Flexible Dual Grid; volumetric PBR attributes; SC-VAE; sparse residual autoencoding; early-pruning upsampler; sparse structure flow; shape SLat flow; texture SLat flow",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=3D asset reconstruction; image-to-3D generation; shape-conditioned PBR texture generation; SC-VAE ablation; test-time resolution scaling; user study; metrics=MD; CD; F1; PSNR; LPIPS; CLIP; CLIP-N; ULIP-2; Uni3D; Pref%; protocols=Toys4K and Sketchfab reconstruction; 100 image prompt generation comparison; about 40 participant user study; PBR attribute and shaded-image reconstruction; architecture ablations; H100 runtime scaling",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=H100; A100; 24GB+ NVIDIA GPU; Linux CUDA workstation; runtimes=Python 3.8+; PyTorch 2.6; CUDA 12.4; flash-attn; xformers optional; nvdiffrast; nvdiffrec; cumesh; o-voxel; flexgemm",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=not specified in the available footprint; code_artifacts=trellis2/pipelines/trellis2_image_to_3d.py; trellis2/pipelines/trellis2_texturing.py; o-voxel/o_voxel/convert/flexible_dual_grid.py; o-voxel/o_voxel/convert/volumetic_attr.py; example.py; example_texturing.py; data_toolkit; configs/gen; configs/scvae",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=Objaverse-XL; ABO; HSSD; TexVerse; Toys4K; Sketchfab Featured; NanoBanana image prompts; data_artifacts=TRELLIS.2-4B Hugging Face weights; O-Voxel .vxz assets; PBR dumps; rendered conditioning views; Toys4K assets; Sketchfab Featured assets; implementation_statuses=official GitHub cloned; pipeline code inspected; O-Voxel conversion code inspected; training/data toolkit inspected; Hugging Face weights not downloaded; results not rerun",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Use discovered official repo path /tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2. The previous no-local-repository blocker is replaced by repo-aware professional gates.",
+      "id": "ops.trellis2_repo_path_resolution_gate",
+      "skill_role": "correct missing repo path in Loop 1",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Resolve microsoft/TRELLIS.2-4B as local loadable Hugging Face model files. Model-card availability is support only.",
+      "id": "ops.trellis2_hf_weight_materialization_gate",
+      "skill_role": "require 4B HF model materialization",
+      "type": "model_data_gate"
+    },
+    {
+      "content": "Materialize Objaverse-XL, ABO, HSSD, TexVerse, Toys4K, Sketchfab Featured, NanoBanana prompts, PBR dumps, dual grids, .vxz assets, latents, and rendered conditioning views.",
+      "id": "ops.ovoxel_dataset_preprocessing_gate",
+      "skill_role": "require 3D datasets and O-Voxel preprocessing",
+      "type": "evaluation_artifact_gate"
+    },
+    {
+      "content": "Verify PyTorch 2.6/CUDA 12.4, flash-attn, nvdiffrast, nvdiffrec, cumesh, o-voxel, flexgemm, imageio/cv2/trimesh/gradio/lpips runtime before running or scoring.",
+      "id": "ops.trellis2_runtime_extension_gate",
+      "skill_role": "require official CUDA extension stack",
+      "type": "runtime_gate"
+    },
+    {
+      "content": "Run example/pipeline image-to-3D, example_texturing, SC-VAE, sparse/shape/texture flow configs, resolution scaling, and user-study artifact generation only with full models/data/runtime.",
+      "id": "ops.trellis2_inference_training_matrix",
+      "skill_role": "bind Loop 2 to official image-to-3D/texturing/training paths",
+      "type": "operational_execution_matrix"
+    },
+    {
+      "content": "Require H100 timing traces for reported scaling and A100/H100 verified environment for official inference; 24GB RTX demos are support only unless full paper surface runs and verifier comparison pass.",
+      "id": "ops.trellis2_h100_a100_hardware_trace_gate",
+      "skill_role": "bind performance claims to paper hardware",
+      "type": "professional_hardware_gate"
+    },
+    {
+      "content": "Require GLB/O-Voxel/raw renders, MD/CD/F1/PSNR/LPIPS/CLIP/CLIP-N/ULIP-2/Uni3D/Pref% metric JSON, table summaries, runtime traces, ablations, and user-study artifacts.",
+      "id": "ops.full_3d_result_userstudy_artifact_gate",
+      "skill_role": "make verifier comparison table/figure shaped",
+      "type": "professional_artifact_gate"
+    },
+    {
+      "content": "If weights, datasets/preprocessing, runtime extensions, H100/A100 traces, clean GPU slot, or result grids are absent, mark not converged and update the DAG instead of running examples.",
+      "id": "decision.explicit_blocker_after_trellis2_preflight",
+      "skill_role": "feed operational failure back into Loop 1",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=not_converged_operational_blocker_recorded; converged=False; professional_ready=False; blocked_checks=['hf_4b_weight_gate', 'dataset_preprocessing_gate', 'runtime_extension_gate', 'hardware_trace_gate', 'full_3d_result_grid_gate', 'blockers']; required_updates=['update.materialize_trellis2_professional_artifacts_before_rerun']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": null,
+            "name": "hf_4b_weight_gate",
+            "status": "blocked"
+          },
+          {
+            "detail": null,
+            "name": "dataset_preprocessing_gate",
+            "status": "blocked"
+          },
+          {
+            "detail": null,
+            "name": "runtime_extension_gate",
+            "status": "blocked"
+          },
+          {
+            "detail": null,
+            "name": "hardware_trace_gate",
+            "status": "blocked"
+          },
+          {
+            "detail": null,
+            "name": "full_3d_result_grid_gate",
+            "status": "blocked"
+          },
+          {
+            "detail": [
+              {
+                "detail": "Paper/DAG includes H100 runtime scaling; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+                "id": "h100_runtime_scaling_hardware_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Official README says code verified on A100/H100; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+                "id": "official_verified_a100_h100_environment_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No visible 24GB+ GPU has >=18GB free and <30% utilization for TRELLIS.2 inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 21343, 'memory_free_mib': 2873, 'utilization_gpu_pct': 15, 'temperature_c': 44, 'power_w': 64.75}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18631, 'memory_free_mib': 5586, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.92}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19037, 'memory_free_m",
+                "id": "clean_24gb_gpu_slot_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing local HF model snapshots/checkpoints: trellis2_4b_hf_weights.",
+                "id": "trellis2_4b_weights_not_materialized",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing local datasets/preprocessed artifacts: objaverse_xl, abo, hssd, texverse, toys4k, sketchfab_featured, nanobanana_prompts, pbr_dumps, dual_grid, ovoxel_vxz, shape_latents, pbr_latents, render_cond.",
+                "id": "trellis2_datasets_or_preprocessed_artifacts_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "Missing official runtime/extension imports: flash_attn, nvdiffrast, nvdiffrec, cumesh, o_voxel, flexgemm, imageio, trimesh, gradio, lpips, kornia, easydict.",
+                "id": "trellis2_runtime_extensions_missing",
+                "status": "blocked"
+              },
+              {
+                "detail": "No complete verifier-comparable 3D generation/reconstruction/texturing/scaling/user-study result grid was found.",
+                "id": "full_3d_result_grid_and_userstudy_missing",
+                "status": "blocked"
+              }
+            ],
+            "name": "blockers",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.materialize_trellis2_professional_artifacts_before_rerun",
+            "reason": "blocked_by_weights_datasets_runtime_hardware_and_result_grid_requirements",
+            "success_criteria": [
+              "materialize microsoft/TRELLIS.2-4B checkpoints from Hugging Face",
+              "install PyTorch 2.6/CUDA 12.4 stack plus flash-attn, nvdiffrast, nvdiffrec, cumesh, o-voxel, flexgemm",
+              "materialize Objaverse-XL, ABO, HSSD, TexVerse, Toys4K, Sketchfab Featured, NanoBanana prompts, and all O-Voxel/PBR/latent/rendered-condition artifacts",
+              "run image-to-3D and shape-conditioned texturing pipelines on paper benchmark sets",
+              "run SC-VAE, resolution-scaling, and architecture-ablation surfaces when training artifacts/hardware are present",
+              "emit GLB/O-Voxel/raw render outputs, metric JSON, H100/A100 timing traces, user-study artifacts, and verifier table summaries"
+            ]
+          }
+        ],
+        "status": "not_converged_operational_blocker_recorded"
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "hf_4b_weight_gate",
+        "dataset_preprocessing_gate",
+        "runtime_extension_gate",
+        "hardware_trace_gate",
+        "full_3d_result_grid_gate",
+        "blockers"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/065_trellis2/TRELLIS.2"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_weights_datasets_runtime_hardware_and_result_grid_requirements",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_materialize_trellis2_professional_artifacts_before_rerun",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.materialize_trellis2_professional_artifacts_before_rerun",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "materialize microsoft/TRELLIS.2-4B checkpoints from Hugging Face",
+        "install PyTorch 2.6/CUDA 12.4 stack plus flash-attn, nvdiffrast, nvdiffrec, cumesh, o-voxel, flexgemm",
+        "materialize Objaverse-XL, ABO, HSSD, TexVerse, Toys4K, Sketchfab Featured, NanoBanana prompts, and all O-Voxel/PBR/latent/rendered-condition artifacts",
+        "run image-to-3D and shape-conditioned texturing pipelines on paper benchmark sets",
+        "run SC-VAE, resolution-scaling, and architecture-ablation surfaces when training artifacts/hardware are present",
+        "emit GLB/O-Voxel/raw render outputs, metric JSON, H100/A100 timing traces, user-study artifacts, and verifier table summaries"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_no_local_repository_encoded_in_dag+not_downloaded",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "h100_runtime_scaling_hardware_missing",
+        "official_verified_a100_h100_environment_missing",
+        "clean_24gb_gpu_slot_missing",
+        "trellis2_4b_weights_not_materialized",
+        "trellis2_datasets_or_preprocessed_artifacts_missing",
+        "trellis2_runtime_extensions_missing",
+        "full_3d_result_grid_and_userstudy_missing"
+      ],
+      "id": "update.add_trellis2_repo_weight_dataset_runtime_hardware_result_gates",
+      "reason": "specialized TRELLIS.2 preflight discovered official repo path but found missing 4B weights, datasets/preprocessing, runtime extensions, hardware traces, and result grids",
+      "success_criteria": [
+        "official repo path encoded",
+        "HF 4B weight materialization gate encoded",
+        "O-Voxel dataset/preprocessing gate encoded",
+        "runtime extension gate encoded",
+        "image-to-3D/texturing/training matrix encoded",
+        "H100/A100 hardware trace gate encoded",
+        "full 3D result and user-study artifact gate encoded"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "hf_4b_weight_gate",
+        "dataset_preprocessing_gate",
+        "runtime_extension_gate",
+        "hardware_trace_gate",
+        "full_3d_result_grid_gate",
+        "blockers"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:01Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.materialize_trellis2_professional_artifacts_before_rerun"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "not_converged_operational_blocker_recorded",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    }
+  ],
+  "signature": "0f5a84691550d4ba",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+  "target_title": "Native and Compact Structured Latents for 3D Generation",
+  "updated_at_utc": "2026-07-24T12:33:09Z"
+}

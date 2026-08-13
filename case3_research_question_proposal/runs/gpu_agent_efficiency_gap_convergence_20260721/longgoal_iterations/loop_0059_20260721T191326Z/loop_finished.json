@@ -1,0 +1,12 @@
+{
+  "event": "loop_finished",
+  "loop": 59,
+  "stage": "simulation_verify_repair",
+  "finished_at_utc": "2026-07-21T19:13:26Z",
+  "returncode": 0,
+  "top_question": "Q1_budgeted_state_verifying_agents",
+  "top_score": 12,
+  "verdict": "partial_gap",
+  "confidence": "medium_high",
+  "graph_signature": "019578f296b1e5f72eafd7d4670386e4e520f77e2e52e0e633f71dd1c31b93ed"
+}

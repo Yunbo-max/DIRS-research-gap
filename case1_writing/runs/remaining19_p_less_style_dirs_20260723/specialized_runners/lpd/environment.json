@@ -1,0 +1,184 @@
+{
+  "artifact_kind": "lpd_environment_manifest",
+  "compileall_repo": {
+    "cmd": [
+      "/opt/conda/bin/python",
+      "-m",
+      "compileall",
+      "-q",
+      "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.08,
+    "stderr": "",
+    "stdout": "",
+    "timeout": false
+  },
+  "created_at_utc": "2026-07-24T13:33:23Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 180.73,
+      "temperature_c": 79,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 388.55,
+      "temperature_c": 86,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7816,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16397,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 181.71,
+      "temperature_c": 77,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8108,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16109,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 162.56,
+      "temperature_c": 80,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "import_probes": {
+    "PIL": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('PIL'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.026,
+      "stderr": "",
+      "stdout": "10.0.1\n",
+      "timeout": false
+    },
+    "einops": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('einops'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.036,
+      "stderr": "",
+      "stdout": "0.8.2\n",
+      "timeout": false
+    },
+    "flash_attn": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('flash_attn'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'flash_attn'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "numpy": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('numpy'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.138,
+      "stderr": "",
+      "stdout": "1.26.4\n",
+      "timeout": false
+    },
+    "timm": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('timm'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 4.233,
+      "stderr": "/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n",
+      "stdout": "1.0.27\n",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.62,
+      "stderr": "",
+      "stdout": "2.6.0+cu124\n",
+      "timeout": false
+    },
+    "torch_fidelity": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch_fidelity'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'torch_fidelity'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "torchvision": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torchvision'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 2.753,
+      "stderr": "",
+      "stdout": "0.21.0+cu124\n",
+      "timeout": false
+    }
+  },
+  "packages": {
+    "PIL": null,
+    "einops": "0.8.2",
+    "flash_attn": null,
+    "numpy": "1.26.4",
+    "timm": "1.0.27",
+    "torch": "2.6.0+cu124",
+    "torch_fidelity": null,
+    "torchvision": "0.21.0+cu124"
+  },
+  "paper_id": "ICLR2026_h06l9w1clt_locality_parallel_decoding_ar_image",
+  "professional_hardware_expected_by_dag": [
+    "A100 bf16 profiling",
+    "8-GPU training/cache path",
+    "ImageNet 256/512 plus GenEval scoring"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]"
+}

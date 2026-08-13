@@ -1,0 +1,42 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "experiment_prediction": "benchmarks=3D asset reconstruction; image-to-3D generation; shape-conditioned PBR texture generation; SC-VAE ablation; test-time resolution scaling; user study; metrics=MD; CD; F1; PSNR; LPIPS; CLIP; CLIP-N; ULIP-2; Uni3D; Pref%; protocols=Toys4K and Sketchfab reconstruction; 100 image prompt generation comparison; about 40 participant user study; PBR attribute and shaded-image reconstruction; architecture ablations; H100 runtime scaling",
+  "gap_prediction": "native compact 3D latents; field topology limits; geometry-material alignment; high-resolution efficient 3D generation; stressors: voxel resolution cost; large weight dependency; GPU memory requirement; public dataset bias; IP/takedown risk; non-rerun reproduction gap",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.048,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19274, 4939, 6\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "O-Voxel; Flexible Dual Grid; volumetric PBR attributes; SC-VAE; sparse residual autoencoding; early-pruning upsampler; sparse structure flow; shape SLat flow; texture SLat flow",
+  "oracle_results_seen": false,
+  "paper_id": "CVPR2026_065_trellis2_native_compact_structured_latents",
+  "paper_text_seen": false,
+  "paper_title": "Native and Compact Structured Latents for 3D Generation",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_no_local_repository_encoded_in_dag+not_downloaded",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": []
+}

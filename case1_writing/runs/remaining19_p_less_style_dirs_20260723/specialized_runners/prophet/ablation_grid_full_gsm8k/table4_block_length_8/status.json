@@ -1,0 +1,126 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 1310,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "0",
+  "current_sample_index": 1310,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 0,
+  "effective_stop_index_exclusive": 1319,
+  "full_split_requested": true,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 15809, 24564, 37\n1, NVIDIA GeForce RTX 4090, 15949, 24564, 98\n2, NVIDIA GeForce RTX 4090, 16224, 24564, 100\n3, NVIDIA GeForce RTX 4090, 15989, 24564, 100",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 8,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-24T11:22:49Z",
+      "exit_info": {
+        "actual_steps": 128,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 128
+      },
+      "flexible_exact_match": false,
+      "flexible_predicted_answer": "2180",
+      "gen_length": 128,
+      "generated_text": "\nAlexandra raises $430.\nKim raises $320 more than Alexandra, so Kim raises $430 + $320 = $750.\nSarah raises $300.\nMaryam raises $400 more than Sarah, so Maryam raises $300 + $400 = $700.\nTo find the total amount of money raised, we add up the amounts raised by each girl: $430 + $750 + $300 + $700 = \\boxed{2180} dollars.",
+      "gold_answer": "2280",
+      "prompt_profile": "official_zero_shot",
+      "question": "The girls are trying to raise money for a carnival. Kim raises $320 more than Alexandra, who raises $430, and Maryam raises $400 more than Sarah, who raises $300. How much money, in dollars, did they all raise in total?",
+      "remasking": "low_confidence",
+      "sample_index": 1309,
+      "seconds": 9.397,
+      "steps": 128,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "baseline"
+    },
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 8,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-24T11:22:59Z",
+      "exit_info": {
+        "actual_steps": 128,
+        "early_exit_triggered": false,
+        "exit_decision_step": null,
+        "total_steps": 128
+      },
+      "flexible_exact_match": false,
+      "flexible_predicted_answer": "2180",
+      "gen_length": 128,
+      "generated_text": "\nAlexandra raises $430.\nKim raises $320 more than Alexandra, so Kim raises $430 + $320 = $750.\nSarah raises $300.\nMaryam raises $400 more than Sarah, so Maryam raises $300 + $400 = $700.\nTo find the total amount of money raised, we add up the amounts raised by each girl: $430 + $750 + $300 + $700 = \\boxed{2180} dollars.",
+      "gold_answer": "2280",
+      "prompt_profile": "official_zero_shot",
+      "question": "The girls are trying to raise money for a carnival. Kim raises $320 more than Alexandra, who raises $430, and Maryam raises $400 more than Sarah, who raises $300. How much money, in dollars, did they all raise in total?",
+      "remasking": "low_confidence",
+      "sample_index": 1309,
+      "seconds": 9.4641,
+      "steps": 128,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "prophet"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 0 is logical cuda:0 when CUDA_VISIBLE_DEVICES=0",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 278940,
+  "prompt_profile": "official_zero_shot",
+  "prompt_template_source": "named_prompt_profile",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8/per_sample_results.jsonl",
+  "run_label": "table4_block_length_8",
+  "running_summary": {
+    "aggregates": {
+      "baseline": {
+        "completed_samples": 1310,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 968,
+        "flexible_exact_match": 0.7389312977099237,
+        "mean_actual_steps": 128.0,
+        "mean_seconds": 7.764065496183217,
+        "strict_correct_count": 109,
+        "strict_exact_match": 0.083206106870229
+      },
+      "prophet": {
+        "completed_samples": 1310,
+        "early_exit_count": 0,
+        "early_exit_rate": 0.0,
+        "flexible_correct_count": 968,
+        "flexible_exact_match": 0.7389312977099237,
+        "mean_actual_steps": 128.0,
+        "mean_seconds": 7.857609847328246,
+        "strict_correct_count": 109,
+        "strict_exact_match": 0.083206106870229
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T11:22:59Z",
+    "dataset": "openai/gsm8k main test",
+    "paired_shape": {
+      "flexible_accuracy_delta": 0.0,
+      "mean_step_reduction": 0.0,
+      "speedup_mean_seconds": 0.9880950628801154
+    },
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8/per_sample_results.jsonl",
+    "status": "running_or_partial",
+    "total_samples": 1319,
+    "variants_requested": [
+      "baseline",
+      "prophet"
+    ]
+  },
+  "started_at_utc": "2026-07-24T05:35:09Z",
+  "status": "running",
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/ablation_grid_full_gsm8k/table4_block_length_8/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-24T11:22:59Z",
+  "variants": [
+    "baseline",
+    "prophet"
+  ]
+}

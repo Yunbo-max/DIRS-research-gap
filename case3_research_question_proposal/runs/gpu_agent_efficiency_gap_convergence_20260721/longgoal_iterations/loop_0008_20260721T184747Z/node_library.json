@@ -1,0 +1,375 @@
+[
+  {
+    "id": "T1_domain_topic",
+    "type": "domain_topic",
+    "support": 20,
+    "properties": {
+      "content_skill": "bind the target domain to code-fit 7B/8B LLM agents and efficiency papers",
+      "tools": [
+        "paper_chip_reader",
+        "shortlist_parser"
+      ],
+      "gpu_required": false,
+      "success_criteria": "20 selected papers loaded from the fit-paper shortlist"
+    }
+  },
+  {
+    "id": "P1_recent_pattern",
+    "type": "pattern_extraction",
+    "support": 393,
+    "properties": {
+      "content_skill": "extract repeated field patterns across simulator agents, token budgets, decoding, and GPU systems",
+      "tools": [
+        "chip_feature_counter"
+      ],
+      "gpu_required": false,
+      "outputs": [
+        "feature_counts",
+        "feature_support"
+      ]
+    }
+  },
+  {
+    "id": "U1_unresolved_uncertainty",
+    "type": "uncertainty_detection",
+    "support": 78,
+    "properties": {
+      "content_skill": "detect what remains unknown when dynamic agent reliability and compute cost are considered jointly",
+      "tools": [
+        "feature_overlap_analyzer"
+      ],
+      "gpu_required": false,
+      "anti_reward": "do not call this a gap if it only restates that agents are expensive"
+    }
+  },
+  {
+    "id": "C1_missing_condition",
+    "type": "missing_condition",
+    "support": 103,
+    "properties": {
+      "content_skill": "name the missing experimental condition: task success under explicit token, latency, GPU, and state-verifier budgets",
+      "tools": [
+        "benchmark_condition_mapper"
+      ],
+      "gpu_required": false,
+      "required_dimensions": [
+        "task_success",
+        "tool_latency",
+        "gpu_time",
+        "state_verifier_reliability"
+      ]
+    }
+  },
+  {
+    "id": "M1_mechanism_hypothesis",
+    "type": "mechanism_hypothesis",
+    "support": 55,
+    "properties": {
+      "content_skill": "hypothesize that budget-aware planning changes when agents should read, speculate, commit, or stop decoding",
+      "tools": [
+        "near_miss_comparison",
+        "mechanism_builder"
+      ],
+      "gpu_required": false,
+      "mechanisms": [
+        "reversible speculation",
+        "state verification",
+        "token/cache policy",
+        "early commit"
+      ]
+    }
+  },
+  {
+    "id": "O1_target_object",
+    "type": "target_object",
+    "support": 133,
+    "properties": {
+      "content_skill": "target 7B/8B local tool agents running on RTX 4090-class hardware",
+      "tools": [
+        "model_selector",
+        "repo_selector"
+      ],
+      "gpu_required": true,
+      "hardware_target": "single or multi RTX 4090, 24GB per GPU",
+      "model_scope": [
+        "Qwen/Llama-class 7B or 8B",
+        "model-free simulator smoke tests"
+      ]
+    }
+  },
+  {
+    "id": "Q1_research_question",
+    "type": "question_generation",
+    "support": 5,
+    "properties": {
+      "content_skill": "generate answerable questions that connect gap, mechanism, target object, and GPU-feasible evidence",
+      "tools": [
+        "question_generator",
+        "question_ranker"
+      ],
+      "gpu_required": false,
+      "outputs": [
+        "ranked_research_questions.json"
+      ]
+    }
+  },
+  {
+    "id": "E1_possible_evidence",
+    "type": "experiment_path",
+    "support": 5,
+    "properties": {
+      "content_skill": "bind each question to a falsifiable experiment path",
+      "tools": [
+        "experiment_planner"
+      ],
+      "gpu_required": false,
+      "success_criteria": "each pursue_now question has benchmark, baseline, intervention, and metrics"
+    }
+  },
+  {
+    "id": "X0_gpu_probe",
+    "type": "gpu_availability_check",
+    "support": 4,
+    "properties": {
+      "content_skill": "verify actual local GPU hardware before claiming executable experiments",
+      "tools": [
+        "nvidia-smi"
+      ],
+      "tool_command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv,noheader",
+      "gpu_required": true,
+      "observed_gpus": [
+        {
+          "index": "0",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "24198 MiB",
+          "driver_version": "535.183.01"
+        },
+        {
+          "index": "1",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "24198 MiB",
+          "driver_version": "535.183.01"
+        },
+        {
+          "index": "2",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "23154 MiB",
+          "driver_version": "535.183.01"
+        },
+        {
+          "index": "3",
+          "name": "NVIDIA GeForce RTX 4090",
+          "memory_total": "24564 MiB",
+          "memory_free": "24198 MiB",
+          "driver_version": "535.183.01"
+        }
+      ],
+      "success_criteria": "at least one GPU detected with enough free memory for 7B/8B or simulator runs"
+    }
+  },
+  {
+    "id": "X1_repo_readiness",
+    "type": "code_artifact_readiness",
+    "support": 5,
+    "properties": {
+      "content_skill": "check selected repositories have local code and install/readme anchors",
+      "tools": [
+        "filesystem_repo_probe",
+        "README_reader",
+        "dependency_manifest_reader"
+      ],
+      "gpu_required": false,
+      "repo_readiness": [
+        {
+          "name": "tau2-Bench",
+          "role": "conversational dual-control benchmark",
+          "repo": "/tf/notebooks/icml2026_oral_paper_memory_fresh_24h/repos/tau2-bench",
+          "exists": true,
+          "readiness_files": [
+            "README.md",
+            "pyproject.toml"
+          ],
+          "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+        },
+        {
+          "name": "SimuHome",
+          "role": "temporal smart-home simulator/verifier",
+          "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SimuHome",
+          "exists": true,
+          "readiness_files": [
+            "README.md",
+            "pyproject.toml"
+          ],
+          "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+        },
+        {
+          "name": "Gaia2",
+          "role": "dynamic/asynchronous agent benchmark",
+          "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments",
+          "exists": true,
+          "readiness_files": [
+            "README.md",
+            "docs/requirements.txt",
+            "gaia2-cli/README.md",
+            "pyproject.toml",
+            "requirements-dev.txt",
+            "requirements-gui.txt",
+            "requirements.txt"
+          ],
+          "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+        },
+        {
+          "name": "Speculative Actions",
+          "role": "latency-reducing reversible action speculation",
+          "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action",
+          "exists": true,
+          "readiness_files": [
+            "README.md",
+            "chess-game/README.md",
+            "chess-game/pyproject.toml",
+            "chess-game/requirements.txt",
+            "e-commerce/README.md",
+            "hotpotqa/README.md",
+            "hotpotqa/requirements.txt",
+            "os-tuning/README.md",
+            "os-tuning/pyproject.toml",
+            "os-tuning/requirements.txt"
+          ],
+          "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+        },
+        {
+          "name": "AgentFlow",
+          "role": "planner/executor/verifier agent stack",
+          "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/AgentFlow",
+          "exists": true,
+          "readiness_files": [
+            "README.md",
+            "agentflow/pyproject.toml",
+            "agentflow/requirements.txt",
+            "pyproject.toml"
+          ],
+          "recommended_smoke": "inspect README/pyproject, install minimal deps, run 1-3 sample/eval tasks"
+        }
+      ],
+      "success_criteria": "core benchmark repos exist locally with README or dependency files"
+    }
+  },
+  {
+    "id": "X2_smoke_benchmark_plan",
+    "type": "experiment_smoke_plan",
+    "support": 5,
+    "properties": {
+      "content_skill": "define the first executable smoke tests before full experiments",
+      "tools": [
+        "python",
+        "pytest_or_repo_cli",
+        "benchmark_runner"
+      ],
+      "gpu_required": true,
+      "first_smoke_order": [
+        "SimuHome: run minimal simulator/verifier episode without model call",
+        "tau2-Bench: run CLI/import smoke and one tiny environment task",
+        "Speculative Actions: run reversible/read-only toy speculation task",
+        "Gaia2: run local scenario/parser/verifier smoke",
+        "AgentFlow: run import/config smoke before any model serving"
+      ],
+      "success_criteria": "one minimal task imports/runs per selected benchmark without full training"
+    }
+  },
+  {
+    "id": "X3_budget_metric_schema",
+    "type": "gpu_budget_metric_binding",
+    "support": 10,
+    "properties": {
+      "content_skill": "force every experiment to log success, tokens, latency, GPU memory, and tool/action costs",
+      "tools": [
+        "nvidia-smi",
+        "time",
+        "benchmark_logger"
+      ],
+      "gpu_required": true,
+      "metrics_to_log": [
+        "task_success",
+        "state_verifier_pass_rate",
+        "tool_calls",
+        "tokens_in",
+        "tokens_out",
+        "wall_clock_latency",
+        "gpu_memory_peak_mb",
+        "gpu_utilization_snapshot",
+        "wrong_commit_count",
+        "speculation_hit_rate"
+      ],
+      "success_criteria": "results include both task quality and compute/resource budget metrics"
+    }
+  },
+  {
+    "id": "X4_execution_verifier",
+    "type": "experiment_execution_gate",
+    "support": 1,
+    "properties": {
+      "content_skill": "prevent convergence from being declared as experiment-backed unless GPU and repo gates pass",
+      "tools": [
+        "control_verifier",
+        "gpu_probe_reader",
+        "artifact_checker"
+      ],
+      "gpu_required": true,
+      "execution_status": "execution_ready",
+      "success_criteria": "gpu_probe.json and gpu_execution_plan.json exist and report execution_ready"
+    }
+  },
+  {
+    "id": "S1_bounded_scope",
+    "type": "scope_control",
+    "support": 5,
+    "properties": {
+      "content_skill": "scope claims to 4090-feasible 7B/8B agent simulations, not full frontier training",
+      "tools": [
+        "claim_scope_auditor"
+      ],
+      "gpu_required": false,
+      "do_not_claim": [
+        "all selected papers fully run on 4090",
+        "full H100-scale training is reproduced"
+      ]
+    }
+  },
+  {
+    "id": "G4_gap_evidence_audit",
+    "type": "gap_verification",
+    "support": 20,
+    "properties": {
+      "content_skill": "audit whether prior work already covers the joint agent+GPU+budget gap",
+      "tools": [
+        "gap_evidence_audit",
+        "near_miss_table"
+      ],
+      "gpu_required": false,
+      "verdict_options": [
+        "supported_gap",
+        "partial_gap",
+        "already_solved",
+        "wrong_framing",
+        "unverified"
+      ]
+    }
+  },
+  {
+    "id": "V4_gap_verdict",
+    "type": "gap_verdict",
+    "support": 5,
+    "properties": {
+      "content_skill": "emit a bounded gap verdict that distinguishes paper-only support from experiment-backed support",
+      "tools": [
+        "control_verifier"
+      ],
+      "gpu_required": false,
+      "current_verdict": "partial_gap",
+      "upgrade_condition": "after repo smoke tests and at least one GPU-measured benchmark run complete"
+    }
+  }
+]

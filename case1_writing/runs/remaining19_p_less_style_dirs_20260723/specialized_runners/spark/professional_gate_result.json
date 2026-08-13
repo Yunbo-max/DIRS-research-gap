@@ -1,0 +1,85 @@
+{
+  "artifact_kind": "spark_professional_gate_result",
+  "blockers": [
+    {
+      "detail": "Repository contains only ['LICENSE', 'README.md', 'assets/SPARK_teaser.png']; no executable source/config/script is released.",
+      "id": "official_repo_placeholder_no_executable_source",
+      "status": "blocked"
+    },
+    {
+      "detail": "README TODO marks these as unreleased: - [ ] Provide a HuggingFace\ud83e\udd17 demo.; - [ ] Release inference scripts and pretrained checkpoints.; - [ ] Release training code and data preprocessing scripts.; - [ ] Release preprocessed dataset.",
+      "id": "readme_declares_core_artifacts_unreleased",
+      "status": "blocked"
+    },
+    {
+      "detail": "DAG expects 4 NVIDIA H100 GPUs; visible devices are NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "four_h100_hardware_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing runtime imports for full 3D/simulation path: pytorch3d, trimesh, isaacsim, open3d, kaolin",
+      "id": "spark_3d_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing released pretrained checkpoints, PartNet-Mobility/GAPartNet preprocessing, 100-image GAPartNet eval set, DINOv2/diffusion transformer configs, and VLM-generated part-reference artifacts.",
+      "id": "spark_models_data_checkpoints_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No structural-reasoning VLM runner, part-reference image-generation runner, or Meshy texture synthesis integration/API artifacts are present.",
+      "id": "spark_vlm_api_and_meshy_integration_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No verifier-comparable mesh/URDF/joint metric tables, ablations, Isaac Sim artifacts, raw outputs, or GPU traces are present.",
+      "id": "spark_full_3d_result_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "convergence_role": "professional operational gate; no README/teaser/proxy evidence is promoted",
+  "created_at_utc": "2026-07-23T18:52:48Z",
+  "missing_artifact_families": [
+    "inference scripts",
+    "training code",
+    "data preprocessing scripts",
+    "pretrained checkpoints",
+    "preprocessed PartNet-Mobility/GAPartNet dataset",
+    "VLM structural reasoning prompts/API runner",
+    "VLM part-reference image-generation runner",
+    "DINOv2 image encoder checkpoint/config",
+    "part-articulated diffusion transformer checkpoint/config",
+    "hierarchical graph attention implementation",
+    "rectified-flow mesh latent implementation",
+    "differentiable forward-kinematics and differentiable rendering refinement code",
+    "Meshy texture synthesis integration/API key or exported textures",
+    "Isaac Sim deployment scripts"
+  ],
+  "next_full_execution_if_unblocked": [
+    "release or obtain official inference/training/preprocessing source",
+    "materialize PartNet-Mobility/GAPartNet/preprocessed SPARK datasets and checkpoints",
+    "configure VLM structural reasoning, part-reference image generation, DINOv2, mesh diffusion transformer, differentiable rendering, and Meshy texture path",
+    "run the 100-image GAPartNet shape/URDF benchmark and baselines",
+    "run ablations and Isaac Sim qualitative/policy deployment",
+    "emit raw meshes, URDFs, joint graphs, metric JSON, table summaries, and 4-H100/Isaac traces for verifier comparison"
+  ],
+  "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+  "paper_shaped_outputs_required": [
+    "100-image GAPartNet articulated-object reconstruction table",
+    "Chamfer Distance, F-Score@0.1, F-Score@0.5 shape metrics",
+    "AxisErr, PivotErr, TypeErr URDF/joint metrics",
+    "Articulate-Anything and Articulate AnyMesh baseline comparison",
+    "ablation of part guidance, data augmentation, joint optimization, and VLM re-prediction",
+    "Isaac Sim qualitative and policy-deployment artifacts",
+    "raw meshes, part labels, URDFs, joint graphs, rendered silhouettes, metric JSON, GPU traces"
+  ],
+  "paper_title": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge",
+  "professional_package_ready": false,
+  "status": "blocked_by_placeholder_repo_unreleased_source_models_data_runtime_hardware_and_result_grid",
+  "support_checks": {
+    "files_checked_excluding_git": 3,
+    "gpu_rows_checked": 4,
+    "readme_todos_detected": 4,
+    "repo_discovered_and_encoded": true
+  }
+}

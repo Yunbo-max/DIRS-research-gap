@@ -1,0 +1,563 @@
+{
+  "blind_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true,
+    "verifier_feedback_visible_only_as_encoded_dag_nodes": true
+  },
+  "created_at_utc": "2026-07-23T08:20:25Z",
+  "edges": [
+    [
+      "paper_context.title_domain",
+      "loop1.extract_evidence_channels"
+    ],
+    [
+      "loop1.extract_evidence_channels",
+      "gap.paper_gap_claims"
+    ],
+    [
+      "gap.paper_gap_claims",
+      "gap.failure_mode_stressors"
+    ],
+    [
+      "gap.failure_mode_stressors",
+      "related.baseline_axis"
+    ],
+    [
+      "related.baseline_axis",
+      "method.bind_gap_to_mechanism"
+    ],
+    [
+      "method.bind_gap_to_mechanism",
+      "experiments.benchmark_metric_grid"
+    ],
+    [
+      "experiments.benchmark_metric_grid",
+      "experiments.system_surface"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.resolve_repo_code"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.resolve_models_data"
+    ],
+    [
+      "ops.resolve_models_data",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_gap_semantics"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.compare_gap_semantics",
+      "decision.promote_research_gap"
+    ],
+    [
+      "reviewer.compare_result_shapes",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.reject_reduced_convergence"
+    ],
+    [
+      "reviewer.reject_reduced_convergence",
+      "reviewer.require_professional_artifact_package"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "reviewer.compare_result_shapes"
+    ],
+    [
+      "reviewer.require_professional_artifact_package",
+      "decision.promote_research_gap"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.rdvq_checkpoint_gate"
+    ],
+    [
+      "ops.resolve_models_data",
+      "ops.compression_dataset_fid_gate"
+    ],
+    [
+      "ops.resolve_repo_code",
+      "ops.estimated_real_bitstream_matrix"
+    ],
+    [
+      "ops.rdvq_checkpoint_gate",
+      "ops.estimated_real_bitstream_matrix"
+    ],
+    [
+      "ops.compression_dataset_fid_gate",
+      "ops.estimated_real_bitstream_matrix"
+    ],
+    [
+      "ops.estimated_real_bitstream_matrix",
+      "ops.compression_metric_runtime_gate"
+    ],
+    [
+      "experiments.system_surface",
+      "ops.rdvq_hardware_trace_gate"
+    ],
+    [
+      "ops.compression_metric_runtime_gate",
+      "ops.rdvq_hardware_trace_gate"
+    ],
+    [
+      "ops.rdvq_hardware_trace_gate",
+      "ops.full_rd_curve_artifact_gate"
+    ],
+    [
+      "ops.full_rd_curve_artifact_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "decision.explicit_blocker_after_rdvq_preflight"
+    ],
+    [
+      "decision.explicit_blocker_after_rdvq_preflight",
+      "reviewer.keep_exact_artifact_debt"
+    ],
+    [
+      "reviewer.keep_exact_artifact_debt",
+      "loop1.latest_verifier_feedback"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "ops.non_reduced_artifact_completion_gate"
+    ],
+    [
+      "ops.non_reduced_artifact_completion_gate",
+      "loop2.execute_operational_dag"
+    ],
+    [
+      "loop2.execute_operational_dag",
+      "reviewer.compare_simulation_to_paper_evidence_channels"
+    ],
+    [
+      "reviewer.compare_simulation_to_paper_evidence_channels",
+      "decision.continue_or_block_after_professional_verifier"
+    ],
+    [
+      "decision.continue_or_block_after_professional_verifier",
+      "decision.promote_research_gap"
+    ],
+    [
+      "loop1.latest_verifier_feedback",
+      "loop1.required_update.update_add_rdvq_checkpoint_dataset_metric_hardware_result_gates"
+    ],
+    [
+      "loop1.required_update.update_add_rdvq_checkpoint_dataset_metric_hardware_result_gates",
+      "ops.non_reduced_artifact_completion_gate"
+    ]
+  ],
+  "graph_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion_gap_dag_iter_04",
+  "nodes": [
+    {
+      "content": "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression | families=compression_vq, visual_tokenizer",
+      "id": "paper_context.title_domain",
+      "skill_role": "identify the paper target",
+      "type": "domain_context"
+    },
+    {
+      "content": "Extract gap, failure modes, baselines, method mechanism, experiments, datasets, metrics, figures/tables, code, model/data dependencies, and hardware.",
+      "id": "loop1.extract_evidence_channels",
+      "skill_role": "turn the paper into evidence channels",
+      "type": "reviewer_inventory"
+    },
+    {
+      "content": "VQ rate-gradient blockage; ultra-low-bitrate structural fidelity; test-time rate adaptation",
+      "id": "gap.paper_gap_claims",
+      "skill_role": "state the missing capability",
+      "type": "gap_hypothesis"
+    },
+    {
+      "content": "temperature sensitivity; limited rate adjustment range; soft-hard mismatch; heavy reproduction dependencies; license metadata mismatch",
+      "id": "gap.failure_mode_stressors",
+      "skill_role": "make the gap falsifiable",
+      "type": "gap_decomposition"
+    },
+    {
+      "content": "VVC; DDCM; RDEIC; ResULIC; MS-ILLM; PerCo; OSCAR; DLF; StableCodec; K-means VQ",
+      "id": "related.baseline_axis",
+      "skill_role": "name the near-miss methods",
+      "type": "baseline_map"
+    },
+    {
+      "content": "soft VQ relaxation; multi-scale VQ tokenizer; masked Transformer entropy model; prefix completion; tensor-rANS bitstream",
+      "id": "method.bind_gap_to_mechanism",
+      "skill_role": "make the solution answer the gap",
+      "type": "mechanism_binding"
+    },
+    {
+      "content": "benchmarks=Kodak RD curves; DIV2K-val RD curves; CLIC2020-test RD curves; DIV2K-val ablation table; metrics=bpp; DISTS; LPIPS; FID; KID; CLIPIQA; MUSIQ; NIQE; PSNR; MS-SSIM; protocols=estimated bitrate evaluation; real bitstream evaluation; full-resolution inference; FID/KID over overlapping 256x256 patches; prefix-transfer rate control sweep",
+      "id": "experiments.benchmark_metric_grid",
+      "skill_role": "design paper-shaped comparisons",
+      "type": "experiment_design"
+    },
+    {
+      "content": "hardware=four NVIDIA RTX 4090 GPUs for primary experiments; single NVIDIA RTX Pro 6000 GPU for DF2K high-resolution fine-tuning; NVIDIA RTX 4090 for 2K-image inference timing; runtimes=PyTorch; torchrun/DDP; torchvision; pyiqa; cleanfid; pytorch-msssim; tensor-rANS C++17 extension",
+      "id": "experiments.system_surface",
+      "skill_role": "bind claims to hardware/runtime",
+      "type": "systems_measurement"
+    },
+    {
+      "content": "repos=/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ; code_artifacts=tokenizer/tokenizer_image/models/quantizer.py; tokenizer/tokenizer_image/models/vq_model.py; tokenizer/tokenizer_image/models/ar_transformer.py; tokenizer/tokenizer_image/training/train_vq.py; my_inference.py; Real_Endecode_inference_single_stageAR.py; test.sh; test_Real.sh; utils/bitstream_container.py",
+      "id": "ops.resolve_repo_code",
+      "repo_paths": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ"
+      ],
+      "skill_role": "find code and runnable entrypoints",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "datasets=ImageNet; OpenImage; DF2K; Kodak; DIV2K validation; CLIC2020 test; data_artifacts=ImageFolder-style image directories; FID_REF_ROOT/<dataset>_256teles; Hugging Face checkpoints not downloaded; implementation_statuses=code_inspected; weights_not_downloaded; datasets_not_downloaded; result_not_rerun; real_bitstream_not_generated; license_metadata_inconsistent",
+      "id": "ops.resolve_models_data",
+      "skill_role": "find models, datasets, and external artifacts",
+      "type": "operational_dependency"
+    },
+    {
+      "content": "Run repo audits, dependency probes, available scripts/unit checks, GPU-ready checks, and paper-shaped experiments only when exact models/data/scripts are present.",
+      "id": "loop2.execute_operational_dag",
+      "skill_role": "act like the author",
+      "type": "operational_execution"
+    },
+    {
+      "content": "Reduced, smoke, toy, syntax-only, README-only, or generic proxy runs are support/debug only and cannot converge this paper.",
+      "id": "reviewer.reject_reduced_convergence",
+      "skill_role": "prevent false convergence",
+      "type": "scale_gate"
+    },
+    {
+      "content": "Require paper-appropriate models/checkpoints, datasets, baselines, metrics, timing/compute traces, raw outputs, and verifier-comparable tables/figures.",
+      "id": "reviewer.require_professional_artifact_package",
+      "skill_role": "require paper-shaped evidence",
+      "type": "professional_gate"
+    },
+    {
+      "content": "Check whether the simulated gap preserves the paper's missing capability, failure mode, baseline axis, and mechanism fit.",
+      "id": "reviewer.compare_gap_semantics",
+      "skill_role": "compare simulated gap to paper evidence",
+      "type": "verification"
+    },
+    {
+      "content": "Accept close result shape only from paper-shaped operational artifacts; otherwise emit blockers and DAG updates.",
+      "id": "reviewer.compare_result_shapes",
+      "skill_role": "compare results to paper tables/figures/paragraphs",
+      "type": "verification"
+    },
+    {
+      "content": "Track missing main tables, figures, appendix tables, raw outputs, scoring scripts, timing traces, memory traces, and seeds as exact artifact debt.",
+      "id": "reviewer.keep_exact_artifact_debt",
+      "skill_role": "do not hide missing exact reruns",
+      "type": "verification_boundary"
+    },
+    {
+      "content": "Promote only if semantic gap and professional result evidence pass; otherwise record explicit blocker and update the DAG.",
+      "id": "decision.promote_research_gap",
+      "skill_role": "decide whether the paper-specific gap is learned",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "Resolve CVLUESTC/RDVQ released checkpoints as local loadable model files. HF metadata, README links, and VGG perceptual cache weights are support only.",
+      "id": "ops.rdvq_checkpoint_gate",
+      "skill_role": "require loadable released RDVQ checkpoints",
+      "type": "model_data_gate"
+    },
+    {
+      "content": "Resolve ImageFolder-style Kodak, DIV2K-val, and CLIC2020-test image directories plus FID_REF_ROOT/<dataset>_256teles reference tiles before RD-curve comparison.",
+      "id": "ops.compression_dataset_fid_gate",
+      "skill_role": "require paper image datasets and FID/KID references",
+      "type": "evaluation_artifact_gate"
+    },
+    {
+      "content": "Run test.sh for estimated cd_bpp and test_Real.sh for actual cd_bpp_real/.bin tensor-rANS payloads across paper datasets, checkpoints, and TEST_TRANSFER_SLICES prefix-control settings.",
+      "id": "ops.estimated_real_bitstream_matrix",
+      "skill_role": "bind Loop 2 to official RDVQ estimated and real bitrate entrypoints",
+      "type": "operational_execution_matrix"
+    },
+    {
+      "content": "Verify PyTorch, torchvision, clean-fid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja/C++17, and optional fvcore before metric, real-bitstream, or FLOP/timing claims.",
+      "id": "ops.compression_metric_runtime_gate",
+      "skill_role": "require metric and codec dependencies",
+      "type": "runtime_gate"
+    },
+    {
+      "content": "Verify four RTX 4090 primary-evaluation capacity, one RTX Pro 6000 high-resolution fine-tune trace, clean GPU slot, CUDA telemetry, and 2K-image inference timing before accepting performance claims.",
+      "id": "ops.rdvq_hardware_trace_gate",
+      "skill_role": "bind RDVQ claims to paper hardware",
+      "type": "professional_hardware_gate"
+    },
+    {
+      "content": "Require raw reconstructed images, .bin bitstreams, metrics JSON, profile/timing traces, RD-curve summaries, DIV2K ablation table, and prefix-transfer sweep outputs. Do not promote release validation, syntax checks, or README assets.",
+      "id": "ops.full_rd_curve_artifact_gate",
+      "skill_role": "make verifier comparison RD-curve shaped",
+      "type": "professional_artifact_gate"
+    },
+    {
+      "content": "If checkpoints, datasets/FID refs, runtime dependencies, hardware, or full estimated/real result grids are absent, mark not converged and update the DAG instead of running a one-image debug probe.",
+      "id": "decision.explicit_blocker_after_rdvq_preflight",
+      "skill_role": "feed operational failure back into Loop 1",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "content": "latest_verifier=verifier_result_iter_03.json; status=blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements; converged=False; professional_ready=False; blocked_checks=['professional_artifact_package', 'result_shape_comparison_ready']; required_updates=['update.add_rdvq_checkpoint_dataset_metric_hardware_result_gates']",
+      "id": "loop1.latest_verifier_feedback",
+      "skill_role": "feed Loop 2 failures back into the DAG without exposing oracle values",
+      "type": "verifier_feedback_packet",
+      "verifier_feedback": {
+        "blocked_checks": [
+          {
+            "detail": {
+              "blockers": [
+                {
+                  "detail": "Paper/DAG expects a single RTX Pro 6000 for high-resolution DF2K fine-tuning; visible GPUs are: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+                  "id": "highres_finetune_hardware_class",
+                  "status": "blocked"
+                },
+                {
+                  "detail": "Missing local released RDVQ checkpoint files: rdvq_testing_checkpoints",
+                  "id": "rdvq_checkpoints_not_materialized",
+                  "status": "blocked"
+                },
+                {
+                  "detail": "Missing local evaluation datasets/FID refs: kodak_image_folder, div2k_val_image_folder, clic2020_test_image_folder, fid_reference_tiles",
+                  "id": "rd_curve_datasets_or_fid_refs_missing",
+                  "status": "blocked"
+                },
+                {
+                  "detail": "Missing training/fine-tuning datasets for full author reproduction: imagenet_training_images, openimage_training_images, df2k_highres_images",
+                  "id": "training_and_highres_finetune_datasets_missing",
+                  "status": "blocked"
+                },
+                {
+                  "detail": "Missing required metric/codec runtime imports: cleanfid, pyiqa, pytorch_msssim, torchmetrics, compressai, ninja",
+                  "id": "compression_metric_runtime_missing",
+                  "status": "blocked"
+                },
+                {
+                  "detail": "scripts/release_validate.sh did not complete cleanly; inspect environment.json for stdout/stderr.",
+                  "id": "release_validation_support_check_failed",
+                  "status": "blocked"
+                },
+                {
+                  "detail": "No complete forward/Real metrics artifacts for Kodak, DIV2K, CLIC, prefix-transfer sweeps, and RD tables were found.",
+                  "id": "full_estimated_and_real_bitstream_result_grid_missing",
+                  "status": "blocked"
+                }
+              ],
+              "reason": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements"
+            },
+            "name": "professional_artifact_package",
+            "status": "blocked"
+          },
+          {
+            "detail": "requires Kodak/DIV2K/CLIC estimated-rate and real-bitstream RD curves, prefix-transfer sweeps, timing/profile traces, and metric tables",
+            "name": "result_shape_comparison_ready",
+            "status": "blocked"
+          }
+        ],
+        "converged": false,
+        "professional_ready": false,
+        "required_updates": [
+          {
+            "id": "update.add_rdvq_checkpoint_dataset_metric_hardware_result_gates",
+            "reason": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements",
+            "success_criteria": [
+              "released checkpoint files are materialized locally",
+              "Kodak, DIV2K-val, CLIC2020-test, and FID reference artifacts exist",
+              "metric/runtime dependencies and tensor-rANS support pass",
+              "estimated-rate and real-bitstream scripts run over paper datasets/rate points",
+              "prefix-transfer sweeps, RD tables, timing/profile traces, and figure/table summaries are produced",
+              "verifier compares close result shape against paper evidence channels"
+            ]
+          }
+        ],
+        "status": null
+      }
+    },
+    {
+      "blocked_checks_to_satisfy": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "content": "Loop 2 must execute the repo/model/data/API/GPU steps encoded in this DAG, emit raw outputs, metrics, tables/figure summaries, and hardware traces, and keep all reduced, proxy, syntax-only, README-only, or support-only artifacts non-convergent.",
+      "id": "ops.non_reduced_artifact_completion_gate",
+      "repo_paths_visible_to_loop2": [
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/067_rdvq/RDVQ"
+      ],
+      "skill_role": "force full author-style execution before any gap claim can converge",
+      "type": "operational_execution_gate"
+    },
+    {
+      "content": "After Loop 2 produces operational artifacts, compare the simulated gap, decisions, result shape, and exceptions against paper tables, figures, result paragraphs, appendix evidence, and released artifacts. Close result shape can pass; absent outputs or generic claims cannot pass.",
+      "id": "reviewer.compare_simulation_to_paper_evidence_channels",
+      "paper_evidence_channels": [
+        "paper tables",
+        "paper figures",
+        "result paragraphs",
+        "appendix tables/figures",
+        "released code/config/checkpoint/data artifacts",
+        "runtime/hardware traces"
+      ],
+      "skill_role": "verify whether DAG-only simulation recovered the paper's real research gap",
+      "type": "reviewer_result_shape_gate"
+    },
+    {
+      "content": "If verifier accepts close paper-shaped results, promote the learned research-gap DAG. If exact model/data/API/GPU/release artifacts are unavailable, record explicit blockers and route them back to Loop 1. Do not stop on missing results without updating the DAG.",
+      "id": "decision.continue_or_block_after_professional_verifier",
+      "skill_role": "continue loops until accepted or explicitly blocked by exact professional requirements",
+      "type": "author_reviewer_decision"
+    },
+    {
+      "artifact_family": null,
+      "content": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements",
+      "failed_metric_ids": [],
+      "failed_simulation_setting_ids": [],
+      "id": "loop1.required_update.update_add_rdvq_checkpoint_dataset_metric_hardware_result_gates",
+      "oracle_values_exposed_to_loop2": false,
+      "protocol_finding_statuses": {},
+      "repair_axis_ids": [],
+      "required_update_id": "update.add_rdvq_checkpoint_dataset_metric_hardware_result_gates",
+      "risk_audit_status": null,
+      "skill_role": "turn a verifier mismatch into a concrete Loop 2 repair action",
+      "success_criteria": [
+        "released checkpoint files are materialized locally",
+        "Kodak, DIV2K-val, CLIC2020-test, and FID reference artifacts exist",
+        "metric/runtime dependencies and tensor-rANS support pass",
+        "estimated-rate and real-bitstream scripts run over paper datasets/rate points",
+        "prefix-transfer sweeps, RD tables, timing/profile traces, and figure/table summaries are produced",
+        "verifier compares close result shape against paper evidence channels"
+      ],
+      "type": "verifier_required_dag_repair",
+      "verifier_report_path": null
+    }
+  ],
+  "previous_loop_updates": [
+    {
+      "id": "update.add_reduced_proxy_rejection_gate",
+      "reason": "The p-less case showed that proxy, syntax, and reduced runs must not count as convergence.",
+      "success_criteria": [
+        "add reviewer.reject_reduced_convergence",
+        "mark repo/generic GPU checks as support only"
+      ]
+    },
+    {
+      "id": "update.add_professional_artifact_package_gate",
+      "reason": "The blind author simulation must know exactly which model/data/table/figure artifacts are required.",
+      "success_criteria": [
+        "add reviewer.require_professional_artifact_package",
+        "record exact artifact debt"
+      ]
+    },
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_datasets_not_downloaded+not_downloaded+not_rerun+result_not_rerun+weights_not_downloaded",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "highres_finetune_hardware_class",
+        "clean_gpu_slot_for_full_rd_grid",
+        "rdvq_checkpoints_not_materialized",
+        "rd_curve_datasets_or_fid_refs_missing",
+        "training_and_highres_finetune_datasets_missing",
+        "compression_metric_runtime_missing",
+        "release_validation_support_check_failed",
+        "full_estimated_and_real_bitstream_result_grid_missing"
+      ],
+      "id": "update.add_rdvq_checkpoint_dataset_metric_hardware_result_gates",
+      "reason": "specialized RDVQ preflight found missing full paper-shaped checkpoint, dataset/FID, metric/runtime, hardware, release-validation, and result-grid artifacts",
+      "success_criteria": [
+        "released checkpoint gate encoded",
+        "Kodak/DIV2K/CLIC/FID reference gate encoded",
+        "estimated and real bitstream script matrix encoded",
+        "metric and tensor-rANS runtime gate encoded",
+        "RTX 4090/RTX Pro 6000 hardware trace gate encoded",
+        "full RD curve, bitstream, profile, and prefix-transfer artifact gate encoded"
+      ]
+    },
+    {
+      "blocker_ids": [
+        "highres_finetune_hardware_class",
+        "clean_gpu_slot_for_full_rd_grid",
+        "rdvq_checkpoints_not_materialized",
+        "rd_curve_datasets_or_fid_refs_missing",
+        "training_and_highres_finetune_datasets_missing",
+        "compression_metric_runtime_missing",
+        "release_validation_support_check_failed",
+        "full_estimated_and_real_bitstream_result_grid_missing"
+      ],
+      "id": "update.add_rdvq_checkpoint_dataset_metric_hardware_result_gates",
+      "reason": "specialized RDVQ preflight found missing full paper-shaped checkpoint, dataset/FID, metric/runtime, hardware, release-validation, and result-grid artifacts",
+      "success_criteria": [
+        "released checkpoint gate encoded",
+        "Kodak/DIV2K/CLIC/FID reference gate encoded",
+        "estimated and real bitstream script matrix encoded",
+        "metric and tensor-rANS runtime gate encoded",
+        "RTX 4090/RTX Pro 6000 hardware trace gate encoded",
+        "full RD curve, bitstream, profile, and prefix-transfer artifact gate encoded"
+      ]
+    },
+    {
+      "blocker_check_names": [
+        "professional_artifact_package",
+        "result_shape_comparison_ready"
+      ],
+      "converged": false,
+      "created_at_utc": "2026-07-23T12:48:01Z",
+      "id": "update.sync_latest_verifier_blockers_to_operational_dag",
+      "iteration": 4,
+      "required_update_ids": [
+        "update.add_rdvq_checkpoint_dataset_metric_hardware_result_gates"
+      ],
+      "source": "sync_verifier_blockers_to_dags.py",
+      "status": "blocked_by_checkpoints_datasets_runtime_hardware_release_and_result_grid_requirements",
+      "success_criteria": [
+        "Loop 2 input remains DAG-only",
+        "missing operational artifacts are named as DAG gates",
+        "reduced/proxy/support-only evidence remains non-convergent",
+        "verifier compares against tables, figures, paragraphs, appendix, and released artifacts only after operational outputs exist"
+      ],
+      "updated_at_utc": "2026-07-24T12:33:09Z"
+    }
+  ],
+  "signature": "6d4a8ce6ca44572b",
+  "strict_policy": {
+    "allowed_nonconverged_support": [
+      "repo audit",
+      "README/script inventory",
+      "syntax/import checks",
+      "generic GPU motif stress rows",
+      "planning manifests"
+    ],
+    "generic_gpu_motif_rows_are_convergence_evidence": false,
+    "loop2_may_use_only_encoded_dag_dependencies": true,
+    "minimum_for_gap_convergence": "DAG-only Loop 2 must produce paper-shaped operational artifacts; reviewer then compares gap and result shape against paper tables, figures, paragraphs, appendix, and released artifacts.",
+    "reduced_or_small_runs_are_convergence_evidence": false,
+    "repo_syntax_or_readme_audit_is_convergence_evidence": false
+  },
+  "target_paper_id": "CVPR2026_067_rdvq_differentiable_vq_rate_distortion",
+  "target_title": "Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression",
+  "updated_at_utc": "2026-07-24T12:33:09Z"
+}

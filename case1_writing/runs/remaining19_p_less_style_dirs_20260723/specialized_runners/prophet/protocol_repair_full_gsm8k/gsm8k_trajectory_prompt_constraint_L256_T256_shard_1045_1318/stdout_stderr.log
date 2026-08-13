@@ -1,0 +1,831 @@
+[2026-07-24T02:44:29Z] loading dataset openai/gsm8k main test
+[2026-07-24T02:44:30Z] loading model GSAI-ML/LLaDA-8B-Instruct
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:00<00:00, 128.24it/s]
+[2026-07-24T02:44:36Z] starting full GSM8K loop: total=1319 range=[1045,1319) already_completed=0
+[2026-07-24T02:44:48Z] sample 1045 baseline: strict='420' flex='420' gold='420' ok=True steps=256 sec=12.04
+Early exit at step 195/256 with gap=3.587
+[2026-07-24T02:44:57Z] sample 1045 prophet: strict='420' flex='420' gold='420' ok=True steps=195 sec=8.74
+[2026-07-24T02:45:09Z] sample 1046 baseline: strict='8.4' flex='8.4' gold='189' ok=False steps=256 sec=11.36
+Early exit at step 185/256 with gap=2.675
+[2026-07-24T02:45:17Z] sample 1046 prophet: strict='8.437' flex='8.437' gold='189' ok=False steps=185 sec=8.30
+[2026-07-24T02:45:29Z] sample 1047 baseline: strict='10' flex='10' gold='10' ok=True steps=256 sec=11.67
+Early exit at step 182/256 with gap=2.500
+[2026-07-24T02:45:37Z] sample 1047 prophet: strict='10' flex='10' gold='10' ok=True steps=182 sec=8.40
+[2026-07-24T02:45:49Z] sample 1048 baseline: strict='12367.2' flex='12367.2' gold='7400' ok=False steps=256 sec=11.51
+Early exit at step 217/256 with gap=3.538
+[2026-07-24T02:45:59Z] sample 1048 prophet: strict='12407.2' flex='0' gold='7400' ok=False steps=217 sec=9.84
+[2026-07-24T02:46:11Z] sample 1049 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.44
+Early exit at step 221/256 with gap=2.562
+[2026-07-24T02:46:21Z] sample 1049 prophet: strict='20' flex='20' gold='20' ok=True steps=221 sec=9.96
+[2026-07-24T02:46:32Z] sample 1050 baseline: strict='655' flex='655' gold='655' ok=True steps=256 sec=11.47
+Early exit at step 195/256 with gap=4.650
+[2026-07-24T02:46:41Z] sample 1050 prophet: strict='655' flex='655' gold='655' ok=True steps=195 sec=8.81
+[2026-07-24T02:46:53Z] sample 1051 baseline: strict='15' flex='15' gold='15' ok=True steps=256 sec=11.41
+Early exit at step 210/256 with gap=2.513
+[2026-07-24T02:47:02Z] sample 1051 prophet: strict='15' flex='15' gold='15' ok=True steps=210 sec=9.43
+[2026-07-24T02:47:14Z] sample 1052 baseline: strict='110' flex='110' gold='110' ok=True steps=256 sec=11.70
+Early exit at step 222/256 with gap=4.325
+[2026-07-24T02:47:25Z] sample 1052 prophet: strict='110' flex='110' gold='110' ok=True steps=222 sec=10.22
+[2026-07-24T02:47:37Z] sample 1053 baseline: strict='55' flex='55' gold='55' ok=True steps=256 sec=11.87
+Early exit at step 194/256 with gap=2.750
+[2026-07-24T02:47:46Z] sample 1053 prophet: strict='55' flex='55' gold='55' ok=True steps=194 sec=9.06
+[2026-07-24T02:47:58Z] sample 1054 baseline: strict='2400' flex='2400' gold='2400' ok=True steps=256 sec=11.54
+Early exit at step 223/256 with gap=6.600
+[2026-07-24T02:48:08Z] sample 1054 prophet: strict='2400' flex='2400' gold='2400' ok=True steps=223 sec=10.11
+[2026-07-24T02:48:19Z] sample 1055 baseline: strict='2304' flex='2304' gold='2304' ok=True steps=256 sec=11.46
+Early exit at step 196/256 with gap=5.438
+[2026-07-24T02:48:28Z] sample 1055 prophet: strict='2304' flex='2304' gold='2304' ok=True steps=196 sec=8.83
+[2026-07-24T02:48:40Z] sample 1056 baseline: strict='87' flex='87' gold='156' ok=False steps=256 sec=11.60
+Early exit at step 216/256 with gap=2.575
+[2026-07-24T02:48:50Z] sample 1056 prophet: strict='87' flex='87' gold='156' ok=False steps=216 sec=9.87
+[2026-07-24T02:49:02Z] sample 1057 baseline: strict='24' flex='24' gold='24' ok=True steps=256 sec=11.44
+Early exit at step 172/256 with gap=2.538
+[2026-07-24T02:49:10Z] sample 1057 prophet: strict='24' flex='24' gold='24' ok=True steps=172 sec=7.75
+[2026-07-24T02:49:21Z] sample 1058 baseline: strict='250' flex='250' gold='250' ok=True steps=256 sec=11.54
+Early exit at step 202/256 with gap=5.050
+[2026-07-24T02:49:30Z] sample 1058 prophet: strict='250' flex='250' gold='250' ok=True steps=202 sec=9.18
+[2026-07-24T02:49:42Z] sample 1059 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.41
+Early exit at step 197/256 with gap=3.438
+[2026-07-24T02:49:51Z] sample 1059 prophet: strict='2' flex='2' gold='2' ok=True steps=197 sec=8.86
+[2026-07-24T02:50:03Z] sample 1060 baseline: strict='31' flex='31' gold='31' ok=True steps=256 sec=11.57
+Early exit at step 213/256 with gap=2.525
+[2026-07-24T02:50:13Z] sample 1060 prophet: strict='31' flex='31' gold='31' ok=True steps=213 sec=9.71
+[2026-07-24T02:50:24Z] sample 1061 baseline: strict='58' flex='58' gold='58' ok=True steps=256 sec=11.48
+Early exit at step 198/256 with gap=3.788
+[2026-07-24T02:50:33Z] sample 1061 prophet: strict='58' flex='58' gold='58' ok=True steps=198 sec=8.93
+[2026-07-24T02:50:45Z] sample 1062 baseline: strict='482' flex='482' gold='482' ok=True steps=256 sec=11.73
+Early exit at step 174/256 with gap=2.612
+[2026-07-24T02:50:53Z] sample 1062 prophet: strict='482' flex='482' gold='482' ok=True steps=174 sec=8.01
+[2026-07-24T02:51:05Z] sample 1063 baseline: strict='320' flex='320' gold='320' ok=True steps=256 sec=11.51
+Early exit at step 177/256 with gap=2.600
+[2026-07-24T02:51:13Z] sample 1063 prophet: strict='320' flex='320' gold='320' ok=True steps=177 sec=8.01
+[2026-07-24T02:51:25Z] sample 1064 baseline: strict='247' flex='247' gold='247' ok=True steps=256 sec=11.60
+Early exit at step 180/256 with gap=2.513
+[2026-07-24T02:51:33Z] sample 1064 prophet: strict='247' flex='247' gold='247' ok=True steps=180 sec=8.21
+[2026-07-24T02:51:45Z] sample 1065 baseline: strict='95' flex='95' gold='95' ok=True steps=256 sec=11.25
+Early exit at step 204/256 with gap=2.925
+[2026-07-24T02:51:54Z] sample 1065 prophet: strict='95' flex='95' gold='95' ok=True steps=204 sec=9.02
+[2026-07-24T02:52:05Z] sample 1066 baseline: strict='14' flex='14' gold='14' ok=True steps=256 sec=11.44
+Early exit at step 183/256 with gap=3.087
+[2026-07-24T02:52:14Z] sample 1066 prophet: strict='14' flex='14' gold='14' ok=True steps=183 sec=8.26
+[2026-07-24T02:52:26Z] sample 1067 baseline: strict='560' flex='560' gold='245' ok=False steps=256 sec=11.60
+Early exit at step 172/256 with gap=3.112
+[2026-07-24T02:52:33Z] sample 1067 prophet: strict='560' flex='560' gold='245' ok=False steps=172 sec=7.87
+[2026-07-24T02:52:45Z] sample 1068 baseline: strict='24' flex='24' gold='24' ok=True steps=256 sec=11.56
+Early exit at step 173/256 with gap=2.737
+[2026-07-24T02:52:53Z] sample 1068 prophet: strict='24' flex='24' gold='24' ok=True steps=173 sec=7.90
+[2026-07-24T02:53:07Z] sample 1069 baseline: strict='300' flex='300' gold='300' ok=True steps=256 sec=13.97
+Early exit at step 200/256 with gap=2.850
+[2026-07-24T02:53:18Z] sample 1069 prophet: strict='300' flex='300' gold='300' ok=True steps=200 sec=11.01
+[2026-07-24T02:53:30Z] sample 1070 baseline: strict='14' flex='14' gold='18' ok=False steps=256 sec=11.72
+Early exit at step 172/256 with gap=3.375
+[2026-07-24T02:53:38Z] sample 1070 prophet: strict='14.00' flex='14.00' gold='18' ok=False steps=172 sec=7.94
+[2026-07-24T02:53:50Z] sample 1071 baseline: strict='251' flex='251' gold='251' ok=True steps=256 sec=11.80
+Early exit at step 177/256 with gap=2.550
+[2026-07-24T02:53:59Z] sample 1071 prophet: strict='251' flex='251' gold='251' ok=True steps=177 sec=8.20
+[2026-07-24T02:54:10Z] sample 1072 baseline: strict='45' flex='45' gold='85' ok=False steps=256 sec=11.44
+Early exit at step 234/256 with gap=2.550
+[2026-07-24T02:54:21Z] sample 1072 prophet: strict='45' flex='2040' gold='85' ok=False steps=234 sec=10.57
+[2026-07-24T02:54:33Z] sample 1073 baseline: strict='0' flex='0' gold='21' ok=False steps=256 sec=11.70
+Early exit at step 222/256 with gap=4.213
+[2026-07-24T02:54:43Z] sample 1073 prophet: strict='0' flex='0' gold='21' ok=False steps=222 sec=10.23
+[2026-07-24T02:54:55Z] sample 1074 baseline: strict='750' flex='750' gold='750' ok=True steps=256 sec=11.52
+Early exit at step 217/256 with gap=3.250
+[2026-07-24T02:55:05Z] sample 1074 prophet: strict='70' flex='70' gold='750' ok=False steps=217 sec=9.79
+[2026-07-24T02:55:17Z] sample 1075 baseline: strict='20' flex='20' gold='16' ok=False steps=256 sec=11.55
+Early exit at step 223/256 with gap=3.900
+[2026-07-24T02:55:27Z] sample 1075 prophet: strict='20' flex='20' gold='16' ok=False steps=223 sec=10.18
+[2026-07-24T02:55:39Z] sample 1076 baseline: strict='162' flex='162' gold='162' ok=True steps=256 sec=11.53
+Early exit at step 186/256 with gap=2.975
+[2026-07-24T02:55:47Z] sample 1076 prophet: strict='' flex='162' gold='162' ok=True steps=186 sec=8.42
+[2026-07-24T02:56:02Z] sample 1077 baseline: strict='60' flex='60' gold='145' ok=False steps=256 sec=14.87
+Early exit at step 220/256 with gap=3.438
+[2026-07-24T02:56:15Z] sample 1077 prophet: strict='60' flex='60' gold='145' ok=False steps=220 sec=12.85
+[2026-07-24T02:56:27Z] sample 1078 baseline: strict='8' flex='8' gold='8' ok=True steps=256 sec=11.89
+Early exit at step 199/256 with gap=2.938
+[2026-07-24T02:56:36Z] sample 1078 prophet: strict='8' flex='8' gold='8' ok=True steps=199 sec=9.32
+[2026-07-24T02:56:48Z] sample 1079 baseline: strict='10' flex='10' gold='10' ok=True steps=256 sec=11.64
+Early exit at step 185/256 with gap=2.587
+[2026-07-24T02:56:57Z] sample 1079 prophet: strict='10' flex='10' gold='10' ok=True steps=185 sec=8.49
+[2026-07-24T02:57:08Z] sample 1080 baseline: strict='72000' flex='72000' gold='72000' ok=True steps=256 sec=11.22
+Early exit at step 197/256 with gap=3.800
+[2026-07-24T02:57:17Z] sample 1080 prophet: strict='72000' flex='72000' gold='72000' ok=True steps=197 sec=8.72
+[2026-07-24T02:57:29Z] sample 1081 baseline: strict='195' flex='195' gold='195' ok=True steps=256 sec=11.52
+Early exit at step 212/256 with gap=4.850
+[2026-07-24T02:57:38Z] sample 1081 prophet: strict='195' flex='195' gold='195' ok=True steps=212 sec=9.62
+[2026-07-24T02:57:50Z] sample 1082 baseline: strict='1' flex='1' gold='2' ok=False steps=256 sec=11.56
+Early exit at step 215/256 with gap=2.987
+[2026-07-24T02:58:00Z] sample 1082 prophet: strict='1' flex='1' gold='2' ok=False steps=215 sec=9.79
+[2026-07-24T02:58:12Z] sample 1083 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.59
+Early exit at step 224/256 with gap=2.700
+[2026-07-24T02:58:22Z] sample 1083 prophet: strict='2' flex='2' gold='2' ok=True steps=224 sec=10.24
+[2026-07-24T02:58:34Z] sample 1084 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.47
+Early exit at step 202/256 with gap=2.513
+[2026-07-24T02:58:43Z] sample 1084 prophet: strict='20' flex='20' gold='20' ok=True steps=202 sec=9.11
+[2026-07-24T02:58:54Z] sample 1085 baseline: strict='26' flex='26' gold='26' ok=True steps=256 sec=11.19
+Early exit at step 223/256 with gap=4.225
+[2026-07-24T02:59:04Z] sample 1085 prophet: strict='26' flex='26' gold='26' ok=True steps=223 sec=9.86
+[2026-07-24T02:59:19Z] sample 1086 baseline: strict='131000' flex='131000' gold='131250' ok=False steps=256 sec=14.64
+Early exit at step 172/256 with gap=2.587
+[2026-07-24T02:59:29Z] sample 1086 prophet: strict='139250' flex='139250' gold='131250' ok=False steps=172 sec=9.88
+[2026-07-24T02:59:41Z] sample 1087 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.73
+Early exit at step 208/256 with gap=3.375
+[2026-07-24T02:59:51Z] sample 1087 prophet: strict='12' flex='12' gold='12' ok=True steps=208 sec=9.60
+[2026-07-24T03:00:03Z] sample 1088 baseline: strict='30' flex='30' gold='30' ok=True steps=256 sec=11.77
+Early exit at step 196/256 with gap=2.587
+[2026-07-24T03:00:12Z] sample 1088 prophet: strict='30' flex='30' gold='30' ok=True steps=196 sec=9.08
+[2026-07-24T03:00:24Z] sample 1089 baseline: strict='' flex='32' gold='32' ok=True steps=256 sec=11.58
+Early exit at step 224/256 with gap=4.812
+[2026-07-24T03:00:34Z] sample 1089 prophet: strict='' flex='32' gold='32' ok=True steps=224 sec=10.22
+[2026-07-24T03:00:46Z] sample 1090 baseline: strict='72' flex='72' gold='72' ok=True steps=256 sec=11.68
+Early exit at step 206/256 with gap=3.688
+[2026-07-24T03:00:56Z] sample 1090 prophet: strict='72' flex='72' gold='72' ok=True steps=206 sec=9.48
+[2026-07-24T03:01:07Z] sample 1091 baseline: strict='' flex='1000' gold='1000' ok=True steps=256 sec=11.47
+Early exit at step 224/256 with gap=5.375
+[2026-07-24T03:01:17Z] sample 1091 prophet: strict='' flex='1000' gold='1000' ok=True steps=224 sec=10.11
+[2026-07-24T03:01:29Z] sample 1092 baseline: strict='1080' flex='1080' gold='1080' ok=True steps=256 sec=11.78
+Early exit at step 177/256 with gap=2.500
+[2026-07-24T03:01:38Z] sample 1092 prophet: strict='1080' flex='1080' gold='1080' ok=True steps=177 sec=8.21
+[2026-07-24T03:01:50Z] sample 1093 baseline: strict='144' flex='144' gold='144' ok=True steps=256 sec=11.63
+Early exit at step 172/256 with gap=3.575
+[2026-07-24T03:01:57Z] sample 1093 prophet: strict='144' flex='144' gold='144' ok=True steps=172 sec=7.86
+[2026-07-24T03:02:10Z] sample 1094 baseline: strict='' flex='40' gold='25' ok=False steps=256 sec=11.90
+Early exit at step 224/256 with gap=3.138
+[2026-07-24T03:02:20Z] sample 1094 prophet: strict='' flex='40' gold='25' ok=False steps=224 sec=10.51
+[2026-07-24T03:02:32Z] sample 1095 baseline: strict='270' flex='270' gold='270' ok=True steps=256 sec=11.52
+Early exit at step 223/256 with gap=6.200
+[2026-07-24T03:02:42Z] sample 1095 prophet: strict='270' flex='270' gold='270' ok=True steps=223 sec=10.09
+[2026-07-24T03:02:54Z] sample 1096 baseline: strict='294' flex='294' gold='240' ok=False steps=256 sec=11.75
+Early exit at step 196/256 with gap=3.487
+[2026-07-24T03:03:03Z] sample 1096 prophet: strict='294' flex='294' gold='240' ok=False steps=196 sec=9.08
+[2026-07-24T03:03:15Z] sample 1097 baseline: strict='480' flex='480' gold='480' ok=True steps=256 sec=11.57
+Early exit at step 188/256 with gap=3.275
+[2026-07-24T03:03:24Z] sample 1097 prophet: strict='480' flex='480' gold='480' ok=True steps=188 sec=8.54
+[2026-07-24T03:03:35Z] sample 1098 baseline: strict='30' flex='30' gold='30' ok=True steps=256 sec=11.52
+Early exit at step 196/256 with gap=3.587
+[2026-07-24T03:03:44Z] sample 1098 prophet: strict='30' flex='30' gold='30' ok=True steps=196 sec=8.86
+[2026-07-24T03:03:56Z] sample 1099 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.70
+Early exit at step 223/256 with gap=3.100
+[2026-07-24T03:04:06Z] sample 1099 prophet: strict='2' flex='2' gold='2' ok=True steps=223 sec=10.28
+[2026-07-24T03:04:18Z] sample 1100 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.48
+Early exit at step 189/256 with gap=2.562
+[2026-07-24T03:04:27Z] sample 1100 prophet: strict='5' flex='5' gold='5' ok=True steps=189 sec=8.52
+[2026-07-24T03:04:38Z] sample 1101 baseline: strict='16' flex='16' gold='16' ok=True steps=256 sec=11.47
+Early exit at step 184/256 with gap=2.500
+[2026-07-24T03:04:47Z] sample 1101 prophet: strict='16' flex='16' gold='16' ok=True steps=184 sec=8.31
+[2026-07-24T03:05:01Z] sample 1102 baseline: strict='113.00' flex='113.00' gold='113' ok=False steps=256 sec=13.80
+Early exit at step 183/256 with gap=2.500
+[2026-07-24T03:05:11Z] sample 1102 prophet: strict='113.00' flex='113.00' gold='113' ok=False steps=183 sec=9.91
+[2026-07-24T03:05:23Z] sample 1103 baseline: strict='90' flex='90' gold='90' ok=True steps=256 sec=11.72
+Early exit at step 214/256 with gap=3.200
+[2026-07-24T03:05:33Z] sample 1103 prophet: strict='90' flex='90' gold='90' ok=True steps=214 sec=9.85
+[2026-07-24T03:05:44Z] sample 1104 baseline: strict='24' flex='24' gold='24' ok=True steps=256 sec=11.16
+Early exit at step 200/256 with gap=3.675
+[2026-07-24T03:05:53Z] sample 1104 prophet: strict='24' flex='24' gold='24' ok=True steps=200 sec=8.81
+[2026-07-24T03:06:05Z] sample 1105 baseline: strict='' flex='39' gold='40' ok=False steps=256 sec=11.61
+Early exit at step 212/256 with gap=4.662
+[2026-07-24T03:06:15Z] sample 1105 prophet: strict='' flex='9' gold='40' ok=False steps=212 sec=9.69
+[2026-07-24T03:06:26Z] sample 1106 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.48
+Early exit at step 207/256 with gap=2.538
+[2026-07-24T03:06:36Z] sample 1106 prophet: strict='5' flex='5' gold='5' ok=True steps=207 sec=9.34
+[2026-07-24T03:06:47Z] sample 1107 baseline: strict='360' flex='360' gold='360' ok=True steps=256 sec=11.17
+Early exit at step 220/256 with gap=4.562
+[2026-07-24T03:06:57Z] sample 1107 prophet: strict='360' flex='360' gold='360' ok=True steps=220 sec=9.70
+[2026-07-24T03:07:09Z] sample 1108 baseline: strict='38' flex='38' gold='38' ok=True steps=256 sec=11.54
+Early exit at step 205/256 with gap=3.462
+[2026-07-24T03:07:18Z] sample 1108 prophet: strict='38' flex='38' gold='38' ok=True steps=205 sec=9.33
+[2026-07-24T03:07:29Z] sample 1109 baseline: strict='3' flex='3' gold='3' ok=True steps=256 sec=11.24
+Early exit at step 208/256 with gap=2.500
+[2026-07-24T03:07:39Z] sample 1109 prophet: strict='3' flex='3' gold='3' ok=True steps=208 sec=9.20
+[2026-07-24T03:07:51Z] sample 1110 baseline: strict='' flex='60' gold='60' ok=True steps=256 sec=11.79
+Early exit at step 223/256 with gap=5.600
+[2026-07-24T03:08:01Z] sample 1110 prophet: strict='' flex='0000' gold='60' ok=False steps=223 sec=10.34
+[2026-07-24T03:08:13Z] sample 1111 baseline: strict='157' flex='157' gold='157' ok=True steps=256 sec=11.56
+Early exit at step 196/256 with gap=2.675
+[2026-07-24T03:08:22Z] sample 1111 prophet: strict='157' flex='157' gold='157' ok=True steps=196 sec=8.92
+[2026-07-24T03:08:34Z] sample 1112 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.46
+Early exit at step 206/256 with gap=2.712
+[2026-07-24T03:08:43Z] sample 1112 prophet: strict='5' flex='5' gold='5' ok=True steps=206 sec=9.29
+[2026-07-24T03:08:55Z] sample 1113 baseline: strict='-3' flex='-3' gold='-3' ok=True steps=256 sec=11.45
+Early exit at step 199/256 with gap=3.038
+[2026-07-24T03:09:04Z] sample 1113 prophet: strict='-3' flex='-3' gold='-3' ok=True steps=199 sec=8.96
+[2026-07-24T03:09:15Z] sample 1114 baseline: strict='8' flex='8' gold='8' ok=True steps=256 sec=11.48
+Early exit at step 196/256 with gap=2.650
+[2026-07-24T03:09:24Z] sample 1114 prophet: strict='8' flex='8' gold='8' ok=True steps=196 sec=8.83
+[2026-07-24T03:09:36Z] sample 1115 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.63
+Early exit at step 213/256 with gap=3.212
+[2026-07-24T03:09:46Z] sample 1115 prophet: strict='5' flex='5' gold='5' ok=True steps=213 sec=9.75
+[2026-07-24T03:09:58Z] sample 1116 baseline: strict='60' flex='60' gold='60' ok=True steps=256 sec=11.45
+Early exit at step 221/256 with gap=2.925
+[2026-07-24T03:10:08Z] sample 1116 prophet: strict='60' flex='60' gold='60' ok=True steps=221 sec=9.97
+[2026-07-24T03:10:19Z] sample 1117 baseline: strict='9' flex='9' gold='9' ok=True steps=256 sec=11.24
+Early exit at step 210/256 with gap=3.438
+[2026-07-24T03:10:28Z] sample 1117 prophet: strict='9' flex='9' gold='9' ok=True steps=210 sec=9.30
+[2026-07-24T03:10:40Z] sample 1118 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.78
+Early exit at step 224/256 with gap=3.250
+[2026-07-24T03:10:51Z] sample 1118 prophet: strict='5' flex='5' gold='5' ok=True steps=224 sec=10.36
+[2026-07-24T03:11:05Z] sample 1119 baseline: strict='18' flex='18' gold='18' ok=True steps=256 sec=13.91
+Early exit at step 195/256 with gap=2.562
+[2026-07-24T03:11:16Z] sample 1119 prophet: strict='18' flex='18' gold='18' ok=True steps=195 sec=10.68
+[2026-07-24T03:11:27Z] sample 1120 baseline: strict='560' flex='560' gold='560' ok=True steps=256 sec=11.46
+Early exit at step 197/256 with gap=2.638
+[2026-07-24T03:11:36Z] sample 1120 prophet: strict='560' flex='560' gold='560' ok=True steps=197 sec=8.88
+[2026-07-24T03:11:48Z] sample 1121 baseline: strict='35' flex='35' gold='35' ok=True steps=256 sec=11.38
+Early exit at step 222/256 with gap=4.225
+[2026-07-24T03:11:58Z] sample 1121 prophet: strict='35' flex='35' gold='35' ok=True steps=222 sec=9.94
+[2026-07-24T03:12:10Z] sample 1122 baseline: strict='3.8' flex='3.8' gold='18' ok=False steps=256 sec=11.84
+Early exit at step 223/256 with gap=3.300
+[2026-07-24T03:12:21Z] sample 1122 prophet: strict='3.8' flex='3.8' gold='18' ok=False steps=223 sec=10.40
+[2026-07-24T03:12:32Z] sample 1123 baseline: strict='105' flex='105' gold='105' ok=True steps=256 sec=11.50
+Early exit at step 198/256 with gap=3.487
+[2026-07-24T03:12:41Z] sample 1123 prophet: strict='105' flex='105' gold='105' ok=True steps=198 sec=8.96
+[2026-07-24T03:12:53Z] sample 1124 baseline: strict='64' flex='64' gold='64' ok=True steps=256 sec=11.45
+Early exit at step 172/256 with gap=2.612
+[2026-07-24T03:13:01Z] sample 1124 prophet: strict='64' flex='64' gold='64' ok=True steps=172 sec=7.76
+[2026-07-24T03:13:13Z] sample 1125 baseline: strict='90' flex='90' gold='90' ok=True steps=256 sec=11.54
+Early exit at step 172/256 with gap=2.525
+[2026-07-24T03:13:20Z] sample 1125 prophet: strict='90' flex='90' gold='90' ok=True steps=172 sec=7.79
+[2026-07-24T03:13:32Z] sample 1126 baseline: strict='50' flex='50' gold='50' ok=True steps=256 sec=11.53
+Early exit at step 223/256 with gap=4.013
+[2026-07-24T03:13:42Z] sample 1126 prophet: strict='50' flex='50' gold='50' ok=True steps=223 sec=10.15
+[2026-07-24T03:13:54Z] sample 1127 baseline: strict='750' flex='750' gold='750' ok=True steps=256 sec=11.78
+Early exit at step 183/256 with gap=2.625
+[2026-07-24T03:14:03Z] sample 1127 prophet: strict='750' flex='750' gold='750' ok=True steps=183 sec=8.47
+[2026-07-24T03:14:14Z] sample 1128 baseline: strict='9' flex='9' gold='9' ok=True steps=256 sec=11.17
+Early exit at step 217/256 with gap=3.987
+[2026-07-24T03:14:24Z] sample 1128 prophet: strict='9' flex='9' gold='9' ok=True steps=217 sec=9.56
+[2026-07-24T03:14:36Z] sample 1129 baseline: strict='12' flex='12' gold='8' ok=False steps=256 sec=11.59
+Early exit at step 202/256 with gap=2.900
+[2026-07-24T03:14:45Z] sample 1129 prophet: strict='12' flex='12' gold='8' ok=False steps=202 sec=9.21
+[2026-07-24T03:14:57Z] sample 1130 baseline: strict='25' flex='25' gold='25' ok=True steps=256 sec=11.76
+Early exit at step 216/256 with gap=3.000
+[2026-07-24T03:15:07Z] sample 1130 prophet: strict='25' flex='25' gold='25' ok=True steps=216 sec=10.00
+[2026-07-24T03:15:19Z] sample 1131 baseline: strict='96' flex='96' gold='96' ok=True steps=256 sec=11.58
+Early exit at step 172/256 with gap=2.513
+[2026-07-24T03:15:27Z] sample 1131 prophet: strict='96' flex='96' gold='96' ok=True steps=172 sec=7.83
+[2026-07-24T03:15:38Z] sample 1132 baseline: strict='5000' flex='45000' gold='45000' ok=True steps=256 sec=11.43
+Early exit at step 180/256 with gap=3.475
+[2026-07-24T03:15:47Z] sample 1132 prophet: strict='45000' flex='45000' gold='45000' ok=True steps=180 sec=8.11
+[2026-07-24T03:15:59Z] sample 1133 baseline: strict='60' flex='60' gold='50' ok=False steps=256 sec=11.77
+Early exit at step 196/256 with gap=3.837
+[2026-07-24T03:16:08Z] sample 1133 prophet: strict='60' flex='60' gold='50' ok=False steps=196 sec=9.10
+[2026-07-24T03:16:19Z] sample 1134 baseline: strict='7' flex='7' gold='7' ok=True steps=256 sec=11.45
+Early exit at step 219/256 with gap=3.525
+[2026-07-24T03:16:29Z] sample 1134 prophet: strict='7' flex='7' gold='7' ok=True steps=219 sec=9.88
+[2026-07-24T03:16:41Z] sample 1135 baseline: strict='32' flex='32' gold='32' ok=True steps=256 sec=11.43
+Early exit at step 172/256 with gap=3.038
+[2026-07-24T03:16:49Z] sample 1135 prophet: strict='32' flex='32' gold='32' ok=True steps=172 sec=7.73
+[2026-07-24T03:17:01Z] sample 1136 baseline: strict='26' flex='26' gold='26' ok=True steps=256 sec=11.43
+Early exit at step 207/256 with gap=3.538
+[2026-07-24T03:17:10Z] sample 1136 prophet: strict='26' flex='26' gold='26' ok=True steps=207 sec=9.31
+[2026-07-24T03:17:22Z] sample 1137 baseline: strict='7' flex='7' gold='68' ok=False steps=256 sec=11.75
+Early exit at step 224/256 with gap=3.350
+[2026-07-24T03:17:32Z] sample 1137 prophet: strict='7' flex='7' gold='68' ok=False steps=224 sec=10.37
+[2026-07-24T03:17:44Z] sample 1138 baseline: strict='700' flex='700' gold='700' ok=True steps=256 sec=11.63
+Early exit at step 198/256 with gap=2.513
+[2026-07-24T03:17:53Z] sample 1138 prophet: strict='700' flex='700' gold='700' ok=True steps=198 sec=9.05
+[2026-07-24T03:18:05Z] sample 1139 baseline: strict='9' flex='9' gold='1' ok=False steps=256 sec=11.64
+Early exit at step 216/256 with gap=2.600
+[2026-07-24T03:18:15Z] sample 1139 prophet: strict='9.09' flex='9.09' gold='1' ok=False steps=216 sec=9.90
+[2026-07-24T03:18:27Z] sample 1140 baseline: strict='36' flex='36' gold='27' ok=False steps=256 sec=11.50
+Early exit at step 177/256 with gap=2.525
+[2026-07-24T03:18:35Z] sample 1140 prophet: strict='36' flex='36' gold='27' ok=False steps=177 sec=8.03
+[2026-07-24T03:18:47Z] sample 1141 baseline: strict='' flex='20' gold='20' ok=True steps=256 sec=11.43
+Early exit at step 223/256 with gap=3.987
+[2026-07-24T03:18:57Z] sample 1141 prophet: strict='' flex='22' gold='20' ok=False steps=223 sec=10.05
+[2026-07-24T03:19:09Z] sample 1142 baseline: strict='9' flex='9' gold='9' ok=True steps=256 sec=11.65
+Early exit at step 223/256 with gap=3.600
+[2026-07-24T03:19:19Z] sample 1142 prophet: strict='9' flex='9' gold='9' ok=True steps=223 sec=10.25
+[2026-07-24T03:19:30Z] sample 1143 baseline: strict='300' flex='300' gold='300' ok=True steps=256 sec=11.19
+Early exit at step 216/256 with gap=5.237
+[2026-07-24T03:19:40Z] sample 1143 prophet: strict='300' flex='300' gold='300' ok=True steps=216 sec=9.52
+[2026-07-24T03:19:52Z] sample 1144 baseline: strict='34' flex='34' gold='34' ok=True steps=256 sec=11.52
+Early exit at step 196/256 with gap=2.675
+[2026-07-24T03:20:01Z] sample 1144 prophet: strict='34' flex='34' gold='34' ok=True steps=196 sec=8.91
+[2026-07-24T03:20:12Z] sample 1145 baseline: strict='117' flex='117' gold='291' ok=False steps=256 sec=11.67
+Early exit at step 252/256 with gap=2.837
+[2026-07-24T03:20:24Z] sample 1145 prophet: strict='107' flex='107' gold='291' ok=False steps=252 sec=11.60
+[2026-07-24T03:20:36Z] sample 1146 baseline: strict='16' flex='16' gold='16' ok=True steps=256 sec=11.60
+Early exit at step 199/256 with gap=3.112
+[2026-07-24T03:20:45Z] sample 1146 prophet: strict='16' flex='16' gold='16' ok=True steps=199 sec=9.10
+[2026-07-24T03:20:57Z] sample 1147 baseline: strict='22' flex='22' gold='22' ok=True steps=256 sec=11.87
+Early exit at step 172/256 with gap=2.750
+[2026-07-24T03:21:05Z] sample 1147 prophet: strict='22' flex='22' gold='22' ok=True steps=172 sec=8.05
+[2026-07-24T03:21:17Z] sample 1148 baseline: strict='9' flex='9' gold='9' ok=True steps=256 sec=11.23
+Early exit at step 215/256 with gap=3.712
+[2026-07-24T03:21:26Z] sample 1148 prophet: strict='9' flex='9' gold='9' ok=True steps=215 sec=9.52
+[2026-07-24T03:21:38Z] sample 1149 baseline: strict='93' flex='93' gold='93' ok=True steps=256 sec=11.22
+Early exit at step 213/256 with gap=4.050
+[2026-07-24T03:21:47Z] sample 1149 prophet: strict='93' flex='93' gold='93' ok=True steps=213 sec=9.43
+[2026-07-24T03:21:59Z] sample 1150 baseline: strict='21' flex='21' gold='21' ok=True steps=256 sec=11.24
+Early exit at step 199/256 with gap=3.900
+[2026-07-24T03:22:08Z] sample 1150 prophet: strict='21' flex='21' gold='21' ok=True steps=199 sec=8.83
+[2026-07-24T03:22:19Z] sample 1151 baseline: strict='50' flex='50' gold='50' ok=True steps=256 sec=11.42
+Early exit at step 204/256 with gap=4.050
+[2026-07-24T03:22:29Z] sample 1151 prophet: strict='50' flex='50' gold='50' ok=True steps=204 sec=9.16
+[2026-07-24T03:22:40Z] sample 1152 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.45
+Early exit at step 198/256 with gap=3.612
+[2026-07-24T03:22:49Z] sample 1152 prophet: strict='12' flex='12' gold='12' ok=True steps=198 sec=8.95
+[2026-07-24T03:23:01Z] sample 1153 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.68
+Early exit at step 199/256 with gap=3.362
+[2026-07-24T03:23:10Z] sample 1153 prophet: strict='20' flex='20' gold='20' ok=True steps=199 sec=9.15
+[2026-07-24T03:23:22Z] sample 1154 baseline: strict='30' flex='30' gold='30' ok=True steps=256 sec=11.23
+Early exit at step 188/256 with gap=2.625
+[2026-07-24T03:23:30Z] sample 1154 prophet: strict='30' flex='30' gold='30' ok=True steps=188 sec=8.32
+[2026-07-24T03:23:42Z] sample 1155 baseline: strict='13' flex='13' gold='13' ok=True steps=256 sec=11.40
+Early exit at step 173/256 with gap=2.612
+[2026-07-24T03:23:50Z] sample 1155 prophet: strict='13' flex='13' gold='13' ok=True steps=173 sec=7.77
+[2026-07-24T03:24:02Z] sample 1156 baseline: strict='100' flex='100' gold='120' ok=False steps=256 sec=11.64
+Early exit at step 178/256 with gap=2.612
+[2026-07-24T03:24:10Z] sample 1156 prophet: strict='120' flex='120' gold='120' ok=True steps=178 sec=8.16
+[2026-07-24T03:24:22Z] sample 1157 baseline: strict='3' flex='3' gold='3' ok=True steps=256 sec=11.56
+Early exit at step 190/256 with gap=2.600
+[2026-07-24T03:24:30Z] sample 1157 prophet: strict='3' flex='3' gold='3' ok=True steps=190 sec=8.67
+[2026-07-24T03:24:42Z] sample 1158 baseline: strict='' flex='2300' gold='7300' ok=False steps=256 sec=11.74
+Early exit at step 223/256 with gap=4.037
+[2026-07-24T03:24:53Z] sample 1158 prophet: strict='' flex='22300' gold='7300' ok=False steps=223 sec=10.29
+[2026-07-24T03:25:04Z] sample 1159 baseline: strict='50' flex='50' gold='50' ok=True steps=256 sec=11.63
+Early exit at step 195/256 with gap=3.900
+[2026-07-24T03:25:13Z] sample 1159 prophet: strict='50' flex='50' gold='50' ok=True steps=195 sec=8.92
+[2026-07-24T03:25:25Z] sample 1160 baseline: strict='1125' flex='1125' gold='1125' ok=True steps=256 sec=11.56
+Early exit at step 223/256 with gap=3.950
+[2026-07-24T03:25:36Z] sample 1160 prophet: strict='1125' flex='1125' gold='1125' ok=True steps=223 sec=10.14
+[2026-07-24T03:25:48Z] sample 1161 baseline: strict='170' flex='170' gold='170' ok=True steps=256 sec=11.71
+Early exit at step 172/256 with gap=2.525
+[2026-07-24T03:25:56Z] sample 1161 prophet: strict='170' flex='170' gold='170' ok=True steps=172 sec=7.93
+[2026-07-24T03:26:07Z] sample 1162 baseline: strict='3' flex='3' gold='3' ok=True steps=256 sec=11.17
+Early exit at step 203/256 with gap=2.587
+[2026-07-24T03:26:16Z] sample 1162 prophet: strict='3' flex='3' gold='3' ok=True steps=203 sec=8.97
+[2026-07-24T03:26:28Z] sample 1163 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.41
+Early exit at step 179/256 with gap=2.500
+[2026-07-24T03:26:36Z] sample 1163 prophet: strict='12' flex='12' gold='12' ok=True steps=179 sec=8.05
+[2026-07-24T03:26:47Z] sample 1164 baseline: strict='9' flex='9' gold='9' ok=True steps=256 sec=11.57
+Early exit at step 220/256 with gap=2.600
+[2026-07-24T03:26:58Z] sample 1164 prophet: strict='9' flex='9' gold='9' ok=True steps=220 sec=10.06
+[2026-07-24T03:27:10Z] sample 1165 baseline: strict='11232' flex='11232' gold='1248' ok=False steps=256 sec=11.72
+Early exit at step 204/256 with gap=2.625
+[2026-07-24T03:27:19Z] sample 1165 prophet: strict='1123' flex='1123' gold='1248' ok=False steps=204 sec=9.40
+[2026-07-24T03:27:33Z] sample 1166 baseline: strict='1800' flex='10' gold='2350' ok=False steps=256 sec=13.91
+Early exit at step 196/256 with gap=2.538
+[2026-07-24T03:27:44Z] sample 1166 prophet: strict='1850' flex='1850' gold='2350' ok=False steps=196 sec=10.75
+[2026-07-24T03:27:55Z] sample 1167 baseline: strict='120' flex='120' gold='120' ok=True steps=256 sec=11.18
+Early exit at step 172/256 with gap=2.888
+[2026-07-24T03:28:03Z] sample 1167 prophet: strict='120' flex='120' gold='120' ok=True steps=172 sec=7.58
+[2026-07-24T03:28:15Z] sample 1168 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.55
+Early exit at step 196/256 with gap=4.188
+[2026-07-24T03:28:24Z] sample 1168 prophet: strict='20' flex='20' gold='20' ok=True steps=196 sec=8.89
+[2026-07-24T03:28:36Z] sample 1169 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.55
+Early exit at step 197/256 with gap=2.925
+[2026-07-24T03:28:45Z] sample 1169 prophet: strict='2' flex='2' gold='2' ok=True steps=197 sec=8.96
+[2026-07-24T03:28:56Z] sample 1170 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.64
+Early exit at step 218/256 with gap=2.562
+[2026-07-24T03:29:06Z] sample 1170 prophet: strict='2' flex='2' gold='2' ok=True steps=218 sec=10.01
+[2026-07-24T03:29:18Z] sample 1171 baseline: strict='3160' flex='3160' gold='3160' ok=True steps=256 sec=11.62
+Early exit at step 218/256 with gap=2.612
+[2026-07-24T03:29:28Z] sample 1171 prophet: strict='3160' flex='3160' gold='3160' ok=True steps=218 sec=9.99
+[2026-07-24T03:29:40Z] sample 1172 baseline: strict='93' flex='93' gold='93' ok=True steps=256 sec=11.77
+Early exit at step 203/256 with gap=2.625
+[2026-07-24T03:29:50Z] sample 1172 prophet: strict='93' flex='93' gold='93' ok=True steps=203 sec=9.42
+[2026-07-24T03:30:02Z] sample 1173 baseline: strict='10' flex='10' gold='10' ok=True steps=256 sec=11.60
+Early exit at step 200/256 with gap=2.987
+[2026-07-24T03:30:11Z] sample 1173 prophet: strict='10' flex='10' gold='10' ok=True steps=200 sec=9.12
+[2026-07-24T03:30:23Z] sample 1174 baseline: strict='300' flex='300' gold='240' ok=False steps=256 sec=11.72
+Early exit at step 203/256 with gap=3.050
+[2026-07-24T03:30:32Z] sample 1174 prophet: strict='120' flex='120' gold='240' ok=False steps=203 sec=9.42
+[2026-07-24T03:30:44Z] sample 1175 baseline: strict='' flex='8' gold='16' ok=False steps=256 sec=11.74
+Early exit at step 206/256 with gap=2.612
+[2026-07-24T03:30:54Z] sample 1175 prophet: strict='' flex='1' gold='16' ok=False steps=206 sec=9.54
+[2026-07-24T03:31:09Z] sample 1176 baseline: strict='2.75' flex='2.75' gold='2' ok=False steps=256 sec=14.71
+Early exit at step 215/256 with gap=4.188
+[2026-07-24T03:31:21Z] sample 1176 prophet: strict='2.75' flex='2.75' gold='2' ok=False steps=215 sec=12.44
+[2026-07-24T03:31:33Z] sample 1177 baseline: strict='17' flex='17' gold='17' ok=True steps=256 sec=11.46
+Early exit at step 221/256 with gap=3.450
+[2026-07-24T03:31:43Z] sample 1177 prophet: strict='17' flex='17' gold='17' ok=True steps=221 sec=9.98
+[2026-07-24T03:31:54Z] sample 1178 baseline: strict='17' flex='17' gold='17' ok=True steps=256 sec=11.19
+Early exit at step 172/256 with gap=2.888
+[2026-07-24T03:32:02Z] sample 1178 prophet: strict='17' flex='17' gold='17' ok=True steps=172 sec=7.59
+[2026-07-24T03:32:14Z] sample 1179 baseline: strict='50' flex='50' gold='50' ok=True steps=256 sec=11.23
+Early exit at step 197/256 with gap=3.087
+[2026-07-24T03:32:22Z] sample 1179 prophet: strict='50' flex='50' gold='50' ok=True steps=197 sec=8.72
+[2026-07-24T03:32:34Z] sample 1180 baseline: strict='' flex='5600' gold='5600' ok=True steps=256 sec=11.80
+Early exit at step 218/256 with gap=2.575
+[2026-07-24T03:32:45Z] sample 1180 prophet: strict='' flex='5600' gold='5600' ok=True steps=218 sec=10.12
+[2026-07-24T03:32:56Z] sample 1181 baseline: strict='15' flex='15' gold='20' ok=False steps=256 sec=11.45
+Early exit at step 223/256 with gap=2.500
+[2026-07-24T03:33:06Z] sample 1181 prophet: strict='15' flex='15' gold='20' ok=False steps=223 sec=10.03
+[2026-07-24T03:33:18Z] sample 1182 baseline: strict='180' flex='180' gold='1800' ok=False steps=256 sec=11.46
+Early exit at step 172/256 with gap=2.538
+[2026-07-24T03:33:26Z] sample 1182 prophet: strict='180' flex='180' gold='1800' ok=False steps=172 sec=7.75
+[2026-07-24T03:33:40Z] sample 1183 baseline: strict='13' flex='13' gold='11' ok=False steps=256 sec=13.86
+Early exit at step 172/256 with gap=2.638
+[2026-07-24T03:33:49Z] sample 1183 prophet: strict='13' flex='13' gold='11' ok=False steps=172 sec=9.38
+[2026-07-24T03:34:01Z] sample 1184 baseline: strict='306' flex='306' gold='306' ok=True steps=256 sec=11.46
+Early exit at step 221/256 with gap=5.588
+[2026-07-24T03:34:11Z] sample 1184 prophet: strict='306' flex='306' gold='306' ok=True steps=221 sec=9.98
+[2026-07-24T03:34:23Z] sample 1185 baseline: strict='5' flex='5' gold='6' ok=False steps=256 sec=11.56
+Early exit at step 222/256 with gap=3.312
+[2026-07-24T03:34:33Z] sample 1185 prophet: strict='5' flex='5' gold='6' ok=False steps=222 sec=10.10
+[2026-07-24T03:34:45Z] sample 1186 baseline: strict='19' flex='19' gold='19' ok=True steps=256 sec=11.24
+Early exit at step 177/256 with gap=2.513
+[2026-07-24T03:34:52Z] sample 1186 prophet: strict='16' flex='16' gold='19' ok=False steps=177 sec=7.83
+[2026-07-24T03:35:04Z] sample 1187 baseline: strict='180' flex='180' gold='5' ok=False steps=256 sec=11.54
+Early exit at step 207/256 with gap=2.575
+[2026-07-24T03:35:14Z] sample 1187 prophet: strict='1800' flex='1800' gold='5' ok=False steps=207 sec=9.41
+[2026-07-24T03:35:25Z] sample 1188 baseline: strict='34' flex='34' gold='24' ok=False steps=256 sec=11.42
+Early exit at step 221/256 with gap=5.287
+[2026-07-24T03:35:35Z] sample 1188 prophet: strict='34' flex='34' gold='24' ok=False steps=221 sec=9.95
+[2026-07-24T03:35:47Z] sample 1189 baseline: strict='6' flex='6' gold='6' ok=True steps=256 sec=11.49
+Early exit at step 204/256 with gap=3.025
+[2026-07-24T03:35:56Z] sample 1189 prophet: strict='6' flex='6' gold='6' ok=True steps=204 sec=9.23
+[2026-07-24T03:36:09Z] sample 1190 baseline: strict='88' flex='88' gold='19' ok=False steps=256 sec=11.91
+Early exit at step 217/256 with gap=3.087
+[2026-07-24T03:36:19Z] sample 1190 prophet: strict='88' flex='88' gold='19' ok=False steps=217 sec=10.18
+[2026-07-24T03:36:31Z] sample 1191 baseline: strict='100' flex='100' gold='100' ok=True steps=256 sec=11.50
+Early exit at step 177/256 with gap=2.550
+[2026-07-24T03:36:39Z] sample 1191 prophet: strict='100' flex='100' gold='100' ok=True steps=177 sec=8.04
+[2026-07-24T03:36:50Z] sample 1192 baseline: strict='280' flex='280' gold='280' ok=True steps=256 sec=11.63
+Early exit at step 174/256 with gap=2.500
+[2026-07-24T03:36:59Z] sample 1192 prophet: strict='280' flex='280' gold='280' ok=True steps=174 sec=7.95
+[2026-07-24T03:37:11Z] sample 1193 baseline: strict='18.00' flex='18.00' gold='9' ok=False steps=256 sec=11.86
+Early exit at step 172/256 with gap=2.675
+[2026-07-24T03:37:19Z] sample 1193 prophet: strict='18.00' flex='18.00' gold='9' ok=False steps=172 sec=8.03
+[2026-07-24T03:37:30Z] sample 1194 baseline: strict='1200' flex='1200' gold='1200' ok=True steps=256 sec=11.54
+Early exit at step 201/256 with gap=3.125
+[2026-07-24T03:37:40Z] sample 1194 prophet: strict='1200' flex='1200' gold='1200' ok=True steps=201 sec=9.14
+[2026-07-24T03:37:55Z] sample 1195 baseline: strict='320' flex='320' gold='320' ok=True steps=256 sec=14.62
+Early exit at step 196/256 with gap=2.850
+[2026-07-24T03:38:06Z] sample 1195 prophet: strict='320' flex='320' gold='320' ok=True steps=196 sec=11.27
+[2026-07-24T03:38:18Z] sample 1196 baseline: strict='75' flex='75' gold='75' ok=True steps=256 sec=11.45
+Early exit at step 197/256 with gap=4.037
+[2026-07-24T03:38:26Z] sample 1196 prophet: strict='75' flex='75' gold='75' ok=True steps=197 sec=8.88
+[2026-07-24T03:38:38Z] sample 1197 baseline: strict='2400' flex='2400' gold='2400' ok=True steps=256 sec=11.51
+Early exit at step 172/256 with gap=3.800
+[2026-07-24T03:38:46Z] sample 1197 prophet: strict='2400' flex='2400' gold='2400' ok=True steps=172 sec=7.80
+[2026-07-24T03:38:58Z] sample 1198 baseline: strict='140' flex='140' gold='140' ok=True steps=256 sec=11.77
+Early exit at step 172/256 with gap=2.913
+[2026-07-24T03:39:06Z] sample 1198 prophet: strict='140' flex='140' gold='140' ok=True steps=172 sec=7.97
+[2026-07-24T03:39:21Z] sample 1199 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=14.78
+Early exit at step 224/256 with gap=3.087
+[2026-07-24T03:39:34Z] sample 1199 prophet: strict='2' flex='2' gold='2' ok=True steps=224 sec=13.02
+[2026-07-24T03:39:46Z] sample 1200 baseline: strict='8' flex='8' gold='8' ok=True steps=256 sec=11.20
+Early exit at step 218/256 with gap=2.513
+[2026-07-24T03:39:55Z] sample 1200 prophet: strict='8' flex='8' gold='8' ok=True steps=218 sec=9.62
+[2026-07-24T03:40:07Z] sample 1201 baseline: strict='42' flex='42' gold='42' ok=True steps=256 sec=11.50
+Early exit at step 223/256 with gap=3.888
+[2026-07-24T03:40:17Z] sample 1201 prophet: strict='42' flex='42' gold='42' ok=True steps=223 sec=10.09
+[2026-07-24T03:40:29Z] sample 1202 baseline: strict='4' flex='4' gold='19' ok=False steps=256 sec=11.56
+Early exit at step 205/256 with gap=3.300
+[2026-07-24T03:40:38Z] sample 1202 prophet: strict='4' flex='4' gold='19' ok=False steps=205 sec=9.32
+[2026-07-24T03:40:50Z] sample 1203 baseline: strict='420' flex='420' gold='240' ok=False steps=256 sec=11.54
+Early exit at step 223/256 with gap=6.450
+[2026-07-24T03:41:00Z] sample 1203 prophet: strict='420' flex='420' gold='240' ok=False steps=223 sec=10.15
+[2026-07-24T03:41:12Z] sample 1204 baseline: strict='168' flex='168' gold='168' ok=True steps=256 sec=11.80
+Early exit at step 179/256 with gap=2.525
+[2026-07-24T03:41:21Z] sample 1204 prophet: strict='168' flex='168' gold='168' ok=True steps=179 sec=8.29
+[2026-07-24T03:41:33Z] sample 1205 baseline: strict='4' flex='4' gold='4' ok=True steps=256 sec=11.63
+Early exit at step 196/256 with gap=2.750
+[2026-07-24T03:41:42Z] sample 1205 prophet: strict='4' flex='4' gold='4' ok=True steps=196 sec=8.96
+[2026-07-24T03:41:53Z] sample 1206 baseline: strict='40000' flex='40000' gold='40000' ok=True steps=256 sec=11.63
+Early exit at step 172/256 with gap=2.650
+[2026-07-24T03:42:01Z] sample 1206 prophet: strict='40000' flex='40000' gold='40000' ok=True steps=172 sec=7.87
+[2026-07-24T03:42:13Z] sample 1207 baseline: strict='64' flex='64' gold='64' ok=True steps=256 sec=11.71
+Early exit at step 205/256 with gap=3.250
+[2026-07-24T03:42:23Z] sample 1207 prophet: strict='64' flex='64' gold='64' ok=True steps=205 sec=9.43
+[2026-07-24T03:42:34Z] sample 1208 baseline: strict='27' flex='27' gold='27' ok=True steps=256 sec=11.24
+Early exit at step 222/256 with gap=4.513
+[2026-07-24T03:42:44Z] sample 1208 prophet: strict='27' flex='27' gold='27' ok=True steps=222 sec=9.83
+[2026-07-24T03:42:59Z] sample 1209 baseline: strict='29' flex='29' gold='29' ok=True steps=256 sec=14.73
+Early exit at step 201/256 with gap=2.525
+[2026-07-24T03:43:11Z] sample 1209 prophet: strict='29' flex='29' gold='29' ok=True steps=201 sec=11.64
+[2026-07-24T03:43:23Z] sample 1210 baseline: strict='288' flex='288' gold='288' ok=True steps=256 sec=11.55
+Early exit at step 172/256 with gap=2.575
+[2026-07-24T03:43:30Z] sample 1210 prophet: strict='288' flex='288' gold='288' ok=True steps=172 sec=7.83
+[2026-07-24T03:43:42Z] sample 1211 baseline: strict='448' flex='448' gold='448' ok=True steps=256 sec=11.41
+Early exit at step 179/256 with gap=2.875
+[2026-07-24T03:43:50Z] sample 1211 prophet: strict='448' flex='448' gold='448' ok=True steps=179 sec=8.04
+[2026-07-24T03:44:02Z] sample 1212 baseline: strict='150' flex='150' gold='150' ok=True steps=256 sec=11.62
+Early exit at step 177/256 with gap=2.550
+[2026-07-24T03:44:10Z] sample 1212 prophet: strict='150' flex='150' gold='150' ok=True steps=177 sec=8.08
+[2026-07-24T03:44:22Z] sample 1213 baseline: strict='25.50' flex='25.50' gold='31' ok=False steps=256 sec=11.65
+Early exit at step 221/256 with gap=2.675
+[2026-07-24T03:44:32Z] sample 1213 prophet: strict='25.50' flex='25.50' gold='31' ok=False steps=221 sec=10.15
+[2026-07-24T03:44:44Z] sample 1214 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.42
+Early exit at step 201/256 with gap=2.575
+[2026-07-24T03:44:53Z] sample 1214 prophet: strict='5' flex='5' gold='5' ok=True steps=201 sec=9.04
+[2026-07-24T03:45:07Z] sample 1215 baseline: strict='' flex='4' gold='36' ok=False steps=256 sec=13.97
+Early exit at step 214/256 with gap=3.475
+[2026-07-24T03:45:19Z] sample 1215 prophet: strict='' flex='4' gold='36' ok=False steps=214 sec=11.77
+[2026-07-24T03:45:31Z] sample 1216 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.89
+Early exit at step 196/256 with gap=3.212
+[2026-07-24T03:45:40Z] sample 1216 prophet: strict='20' flex='20' gold='20' ok=True steps=196 sec=9.17
+[2026-07-24T03:45:52Z] sample 1217 baseline: strict='75' flex='75' gold='75' ok=True steps=256 sec=11.73
+Early exit at step 172/256 with gap=2.962
+[2026-07-24T03:46:00Z] sample 1217 prophet: strict='75' flex='75' gold='75' ok=True steps=172 sec=7.91
+[2026-07-24T03:46:14Z] sample 1218 baseline: strict='3.75' flex='3.75' gold='225' ok=False steps=256 sec=13.78
+Early exit at step 223/256 with gap=6.537
+[2026-07-24T03:46:26Z] sample 1218 prophet: strict='3.75' flex='3.75' gold='225' ok=False steps=223 sec=12.09
+[2026-07-24T03:46:38Z] sample 1219 baseline: strict='100' flex='100' gold='100' ok=True steps=256 sec=11.45
+Early exit at step 215/256 with gap=6.125
+[2026-07-24T03:46:48Z] sample 1219 prophet: strict='100' flex='100' gold='100' ok=True steps=215 sec=9.70
+[2026-07-24T03:47:00Z] sample 1220 baseline: strict='32' flex='32' gold='32' ok=True steps=256 sec=11.48
+Early exit at step 201/256 with gap=3.775
+[2026-07-24T03:47:09Z] sample 1220 prophet: strict='32' flex='32' gold='32' ok=True steps=201 sec=9.08
+[2026-07-24T03:47:21Z] sample 1221 baseline: strict='10' flex='10' gold='10' ok=True steps=256 sec=11.65
+Early exit at step 172/256 with gap=3.475
+[2026-07-24T03:47:29Z] sample 1221 prophet: strict='10' flex='10' gold='10' ok=True steps=172 sec=7.91
+[2026-07-24T03:47:40Z] sample 1222 baseline: strict='350' flex='350' gold='350' ok=True steps=256 sec=11.50
+Early exit at step 172/256 with gap=3.038
+[2026-07-24T03:47:48Z] sample 1222 prophet: strict='350' flex='350' gold='350' ok=True steps=172 sec=7.77
+[2026-07-24T03:48:00Z] sample 1223 baseline: strict='8' flex='8' gold='8' ok=True steps=256 sec=11.51
+Early exit at step 202/256 with gap=2.550
+[2026-07-24T03:48:09Z] sample 1223 prophet: strict='8' flex='8' gold='8' ok=True steps=202 sec=9.15
+[2026-07-24T03:48:21Z] sample 1224 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.40
+Early exit at step 199/256 with gap=2.900
+[2026-07-24T03:48:30Z] sample 1224 prophet: strict='5' flex='5' gold='5' ok=True steps=199 sec=8.93
+[2026-07-24T03:48:41Z] sample 1225 baseline: strict='3' flex='3' gold='3' ok=True steps=256 sec=11.46
+Early exit at step 197/256 with gap=3.075
+[2026-07-24T03:48:50Z] sample 1225 prophet: strict='3' flex='3' gold='3' ok=True steps=197 sec=8.92
+[2026-07-24T03:49:02Z] sample 1226 baseline: strict='90' flex='90' gold='90' ok=True steps=256 sec=11.66
+Early exit at step 172/256 with gap=2.763
+[2026-07-24T03:49:10Z] sample 1226 prophet: strict='90' flex='90' gold='90' ok=True steps=172 sec=7.89
+[2026-07-24T03:49:22Z] sample 1227 baseline: strict='66' flex='66' gold='66' ok=True steps=256 sec=11.56
+Early exit at step 177/256 with gap=2.600
+[2026-07-24T03:49:30Z] sample 1227 prophet: strict='66' flex='66' gold='66' ok=True steps=177 sec=8.04
+[2026-07-24T03:49:42Z] sample 1228 baseline: strict='31' flex='31' gold='31' ok=True steps=256 sec=11.41
+Early exit at step 220/256 with gap=4.400
+[2026-07-24T03:49:52Z] sample 1228 prophet: strict='31' flex='31' gold='31' ok=True steps=220 sec=9.89
+[2026-07-24T03:50:03Z] sample 1229 baseline: strict='36' flex='36' gold='36' ok=True steps=256 sec=11.47
+Early exit at step 209/256 with gap=3.038
+[2026-07-24T03:50:13Z] sample 1229 prophet: strict='36' flex='36' gold='36' ok=True steps=209 sec=9.45
+[2026-07-24T03:50:25Z] sample 1230 baseline: strict='440' flex='440' gold='440' ok=True steps=256 sec=11.88
+Early exit at step 172/256 with gap=3.975
+[2026-07-24T03:50:33Z] sample 1230 prophet: strict='440' flex='440' gold='440' ok=True steps=172 sec=8.05
+[2026-07-24T03:50:45Z] sample 1231 baseline: strict='80' flex='80' gold='70' ok=False steps=256 sec=11.53
+Early exit at step 196/256 with gap=2.513
+[2026-07-24T03:50:54Z] sample 1231 prophet: strict='80' flex='80' gold='70' ok=False steps=196 sec=8.91
+[2026-07-24T03:51:06Z] sample 1232 baseline: strict='15' flex='15' gold='15' ok=True steps=256 sec=11.48
+Early exit at step 223/256 with gap=4.075
+[2026-07-24T03:51:16Z] sample 1232 prophet: strict='15' flex='15' gold='15' ok=True steps=223 sec=10.07
+[2026-07-24T03:51:27Z] sample 1233 baseline: strict='81' flex='81' gold='81' ok=True steps=256 sec=11.51
+Early exit at step 195/256 with gap=3.675
+[2026-07-24T03:51:36Z] sample 1233 prophet: strict='81' flex='81' gold='81' ok=True steps=195 sec=8.84
+[2026-07-24T03:51:48Z] sample 1234 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.23
+Early exit at step 195/256 with gap=3.225
+[2026-07-24T03:51:56Z] sample 1234 prophet: strict='12' flex='12' gold='12' ok=True steps=195 sec=8.64
+[2026-07-24T03:52:08Z] sample 1235 baseline: strict='' flex='60' gold='60' ok=True steps=256 sec=11.61
+Early exit at step 224/256 with gap=5.400
+[2026-07-24T03:52:19Z] sample 1235 prophet: strict='' flex='60' gold='60' ok=True steps=224 sec=10.27
+[2026-07-24T03:52:31Z] sample 1236 baseline: strict='84' flex='84' gold='84' ok=True steps=256 sec=11.63
+Early exit at step 195/256 with gap=2.962
+[2026-07-24T03:52:40Z] sample 1236 prophet: strict='84' flex='84' gold='84' ok=True steps=195 sec=8.94
+[2026-07-24T03:52:51Z] sample 1237 baseline: strict='78' flex='78' gold='78' ok=True steps=256 sec=11.45
+Early exit at step 209/256 with gap=3.362
+[2026-07-24T03:53:01Z] sample 1237 prophet: strict='78' flex='78' gold='78' ok=True steps=209 sec=9.41
+[2026-07-24T03:53:13Z] sample 1238 baseline: strict='520.00' flex='520.00' gold='520' ok=False steps=256 sec=11.59
+Early exit at step 174/256 with gap=2.688
+[2026-07-24T03:53:21Z] sample 1238 prophet: strict='520.00' flex='520.00' gold='520' ok=False steps=174 sec=7.95
+[2026-07-24T03:53:32Z] sample 1239 baseline: strict='50' flex='50' gold='50' ok=True steps=256 sec=11.57
+Early exit at step 198/256 with gap=3.712
+[2026-07-24T03:53:41Z] sample 1239 prophet: strict='50' flex='50' gold='50' ok=True steps=198 sec=9.00
+[2026-07-24T03:53:53Z] sample 1240 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.77
+Early exit at step 196/256 with gap=2.513
+[2026-07-24T03:54:02Z] sample 1240 prophet: strict='2' flex='2' gold='2' ok=True steps=196 sec=9.09
+[2026-07-24T03:54:14Z] sample 1241 baseline: strict='8.00' flex='8.00' gold='8' ok=False steps=256 sec=11.24
+Early exit at step 175/256 with gap=2.612
+[2026-07-24T03:54:22Z] sample 1241 prophet: strict='8.00' flex='8.00' gold='8' ok=False steps=175 sec=7.74
+[2026-07-24T03:54:34Z] sample 1242 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.53
+Early exit at step 193/256 with gap=2.538
+[2026-07-24T03:54:42Z] sample 1242 prophet: strict='20' flex='20' gold='20' ok=True steps=193 sec=8.77
+[2026-07-24T03:54:54Z] sample 1243 baseline: strict='50' flex='50' gold='50' ok=True steps=256 sec=11.55
+Early exit at step 209/256 with gap=3.163
+[2026-07-24T03:55:04Z] sample 1243 prophet: strict='50' flex='50' gold='50' ok=True steps=209 sec=9.51
+[2026-07-24T03:55:16Z] sample 1244 baseline: strict='35' flex='35' gold='35' ok=True steps=256 sec=11.79
+Early exit at step 172/256 with gap=3.275
+[2026-07-24T03:55:24Z] sample 1244 prophet: strict='35' flex='35' gold='35' ok=True steps=172 sec=8.00
+[2026-07-24T03:55:36Z] sample 1245 baseline: strict='96' flex='96' gold='96' ok=True steps=256 sec=11.58
+Early exit at step 208/256 with gap=3.712
+[2026-07-24T03:55:45Z] sample 1245 prophet: strict='96' flex='96' gold='96' ok=True steps=208 sec=9.50
+[2026-07-24T03:55:57Z] sample 1246 baseline: strict='3360' flex='3360' gold='3360' ok=True steps=256 sec=11.49
+Early exit at step 223/256 with gap=2.587
+[2026-07-24T03:56:07Z] sample 1246 prophet: strict='' flex='3360' gold='3360' ok=True steps=223 sec=10.10
+[2026-07-24T03:56:19Z] sample 1247 baseline: strict='2' flex='2' gold='7' ok=False steps=256 sec=11.79
+Early exit at step 200/256 with gap=2.638
+[2026-07-24T03:56:28Z] sample 1247 prophet: strict='2' flex='2' gold='7' ok=False steps=200 sec=9.29
+[2026-07-24T03:56:42Z] sample 1248 baseline: strict='1500' flex='1500' gold='750' ok=False steps=256 sec=13.85
+Early exit at step 223/256 with gap=5.450
+[2026-07-24T03:56:55Z] sample 1248 prophet: strict='1500' flex='1500' gold='750' ok=False steps=223 sec=12.14
+[2026-07-24T03:57:09Z] sample 1249 baseline: strict='52' flex='52' gold='56' ok=False steps=256 sec=13.85
+Early exit at step 200/256 with gap=3.675
+[2026-07-24T03:57:20Z] sample 1249 prophet: strict='52' flex='52' gold='56' ok=False steps=200 sec=10.88
+[2026-07-24T03:57:31Z] sample 1250 baseline: strict='22' flex='22' gold='22' ok=True steps=256 sec=11.48
+Early exit at step 196/256 with gap=2.812
+[2026-07-24T03:57:40Z] sample 1250 prophet: strict='22' flex='22' gold='22' ok=True steps=196 sec=8.88
+[2026-07-24T03:57:52Z] sample 1251 baseline: strict='30' flex='30' gold='30' ok=True steps=256 sec=11.70
+Early exit at step 214/256 with gap=2.650
+[2026-07-24T03:58:02Z] sample 1251 prophet: strict='30' flex='30' gold='30' ok=True steps=214 sec=9.85
+[2026-07-24T03:58:14Z] sample 1252 baseline: strict='40' flex='40' gold='70' ok=False steps=256 sec=11.49
+Early exit at step 193/256 with gap=2.587
+[2026-07-24T03:58:23Z] sample 1252 prophet: strict='40' flex='40' gold='70' ok=False steps=193 sec=8.73
+[2026-07-24T03:58:34Z] sample 1253 baseline: strict='120' flex='120' gold='120' ok=True steps=256 sec=11.47
+Early exit at step 172/256 with gap=2.700
+[2026-07-24T03:58:42Z] sample 1253 prophet: strict='120' flex='120' gold='120' ok=True steps=172 sec=7.76
+[2026-07-24T03:58:54Z] sample 1254 baseline: strict='' flex='6' gold='30' ok=False steps=256 sec=11.83
+Early exit at step 223/256 with gap=5.763
+[2026-07-24T03:59:05Z] sample 1254 prophet: strict='' flex='6' gold='30' ok=False steps=223 sec=10.42
+[2026-07-24T03:59:17Z] sample 1255 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.66
+Early exit at step 172/256 with gap=2.700
+[2026-07-24T03:59:25Z] sample 1255 prophet: strict='12' flex='12' gold='12' ok=True steps=172 sec=7.87
+[2026-07-24T03:59:39Z] sample 1256 baseline: strict='15' flex='15' gold='15' ok=True steps=256 sec=13.96
+Early exit at step 172/256 with gap=2.675
+[2026-07-24T03:59:48Z] sample 1256 prophet: strict='15' flex='15' gold='15' ok=True steps=172 sec=9.42
+[2026-07-24T04:00:00Z] sample 1257 baseline: strict='14.00' flex='14.00' gold='14' ok=False steps=256 sec=11.54
+Early exit at step 176/256 with gap=2.500
+[2026-07-24T04:00:08Z] sample 1257 prophet: strict='14.0' flex='14.0' gold='14' ok=False steps=176 sec=8.01
+[2026-07-24T04:00:20Z] sample 1258 baseline: strict='60' flex='60' gold='60' ok=True steps=256 sec=11.45
+Early exit at step 173/256 with gap=2.562
+[2026-07-24T04:00:28Z] sample 1258 prophet: strict='60' flex='60' gold='60' ok=True steps=173 sec=7.78
+[2026-07-24T04:00:39Z] sample 1259 baseline: strict='7200' flex='7200' gold='7200' ok=True steps=256 sec=11.43
+Early exit at step 172/256 with gap=4.312
+[2026-07-24T04:00:47Z] sample 1259 prophet: strict='7200' flex='7200' gold='7200' ok=True steps=172 sec=7.74
+[2026-07-24T04:00:59Z] sample 1260 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.77
+Early exit at step 203/256 with gap=2.575
+[2026-07-24T04:01:09Z] sample 1260 prophet: strict='5' flex='5' gold='5' ok=True steps=203 sec=9.41
+[2026-07-24T04:01:21Z] sample 1261 baseline: strict='235.00' flex='235.00' gold='235' ok=False steps=256 sec=11.74
+Early exit at step 172/256 with gap=3.550
+[2026-07-24T04:01:29Z] sample 1261 prophet: strict='235.00' flex='235.00' gold='235' ok=False steps=172 sec=7.96
+[2026-07-24T04:01:40Z] sample 1262 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.62
+Early exit at step 204/256 with gap=2.750
+[2026-07-24T04:01:50Z] sample 1262 prophet: strict='12' flex='12' gold='12' ok=True steps=204 sec=9.37
+[2026-07-24T04:02:04Z] sample 1263 baseline: strict='500' flex='500' gold='500' ok=True steps=256 sec=13.82
+Early exit at step 211/256 with gap=2.513
+[2026-07-24T04:02:15Z] sample 1263 prophet: strict='480' flex='480' gold='500' ok=False steps=211 sec=11.50
+[2026-07-24T04:02:30Z] sample 1264 baseline: strict='210' flex='210' gold='210' ok=True steps=256 sec=14.56
+Early exit at step 177/256 with gap=3.087
+[2026-07-24T04:02:40Z] sample 1264 prophet: strict='210' flex='210' gold='210' ok=True steps=177 sec=10.13
+[2026-07-24T04:02:53Z] sample 1265 baseline: strict='30' flex='30' gold='36' ok=False steps=256 sec=11.85
+Early exit at step 172/256 with gap=2.850
+[2026-07-24T04:03:01Z] sample 1265 prophet: strict='30' flex='30' gold='36' ok=False steps=172 sec=8.03
+[2026-07-24T04:03:12Z] sample 1266 baseline: strict='147' flex='147' gold='147' ok=True steps=256 sec=11.51
+Early exit at step 172/256 with gap=3.500
+[2026-07-24T04:03:20Z] sample 1266 prophet: strict='147' flex='147' gold='147' ok=True steps=172 sec=7.81
+[2026-07-24T04:03:32Z] sample 1267 baseline: strict='80' flex='80' gold='40' ok=False steps=256 sec=11.42
+Early exit at step 196/256 with gap=3.325
+[2026-07-24T04:03:41Z] sample 1267 prophet: strict='80' flex='80' gold='40' ok=False steps=196 sec=8.80
+[2026-07-24T04:03:52Z] sample 1268 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.47
+Early exit at step 208/256 with gap=4.088
+[2026-07-24T04:04:02Z] sample 1268 prophet: strict='20' flex='20' gold='20' ok=True steps=208 sec=9.39
+[2026-07-24T04:04:14Z] sample 1269 baseline: strict='54' flex='54' gold='54' ok=True steps=256 sec=11.55
+Early exit at step 215/256 with gap=3.125
+[2026-07-24T04:04:23Z] sample 1269 prophet: strict='54' flex='54' gold='54' ok=True steps=215 sec=9.79
+[2026-07-24T04:04:35Z] sample 1270 baseline: strict='3528' flex='3528' gold='3528' ok=True steps=256 sec=11.56
+Early exit at step 172/256 with gap=3.163
+[2026-07-24T04:04:43Z] sample 1270 prophet: strict='3528' flex='3528' gold='3528' ok=True steps=172 sec=7.82
+[2026-07-24T04:04:55Z] sample 1271 baseline: strict='43' flex='43' gold='43' ok=True steps=256 sec=11.53
+Early exit at step 208/256 with gap=2.550
+[2026-07-24T04:05:04Z] sample 1271 prophet: strict='43' flex='43' gold='43' ok=True steps=208 sec=9.44
+[2026-07-24T04:05:16Z] sample 1272 baseline: strict='296' flex='296' gold='296' ok=True steps=256 sec=11.68
+Early exit at step 172/256 with gap=3.100
+[2026-07-24T04:05:24Z] sample 1272 prophet: strict='296' flex='296' gold='296' ok=True steps=172 sec=7.92
+[2026-07-24T04:05:36Z] sample 1273 baseline: strict='35' flex='35' gold='27' ok=False steps=256 sec=11.54
+Early exit at step 214/256 with gap=3.400
+[2026-07-24T04:05:46Z] sample 1273 prophet: strict='35' flex='35' gold='27' ok=False steps=214 sec=9.69
+[2026-07-24T04:05:58Z] sample 1274 baseline: strict='38' flex='38' gold='38' ok=True steps=256 sec=11.51
+Early exit at step 223/256 with gap=3.212
+[2026-07-24T04:06:08Z] sample 1274 prophet: strict='38' flex='38' gold='38' ok=True steps=223 sec=10.11
+[2026-07-24T04:06:20Z] sample 1275 baseline: strict='160' flex='160' gold='16' ok=False steps=256 sec=11.69
+Early exit at step 182/256 with gap=2.812
+[2026-07-24T04:06:28Z] sample 1275 prophet: strict='160' flex='160' gold='16' ok=False steps=182 sec=8.38
+[2026-07-24T04:06:40Z] sample 1276 baseline: strict='70' flex='70' gold='70' ok=True steps=256 sec=11.54
+Early exit at step 172/256 with gap=2.837
+[2026-07-24T04:06:48Z] sample 1276 prophet: strict='70' flex='70' gold='70' ok=True steps=172 sec=7.81
+[2026-07-24T04:06:59Z] sample 1277 baseline: strict='48' flex='48' gold='48' ok=True steps=256 sec=11.40
+Early exit at step 172/256 with gap=2.550
+[2026-07-24T04:07:07Z] sample 1277 prophet: strict='48' flex='48' gold='48' ok=True steps=172 sec=7.74
+[2026-07-24T04:07:19Z] sample 1278 baseline: strict='665' flex='665' gold='665' ok=True steps=256 sec=11.57
+Early exit at step 191/256 with gap=2.600
+[2026-07-24T04:07:28Z] sample 1278 prophet: strict='665' flex='665' gold='665' ok=True steps=191 sec=8.68
+[2026-07-24T04:07:40Z] sample 1279 baseline: strict='180.00' flex='180.00' gold='180' ok=False steps=256 sec=11.76
+Early exit at step 172/256 with gap=2.913
+[2026-07-24T04:07:48Z] sample 1279 prophet: strict='180.00' flex='180.00' gold='180' ok=False steps=172 sec=7.95
+[2026-07-24T04:07:59Z] sample 1280 baseline: strict='7' flex='7' gold='7' ok=True steps=256 sec=11.45
+Early exit at step 213/256 with gap=3.712
+[2026-07-24T04:08:09Z] sample 1280 prophet: strict='7' flex='7' gold='7' ok=True steps=213 sec=9.63
+[2026-07-24T04:08:21Z] sample 1281 baseline: strict='20' flex='20' gold='20' ok=True steps=256 sec=11.44
+Early exit at step 186/256 with gap=2.500
+[2026-07-24T04:08:29Z] sample 1281 prophet: strict='20' flex='20' gold='20' ok=True steps=186 sec=8.39
+[2026-07-24T04:08:41Z] sample 1282 baseline: strict='12' flex='12' gold='12' ok=True steps=256 sec=11.61
+Early exit at step 199/256 with gap=4.725
+[2026-07-24T04:08:50Z] sample 1282 prophet: strict='12' flex='12' gold='12' ok=True steps=199 sec=9.10
+[2026-07-24T04:09:02Z] sample 1283 baseline: strict='60' flex='60' gold='60' ok=True steps=256 sec=11.46
+Early exit at step 172/256 with gap=2.938
+[2026-07-24T04:09:10Z] sample 1283 prophet: strict='60' flex='60' gold='60' ok=True steps=172 sec=7.77
+[2026-07-24T04:09:22Z] sample 1284 baseline: strict='25' flex='25' gold='25' ok=True steps=256 sec=11.88
+Early exit at step 179/256 with gap=2.875
+[2026-07-24T04:09:30Z] sample 1284 prophet: strict='25' flex='25' gold='25' ok=True steps=179 sec=8.35
+[2026-07-24T04:09:42Z] sample 1285 baseline: strict='1218' flex='1218' gold='1218' ok=True steps=256 sec=11.70
+Early exit at step 172/256 with gap=2.538
+[2026-07-24T04:09:50Z] sample 1285 prophet: strict='12118' flex='12118' gold='1218' ok=False steps=172 sec=7.88
+[2026-07-24T04:10:02Z] sample 1286 baseline: strict='105' flex='105' gold='105' ok=True steps=256 sec=11.41
+Early exit at step 173/256 with gap=2.513
+[2026-07-24T04:10:10Z] sample 1286 prophet: strict='105' flex='105' gold='105' ok=True steps=173 sec=7.78
+[2026-07-24T04:10:21Z] sample 1287 baseline: strict='84' flex='84' gold='84' ok=True steps=256 sec=11.55
+Early exit at step 215/256 with gap=2.788
+[2026-07-24T04:10:31Z] sample 1287 prophet: strict='84' flex='84' gold='84' ok=True steps=215 sec=9.81
+[2026-07-24T04:10:43Z] sample 1288 baseline: strict='1320' flex='1320' gold='34' ok=False steps=256 sec=11.52
+Early exit at step 223/256 with gap=5.013
+[2026-07-24T04:10:53Z] sample 1288 prophet: strict='1320' flex='1320' gold='34' ok=False steps=223 sec=10.12
+[2026-07-24T04:11:05Z] sample 1289 baseline: strict='101' flex='101' gold='101' ok=True steps=256 sec=11.82
+Early exit at step 195/256 with gap=4.200
+[2026-07-24T04:11:14Z] sample 1289 prophet: strict='101' flex='101' gold='101' ok=True steps=195 sec=9.08
+[2026-07-24T04:11:26Z] sample 1290 baseline: strict='90' flex='90' gold='90' ok=True steps=256 sec=11.23
+Early exit at step 181/256 with gap=2.638
+[2026-07-24T04:11:34Z] sample 1290 prophet: strict='90' flex='90' gold='90' ok=True steps=181 sec=8.01
+[2026-07-24T04:11:45Z] sample 1291 baseline: strict='27' flex='27' gold='27' ok=True steps=256 sec=11.41
+Early exit at step 209/256 with gap=4.675
+[2026-07-24T04:11:55Z] sample 1291 prophet: strict='27' flex='27' gold='27' ok=True steps=209 sec=9.40
+[2026-07-24T04:12:07Z] sample 1292 baseline: strict='67' flex='67' gold='67' ok=True steps=256 sec=11.48
+Early exit at step 175/256 with gap=2.625
+[2026-07-24T04:12:15Z] sample 1292 prophet: strict='67' flex='67' gold='67' ok=True steps=175 sec=7.90
+[2026-07-24T04:12:26Z] sample 1293 baseline: strict='140000' flex='140000' gold='140000' ok=True steps=256 sec=11.50
+Early exit at step 172/256 with gap=2.525
+[2026-07-24T04:12:34Z] sample 1293 prophet: strict='140000' flex='140000' gold='140000' ok=True steps=172 sec=7.79
+[2026-07-24T04:12:46Z] sample 1294 baseline: strict='36' flex='36' gold='36' ok=True steps=256 sec=11.77
+Early exit at step 190/256 with gap=2.587
+[2026-07-24T04:12:55Z] sample 1294 prophet: strict='36' flex='36' gold='36' ok=True steps=190 sec=8.83
+[2026-07-24T04:13:07Z] sample 1295 baseline: strict='2' flex='2' gold='2' ok=True steps=256 sec=11.66
+Early exit at step 203/256 with gap=2.812
+[2026-07-24T04:13:16Z] sample 1295 prophet: strict='2' flex='2' gold='2' ok=True steps=203 sec=9.32
+[2026-07-24T04:13:28Z] sample 1296 baseline: strict='335' flex='335' gold='335' ok=True steps=256 sec=11.64
+Early exit at step 172/256 with gap=3.362
+[2026-07-24T04:13:36Z] sample 1296 prophet: strict='335' flex='335' gold='335' ok=True steps=172 sec=7.89
+[2026-07-24T04:13:48Z] sample 1297 baseline: strict='60' flex='60' gold='60' ok=True steps=256 sec=11.88
+Early exit at step 203/256 with gap=3.212
+[2026-07-24T04:13:58Z] sample 1297 prophet: strict='60' flex='60' gold='60' ok=True steps=203 sec=9.49
+[2026-07-24T04:14:10Z] sample 1298 baseline: strict='31.00' flex='31.00' gold='31' ok=False steps=256 sec=11.49
+Early exit at step 176/256 with gap=2.550
+[2026-07-24T04:14:18Z] sample 1298 prophet: strict='31.00' flex='31.00' gold='31' ok=False steps=176 sec=7.96
+[2026-07-24T04:14:29Z] sample 1299 baseline: strict='13.00' flex='13.00' gold='13' ok=False steps=256 sec=11.55
+Early exit at step 197/256 with gap=2.875
+[2026-07-24T04:14:38Z] sample 1299 prophet: strict='13.00' flex='13.00' gold='13' ok=False steps=197 sec=8.97
+[2026-07-24T04:14:50Z] sample 1300 baseline: strict='120' flex='120' gold='120' ok=True steps=256 sec=11.48
+Early exit at step 172/256 with gap=2.712
+[2026-07-24T04:14:58Z] sample 1300 prophet: strict='120' flex='120' gold='120' ok=True steps=172 sec=7.75
+[2026-07-24T04:15:10Z] sample 1301 baseline: strict='10' flex='23' gold='23' ok=True steps=256 sec=11.70
+Early exit at step 227/256 with gap=3.050
+[2026-07-24T04:15:20Z] sample 1301 prophet: strict='10' flex='76' gold='23' ok=False steps=227 sec=10.48
+[2026-07-24T04:15:32Z] sample 1302 baseline: strict='72' flex='72' gold='72' ok=True steps=256 sec=11.61
+Early exit at step 187/256 with gap=2.612
+[2026-07-24T04:15:41Z] sample 1302 prophet: strict='72' flex='72' gold='72' ok=True steps=187 sec=8.58
+[2026-07-24T04:15:53Z] sample 1303 baseline: strict='4.0714' flex='4.0714' gold='4' ok=False steps=256 sec=11.60
+Early exit at step 194/256 with gap=2.500
+[2026-07-24T04:16:02Z] sample 1303 prophet: strict='4.0714' flex='4.0714' gold='4' ok=False steps=194 sec=8.89
+[2026-07-24T04:16:13Z] sample 1304 baseline: strict='1000' flex='1000' gold='1000' ok=True steps=256 sec=11.60
+Early exit at step 221/256 with gap=6.062
+[2026-07-24T04:16:24Z] sample 1304 prophet: strict='1000' flex='000' gold='1000' ok=False steps=221 sec=10.09
+[2026-07-24T04:16:35Z] sample 1305 baseline: strict='2325' flex='2325' gold='2325' ok=True steps=256 sec=11.53
+Early exit at step 203/256 with gap=5.612
+[2026-07-24T04:16:45Z] sample 1305 prophet: strict='2325' flex='2325' gold='2325' ok=True steps=203 sec=9.24
+[2026-07-24T04:16:59Z] sample 1306 baseline: strict='' flex='0' gold='2' ok=False steps=256 sec=14.59
+Early exit at step 201/256 with gap=3.800
+[2026-07-24T04:17:11Z] sample 1306 prophet: strict='' flex='3' gold='2' ok=False steps=201 sec=11.53
+[2026-07-24T04:17:23Z] sample 1307 baseline: strict='8' flex='8' gold='8' ok=True steps=256 sec=11.46
+Early exit at step 185/256 with gap=2.612
+[2026-07-24T04:17:31Z] sample 1307 prophet: strict='8' flex='8' gold='8' ok=True steps=185 sec=8.32
+[2026-07-24T04:17:43Z] sample 1308 baseline: strict='30' flex='30' gold='30' ok=True steps=256 sec=11.21
+Early exit at step 209/256 with gap=2.575
+[2026-07-24T04:17:52Z] sample 1308 prophet: strict='30' flex='30' gold='30' ok=True steps=209 sec=9.23
+[2026-07-24T04:18:04Z] sample 1309 baseline: strict='2180' flex='2180' gold='2280' ok=False steps=256 sec=11.60
+Early exit at step 193/256 with gap=3.163
+[2026-07-24T04:18:13Z] sample 1309 prophet: strict='2180' flex='2180' gold='2280' ok=False steps=193 sec=8.83
+[2026-07-24T04:18:24Z] sample 1310 baseline: strict='64' flex='64' gold='64' ok=True steps=256 sec=11.66
+Early exit at step 196/256 with gap=2.888
+[2026-07-24T04:18:33Z] sample 1310 prophet: strict='64' flex='64' gold='64' ok=True steps=196 sec=9.04
+[2026-07-24T04:18:45Z] sample 1311 baseline: strict='' flex='594' gold='594' ok=True steps=256 sec=11.59
+Early exit at step 223/256 with gap=4.450
+[2026-07-24T04:18:56Z] sample 1311 prophet: strict='' flex='4' gold='594' ok=False steps=223 sec=10.18
+[2026-07-24T04:19:07Z] sample 1312 baseline: strict='180' flex='180' gold='180' ok=True steps=256 sec=11.48
+Early exit at step 187/256 with gap=2.737
+[2026-07-24T04:19:16Z] sample 1312 prophet: strict='180' flex='180' gold='180' ok=True steps=187 sec=8.46
+[2026-07-24T04:19:27Z] sample 1313 baseline: strict='2.00' flex='2.00' gold='2' ok=False steps=256 sec=11.24
+Early exit at step 214/256 with gap=2.525
+[2026-07-24T04:19:37Z] sample 1313 prophet: strict='2.00' flex='2.00' gold='2' ok=False steps=214 sec=9.49
+[2026-07-24T04:19:49Z] sample 1314 baseline: strict='8' flex='8' gold='8' ok=True steps=256 sec=11.60
+Early exit at step 197/256 with gap=3.100
+[2026-07-24T04:19:58Z] sample 1314 prophet: strict='8' flex='8' gold='8' ok=True steps=197 sec=8.97
+[2026-07-24T04:20:09Z] sample 1315 baseline: strict='5' flex='5' gold='5' ok=True steps=256 sec=11.55
+Early exit at step 223/256 with gap=3.388
+[2026-07-24T04:20:20Z] sample 1315 prophet: strict='5' flex='5' gold='5' ok=True steps=223 sec=10.15
+[2026-07-24T04:20:32Z] sample 1316 baseline: strict='' flex='230' gold='230' ok=True steps=256 sec=11.71
+Early exit at step 172/256 with gap=2.587
+[2026-07-24T04:20:40Z] sample 1316 prophet: strict='230' flex='230' gold='230' ok=True steps=172 sec=7.91
+[2026-07-24T04:20:51Z] sample 1317 baseline: strict='15' flex='15' gold='5' ok=False steps=256 sec=11.43
+Early exit at step 200/256 with gap=3.862
+[2026-07-24T04:21:00Z] sample 1317 prophet: strict='15' flex='15' gold='5' ok=False steps=200 sec=9.00
+[2026-07-24T04:21:12Z] sample 1318 baseline: strict='14' flex='14' gold='14' ok=True steps=256 sec=11.46
+Early exit at step 202/256 with gap=2.837
+[2026-07-24T04:21:21Z] sample 1318 prophet: strict='14' flex='14' gold='14' ok=True steps=202 sec=9.11
+[2026-07-24T04:21:21Z] completed full GSM8K custom run

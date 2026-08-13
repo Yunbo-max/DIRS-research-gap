@@ -1,0 +1,269 @@
+{
+  "artifact_kind": "nuwa_environment_manifest",
+  "compileall": {
+    "repo": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.039,
+      "stderr": "",
+      "stdout": "*** Error compiling '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_anchor_model.py'...\n  File \"/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_anchor_model.py\", line 406\n    file_name = f\"{args.dataset_name}/{args.model_name}/mask({args.task_name}{\"-uniform\" if uniform else \"\"}).pt\"\n                                                                               ^\nSyntaxError: f-string: expecting '}'\n\n*** Error compiling '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_clibration_data.py'...\n  File \"/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/get_clibration_data.py\", line 13\n    file_name1 = f\"{args.dataset_name}/{args.model_name}/activation({args.task_name}{\"\" if args.anchor else \"original\"}).pt\"\n                                                                                                             ^^^^^^^^\nSyntaxError: f-string: expecting '}'\n\n*** Error compiling '/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/utils.py'...\n  File \"/tf/notebooks/cvpr2026_oral_paper_memory_141/repos/016_nuwa/NuWa/method/utils.py\", line 34\n    file_name = f\"{args.dataset_name}/{args.model_name}/mask({args.task_name}{\"-uniform\" if args.uniform else \"\"}).pt\"\n                                                                               ^\nSyntaxError: f-string: expecting '}'\n\n",
+      "timeout": false
+    }
+  },
+  "created_at_utc": "2026-07-24T13:31:38Z",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 8108,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16109,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 180.08,
+      "temperature_c": 79,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 388.7,
+      "temperature_c": 87,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 7796,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16417,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 183.68,
+      "temperature_c": 78,
+      "utilization_gpu_pct": 99
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_w": 164.32,
+      "temperature_c": 80,
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "import_probes": {
+    "fvcore": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('fvcore'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'fvcore'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "mmcv": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('mmcv'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'mmcv'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "mmdet": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('mmdet'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.025,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'mmdet'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "mmengine": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('mmengine'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.024,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'mmengine'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "numpy": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('numpy'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.134,
+      "stderr": "",
+      "stdout": "1.26.4\n",
+      "timeout": false
+    },
+    "ptflops": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('ptflops'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 1,
+      "seconds": 0.023,
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'ptflops'\n",
+      "stdout": "",
+      "timeout": false
+    },
+    "pycocotools": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('pycocotools'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.023,
+      "stderr": "",
+      "stdout": "imported\n",
+      "timeout": false
+    },
+    "timm": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('timm'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 4.224,
+      "stderr": "/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n",
+      "stdout": "1.0.27\n",
+      "timeout": false
+    },
+    "torch": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torch'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.646,
+      "stderr": "",
+      "stdout": "2.6.0+cu124\n",
+      "timeout": false
+    },
+    "torchvision": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('torchvision'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 2.866,
+      "stderr": "",
+      "stdout": "0.21.0+cu124\n",
+      "timeout": false
+    },
+    "tqdm": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('tqdm'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.042,
+      "stderr": "",
+      "stdout": "4.67.1\n",
+      "timeout": false
+    },
+    "transformers": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('transformers'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.866,
+      "stderr": "",
+      "stdout": "4.51.2\n",
+      "timeout": false
+    },
+    "wandb": {
+      "cmd": [
+        "/opt/conda/bin/python",
+        "-c",
+        "import importlib; m=importlib.import_module('wandb'); print(getattr(m, '__version__', 'imported'))"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 1.104,
+      "stderr": "/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n/opt/conda/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.\n  warnings.warn(\n",
+      "stdout": "0.22.2\n",
+      "timeout": false
+    }
+  },
+  "packages": {
+    "fvcore": null,
+    "mmcv": null,
+    "mmdet": null,
+    "mmengine": null,
+    "numpy": "1.26.4",
+    "ptflops": null,
+    "pycocotools": "2.0.11",
+    "timm": "1.0.27",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "tqdm": "4.67.1",
+    "transformers": "4.51.2",
+    "wandb": "0.22.2"
+  },
+  "paper_id": "CVPR2026_016_nuwa_class_specific_vit_pruning",
+  "professional_hardware_expected_by_dag": [
+    "NVIDIA RTX 4090 runtime traces",
+    "NVIDIA Jetson Orin NX real-device profiling",
+    "CUDA GPU for full ImageNet/CIFAR/COCO pruning/evaluation grid"
+  ],
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "python_processes": {
+    "cmd": [
+      "bash",
+      "-lc",
+      "ps -eo pid,etime,stat,cmd | rg 'prophet_custom_full_gsm8k_runner|nuwa|NuWa|python' || true"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.007,
+    "stderr": "",
+    "stdout": "   2355    01:11:01 Rsl  python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 0 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_6_4_2 --run-label table1_threshold_relaxed_6_4_2 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 6.0 --mid-threshold 4.0 --late-threshold 2.0\n   2465    01:10:58 Rsl  python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 1 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1 --run-label table1_threshold_relaxed_5_3_1 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 5.0 --mid-threshold 3.0 --late-threshold 1.0\n   2714    01:10:55 Rsl  python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 2 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_4_2_0p5 --run-label table1_threshold_relaxed_4_2_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 4.0 --mid-threshold 2.0 --late-threshold 0.5\n   2903    01:10:52 Rsl  python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/prophet_custom_full_gsm8k_runner.py --gpu 3 --out-dir /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_3_1p5_0p5 --run-label table1_threshold_relaxed_3_1p5_0p5 --variants prophet --gen-length 256 --steps 256 --block-length 32 --remasking low_confidence --constraints-text 200:The|201:answer|202:is --answer-start-offset 200 --prompt-profile official_zero_shot --early-threshold 3.0 --mid-threshold 1.5 --late-threshold 0.5\n  12618    01:00:24 Ss   python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/strict_dirs_goal_supervisor.py --interval-seconds 60\n  79779       00:01 Ss   python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/professional_gate_sweep.py --scope all --run --max-count 4 --timeout-seconds 180\n  79780       00:01 S    /opt/conda/bin/python /tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/nuwa/run_nuwa_professional_gate.py\n  79809       00:00 S    bash -lc ps -eo pid,etime,stat,cmd | rg 'prophet_custom_full_gsm8k_runner|nuwa|NuWa|python' || true\n  79813       00:00 S    rg prophet_custom_full_gsm8k_runner|nuwa|NuWa|python\n",
+    "timeout": false
+  }
+}

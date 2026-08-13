@@ -1,0 +1,128 @@
+{
+  "date": "2026-07-20",
+  "run_dir": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/llm_architecture_abstract_train19_holdout_mamba3_20260720",
+  "domain": "LLM Architecture / Attention / State Space Models",
+  "runtime": "codex_subagents_default",
+  "api_runtime_policy": {
+    "default_for_dirs": false,
+    "allowed_only_if_explicitly_enabled": "DIRS_ALLOW_OPENAI_API=1",
+    "case2_api_tool_node_note": "API feasibility checks are task nodes only when the experiment itself depends on hosted APIs."
+  },
+  "completion": {
+    "training_samples_completed": 19,
+    "training_samples_total": 19,
+    "subagent_batches_completed": 5,
+    "independent_auditors": 3,
+    "deterministic_preflight_converged": true,
+    "deterministic_preflight_converged_at_loop": 6,
+    "mcts_rollouts_per_example": 500,
+    "heldout_private_file_opened": false
+  },
+  "scores": {
+    "mean_initial_score": 0.89,
+    "mean_final_score": 0.95563,
+    "mean_improvement": 0.06563,
+    "min_final_score": 0.94,
+    "max_final_score": 0.98,
+    "unsupported_claims_after_repair": 0
+  },
+  "required_spine": [
+    "R1_abstract_as_argument",
+    "G1_problem_gap",
+    "O1_named_method_or_object",
+    "M1_architecture_or_mechanism",
+    "E1_evaluation_setup",
+    "E2_result_outcome",
+    "I1_interpretation_or_tradeoff",
+    "S1_bounded_takeaway",
+    "P1_length_and_placement_prior"
+  ],
+  "optional_branches": {
+    "context_branch": [
+      "G1_problem_gap",
+      "C1_domain_context",
+      "O1_named_method_or_object"
+    ],
+    "mechanism_branch": [
+      "M1_architecture_or_mechanism",
+      "M2_efficiency_or_theory_detail",
+      "E1_evaluation_setup"
+    ],
+    "evidence_branch": [
+      "E2_result_outcome",
+      "E3_evidence_anchor",
+      "I1_interpretation_or_tradeoff"
+    ],
+    "no_e3_branch": [
+      "E2_result_outcome",
+      "I1_interpretation_or_tradeoff"
+    ]
+  },
+  "aliases": {
+    "E3_quantitative_anchor": "E3_evidence_anchor"
+  },
+  "selection_rules": {
+    "C1_domain_context": {
+      "select_when": [
+        "broad domain context is needed before naming the method",
+        "paper is outside the domain core",
+        "reader needs nonstandard task framing"
+      ],
+      "reject_when": [
+        "problem-gap sentence already provides enough context",
+        "adding context delays the named contribution"
+      ]
+    },
+    "M2_efficiency_or_theory_detail": {
+      "select_when": [
+        "theory",
+        "proof",
+        "bound",
+        "estimator",
+        "recurrence",
+        "efficiency",
+        "complexity",
+        "causal mechanism",
+        "numerical failure",
+        "architecture-internal detail"
+      ],
+      "reject_when": [
+        "it would add implementation detail without changing the abstract argument"
+      ]
+    },
+    "E3_evidence_anchor": {
+      "allowed_forms": [
+        "one compact numeric result",
+        "theorem or regime scope",
+        "benchmark count or task breadth",
+        "stage decomposition",
+        "qualitative validation anchor"
+      ],
+      "reject_when": [
+        "it creates false precision",
+        "it turns the abstract into a result table",
+        "the chip does not support the claim"
+      ]
+    },
+    "S1_bounded_takeaway": {
+      "remove_or_repair": [
+        "unsupported deployment claims",
+        "large-scale LLM readiness claims",
+        "speed or efficiency claims without measured support",
+        "universality claims beyond the training/evaluation family",
+        "future-work claims not present as paper contributions"
+      ]
+    }
+  },
+  "mcts_updates": [
+    "Start from the required spine, not the full graph.",
+    "Apply archetype gates before rollout.",
+    "Add C1 only when the chip needs context before the object.",
+    "Add M2 when the central contribution depends on theory, mechanism, or efficiency.",
+    "Add E3 only when a compact supported evidence anchor improves the abstract.",
+    "Keep M1->E1 and E2->I1 as valid low-support escape routes.",
+    "Penalize table-like result dumps, unsupported numbers, and broad S1 claims."
+  ],
+  "audit_warning": "Batch files preserve summary-level evidence, not complete raw evaluator transcripts for every sample. The next strict run should save one JSON transcript per sample."
+}
+

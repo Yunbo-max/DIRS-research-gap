@@ -1,0 +1,4 @@
+{"loop": 1, "stage": "collect_code_fit_papers", "top_question": "Q1_budgeted_state_verifying_agents", "top_score": 12}
+{"loop": 2, "stage": "aggregate_gap_features", "top_question": "Q1_budgeted_state_verifying_agents", "top_score": 12}
+{"loop": 3, "stage": "rank_questions", "top_question": "Q1_budgeted_state_verifying_agents", "top_score": 12}
+{"loop": 4, "stage": "verify_and_reframe_gap", "top_question": "Q1_budgeted_state_verifying_agents", "top_score": 12}

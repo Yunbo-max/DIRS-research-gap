@@ -1,0 +1,14 @@
+{
+  "R1_abstract_as_argument": 0.8340129388270603,
+  "G1_problem_gap": 0.8403966049575463,
+  "C1_domain_context": 0.48631251761123484,
+  "O1_named_method_or_object": 0.8245390404344369,
+  "M1_architecture_or_mechanism": 0.8503206173304133,
+  "M2_efficiency_or_theory_detail": 0.7452539181181309,
+  "E1_evaluation_setup": 0.8846519109537178,
+  "E2_result_outcome": 0.8686611971068208,
+  "E3_quantitative_anchor": 0.6883675528143545,
+  "I1_interpretation_or_tradeoff": 0.7511651313994032,
+  "S1_bounded_takeaway": 0.8334378820860101,
+  "P1_length_and_placement_prior": 0.7729040125697775
+}

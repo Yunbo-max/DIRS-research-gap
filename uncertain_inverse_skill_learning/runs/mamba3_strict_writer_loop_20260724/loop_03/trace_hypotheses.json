@@ -1,0 +1,296 @@
+{
+  "schema_version": "dirs.strict_writer.trace_hypotheses.v1",
+  "loop": 3,
+  "scope": "single-paper blind artifact reconstruction",
+  "feedback_boundary": {
+    "source": "loop_02/evaluator_feedback.json",
+    "expert_wording_received": false,
+    "expert_wording_inferred": false,
+    "feedback_used_as": "structural, functional, and evidence-bound constraints only"
+  },
+  "posterior_update": {
+    "policy": "Reweight by evidence fidelity, artifact-function coverage, compression cost, and the loop-2 blind evaluation while retaining structurally distinct alternatives.",
+    "loop_2_weights": {
+      "H1_comparative_quality_efficiency": 0.56,
+      "H2_mechanism_ablation_fan_in": 0.23,
+      "H3_deployment_pareto_with_retrieval_branch": 0.15,
+      "H4_implementation_upward_grounding": 0.06
+    },
+    "loop_3_weights": {
+      "H1_comparative_quality_capability_efficiency": 0.65,
+      "H2_mechanism_ablation_fan_in": 0.22,
+      "H3_deployment_pareto_with_retrieval_branch": 0.1,
+      "H4_implementation_upward_grounding": 0.03
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H1_comparative_quality_capability_efficiency",
+      "parent_id": "H1_comparative_quality_efficiency",
+      "label": "Comparative MIMO path with qualitative complex-state validation",
+      "normalized_weight": 0.65,
+      "structural_signature": "two pressure roots -> method hub -> three mechanism branches; MIMO branch joins comparative quality and latency, complex branch reaches a qualitative capability node, then both branches join at bounded synthesis",
+      "active_nodes": [
+        "gap_transformer_inference_cost",
+        "gap_linear_model_capability",
+        "method_mamba3",
+        "module_exp_trap_recurrence",
+        "module_complex_state_update",
+        "module_mimo_ssm",
+        "training_pretraining_protocol",
+        "result_lm_1p5b",
+        "result_mimo_increment",
+        "result_state_tracking",
+        "result_bf16_kernel_latency"
+      ],
+      "artifact_functions": [
+        "motivate the joint quality-efficiency intervention",
+        "describe the three architectural changes",
+        "state the incremental MIMO quality contribution",
+        "validate the complex-update branch qualitatively",
+        "anchor recurrent efficiency with one latency comparison",
+        "produce one bounded contribution argument"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "Loop 2 validated the comparative-gain join as a coherent headline-result function.",
+          "paths": [
+            "$.result_outcome.nodes[0]",
+            "$.result_outcome.nodes[1]"
+          ],
+          "feedback_support": "accepted_improvements[0:2]"
+        },
+        {
+          "reason": "The complex update has direct formal-task evidence and an explicit mechanism-validation event, allowing a qualitative node without raw-score enumeration.",
+          "paths": [
+            "$.result_outcome.nodes[2]",
+            "$.result_outcome.events[1]",
+            "$.evaluation_validation.events[2]"
+          ],
+          "feedback_support": "REP3"
+        },
+        {
+          "reason": "Experimental scope can be retained in the graph while the surface form omits tokenizer and context-length details.",
+          "paths": [
+            "$.evaluation_validation.events[0]",
+            "$.experimental_setting.nodes[0]"
+          ],
+          "feedback_support": "SEL3"
+        }
+      ],
+      "weight_delta": 0.09,
+      "weight_reason": "Raised because the added qualitative branch repairs capability coverage without restoring the numeric density removed in loop 2."
+    },
+    {
+      "id": "H2_mechanism_ablation_fan_in",
+      "parent_id": "H2_mechanism_ablation_fan_in",
+      "label": "Mechanism-first ablation fan-in",
+      "normalized_weight": 0.22,
+      "structural_signature": "three mechanism roots -> recurrence ablation, formal-state ablation, and MIMO quality/latency branches -> architecture inference",
+      "active_nodes": [
+        "module_exp_trap_recurrence",
+        "module_complex_state_update",
+        "module_mimo_ssm",
+        "result_component_ablation",
+        "result_state_tracking",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency",
+        "method_mamba3"
+      ],
+      "artifact_functions": [
+        "attribute evidence to each mechanism",
+        "join heterogeneous ablations into an architecture claim"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "Recurrence, complex-state, and MIMO branches each have chip-grounded validation.",
+          "paths": [
+            "$.result_outcome.nodes[1:4]",
+            "$.result_outcome.nodes[4]"
+          ]
+        },
+        {
+          "reason": "A compact qualitative state-tracking realization is now available, but realizing every ablation remains too costly.",
+          "feedback_support": [
+            "REP3",
+            "SEL3"
+          ]
+        }
+      ],
+      "weight_delta": -0.01,
+      "weight_reason": "Nearly stable as the principal mechanism alternative; slightly downweighted because the selected graph captures its most useful capability function at lower cost."
+    },
+    {
+      "id": "H3_deployment_pareto_with_retrieval_branch",
+      "parent_id": "H3_deployment_pareto_with_retrieval_branch",
+      "label": "Deployment Pareto trace with retrieval-risk mitigation",
+      "normalized_weight": 0.1,
+      "structural_signature": "memory-bound decode root -> MIMO quality/latency fork; parallel retrieval-risk root -> hybrid mitigation and cost join",
+      "active_nodes": [
+        "gap_memory_bound_decode",
+        "module_mimo_ssm",
+        "result_mimo_increment",
+        "result_bf16_kernel_latency",
+        "result_end_to_end_latency",
+        "failure_fixed_state_retrieval",
+        "primitive_hybrid_attention_ratio",
+        "compat_hybrid_adds_cost",
+        "setting_state_size_pareto"
+      ],
+      "artifact_functions": [
+        "express a deployment Pareto frontier",
+        "preserve retrieval risk",
+        "record the state-size experiment without asserting a missing result"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "Deployment and retrieval evidence remains direct but is not the active loop-3 coverage gap.",
+          "paths": [
+            "$.result_outcome.events[2]",
+            "$.problem_gap.nodes[4]",
+            "$.method_mechanism.events[4]"
+          ]
+        },
+        {
+          "reason": "The state-size sweep exists, but DATA1 confirms that the compact matched-quality outcome is absent.",
+          "paths": [
+            "$.experimental_setting.nodes[1]"
+          ],
+          "feedback_support": "DATA1"
+        }
+      ],
+      "weight_delta": -0.05,
+      "weight_reason": "Downweighted because deployment detail would displace the evaluator-requested capability function and the desired surface compression."
+    },
+    {
+      "id": "H4_implementation_upward_grounding",
+      "parent_id": "H4_implementation_upward_grounding",
+      "label": "Implementation-upward realization trace",
+      "normalized_weight": 0.03,
+      "structural_signature": "four code-anchor roots -> implementation join -> method realization -> test and latency leaves",
+      "active_nodes": [
+        "code_mamba3_module",
+        "code_siso_triton",
+        "code_mimo_tilelang",
+        "code_cute_decode",
+        "impl_forward_anchor",
+        "method_mamba3",
+        "impl_test_anchor",
+        "result_bf16_kernel_latency"
+      ],
+      "artifact_functions": [
+        "ground the method in executable kernels",
+        "connect implementation checks to latency"
+      ],
+      "evidence_reasons": [
+        {
+          "reason": "The implementation trace remains fully grounded but does not address REP3.",
+          "paths": [
+            "$.implementation.events[0]",
+            "$.implementation.events[1]"
+          ],
+          "feedback_support": "REP3"
+        }
+      ],
+      "weight_delta": -0.03,
+      "weight_reason": "Retained for structural diversity but further downweighted because loop-3 feedback targets capability validation and surface compression."
+    }
+  ],
+  "feedback_dispositions": [
+    {
+      "feedback_id": "REP3",
+      "decision": "accepted",
+      "action": "Added n14_complex_capability_validation with a qualitative output grounded in formal-task evidence; no raw formal-task scores are realized."
+    },
+    {
+      "feedback_id": "SEL3",
+      "decision": "accepted",
+      "action": "Kept the training-context node and full evidence binding but compressed its abstract realization to scale, corpus, and token count."
+    },
+    {
+      "feedback_id": "DATA1",
+      "decision": "evidence_shortage_preserved",
+      "action": "No matched-quality recurrent-state reduction node or claim was added.",
+      "reason": "The public chip records the sweep and purpose, not the requested outcome.",
+      "chip_path_checked": "$.experimental_setting.nodes[1]"
+    }
+  ],
+  "graph_diff_from_loop_02": {
+    "parent_selected_hypothesis": "H1_comparative_quality_efficiency",
+    "child_selected_hypothesis": "H1_comparative_quality_capability_efficiency",
+    "operations": [
+      {
+        "operation": "PRESERVE_NODE",
+        "target": "n13_mimo_incremental_quality",
+        "reason": "Loop-2 evidence and evaluation support the comparative-gain function.",
+        "evidence_binding": [
+          "$.result_outcome.nodes[0]",
+          "$.result_outcome.nodes[1]"
+        ]
+      },
+      {
+        "operation": "ADD_NODE",
+        "target": "n14_complex_capability_validation",
+        "input": [
+          "n5_complex_update",
+          "formal state-tracking comparison evidence"
+        ],
+        "output": "Qualitative statement that the complex update produces substantial formal state-tracking gains over Mamba-2 and ablated variants",
+        "evidence_binding": [
+          "$.result_outcome.nodes[2]",
+          "$.result_outcome.events[1]",
+          "$.evaluation_validation.events[2]"
+        ],
+        "artifact_function": "compact capability validation for the complex-update branch"
+      },
+      {
+        "operation": "UPDATE_NODE",
+        "target": "n7_training_context",
+        "before": "surface model scales, data volume, tokenizer, and context length",
+        "after": "retain full graph evidence but surface only pretraining up to 1.5B on 100B FineWeb-Edu tokens",
+        "reason": "SEL3 surface compression"
+      },
+      {
+        "operation": "UPDATE_NODE",
+        "target": "n12_bounded_synthesis",
+        "before": "method components, comparative quality gain, and one latency anchor",
+        "after": "method components, comparative quality gain, qualitative capability validation, and one latency anchor"
+      },
+      {
+        "operation": "DELETE_EDGE",
+        "target": "n5_complex_update -> n12_bounded_synthesis",
+        "reason": "Insert evidence-bearing validation between mechanism and synthesis."
+      },
+      {
+        "operation": "ADD_EDGE",
+        "target": "n5_complex_update -> n14_complex_capability_validation",
+        "relation": "validated_by"
+      },
+      {
+        "operation": "ADD_EDGE",
+        "target": "n14_complex_capability_validation -> n12_bounded_synthesis",
+        "relation": "supports"
+      },
+      {
+        "operation": "REJECT_NODE",
+        "target": "matched_quality_recurrent_state_reduction",
+        "reason": "DATA1: the public chip contains the sweep setup but no direct matched-quality outcome."
+      }
+    ],
+    "accepted_structural_edits": 6,
+    "preserved_nodes": [
+      "n13_mimo_incremental_quality"
+    ],
+    "rejected_structural_edits": 1
+  },
+  "normalization_check": {
+    "weights_sum": 1.0,
+    "retained_count": 4,
+    "all_hypotheses_acyclic": true,
+    "structurally_distinct": true
+  },
+  "selection": {
+    "selected_hypothesis_id": "H1_comparative_quality_capability_efficiency",
+    "selection_basis": "It preserves the validated comparative join, adds the missing capability function qualitatively, and compresses experimental surface detail without introducing DATA1."
+  }
+}

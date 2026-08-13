@@ -1,0 +1,115 @@
+{
+  "artifact_kind": "prophet_trajectory_metric_semantics_audit",
+  "created_at_utc": "2026-07-24T13:52:47Z",
+  "dag_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/paper_runs/iclr2026_g88nt4ietg_prophet_dlm_early_commit_decoding/paper_author_gap_dag.json",
+  "failed_simulation_setting_ids_from_dag": [
+    "gsm8k_low_conf_constraint_block32"
+  ],
+  "oracle_values_exposed_to_loop2": false,
+  "professional_gate": {
+    "all_expected_counts_present": true,
+    "full_dataset_expected_files": 17888,
+    "full_dataset_observed_files": 17888,
+    "not_reduced": true,
+    "paper_figure_logic": "first correct answer emergence percentage over correct trajectories at 25% and 50% decoding thresholds; GSM8K correctness is recomputed from generated pred_text vs gt_text following analysis/visualize.ipynb"
+  },
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_first_emergence_rows.jsonl",
+  "setting_audits": [
+    {
+      "correct_count": 1031,
+      "correct_rate_in_simulation_artifact": 78.16527672479151,
+      "correct_source_counts": {
+        "author_notebook_gsm8k_recomputed_final_answer": 1319
+      },
+      "diagnosis": "resolved_by_author_notebook_gsm8k_correctness_semantics",
+      "loop2_next_checks": [
+        "For GSM8K, recompute correctness from pred_text vs gt_text using the released analysis/visualize.ipynb numeric extraction rule; do not trust stale .pt correct flags.",
+        "Verify whether constrained trajectories include fixed/generated answer-region tokens at step 0.",
+        "Re-score first emergence with and without step-0 matches for constrained settings.",
+        "Confirm whether percentages should be computed over correct trajectories or all trajectories.",
+        "Confirm whether threshold comparisons are strict or inclusive.",
+        "Keep verifier paper targets hidden from this audit artifact."
+      ],
+      "row_count": 1319,
+      "setting_id": "gsm8k_low_conf_constraint_block32",
+      "step_summary": {
+        "max": 255,
+        "mean": 70.38700290979631,
+        "median": 21,
+        "min": 0,
+        "most_common": [
+          {
+            "count": 316,
+            "step": 0
+          },
+          {
+            "count": 64,
+            "step": 255
+          },
+          {
+            "count": 50,
+            "step": 1
+          },
+          {
+            "count": 27,
+            "step": 3
+          },
+          {
+            "count": 23,
+            "step": 2
+          },
+          {
+            "count": 17,
+            "step": 4
+          },
+          {
+            "count": 11,
+            "step": 12
+          },
+          {
+            "count": 8,
+            "step": 5
+          },
+          {
+            "count": 8,
+            "step": 10
+          },
+          {
+            "count": 7,
+            "step": 16
+          },
+          {
+            "count": 7,
+            "step": 219
+          },
+          {
+            "count": 7,
+            "step": 223
+          }
+        ],
+        "p90": 219
+      },
+      "stored_correct_disagreement_count": 196,
+      "variants": {
+        "all_rows_denominator": {
+          "by_25pct_le": 46.70204700530705,
+          "by_50pct_le": 59.21152388172858
+        },
+        "correct_denominator": {
+          "by_25pct_le": 59.747817652764304,
+          "by_25pct_lt": 59.65082444228904,
+          "by_50pct_le": 75.75169738118332,
+          "by_50pct_lt": 75.65470417070806
+        },
+        "step_zero_sensitivity_correct_denominator": {
+          "step_eq_0": 30.649854510184287,
+          "step_gt0_le_25pct": 29.09796314258002,
+          "step_gt0_le_50pct": 45.10184287099903,
+          "step_le_1": 35.499515033947624
+        }
+      }
+    }
+  ],
+  "status": "completed_metric_semantics_audit",
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/trajectory_dataset_analysis/trajectory_analysis_summary.json"
+}

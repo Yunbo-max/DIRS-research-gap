@@ -1,0 +1,51 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 1,
+  "selected_proposal_id": "S2_mechanism_ablation_staircase",
+  "selected_variant": "B",
+  "status": "candidate",
+  "status_reason": "The writer prefers this realization on the motivating case, but a local_strategy_hypothesis requires blind controller preference and a direct matched counterfactual. No transfer evidence exists.",
+  "selection_basis": {
+    "decision_rule": "Select by decomposed functional dominance, not lexical similarity or a manually weighted scalar.",
+    "hard_gates": {
+      "facts_supported_by_permitted_chip": true,
+      "word_count_in_166_236_band": true,
+      "explicit_scope_boundary": true,
+      "hidden_target_used": false
+    },
+    "functional_judgment": [
+      "Variant B gives every major architectural change an adjacent diagnostic result.",
+      "It preserves the headline 1.5B quality comparison and the SISO/MIMO latency tradeoff.",
+      "It includes the retrieval limitation and the untested 7B boundary without turning the abstract into a limitations summary.",
+      "Its 204-word length is near the 201-word style-profile target."
+    ],
+    "pairwise_assessment": {
+      "B_over_A": "Prefer B for stronger mechanism-result coherence; A remains preferable when immediate baseline comparison is the primary communication objective.",
+      "B_over_C": "Prefer B for tighter component attribution and less evaluation fragmentation; C remains preferable when breadth of validation is the primary objective.",
+      "uncertainty": "This is writer self-evaluation on one case, not calibrated evidence of utility."
+    }
+  },
+  "predicted_counterfactual_effect": {
+    "ablation": "Detach or permute the three local result bindings while holding facts, length, and surface quality approximately fixed.",
+    "prediction": "Blind evaluators will score mechanism-result coherence lower and will less reliably match recurrence, complex update, and MIMO to their diagnostic evidence.",
+    "falsification_condition": "If the matched ablation is not worse on coherence or pairwise preference, the staircase's claimed benefit is falsified for this case."
+  },
+  "retained_multimodal_candidates": [
+    {
+      "proposal_id": "S1_result_first_pareto_ledger",
+      "realization": "Variant A",
+      "reason_retained": "Potentially superior for rapid comparative-result salience."
+    },
+    {
+      "proposal_id": "S3_evaluation_mosaic_with_scope_gate",
+      "realization": "Variant C",
+      "reason_retained": "Potentially superior for communicating validation breadth and distinct evaluation roles."
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "realization": null,
+      "reason_retained": "A distinct unexecuted hypothesis for testing whether an early limitation improves calibration without hiding the contribution."
+    }
+  ],
+  "promotion_boundary": "Do not promote beyond candidate in this round. Local acceptance requires controller evaluation on the motivating case; reusable-skill status additionally requires preregistered transfer tests on separate papers."
+}

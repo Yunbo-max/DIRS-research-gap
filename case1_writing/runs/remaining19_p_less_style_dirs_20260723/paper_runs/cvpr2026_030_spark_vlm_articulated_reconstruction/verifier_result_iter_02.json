@@ -1,0 +1,225 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "only_input_file": "paper_author_gap_dag.json",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_visible_to_loop2": false,
+        "previous_memory_visible_to_loop2": false,
+        "repo_paths_visible_only_if_encoded_in_dag": true
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "appearance-driven",
+        "are",
+        "articulate",
+        "articulated",
+        "assets",
+        "buttons",
+        "can",
+        "chains",
+        "checkpoints",
+        "closed",
+        "code",
+        "compound",
+        "construction",
+        "convert",
+        "currently",
+        "demonstrated",
+        "enough",
+        "fused",
+        "generation",
+        "geometry",
+        "github",
+        "handles",
+        "hard",
+        "image",
+        "image-to-3d",
+        "images",
+        "input",
+        "into",
+        "joint",
+        "joints"
+      ],
+      "name": "gap_semantic_match",
+      "oracle_gap_terms": [
+        "single-image articulated objects are hard to convert into simulation-ready assets",
+        "image-to-3D and text-to-3D methods usually produce fused shapes rather than kinematic part meshes",
+        "appearance-driven part generation is not enough for motion-aware segmentation and URDF construction",
+        "template-free reconstruction needs part geometry and joint parameters from one RGB image"
+      ],
+      "score": 6.333,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "attention",
+        "code",
+        "differentiable",
+        "diffusion",
+        "dinov2",
+        "discrete",
+        "encoder",
+        "flow",
+        "forward",
+        "generation",
+        "graph",
+        "hierarchical",
+        "image",
+        "joint",
+        "kinematics",
+        "latent",
+        "mesh",
+        "meshy",
+        "objective",
+        "optimization",
+        "part",
+        "part-articulated",
+        "re-prediction",
+        "reasoning",
+        "rectified",
+        "reference",
+        "rendering",
+        "silhouette",
+        "structural",
+        "synthesis"
+      ],
+      "name": "method_gap_binding_match",
+      "oracle_method_terms": [
+        "VLM structural reasoning",
+        "VLM part reference image generation",
+        "DINOv2 image encoder",
+        "part-articulated diffusion transformer",
+        "hierarchical graph attention",
+        "rectified flow mesh latent objective",
+        "VLM discrete joint re-prediction",
+        "differentiable forward kinematics",
+        "differentiable rendering silhouette optimization",
+        "Meshy texture synthesis"
+      ],
+      "score": 2.75,
+      "status": "pass"
+    },
+    {
+      "hits": [
+        "100-image",
+        "ablation",
+        "against",
+        "anymesh",
+        "articulate",
+        "articulate-anything",
+        "articulated",
+        "articulated-object",
+        "augmentation",
+        "axiserr",
+        "chamfer",
+        "deployment",
+        "distance",
+        "f-score",
+        "gapartnet",
+        "guidance",
+        "held-out",
+        "isaac",
+        "joint",
+        "objects",
+        "optimization",
+        "parameter",
+        "part",
+        "pivoterr",
+        "qualitative",
+        "re-prediction",
+        "reconstruction",
+        "set",
+        "shape",
+        "sim"
+      ],
+      "name": "experiment_axis_match",
+      "oracle_experiment_terms": [
+        "100-image GAPartNet articulated-object test set",
+        "shape reconstruction against GAPartNet held-out articulated objects",
+        "URDF joint parameter evaluation against Articulate-Anything and Articulate AnyMesh",
+        "ablation of part guidance, data augmentation, joint optimization, and VLM re-prediction",
+        "qualitative simulator deployment in Isaac Sim"
+      ],
+      "score": 2.917,
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "allowed_nonconverged_support": [
+          "repo audit",
+          "README/script inventory",
+          "syntax/import checks",
+          "generic GPU motif stress rows",
+          "planning manifests"
+        ],
+        "generic_gpu_motif_rows_are_convergence_evidence": false,
+        "minimum_for_gap_convergence": "professional paper-shaped artifacts with paper-appropriate models, datasets, baselines, metrics, timing/compute traces, and verifier comparison to paper tables/figures/paragraph claims",
+        "reduced_or_small_runs_are_convergence_evidence": false,
+        "repo_syntax_or_readme_audit_is_convergence_evidence": false
+      },
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "raw_artifact_level": "repo_and_dependency_audit_only",
+        "ready": false,
+        "reason": "blocked_by_missing+no_local_repository_encoded_in_dag",
+        "repo_audit_count": 0
+      },
+      "name": "professional_artifact_package",
+      "status": "blocked"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "100-image GAPartNet articulated-object test set; shape reconstruction against GAPartNet held-out articulated objects; URDF joint parameter evaluation against Articulate-Anything and Articulate AnyMesh; ablation of part guidance, data augmentation, joint optimization, and VLM re-prediction; qualitative simulator deployment in Isaac Sim"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "Chamfer Distance; F-Score@0.1; F-Score@0.5; AxisErr; PivotErr; TypeErr"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "PartNet-Mobility; GAPartNet; PartNet-Mobility-derived augmented training set; GAPartNet 100-image evaluation set; preprocessed dataset announced but not released in repository"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "4 NVIDIA H100 GPUs; PyTorch; PyTorch3D; Trimesh; Isaac Sim"
+        },
+        {
+          "id": "method_specific_code_path",
+          "required": "VLM structural reasoning; VLM part reference image generation; DINOv2 image encoder; part-articulated diffusion transformer; hierarchical graph attention; rectified flow mesh latent objective; VLM discrete joint re-prediction; differentiable forward kinematics; differentiable rendering silhouette optimization; Meshy texture synthesis; README.md placeholder; assets/SPARK_teaser.png; missing inference scripts; missing pretrained checkpoints; missing training code; missing data preprocessing scripts"
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T08:20:29Z",
+  "iteration": 2,
+  "paper_id": "CVPR2026_030_spark_vlm_articulated_reconstruction",
+  "paper_title": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.build_paper_shaped_runner_or_record_external_blocker",
+      "reason": "blocked_by_missing+no_local_repository_encoded_in_dag",
+      "success_criteria": [
+        "resolve checkpoints/models/datasets/APIs named by the DAG",
+        "run paper-appropriate baselines and ablations",
+        "emit raw outputs, scoring, timing, GPU/CPU/RAM traces",
+        "compare to paper tables, figures, paragraphs, and appendix"
+      ]
+    }
+  ],
+  "score": 0.857143,
+  "semantic_ready": true,
+  "status": "blocked_waiting_for_professional_artifacts_after_dag_update"
+}

@@ -1,0 +1,42 @@
+{
+  "author_decision": "explicit_operational_blocker",
+  "contains_professional_artifact_gate": true,
+  "contains_reduced_rejection_gate": true,
+  "created_at_utc": "2026-07-23T08:20:26Z",
+  "experiment_prediction": "benchmarks=ImageNet classification; CIFAR-100 KD; COCO2017 object detection; metrics=Top-1 accuracy; AP; AP50; AP75; APS; APM; APL; protocols=300-epoch ImageNet training; 50-epoch COCO detection; component ablation; teacher-scale robustness",
+  "gap_prediction": "fixed-weight KD ignores dynamic conflict; gradient conflict; gradient dominance; manual loss-weight tuning; stressors: directionally misaligned task and distillation gradients; one objective suppresses the other; data-free distillation not handled; no official source repository found",
+  "gpu_probe": {
+    "nvidia_smi": {
+      "cmd": [
+        "nvidia-smi",
+        "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": null,
+      "elapsed_s": 0.036,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "0, NVIDIA GeForce RTX 4090, 24564, 20972, 3245, 4\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19268, 4946, 7\n3, NVIDIA GeForce RTX 4090, 24564, 21, 24195, 0\n",
+      "timed_out": false
+    },
+    "status": "pass"
+  },
+  "input_contract": {
+    "only_input_file": "paper_author_gap_dag.json",
+    "oracle_results_visible_to_loop2": false,
+    "paper_text_visible_to_loop2": false,
+    "previous_memory_visible_to_loop2": false,
+    "repo_paths_visible_only_if_encoded_in_dag": true
+  },
+  "method_prediction": "multi-scale projectors; distillation head; task head; dynamic trade-off module; softmax-normalized amortized pi update",
+  "oracle_results_seen": false,
+  "paper_id": "ICLR2026_QMItTyQW92_dto_kd_dynamic_tradeoff_distillation",
+  "paper_text_seen": false,
+  "paper_title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+  "previous_memory_seen": false,
+  "professional_package_ready": false,
+  "professional_package_reason": "blocked_by_no_local_repository_encoded_in_dag",
+  "raw_artifact_level": "repo_and_dependency_audit_only",
+  "reduced_or_proxy_used_for_convergence": false,
+  "repo_audits": []
+}

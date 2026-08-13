@@ -1,0 +1,3144 @@
+{
+  "artifact_kind": "prism_model_data_manifest",
+  "candidate_artifacts": {
+    "bold5000_artifacts": [],
+    "checkpoint_artifacts": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/molecular_experiments/diffusion_model.pt",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/molecular_experiments/diffusion_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "400552",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/molecular_experiments/potential_model.pt",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/molecular_experiments/potential_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "20504",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/generative_dropout/diffusion_2moons_dropout.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/generative_dropout/diffusion_2moons_dropout.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "133297",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/NLOT/data/reacher_data.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/NLOT/data/reacher_data.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "105612",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/NLOT/data/conditional_semicircles.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/NLOT/data/conditional_semicircles.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "16153",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/NLOT/data/reward_weighting_hinge_data.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/NLOT/data/reward_weighting_hinge_data.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "902080",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/NLOT/data/quantile_data_new.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/NLOT/data/quantile_data_new.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "580814",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/NLOT/data/diffusion_2moons_dropout.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/NLOT/data/diffusion_2moons_dropout.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "133297",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/hyperparameter-trajectory-inference/NLOT/data/reward_weighting_data_0_10.pt",
+        "relative_to_search_root": "repos/hyperparameter-trajectory-inference/NLOT/data/reward_weighting_data_0_10.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3142126",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/kr-Spk0_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/kr-Spk0_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4154002",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/pl-Spk1_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/pl-Spk1_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4978626",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/de-Spk1_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/de-Spk1_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5290778",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/sp-Spk1_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/sp-Spk1_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5130522",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/en-Carter_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/en-Carter_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4256002",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/it-Spk0_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/it-Spk0_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2552026",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/en-Davis_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/en-Davis_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2471258",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/nl-Spk1_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/nl-Spk1_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5095874",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/en-Emma_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/en-Emma_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3343090",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/de-Spk0_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/de-Spk0_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "7039666",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/pt-Spk1_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/pt-Spk1_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3554890",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/in-Samuel_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/in-Samuel_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3782658",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/en-Mike_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/en-Mike_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2016234",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/kr-Spk1_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/kr-Spk1_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5865138",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/fr-Spk1_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/fr-Spk1_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4272170",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/fr-Spk0_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/fr-Spk0_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4386482",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/pl-Spk0_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/pl-Spk0_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3750522",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/jp-Spk0_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/jp-Spk0_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4668234",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/en-Frank_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/en-Frank_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3359578",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/sp-Spk0_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/sp-Spk0_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4243906",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/en-Grace_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/en-Grace_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2772466",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/pt-Spk0_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/pt-Spk0_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2268290",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/it-Spk1_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/it-Spk1_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2854514",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/nl-Spk0_man.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/nl-Spk0_man.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3704498",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/VibeVoice/demo/voices/streaming_model/jp-Spk1_woman.pt",
+        "relative_to_search_root": "repos/VibeVoice/demo/voices/streaming_model/jp-Spk1_woman.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4637994",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Markov-Mamba/src/x_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Markov-Mamba/src/x_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Markov-Mamba/src/y_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Markov-Mamba/src/y_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Attention-Conv/src/x_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Attention-Conv/src/x_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Attention-Conv/src/y_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Attention-Conv/src/y_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Markov-Mamba-L1/src/x_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Markov-Mamba-L1/src/x_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Markov-Mamba-L1/src/y_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Markov-Mamba-L1/src/y_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Markov-Mamba-Switch/src/x_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Markov-Mamba-Switch/src/x_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Markov-Mamba/Markov-Mamba-Switch/src/y_test.pt",
+        "relative_to_search_root": "repos/Markov-Mamba/Markov-Mamba-Switch/src/y_test.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5207",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/projection_state.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/projection_state.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1298226",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/delta_matrices.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/delta_matrices.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "42184",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/padded_delta_matrices.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/padded_delta_matrices.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "61440",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/PreDomainEmbedding.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/PreDomainEmbedding.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2259",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/d_c_max.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/d_c_max.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "864",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/theta0.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics_amazon-ratings/theta0.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "52138",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/projection_state.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/projection_state.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1298226",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/delta_matrices.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/delta_matrices.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "27077",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/padded_delta_matrices.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/padded_delta_matrices.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "42486",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/PreDomainEmbedding.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/PreDomainEmbedding.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2003",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/d_c_max.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/d_c_max.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "864",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/theta0.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/fingerprint/pubmed_arxiv_wikics/theta0.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "50858",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/output/G-Align/Aug22-2:56-0438f978/final_gfm_model.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/output/G-Align/Aug22-2:56-0438f978/final_gfm_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1856749",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/output/G-Align/Aug25-20:37-76594502/final_gfm_model.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/output/G-Align/Aug25-20:37-76594502/final_gfm_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1857069",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/output/G-Align/Aug13-0:14-97cc0c8c/final_gfm_model.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/output/G-Align/Aug13-0:14-97cc0c8c/final_gfm_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1857325",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/output/G-Align/Aug26-22:08-711a96fc/final_gfm_model.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/output/G-Align/Aug26-22:08-711a96fc/final_gfm_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1857069",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MF-GIA/generated_files/output/G-Align/Aug11-17:00-9929422f/final_gfm_model.pt",
+        "relative_to_search_root": "repos/MF-GIA/generated_files/output/G-Align/Aug11-17:00-9929422f/final_gfm_model.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1933132",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/pre_filter.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/pre_filter.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "864",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/avg_degrees.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/avg_degrees.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1904",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/slices.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/slices.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "14708",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/data.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/data.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "579775",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/rwpe_3.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/rwpe_3.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "41623",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/pre_transform.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/pre_transform.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "864",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/LapE/eigen_values.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/LapE/eigen_values.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "14645",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/LapE/slices.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/LapE/slices.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "11262",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/iclr_UniImb/data/TU/MUTAG/processed/LapE/eigen_vectors.pt",
+        "relative_to_search_root": "repos/iclr_UniImb/data/TU/MUTAG/processed/LapE/eigen_vectors.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "258682",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/glass_flows_tutorial/figures/traj_data_01.pt",
+        "relative_to_search_root": "repos/glass_flows_tutorial/figures/traj_data_01.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "66318",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/499775_hall.pt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/499775_hall.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1783",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/Qwen.pt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/Qwen.pt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5005",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/getting_started_with_CDGS/pretrained_checkpoints/flow_matching_model_start.pth",
+        "relative_to_search_root": "repos/getting_started_with_CDGS/pretrained_checkpoints/flow_matching_model_start.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "23129690",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/getting_started_with_CDGS/pretrained_checkpoints/flow_matching_model_end.pth",
+        "relative_to_search_root": "repos/getting_started_with_CDGS/pretrained_checkpoints/flow_matching_model_end.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "23129430",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/getting_started_with_CDGS/pretrained_checkpoints/simple_diffusion_model_start.pth",
+        "relative_to_search_root": "repos/getting_started_with_CDGS/pretrained_checkpoints/simple_diffusion_model_start.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "23130080",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/getting_started_with_CDGS/pretrained_checkpoints/simple_diffusion_model_bridge.pth",
+        "relative_to_search_root": "repos/getting_started_with_CDGS/pretrained_checkpoints/simple_diffusion_model_bridge.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "23130210",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/getting_started_with_CDGS/pretrained_checkpoints/flow_matching_model_bridge.pth",
+        "relative_to_search_root": "repos/getting_started_with_CDGS/pretrained_checkpoints/flow_matching_model_bridge.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "23129820",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/getting_started_with_CDGS/pretrained_checkpoints/simple_diffusion_model_end.pth",
+        "relative_to_search_root": "repos/getting_started_with_CDGS/pretrained_checkpoints/simple_diffusion_model_end.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "23129820",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpwm/eval/lpips/vgg.pth",
+        "relative_to_search_root": "repos/lpwm/eval/lpips/vgg.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "7289",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/discount-models/src/domains/mnist/mnist_weights/mnist_mlp_discriminator.pth",
+        "relative_to_search_root": "repos/discount-models/src/domains/mnist/mnist_weights/mnist_mlp_discriminator.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5844087",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/discount-models/src/domains/mnist/mnist_weights/mnist_classifier.pth",
+        "relative_to_search_root": "repos/discount-models/src/domains/mnist/mnist_weights/mnist_classifier.pth",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "180423",
+        "support_only_until_grid_bound": true
+      }
+    ],
+    "coco_artifacts": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_9jdQLmPUHW_coco_compactness_consistency_graph_clustering.chip.json",
+        "relative_to_search_root": "chips/ICLR2026_9jdQLmPUHW_coco_compactness_consistency_graph_clustering.chip.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "43429",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 12,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "56K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 13,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "64K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 3,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/llava-bench-coco",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/llava-bench-coco",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "28K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 20,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "92K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 16,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "76K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 3,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap_chair",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap_chair",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "56K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2014_cap_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2014_cap_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1417",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2014_cap.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2014_cap.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "69",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1401",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_cap.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_cap.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "109",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "69",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "750",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_karpathy_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_karpathy_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1394",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_karpathy.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_karpathy.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "72",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap_val_lite.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2017_cap_val_lite.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1409",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2014_cap_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco2014_cap_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "766",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_karpathy_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap/coco_karpathy_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1390",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "98",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "100",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_rec_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_rec_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "112",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_seg_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_seg_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "95",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_seg_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_seg_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "97",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_rec_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/refcocog_bbox_rec_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "110",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/_refcoco.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcocog/_refcoco.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "102",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/llava-bench-coco/llava-bench-coco.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/llava-bench-coco/llava-bench-coco.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1086",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "95",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_testA.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_testA.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "97",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_val_lite.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_val_lite.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1245",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_testB.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_testB.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "112",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_testA.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_testA.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "100",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_testB.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_testB.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "100",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_testB.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_testB.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "97",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "96",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "98",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_seg_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "93",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_testA.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_testA.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "112",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_test.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_test.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "110",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/_refcoco.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/_refcoco.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "179",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco/refcoco_bbox_rec_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "108",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_seg_testB.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_seg_testB.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "99",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "98",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_rec_testB.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_rec_testB.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "114",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_rec_testA.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_rec_testA.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "114",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_testA.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_testA.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "102",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_seg_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_seg_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "95",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_testB.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_testB.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "102",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/_refcoco.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/_refcoco.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "147",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_seg_testA.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_seg_testA.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "99",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_rec_val.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/refcoco+/refcoco+_bbox_rec_val.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "110",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap_chair/coco_cap_chair.yaml",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tasks/coco_cap_chair/coco_cap_chair.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1118",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 3,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lm-harmony/lm_eval/tasks/groundcocoa",
+        "relative_to_search_root": "repos/lm-harmony/lm_eval/tasks/groundcocoa",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "16K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lm-harmony/lm_eval/tasks/groundcocoa/groundcocoa.yaml",
+        "relative_to_search_root": "repos/lm-harmony/lm_eval/tasks/groundcocoa/groundcocoa.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "424",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lm-harmony/lm_eval/tasks/catalan_bench/cocoteros_va.yaml",
+        "relative_to_search_root": "repos/lm-harmony/lm_eval/tasks/catalan_bench/cocoteros_va.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "610",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lm-harmony/lm_eval/tasks/spanish_bench/cocoteros_es.yaml",
+        "relative_to_search_root": "repos/lm-harmony/lm_eval/tasks/spanish_bench/cocoteros_es.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "566",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 3,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/agent-data-protocol/datasets/llava_plus/images/coco",
+        "relative_to_search_root": "repos/agent-data-protocol/datasets/llava_plus/images/coco",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3.1M",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/EBT/data/img/coco_medium_dataset.py",
+        "relative_to_search_root": "repos/EBT/data/img/coco_medium_dataset.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1900",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/EBT/data/img/coco_tiny_dataset.py",
+        "relative_to_search_root": "repos/EBT/data/img/coco_tiny_dataset.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1752",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SGF/nudity_sdv1/generate_coco30k_sgf.py",
+        "relative_to_search_root": "repos/SGF/nudity_sdv1/generate_coco30k_sgf.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "29016",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SGF/nudity_sdv1/generate_coco30k_safedenoiser.py",
+        "relative_to_search_root": "repos/SGF/nudity_sdv1/generate_coco30k_safedenoiser.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "29026",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 3,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/groundcocoa",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/groundcocoa",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "16K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/groundcocoa/groundcocoa.yaml",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/groundcocoa/groundcocoa.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "398",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/catalan_bench/cocoteros_va.yaml",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/catalan_bench/cocoteros_va.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "610",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/spanish_bench/cocoteros_es.yaml",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/lm_eval/tasks/spanish_bench/cocoteros_es.yaml",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "566",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/optimal-sparsity/pre-training/examples/multimodal/evaluate_coco.py",
+        "relative_to_search_root": "repos/optimal-sparsity/pre-training/examples/multimodal/evaluate_coco.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1871",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/transformers-main/tests/fixtures/tests_samples/COCO/coco_panoptic_annotations.txt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/transformers-main/tests/fixtures/tests_samples/COCO/coco_panoptic_annotations.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "555",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/transformers-main/tests/fixtures/tests_samples/COCO/coco_annotations.txt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/transformers-main/tests/fixtures/tests_samples/COCO/coco_annotations.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4075",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/transformers-main/tests/fixtures/tests_samples/COCO/coco_panoptic",
+        "relative_to_search_root": "repos/LVLMs-Saliency/transformers-main/tests/fixtures/tests_samples/COCO/coco_panoptic",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "16K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic_annotations.txt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic_annotations.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "555",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/transformers/tests/fixtures/tests_samples/COCO/coco_annotations.txt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/transformers/tests/fixtures/tests_samples/COCO/coco_annotations.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4075",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "16K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic_annotations.txt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic_annotations.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "555",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/tests/fixtures/tests_samples/COCO/coco_annotations.txt",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/tests/fixtures/tests_samples/COCO/coco_annotations.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "4075",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": true,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/tests/fixtures/tests_samples/COCO/coco_panoptic",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "16K",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000493435.txt",
+        "relative_to_search_root": "repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000493435.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "337",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000342593.txt",
+        "relative_to_search_root": "repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000342593.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "335",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000567609.txt",
+        "relative_to_search_root": "repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000567609.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "313",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000367228.txt",
+        "relative_to_search_root": "repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000367228.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "319",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000449726.txt",
+        "relative_to_search_root": "repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000449726.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "297",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000367905.txt",
+        "relative_to_search_root": "repos/NextStep-1/evals/prompts/dpg_prompts/COCOval2014000000367905.txt",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "277",
+        "support_only_until_grid_bound": true
+      }
+    ],
+    "generated_images": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Depth-Anything-3/assets/examples/SOH/010.png",
+        "relative_to_search_root": "repos/Depth-Anything-3/assets/examples/SOH/010.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1134666",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Depth-Anything-3/assets/examples/SOH/000.png",
+        "relative_to_search_root": "repos/Depth-Anything-3/assets/examples/SOH/000.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1091690",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Depth-Anything-3/assets/images/da3_teaser.png",
+        "relative_to_search_root": "repos/Depth-Anything-3/assets/images/da3_teaser.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "132",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Depth-Anything-3/assets/images/da3_radar.png",
+        "relative_to_search_root": "repos/Depth-Anything-3/assets/images/da3_radar.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "214877",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/mamba/assets/mamba3.png",
+        "relative_to_search_root": "repos/mamba/assets/mamba3.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "181058",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/mamba/assets/ssd_algorithm.png",
+        "relative_to_search_root": "repos/mamba/assets/ssd_algorithm.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1118415",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/mamba/assets/selection.png",
+        "relative_to_search_root": "repos/mamba/assets/selection.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "818624",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/analysis.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/analysis.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "553354",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/trust_region_schematic.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/trust_region_schematic.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "236674",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/qwen3_math_code.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/qwen3_math_code.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1135499",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/other_models.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/other_models.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "677951",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/unprojected_llama.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/unprojected_llama.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "429644",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/troll_overview.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/troll_overview.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "195376",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/troll_illustration_no_bg.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/troll_illustration_no_bg.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1480338",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/qwen3_methods.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/qwen3_methods.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "749420",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/troll_illustration.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/troll_illustration.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3513001",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/docs/static/images/staleness.png",
+        "relative_to_search_root": "repos/troll/docs/static/images/staleness.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "575472",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/troll/verl/docs/_static/logo.png",
+        "relative_to_search_root": "repos/troll/verl/docs/_static/logo.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "84701",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_castle_interp1.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_castle_interp1.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "347387",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/plane_interp1.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/plane_interp1.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "400199",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_castle_interp2.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_castle_interp2.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "468084",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/dog_interp2.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/dog_interp2.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "524339",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_dog_interp2.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_dog_interp2.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "508189",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/dog_interp1.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/dog_interp1.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "417831",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/plane_interp2.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/plane_interp2.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "290844",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_dog_interp1.png",
+        "relative_to_search_root": "repos/rafal-spacetime-geometry/image_experiments/interpolation_images/similar_dog_interp1.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "611695",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CDGS_ogbench/conda_env/2-comp-dfu-per-step-v2-3k.png",
+        "relative_to_search_root": "repos/CDGS_ogbench/conda_env/2-comp-dfu-per-step-v2-3k.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "539947",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CDGS_ogbench/conda_env/11-algo-both-v5-c2-3k.png",
+        "relative_to_search_root": "repos/CDGS_ogbench/conda_env/11-algo-both-v5-c2-3k.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "295859",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MedAgentGym/assets/figure1.png",
+        "relative_to_search_root": "repos/MedAgentGym/assets/figure1.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "183456",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MedAgentGym/assets/figure3.png",
+        "relative_to_search_root": "repos/MedAgentGym/assets/figure3.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "419866",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MedAgentGym/assets/figure6.png",
+        "relative_to_search_root": "repos/MedAgentGym/assets/figure6.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "279157",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MedAgentGym/assets/figure4.png",
+        "relative_to_search_root": "repos/MedAgentGym/assets/figure4.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "185866",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MedAgentGym/assets/figure2.png",
+        "relative_to_search_root": "repos/MedAgentGym/assets/figure2.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1386171",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/MedAgentGym/assets/figure5.png",
+        "relative_to_search_root": "repos/MedAgentGym/assets/figure5.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "247795",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/attn_head_deviation.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/attn_head_deviation.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "490197",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama_boundless_pricetag.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama_boundless_pricetag.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "530901",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama3_sae_tokenidx7.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama3_sae_tokenidx7.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "923825",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama3_sae_tokenidx31.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama3_sae_tokenidx31.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "793517",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama_boundless_pricetag_legend.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama_boundless_pricetag_legend.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1249851",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/saes.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/saes.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "668065",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama3_sae_tokenidx63.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama3_sae_tokenidx63.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1069461",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama3_sae_tokenidx15.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama3_sae_tokenidx15.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "891422",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/rep_divergence/divergence/figs/llama3_sae_tokenidx3.png",
+        "relative_to_search_root": "repos/rep_divergence/divergence/figs/llama3_sae_tokenidx3.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1050443",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CauKer/Models/Chronos/figures/main-figure.png",
+        "relative_to_search_root": "repos/CauKer/Models/Chronos/figures/main-figure.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "232294",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CauKer/Models/Chronos/figures/chronos-logo.png",
+        "relative_to_search_root": "repos/CauKer/Models/Chronos/figures/chronos-logo.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "120558",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/In-Place-TTT/assets/pipeline.png",
+        "relative_to_search_root": "repos/In-Place-TTT/assets/pipeline.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "7327890",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_content_creators_all_three_flags_count.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_content_creators_all_three_flags_count.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "685517",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_content_creators_detailed_flags_count.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_content_creators_detailed_flags_count.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "256607",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_podcasts_all_three_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_podcasts_all_three_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "735282",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_broadcast_news_detailed_flags_count.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_broadcast_news_detailed_flags_count.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "249606",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/speaker_similarity_boxplot_af.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/speaker_similarity_boxplot_af.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "134792",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/link_results.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/link_results.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "212429",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/broadcast_news.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/broadcast_news.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "176786",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/speaker_similarity_vs_count_af.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/speaker_similarity_vs_count_af.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "155768",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_broadcast_news_all_three_flags_count.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_broadcast_news_all_three_flags_count.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "710704",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_content_creators_detailed_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_content_creators_detailed_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "255570",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_flags_count_overview.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_flags_count_overview.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "167038",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/podcasts_link_results.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/podcasts_link_results.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "185663",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_broadcast_news_all_three_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_broadcast_news_all_three_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "785832",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_podcasts_detailed_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_podcasts_detailed_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "253564",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_content_creators_all_three_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_content_creators_all_three_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "779460",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/speaker_embeddings_pca_af.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/speaker_embeddings_pca_af.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "994864",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_stacked_language_totals.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_stacked_language_totals.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "457617",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/llm_sources.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/llm_sources.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "199764",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_podcasts_detailed_flags_count.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_podcasts_detailed_flags_count.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "247835",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_podcasts_all_three_flags_count.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_podcasts_all_three_flags_count.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "628927",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/content_creators.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/content_creators.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "169306",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/podcasts.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/podcasts.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "170542",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/speaker_similarity_distribution_af.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/speaker_similarity_distribution_af.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "125172",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_broadcast_news_detailed_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_broadcast_news_detailed_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "258995",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/filtered_flags_overview.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/filtered_flags_overview.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "173548",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/flower.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/flower.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1780705",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/content_creators_link_results.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/content_creators_link_results.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "185712",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/test_fixed.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/test_fixed.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "95177",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/broadcast_news_link_results.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/broadcast_news_link_results.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "187740",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/figures/top_speakers_similarity_af.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/figures/top_speakers_similarity_af.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "191076",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/scripts/figures/figures/filtered_podcasts_all_three_flags.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/scripts/figures/figures/filtered_podcasts_all_three_flags.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "735282",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/scripts/figures/figures/speaker_similarity_boxplot_af.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/scripts/figures/figures/speaker_similarity_boxplot_af.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "134792",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/scripts/figures/figures/link_results.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/scripts/figures/figures/link_results.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "212429",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_pipeline/scripts/figures/figures/broadcast_news.png",
+        "relative_to_search_root": "repos/ttsds_pipeline/scripts/figures/figures/broadcast_news.png",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "176786",
+        "support_only_until_grid_bound": true
+      }
+    ],
+    "god_artifacts": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_T0EiEuhOOL_huxley_godel_machine_cmp.chip.json",
+        "relative_to_search_root": "chips/ICLR2026_T0EiEuhOOL_huxley_godel_machine_cmp.chip.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "32181",
+        "support_only_until_grid_bound": true
+      }
+    ],
+    "keyword_artifacts": [],
+    "metric_outputs": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SANA/asset/example_data/00000000_VILA1-5-13B_clip_score.json",
+        "relative_to_search_root": "repos/SANA/asset/example_data/00000000_VILA1-5-13B_clip_score.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "61",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SANA/asset/example_data/00000000_InternVL2-26B_clip_score.json",
+        "relative_to_search_root": "repos/SANA/asset/example_data/00000000_InternVL2-26B_clip_score.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "63",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/SANA/asset/example_data/00000000_prompt_clip_score.json",
+        "relative_to_search_root": "repos/SANA/asset/example_data/00000000_prompt_clip_score.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "57",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_DkHt2K1g2Y_rali_reasoning_as_representation_iqa.chip.json",
+        "relative_to_search_root": "chips/ICLR2026_DkHt2K1g2Y_rali_reasoning_as_representation_iqa.chip.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "32565",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/ease_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/ease_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1093",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/cprompt_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/cprompt_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "769",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/slot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/slot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1010",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/ranpac_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/ranpac_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "614",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/ease_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/ease_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "860",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/cprompt_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/cprompt_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "535",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/memo_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/memo_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1028",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/der_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/der_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "634",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/ranpac_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/ranpac_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "847",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/der_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/der_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "867",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/cofima_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/cofima_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "599",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/foster_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/foster_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "958",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/cofima_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/cofima_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "843",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/aper_aperpter_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/aper_aperpter_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "543",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/aper_aperpter_compslot_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/aper_aperpter_compslot_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "776",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/memo_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/memo_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "793",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CompSLOT/exps/foster_cgqa.json",
+        "relative_to_search_root": "repos/CompSLOT/exps/foster_cgqa.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "725",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/assets/open-eqa-demo-data.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/assets/open-eqa-demo-data.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "845",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/assets/open-eqa-v0-184-questions.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/assets/open-eqa-v0-184-questions.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "7731",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-41-3dmem.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-41-3dmem.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "25736",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-557.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-557.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "178200",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-184.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-184.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "59065",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-184-gpt-4o-1234-metrics.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-184-gpt-4o-1234-metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "8282",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-v0.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-v0.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "476360",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-41.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-41.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "13482",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-54-gpt-4o-1234-metrics.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-54-gpt-4o-1234-metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2432",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/open-eqa-54.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/open-eqa-54.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "17506",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/results/AEQA_blind/open-eqa-41-Qwen--Qwen2.5-VL-72B-Instruct-AWQ-1234.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/results/AEQA_blind/open-eqa-41-Qwen--Qwen2.5-VL-72B-Instruct-AWQ-1234.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "3191",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/world-in-world/subtrees/open-eqa/data/results/AEQA_blind/open-eqa-184-Qwen--Qwen2.5-VL-72B-Instruct-AWQ-1234.json",
+        "relative_to_search_root": "repos/world-in-world/subtrees/open-eqa/data/results/AEQA_blind/open-eqa-184-Qwen--Qwen2.5-VL-72B-Instruct-AWQ-1234.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "14619",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/qa4mre_2012-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/qa4mre_2012-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "175",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_gen-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_gen-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "839",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/mathqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/mathqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "189",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/qa4mre_2013-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/qa4mre_2013-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "199",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/openbookqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/openbookqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "170",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/headqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/headqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "187",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/pubmedqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/pubmedqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "105",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/triviaqa-v1-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/triviaqa-v1-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "87",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_mc-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_mc-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "191",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/coqa-v1-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/coqa-v1-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "106",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/qa4mre_2011-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/qa4mre_2011-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "183",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_gen-v1-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_gen-v1-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "839",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/piqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/piqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "182",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/headqa_es-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/headqa_es-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "193",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/headqa_en-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/headqa_en-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "195",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/triviaqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/triviaqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "87",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/coqa-v0-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/coqa-v0-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "106",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_mc-v1-res.json",
+        "relative_to_search_root": "repos/Open-dLLM/lm-evaluation-harness/tests/testdata/truthfulqa_mc-v1-res.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "192",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/optimal-sparsity/taskloss-eval/datasets/lm-evaluation-harness/triviaqa_4shot.json",
+        "relative_to_search_root": "repos/optimal-sparsity/taskloss-eval/datasets/lm-evaluation-harness/triviaqa_4shot.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "11406700",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tui/web/package.json",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tui/web/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "537",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID/lmms-eval/lmms_eval/tui/web/package-lock.json",
+        "relative_to_search_root": "repos/FlashVID/lmms-eval/lmms_eval/tui/web/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "89352",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/package.json",
+        "relative_to_search_root": "repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "50",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/package-lock.json",
+        "relative_to_search_root": "repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "783",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/node_modules/.package-lock.json",
+        "relative_to_search_root": "repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/node_modules/.package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "447",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/node_modules/acorn/package.json",
+        "relative_to_search_root": "repos/open-thoughts/open_thoughts_3/dcft/external_repositories/code2flow/code2flow/node_modules/acorn/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1063",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments/are/simulation/gui/client/package.json",
+        "relative_to_search_root": "repos/meta-agents-research-environments/are/simulation/gui/client/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2794",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/meta-agents-research-environments/are/simulation/gui/client/package-lock.json",
+        "relative_to_search_root": "repos/meta-agents-research-environments/are/simulation/gui/client/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "265631",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/client/package.json",
+        "relative_to_search_root": "repos/battleship/experiments/prolific/battleship/client/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "784",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/client/package-lock.json",
+        "relative_to_search_root": "repos/battleship/experiments/prolific/battleship/client/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "286290",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/server/package.json",
+        "relative_to_search_root": "repos/battleship/experiments/prolific/battleship/server/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "782",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/battleship/experiments/prolific/battleship/server/package-lock.json",
+        "relative_to_search_root": "repos/battleship/experiments/prolific/battleship/server/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "86805",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_website/package.json",
+        "relative_to_search_root": "repos/ttsds_website/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "411",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ttsds_website/package-lock.json",
+        "relative_to_search_root": "repos/ttsds_website/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "40791",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/marin_suhas_data_efficiency/data_browser/package.json",
+        "relative_to_search_root": "repos/marin_suhas_data_efficiency/data_browser/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1108",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/marin_suhas_data_efficiency/data_browser/package-lock.json",
+        "relative_to_search_root": "repos/marin_suhas_data_efficiency/data_browser/package-lock.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "764041",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/marin_suhas_data_efficiency/lib/iris/package.json",
+        "relative_to_search_root": "repos/marin_suhas_data_efficiency/lib/iris/package.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "179",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/ScaleCUA/evaluation/OSWorld/evaluation_examples/examples/libreoffice_impress/e4ef0baf-4b52-4590-a47e-d4d464cca2d7.json",
+        "relative_to_search_root": "repos/ScaleCUA/evaluation/OSWorld/evaluation_examples/examples/libreoffice_impress/e4ef0baf-4b52-4590-a47e-d4d464cca2d7.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "2036",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/chips/ICLR2026_ObFVZGnSFN_depthlm_metric_depth_vlms.chip.json",
+        "relative_to_search_root": "chips/ICLR2026_ObFVZGnSFN_depthlm_metric_depth_vlms.chip.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "44950",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/3021/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/3021/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "41",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/4202/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/4202/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "60",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/6/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/6/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "60",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/4349/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gemini-2.5-flash-lite/4349/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "60",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-3.5-turbo/7107/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-3.5-turbo/7107/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "60",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-3.5-turbo/6904/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-3.5-turbo/6904/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "41",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-3.5-turbo/2316/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-3.5-turbo/2316/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "60",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-4.1-nano/7356/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-4.1-nano/7356/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "60",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-4.1-nano/7107/metrics.json",
+        "relative_to_search_root": "repos/speculative-action/hotpotqa/run_metrics/agent_gpt-5_top1/trajs_gpt-4.1-nano/7107/metrics.json",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "94",
+        "support_only_until_grid_bound": true
+      }
+    ],
+    "nsd_artifacts": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/new_nsd_data.py",
+        "relative_to_search_root": "src/new_nsd_data.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM",
+        "size_human": "7116",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/transformers-main/examples/research_projects/layoutlmv3/run_funsd_cord.py",
+        "relative_to_search_root": "repos/LVLMs-Saliency/transformers-main/examples/research_projects/layoutlmv3/run_funsd_cord.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "21140",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/transformers/examples/research_projects/layoutlmv3/run_funsd_cord.py",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/transformers/examples/research_projects/layoutlmv3/run_funsd_cord.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "21185",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/examples/research_projects/layoutlmv3/run_funsd_cord.py",
+        "relative_to_search_root": "repos/LVLMs-Saliency/src/FastV/llava-hf/transformers/examples/research_projects/layoutlmv3/run_funsd_cord.py",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "21140",
+        "support_only_until_grid_bound": true
+      }
+    ],
+    "structured_text_npz": [
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CDGS_ogbench/data/ogb_maze/antmaze-medium-explore-v0-luotest.npz",
+        "relative_to_search_root": "repos/CDGS_ogbench/data/ogb_maze/antmaze-medium-explore-v0-luotest.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "13277754",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CDGS_ogbench/data/ogb_maze/antmaze-giant-stitch-v0-luotest.npz",
+        "relative_to_search_root": "repos/CDGS_ogbench/data/ogb_maze/antmaze-giant-stitch-v0-luotest.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5327754",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/CDGS_ogbench/data/ogb_maze/antmaze-large-stitch-v0-luotest.npz",
+        "relative_to_search_root": "repos/CDGS_ogbench/data/ogb_maze/antmaze-large-stitch-v0-luotest.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "5327754",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd/fid_stats/adm_in256_stats.npz",
+        "relative_to_search_root": "repos/lpd/fid_stats/adm_in256_stats.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "33563124",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/lpd/fid_stats/adm_in512_stats.npz",
+        "relative_to_search_root": "repos/lpd/fid_stats/adm_in512_stats.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "33563124",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/SimpleQP_seed42_var1000_ineq500_eq500_examples2000.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/SimpleQP_seed42_var1000_ineq500_eq500_examples2000.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "40029956",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/dc3_random_nonconvex_dataset_var100_ineq50_eq50_ex10000valid.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/dc3_random_nonconvex_dataset_var100_ineq50_eq50_ex10000valid.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1391668",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/dc3_random_simple_dataset_var100_ineq50_eq50_ex10000train.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/dc3_random_simple_dataset_var100_ineq50_eq50_ex10000train.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "9705268",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/dc3_random_nonconvex_dataset_var100_ineq50_eq50_ex10000train.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/dc3_random_nonconvex_dataset_var100_ineq50_eq50_ex10000train.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "9705268",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/SimpleQP_seed42_var100_ineq50_eq50_examples10000.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/SimpleQP_seed42_var100_ineq50_eq50_examples10000.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "12243156",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/dc3_random_simple_dataset_var100_ineq50_eq50_ex10000valid.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/dc3_random_simple_dataset_var100_ineq50_eq50_ex10000valid.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1391668",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/dc3_random_nonconvex_dataset_var100_ineq50_eq50_ex10000test.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/dc3_random_nonconvex_dataset_var100_ineq50_eq50_ex10000test.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1391668",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/SimpleQP_seed42_var100_ineq50_eq50_examples200.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/SimpleQP_seed42_var100_ineq50_eq50_examples200.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "404756",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/QP/datasets/dc3_random_simple_dataset_var100_ineq50_eq50_ex10000test.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/QP/datasets/dc3_random_simple_dataset_var100_ineq50_eq50_ex10000test.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "1391668",
+        "support_only_until_grid_bound": true
+      },
+      {
+        "file_count": 1,
+        "is_dir": false,
+        "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/pinet/src/benchmarks/toy_MPC/datasets/toy_MPC_seed42_examples10000.npz",
+        "relative_to_search_root": "repos/pinet/src/benchmarks/toy_MPC/datasets/toy_MPC_seed42_examples10000.npz",
+        "search_root": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h",
+        "size_human": "6831844",
+        "support_only_until_grid_bound": true
+      }
+    ]
+  },
+  "created_at_utc": "2026-07-24T13:33:21Z",
+  "exact_prism_pipeline_artifacts": {
+    "best_keyword_json": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/search_prompt/best_keyword.json",
+      "size_human": null
+    },
+    "generated_output_dir": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/results",
+      "size_human": null
+    },
+    "metric_output_dir": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/metrics",
+      "size_human": null
+    },
+    "test_structured_npz": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/data/test_response.npz",
+      "size_human": null
+    },
+    "train_structured_npz": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/data/train_response.npz",
+      "size_human": null
+    },
+    "trained_checkpoint_cur_best": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/cur_best_large_lr.pt",
+      "size_human": null
+    },
+    "val_structured_npz": {
+      "exists": false,
+      "file_count": 0,
+      "is_dir": false,
+      "path": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/PRISM/src/data/val_response.npz",
+      "size_human": null
+    }
+  },
+  "paper_id": "ICLR2026_88ZLp7xYxw_prism_fmri_structured_text",
+  "paper_shaped_outputs_required": [
+    "NSD, BOLD5000, and Generic Object Decoding fMRI reconstruction benchmarks",
+    "COCO-derived QA pairs and Qwen2.5 QA scoring on reconstructed images",
+    "five-run subject-averaged metrics and standardized fMRI train/test splits",
+    "PixCorr, SSIM, LPIPS, CLIP, Inception V3, QA accuracy, CKA, CCA, and generalization-gap outputs",
+    "latent-space ablation comparing CLIP text latent, LDM latent, and PRISM structured text",
+    "module ablation for attribute/relationship search and object-centric cross-attention generation",
+    "raw reconstructed images, prompts/structured descriptions, checkpoints, metric JSON/CSV, and GPU traces"
+  ],
+  "support_only_warning": "candidate artifacts are not verifier-comparable unless bound to PRISM paper splits, metrics, tables, figures, and ablations"
+}

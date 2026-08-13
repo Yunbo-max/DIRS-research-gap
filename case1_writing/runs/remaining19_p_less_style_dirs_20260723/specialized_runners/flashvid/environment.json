@@ -1,0 +1,98 @@
+{
+  "artifact_kind": "flashvid_environment_manifest",
+  "compileall": {
+    "cmd": [
+      "python",
+      "-m",
+      "compileall",
+      "-q",
+      "flashvid",
+      "playground",
+      "tools"
+    ],
+    "cwd": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID",
+    "returncode": 0,
+    "seconds": 0.058,
+    "stderr": "",
+    "stdout": "",
+    "timeout": false
+  },
+  "created_at_utc": "2026-07-23T18:53:32Z",
+  "cwd": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/flashvid",
+  "gpu_rows": [
+    {
+      "index": "0",
+      "memory_free_mib": 2873,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 21343,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "1",
+      "memory_free_mib": 5586,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 18631,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 0
+    },
+    {
+      "index": "2",
+      "memory_free_mib": 5193,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 19020,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 17
+    },
+    {
+      "index": "3",
+      "memory_free_mib": 8088,
+      "memory_total_mib": 24564,
+      "memory_used_mib": 16129,
+      "name": "NVIDIA GeForce RTX 4090",
+      "utilization_gpu_pct": 99
+    }
+  ],
+  "nvidia_smi": {
+    "cmd": [
+      "nvidia-smi",
+      "--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu",
+      "--format=csv,noheader,nounits"
+    ],
+    "cwd": null,
+    "returncode": 0,
+    "seconds": 0.073,
+    "stderr": "",
+    "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 21343, 2873, 0\n1, NVIDIA GeForce RTX 4090, 24564, 18631, 5586, 0\n2, NVIDIA GeForce RTX 4090, 24564, 19020, 5193, 17\n3, NVIDIA GeForce RTX 4090, 24564, 16129, 8088, 99\n",
+    "timeout": false
+  },
+  "packages": {
+    "accelerate": "1.11.0",
+    "decord": "0.6.0",
+    "flash_attn": null,
+    "lmms_eval": "0.5.0",
+    "qwen_vl_utils": "0.0.14",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.2",
+    "uv": {
+      "cmd": [
+        "bash",
+        "-lc",
+        "command -v uv && uv --version"
+      ],
+      "cwd": null,
+      "returncode": 0,
+      "seconds": 0.019,
+      "stderr": "",
+      "stdout": "/root/.local/bin/uv\nuv 0.9.7\n",
+      "timeout": false
+    }
+  },
+  "paper_id": "ICLR2026_H6rDX4w6Al_flashvid_vllm_token_merging",
+  "professional_hardware_expectation": {
+    "efficiency": "single NVIDIA A100 according to paper/DAG",
+    "main_experiments": "8 x NVIDIA A800 80G according to paper/DAG"
+  },
+  "python": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+  "repo": "/tf/notebooks/iclr2026_oral_paper_memory_fresh_248h/repos/FlashVID"
+}

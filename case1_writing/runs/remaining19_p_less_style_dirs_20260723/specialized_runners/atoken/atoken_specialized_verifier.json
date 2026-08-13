@@ -1,0 +1,120 @@
+{
+  "artifact_kind": "atoken_specialized_verifier",
+  "blockers": [
+    {
+      "detail": "DAG records 64 H100 Stage 1 and 256 H100 Stages 2-3; visible H100 count is 0; visible GPUs: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.",
+      "id": "h100_training_scale_hardware_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No visible GPU has >=18GB free and <30% utilization for official ATokenWrapper inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 21343, 'memory_free_mib': 2873, 'utilization_gpu_pct': 0, 'temperature_c': 44, 'power_w': 61.89}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18631, 'memory_free_mib': 5586, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.57}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19023, 'memory_free_mib': 5191, 'utilization_gpu_pct': 17, 'temperature_c': 39, 'power_w': 20.85}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99, 'temperature_c': 74, 'power_w': 247.02}]",
+      "id": "clean_gpu_slot_for_official_atoken_inference_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Official Apple checkpoint URLs exist but local .pt files are missing or empty: atoken_soc_continuous, atoken_sod_discrete, atoken_3d_decode_gs, atoken_soc_stage1, atoken_soc_stage2.",
+      "id": "apple_checkpoints_not_materialized",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing local dataset/materialized benchmark artifacts: dfn_training, open_images_training, webvid_video_training, textvr_retrieval, panda70m_video_training, objaverse_3d, cap3d_3d_text, imagenet_classification, coco_retrieval_generation, davis_video_reconstruction, msrvtt_video_text.",
+      "id": "multimodal_training_eval_datasets_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "Missing imports needed for full official/video/GS path: diffusers, open_clip, imageio, webdataset, flash_attn, diff_gaussian_rasterization.",
+      "id": "atoken_runtime_dependencies_missing",
+      "status": "blocked"
+    },
+    {
+      "detail": "No complete verifier-comparable AToken tables/figures/raw outputs were found for reconstruction, retrieval, MLLM, generation, 3D, and scaling surfaces.",
+      "id": "full_multitask_benchmark_grid_missing",
+      "status": "blocked"
+    }
+  ],
+  "checks": [
+    {
+      "detail": {
+        "loop2_input": "paper_author_gap_dag_iter_03.json plus repo paths already encoded in DAG",
+        "oracle_results_visible_to_loop2": false,
+        "paper_text_in_lightweight_repo_not_used_for_loop2": true,
+        "paper_text_visible_to_loop2": false
+      },
+      "name": "blind_contract",
+      "status": "pass"
+    },
+    {
+      "name": "official_checkpoint_gate",
+      "status": "blocked"
+    },
+    {
+      "name": "multimodal_dataset_gate",
+      "status": "blocked"
+    },
+    {
+      "name": "runtime_and_gs_gate",
+      "status": "blocked"
+    },
+    {
+      "name": "h100_training_scale_gate",
+      "status": "blocked"
+    },
+    {
+      "name": "full_result_grid_gate",
+      "status": "blocked"
+    },
+    {
+      "detail": "The gate explicitly rejects the lightweight single-GPU repo and demo/example outputs as convergence evidence.",
+      "name": "reduced_proxy_rejection_gate",
+      "status": "pass"
+    },
+    {
+      "detail": [
+        {
+          "id": "main_benchmark_tables",
+          "required": "image/video reconstruction, zero-shot classification, image/video retrieval, MLLM replacement, T2I/T2V, image-to-3D, and scaling ablation tables"
+        },
+        {
+          "id": "metric_scoring_outputs",
+          "required": "PSNR, SSIM, LPIPS, rFID, rFVD, accuracy, R@1, gFID, Inception Score, precision, timing and GPU traces"
+        },
+        {
+          "id": "datasets_and_model_artifacts",
+          "required": "five Apple CDN checkpoints; DFN, Open Images, WebVid, TextVR, Panda70M, Objaverse, Cap3D, ImageNet, COCO, DAVIS, MSR-VTT"
+        },
+        {
+          "id": "hardware_runtime_traces",
+          "required": "64 H100 Stage 1 and 256 H100 Stages 2-3 traces; clean CUDA inference slot; flash-attn and Gaussian Splatting runtime"
+        },
+        {
+          "id": "operational_preflight_blockers",
+          "required": "h100_training_scale_hardware_missing: DAG records 64 H100 Stage 1 and 256 H100 Stages 2-3; visible H100 count is 0; visible GPUs: NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090 | NVIDIA GeForce RTX 4090.; clean_gpu_slot_for_official_atoken_inference_missing: No visible GPU has >=18GB free and <30% utilization for official ATokenWrapper inference. GPU rows: [{'index': '0', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 21343, 'memory_free_mib': 2873, 'utilization_gpu_pct': 0, 'temperature_c': 44, 'power_w': 61.89}, {'index': '1', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 18631, 'memory_free_mib': 5586, 'utilization_gpu_pct': 0, 'temperature_c': 39, 'power_w': 20.57}, {'index': '2', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 19023, 'memory_free_mib': 5191, 'utilization_gpu_pct': 17, 'temperature_c': 39, 'power_w': 20.85}, {'index': '3', 'name': 'NVIDIA GeForce RTX 4090', 'memory_total_mib': 24564, 'memory_used_mib': 16109, 'memory_free_mib': 8108, 'utilization_gpu_pct': 99, 'temperature_c': 74, 'power_w': 247.02}]; apple_checkpoints_not_materialized: Official Apple checkpoint URLs exist but local .pt files are missing or empty: atoken_soc_continuous, atoken_sod_discrete, atoken_3d_decode_gs, atoken_soc_stage1, atoken_soc_stage2.; multimodal_training_eval_datasets_missing: Missing local dataset/materialized benchmark artifacts: dfn_training, open_images_training, webvid_video_training, textvr_retrieval, panda70m_video_training, objaverse_3d, cap3d_3d_text, imagenet_classification, coco_retrieval_generation, davis_video_reconstruction, msrvtt_video_text.; atoken_runtime_dependencies_missing: Missing imports needed for full official/video/GS path: diffusers, open_clip, imageio, webdataset, flash_attn, diff_gaussian_rasterization.; full_multitask_benchmark_grid_missing: No complete verifier-comparable AToken tables/figures/raw outputs were found for reconstruction, retrieval, MLLM, generation, 3D, and scaling surfaces."
+        }
+      ],
+      "name": "exact_artifact_debt_recorded",
+      "status": "pass"
+    }
+  ],
+  "converged": false,
+  "created_at_utc": "2026-07-23T18:53:13Z",
+  "dag_signature": "ae3bfe8ac298f3f1",
+  "iteration": 3,
+  "paper_id": "CVPR2026_103_atoken_unified_visual_tokenizer",
+  "paper_title": "AToken: A Unified Tokenizer for Vision",
+  "professional_ready": false,
+  "required_updates": [
+    {
+      "id": "update.materialize_atoken_professional_artifacts_before_rerun",
+      "reason": "blocked_by_checkpoints_datasets_runtime_hardware_and_benchmark_grid_requirements",
+      "success_criteria": [
+        "download and verify all five Apple checkpoint files under ml-atoken/checkpoints",
+        "install official dependencies including flash-attn and Gaussian Splatting modules",
+        "materialize DFN, Open Images, WebVid, TextVR, Panda70M, Objaverse, Cap3D, ImageNet, COCO, DAVIS, and MSR-VTT as required by the DAG",
+        "run official ATokenWrapper image/video/3D inference over benchmark inputs",
+        "run reconstruction, zero-shot/retrieval, MLLM replacement, T2I/T2V, image-to-3D, and scaling result surfaces",
+        "emit raw media, metric JSON, table summaries, timing/GPU traces, and compare to paper tables/figures/paragraph claims"
+      ]
+    }
+  ],
+  "status": "not_converged_operational_blocker_recorded"
+}

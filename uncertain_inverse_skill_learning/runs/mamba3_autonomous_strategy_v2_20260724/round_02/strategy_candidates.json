@@ -1,0 +1,197 @@
+{
+  "run": "mamba3_autonomous_strategy_v2_20260724",
+  "round": 2,
+  "diagnosis": {
+    "source": "writer self-critique informed by outcome-level controller feedback",
+    "representation_failure": "The round-01 staircase gave two local diagnostic blocks priority over the system-level outcome.",
+    "selection_failure": "Too many absolute values received equal rhetorical weight, so the abstract exposed evidence without a sufficiently strong contribution hierarchy.",
+    "preserved_strength": "Adjacent mechanism-to-test bindings made the role of component evidence recoverable.",
+    "repair_target": "Preserve local bindings while establishing the aggregate contribution earlier and reducing each binding to a discriminative numeric anchor."
+  },
+  "candidates": [
+    {
+      "proposal_id": "S5_salience_anchor_then_selective_bindings",
+      "relationship_to_round_01": "self_inferred_edit_of_S2",
+      "proposal_origin": {
+        "type": "self_critique",
+        "observations": [
+          "In the selected round-01 realization, the headline 1.5B result followed two dense local result blocks.",
+          "Nearly every evidence sentence carried several absolute values, making local details compete with the contribution-level comparison.",
+          "The useful part of the staircase was adjacency between a mechanism and its diagnostic evidence, not its low-to-high ordering."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "The evidence contains a system-level comparative result and component-relevant diagnostic results.",
+          "The system result can be stated without an exhaustive baseline table.",
+          "Local evidence can be compressed without changing its direction or scope."
+        ],
+        "inputs": [
+          "one aggregate quality comparison",
+          "recurrence ablation",
+          "state-dynamics diagnostic",
+          "MIMO quality-latency tradeoff",
+          "retrieval and scaling boundaries"
+        ],
+        "transformation": "State the joint problem and architecture, place one system-level comparative anchor by the third sentence, then attach one selectively compressed diagnostic anchor to each mechanism role. Preserve an explicit non-dominance statement for SISO versus MIMO and end with retrieval and scale scope gates.",
+        "outputs": [
+          "an early contribution hierarchy",
+          "recoverable local mechanism-test bindings",
+          "lower numeric competition",
+          "a bounded system-level synthesis"
+        ],
+        "rejection_rule": "Reject if the early anchor implies universal dominance, if compression removes the direction of a diagnostic comparison, if a number is detached from its setting, or if the scope gates disappear."
+      },
+      "predicted_effects": [
+        "Earlier recovery of the main language-model contribution.",
+        "Mechanism-result coherence comparable to the original staircase.",
+        "Less table-like prose because each local block uses only its most discriminative contrast.",
+        "Clearer distinction between MIMO's quality benefit and SISO's latency advantage."
+      ],
+      "failure_modes": [
+        "Compressing the baseline table may weaken readers' sense of comparative margin.",
+        "A headline result before local validation may make the architecture sound less mechanistically motivated.",
+        "Selective anchors may omit a component detail that some evaluators consider central."
+      ],
+      "falsification_tests": [
+        "Compare with a binding-detached control containing the same factual units, numeric anchors, and similar length; falsify the binding claim if mechanism-test recoverability does not decline in the control.",
+        "Compare with the round-01 staircase; falsify the salience repair if contribution identification is not earlier or numeric-load judgments do not improve.",
+        "Reject if any blind evaluator finds that compression changed a comparison's scope or factual meaning."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The early anchor, selective numeric budget, and adjacency rule are writer-invented operations. The controller supplied outcome failures, not this repair.",
+        "required_content_evidence": "All architecture components, settings, comparisons, diagnostic results, latency tradeoffs, retrieval claims, and scale boundaries must map to the permitted chip.",
+        "feedback_role": "Controller feedback motivates diagnosis only and is not evidence for paper content.",
+        "prohibited": [
+          "claiming exact component causality for aggregate gains",
+          "claiming MIMO is the fastest path",
+          "claiming retrieval is solved",
+          "claiming transfer beyond 1.5B"
+        ]
+      },
+      "status": "local_strategy_hypothesis_pending_controller"
+    },
+    {
+      "proposal_id": "S2_mechanism_ablation_staircase",
+      "relationship_to_round_01": "incumbent_preserved_for_comparison",
+      "proposal_origin": {
+        "type": "recombination",
+        "observations": [
+          "Round-01 writer and controller judgments both found the adjacent local bindings functionally coherent.",
+          "The remaining uncertainty is whether that coherence requires the original staircase order and numeric density."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "Multiple mechanisms have diagnostic evidence.",
+          "Local attribution is prioritized over early aggregate salience."
+        ],
+        "inputs": [
+          "three mechanisms",
+          "three nearby validation blocks",
+          "system outcome",
+          "scope boundary"
+        ],
+        "transformation": "Present mechanism and diagnostic evidence in three ascending adjacent steps, then state the aggregate tradeoff and limitation.",
+        "outputs": [
+          "maximally explicit local bindings",
+          "a mechanism-led narrative"
+        ],
+        "rejection_rule": "Reject if the main result arrives too late for the communication context or the abstract reads as a numeric catalog."
+      },
+      "predicted_effects": [
+        "High local mechanism-test recoverability.",
+        "Lower early system-level salience than S5.",
+        "Potentially higher numeric burden than S5."
+      ],
+      "failure_modes": [
+        "Local evidence can obscure the contribution hierarchy.",
+        "Readers may retain a measurement table instead of the architectural idea."
+      ],
+      "falsification_tests": [
+        "Compare with S5 at a matched word budget; reject the incumbent locally if S5 preserves coherence while improving salience and compression."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "This is the round-01 incumbent, retained as posterior mass rather than assumed optimal.",
+        "required_content_evidence": "Every local binding and aggregate result must remain chip-grounded.",
+        "prohibited": [
+          "treating the controller's coherence judgment as transfer evidence",
+          "promoting the strategy without a counterfactual"
+        ]
+      },
+      "status": "candidate"
+    },
+    {
+      "proposal_id": "S4_boundary_first_contrast_loop",
+      "relationship_to_round_01": "retained_multimodal_branch_now_executed",
+      "proposal_origin": {
+        "type": "failure_induced",
+        "observations": [
+          "A fixed recurrent state has a documented retrieval boundary.",
+          "A mitigation exists but adds attention-related cost.",
+          "Leading with this contrast may calibrate the positive results differently from either a result ledger or mechanism staircase."
+        ]
+      },
+      "operation_contract": {
+        "preconditions": [
+          "A central architectural promise has a supported limitation.",
+          "A supported mitigation has a supported cost."
+        ],
+        "inputs": [
+          "fixed-state retrieval boundary",
+          "hybrid mitigation and cost",
+          "architecture",
+          "aggregate quality result",
+          "diagnostic and latency evidence"
+        ],
+        "transformation": "Open with the promise-boundary contrast, state mitigation and cost, then introduce the architecture and positive evidence before returning to a conditional conclusion.",
+        "outputs": [
+          "an early scope gate",
+          "calibrated positive claims",
+          "a boundary-led alternative narrative"
+        ],
+        "rejection_rule": "Reject if the opening hides the contribution, repeats the caveat, or implies that hybrid attention is free."
+      },
+      "predicted_effects": [
+        "Strong bounded-claim calibration.",
+        "A surface and information order distinct from S5.",
+        "Potentially lower immediate contribution salience."
+      ],
+      "failure_modes": [
+        "The abstract may sound defensive.",
+        "The limitation can dominate a short word budget."
+      ],
+      "falsification_tests": [
+        "Compare contribution identification and boundedness with S5; reject if the early boundary reduces salience without improving calibration."
+      ],
+      "content_evidence_boundary": {
+        "strategy_induction": "The contrast loop remains a writer-proposed alternative and is not attributed to an expert trace.",
+        "required_content_evidence": "The limitation, mitigation, cost, method, and all positive results must be separately grounded in the chip.",
+        "prohibited": [
+          "claiming hybrid attention eliminates retrieval failures",
+          "presenting attention cost as negligible",
+          "generalizing to 7B"
+        ]
+      },
+      "status": "candidate"
+    }
+  ],
+  "counterfactual_control": {
+    "control_id": "A1_binding_detached_and_salience_delayed",
+    "targeted_operation": "S5 early system anchor plus adjacent selective mechanism-test bindings",
+    "held_approximately_constant": [
+      "problem statement",
+      "architecture components",
+      "training scale",
+      "aggregate quality facts",
+      "recurrence-ablation facts",
+      "formal-state facts",
+      "latency facts",
+      "retrieval and scale boundaries",
+      "word band",
+      "general prose quality"
+    ],
+    "intervention": "List all mechanisms together, group evaluations separately in a non-mechanism order, and move the aggregate quality result behind latency, ablation, and retrieval.",
+    "prediction": "The control will make the aggregate contribution later and the local component-test mapping less immediately recoverable while preserving factual support."
+  }
+}

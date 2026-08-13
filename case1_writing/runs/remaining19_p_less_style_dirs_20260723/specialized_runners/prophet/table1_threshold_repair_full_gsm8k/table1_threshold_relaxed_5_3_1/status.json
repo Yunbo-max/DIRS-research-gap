@@ -1,0 +1,82 @@
+{
+  "already_completed_samples": 0,
+  "artifact_kind": "prophet_custom_full_gsm8k_status",
+  "completed_sample_indices": 669,
+  "convergence_role": "full non-reduced paper-shaped operational evidence for Prophet full-step vs early-exit comparison",
+  "cuda_visible_devices": "1",
+  "current_sample_index": 669,
+  "dataset": "openai/gsm8k main test",
+  "device": "cuda",
+  "effective_start_index": 0,
+  "effective_stop_index_exclusive": 1319,
+  "full_split_requested": true,
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, 16169, 24564, 100\n1, NVIDIA GeForce RTX 4090, 15829, 24564, 34\n2, NVIDIA GeForce RTX 4090, 16601, 24564, 99\n3, NVIDIA GeForce RTX 4090, 16129, 24564, 99",
+  "last_rows": [
+    {
+      "artifact_kind": "prophet_custom_full_gsm8k_per_sample",
+      "block_length": 32,
+      "constraints_text": "200:The|201:answer|202:is",
+      "created_at_utc": "2026-07-24T14:03:26Z",
+      "exit_info": {
+        "actual_steps": 210,
+        "early_exit_triggered": true,
+        "exit_decision_step": 210,
+        "total_steps": 256
+      },
+      "flexible_exact_match": true,
+      "flexible_predicted_answer": "3",
+      "gen_length": 256,
+      "generated_text": "\nTo determine how many employees oversee the company, we need to follow these steps:\n\n1. Calculate the number of management employees.\n2. Determine the number of management employees who oversee the entire company.\n\n**Step 1: Calculate the number of management employees.**\n\nThe company has 50 employees, and 20% of them are management. Therefore, the number of management employees is:\n\\[ \\text{Number of management employees} = 0.20 \\times 50 = 10 \\]\n\n**Step 2: Determine the number of management employees who oversee the entire company.**\n\nOut of the 10 management employees, 30% oversee the entire company. Therefore, the number of management employees who oversee the entire company is:\n\\[ \\text{Number of management employees overseeing the company} = 0.30 \\times 10 = 3 \\]\n\n** Answer:** The answer is \\(\\boxed{3}\\).",
+      "gold_answer": "3",
+      "prompt_profile": "official_zero_shot",
+      "question": "In a company of 50 employees, 20% of the employees are management.  Out of this 20%, only 30% oversee the entire company.  How many employees oversee the company?",
+      "remasking": "low_confidence",
+      "sample_index": 668,
+      "seconds": 9.6564,
+      "steps": 256,
+      "strict_exact_match": false,
+      "strict_predicted_answer": "",
+      "variant": "prophet"
+    }
+  ],
+  "lm_eval_failure_predecessor": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/full_gsm8k_sequence_status.json",
+  "logical_gpu_mapping_note": "physical GPU 1 is logical cuda:0 when CUDA_VISIBLE_DEVICES=1",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "pid": 2465,
+  "prompt_profile": "official_zero_shot",
+  "prompt_template_source": "named_prompt_profile",
+  "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1/per_sample_results.jsonl",
+  "run_label": "table1_threshold_relaxed_5_3_1",
+  "running_summary": {
+    "aggregates": {
+      "prophet": {
+        "completed_samples": 669,
+        "early_exit_count": 669,
+        "early_exit_rate": 1.0,
+        "flexible_correct_count": 470,
+        "flexible_exact_match": 0.70254110612855,
+        "mean_actual_steps": 186.98056801195816,
+        "mean_seconds": 8.735481165919282,
+        "strict_correct_count": 302,
+        "strict_exact_match": 0.4514200298953662
+      }
+    },
+    "artifact_kind": "prophet_custom_full_gsm8k_summary",
+    "created_at_utc": "2026-07-24T14:03:26Z",
+    "dataset": "openai/gsm8k main test",
+    "rows_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1/per_sample_results.jsonl",
+    "status": "running_or_partial",
+    "total_samples": 1319,
+    "variants_requested": [
+      "prophet"
+    ]
+  },
+  "started_at_utc": "2026-07-24T12:20:43Z",
+  "status": "running",
+  "summary_path": "/tf/notebooks/yunbo/DIRS/case1_writing/runs/remaining19_p_less_style_dirs_20260723/specialized_runners/prophet/table1_threshold_repair_full_gsm8k/table1_threshold_relaxed_5_3_1/summary.json",
+  "total_samples": 1319,
+  "updated_at_utc": "2026-07-24T14:03:26Z",
+  "variants": [
+    "prophet"
+  ]
+}
